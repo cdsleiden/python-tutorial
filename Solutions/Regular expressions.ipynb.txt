@@ -1,0 +1,235 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Regular expressions - Exercises"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Exercise 8.1.\n",
+    "\n",
+    "Download “P.B. Shelley's Complete Poems” from the following URL:  \n",
+    "[https://edu.nl/r6dn8](https://edu.nl/r6dn8)\n",
+    "\n",
+    "Regular expressions can be used to find verse lines with specific properties. Write a program in Python which can identify verse lines with the following features: \n",
+    "\n",
+    "* Lines containing the word \"fire\". \n",
+    "* Lines that containing either the word \"sun\" or to word \"moon\". \n",
+    "* Use a single regular expression to identify these lines. \n",
+    "* All the lines which contain either the singular or the plural form of \"star\". \n",
+    "* All the lines which contain either the singular or the plural form of \"leaf\". \n",
+    "* Lines with words ending in in \"ly\". \n",
+    "* All the lines which contain a question mark. \n",
+    "* Lines ending in the character combination \"ain\". \n",
+    "* Cases of alliteration on \"br\" (or, in other words, all the lines which contain at least two words that begin with \"br\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import re\n",
+    "\n",
+    "poems = open(\"Shelley.txt\" , encoding='utf-8')\n",
+    "lines = []\n",
+    "\n",
+    "\n",
+    "for line in poems:\n",
+    "    lines.append(line)\n",
+    "\n",
+    "\n",
+    "for line in lines:\n",
+    "    if re.search( r\"\\bfire\\b\" , line , re.IGNORECASE ):\n",
+    "        print(line)\n",
+    "\n",
+    "\n",
+    "# Using the same text, print all the lines containing either the word \"sun\" or to word \"moon\". Use a single regular expression to identify these lines.\n",
+    "\n",
+    "\n",
+    "\n",
+    "for line in lines:\n",
+    "    if re.search( r'\\bsun\\b|\\bmoon\\b' , line ):\n",
+    "        print( line )\n",
+    "\n",
+    "\n",
+    "# Find all the lines which contain either the singular or the plural form of \"star\".\n",
+    "\n",
+    "\n",
+    "for line in lines:\n",
+    "    if re.search( r'\\bstars?\\b' , line ):\n",
+    "        print( line )\n",
+    "\n",
+    "\n",
+    "# Find all the lines which contain either the singular or the plural form of \"leaf\".\n",
+    "\n",
+    "\n",
+    "for line in lines:\n",
+    "    if re.search( r'\\blea(f|ves)\\b' , line ):\n",
+    "        print( line )\n",
+    "\n",
+    "\n",
+    "# Find all the lines which contain a word ending in in \"ly\".\n",
+    "\n",
+    "\n",
+    "for line in lines:\n",
+    "    if re.search( r'ly\\b' , line ):\n",
+    "        print( line )\n",
+    "\n",
+    "\n",
+    "# Find all the lines which contain a question mark.\n",
+    "\n",
+    "\n",
+    "for line in lines:\n",
+    "    if re.search( r'\\?' , line ):\n",
+    "        print( line )\n",
+    "\n",
+    "\n",
+    "# Find all the lines ending in the character sequence \"ain\".\n",
+    "\n",
+    "\n",
+    "for line in lines:\n",
+    "    if re.search( r'ain$' , line ):\n",
+    "        print( line )\n",
+    "\n",
+    "\n",
+    "# Find all the lines which contain at least two words that begin with \"br\"\n",
+    "\n",
+    "\n",
+    "\n",
+    "for line in lines:\n",
+    "    if re.search( r'\\bbr.+\\bbr.*' , line ):\n",
+    "        print( line )\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Exercise 8.2.\n",
+    "\n",
+    "Download the file “bibliography.txt” from \n",
+    "[https://edu.nl/t449h](https://edu.nl/t449h)\n",
+    "\n",
+    "This file contains a list of articles, formatted according to the APA citation style. For each title, try to extract the year of publication, the title and the name of the journal.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import re\n",
+    "\n",
+    "file = open(  \"bibliography.txt\" )\n",
+    "\n",
+    "for pub in file:\n",
+    "    match = re.search( r'\\((\\d+)\\)' , pub )\n",
+    "    if match:\n",
+    "        year = match.group(1)\n",
+    "\n",
+    "    match = re.search( r'\\\"(.+)\\\"' , pub )\n",
+    "    if match:\n",
+    "        title = match.group(1)\n",
+    "\n",
+    "    match = re.search( r'\\\".+\\\"\\s([A-Za-z\\s]*)\\d' , pub )\n",
+    "    if match:\n",
+    "        journal = match.group(1)\n",
+    "\n",
+    "    print( year + '\\n' +  title + '\\n' + journal + '\\n')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Exercise 8.3.\n",
+    "\n",
+    "Download the file “tweets.txt” from [https://edu.nl/cvge6](https://edu.nl/cvge6).\n",
+    "\n",
+    "This file contains a number of tweets containing the hashtag ‘#universiteitleiden’, obtained using the Twitter API. Extract all the usernames and all the hashtags form these tweets, using regular expressions.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "FileNotFoundError",
+     "evalue": "[Errno 2] No such file or directory: 'tweets.txt'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-1-0a26a1cad598>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mre\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0mtweets\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mopen\u001b[0m\u001b[0;34m(\u001b[0m \u001b[0;34m'tweets.txt'\u001b[0m \u001b[0;34m,\u001b[0m \u001b[0mencoding\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m'utf-8'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      4\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0mhashTags\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mdict\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mFileNotFoundError\u001b[0m: [Errno 2] No such file or directory: 'tweets.txt'"
+     ]
+    }
+   ],
+   "source": [
+    "import re\n",
+    "\n",
+    "tweets = open( 'tweets.txt' , encoding = 'utf-8')\n",
+    "\n",
+    "hashTags = dict()\n",
+    "userNames = dict()\n",
+    "\n",
+    "for t in tweets:\n",
+    "    \n",
+    "    ht = re.findall( r'#\\w+\\b' , t )\n",
+    "    for h in ht:\n",
+    "        hashTags[h] = hashTags.get( h , 0 ) + 1\n",
+    "    un = re.findall( r'@\\w+\\b' , t )\n",
+    "    for u in un:\n",
+    "        userNames[u] = userNames.get( u , 0 ) + 1\n",
+    "        \n",
+    "print(\"Hashtags:\")        \n",
+    "for ht in hashTags:\n",
+    "    print(ht)\n",
+    "    \n",
+    "print(\"\\nUser names:\")     \n",
+    "    \n",
+    "for u in userNames:\n",
+    "    print(u)\n",
+    "    \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
