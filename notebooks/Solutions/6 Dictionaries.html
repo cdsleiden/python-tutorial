@@ -1,0 +1,558 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6. Dictionaries &#8212; Python Tutorial</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7. Functions, Modules and Libraries" href="7%20Functions_modules_and_libraries.html" />
+    <link rel="prev" title="5. Lists" href="5%20Lists.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Python Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Welcome.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorial
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1%20Variables_and_data_types.html">
+   1. Variables and data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2%20Operators.html">
+   2. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3%20Working_with_strings.html">
+   3. Working with strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4%20Flow_control.html">
+   4. Flow control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5%20Lists.html">
+   5. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6%20Dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../7%20Functions_modules_and_libraries.html">
+   7. Functions, Modules and Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../8%20Working_with_files_and_folders.html">
+   8. Working with files and folders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../9%20Regular_expressions.html">
+   9. Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10%20Data_acquisition.html">
+   10. Data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11%20Pandas.html">
+   11. Data analysis with pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../12%20Visualisation.html">
+   12. Data Visualisation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Practical information
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Jupyter_notebook_basics.html">
+   Jupyter Notebook basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Installation.html">
+   Installation guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Other_resources.html">
+   Other resources
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Solutions to the exercises
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1%20Variables_and_data_types.html">
+   1. Variables and data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2%20Operators.html">
+   2. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20Working_with_strings.html">
+   3. Working with strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4%20Flow_control.html">
+   4. Flow control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5%20Lists.html">
+   5. Lists
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7%20Functions_modules_and_libraries.html">
+   7. Functions, Modules and Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8%20Working_with_files_and_folders.html">
+   8. Working with files and folders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9%20Regular_expressions.html">
+   9. Regular expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10%20Data_acquisition.html">
+   10. Data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11%20Pandas.html">
+   11. Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12%20Visualisation.html">
+   12. Visualisation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/Solutions/6 Dictionaries.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/gh-pages?urlpath=tree/docs/notebooks/Solutions/6 Dictionaries.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-6-1">
+   Exercise 6.1.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-6-2">
+   Exercise 6.2.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-6-3">
+   Exercise 6.3.
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="dictionaries">
+<h1>6. Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exercise-6-1">
+<h2>Exercise 6.1.<a class="headerlink" href="#exercise-6-1" title="Permalink to this headline">¶</a></h2>
+<p>The code below creates a new dictionary. This dictionary connects a number of ISBNs to the titles of the books they identify.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">isbn</span> <span class="o">=</span> <span class="p">{</span>
+<span class="mi">9780143105985</span> <span class="p">:</span> <span class="s1">&#39;White Noise&#39;</span> <span class="p">,</span>
+<span class="mi">9780241984536</span> <span class="p">:</span> <span class="s1">&#39;Libra&#39;</span> <span class="p">,</span>
+<span class="mi">9781925480665</span> <span class="p">:</span> <span class="s1">&#39;Mao II&#39;</span> <span class="p">,</span>
+<span class="mi">9781447289395</span> <span class="p">:</span> <span class="s1">&#39;Underworld&#39;</span> <span class="p">,</span>
+<span class="mi">9780743595728</span> <span class="p">:</span> <span class="s1">&#39;The Body Artist&#39;</span> <span class="p">,</span>
+<span class="mi">9781925480665</span> <span class="p">:</span> <span class="s1">&#39;Cosmopolis&#39;</span> <span class="p">,</span>
+<span class="mi">9780330524919</span> <span class="p">:</span> <span class="s1">&#39;Falling man&#39;</span> <span class="p">,</span>
+<span class="mi">9781439169971</span> <span class="p">:</span> <span class="s1">&#39;Point Omega&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Add the novel Zero K to the dictionary. This novel has ISBN13 9781501138072.</p></li>
+<li><p>Write some code which can print the title that corresponds to ISBN 9781447289395.</p></li>
+<li><p>Print a list of all the novels. Display both the ISBN and the title.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">isbn</span> <span class="o">=</span> <span class="p">{</span>
+<span class="mi">9780143105985</span> <span class="p">:</span> <span class="s1">&#39;White Noise&#39;</span> <span class="p">,</span>
+<span class="mi">9780241984536</span> <span class="p">:</span> <span class="s1">&#39;Libra&#39;</span> <span class="p">,</span>
+<span class="mi">9781925480665</span> <span class="p">:</span> <span class="s1">&#39;Mao II&#39;</span> <span class="p">,</span>
+<span class="mi">9781447289395</span> <span class="p">:</span> <span class="s1">&#39;Underworld&#39;</span> <span class="p">,</span>
+<span class="mi">9780743595728</span> <span class="p">:</span> <span class="s1">&#39;The Body Artist&#39;</span> <span class="p">,</span>
+<span class="mi">9781925480665</span> <span class="p">:</span> <span class="s1">&#39;Cosmopolis&#39;</span> <span class="p">,</span>
+<span class="mi">9780330524919</span> <span class="p">:</span> <span class="s1">&#39;Falling man&#39;</span> <span class="p">,</span>
+<span class="mi">9781439169971</span> <span class="p">:</span> <span class="s1">&#39;Point Omega&#39;</span>
+<span class="p">}</span>
+
+<span class="n">isbn</span><span class="p">[</span><span class="mi">9781501138072</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Zero K&#39;</span>
+
+<span class="n">index</span> <span class="o">=</span> <span class="mi">9781447289395</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The ISBN of the novel &#39;</span><span class="si">{</span><span class="n">isbn</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="si">}</span><span class="s2">&#39; is </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="p">)</span>
+
+<span class="k">for</span> <span class="n">novel</span> <span class="ow">in</span> <span class="n">isbn</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">isbn</span><span class="p">[</span><span class="n">novel</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; (&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">novel</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-6-2">
+<h2>Exercise 6.2.<a class="headerlink" href="#exercise-6-2" title="Permalink to this headline">¶</a></h2>
+<p>Using the dictionary <code class="docutils literal notranslate"><span class="pre">data</span></code> below, print the following sentence: “Louis Elsevier was a printer. He was born in 1540 in Leuven and died in 1617 in Leiden.”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;firstName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;louis&#39;</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;lastName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;elsevier&#39;</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;profession&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;printer&#39;</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;yob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1540</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;yod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1617</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;pob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leuven&#39;</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;pod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leiden&#39;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;firstName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;louis&#39;</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;lastName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;elsevier&#39;</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;profession&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;printer&#39;</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;yob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1540</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;yod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1617</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;pob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leuven&#39;</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;pod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leiden&#39;</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;firstName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;lastName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> was a </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;profession&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">. &quot;</span>
+<span class="n">sentence</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;He was born in </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;yob&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pob&#39;</span> <span class="p">,</span> <span class="s1">&#39;[Unknown]&#39;</span> <span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">sentence</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; and died in </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;yod&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pod&#39;</span> <span class="p">,</span> <span class="s1">&#39;[Unknown]&#39;</span> <span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span>
+
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">sentence</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-6-3">
+<h2>Exercise 6.3.<a class="headerlink" href="#exercise-6-3" title="Permalink to this headline">¶</a></h2>
+<p>Copy the code below in your code editor. Using the dictionary <code class="docutils literal notranslate"><span class="pre">eu</span></code>, print a sentence which gives information about the current number of countries in the EU. Add some code which can print a list of all the countries of the EU in alphabetical order. Finally, for each country, print the following sentence: “The capital of [ <em>country</em> ] is [ <em>capital</em> ].”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">eu</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s1">&#39;Italy&#39;</span><span class="p">:</span><span class="s1">&#39;Rome&#39;</span> <span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">:</span><span class="s1">&#39;Luxembourg&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Belgium&#39;</span><span class="p">:</span><span class="s1">&#39;Brussels&#39;</span> <span class="p">,</span> <span class="s1">&#39;Denmark&#39;</span><span class="p">:</span><span class="s1">&#39;Copenhagen&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Finland&#39;</span><span class="p">:</span><span class="s1">&#39;Helsinki&#39;</span> <span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">:</span><span class="s1">&#39;Paris&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Slovakia&#39;</span><span class="p">:</span><span class="s1">&#39;Bratislava&#39;</span> <span class="p">,</span> <span class="s1">&#39;Slovenia&#39;</span><span class="p">:</span><span class="s1">&#39;Ljubljana&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Germany&#39;</span><span class="p">:</span><span class="s1">&#39;Berlin&#39;</span> <span class="p">,</span> <span class="s1">&#39;Greece&#39;</span><span class="p">:</span><span class="s1">&#39;Athens&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Ireland&#39;</span><span class="p">:</span><span class="s1">&#39;Dublin&#39;</span> <span class="p">,</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">:</span><span class="s1">&#39;Amsterdam&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Portugal&#39;</span><span class="p">:</span><span class="s1">&#39;Lisbon&#39;</span> <span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">:</span><span class="s1">&#39;Madrid&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Sweden&#39;</span><span class="p">:</span><span class="s1">&#39;Stockholm&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Cyprus&#39;</span><span class="p">:</span><span class="s1">&#39;Nicosia&#39;</span> <span class="p">,</span> <span class="s1">&#39;Lithuania&#39;</span><span class="p">:</span><span class="s1">&#39;Vilnius&#39;</span> <span class="p">,</span> <span class="s1">&#39;Czech</span>
+<span class="n">Republic</span><span class="s1">&#39;:&#39;</span><span class="n">Prague</span><span class="s1">&#39; , &#39;</span><span class="n">Estonia</span><span class="s1">&#39;:&#39;</span><span class="n">Tallin</span><span class="s1">&#39; ,</span>
+<span class="s1">&#39;Hungary&#39;</span><span class="p">:</span><span class="s1">&#39;Budapest&#39;</span> <span class="p">,</span> <span class="s1">&#39;Latvia&#39;</span><span class="p">:</span><span class="s1">&#39;Riga&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Malta&#39;</span><span class="p">:</span><span class="s1">&#39;Valetta&#39;</span> <span class="p">,</span> <span class="s1">&#39;Austria&#39;</span><span class="p">:</span><span class="s1">&#39;Vienna&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Poland&#39;</span><span class="p">:</span><span class="s1">&#39;Warsaw&#39;</span> <span class="p">,</span> <span class="s1">&#39;Croatia&#39;</span><span class="p">:</span><span class="s1">&#39;Zagreb&#39;</span>
+<span class="p">,</span><span class="s1">&#39;Romania&#39;</span><span class="p">:</span><span class="s1">&#39;Bucharest&#39;</span> <span class="p">,</span> <span class="s1">&#39;Bulgaria&#39;</span><span class="p">:</span><span class="s1">&#39;Sofia&#39;</span> <span class="p">}</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eu</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s1">&#39;Italy&#39;</span><span class="p">:</span><span class="s1">&#39;Rome&#39;</span> <span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">:</span><span class="s1">&#39;Luxembourg&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">:</span><span class="s1">&#39;Brussels&#39;</span> <span class="p">,</span> <span class="s1">&#39;Denmark&#39;</span><span class="p">:</span><span class="s1">&#39;Copenhagen&#39;</span> <span class="p">,</span> <span class="s1">&#39;Finland&#39;</span><span class="p">:</span><span class="s1">&#39;Helsinki&#39;</span> <span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">:</span><span class="s1">&#39;Paris&#39;</span> <span class="p">,</span> <span class="s1">&#39;Slovakia&#39;</span><span class="p">:</span><span class="s1">&#39;Bratislava&#39;</span> <span class="p">,</span> <span class="s1">&#39;Slovenia&#39;</span><span class="p">:</span><span class="s1">&#39;Ljubljana&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span><span class="p">:</span><span class="s1">&#39;Berlin&#39;</span> <span class="p">,</span> <span class="s1">&#39;Greece&#39;</span><span class="p">:</span><span class="s1">&#39;Athens&#39;</span> <span class="p">,</span> <span class="s1">&#39;Ireland&#39;</span><span class="p">:</span><span class="s1">&#39;Dublin&#39;</span> <span class="p">,</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">:</span><span class="s1">&#39;Amsterdam&#39;</span> <span class="p">,</span> <span class="s1">&#39;Portugal&#39;</span><span class="p">:</span><span class="s1">&#39;Lisbon&#39;</span> <span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">:</span><span class="s1">&#39;Madrid&#39;</span> <span class="p">,</span> <span class="s1">&#39;Sweden&#39;</span><span class="p">:</span><span class="s1">&#39;Stockholm&#39;</span> <span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">:</span><span class="s1">&#39;London&#39;</span> <span class="p">,</span> <span class="s1">&#39;Cyprus&#39;</span><span class="p">:</span><span class="s1">&#39;Nicosia&#39;</span> <span class="p">,</span> <span class="s1">&#39;Lithuania&#39;</span><span class="p">:</span><span class="s1">&#39;Vilnius&#39;</span> <span class="p">,</span> <span class="s1">&#39;Czech Republic&#39;</span><span class="p">:</span><span class="s1">&#39;Prague&#39;</span> <span class="p">,</span> <span class="s1">&#39;Estonia&#39;</span><span class="p">:</span><span class="s1">&#39;Tallin&#39;</span> <span class="p">,</span> <span class="s1">&#39;Hungary&#39;</span><span class="p">:</span><span class="s1">&#39;Budapest&#39;</span> <span class="p">,</span> <span class="s1">&#39;Latvia&#39;</span><span class="p">:</span><span class="s1">&#39;Riga&#39;</span> <span class="p">,</span> <span class="s1">&#39;Malta&#39;</span><span class="p">:</span><span class="s1">&#39;Valetta&#39;</span> <span class="p">,</span> <span class="s1">&#39;Austria&#39;</span><span class="p">:</span><span class="s1">&#39;Vienna&#39;</span> <span class="p">,</span> <span class="s1">&#39;Poland&#39;</span><span class="p">:</span><span class="s1">&#39;Warsaw&#39;</span> <span class="p">,</span> <span class="s1">&#39;Croatia&#39;</span><span class="p">:</span><span class="s1">&#39;Zagreb&#39;</span> <span class="p">,</span><span class="s1">&#39;Romania&#39;</span><span class="p">:</span><span class="s1">&#39;Bucharest&#39;</span> <span class="p">,</span> <span class="s1">&#39;Bulgaria&#39;</span><span class="p">:</span><span class="s1">&#39;Sofia&#39;</span> <span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;The EU currently has </span><span class="si">{}</span><span class="s1"> member countries:&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">eu</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">eu</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">country</span> <span class="p">)</span>
+
+    
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">-----------</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+
+<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">eu</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;The capital of </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">eu</span><span class="p">[</span><span class="n">country</span><span class="p">]</span><span class="si">}</span><span class="s1">.&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cdsleiden/python-tutorial",
+            ref: "gh-pages",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/Solutions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="5%20Lists.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">5. Lists</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="7%20Functions_modules_and_libraries.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">7. Functions, Modules and Libraries</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Peter Verhaar and Ben Companjen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

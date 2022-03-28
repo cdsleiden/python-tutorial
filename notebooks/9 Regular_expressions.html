@@ -1,0 +1,897 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9. Regular Expressions &#8212; Python Tutorial</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="10. Data acquisition" href="10%20Data_acquisition.html" />
+    <link rel="prev" title="8. Working with files and folders" href="8%20Working_with_files_and_folders.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Python Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Welcome.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorial
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1%20Variables_and_data_types.html">
+   1. Variables and data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2%20Operators.html">
+   2. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20Working_with_strings.html">
+   3. Working with strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4%20Flow_control.html">
+   4. Flow control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5%20Lists.html">
+   5. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6%20Dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7%20Functions_modules_and_libraries.html">
+   7. Functions, Modules and Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8%20Working_with_files_and_folders.html">
+   8. Working with files and folders
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   9. Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10%20Data_acquisition.html">
+   10. Data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11%20Pandas.html">
+   11. Data analysis with pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12%20Visualisation.html">
+   12. Data Visualisation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Practical information
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Jupyter_notebook_basics.html">
+   Jupyter Notebook basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Installation.html">
+   Installation guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Other_resources.html">
+   Other resources
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Solutions to the exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">
+   1. Variables and data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/2%20Operators.html">
+   2. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/3%20Working_with_strings.html">
+   3. Working with strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/4%20Flow_control.html">
+   4. Flow control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/5%20Lists.html">
+   5. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/6%20Dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/7%20Functions_modules_and_libraries.html">
+   7. Functions, Modules and Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/8%20Working_with_files_and_folders.html">
+   8. Working with files and folders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/9%20Regular_expressions.html">
+   9. Regular expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/10%20Data_acquisition.html">
+   10. Data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/11%20Pandas.html">
+   11. Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/12%20Visualisation.html">
+   12. Visualisation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/9 Regular_expressions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/gh-pages?urlpath=tree/docs/notebooks/9 Regular_expressions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   9. Regular Expressions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#re-search">
+     re.search()
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#meta-characters">
+     Meta-characters
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantifiers">
+     Quantifiers
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#anchors">
+     Anchors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-insensitivity">
+     Case insensitivity
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-escape-character">
+     The escape character
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-and-replacing-text">
+     Finding and replacing text
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-9-1">
+     Exercise 9.1.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-9-2">
+     Exercise 9.2.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-9-3">
+     Exercise 9.3.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="regular-expressions">
+<h1>9. Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">¶</a></h1>
+<p>Regular expressions can be used to search for specific patterns within texts. When you search using patterns, rather than search terms, you can generally search in much more advanced ways. You can search for words with specific types of characters or for words containing a specific number fo characters, for instance.</p>
+<p>Such regular expressions typically consist of a sequence of symbols which specify a search action. Once defined, such regular expressions can be matched against actual strings.</p>
+<p>Regular expressions can be constructed using literal characters and so-called metacharacters. The simple regular expression ‘flower’, for instance, only contains literal characters. It can be used to search for the six characters that are mentioned. Metacharacters, by contrast, are characters with a special meaning. They represent specific types of characters, such as characters in lower case, digits, spaces or tabs. When you combine literal characters and metacharacters, you can search for patterns rather than for literal strings or keywords.</p>
+<div class="section" id="re-search">
+<h2>re.search()<a class="headerlink" href="#re-search" title="Permalink to this headline">¶</a></h2>
+<p>The standard installation of Python includes a useful module called <code class="docutils literal notranslate"><span class="pre">re</span></code>, which can be used to search for text fragments on the basis of regular expressions. To work with the module, you firstly need to import it. The module <code class="docutils literal notranslate"><span class="pre">re</span></code> contains a method named <code class="docutils literal notranslate"><span class="pre">search()</span></code>, which minimally requires two parameters. The first parameter is the pattern to search for, and the second parameter is the string in which you want to search. The method returns the value <code class="docutils literal notranslate"><span class="pre">True</span></code> if the pattern which is mentioned occurs in the string which is provided as the second parameter.</p>
+<p>The listing below offers an example. The regular expression, in this case, is simply a string consisting of literal characters. The code below tries to establish whether the string that is mentioned as the first parameter of <code class="docutils literal notranslate"><span class="pre">re.search()'</span></code>occurs in the sentence which is mentioned as the second parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="s1">&#39;Mrs. Dalloway said she would buy the flowers herself.&#39;</span>
+
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="s1">&#39;flower&#39;</span> <span class="p">,</span> <span class="n">sentence</span> <span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The pattern was found in the sentence!&#39;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="meta-characters">
+<h2>Meta-characters<a class="headerlink" href="#meta-characters" title="Permalink to this headline">¶</a></h2>
+<p>Next to literal characters, the following metacharacters may be used:</p>
+<p>
+<table width="100%; " style="text-align: left; font-size: 1.0em;  ">
+    <tr style="text-align: left; " >
+        <td width="25%" style="text-align: center; "><b>Metacharacter</b></td>    
+<td style="text-align: left; padding-right: 40%;"><b>Description</b></td>    
+</tr> 
+    <tr style="text-align: left; ">
+    <td width="25%" style="text-align: center; ">\w</td>    
+<td style="text-align: left; " >Any alphanumeric character: all 26 alphabetical characters or the Latin alphabet, both in upper case and in lower case, all numbers and the underscore.</td>    
+</tr>
+      <tr style="text-align: left; ">
+    <td width="25%" style="text-align: center; " >\d</td>    
+<td style="text-align: left; " >Digits.</td>    
+</tr>
+<tr style="text-align: left; " >
+    <td width="25%" style="text-align: center; ">.</td>    
+<td style="text-align: left; padding-right: 40%;">Any character, except the newline.</td>    
+</tr> 
+   <tr style="text-align: left; ">
+    <td width="25%" style="text-align: center; ">\s</td>    
+<td style="text-align: left; " >White space: the space, a tab or a newline character.</td>    
+</tr>
+ <tr style="text-align: left; ">
+    <td width="25%" style="text-align: center; ">[A-Z]</td>    
+<td style="text-align: left; " >Any upper case character.</td>    
+</tr>
+ <tr style="text-align: left; ">
+    <td width="25%" style="text-align: center; ">[A-Za-z]</td>    
+<td style="text-align: left; " >Any upper case or lower case character.</td>    
+</tr>
+       <tr style="text-align: left; ">
+    <td width="25%" style="text-align: center; ">[...]</td>    
+<td style="text-align: left; " >If only a limited number of characters are allowed on a specific position in a string, the characters that are allowed can be supplied in square brackets (i.e. on the place of the dots). </td>    
+</tr>
+</table>
+  </p>
+<p>The square brackets can be useful if you need to search for words which can be spelled in different ways. To localize the word ‘digitise’ in a text, for instance, either in its British or in its American spelling, you may use the regular expression <code class="docutils literal notranslate"><span class="pre">digiti[sz]e</span></code>.</p>
+</div>
+<div class="section" id="quantifiers">
+<h2>Quantifiers<a class="headerlink" href="#quantifiers" title="Permalink to this headline">¶</a></h2>
+<p>You can also use quantifiers to specify the number of times a character or a pattern should occur.</p>
+<p>
+<table width="100%; " style="text-align: left; font-size: 1.0em; ">
+    <tr style="text-align: left; " >
+    <td width="15%" style="text-align: center; "><b>Quantifier</b></td>    
+<td style="text-align: left; padding-right: 40%;"><b>Description</b></td>    
+</tr> 
+       <tr style="text-align: left; " >
+    <td width="15%" style="text-align: center; ">{n,m}</td>    
+<td style="text-align: left; padding-right: 40%;">Pattern must occur a least n times, at most m times</td>    
+</tr> 
+       <tr style="text-align: left; " >
+    <td width="15%" style="text-align: center; ">{n,}</td>    
+<td style="text-align: left; padding-right: 40%;">At least n times.</td>    
+</tr> 
+     <tr style="text-align: left; " >
+    <td width="15%" style="text-align: center; ">{n}</td>    
+<td style="text-align: left; padding-right: 40%;">Exactly n times.</td>    
+</tr> 
+       <tr style="text-align: left; " >
+    <td width="15%" style="text-align: center; ">?</td>    
+<td style="text-align: left; padding-right: 40%;"> Is the same as {0,1}</td>    
+</tr> 
+       <tr style="text-align: left; " >
+    <td width="15%" style="text-align: center; ">+</td>    
+<td style="text-align: left; padding-right: 40%;"> Is the same as {1,}</td>    
+</tr> 
+      <tr style="text-align: left; " >
+    <td width="15%" style="text-align: center; ">*</td>    
+<td style="text-align: left; padding-right: 40%;">Is the same as {0,}</td>    
+</tr> 
+    </table></p>
+<p>The code below contains a number of examples of regular expressions containing such metacharacters and quantifiers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;Keats&#39;s &#39;Ode on a Grecian Urn&#39; was written in 1819.&quot;</span>
+
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;\d</span><span class="si">{4}</span><span class="s1">&#39;</span> <span class="p">,</span> <span class="n">sentence</span> <span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Found&#39;</span><span class="p">)</span>
+<span class="c1">## Matches &#39;1819&#39;</span>
+
+
+<span class="n">hits</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;[aeuio]n&#39;</span> <span class="p">,</span> <span class="n">sentence</span> <span class="p">)</span>
+<span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">hits</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="c1">## Four matches: &#39;on&#39;, &#39;an&#39;, &#39;en&#39; and &#39;in&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the code above, all the regular expressions are preceded by the character ‘r’, which, in this context, indicates that the strings defining the regular expressions make use of the ‘raw string’ notation. In short, it means that all characters need to be read literally, in their ‘raw’ form. You are advised to use the ‘r’ in front of the string whenever the regular expression contains metacharacters such as ‘\w’ or ‘\d’.</p>
+<p>The fragment above also illustrates the function of the <code class="docutils literal notranslate"><span class="pre">findall()</span></code> method from the <code class="docutils literal notranslate"><span class="pre">re</span></code> module. This function creates a list containing all fragments from the string that match the regular expression. The <code class="docutils literal notranslate"><span class="pre">re.search()</span></code> funcion, by contrast, only produces a Boolean value, depending on whether the regular expression matches the string.</p>
+</div>
+<div class="section" id="anchors">
+<h2>Anchors<a class="headerlink" href="#anchors" title="Permalink to this headline">¶</a></h2>
+<p>Finally, you can also use so-called anchors in regular expression. Anchors do not represent actual characters, but only locations within strings.</p>
+<p>
+<table width="100%; " style="text-align: left; font-size: 1.0em; ">
+    <tr style="text-align: left; " >
+    <td width="15%" style="text-align: center; "><b>Symbol</b></td>    
+<td style="text-align: left; padding-right: 40%;"><b>Description</b></td>    
+</tr> 
+<tr style="text-align: left; " >
+    <td width="15%" style="text-align: center; ">\b</td>    
+<td style="text-align: left; padding-right: 40%;">A word boundary.</td>    </tr> 
+    <tr style="text-align: left; " >
+    <td width="15%" style="text-align: center; ">^</td>    
+<td style="text-align: left; padding-right: 40%;"> The beginning of a string.</td>    </tr> 
+    <tr style="text-align: left; " >
+    <td width="15%" style="text-align: center; ">$</td>    
+<td style="text-align: left; padding-right: 40%;">The end of a string.</td>    </tr> 
+</table>
+</p>
+<p>A word boundary is a location in which an alphanumeric character is placed next to a character which is not an alphanumeric character, such as punctuation, a space or a new line character. Illustrations of the use of such anchors can be found below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;In Xanadu did Kubla Khan a stately pleasure-dome decree&quot;</span>
+
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;^In\b&#39;</span> <span class="p">,</span> <span class="n">line</span> <span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Found!&#39;</span><span class="p">)</span>
+    <span class="c1">## This regular expression searches for lines </span>
+    <span class="c1">## beginning with the preposion ‘In’  </span>
+
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;\bd.*$&#39;</span> <span class="p">,</span> <span class="n">line</span> <span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Found!&#39;</span><span class="p">)</span>  
+    <span class="c1">## Searches for lines whose final word begin with the character ‘d’  </span>
+
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;\ba\b&#39;</span> <span class="p">,</span> <span class="n">line</span> <span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Found!&#39;</span><span class="p">)</span>  
+    <span class="c1">### Searches for the single character ‘a’.    </span>
+    <span class="c1">### It does not match words which contain an ‘a’, such    </span>
+    <span class="c1">### as ‘Xanadu’ or ‘Khan’</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="case-insensitivity">
+<h2>Case insensitivity<a class="headerlink" href="#case-insensitivity" title="Permalink to this headline">¶</a></h2>
+<p>If you add the text “re.IGNORECASE” as the third parameter of the search() function, the search will take place in a case-insensitive manner. For examples of case-insensitive searches using word boundaries, see the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;Doubting, dreaming dreams no mortal ever dared to dream before&quot;</span>
+
+<span class="n">hits</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;\bd[a-z]*\b&#39;</span> <span class="p">,</span> <span class="n">line</span> <span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span> <span class="p">)</span>
+<span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">hits</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># Matches all words starting with &#39;d&#39;, including &#39;Doubting&#39; which starts </span>
+<span class="c1"># with upper case &#39;d&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The method <code class="docutils literal notranslate"><span class="pre">findall()</span></code> can also be used, for instance, to extract the direct speech from a longer sentence, provided that this speech is givem in quotes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">Oh, good gracious me!</span><span class="se">\&quot;</span><span class="s2"> said Lucy, suddenly collapsing and again seeing the whole of life in a new perspective.&quot;</span>
+
+<span class="n">hits</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;[&quot;](.+)[&quot;]&#39;</span> <span class="p">,</span> <span class="n">sentence</span> <span class="p">)</span>
+
+<span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">hits</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">h</span> <span class="p">)</span>
+    <span class="c1">## prints Oh, good gracious me!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-escape-character">
+<h2>The escape character<a class="headerlink" href="#the-escape-character" title="Permalink to this headline">¶</a></h2>
+<p>As was discussed above, character such as the dot (‘.’), the asterisk (‘*’) or the question mark (‘?’) have a special meaning in regular expressions. Normally, they function as quantifiers or as metacharacters. In some cases, however, you may want to search for these literal characters themselves. If you need to extract the top level domain name from the URL of a website, for example, you need to specify that it is the part that follows the final dot.</p>
+<p>If you want to refer to characters in their literal meaning, these special characters need to be preceded by the back slash. This notation is known as “escaping” the character. The following code cell contains an illustration.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;www.universiteitleiden.nl&quot;</span>
+
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;\.\w+$&#39;</span> <span class="p">,</span> <span class="n">url</span> <span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">matches</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;The top level domain name of this URL is &#39;</span> <span class="o">+</span> <span class="n">matches</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="finding-and-replacing-text">
+<h2>Finding and replacing text<a class="headerlink" href="#finding-and-replacing-text" title="Permalink to this headline">¶</a></h2>
+<p>In Python, regular expressions can also be applied usefully in ‘find and replace’ operations. Such operations can be performed using the <code class="docutils literal notranslate"><span class="pre">sub()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">re</span></code> module. The <code class="docutils literal notranslate"><span class="pre">sub()</span></code> method demands three parameters: (1) a regular expression, (2) a replacement string, and (3) the string containing text which needs to be replaced.</p>
+<p>If matches can be found for the regular expression which is mentioned as the first parameter, these matches will all be replaced with the string which is given as the second parameter. The function of <code class="docutils literal notranslate"><span class="pre">re.sub</span></code> is comparable to that of the <code class="docutils literal notranslate"><span class="pre">replace()</span></code> function, discussed in the section on ‘Working with Strings’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">name1</span> <span class="o">=</span> <span class="s1">&#39;data carpentry&#39;</span>
+<span class="n">name2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span> <span class="s1">&#39;data&#39;</span> <span class="p">,</span> <span class="s1">&#39;software&#39;</span> <span class="p">,</span> <span class="n">name1</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name2</span><span class="p">)</span>
+<span class="c1">## prints &#39;software carpentry&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also remove unwanted characters using <code class="docutils literal notranslate"><span class="pre">re.sub</span></code> by replacing these characters with an empty string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;This,, ..sentence-. .,contains. .strange. !=puncuation&quot;</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;[.,!=-]&#39;</span> <span class="p">,</span> <span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">sentence</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+<span class="c1">## This code removes all punctuation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The process of learning to work with regular expressions may imply a steep learning curve. You need to develp a good understanding of all the characters that can be used to compose search patterns, next to the ability to use all of these characters and symbols in combination.</p>
+<p>If you want to learn more about regular expressions, you can study the very elaborate and accessible turorials on this topic on <a class="reference external" href="https://programminghistorian.org/en/lessons/understanding-regular-expressions">The Programming Historian</a> or on the website of <a class="reference external" href="https://librarycarpentry.org/lc-data-intro/01-regular-expressions/">Library Carpentry</a>.</p>
+<p>On <a class="reference external" href="http://Dataquest.io">Dataquest.io</a>, you can find a helpful <a class="reference external" href="https://www.dataquest.io/blog/regex-cheatsheet/">Regular Expressions Cheat Sheet</a> (also available as a <a class="reference external" href="https://www.dataquest.io/wp-content/uploads/2019/03/python-regular-expressions-cheat-sheet.pdf">PDF document</a>)</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exercise-9-1">
+<h2>Exercise 9.1.<a class="headerlink" href="#exercise-9-1" title="Permalink to this headline">¶</a></h2>
+<p>Download the full text of “P.B. Shelley’s Complete Poems” from the following URL:</p>
+<p><a class="reference external" href="https://edu.nl/r6dn8">https://edu.nl/r6dn8</a></p>
+<p>Regular expressions can be used to find verse lines with specific properties. Write a program in Python which can identify verse lines with the following features:</p>
+<ul class="simple">
+<li><p>Lines containing the word “fire”.</p></li>
+<li><p>Lines that containing either the word “sun” or to word “moon”.</p></li>
+<li><p>Use a single regular expression to identify these lines.</p></li>
+<li><p>All the lines which contain either the singular or the plural form of “star”.</p></li>
+<li><p>All the lines which contain either the singular or the plural form of “leaf”.</p></li>
+<li><p>Lines with words ending in in “ly”.</p></li>
+<li><p>All the lines which contain a question mark.</p></li>
+<li><p>Lines ending in the character combination “ain”.</p></li>
+<li><p>Cases of alliteration on “br” (or, in other words, all the lines which contain at least two words that begin with “br”)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1"># Open the file and read its lines so that we can iterate over the lines multiple times</span>
+<span class="n">poems</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../Texts/shelley.txt&quot;</span> <span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">poems</span><span class="p">:</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+
+<span class="c1"># ADD YOUR CODE BELOW - YOU ONLY NEED TO ADD THE REGULAR EXPRESSIONS</span>
+
+<span class="c1"># Print lines that contain the word &#39;fire&#39;</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s2">&quot;&quot;</span> <span class="p">,</span> <span class="n">line</span> <span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span> <span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+
+<span class="c1"># Using the same text, print all the lines containing either the word &quot;sun&quot; or to word &quot;moon&quot;.</span>
+<span class="c1"># Use a single regular expression to identify these lines.</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">line</span> <span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="n">line</span> <span class="p">)</span>
+
+
+<span class="c1"># Find all the lines which contain either the singular or the plural form of &quot;star&quot;.</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">line</span> <span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="n">line</span> <span class="p">)</span>
+
+
+<span class="c1"># Find all the lines which contain either the singular or the plural form of &quot;leaf&quot;.</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">line</span> <span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="n">line</span> <span class="p">)</span>
+
+
+<span class="c1"># Find all the lines which contain a word ending in in &quot;ly&quot;.</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">line</span> <span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="n">line</span> <span class="p">)</span>
+
+
+<span class="c1"># Find all the lines which contain a question mark.</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">line</span> <span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="n">line</span> <span class="p">)</span>
+
+
+<span class="c1"># Find all the lines ending in the character sequence &quot;ain&quot;.</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">line</span> <span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="n">line</span> <span class="p">)</span>
+
+
+<span class="c1"># Find all the lines which contain at least two words that begin with &quot;br&quot;</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">line</span> <span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="n">line</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-9-2">
+<h2>Exercise 9.2.<a class="headerlink" href="#exercise-9-2" title="Permalink to this headline">¶</a></h2>
+<p>Download the file “bibliography.txt” from</p>
+<p><a class="reference external" href="https://edu.nl/t449h">https://edu.nl/t449h</a></p>
+<p>This file contains a list of articles, formatted according to the APA citation style. For each title, try to extract the year of publication, the title and the name of the journal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1"># Open the file</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span> <span class="s2">&quot;../Texts/bibliography.txt&quot;</span> <span class="p">)</span>
+
+<span class="c1"># ADD YOUR CODE BELOW - YOU ONLY NEED TO ADD THE REGULAR EXPRESSIONS</span>
+
+<span class="k">for</span> <span class="n">pub</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">pub</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">pub</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">pub</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+        <span class="n">journal</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span> <span class="n">year</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span>  <span class="n">title</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">journal</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-9-3">
+<h2>Exercise 9.3.<a class="headerlink" href="#exercise-9-3" title="Permalink to this headline">¶</a></h2>
+<p>Download the file “tweets.txt” from <a class="reference external" href="https://edu.nl/cvge6">https://edu.nl/cvge6</a>.</p>
+<p>This file contains a number of tweets containing the hashtag ‘#universiteitleiden’, obtained using the Twitter API. Extract all the usernames and all the hashtags form these tweets, using regular expressions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">tweets</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span> <span class="s1">&#39;../Texts/tweets.txt&#39;</span> <span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+<span class="n">hash_tags</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">user_names</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="c1"># ADD YOUR CODE BELOW</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tweets</span><span class="p">:</span>
+    
+    <span class="c1"># Count all hashtags and usernames</span>
+
+
+<span class="c1"># DON&#39;T CHANGE THE CODE BELOW</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hashtags:&quot;</span><span class="p">)</span>        
+<span class="k">for</span> <span class="n">ht</span> <span class="ow">in</span> <span class="n">hash_tags</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ht</span><span class="p">,</span> <span class="s1">&#39;(&#39;</span><span class="p">,</span> <span class="n">hash_tags</span><span class="p">[</span><span class="n">ht</span><span class="p">],</span> <span class="s1">&#39;times)&#39;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">User names:&quot;</span><span class="p">)</span>     
+    
+<span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">user_names</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s1">&#39;(&#39;</span><span class="p">,</span> <span class="n">user_names</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="s1">&#39;times)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cdsleiden/python-tutorial",
+            ref: "gh-pages",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="8%20Working_with_files_and_folders.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">8. Working with files and folders</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="10%20Data_acquisition.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">10. Data acquisition</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Peter Verhaar and Ben Companjen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
