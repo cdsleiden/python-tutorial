@@ -353,11 +353,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Exercise 4.3.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-4-4">
    Exercise 4.4
   </a>
@@ -413,15 +408,12 @@
 </div>
 <div class="section" id="exercise-4-3">
 <h2>Exercise 4.3.<a class="headerlink" href="#exercise-4-3" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id1">
-<h2>Exercise 4.3.<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>The standard function <code class="docutils literal notranslate"><span class="pre">input()</span></code> can be used to request a value from the user.</p>
 <p>Use this function to request a year from the user. You can copy the code below:</p>
 <p><code class="docutils literal notranslate"><span class="pre">year</span> <span class="pre">=</span> <span class="pre">int(</span> <span class="pre">input(</span> <span class="pre">f&quot;Please</span> <span class="pre">enter</span> <span class="pre">a</span> <span class="pre">year:</span> <span class="pre">&quot;)</span> <span class="pre">)</span></code></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">input()</span></code> returns a string by default. You can use <code class="docutils literal notranslate"><span class="pre">int()</span></code> to change this calue into an an integer.</p>
 <p>Next, write some code which can describe the century a given year is in. Given the year 1767, for instance, the application must be able to print the following sentence: “The year 1767 is in the eighteenth century”. Limit your algorithm to years in between 1500 and 2020.
-Note that it is possible to combine two different Boolean expressions using the word ‘and’.</p>
+Note that it is possible to combine two different Boolean expressions using the word <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;Please enter a year: &quot;</span><span class="p">)</span> <span class="p">)</span>
@@ -455,10 +447,10 @@ Note that it is possible to combine two different Boolean expressions using the 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
-<span class="nb">max</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="p">)</span>
+<span class="n">max_number</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">max_number</span><span class="p">)</span>
 
-<span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;Guess a number in between 1 and </span><span class="si">{</span><span class="nb">max</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;Guess a number in between 1 and </span><span class="si">{</span><span class="n">max_number</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="k">while</span> <span class="n">guess</span> <span class="o">!=</span> <span class="n">number</span><span class="p">:</span>
 
