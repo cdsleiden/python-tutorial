@@ -460,7 +460,7 @@
 <p>The strings that you want to work with may sometimes contain single or double quotes themselves. Python would normally treat such quotes as the characters that end the end of a string. You need to take special measures to ensure that such strings containing quotes do not lead to syntax errors. If the string only contains single quotes, you can surround it with double quotes. Vice versa, a string containing double quotes can be created using a single quote.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Code is like humour. When you have to explain it, it’s bad.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Code is like humour. When you have to explain it, it&#39;s bad.&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -476,7 +476,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quote</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">&quot;But I don’t want to go among mad people&quot;&quot; Alice remarked.</span>
+<span class="s1">&quot;But I don’t want to go among mad people&quot;, Alice remarked.</span>
 <span class="s1">&quot;Oh, you can’t help that,&quot; said the Cat: &quot;we&#39;re all mad here. I&#39;m mad. You&#39;re mad.&quot;</span>
 <span class="s1">&#39;&#39;&#39;</span>
 </pre></div>
@@ -628,9 +628,10 @@
 <p>Try to debug the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;It</span><span class="se">\&#39;</span><span class="s1">s not always easy to see the mistakes in your code.&#39;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;The ability to debug can be really useful.&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Don&#39;t forget to read the error messages! They&#39;re often very useful.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;It&#39;</span><span class="n">s</span> <span class="ow">not</span> <span class="n">always</span> <span class="n">easy</span> <span class="n">to</span> <span class="n">see</span> <span class="n">the</span> <span class="n">mistakes</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">code</span><span class="o">.</span><span class="s1">&#39; )</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;The ability to debug can be really useful.&#39;&#39; )</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">Don</span><span class="s1">&#39;t forget to read the error messages!</span>
+      <span class="n">They</span><span class="s1">&#39;re often very useful.)</span>
 </pre></div>
 </div>
 </div>
