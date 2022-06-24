@@ -405,6 +405,16 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-6">
+   Exercise 10.6
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-7">
+   Exercise 10.7
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -717,11 +727,11 @@ The basename in a URL can be extracted using the <a class="reference external" h
 <span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The data received via the OpenStreetMap API can be captured in the JSON format using the <code class="docutils literal notranslate"><span class="pre">json()</span></code> method:</p>
+<p>The JSON data received via the OpenStreetMap API can be converted to regular Python lists and dictionaries using the <code class="docutils literal notranslate"><span class="pre">json()</span></code> method:</p>
 <p><code class="docutils literal notranslate"><span class="pre">json_data</span> <span class="pre">=</span> <span class="pre">response.json()</span></code></p>
 <p>If the result is saved as variable named <code class="docutils literal notranslate"><span class="pre">json_data</span></code>, you should be able to access the latitude and the longitude as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">latitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
-<span class="n">longitude</span> <span class="o">-=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
+<span class="n">longitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -758,6 +768,23 @@ The basename in a URL can be extracted using the <a class="reference external" h
 </div>
 </div>
 </div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="exercise-10-6">
+<h1>Exercise 10.6<a class="headerlink" href="#exercise-10-6" title="Permalink to this headline">¶</a></h1>
+<p>Using <code class="docutils literal notranslate"><span class="pre">requests</span></code> and <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>, create a list of all the countries mentioned on <a class="reference external" href="https://www.scrapethissite.com/pages/simple/">https://www.scrapethissite.com/pages/simple/</a>.</p>
+<p>Also collect data about the capital, the population and the area of all of these countries.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="exercise-10-7">
+<h1>Exercise 10.7<a class="headerlink" href="#exercise-10-7" title="Permalink to this headline">¶</a></h1>
+<p>Download all the images shown on the following page: <a class="reference external" href="https://www.bbc.com/news/in-pictures-61014501">https://www.bbc.com/news/in-pictures-61014501</a></p>
+<p>You can follow these steps:</p>
+<ul class="simple">
+<li><p>Download the HTML file</p></li>
+<li><p>‘Scrape’ the HTML file you downloaded. As images in HTML are encoded using the <code class="docutils literal notranslate"><span class="pre">&amp;lt;img&amp;gt;</span></code> element, try to create a list containing all occurrences of this element.</p></li>
+<li><p>Find the URLS of all the images. Witnin these <code class="docutils literal notranslate"><span class="pre">&amp;lt;img&amp;gt;</span></code> element, there should be a <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute containing the URL of the image.</p></li>
+<li><p>The <a class="reference external" href="http://bbc.com">bbc.com</a> website uses images as part of the user interface. These images all have the word ‘line’ in their filenames. Try to exclude these images whose file names contain the word ‘line’.</p></li>
+<li><p>Download all the images that you found in this way, using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library. In the <code class="docutils literal notranslate"><span class="pre">Response</span></code> object that is created following a succesful download, you need to work with the <code class="docutils literal notranslate"><span class="pre">content</span></code> property to obtain the actual file.  Save all these images on your computer, using <code class="docutils literal notranslate"><span class="pre">open()</span></code> and <code class="docutils literal notranslate"><span class="pre">write()</span></code>. In the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function, use the code ‘wb’ as a second parameter (instead of only ‘w’) to make sure that the contents are saved as bytes.</p></li>
+</ul>
 </div>
 
     <script type="text/x-thebe-config">
