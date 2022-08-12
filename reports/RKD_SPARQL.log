@@ -17,21 +17,33 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
+from SPARQLWrapper import SPARQLWrapper, JSON
+
+endpoint = 'https://api.data.netwerkdigitaalerfgoed.nl/datasets/rkd/rkdartists/services/rkdartists-jena/sparql'
 query = """
-SELECT ?author ?authorLabel ?image ?genderLabel ?nationalityLabel ?birth_date ?birth_placeLabel ?educationLabel
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rkdo: <http://data.rkd.nl/def#>
+PREFIX schema: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?id ?name ?gender ?date_birth ?date_death
 
 WHERE {
-?author wdt:P1411 wd:Q37922 .
-?author wdt:P31 wd:Q5 .
-OPTIONAL { ?author wdt:P21 ?gender . } . 
-OPTIONAL { ?author wdt:P27 ?nationality . } . 
-OPTIONAL { ?author wdt:P569 ?birth_date .} . 
-OPTIONAL { ?author wdt:P19 ?birth_place .} . 
-OPTIONAL { ?author wdt:P69 ?education . } . 
-OPTIONAL { ?author wdt:P18 ?image . } .
-                                                                                                            
- SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en".}
+?id a schema:Person .
+?id schema:name ?name .
+?id schema:gender ?gender .
+?id rkdo:Birth ?birth .
+OPTIONAL {
+    ?birth schema:startDate ?date_birth . } .
+?id rkdo:Death ?death .
+OPTIONAL {
+    ?death schema:startDate ?date_death . } .
+    
+FILTER ( ?date_birth >= "1800-01-01"^^xsd:date && ?date_birth < "1900-01-01"^^xsd:date)
+
 }
+ORDER BY ?name
 """
 
 
@@ -99,10 +111,10 @@ data = sparql.query().convert()
 During handling of the above exception, another exception occurred:
 
 [0;31mURLError[0m                                  Traceback (most recent call last)
-[0;32m/var/folders/nf/35gdwksd0fx8kzbsljz4dz6hnrcnxq/T/ipykernel_88789/2521994260.py[0m in [0;36m<module>[0;34m[0m
-[1;32m     20[0m [0msparql[0m[0;34m.[0m[0msetQuery[0m[0;34m([0m[0mquery[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     21[0m [0msparql[0m[0;34m.[0m[0msetReturnFormat[0m[0;34m([0m[0mJSON[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 22[0;31m [0mdata[0m [0;34m=[0m [0msparql[0m[0;34m.[0m[0mquery[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mconvert[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/var/folders/nf/35gdwksd0fx8kzbsljz4dz6hnrcnxq/T/ipykernel_89411/2388599225.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     32[0m [0msparql[0m[0;34m.[0m[0msetQuery[0m[0;34m([0m[0mquery[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     33[0m [0msparql[0m[0;34m.[0m[0msetReturnFormat[0m[0;34m([0m[0mJSON[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 34[0;31m [0mdata[0m [0;34m=[0m [0msparql[0m[0;34m.[0m[0mquery[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mconvert[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;32m/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/SPARQLWrapper/Wrapper.py[0m in [0;36mquery[0;34m(self)[0m
 [1;32m    958[0m         [0;34m:[0m[0mrtype[0m[0;34m:[0m [0;34m:[0m[0;32mclass[0m[0;34m:[0m[0;31m`[0m[0mQueryResult[0m[0;31m`[0m [0minstance[0m[0;34m[0m[0;34m[0m[0m

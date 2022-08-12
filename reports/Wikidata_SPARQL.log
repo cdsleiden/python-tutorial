@@ -99,7 +99,7 @@ data = sparql.query().convert()
 During handling of the above exception, another exception occurred:
 
 [0;31mURLError[0m                                  Traceback (most recent call last)
-[0;32m/var/folders/nf/35gdwksd0fx8kzbsljz4dz6hnrcnxq/T/ipykernel_89091/2521994260.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/nf/35gdwksd0fx8kzbsljz4dz6hnrcnxq/T/ipykernel_89677/2521994260.py[0m in [0;36m<module>[0;34m[0m
 [1;32m     20[0m [0msparql[0m[0;34m.[0m[0msetQuery[0m[0;34m([0m[0mquery[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     21[0m [0msparql[0m[0;34m.[0m[0msetReturnFormat[0m[0;34m([0m[0mJSON[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 22[0;31m [0mdata[0m [0;34m=[0m [0msparql[0m[0;34m.[0m[0mquery[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mconvert[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
