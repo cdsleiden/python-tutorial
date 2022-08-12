@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nbclient/client.py", line 554, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+<https://bookandbye.universiteitleiden.nl/resource/1> <http://purl.org/dc/terms/title> "Brave New World" .
+<https://bookandbye.universiteitleiden.nl/resource/1> <https://schema.org/author> "Aldous Huxley" .
+<https://bookandbye.universiteitleiden.nl/resource/1> <http://purl.org/dc/terms/date> "1932" .
+<https://bookandbye.universiteitleiden.nl/resource/1> <http://purl.org/dc/terms/publisher> "English" .
+<https://bookandbye.universiteitleiden.nl/resource/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/BibliographicResource> .
+<https://bookandbye.universiteitleiden.nl/resource/2> <http://purl.org/dc/terms/title> "1984" .
+<https://bookandbye.universiteitleiden.nl/resource/2> <https://schema.org/author> "George Orwell" .
+<https://bookandbye.universiteitleiden.nl/resource/2> <http://purl.org/dc/terms/date> "1949" .
+<https://bookandbye.universiteitleiden.nl/resource/2> <http://purl.org/dc/terms/publisher> "English" .
+<https://bookandbye.universiteitleiden.nl/resource/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/BibliographicResource> .
+<https://bookandbye.universiteitleiden.nl/resource/3> <http://purl.org/dc/terms/title> "Madame Bovary" .
+<https://bookandbye.universiteitleiden.nl/resource/3> <https://schema.org/author> "Gustave Flaubert" .
+<https://bookandbye.universiteitleiden.nl/resource/3> <http://purl.org/dc/terms/date> "1856" .
+<https://bookandbye.universiteitleiden.nl/resource/3> <http://purl.org/dc/terms/publisher> "French" .
+<https://bookandbye.universiteitleiden.nl/resource/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/BibliographicResource> .
+<https://bookandbye.universiteitleiden.nl/resource/4> <http://purl.org/dc/terms/title> "Im Westen nichts Neues" .
+<https://bookandbye.universiteitleiden.nl/resource/4> <https://schema.org/author> "Erich Maria Remarque" .
+<https://bookandbye.universiteitleiden.nl/resource/4> <http://purl.org/dc/terms/date> "1929" .
+<https://bookandbye.universiteitleiden.nl/resource/4> <http://purl.org/dc/terms/publisher> "German" .
+<https://bookandbye.universiteitleiden.nl/resource/4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/BibliographicResource> .
+------------------
+
+
+<Error>: 
+

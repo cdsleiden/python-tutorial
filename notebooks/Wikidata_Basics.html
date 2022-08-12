@@ -1,0 +1,561 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wikidata &#8212; LOD tutorial</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="RKD SPARQL" href="RKD_SPARQL.html" />
+    <link rel="prev" title="GLAM Workbenches" href="GLAM_Workbenches.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">LOD tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorial
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Module1.html">
+   Module 1: Basic Principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Module2.html">
+   Module 2: Creating LOD
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Module3.html">
+   Module 3: SPARQL queries
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="GLAM_Workbenches.html">
+   GLAM Workbenches
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Wikidata
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RKD_SPARQL.html">
+   RKD SPARQL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="WIkiData_SPARQL.html">
+   WikiData SPARQL
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/Wikidata_Basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Wikidata
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wiki-query-services">
+   Wiki query services
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-1">
+     Exercise 3.1.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-2">
+     Exercise 3.2.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Wikidata</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Wikidata
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wiki-query-services">
+   Wiki query services
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-1">
+     Exercise 3.1.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-2">
+     Exercise 3.2.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="wikidata">
+<h1>Wikidata<a class="headerlink" href="#wikidata" title="Permalink to this headline">#</a></h1>
+<p>Wikidata offers access to many of the facts that are listed on Wikipedia as RDF triplets. In other words, Wikidata presents the contents of Wikipedia as structured data. WikiData’s SPARQL Endpoint can be found at <a class="reference external" href="https://query.wikidata.org/sparql">https://query.wikidata.org/sparql</a></p>
+<p>Wikidata does not make use of human-understandable labels. Objects, subjects and predicated are all represented as numeric codes, following either the letter ‘P’ or ‘W’. Named entities such as people, places, organizations and works of art have mostly been assigned a code starting with the letter ‘Q’. The properties all start with a ‘P’.</p>
+<p>You can see an example below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sparql-nb notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="nv">?work</span>  
+
+<span class="k">WHERE</span> <span class="p">{</span>  
+<span class="nv">?work</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P170</span> <span class="nn">wd</span><span class="p">:</span><span class="nt">Q151803</span> <span class="p">.</span> 
+<span class="p">}</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="krn-spql"><div class="krn-error"><span class="title">Error:</span> no endpoint defined</div></div></div></div>
+</div>
+<p>The property wdt:P170 was created to describe a “maker of this creative work or other object”. wd:Q151803 is the identifier that was assigned to Piet Mondriaan. The query shown in this example requests all the works of art created by the painter Piet Mondriaan. As you can see, the subject is represented as a variable named ?work.</p>
+<p>When you run the code in Wikidata’s SPARQL endpoint, the result will initially consist of numbers only, so this may look slightly disappointing. The identifiers, consisting of random codes, are not highly informative in themselves. Wikidata offers a useful service, however, which you can use to generate human-readable labels for the codes assigned by Wikidata.</p>
+<p>First, you need to add the following line to the query.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sparql-nb notranslate"><div class="highlight"><pre><span></span><span class="k">SERVICE</span> <span class="nn">wikibase</span><span class="p">:</span><span class="nt">label</span> <span class="p">{</span> <span class="nn">bd</span><span class="p">:</span><span class="nt">serviceParam</span> <span class="nn">wikibase</span><span class="p">:</span><span class="nt">language</span> <span class="s">&quot;en&quot;</span> <span class="p">.</span> <span class="p">}</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>After wikibase:language, you can specify the language of the label. Next to “en”, which stands for English, you can also request labels in Dutch (“nl”), German (‘de”’) or French (“fr”).</p>
+<p>Once you have added this specific SERVICE clause, Wikidata creates a second version of all the variables you specify in the WHERE section of the query. The name of this second version of the query will be the name you assigned yourself, with the suffix ‘Label’ as an addition. If you created a variable named ?place, for example, the Wikibase Label service will create a ?placeLabel variable. This variable will contain a textual label associated with the Wikidata identifier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sparql-nb notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="nv">?work</span>  <span class="nv">?workLabel</span> 
+
+<span class="k">WHERE</span>  
+<span class="p">{</span>   
+<span class="nv">?work</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P170</span> <span class="nn">wd</span><span class="p">:</span><span class="nt">Q151803</span> <span class="p">.</span>  
+<span class="k">SERVICE</span> <span class="nn">wikibase</span><span class="p">:</span><span class="nt">label</span> <span class="p">{</span> <span class="nn">bd</span><span class="p">:</span><span class="nt">serviceParam</span> <span class="nn">wikibase</span><span class="p">:</span><span class="nt">language</span> <span class="s">&quot;en&quot;</span> <span class="p">.</span> <span class="p">}</span>  
+<span class="p">}</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="wiki-query-services">
+<h1>Wiki query services<a class="headerlink" href="#wiki-query-services" title="Permalink to this headline">#</a></h1>
+<p>Since 2015, Wikidata has provided services that can help you build SPARQL queries. One service is called the <strong>query builder</strong>. It can be accessed via <a class="reference external" href="https://query.wikidata.org/querybuilder/">https://query.wikidata.org/querybuilder/</a>. This tool offers a visual interface that can be used to build simple SPARQL queries. Although this service is limited in making SPARQL queries, it can be helpful if you do not have a lot of experience yet with building SPARQL queries.</p>
+<p>Another service offered by WikiData is the <strong>query service</strong> accessible via <a class="reference external" href="https://query.wikidata.org/">https://query.wikidata.org/</a>. The Wikidata Query Service offers opportunities for building SPARQL queries and downloading the requested data in various file formats (including JSON and CSV). It is also possible to view the data in different data visualizations, like a table, a bar chart or a timeline.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
+<div class="section" id="exercise-3-1">
+<h2>Exercise 3.1.<a class="headerlink" href="#exercise-3-1" title="Permalink to this headline">#</a></h2>
+<p>Use the <a class="reference external" href="https://query.wikidata.org/querybuilder/">WikiData Query Builder</a> to find artworks made by Leonardo da Vinci created after 1495.</p>
+<p>Tip: Type in ‘Creator’ under property, and ‘Leonardo da Vinci’ under ‘value’. Next, click on “Add condition”. In a new condition type in “inception” under property and ‘1495’ under ‘value’. Next, run the query.</p>
+</div>
+<div class="section" id="exercise-3-2">
+<h2>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Permalink to this headline">#</a></h2>
+<p>If you cannot manage to build the query using the <a class="reference external" href="https://query.wikidata.org/querybuilder/">WikiData Query Builder</a>, you can open the <a class="reference external" href="https://query.wikidata.org/">Query Service</a> and copy and paste <a class="reference external" href="https://query.wikidata.org/#SELECT%20%3Fwork%20%3Fdate%20%3FworkLabel%20%0A%0AWHERE%20%20%0A%7B%20%20%20%0A%3Fwork%20wdt%3AP170%20wd%3AQ762%20.%20%20%0A%3Fwork%20wdt%3AP571%20%3Fdate%20%0AFILTER%28%3Fdate%20%3E%3D%20%22%2B1496-00-00T00%3A00%3A00Z%22%5E%5Exsd%3AdateTime%29%0ASERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%20%20%0A%7D%20">the query below</a> in the central text field.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sparql-nb notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="nv">?work</span> <span class="nv">?date</span> <span class="nv">?workLabel</span> 
+
+<span class="k">WHERE</span>  
+<span class="p">{</span>   
+<span class="nv">?work</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P170</span> <span class="nn">wd</span><span class="p">:</span><span class="nt">Q762</span> <span class="p">.</span>  
+<span class="nv">?work</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P571</span> <span class="nv">?date</span> 
+<span class="k">FILTER</span><span class="p">(</span><span class="nv">?date</span> <span class="o">&gt;=</span> <span class="s">&quot;+1496-00-00T00:00:00Z&quot;</span><span class="o">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span><span class="p">)</span>
+<span class="k">SERVICE</span> <span class="nn">wikibase</span><span class="p">:</span><span class="nt">label</span> <span class="p">{</span> <span class="nn">bd</span><span class="p">:</span><span class="nt">serviceParam</span> <span class="nn">wikibase</span><span class="p">:</span><span class="nt">language</span> <span class="s">&quot;en&quot;</span> <span class="p">.</span> <span class="p">}</span>  
+<span class="p">}</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, try to artist in this query to Michelangelo, who is identified on Wikidata as <code class="docutils literal notranslate"><span class="pre">'wd:Q5592'</span></code>, and also try to change the year into 1505.</p>
+<p>Finally, find the “Download” button at the top right of the results screen and download the results of the query as a CSV file.</p>
+<p>This new query should have the following form.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sparql-nb notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?work</span> <span class="nv">?date</span> <span class="nv">?workLabel</span> 
+
+<span class="k">WHERE</span>  
+<span class="p">{</span>   
+<span class="nv">?work</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P170</span> <span class="nn">wd</span><span class="p">:</span><span class="nt">Q5592</span> <span class="p">.</span>  
+<span class="nv">?work</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P571</span> <span class="nv">?date</span> 
+<span class="k">FILTER</span><span class="p">(</span><span class="nv">?date</span> <span class="o">&gt;=</span> <span class="s">&quot;+1505-00-00T00:00:00Z&quot;</span><span class="o">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span><span class="p">)</span>
+<span class="k">LIMIT</span> <span class="mi">1000</span>
+<span class="k">SERVICE</span> <span class="nn">wikibase</span><span class="p">:</span><span class="nt">label</span> <span class="p">{</span> <span class="nn">bd</span><span class="p">:</span><span class="nt">serviceParam</span> <span class="nn">wikibase</span><span class="p">:</span><span class="nt">language</span> <span class="s">&quot;en&quot;</span> <span class="p">.</span> <span class="p">}</span>  
+<span class="p">}</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "peterverhaar/network-cultural-heritage",
+            ref: "gh-pages",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "sparql"
+        },
+        kernelOptions: {
+            kernelName: "sparql",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'sparql'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="GLAM_Workbenches.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">GLAM Workbenches</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="RKD_SPARQL.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">RKD SPARQL</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Karin de Wild and Peter Verhaar<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 3: SPARQL queries &#8212; LOD tutorial</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GLAM Workbenches" href="GLAM_Workbenches.html" />
+    <link rel="prev" title="Module 2: Creating LOD" href="Module2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">LOD tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorial
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Module1.html">
+   Module 1: Basic Principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Module2.html">
+   Module 2: Creating LOD
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Module 3: SPARQL queries
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="GLAM_Workbenches.html">
+   GLAM Workbenches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Wikidata_Basics.html">
+   Wikidata
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RKD_SPARQL.html">
+   RKD SPARQL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="WIkiData_SPARQL.html">
+   WikiData SPARQL
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/Module3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rdf">
+   RDF
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sparql">
+   SPARQL
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#select-and-where">
+   SELECT and WHERE
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-variables">
+   Multiple variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limit">
+   LIMIT
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filter">
+   FILTER
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#order">
+   ORDER
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#publishing-sparql-queries-as-apis">
+   Publishing SPARQL queries as APIs
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Module 3: SPARQL queries</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rdf">
+   RDF
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sparql">
+   SPARQL
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#select-and-where">
+   SELECT and WHERE
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-variables">
+   Multiple variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limit">
+   LIMIT
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filter">
+   FILTER
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#order">
+   ORDER
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#publishing-sparql-queries-as-apis">
+   Publishing SPARQL queries as APIs
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="module-3-sparql-queries">
+<h1>Module 3: SPARQL queries<a class="headerlink" href="#module-3-sparql-queries" title="Permalink to this headline">#</a></h1>
+<p><strong>Level: Advanced (300)</strong></p>
+<p>Learning objectives:</p>
+<ul class="simple">
+<li><p>The basic syntax of a SPARQL query.</p></li>
+<li><p>Being able to run SPARQL queries on the endpoint of heritage institutions.</p></li>
+</ul>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>SPARQL (pronounced “sparkle”) is the query language for the Semantic Web. The name of the standard is an acronym standing for SPARQL Protocol and RDF Query Language. To be able to search Linked Open Data, you need to know how to build SPARQL queries. This is what you will learn within this module, by looking at several sample queries. You will also learn how to formulate SPARQL queries on Wikidata using the Wiki query service.</p>
+</div>
+<div class="section" id="rdf">
+<h2>RDF<a class="headerlink" href="#rdf" title="Permalink to this headline">#</a></h2>
+<p>RDF statements, as you saw in the first lesson, consist of three components: subjects, predicates and objects. You can see an example of an RDF statement below:</p>
+<div class="highlight-PREFIX notranslate"><div class="highlight"><pre><span></span>
+&lt;https://data.rkd.nl/artists/56854&gt; 
+&lt;schema:name&gt; 
+&#39;Piet Mondriaan&#39; .
+</pre></div>
+</div>
+<p>In this example, the base URI for <code class="docutils literal notranslate"><span class="pre">schema.org</span></code> is replaced with a prefix. This was done to make the URI shorter and more manageable.</p>
+<p>The identifier that serves as the subject in this RDF statement (or triple) was assigned by the RKD, the Netherlands Institute for Art History. The RDF triple gives information about one of the artists described in their digital archive. More specifically, it states that the entity specified by the identifier (<a class="reference external" href="https://data.rkd.nl/artists/56854">https://data.rkd.nl/artists/56854</a>) has a name, namely “Piet Mondriaan”. The subject and the object of RDF triples can either be an URI or a literal value. In the example above, the URIs are given in angular brackets, and the literals are given in quotes. This is the convention in the so-called N-Quads serialisation.</p>
+</div>
+<div class="section" id="sparql">
+<h2>SPARQL<a class="headerlink" href="#sparql" title="Permalink to this headline">#</a></h2>
+<p>Now imagine a situation in which you have received a URI without any further context, such as <code class="docutils literal notranslate"><span class="pre">https://data.rkd.nl/artists/32439</span></code>. The identifiers created for the artists in the RKD do not reveal any details about the people that are being identified. In this situation, you may want to know which artist is being identified exactly. We can use SPARQL to find more information about these identifiers. The RDF triple (which reads like an affirmative statement) firstly needs to be transformed into a question. You can do this as follows.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PREFIX rkdo: &lt;http://data.rkd.nl/def#&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; 
+PREFIX schema: &lt;http://schema.org/&gt; 
+
+SELECT ?name 
+WHERE { 
+&lt;https://data.rkd.nl/artists/32439&gt;  
+schema:name  
+?name  
+} 
+</pre></div>
+</div>
+<p>SPARQL queries look quite similar to regular RDF triples. A significant difference, however, is that certain components are replaced with variables. If you compare the query contained within the curly brackets following WHERE to the full RDF statement that was discussed earlier, you can see that the literal value that was used as a predicate (i.e., the actual name associated with the subject) has been replaced with a variable named ?name.
+You are free to choose the name of the variables yourself. In the SPARQL language, variables always start with a question mark. It is advisable to work with meaningful names, such as <code class="docutils literal notranslate"><span class="pre">?place</span></code> for places or <code class="docutils literal notranslate"><span class="pre">?date</span></code> for dates.</p>
+</div>
+<div class="section" id="select-and-where">
+<h2>SELECT and WHERE<a class="headerlink" href="#select-and-where" title="Permalink to this headline">#</a></h2>
+<p>To change a sentence into an actual SPARQL query, you also need to add the keywords SELECT and WHERE. The curly brackets that follow WHERE contain one or more ‘incomplete’ RDF statements, or statements in which one of the central components (subject, object, and predicate) are replaced with variables. In the example above, the request is to ‘fill in the blanks’, or, in other words, to find the correct value for the variable.</p>
+<p>In the SELECT clause, you specify the variables whose values you would like to see. In this example there is only one variable, namely, <code class="docutils literal notranslate"><span class="pre">?name</span></code>. The SPARQL query will return a table. The number of columns will be the same as the number of variables you mention after SELECT. Each value that can be found to complete one of the RDF statements in the WHERE clause will be displayed will generate a new row in this table.</p>
+<p>As was explained in module 2, SPARQL queries can be executed at a SPARQL endpoint. An endpoint is essentially a web application on which you can access an institution’s RDF data.</p>
+<p>If you run the query above in the RKD SPARQL endpoint, available at <a class="reference external" href="https://data.netwerkdigitaalerfgoed.nl/rkd/rkdartists/sparql/rkdartists">https://data.netwerkdigitaalerfgoed.nl/rkd/rkdartists/sparql/rkdartists</a>, the SPARQL engine will then try to complete the query. The values that are found are assigned to the variables. If everything goes well, you will see that the identifier that was supplied is associated with Vincent van Gogh, the artist associated with RKD identifier 32439.
+This is the basis of working with SPARQL.</p>
+</div>
+<div class="section" id="multiple-variables">
+<h2>Multiple variables<a class="headerlink" href="#multiple-variables" title="Permalink to this headline">#</a></h2>
+<p>If you want to see more details for a specific identifier, you can simply add more RDF statements containing variables in the WHERE clause. According to the rules of the SPARQL syntax, each individual RDF triple needs to end in a full stop.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PREFIX rkdo: &lt;http://data.rkd.nl/def#&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; 
+PREFIX schema: &lt;http://schema.org/&gt; 
+
+SELECT ?name ?gender ?date_birth 
+
+WHERE { 
+&lt;https://data.rkd.nl/artists/32439&gt; schema:name ?name . 
+&lt;https://data.rkd.nl/artists/32439&gt; schema:gender ?gender . 
+&lt;https://data.rkd.nl/artists/32439&gt; rkdo:Birth ?birth . 
+?birth schema:startDate ?date_birth . 
+} 
+</pre></div>
+</div>
+<p>This query requests the name, the gender and the birth date of the artist identified by the URI that is mentioned. The variable <code class="docutils literal notranslate"><span class="pre">?date_birth</span></code> is slightly confusing at first sight. The property rkdo:Birth initially returns a <code class="docutils literal notranslate"><span class="pre">rkdo:Birth</span></code> resource. This is a general resource that can describe the details of a specific birth. Such a birth event can be described using a schema:startDate property. To find the actual birth date of Vincent van Gogh in the RKD database, you need to work with these two separate queries.</p>
+</div>
+<div class="section" id="limit">
+<h2>LIMIT<a class="headerlink" href="#limit" title="Permalink to this headline">#</a></h2>
+<p>Following the principles that have been discussed so far, you can start to build more complicated queries, or queries that produce longer lists of results.
+The query below, for example, requests the name and the gender of all the artists that are described in the RKD database. It firstly creates a variable named ?id, which represents all the identifiers that are assigned to people. In this example, the SPARQL endpoint will be able to find many potential matches for the ?id variable. For each of the identifiers, it tries to obtain the name and the gender.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PREFIX rkdo: &lt;http://data.rkd.nl/def#&gt; 
+PREFIX schema: &lt;http://schema.org/&gt; 
+
+SELECT ?id ?name ?gender ?date_birth ?date_death 
+
+WHERE { 
+?id a schema:Person . 
+?id schema:name ?name . 
+?id schema:gender ?gender. } 
+LIMIT 100 
+</pre></div>
+</div>
+<p>As you can imagine, this query would return quite an extensive list of results. When the result list consists of several hundreds of items, it may take some time to load. SPARQL endpoints may also produce time-out errors in the case of such long lists of results. To avoid such errors, we can work with the LIMIT keyword, which needs to be followed by a number. Adding such a LIMIT section will have the effect that the length of the result list will not exceed the number that is specified.</p>
+</div>
+<div class="section" id="filter">
+<h2>FILTER<a class="headerlink" href="#filter" title="Permalink to this headline">#</a></h2>
+<p>You can add a FILTER clause to add some criteria for the results to be displayed. You can do this, for instance, if you do not want to see all the artists, but only those artists that were born in a specific decade (in between 1890 and 1900, for example). The FILTER keyword is followed by a set or parenthesis. Within these parentheses, you can add Boolean expressions which define criteria for the variables you work with. To see the artists who were born in the last decade of the 19th century, you can work with the query below.</p>
+<div class="highlight-PREFIX notranslate"><div class="highlight"><pre><span></span>PREFIX schema: &lt;http://schema.org/&gt; 
+
+SELECT ?id ?name ?gender ?date_birth  
+
+WHERE { 
+?id a schema:Person . 
+?id schema:name ?name . 
+?id schema:gender ?gender . 
+?id rkdo:Birth ?birth . 
+?birth schema:startDate ?date_birth .   
+
+FILTER ( ?date_birth &gt;= &quot;1890-01-01&quot;^^xsd:date &amp;&amp; ?date_birth &lt; &quot;1900-01-01&quot;^^xsd:date) 
+
+} 
+</pre></div>
+</div>
+</div>
+<div class="section" id="order">
+<h2>ORDER<a class="headerlink" href="#order" title="Permalink to this headline">#</a></h2>
+<p>The ORDER keyword can be used to arrange the query results. ORDER needs to be included in the query after the closing bracket following WHERE. After ORDER, you can refer to any of the variables you have defined.</p>
+<div class="highlight-PREFIX notranslate"><div class="highlight"><pre><span></span>PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; 
+PREFIX schema: &lt;http://schema.org/&gt;  
+
+SELECT ?id ?name ?gender ?date_birth     
+
+WHERE {  
+?id a schema:Person .  
+?id schema:name ?name .  
+?id schema:gender ?gender .  
+?id rkdo:Birth ?birth .  
+?birth schema:startDate ?date_birth .    
+
+FILTER ( ?date_birth &gt;= &quot;1890-01-01&quot;^^xsd:date &amp;&amp; ?date_birth &lt; &quot;1900-01-01&quot;^^xsd:date)  
+} 
+
+ORDER BY ?name  
+</pre></div>
+</div>
+</div>
+<div class="section" id="publishing-sparql-queries-as-apis">
+<h2>Publishing SPARQL queries as APIs<a class="headerlink" href="#publishing-sparql-queries-as-apis" title="Permalink to this headline">#</a></h2>
+<p>You can run SPARQL queries by entering the SPARQL commands in a SPARQL endpoint. Alternatively, to make the results of these queries available directly on the web, it can also be very useful to publish your SPARQL queries and to make their results available through Web API. When you do this, you share the data with others more easily. Other people interested in working with the data don’t longer need to learn SPARQL to access the data.
+You can create such Web APIs using the grlc tool, which was developed as part of CLARIAH {}. grcl stands for git repository linked data API constructor, and is available at <a class="reference external" href="http://grlc.io/">http://grlc.io/</a>.</p>
+<p>To work with grlc, you can follow the steps below.</p>
+<ul class="simple">
+<li><p>First of all, you need to set up a github repository containing your SPARQL queries. Each
+query needs to be saved in separate file with the .rq extension. You need to add values for a number of parameters before the actual SPARQL query:</p>
+<ul>
+<li><p>#+ description: Provide a brief description of the type of data generated by the SPARQL query.</p></li>
+<li><p>#+ endpoint: <a class="reference external" href="http://example.com/sparql:">http://example.com/sparql:</a> Specify the SPARQL endpoint of the query.
+Examples of such rq files can be found in a guthub repository named qrl-queries. <a class="reference external" href="https://github.com/CLARIAH/grlc-queries/blob/master/description.rq">https://github.com/CLARIAH/grlc-queries/blob/master/description.rq</a></p></li>
+</ul>
+</li>
+<li><p>Next, you need create a URL for the Web API, using the grlc tool. To the base URL <a class="reference external" href="http://grlc.io/">http://grlc.io/</a>, you need to add your github user account and the name of github repository containing the queries, as follows: <a class="reference external" href="http://grlc.io//api/github_username/repository_name">http://grlc.io//api/github_username/repository_name</a>. `</p></li>
+</ul>
+<p>When you open this URL in a browser, you should see that the tool creates separate APIs for all the .rq files you have added to your github repository. If everything went well, the data can be accessed via a URL with the following structure:</p>
+<p>If you want more information, you can read <a class="reference external" href="https://github.com/CLARIAH/grlc/wiki/Quick-tutorial">the grlc tutorial</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "peterverhaar/network-cultural-heritage",
+            ref: "gh-pages",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Module2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Module 2: Creating LOD</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="GLAM_Workbenches.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">GLAM Workbenches</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Karin de Wild and Peter Verhaar<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
