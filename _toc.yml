@@ -1,0 +1,36 @@
+format: jb-book
+root: Welcome
+parts:
+- caption: Tutorial
+  chapters:
+  - file: notebooks/1 Variables_and_data_types
+  - file: notebooks/2 Operators
+  - file: notebooks/3 Working_with_strings
+  - file: notebooks/4 Flow_control
+  - file: notebooks/5 Lists
+  - file: notebooks/6 Dictionaries
+  - file: notebooks/7 Functions_modules_and_libraries
+  - file: notebooks/8 Working_with_files_and_folders
+  - file: notebooks/9 Regular_expressions
+  - file: notebooks/10 Data_acquisition
+  - file: notebooks/11 Pandas
+  - file: notebooks/12 Visualisation
+- caption: Practical information
+  chapters:
+  - file: notebooks/Jupyter_notebook_basics
+  - file: Installation
+  - file: Other_resources
+- caption: Solutions to the exercises
+  chapters:
+  - file: notebooks/Solutions/1 Variables_and_data_types
+  - file: notebooks/Solutions/2 Operators
+  - file: notebooks/Solutions/3 Working_with_strings
+  - file: notebooks/Solutions/4 Flow_control
+  - file: notebooks/Solutions/5 Lists
+  - file: notebooks/Solutions/6 Dictionaries
+  - file: notebooks/Solutions/7 Functions_modules_and_libraries
+  - file: notebooks/Solutions/8 Working_with_files_and_folders
+  - file: notebooks/Solutions/9 Regular_expressions
+  - file: notebooks/Solutions/10 Data_acquisition
+  - file: notebooks/Solutions/11 Pandas
+  - file: notebooks/Solutions/12 Visualisation
