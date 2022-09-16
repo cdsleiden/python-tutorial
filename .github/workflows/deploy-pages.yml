@@ -35,3 +35,21 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_build/html
+
+  zip-notebooks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Zip notebooks
+      run: |
+        zip -r notebooks.zip notebooks
+    - name: Create release title
+      id: set-title
+      run: echo "::set-output name=title::v$(date +'%Y.%m.%d.%H.%M')"
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_title: "${{ steps.set-title.outputs.title }}"
+        prerelease: false
+        files: |
+          notebooks.zip
