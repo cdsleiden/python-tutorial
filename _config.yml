@@ -62,15 +62,14 @@ jupyterhub_url                   : ""  # The URL for your JupyterHub. If no URL,
 jupyterhub_interact_text         : "Interact"  # The text that interact buttons will contain.
 
 repository:
-  url: https://github.com/cdsleiden/python-tutorial
-  branch: gh-pages
-  path_to_book: docs
+  url: https://github.com/peterverhaar/python_tutorial
+  branch: main
 
 launch_buttons:
   notebook_interface: "classic" # The interface interactive links will activate ["classic", "jupyterlab"]
-  #binderhub_url: "https://mybinder.org"
+  binderhub_url: "https://mybinder.org"
   #colab_url: "https://colab.research.google.com"
-  thebe: true
+  thebe: false
 
 
 
