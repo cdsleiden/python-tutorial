@@ -13,7 +13,7 @@ execute:
 
 # the name of your GitHub Repo.
 # If there is no subpath for your site, use an empty string ""
-baseurl: "/python_tutorial"
+baseurl: "/python-tutorial"
 
 
 # the base hostname & protocol for your site.
@@ -28,7 +28,7 @@ url: "https://cdsleiden.github.io/"
 
 # Main page settings
 # Optional: you can replace with <https://github.com/my-first-jupyter-book/my-book-site> your repo URL
-footer_text               : View source repository at <a href="https://github.com/cdsleiden/python_tutorial"></a>
+footer_text               : View source repository at <a href="https://github.com/cdsleiden/python-tutorial"></a>
 
 # Sidebar settings
 show_sidebar              : true  # Show the sidebar. Only set to false if your only wish to host a single page.
@@ -63,7 +63,7 @@ jupyterhub_url                   : ""  # The URL for your JupyterHub. If no URL,
 jupyterhub_interact_text         : "Interact"  # The text that interact buttons will contain.
 
 repository:
-  url: https://github.com/peterverhaar/python_tutorial
+  url: https://github.com/cdsleiden/python-tutorial
   branch: main
 
 launch_buttons:
