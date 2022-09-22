@@ -1,0 +1,862 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Working with strings &#8212; Python Tutorial</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Flow control" href="4%20Flow_control.html" />
+    <link rel="prev" title="2. Operators" href="2%20Operators.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Python Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorial
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1%20Variables_and_data_types.html">
+   1. Variables and data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2%20Operators.html">
+   2. Operators
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Working with strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4%20Flow_control.html">
+   4. Flow control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5%20Lists.html">
+   5. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6%20Dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7%20Functions_modules_and_libraries.html">
+   7. Functions, Modules and Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8%20Working_with_files_and_folders.html">
+   8. Working with files and folders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9%20Regular_expressions.html">
+   9. Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10%20Data_acquisition.html">
+   10. Data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11%20Pandas.html">
+   11. Data analysis with pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12%20Visualisation.html">
+   12. Data Visualisation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Practical information
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Jupyter_notebook_basics.html">
+   Jupyter Notebook basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Installation.html">
+   Installation guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Other_resources.html">
+   Other resources
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Solutions to the exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">
+   1. Variables and data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/2%20Operators.html">
+   2. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/3%20Working_with_strings.html">
+   3. Working with strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/4%20Flow_control.html">
+   4. Flow control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/5%20Lists.html">
+   5. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/6%20Dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/7%20Functions_modules_and_libraries.html">
+   7. Functions, Modules and Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/8%20Working_with_files_and_folders.html">
+   8. Working with files and folders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/9%20Regular_expressions.html">
+   9. Regular expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/10%20Data_acquisition.html">
+   10. Data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/11%20Pandas.html">
+   11. Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/12%20Visualisation.html">
+   12. Visualisation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/gh-pages?urlpath=tree/docs/notebooks/3 Working_with_strings.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/3 Working_with_strings.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3. Working with strings
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concatenation">
+     Concatenation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selecting-individual-characters-of-a-string">
+     Selecting individual characters of a string
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-and-methods-for-strings">
+   Functions and methods for strings
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-1">
+     Exercise 3.1.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-2">
+     Exercise 3.2.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-3">
+     Exercise 3.3.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-4">
+     Exercise 3.4.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-5">
+     Exercise 3.5.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>3. Working with strings</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3. Working with strings
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concatenation">
+     Concatenation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selecting-individual-characters-of-a-string">
+     Selecting individual characters of a string
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-and-methods-for-strings">
+   Functions and methods for strings
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-1">
+     Exercise 3.1.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-2">
+     Exercise 3.2.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-3">
+     Exercise 3.3.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-4">
+     Exercise 3.4.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-5">
+     Exercise 3.5.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="working-with-strings">
+<h1>3. Working with strings<a class="headerlink" href="#working-with-strings" title="Permalink to this headline">#</a></h1>
+<p>Strings, as has been explained, consists of sequences of characters. They can be created using single, double and triple quotes. The single and the double quotes are used most commonly. Once created, such strings can be changed in a number of ways.</p>
+<div class="section" id="concatenation">
+<h2>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">#</a></h2>
+<p>One of the operators that you can use in combination with strings is the concatenation operator. Its symbol is the plus (‘+’). You can use this operator to combine two or more existing strings into a longer string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;Jane&quot;</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="s2">&quot;Austen&quot;</span>
+<span class="n">full_name</span> <span class="o">=</span> <span class="n">first_name</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">last_name</span>
+<span class="n">sentence</span> <span class="o">=</span> <span class="s1">&#39;Pride and Prejudice was written by &#39;</span> <span class="o">+</span> <span class="n">full_name</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code above actually contains a number of concatenations. The variables <code class="docutils literal notranslate"><span class="pre">first_name</span></code> and
+<code class="docutils literal notranslate"><span class="pre">second_name</span></code> are firstly combined into the longer variable named <code class="docutils literal notranslate"><span class="pre">full_name</span></code>.</p>
+<p>A very short string, consisting of a space only, is placed in between the first name and the last name. The penultimate line uses the variable <code class="docutils literal notranslate"><span class="pre">full_name</span></code> in a sentence which is printed.</p>
+</div>
+<div class="section" id="selecting-individual-characters-of-a-string">
+<h2>Selecting individual characters of a string<a class="headerlink" href="#selecting-individual-characters-of-a-string" title="Permalink to this headline">#</a></h2>
+<p>When you create a string, it is useful to bear in mind that all the inividual characters that make up the string are numbered behind the scenes. These numbers are referred to as indices. The first character is given the index 0. Individual characters can be accessed by appending a set of square brackets to the name of the string variable, and by supplying the index of the character you want to access within these brackets. Using these indices, it becomes possible to extract specific characters from variables. When you use negative numbers (e.g. -1 or -2), Python starts selecting characters at the end of the string and moves back.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Albert Einstein&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
+<span class="c1">## This prints &#39;A&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">name</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="p">)</span>
+<span class="c1">## This prints &#39;t&#39;</span>
+
+<span class="nb">print</span> <span class="p">(</span> <span class="n">name</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+<span class="c1">## This prints &#39;n&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also extract a range of characters from a given string by mentioning the start position and the end position of the substring you want to create within a set of square brackets. The two indices must be separated by a colon. Strings such as these, which are created by extracting a substring from a longer string, are referred to as ‘slices’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Romeo and Juliet&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">title</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="p">)</span>
+<span class="c1"># this prints &#39;Romeo&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">title</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">16</span><span class="p">])</span>
+<span class="c1"># this prints &#39;Juliet&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you leave out the number to the left of the column, Python will assume that the slicing operation needs to start at the beginning of the string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Antony and Cleopatra&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">title</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="p">)</span>
+<span class="c1"># this prints &#39;Antony&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If no number is provided to the right of the colon, Python will select all characters until it reaches the end of the string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;King John&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">title</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span> <span class="p">)</span>
+<span class="c1"># This prints &#39;John&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="functions-and-methods-for-strings">
+<h1>Functions and methods for strings<a class="headerlink" href="#functions-and-methods-for-strings" title="Permalink to this headline">#</a></h1>
+<p>To get information about the number of characters in a string, you can make use of the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function. The characters ‘len’ stand for ‘length’.</p>
+<p>The value a of string variable can also be manipulated by making use of methods. A method is similar to a function. A method, like a function, is a word that represents a certain action. The difference between methods and functions will be explained in more detail in another part of this tutorial. While functions can be used independently, methods are always associated with a specific type of variable such as a string. We can call a method by appending the name of the method to the name of the variable. The variable and the method must be delimited by a period. The following methods are available for string objects:</p>
+<table width="100%; " style="font-size: 1.0em; text-align: left; ">
+      <tr style="font-size: 1.0em; text-align: left; ">
+          <td  width="15%" style="text-align: center;"><b>Function name</b></td><td ><b>Description</b></td>
+    </tr>
+    <tr style="font-size: 1.0em; text-align: left; ">
+        <td width="15%" style="text-align: center;">lower()</td><td  style="text-align: left; ">Converts all the characters of the string into lower case.</td>
+    </tr>
+    <tr>
+        <td width="15%" style="text-align: center;">upper()</td><td  style="text-align: left; ">Converts all the characters of the string into lower case.</td>
+    </tr>
+       <tr>
+        <td  width="15%" style="text-align: center;">replace()</td><td  style="text-align: left; ">Replaces a substring with a new set of characters.</td>
+    </tr>
+     <tr>
+        <td  width="15%" style="text-align: center;">strip()</td><td  style="text-align: left; ">Removes all white space (such as spaces, hard returns or tabs) from the beginning and the end of a string.</td>
+    </tr>
+</table>    
+<p>The code below gives a demonstration of some of these mehods and functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;   The Hitchhiker&#39;s Guide to the Galaxy   &quot;</span>
+
+<span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="c1">#this removes the spaces before and after the original string</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;-</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">title</span><span class="p">)</span> <span class="p">)</span>
+<span class="c1">## This prints 36</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">title</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="p">)</span>
+<span class="c1">## This prints &#39;the hitchhiker&#39;s guide to the galaxy&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">title</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="p">)</span>
+<span class="c1">## This prints &#39;THE HITCHHIKER&#39;S GUIDE TO THE GALAXY&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Th method <code class="docutils literal notranslate"><span class="pre">replace()</span></code> takes two parameters. You firstly need to mention the substring you want to replace. A substring is a sequence of characters contained within the original string. Secondly, you need to specify the substring that you want to replace it with. The old and the new substring do not need to have the same number of characters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Paradise Lost&#39;</span>
+<span class="n">new_title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Lost&#39;</span> <span class="p">,</span> <span class="s1">&#39;Regained&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_title</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The method ‘index()’, finally, determines whether a string contains a given substring. If it does, the method returns a number indicating the starting position (i.e. the index) of this substring. The function always returns the index of the first occurrence of the substring. If the string does not contain the substring that is mentioned as a parameter, the method produces an error message.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">email</span> <span class="o">=</span> <span class="s1">&#39;person@test.com&#39;</span>
+
+<span class="n">at_index</span> <span class="o">=</span> <span class="n">email</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">at_index</span><span class="p">)</span>
+<span class="c1">## at_index has been assigned value 6</span>
+
+<span class="n">at_index</span> <span class="o">=</span> <span class="n">email</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">)</span>
+<span class="c1">## This line will produce an error message: &#39;substring not found&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This method can be used productively in string slices, as is demonstrated below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">email</span> <span class="o">=</span> <span class="s1">&#39;person@test.com&#39;</span>
+
+<span class="n">position_at</span> <span class="o">=</span> <span class="n">email</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">)</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="n">email</span><span class="p">[</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">position_at</span> <span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+<span class="c1">## prints &#39;person&#39;</span>
+
+<span class="n">domain</span> <span class="o">=</span> <span class="n">email</span><span class="p">[</span> <span class="n">position_at</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">email</span><span class="p">)</span> <span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+<span class="c1">## prints &#39;test.com&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
+<div class="section" id="exercise-3-1">
+<h2>Exercise 3.1.<a class="headerlink" href="#exercise-3-1" title="Permalink to this headline">#</a></h2>
+<p>Create two string variables. The first variable must be assigned the value ‘unique’ and the second variable should be assigned the value ‘biodiversity’. Create a third variable with the value ‘university’, by firstly slicing the first two string variables, and by subsequently concatenating the substrings.</p>
+</div>
+<div class="section" id="exercise-3-2">
+<h2>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Permalink to this headline">#</a></h2>
+<p>Create the following two string variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;vladimir&#39;</span>
+<span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;nabokov&#39;</span>
+</pre></div>
+</div>
+<p>Using these two existing variables, create a third variable named ‘fullName’ with the following value: “Nabokov, Vladimir”. Note that the first character of the first name and the last name must be in upper case. Also try to print the initials of the author in upper case, as follows: ‘VN’</p>
+</div>
+<div class="section" id="exercise-3-3">
+<h2>Exercise 3.3.<a class="headerlink" href="#exercise-3-3" title="Permalink to this headline">#</a></h2>
+<p>Create a variable and assign it your full name as a string. Next, print the number of characters in your name, excluding the space.</p>
+</div>
+<div class="section" id="exercise-3-4">
+<h2>Exercise 3.4.<a class="headerlink" href="#exercise-3-4" title="Permalink to this headline">#</a></h2>
+<p>Create a variable named <code class="docutils literal notranslate"><span class="pre">url</span></code> and assign it following string: <code class="docutils literal notranslate"><span class="pre">https://www.universiteitleiden.nl</span></code>.</p>
+<p>Try to write code which can extract the top level domain (i.e. the country code) from this url.
+Tip: this problem can be solved by creating a string slice with the last two characters only, but top domain levels may of course consists of more than two characters. An alternative approach is to make use of the <code class="docutils literal notranslate"><span class="pre">rindex()</span></code> function, which returns the LAST occurrence of a character.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.universiteitleiden.nl&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-3-5">
+<h2>Exercise 3.5.<a class="headerlink" href="#exercise-3-5" title="Permalink to this headline">#</a></h2>
+<p>Create a variable named ‘filename’ and assign it the value ‘README.txt’. Next, write some code in Python which can extract the filename without the extension.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cdsleiden/python-tutorial",
+            ref: "gh-pages",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="2%20Operators.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">2. Operators</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="4%20Flow_control.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">4. Flow control</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Peter Verhaar and Ben Companjen<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
