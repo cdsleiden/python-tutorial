@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>9. Regular Expressions &#8212; Python Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,10 +35,13 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -318,7 +322,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/gh-pages?urlpath=tree/docs/notebooks/9 Regular_expressions.ipynb"
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/9 Regular_expressions.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -332,24 +336,6 @@ title="Launch on Binder"
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
 
       </li>
       
@@ -595,12 +581,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="regular-expressions">
+  <section class="tex2jax_ignore mathjax_ignore" id="regular-expressions">
 <h1>9. Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">#</a></h1>
 <p>Regular expressions can be used to search for specific patterns within texts. When you search using patterns, rather than search terms, you can generally search in much more advanced ways. You can search for words with specific types of characters or for words containing a specific number fo characters, for instance.</p>
 <p>Such regular expressions typically consist of a sequence of symbols which specify a search action. Once defined, such regular expressions can be matched against actual strings.</p>
 <p>Regular expressions can be constructed using literal characters and so-called metacharacters. The simple regular expression ‘flower’, for instance, only contains literal characters. It can be used to search for the six characters that are mentioned. Metacharacters, by contrast, are characters with a special meaning. They represent specific types of characters, such as characters in lower case, digits, spaces or tabs. When you combine literal characters and metacharacters, you can search for patterns rather than for literal strings or keywords.</p>
-<div class="section" id="re-search">
+<section id="re-search">
 <h2>re.search()<a class="headerlink" href="#re-search" title="Permalink to this headline">#</a></h2>
 <p>The standard installation of Python includes a useful module called <code class="docutils literal notranslate"><span class="pre">re</span></code>, which can be used to search for text fragments on the basis of regular expressions. To work with the module, you firstly need to import it. The module <code class="docutils literal notranslate"><span class="pre">re</span></code> contains a method named <code class="docutils literal notranslate"><span class="pre">search()</span></code>, which minimally requires two parameters. The first parameter is the pattern to search for, and the second parameter is the string in which you want to search. The method returns the value <code class="docutils literal notranslate"><span class="pre">True</span></code> if the pattern which is mentioned occurs in the string which is provided as the second parameter.</p>
 <p>The listing below offers an example. The regular expression, in this case, is simply a string consisting of literal characters. The code below tries to establish whether the string that is mentioned as the first parameter of <code class="docutils literal notranslate"><span class="pre">re.search()'</span></code>occurs in the sentence which is mentioned as the second parameter.</p>
@@ -617,8 +603,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="meta-characters">
+</section>
+<section id="meta-characters">
 <h2>Meta-characters<a class="headerlink" href="#meta-characters" title="Permalink to this headline">#</a></h2>
 <p>Next to literal characters, the following metacharacters may be used:</p>
 <p>
@@ -658,8 +644,8 @@ title="Print to PDF"
 </table>
   </p>
 <p>The square brackets can be useful if you need to search for words which can be spelled in different ways. To localize the word ‘digitise’ in a text, for instance, either in its British or in its American spelling, you may use the regular expression <code class="docutils literal notranslate"><span class="pre">digiti[sz]e</span></code>.</p>
-</div>
-<div class="section" id="quantifiers">
+</section>
+<section id="quantifiers">
 <h2>Quantifiers<a class="headerlink" href="#quantifiers" title="Permalink to this headline">#</a></h2>
 <p>You can also use quantifiers to specify the number of times a character or a pattern should occur.</p>
 <p>
@@ -715,8 +701,8 @@ title="Print to PDF"
 </div>
 <p>In the code above, all the regular expressions are preceded by the character ‘r’, which, in this context, indicates that the strings defining the regular expressions make use of the ‘raw string’ notation. In short, it means that all characters need to be read literally, in their ‘raw’ form. You are advised to use the ‘r’ in front of the string whenever the regular expression contains metacharacters such as ‘\w’ or ‘\d’.</p>
 <p>The fragment above also illustrates the function of the <code class="docutils literal notranslate"><span class="pre">findall()</span></code> method from the <code class="docutils literal notranslate"><span class="pre">re</span></code> module. This function creates a list containing all fragments from the string that match the regular expression. The <code class="docutils literal notranslate"><span class="pre">re.search()</span></code> funcion, by contrast, only produces a Boolean value, depending on whether the regular expression matches the string.</p>
-</div>
-<div class="section" id="anchors">
+</section>
+<section id="anchors">
 <h2>Anchors<a class="headerlink" href="#anchors" title="Permalink to this headline">#</a></h2>
 <p>Finally, you can also use so-called anchors in regular expression. Anchors do not represent actual characters, but only locations within strings.</p>
 <p>
@@ -761,8 +747,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="case-insensitivity">
+</section>
+<section id="case-insensitivity">
 <h2>Case insensitivity<a class="headerlink" href="#case-insensitivity" title="Permalink to this headline">#</a></h2>
 <p>If you add the text “re.IGNORECASE” as the third parameter of the search() function, the search will take place in a case-insensitive manner. For examples of case-insensitive searches using word boundaries, see the code below.</p>
 <div class="cell docutils container">
@@ -797,8 +783,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="the-escape-character">
+</section>
+<section id="the-escape-character">
 <h2>The escape character<a class="headerlink" href="#the-escape-character" title="Permalink to this headline">#</a></h2>
 <p>As was discussed above, character such as the dot (‘.’), the asterisk (‘*’) or the question mark (‘?’) have a special meaning in regular expressions. Normally, they function as quantifiers or as metacharacters. In some cases, however, you may want to search for these literal characters themselves. If you need to extract the top level domain name from the URL of a website, for example, you need to specify that it is the part that follows the final dot.</p>
 <p>If you want to refer to characters in their literal meaning, these special characters need to be preceded by the back slash. This notation is known as “escaping” the character. The following code cell contains an illustration.</p>
@@ -817,8 +803,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="finding-and-replacing-text">
+</section>
+<section id="finding-and-replacing-text">
 <h2>Finding and replacing text<a class="headerlink" href="#finding-and-replacing-text" title="Permalink to this headline">#</a></h2>
 <p>In Python, regular expressions can also be applied usefully in ‘find and replace’ operations. Such operations can be performed using the <code class="docutils literal notranslate"><span class="pre">sub()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">re</span></code> module. The <code class="docutils literal notranslate"><span class="pre">sub()</span></code> method demands three parameters: (1) a regular expression, (2) a replacement string, and (3) the string containing text which needs to be replaced.</p>
 <p>If matches can be found for the regular expression which is mentioned as the first parameter, these matches will all be replaced with the string which is given as the second parameter. The function of <code class="docutils literal notranslate"><span class="pre">re.sub</span></code> is comparable to that of the <code class="docutils literal notranslate"><span class="pre">replace()</span></code> function, discussed in the section on ‘Working with Strings’.</p>
@@ -852,11 +838,11 @@ title="Print to PDF"
 <p>The process of learning to work with regular expressions may imply a steep learning curve. You need to develp a good understanding of all the characters that can be used to compose search patterns, next to the ability to use all of these characters and symbols in combination.</p>
 <p>If you want to learn more about regular expressions, you can study the very elaborate and accessible turorials on this topic on <a class="reference external" href="https://programminghistorian.org/en/lessons/understanding-regular-expressions">The Programming Historian</a> or on the website of <a class="reference external" href="https://librarycarpentry.org/lc-data-intro/01-regular-expressions/">Library Carpentry</a>.</p>
 <p>On <a class="reference external" href="http://Dataquest.io">Dataquest.io</a>, you can find a helpful <a class="reference external" href="https://www.dataquest.io/blog/regex-cheatsheet/">Regular Expressions Cheat Sheet</a> (also available as a <a class="reference external" href="https://www.dataquest.io/wp-content/uploads/2019/03/python-regular-expressions-cheat-sheet.pdf">PDF document</a>)</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
-<div class="section" id="exercise-9-1">
+<section id="exercise-9-1">
 <h2>Exercise 9.1.<a class="headerlink" href="#exercise-9-1" title="Permalink to this headline">#</a></h2>
 <p>Download the full text of “P.B. Shelley’s Complete Poems” from the following URL:</p>
 <p><a class="reference external" href="https://edu.nl/r6dn8">https://edu.nl/r6dn8</a></p>
@@ -945,8 +931,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-9-2">
+</section>
+<section id="exercise-9-2">
 <h2>Exercise 9.2.<a class="headerlink" href="#exercise-9-2" title="Permalink to this headline">#</a></h2>
 <p>Download the file “bibliography.txt” from</p>
 <p><a class="reference external" href="https://edu.nl/t449h">https://edu.nl/t449h</a></p>
@@ -978,8 +964,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-9-3">
+</section>
+<section id="exercise-9-3">
 <h2>Exercise 9.3.<a class="headerlink" href="#exercise-9-3" title="Permalink to this headline">#</a></h2>
 <p>Download the file “tweets.txt” from <a class="reference external" href="https://edu.nl/cvge6">https://edu.nl/cvge6</a>.</p>
 <p>This file contains a number of tweets containing the hashtag ‘#universiteitleiden’, obtained using the Twitter API. Extract all the usernames and all the hashtags form these tweets, using regular expressions.</p>
@@ -1012,15 +998,15 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "cdsleiden/python-tutorial",
-            ref: "gh-pages",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

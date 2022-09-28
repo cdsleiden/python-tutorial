@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Welcome &#8212; Python Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,10 +35,13 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -317,7 +321,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/gh-pages?urlpath=tree/docs/Welcome.ipynb"
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/Welcome.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -331,24 +335,6 @@ title="Launch on Binder"
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
 
       </li>
       
@@ -439,27 +425,27 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="welcome">
+  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
 <h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline">#</a></h1>
 <p>This website offers a basic and accessible introduction to programming in Python, aimed specifically at researchers and teachers without prior coding skills.</p>
 <p>The tutorials that you can follow on this website explain the core features of the Python programming language, including topics such as variables, data types and control structures. Additionally, you can learn learn about the main techniques that can be used to clean, enrich, analyse and visualise data.</p>
 <p>You can download all the notebooks written for this tutorial at the following address:</p>
-<p><a class="reference external" href="https://github.com/peterverhaar/python_tutorial/archive/refs/heads/main.zip">https://github.com/peterverhaar/python_tutorial/archive/refs/heads/main.zip</a></p>
-<p>When you download and unzip this folder, make sure that you put the unzipped folder (<em>python_tutorial-master</em> by default) in a location that you can access from the Jupyter Notebook environment. Your home directory should be a good location.</p>
+<p><a class="reference external" href="https://github.com/cdsleiden/python-tutorial/releases/latest/download/notebooks.zip">https://github.com/cdsleiden/python-tutorial/releases/latest/download/notebooks.zip</a></p>
+<p>When you download and unzip this folder, make sure that you put the unzipped folder (<em>notebooks</em>) in a location that you can access from the Jupyter Notebook environment. Your home directory should be a good location.</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "cdsleiden/python-tutorial",
-            ref: "gh-pages",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>1. Variables and data types &#8212; Python Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,10 +35,13 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -318,7 +322,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/gh-pages?urlpath=tree/docs/notebooks/1 Variables_and_data_types.ipynb"
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/1 Variables_and_data_types.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -332,24 +336,6 @@ title="Launch on Binder"
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
 
       </li>
       
@@ -585,14 +571,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="variables-and-data-types">
+  <section class="tex2jax_ignore mathjax_ignore" id="variables-and-data-types">
 <h1>1. Variables and data types<a class="headerlink" href="#variables-and-data-types" title="Permalink to this headline">#</a></h1>
-<div class="section" id="statements">
+<section id="statements">
 <h2>Statements<a class="headerlink" href="#statements" title="Permalink to this headline">#</a></h2>
 <p>Computer programs are generally written to solve specific problems or to automate certain activities. They consist of instructions or command which tell the computer what to do. Such instructions are referred to as statements.</p>
 <p>In the Python language, the individual statements are delineated by hard returns. The end of the statement (i.e. the hard return) is a cue which triggers the Python parser to interpret and to execute the statement.</p>
-</div>
-<div class="section" id="variables">
+</section>
+<section id="variables">
 <h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h2>
 <p>Virtually all programming languages make use of variables of some sort. Variables can be thought of as containers or as boxes in which information can be stored temporarily. Variables always need to be given a name. This name can be used to retrieve the ‘contents’ of the variable. These contents (the data assigned to the variable) are referred to as the variable’s <em>value</em>.</p>
 <p>Variables names can consist of any combination of alphanumerical characters that you can think of. Underscores are also allowed in variable names. Variable names cannot begin with a number, however, and they cannot contain a hyphen or spaces.</p>
@@ -607,8 +593,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="data-types">
+</section>
+<section id="data-types">
 <h2>Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">#</a></h2>
 <p>Computer program often process or manipulate specific data values. Such values are always of a specific type.</p>
 <p><strong>Strings</strong></p>
@@ -743,13 +729,13 @@ title="Print to PDF"
 <p>When an integer is coerced into a float, this creates a number with a <code class="docutils literal notranslate"><span class="pre">0</span></code> following the decimal point.</p>
 <p><strong>Boolean values</strong></p>
 <p>A Boolean variable can only be assigned two values: either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. They are often used to test whether someting is the case. These values will be discussed in more detail in the section on ‘<em>Flow Control</em>’</p>
-</div>
-<div class="section" id="comments">
+</section>
+<section id="comments">
 <h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">#</a></h2>
 <p>In the Python langauge, lines can be preceded by the hash (‘#’) symbol. Lines that start with a hash are called comments. Comments are always ignored by the Python interpreter. They are included exclusively for human readers of the code.</p>
 <p>Such comments can be very useful when you want to document your code. Computer programs can sometimes be difficut to understand, and, in such situations, comments may help to explain in understandable language what happens exactly in specific parts of the code.</p>
-</div>
-<div class="section" id="printing-output">
+</section>
+<section id="printing-output">
 <h2>Printing output<a class="headerlink" href="#printing-output" title="Permalink to this headline">#</a></h2>
 <p>Programs usually produce some output. This output can be the result of a calculation, for instance. The <code class="docutils literal notranslate"><span class="pre">print()</span></code> function can be used to communicate the output of the program to the user. As will be explained in more detail later, a function is a named collection of statements.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">print()</span></code> function is always used with parentheses. Inside the parentheses, you can provide the string that you would like the computer to display. A string, as was explained above, is a sequence of alphanumerical characters and spaces.</p>
@@ -779,15 +765,15 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
-<div class="section" id="exercise-1-1">
+<section id="exercise-1-1">
 <h2>Exercise 1.1.<a class="headerlink" href="#exercise-1-1" title="Permalink to this headline">#</a></h2>
 <p>Write code that can print the sentence “Hello world” or any other sentence that you can think of.</p>
-</div>
-<div class="section" id="exercise-1-2">
+</section>
+<section id="exercise-1-2">
 <h2>Exercise 1.2.<a class="headerlink" href="#exercise-1-2" title="Permalink to this headline">#</a></h2>
 <p>Write a program which produces the following output:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">first</span> <span class="n">line</span><span class="o">.</span>
@@ -795,13 +781,13 @@ title="Print to PDF"
 <span class="n">This</span> <span class="n">line</span> <span class="n">contains</span> <span class="n">a</span>        <span class="n">tab</span><span class="o">.</span> 
 </pre></div>
 </div>
-</div>
-<div class="section" id="exercise-1-3">
+</section>
+<section id="exercise-1-3">
 <h2>Exercise 1.3.<a class="headerlink" href="#exercise-1-3" title="Permalink to this headline">#</a></h2>
 <p>Create a new variable and assign it a floating point number. Print the <em>type</em> of the value represented by the variable.</p>
 <p>Next, coerce it into an integer using the <code class="docutils literal notranslate"><span class="pre">int()</span></code> function. Next, display the new value of this variable using the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function. What happened to the numbers after the decimal point?</p>
-</div>
-<div class="section" id="exercise-1-4">
+</section>
+<section id="exercise-1-4">
 <h2>Exercise 1.4<a class="headerlink" href="#exercise-1-4" title="Permalink to this headline">#</a></h2>
 <p>Try to debug the code below.</p>
 <div class="cell docutils container">
@@ -814,15 +800,15 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "cdsleiden/python-tutorial",
-            ref: "gh-pages",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

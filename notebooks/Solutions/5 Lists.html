@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>5. Lists &#8212; Python Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,10 +35,13 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -318,7 +322,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/gh-pages?urlpath=tree/docs/notebooks/Solutions/5 Lists.ipynb"
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/Solutions/5 Lists.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -332,24 +336,6 @@ title="Launch on Binder"
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
 
       </li>
       
@@ -527,9 +513,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lists">
+  <section class="tex2jax_ignore mathjax_ignore" id="lists">
 <h1>5. Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h1>
-<div class="section" id="exercise-5-1">
+<section id="exercise-5-1">
 <h2>Exercise 5.1.<a class="headerlink" href="#exercise-5-1" title="Permalink to this headline">#</a></h2>
 <p>Create the following list:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colours</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">]</span>
@@ -546,8 +532,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-5-2">
+</section>
+<section id="exercise-5-2">
 <h2>Exercise 5.2.<a class="headerlink" href="#exercise-5-2" title="Permalink to this headline">#</a></h2>
 <p>Create two lists:</p>
 <p><code class="docutils literal notranslate"><span class="pre">first</span> <span class="pre">=</span> <span class="pre">[4,</span> <span class="pre">9,</span> <span class="pre">1,</span> <span class="pre">17,</span> <span class="pre">11,</span> <span class="pre">26,</span> <span class="pre">28,</span> <span class="pre">54,</span> <span class="pre">63]</span>&#160; <span class="pre">second</span> <span class="pre">=</span> <span class="pre">[8,</span> <span class="pre">9,</span> <span class="pre">74,</span> <span class="pre">21,</span> <span class="pre">45,</span> <span class="pre">11,</span> <span class="pre">63,</span> <span class="pre">28,</span> <span class="pre">26]</span> </code></p>
@@ -564,8 +550,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-5-3">
+</section>
+<section id="exercise-5-3">
 <h2>Exercise 5.3.<a class="headerlink" href="#exercise-5-3" title="Permalink to this headline">#</a></h2>
 <p>The list below contains the titles of first twelve plays written by William Shakespeare.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>plays = [ &#39;Comedy of Errors&#39; ,
@@ -621,8 +607,8 @@ Print the full list in alphabetical order using the ‘for’ keyword.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-5-4">
+</section>
+<section id="exercise-5-4">
 <h2>Exercise 5.4.<a class="headerlink" href="#exercise-5-4" title="Permalink to this headline">#</a></h2>
 <p>Copy the code below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sites</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;https://www.universiteitleiden.nl&#39;</span> <span class="p">,</span> <span class="s1">&#39;https://www.stanford.edu&#39;</span> <span class="p">,</span> <span class="s1">&#39;https://www.uu.nl&#39;</span> <span class="p">,</span> <span class="s1">&#39;http://www.ox.ac.uk&#39;</span> <span class="p">,</span> <span class="s1">&#39;https://www.rug.nl&#39;</span> <span class="p">,</span> <span class="s1">&#39;https://www.hu-berlin.de&#39;</span> <span class="p">,</span> <span class="s1">&#39;https://www.uva.nl&#39;</span> <span class="p">]</span>
@@ -642,8 +628,8 @@ Tip: You may want to reuse some of the code developed for  exercise 3.4.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-5-5">
+</section>
+<section id="exercise-5-5">
 <h2>Exercise 5.5<a class="headerlink" href="#exercise-5-5" title="Permalink to this headline">#</a></h2>
 <p>Define a Python list named <code class="docutils literal notranslate"><span class="pre">years</span></code>, containing the following values:</p>
 <p><code class="docutils literal notranslate"><span class="pre">years</span> <span class="pre">=</span> <span class="pre">[</span> <span class="pre">1756,</span> <span class="pre">1575,</span> <span class="pre">2002,</span> <span class="pre">1984</span> <span class="pre">,1626</span> <span class="pre">,1791,</span> <span class="pre">1714,</span> <span class="pre">1873,</span> <span class="pre">1991</span> <span class="pre">]</span></code></p>
@@ -667,8 +653,8 @@ Note that, after <code class="docutils literal notranslate"><span class="pre">if
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-5-6">
+</section>
+<section id="exercise-5-6">
 <h2>Exercise 5.6.<a class="headerlink" href="#exercise-5-6" title="Permalink to this headline">#</a></h2>
 <p>Convert the following quotation from E.M. Forster’s <em>A Room with a View</em> to a list of words, using the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method. This function can convert a string into a list, based on the spaces that occur in this string. Use this list to give information about the total number of words in this quote. Print the last word in teh quote, and count the number of occurrences of the word “place”.</p>
 <div class="highlight-quote notranslate"><div class="highlight"><pre><span></span>
@@ -701,15 +687,15 @@ There are 4 occurrences of the word &#39;place&#39;.
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "cdsleiden/python-tutorial",
-            ref: "gh-pages",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>11. Data analysis with pandas &#8212; Python Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,10 +35,13 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -318,7 +322,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/gh-pages?urlpath=tree/docs/notebooks/11 Pandas.ipynb"
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/11 Pandas.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -332,24 +336,6 @@ title="Launch on Binder"
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
 
       </li>
       
@@ -669,7 +655,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="data-analysis-with-pandas">
+  <section class="tex2jax_ignore mathjax_ignore" id="data-analysis-with-pandas">
 <h1>11. Data analysis with pandas<a class="headerlink" href="#data-analysis-with-pandas" title="Permalink to this headline">#</a></h1>
 <p>‘Pandas’ is a Python library which was developed for the manipulation and the analysis of data sets. It is available for Python version 2.7 and higher. The name of the library loosely stands for “Python Data Analysis Library”. Pandas contains methods that enable programmers to read data from and write data to a wide range of file formats, including CSV, TSV, Excel spreadsheets and MySQL databases, and it offers numerous statistical methods that can be used to analyse these data.</p>
 <p>If pandas has been installed successfully on your computer, this library can be imported into your program using the <code class="docutils literal notranslate"><span class="pre">import</span></code> keyword.</p>
@@ -681,7 +667,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>As can be seen, this import statement also assigns an alias, namely <code class="docutils literal notranslate"><span class="pre">pd</span></code>. This is an abbreviated reference to the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library. Without this alias, the full name of the library would have to be typed in each time a method from this library is needed.</p>
-<div class="section" id="reading-a-csv-file">
+<section id="reading-a-csv-file">
 <h2>Reading a CSV file<a class="headerlink" href="#reading-a-csv-file" title="Permalink to this headline">#</a></h2>
 <p>If your data set is stored in the CSV format, it can be accessed using the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function.</p>
 <div class="cell docutils container">
@@ -709,8 +695,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="reading-an-excel-spreadsheet">
+</section>
+<section id="reading-an-excel-spreadsheet">
 <h2>Reading an Excel spreadsheet<a class="headerlink" href="#reading-an-excel-spreadsheet" title="Permalink to this headline">#</a></h2>
 <p>The Pandas library also offers a method named <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code>. You can use this function, unsurprisingly, to process data stored in an Excel spreadsheet. The method needs to be used with two parameters. The first parameter is simply the name of the Excel file that you want to work with. Secondly, as a value to a parameter named <code class="docutils literal notranslate"><span class="pre">sheet_name</span></code>, you need to provide the name of the sheet within the spreadsheet that you want to read. Similarly to the way in which <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> processes data, <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code> loads the data on the sheet that you mention into a data frame.</p>
 <div class="cell docutils container">
@@ -722,8 +708,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="converting-a-list-into-a-data-frame">
+</section>
+<section id="converting-a-list-into-a-data-frame">
 <h2>Converting a list into a data frame<a class="headerlink" href="#converting-a-list-into-a-data-frame" title="Permalink to this headline">#</a></h2>
 <p>It is also possible to convert an existing Python list into a data frame, using the <code class="docutils literal notranslate"><span class="pre">DataFrame()</span></code> method. In the code below, the list named <code class="docutils literal notranslate"><span class="pre">data</span></code> is a two-dimensional array. Each item is in fact a list in itself.</p>
 <p>When you pass this list into <code class="docutils literal notranslate"><span class="pre">Dataframe()</span></code>, the method converts this data structure into a colelction of rows and columns. The <code class="docutils literal notranslate"><span class="pre">columns</span></code> parameter may be used to supply column names.</p>
@@ -741,8 +727,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="basic-information-about-the-data-frame">
+</section>
+<section id="basic-information-about-the-data-frame">
 <h2>Basic information about the data frame<a class="headerlink" href="#basic-information-about-the-data-frame" title="Permalink to this headline">#</a></h2>
 <p>Once a data frame has been created, the data set can be examined using a number of methods that are available within the Pandas library. These methods will be explained using the simple data set that was shown above.</p>
 <p>After you have run the cell above, you can inspect the contents by using a print command, as follows:</p>
@@ -797,8 +783,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="series">
+</section>
+<section id="series">
 <h2>Series<a class="headerlink" href="#series" title="Permalink to this headline">#</a></h2>
 <p>The values in a column of a data frame can be accessed separately using the name of the column. This assumes, obviously, that such column names have been defined. In order to obtain the data in a specific column, the name of the column must be appended to the name of the full data frame using square brackets, as follows.</p>
 <div class="cell docutils container">
@@ -825,8 +811,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="statistical-functions">
+</section>
+<section id="statistical-functions">
 <h2>Statistical functions<a class="headerlink" href="#statistical-functions" title="Permalink to this headline">#</a></h2>
 <p>Within Pandas, you can use methods such as <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code>, <code class="docutils literal notranslate"><span class="pre">mean()</span></code> to receive basic statistical information about numerical values in your data set.</p>
 <div class="cell docutils container">
@@ -856,8 +842,8 @@ title="Print to PDF"
 </div>
 </div>
 <p>Note that this particular method for calculating summations will only produce meaningful results in the case of numerical values. If the column contains strings, as in the case of column ‘E’ of our sample data set, this method will simply concatenate all the string values in the Series.</p>
-</div>
-<div class="section" id="navigating-a-data-frame">
+</section>
+<section id="navigating-a-data-frame">
 <h2>Navigating a data frame<a class="headerlink" href="#navigating-a-data-frame" title="Permalink to this headline">#</a></h2>
 <p>To iterate across all the rows in a data frame, you can make use of the iterrows() method. This method processes the data frame row by row. When you use <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code>, pandas will create a new Series for each individual row. This Series will contain all the individual values on that row. Secondly, the method also returns each row’s index.</p>
 <p>In the code below, the method <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code> navigates across all the rows in the data frame. During each iteration, the compound variable named row will be assigned all the values that are available on a given row. When the variable row is used in combination with a column name, this variable will represent the data value in that particular column. The method <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code> can also return the index of each row, but that index is not actually used in the fragment that follows.</p>
@@ -869,11 +855,11 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="selecting-subsets">
+</section>
+<section id="selecting-subsets">
 <h2>Selecting subsets<a class="headerlink" href="#selecting-subsets" title="Permalink to this headline">#</a></h2>
 <p>In the pandas library, it is also possible to filter data sets. In other words, we can create new data sets containing only some of the rows or the columns of the original data sets. Such filtered data sets are also referred to as subsets. This process of ‘subsetting’ a data frame takes place on the basis of specific criteria. Different types of criteria are possible.</p>
-<div class="section" id="filtering-by-index">
+<section id="filtering-by-index">
 <h3>Filtering by index<a class="headerlink" href="#filtering-by-index" title="Permalink to this headline">#</a></h3>
 <p>As a first possibility, we can use the indices of rows and of columns as criteria. These indices need to be added to the data frame using the <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> indexer.</p>
 <p>When we want to select all the values on the third row of the data frame (i.e. the row with index 2), this can be accomplished using the code below. The third row has index number ‘2’, because pandas start counting at zero.</p>
@@ -903,8 +889,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="filtering-by-values">
+</section>
+<section id="filtering-by-values">
 <h3>Filtering by values<a class="headerlink" href="#filtering-by-values" title="Permalink to this headline">#</a></h3>
 <p>A potential disadvantage of this <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> selector is that you need to know the exact values for the indices. In most situations, it is more useful to create subsets on the basis of criteria applied to the values in the data set. Imagine, for instance, that you are only interested in rows in which the column B contains a value of 5 or higher. To select those rows, you can work with the Boolean expression <code class="docutils literal notranslate"><span class="pre">df['B']</span> <span class="pre">&gt;=</span> <span class="pre">5</span></code>. This Boolean expression can be added to the original data frame in square brackets. In the code that follows, the subset is assigned to a new data frame, one named <code class="docutils literal notranslate"><span class="pre">new_df</span></code>.</p>
 <div class="cell docutils container">
@@ -939,8 +925,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="subsets-of-columns">
+</section>
+<section id="subsets-of-columns">
 <h3>Subsets of columns<a class="headerlink" href="#subsets-of-columns" title="Permalink to this headline">#</a></h3>
 <p>Next to subsets of rows, it is also possible to create subsets of columns. More specifically, this means that we create new data frame, by copying only some of the columns that are available in another data frame. The easiest way to accomplish this is by supplying a list of the column names that you want to keep within the square brackets appended to data frame that needs to be filtered. After running the code below, the data frame named <code class="docutils literal notranslate"><span class="pre">new_df</span></code> has the exact same number of rows as df, but it only contains three of its columns.</p>
 <div class="cell docutils container">
@@ -959,9 +945,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="calculations">
+</section>
+</section>
+<section id="calculations">
 <h2>Calculations<a class="headerlink" href="#calculations" title="Permalink to this headline">#</a></h2>
 <p>One of the great strengths of Pandas is that it can make calculations using the values captured in data frames. Such calculations can be carried out using the regular mathematical operators in Python.</p>
 <div class="cell docutils container">
@@ -984,8 +970,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="grouping-items-and-aggregation">
+</section>
+<section id="grouping-items-and-aggregation">
 <h2>Grouping items and aggregation<a class="headerlink" href="#grouping-items-and-aggregation" title="Permalink to this headline">#</a></h2>
 <p>Pandas also offers a method named <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> which can be very useful when your data set contains labels or categories for specific records. Using <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>, the records which have been assigned the same category can all be placed in a single group. Subsequently, it becomes possible to perform calcutions for each group that has been created. This process is demonstrated below.</p>
 <div class="cell docutils container">
@@ -1011,11 +997,11 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
-<div class="section" id="exercise-11-1">
+<section id="exercise-11-1">
 <h2>Exercise 11.1.<a class="headerlink" href="#exercise-11-1" title="Permalink to this headline">#</a></h2>
 <p>Download the CSV file ‘nobel.csv’:
 <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a></p>
@@ -1084,8 +1070,8 @@ Tip: create a new column called ‘Age’, in which the year in which the prize 
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-11-2">
+</section>
+<section id="exercise-11-2">
 <h2>Exercise 11.2.<a class="headerlink" href="#exercise-11-2" title="Permalink to this headline">#</a></h2>
 <p>Download the Excel file names ‘Grades.xsl’ from the following address:</p>
 <p><a class="reference external" href="https://edu.nl/m6w8n">https://edu.nl/m6w8n</a></p>
@@ -1098,8 +1084,8 @@ Tip: create a new column called ‘Age’, in which the year in which the prize 
 <li><p>Which student scored worst on the presentation?</p></li>
 <li><p>How many students have received a 6 or lower for the exam?</p></li>
 </ul>
-</div>
-<div class="section" id="exercise-11-3">
+</section>
+<section id="exercise-11-3">
 <h2>Exercise 11.3<a class="headerlink" href="#exercise-11-3" title="Permalink to this headline">#</a></h2>
 <p>In the exercise, we make use of the following data set:</p>
 <blockquote>
@@ -1154,12 +1140,12 @@ Tip: create a new column called ‘Age’, in which the year in which the prize 
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-11-4">
+</section>
+<section id="exercise-11-4">
 <h2>Exercise 11.4<a class="headerlink" href="#exercise-11-4" title="Permalink to this headline">#</a></h2>
 <p>Download the CSV file ‘gutenberg_metadata.csv’ via the url <a class="reference external" href="https://edu.nl/xcm3q">https://edu.nl/xcm3q</a>.</p>
 <p>Using this CSV file, create a dataframe which only contains the English texts written by Charles Dickens. In the data set, this name is given as ‘Dickens, Charles’. Use the code ‘en’ for ‘English’.</p>
-<p>Two different conditions can be combined using the amoersand (‘&amp;’). The combined criteria must be given in brackets.</p>
+<p>Two different conditions can be combined using the amoersand (’&amp;’). The combined criteria must be given in brackets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -1175,15 +1161,15 @@ Tip: create a new column called ‘Age’, in which the year in which the prize 
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "cdsleiden/python-tutorial",
-            ref: "gh-pages",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

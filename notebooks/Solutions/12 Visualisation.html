@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>12. Visualisation &#8212; Python Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,10 +35,13 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -317,7 +321,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/gh-pages?urlpath=tree/docs/notebooks/Solutions/12 Visualisation.ipynb"
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/Solutions/12 Visualisation.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -331,24 +335,6 @@ title="Launch on Binder"
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
 
       </li>
       
@@ -516,9 +502,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="visualisation">
+  <section class="tex2jax_ignore mathjax_ignore" id="visualisation">
 <h1>12. Visualisation<a class="headerlink" href="#visualisation" title="Permalink to this headline">#</a></h1>
-<div class="section" id="exercise-12-1">
+<section id="exercise-12-1">
 <h2>Exercise 12.1<a class="headerlink" href="#exercise-12-1" title="Permalink to this headline">#</a></h2>
 <p>In exercise 11.3, you created a CSV file named ‘prices_of_coffee_over_time.csv’, containing data about the average price of a pound of coffee on a range of dates. Use this CSV file to create a line chart which visualises the development of these prices over time.</p>
 <div class="cell docutils container">
@@ -552,8 +538,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-12-2">
+</section>
+<section id="exercise-12-2">
 <h2>Exercise 12.2<a class="headerlink" href="#exercise-12-2" title="Permalink to this headline">#</a></h2>
 <p>Download the following data set:</p>
 <p><a class="reference external" href="https://edu.nl/bcm4x">https://edu.nl/bcm4x</a></p>
@@ -672,8 +658,8 @@ title="Print to PDF"
 <img alt="../../_images/12 Visualisation_7_0.png" src="../../_images/12 Visualisation_7_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="exercise-12-3">
+</section>
+<section id="exercise-12-3">
 <h2>Exercise 12.3<a class="headerlink" href="#exercise-12-3" title="Permalink to this headline">#</a></h2>
 <p>Use the CSV file that you have downloaded for exercise in 12.2 to create a scatter plot. The X-axis must visualise the values in the column ‘self-reported_health’, and the Y-axis must show the ‘employment_rate’. The size of the points must represent the ‘educational_attainment’ and the colour of the points ust indicate the values collected for ‘air_pollution’.</p>
 <p>Apply the following specifications:</p>
@@ -729,8 +715,8 @@ title="Print to PDF"
 <img alt="../../_images/12 Visualisation_9_0.png" src="../../_images/12 Visualisation_9_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="exercise-12-4">
+</section>
+<section id="exercise-12-4">
 <h2>Exercise 12.4<a class="headerlink" href="#exercise-12-4" title="Permalink to this headline">#</a></h2>
 <p>PISA is the OECD’s <a class="reference external" href="https://www.oecd.org/pisa/">Programme for International Student Assessment</a>. This programme evaluates educational systems globally by measuring the performance of 15 year-old-children in mathematics, science and reading. The latest study is from 2018.</p>
 <p>The CSV file ‘<a class="reference external" href="https://edu.nl/p97ma">pisa.csv</a>’ contains all the scores measured for mathematics and reading in between 2000 and 2018.</p>
@@ -1007,8 +993,8 @@ title="Print to PDF"
 <img alt="../../_images/12 Visualisation_32_0.png" src="../../_images/12 Visualisation_32_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="exercise-12-5">
+</section>
+<section id="exercise-12-5">
 <h2>Exercise 12.5<a class="headerlink" href="#exercise-12-5" title="Permalink to this headline">#</a></h2>
 <p>Download the CSV file ‘nobel.csv’: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a>. If you have done exercise 11.1 of this tutorial, you have downloaded this file already. Visualise the data in this data set in the followng ways.</p>
 <ul class="simple">
@@ -1157,15 +1143,15 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "cdsleiden/python-tutorial",
-            ref: "gh-pages",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

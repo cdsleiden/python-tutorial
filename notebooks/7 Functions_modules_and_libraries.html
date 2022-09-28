@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>7. Functions, Modules and Libraries &#8212; Python Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,10 +35,13 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -318,7 +322,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/gh-pages?urlpath=tree/docs/notebooks/7 Functions_modules_and_libraries.ipynb"
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/7 Functions_modules_and_libraries.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -332,24 +336,6 @@ title="Launch on Binder"
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
 
       </li>
       
@@ -565,9 +551,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="functions-modules-and-libraries">
+  <section class="tex2jax_ignore mathjax_ignore" id="functions-modules-and-libraries">
 <h1>7. Functions, Modules and Libraries<a class="headerlink" href="#functions-modules-and-libraries" title="Permalink to this headline">#</a></h1>
-<div class="section" id="functions">
+<section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
 <p>Image that you need to write a program in Python which can calculate the final grades earned by students who have followed a certain course. Such grades are normally calculated using a fixed formula (e.g. a mid-term assignment which counts for 40% and a final exam which counts for 60%). To calculate the final grades, this formula needs to be applied repeatedly with different values. In such a situation, it would be quite inefficient if you simply repeated the code that is needed for every single student. In most programming languages, fortunately, it is also possible to reuse fragments of code by defining these as functions.</p>
 <p>A function is essentially a set of statements which can be addressed collectively via a single name. Python has a number of in-built functions, such as <code class="docutils literal notranslate"><span class="pre">print()</span></code> or <code class="docutils literal notranslate"><span class="pre">len()</span></code>. As you have seen, such functions represent certain actions. To have these actions executed, you need to refer to the names of these functions in your programs. These function often take one or more parameters as input. These are values that need to be supplied to the function and that the fuinction will work with.</p>
@@ -596,8 +582,8 @@ title="Print to PDF"
 </div>
 <p>The first four lines of the code above define the function <code class="docutils literal notranslate"><span class="pre">calculateFinalMark()</span></code>. The <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword needs to be followed by the name of the function, which you can specify yourself. The name of the function also needs to end in a set of parentheses. Within these parentheses, you can optionally mention the values the function should operate on. As was indicated above, the values mentioned within the parentheses are called the parameters of the function. If there are two or more parameters, these need to be separated by commas. In the example above, a certain calculation is carried out within the function, using the parameters that are supplied, and the result of this calculation is mentioned after the keyword <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
 <p>Once the function has been defined, it can be used, or invoked, on other locations in your program. The <code class="docutils literal notranslate"><span class="pre">print</span></code> statements on the final three lines will show the result of the calculation that is returned by the function, using the values that are mentioned within the parentheses as a basis.</p>
-</div>
-<div class="section" id="classes">
+</section>
+<section id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">#</a></h2>
 <p>Python is based on a programming paradigm which is known as object-oriented programming. This paradigm, in short, involves an organisation in which variables and functions which are closely related can be brought together in structure known as a class.  In the example below, the variables named <code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">isbn</span></code>, and the function named <code class="docutils literal notranslate"><span class="pre">describe()</span></code> are brought together in a class named ‘Book’.</p>
 <p>A class can also be instantiated. An instance of a class is called an object, and this object can be given a new name. For this newly created object, all the variables and all the functions which are defined in the class can also be accessed, by appending the names of the variables or functions to the dot following the object name. This notation is called the ‘period syntax’. Functions defined within classes are referred to as methods. A class thus functions as a blueprint or as a template for new types of objects.</p>
@@ -620,8 +606,8 @@ title="Print to PDF"
 </div>
 <p>In the code above, a new object is created based on the class <code class="docutils literal notranslate"><span class="pre">Book</span></code>, named <code class="docutils literal notranslate"><span class="pre">title1</span></code>. In the definition of this particular class, it was specified that the title and the ISBN always needs to be provided upon the initiation of a <code class="docutils literal notranslate"><span class="pre">Book</span></code> object. Once the class <code class="docutils literal notranslate"><span class="pre">Book</span></code> has been instantiated in this way, the object based on the class specifications can make use of all the methods of the class. The method <code class="docutils literal notranslate"><span class="pre">describe()</span></code>, for instance, simply prints the values that have been assigned to the object.</p>
 <p>In Python, all strings are saved as instances of the general <code class="docutils literal notranslate"><span class="pre">str</span></code> (string) class. This class has methods such as <code class="docutils literal notranslate"><span class="pre">lower()</span></code>, <code class="docutils literal notranslate"><span class="pre">strip()</span></code> and <code class="docutils literal notranslate"><span class="pre">index()</span></code>. If you want to use these methods, they need to be added to the name of the object (i.e. the instantiation of the Class) using the ‘period syntax’.</p>
-</div>
-<div class="section" id="modules-packages-and-libraries">
+</section>
+<section id="modules-packages-and-libraries">
 <h2>Modules, packages and libraries<a class="headerlink" href="#modules-packages-and-libraries" title="Permalink to this headline">#</a></h2>
 <p>When you have a number of functions of classes that perform similar or related activities, these can all be placed together in a Python file. Such a file containing related functions, statements or classes is called a module. Such modules can be imported into other scipts using the <code class="docutils literal notranslate"><span class="pre">import</span></code> command. A module, in short, is a file with code that you can reuse across different programs.</p>
 <p>The term ‘Python library’ generally refers to a collection of related modules. These libraries, in turn, are mostly distributed as packages. Once installed, a Python package is a directory on your computer which contains a library. A library contains code that you can reuse.</p>
@@ -658,11 +644,11 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
-<div class="section" id="exercise-7-1">
+<section id="exercise-7-1">
 <h2>Exercise 7.1.<a class="headerlink" href="#exercise-7-1" title="Permalink to this headline">#</a></h2>
 <p>In a given university course, the final grade is determined by grade for essay and by the grade for a presentation. The presentation counts for 30% and the essay for 70%. Write two functions: (1) one function which can calculate the final grade based on a set of partial grades. Grades must be rounded to integers. 5.4, for example, becomes 5 and 6.6 becomes 7. (2) Write a second function which can determine whether a given grade is at a pass level (i.e. higher than 6). This function must return a boolean value, in which ‘pass’ is true and ‘fail’ equals false.</p>
 <div class="cell docutils container">
@@ -687,8 +673,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-7-2">
+</section>
+<section id="exercise-7-2">
 <h2>Exercise 7.2.<a class="headerlink" href="#exercise-7-2" title="Permalink to this headline">#</a></h2>
 <p>Import the math library, as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
@@ -711,24 +697,24 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-7-3">
+</section>
+<section id="exercise-7-3">
 <h2>Exercise 7.3.<a class="headerlink" href="#exercise-7-3" title="Permalink to this headline">#</a></h2>
 <p>Write a function which can convert a given temperature in degrees Celcius into the equivalent in Fahrenheit. Use the following formula: F = 1.8 * C + 32.</p>
 <p>Once the function is ready, test it with a number of values. 20 degrees Celcius ought to be converted into 68 degrees Fahrenheit, and 37 degrees Celcius should equal 98.6 degrees Fahrenheit.</p>
-</div>
-<div class="section" id="exercise-7-4">
+</section>
+<section id="exercise-7-4">
 <h2>Exercise 7.4.<a class="headerlink" href="#exercise-7-4" title="Permalink to this headline">#</a></h2>
 <p>Following Pythagoras’ theorem (A<sup>2</sup> + B<sup>2</sup> = C<sup>2</sup>), calculate the length of the hypothenuse in a right trangle in which the other two sides have a length of 6 and 7. Make use of the math module.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "cdsleiden/python-tutorial",
-            ref: "gh-pages",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

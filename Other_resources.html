@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Other resources &#8212; Python Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,10 +35,13 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -318,7 +322,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/gh-pages?urlpath=tree/docs/Other_resources.ipynb"
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/Other_resources.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -332,24 +336,6 @@ title="Launch on Binder"
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
 
       </li>
       
@@ -487,9 +473,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="other-resources">
+  <section class="tex2jax_ignore mathjax_ignore" id="other-resources">
 <h1>Other resources<a class="headerlink" href="#other-resources" title="Permalink to this headline">#</a></h1>
-<div class="section" id="python-tutorials">
+<section id="python-tutorials">
 <h2>Python Tutorials<a class="headerlink" href="#python-tutorials" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Video series on programming in Python</a> recorded by Paul Vierthaler for his Text Mining and Digital Humanities class, taught in 2018-2019.</p></li>
@@ -502,23 +488,23 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://github.com/rougier/scientific-visualization-book">Data Visualisation Handbook</a> by Nicolas Rougier.</p></li>
 <li><p><a class="reference external" href="https://github.com/sgsinclair/alta/blob/master/ipynb/ArtOfLiteraryTextAnalysis.ipynb">The Art of Literary Text Analysis</a> by Geoffrey Rockwell and Stéfan Sinclair.</p></li>
 </ul>
-</div>
-<div class="section" id="regular-expression-tutorials">
+</section>
+<section id="regular-expression-tutorials">
 <h2>Regular Expression Tutorials<a class="headerlink" href="#regular-expression-tutorials" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://programminghistorian.org/en/lessons/understanding-regular-expressions">Understanding Regular Expressions</a> on The Programming Historian.</p></li>
 <li><p><a class="reference external" href="https://librarycarpentry.org/lc-data-intro/01-regular-expressions/">Introduction to Regular Expressions</a> by Library Carpentry.</p></li>
 <li><p><a class="reference external" href="https://www.dataquest.io/blog/regex-cheatsheet/">Regular Expressions Cheat Sheet</a> on <a class="reference external" href="http://Dataquest.io">Dataquest.io</a>.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "cdsleiden/python-tutorial",
-            ref: "gh-pages",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

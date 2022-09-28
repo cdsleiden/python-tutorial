@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>12. Data Visualisation &#8212; Python Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,10 +35,13 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -318,7 +322,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/gh-pages?urlpath=tree/docs/notebooks/12 Visualisation.ipynb"
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/12 Visualisation.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -332,24 +336,6 @@ title="Launch on Binder"
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
 
       </li>
       
@@ -693,11 +679,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="data-visualisation">
+  <section class="tex2jax_ignore mathjax_ignore" id="data-visualisation">
 <h1>12. Data Visualisation<a class="headerlink" href="#data-visualisation" title="Permalink to this headline">#</a></h1>
 <p>Data visualisations such as graphs and diagrams often make it easier for researchers to explore patterns and trends within large data sets, or to identify notable exceptions to the trends that can be observed.</p>
 <p>During the last number of years, a large number of visualisation libraries have been developed for the Python language. One of the most widely used libraries is <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. This tutorial concentrates on three types of visualisations that you can create using matplot: bar charts, line charts and scatter plots. <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> is very powerful, but its code can easily get quite complicated. The visualisation library named <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> was built, more or less, as a shell around <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and simplifies many of its aspects. This tutorial also explains a number of visualisations that can be created using <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>.</p>
-<div class="section" id="the-data-to-be-visualised">
+<section id="the-data-to-be-visualised">
 <h2>The data to be visualised<a class="headerlink" href="#the-data-to-be-visualised" title="Permalink to this headline">#</a></h2>
 <p>Data visualisations are obviously based on data. The data to be used in the remainder of this tutorial are created below. The data set contains four columns with numerical data. These have the column names ‘A’, ‘B’, ‘C’ and ‘D’. There is also a column called ‘class’ containing a categorical variable. The column ‘year’, finally, contains years.</p>
 <div class="cell docutils container">
@@ -743,11 +729,11 @@ title="Print to PDF"
 </div>
 </div>
 <p>These values will be used in the visualisations that are discusses below.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="matplotlib">
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="matplotlib">
 <h1>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h1>
-<div class="section" id="a-bar-chart">
+<section id="a-bar-chart">
 <h2>A bar chart<a class="headerlink" href="#a-bar-chart" title="Permalink to this headline">#</a></h2>
 <p>To create a regular bar chart, we need to work with two variables: (1) the values to be shown on the X-axis and (2) the values to be shown on the Y-axis. In this section, we create a bar chart which visualises the sums of all the values in column A, for each of the categories identified in column ‘class’. As explained above, we can create a list of all the available categories using <code class="docutils literal notranslate"><span class="pre">sum_A.index.tolist()</span></code>, and the totals of all the values in column ‘A’, broken down by category, can be retrieved using the code <code class="docutils literal notranslate"><span class="pre">sum_A.tolist()</span></code>. The former values need to be shown on the X-axis and the latter values on the Y-axis.</p>
 <div class="cell docutils container">
@@ -829,8 +815,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="a-line-chart">
+</section>
+<section id="a-line-chart">
 <h2>A line chart<a class="headerlink" href="#a-line-chart" title="Permalink to this headline">#</a></h2>
 <p>To create a line chart, you need to make use of the plot() method of the pyplot module. The following code create a line chart which displays the values in the column ‘year’ on the X-axis, and the corresponding values in column ‘D’ on the Y-axis.</p>
 <div class="cell docutils container">
@@ -889,12 +875,12 @@ title="Print to PDF"
 </div>
 <p>Matplotlib normally infers the limits of the X-axis and the Y-axis from your data. In some cases, however, you may want to adjust the limits of the axes yourself.</p>
 <p>As is illustrated, you can do this via <code class="docutils literal notranslate"><span class="pre">set_xlim()</span></code>. The corresponding method for the Y-axis is <code class="docutils literal notranslate"><span class="pre">set_ylim()</span></code>.  These two methods take two parameters: the lowest value and the highest value. The two numbers that you mention determine the range of values that you shall see on the X-axis and the Y-axis.</p>
-</div>
-<div class="section" id="saving-images">
+</section>
+<section id="saving-images">
 <h2>Saving images<a class="headerlink" href="#saving-images" title="Permalink to this headline">#</a></h2>
 <p>Next to opening the graph in a viewer on your screen, using show(), it is also possible to instruct Python to create an image file on your computer, via the <code class="docutils literal notranslate"><span class="pre">savefig()</span></code> method. As the first parameter to this function, you must provide a filename. The filename must include an extension, such as ‘jpeg’, ‘tiff’, ‘png’ or ‘pdf’. The methods savefig() and show() are mutually exclusive. When you use one of these, you cannot use the other.</p>
-</div>
-<div class="section" id="a-scatter-plot">
+</section>
+<section id="a-scatter-plot">
 <h2>A scatter plot<a class="headerlink" href="#a-scatter-plot" title="Permalink to this headline">#</a></h2>
 <p>A scatter plot is a data visualisation that makes use of dots to represent the values of two numerical variables. To create a scatterplot, you need to use the method <code class="docutils literal notranslate"><span class="pre">scatter()</span></code> in the Axes Class. Like <code class="docutils literal notranslate"><span class="pre">plot()</span></code> and <code class="docutils literal notranslate"><span class="pre">bar()</span></code>, the <code class="docutils literal notranslate"><span class="pre">scatter()</span></code> method minimally demands two parameters: the values to be shown on the X-axis and the values that need to be plotted on the Y-axis. The sizes of the dots can be specified in the <code class="docutils literal notranslate"><span class="pre">s</span></code> parameter.</p>
 <div class="cell docutils container">
@@ -979,9 +965,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="seaborn">
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="seaborn">
 <h1>Seaborn<a class="headerlink" href="#seaborn" title="Permalink to this headline">#</a></h1>
 <p>As you noticed, the code that is needed to create a visualisation in matplotlib can quickly become complicated, especially if you want to work with different colours and with legends.</p>
 <p>The whole process of working with colours and legends can be simplified enormously if we replace some of the methods from matplotlib with methods from the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> library. This latter visualisation library may be viewed as as extention and as a simplification of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. According to its [documentation]
@@ -996,7 +982,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="section" id="id1">
+<section id="id1">
 <h2>A scatter plot<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Scatter plots can be created using the <code class="docutils literal notranslate"><span class="pre">scatterplot()</span></code> method. The <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter needs to refer to <code class="docutils literal notranslate"><span class="pre">pandas</span></code> data frame containing the dataset you want to visualise. The parameters <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> specify the variables (i.e. the columns) from this dataset that should be displayed on teh X-axis and the Y-axis, respectively.</p>
 <p>You can specify a fixed colour for the points using the <code class="docutils literal notranslate"><span class="pre">color</span></code> parameter, and the size of the points can be set using the <code class="docutils literal notranslate"><span class="pre">s</span></code> parameter.</p>
@@ -1042,8 +1028,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="a-bar-plot">
+</section>
+<section id="a-bar-plot">
 <h2>A bar plot<a class="headerlink" href="#a-bar-plot" title="Permalink to this headline">#</a></h2>
 <p>Bar plots can be created using the <code class="docutils literal notranslate"><span class="pre">barplot()</span></code> method. As is the case for the <code class="docutils literal notranslate"><span class="pre">scatterplot()</span></code> method, <code class="docutils literal notranslate"><span class="pre">barplot()</span></code> takes a <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter which need to refer to a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe, together with an <code class="docutils literal notranslate"><span class="pre">x</span></code> and a <code class="docutils literal notranslate"><span class="pre">y</span></code> parameter. The former parameter specifies the values to be shown on the X-axis, and the latter parameter specifies the height iof the bars that are drawn. The <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter can be used to vary the colours of the bars. If this parameter refers to a categorical variable, each unique value for this variable will be assigned a different colour. To make sure that the bars do not overlap, you can set the value of the <code class="docutils literal notranslate"><span class="pre">dodge</span></code> parameter to ‘False’.</p>
 <div class="cell docutils container">
@@ -1058,8 +1044,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="a-line-plot">
+</section>
+<section id="a-line-plot">
 <h2>A line plot<a class="headerlink" href="#a-line-plot" title="Permalink to this headline">#</a></h2>
 <p>To create a line plot, use the <code class="docutils literal notranslate"><span class="pre">lineplot()</span></code> method. The colour of the line can be changed using the <code class="docutils literal notranslate"><span class="pre">color</span></code> parameter.</p>
 <div class="cell docutils container">
@@ -1070,8 +1056,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="a-count-plot">
+</section>
+<section id="a-count-plot">
 <h2>A count plot<a class="headerlink" href="#a-count-plot" title="Permalink to this headline">#</a></h2>
 <p>You can see that, using seaborn, you can create fairly advanced plots with only a few lines of code.</p>
 <p>If you want to see the number of items for each of the categories that have been assigned in the <code class="docutils literal notranslate"><span class="pre">class</span></code> column, for instance, you can work with the <code class="docutils literal notranslate"><span class="pre">countplot()</span></code> method, as follows.</p>
@@ -1082,8 +1068,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="a-boxplot">
+</section>
+<section id="a-boxplot">
 <h2>A boxplot<a class="headerlink" href="#a-boxplot" title="Permalink to this headline">#</a></h2>
 <p>With seaborn, we can also create many other types of visualisations. A boxplot, for instance, is a diagram which visualises the minimum, the maximum, the median and the first and third quartiles. It can be created using the <code class="docutils literal notranslate"><span class="pre">boxplot()</span></code> method.</p>
 <div class="cell docutils container">
@@ -1099,8 +1085,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="a-heatmap">
+</section>
+<section id="a-heatmap">
 <h2>A heatmap<a class="headerlink" href="#a-heatmap" title="Permalink to this headline">#</a></h2>
 <p>In seaborn, a heatmap clarifying the correlations among the variables in the data set can be created using only two lines of code. The heapmap below suggests that there is moderate correlation between variables ‘B’ and ‘D’.</p>
 <div class="cell docutils container">
@@ -1114,8 +1100,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="density-plot">
+</section>
+<section id="density-plot">
 <h2>Density plot<a class="headerlink" href="#density-plot" title="Permalink to this headline">#</a></h2>
 <p>To visualise density regions, you can work with <code class="docutils literal notranslate"><span class="pre">kdeplot()</span></code>.</p>
 <div class="cell docutils container">
@@ -1126,15 +1112,15 @@ title="Print to PDF"
 </div>
 </div>
 <p>Many other types are diagrams can be created. For more information, visit the <a class="reference external" href="https://seaborn.pydata.org/examples/index.html">gallery</a> or the <a class="reference external" href="https://seaborn.pydata.org/tutorial.html">tutorials</a> on the seaborn website.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
-<div class="section" id="exercise-12-1">
+<section id="exercise-12-1">
 <h2>Exercise 12.1<a class="headerlink" href="#exercise-12-1" title="Permalink to this headline">#</a></h2>
 <p>In exercise 11.3, you created a CSV file named ‘prices_of_coffee_over_time.csv’, containing data about the average price of a pound of coffee on a range of dates. Use this CSV file to create a line chart which visualises the development of these prices over time.</p>
-</div>
-<div class="section" id="exercise-12-2">
+</section>
+<section id="exercise-12-2">
 <h2>Exercise 12.2<a class="headerlink" href="#exercise-12-2" title="Permalink to this headline">#</a></h2>
 <p>Download the following data set:</p>
 <p><a class="reference external" href="https://edu.nl/bcm4x">https://edu.nl/bcm4x</a></p>
@@ -1165,8 +1151,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-12-3">
+</section>
+<section id="exercise-12-3">
 <h2>Exercise 12.3<a class="headerlink" href="#exercise-12-3" title="Permalink to this headline">#</a></h2>
 <p>Use the CSV file that you have downloaded for exercise in 12.2 to create a scatter plot. The X-axis must visualise the values in the column ‘self-reported_health’, and the Y-axis must show the ‘employment_rate’. The size of the points must represent the ‘educational_attainment’ and the colour of the points ust indicate the values collected for ‘air_pollution’.</p>
 <p>Apply the following specifications:</p>
@@ -1189,8 +1175,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-12-4">
+</section>
+<section id="exercise-12-4">
 <h2>Exercise 12.4<a class="headerlink" href="#exercise-12-4" title="Permalink to this headline">#</a></h2>
 <p>PISA is the OECD’s <a class="reference external" href="https://www.oecd.org/pisa/">Programme for International Student Assessment</a>. This programme evaluates educational systems globally by measuring the performance of 15 year-old-children in mathematics, science and reading. The latest study is from 2018.</p>
 <p>The CSV file ‘<a class="reference external" href="https://edu.nl/p97ma">pisa.csv</a>’ contains all the scores measured for mathematics and reading in between 2000 and 2018.</p>
@@ -1245,8 +1231,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-12-5">
+</section>
+<section id="exercise-12-5">
 <h2>Exercise 12.5<a class="headerlink" href="#exercise-12-5" title="Permalink to this headline">#</a></h2>
 <p>Download the CSV file ‘nobel.csv’: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a>. If you have done exercise 11.1 of this tutorial, you have downloaded this file already. Visualise the data in this data set in the followng ways.</p>
 <ul class="simple">
@@ -1323,15 +1309,15 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "cdsleiden/python-tutorial",
-            ref: "gh-pages",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

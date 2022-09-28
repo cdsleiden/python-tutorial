@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>10. Data acquisition &#8212; Python Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,10 +35,13 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -318,7 +322,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/gh-pages?urlpath=tree/docs/notebooks/10 Data_acquisition.ipynb"
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/10 Data_acquisition.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -332,24 +336,6 @@ title="Launch on Binder"
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
 
       </li>
       
@@ -623,12 +609,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="data-acquisition">
+  <section class="tex2jax_ignore mathjax_ignore" id="data-acquisition">
 <h1>10. Data acquisition<a class="headerlink" href="#data-acquisition" title="Permalink to this headline">#</a></h1>
 <p>Data science projects typically start with the acquisition of data. In many cases, such data sets consist of secondary data made available by commercial or non-commercial organisations. This part of the tutorial explains how you can obtain such online data sets.</p>
 <p>In this tutorial, we distinguish three methods of data acquisition: downloading data files, accessing data through APIs and webscraping.
 You usually choose one of these methods to get your data based on what the data provider offers.</p>
-<div class="section" id="direct-downloads">
+<section id="direct-downloads">
 <h2>Direct downloads<a class="headerlink" href="#direct-downloads" title="Permalink to this headline">#</a></h2>
 <p>If the resources that you are interested in are available directly via the web (i.e. via HTTP or HTTPS), you can download these files by making use of the <a class="reference external" href="https://requests.readthedocs.io/"><code class="docutils literal notranslate"><span class="pre">requests</span></code></a> library.
 As is the case for all libraries, the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library needs to be imported before you can use it.</p>
@@ -686,15 +672,15 @@ The status code 200 indicates that the request was successful and the infamous s
 </div>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">if</span></code> keyword in the code above does not explicitly test whether the response code is 200. The Response object, which is created when you use the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method from requests, automatically returns <code class="docutils literal notranslate"><span class="pre">True</span></code> when the status code is 200.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">requests</span></code> library can also be used to retrieve data from an API.</p>
-</div>
-<div class="section" id="acquiring-data-via-apis">
+</section>
+<section id="acquiring-data-via-apis">
 <h2>Acquiring data via APIs<a class="headerlink" href="#acquiring-data-via-apis" title="Permalink to this headline">#</a></h2>
 <p>Organisations which aim to make their data available for reuse often do this through an Application Programming Interface (API).
 An API, simply put, is the interface through which (online) services and applications provide access to their information and functionalities.</p>
 <p>It enables organisations to share some of the data that they have in a strucured format, so that these other external parties can make use of these data in new applications.</p>
 <p>The communication between the sender and the recipient of such requests needs to take place according to a specific protocol; the requests need to be formulated according to certain rules. Many APIs allow accessing selections of data collections, for example.</p>
 <p>For many APIs, you need to create an access key before you can send requests. This is the case, for instance, for the Twitter API.</p>
-<div class="section" id="example-wikipedia-search-api">
+<section id="example-wikipedia-search-api">
 <h3>Example: Wikipedia search API<a class="headerlink" href="#example-wikipedia-search-api" title="Permalink to this headline">#</a></h3>
 <p>There are also many APIs which are fully open, however, such as the Wikipedia API. You can send requests to this API without having to provide an access key. The endpoint of this API is available at <a class="reference external" href="https://en.wikipedia.org/w/api.php">https://en.wikipedia.org/w/api.php</a>.</p>
 <p>You can use this API to search for Wikipedia articles containing a given search term. You can work with the following parameters:</p>
@@ -738,9 +724,9 @@ An API, simply put, is the interface through which (online) services and applica
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="webscraping">
+</section>
+</section>
+<section id="webscraping">
 <h2>Webscraping<a class="headerlink" href="#webscraping" title="Permalink to this headline">#</a></h2>
 <p>When a website does not offer access to its structured data via a well-defined API, it may be an option to acquire the data that can be viewed on a site by making use of web scraping. It is a process in which a computer program tries to process the contents of given webpage, and to extract the data values that are needed. The aim of such an application is generally to copy information on a web page and to paste it into a local database.</p>
 <p>To get the most out of webscraping, you need to have a basic understanding of HTML. Many <a class="reference external" href="https://bookandbyte.universiteitleiden.nl/DMT/PDF/HTML.pdf">basic introductions</a> can be found on the web. Web scraping should be used with caution, because it may be not be allowed to download large quantities of data from a specific website. In this tutorial we will only look at extracting information from single pages.</p>
@@ -808,15 +794,15 @@ An API, simply put, is the interface through which (online) services and applica
 </div>
 <p>Once you have created a list of URLs using the method outlined above, you can also download all the texts that were found, using the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method from <code class="docutils literal notranslate"><span class="pre">requests</span></code> library.</p>
 <p>As you can see, web scraping can easily become rather difficult. You need to inspect the structure of the HTML source quite carefully, and you often need to work with fairly complicated code to extract only the values that you need.</p>
-<div class="section" id="advanced-scraping-scrapy">
+<section id="advanced-scraping-scrapy">
 <h3>Advanced scraping: Scrapy<a class="headerlink" href="#advanced-scraping-scrapy" title="Permalink to this headline">#</a></h3>
 <p>This tutorial has only touched the surface of web scraping. To get specific data from webpages or APIs, you will need to dig into the data that you get and probably learn more about the data formats. A more advanced framework (or toolkit) for webscraping with Python is <a class="reference external" href="https://scrapy.org">Scrapy</a>. This framework simlified the process of building a scraper/crawler considerably by providing basic functionalities out of the box. Although Scrapy does not understand what parts of webpages are of interest to you, it does many things for you, such as making sure you don’t send too many requests at the same time or retrying requests that fail. Feel free to look at the <a class="reference external" href="https://docs.scrapy.org/en/latest/intro/tutorial.html">Scrapy tutorial</a> if you want to experiment with this library.</p>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
-<div class="section" id="exercise-10-1">
+<section id="exercise-10-1">
 <h2>Exercise 10.1.<a class="headerlink" href="#exercise-10-1" title="Permalink to this headline">#</a></h2>
 <p>The list below contains a number of URLs. They are the web addresses of texts created for the <a class="reference external" href="https://www.gutenberg.org">Project Gutenberg</a> website.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;https://www.gutenberg.org/files/580/580-0.txt&#39;</span> <span class="p">,</span>
@@ -855,8 +841,8 @@ The basename in a URL can be extracted using the <a class="reference external" h
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-10-2">
+</section>
+<section id="exercise-10-2">
 <h2>Exercise 10.2.<a class="headerlink" href="#exercise-10-2" title="Permalink to this headline">#</a></h2>
 <p>Write Python code which can download the titles and the URLs of Wikipedia articles whose titles contain the word ‘Dutch’. Your code needs to display the first 30 results only.</p>
 <p><em>Hint: the tutorial covers the Wikipedia API.</em></p>
@@ -871,8 +857,8 @@ The basename in a URL can be extracted using the <a class="reference external" h
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-10-3">
+</section>
+<section id="exercise-10-3">
 <h2>Exercise 10.3.<a class="headerlink" href="#exercise-10-3" title="Permalink to this headline">#</a></h2>
 <p>Write an application in Python that extracts all the publications that have been added to a specific ORCID account, using the ORCID API.</p>
 <p>Information about individual ORCID accounts can be obtained by appending their ID to the base URL <a class="reference external" href="https://pub.orcid.org/v2.0/">https://pub.orcid.org/v2.0/</a>. The ORCID API returns data in XML by default. In the XML, the list of publications can be found using the XPath <code class="docutils literal notranslate"><span class="pre">r:record/a:activities-summary/a:works/a:group</span></code> (using the namespace declarations given below).</p>
@@ -916,8 +902,8 @@ The basename in a URL can be extracted using the <a class="reference external" h
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-10-4">
+</section>
+<section id="exercise-10-4">
 <h2>Exercise 10.4.<a class="headerlink" href="#exercise-10-4" title="Permalink to this headline">#</a></h2>
 <p>The API developed by <a class="reference external" href="https://www.openstreetmap.org/">OpenStreetMap</a> can be used, among other things, to find the precise geographic coordinates of a specific location. The base URL of this API is <a class="reference external" href="https://nominatim.openstreetmap.org/search">https://nominatim.openstreetmap.org/search</a>. Following the <code class="docutils literal notranslate"><span class="pre">q</span></code> parameter, you need to supply a string describing the locations whose latitude and longitude you want to find. As values for the <code class="docutils literal notranslate"><span class="pre">format</span></code> parameter, you can use <code class="docutils literal notranslate"><span class="pre">xml</span></code> for XML-formatted data or <code class="docutils literal notranslate"><span class="pre">json</span></code> for JSON-formatted data. Use this API to find the longitude and the latitude of the addresses in the following list:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span> <span class="p">,</span>
@@ -958,8 +944,8 @@ The basename in a URL can be extracted using the <a class="reference external" h
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-10-5">
+</section>
+<section id="exercise-10-5">
 <h2>Exercise 10.5<a class="headerlink" href="#exercise-10-5" title="Permalink to this headline">#</a></h2>
 <p>The webpage below offers access to the complete work of the author H.P. Lovecraft.</p>
 <p><a class="reference external" href="http://www.hplovecraft.com/writings/texts/">http://www.hplovecraft.com/writings/texts/</a></p>
@@ -975,13 +961,13 @@ The basename in a URL can be extracted using the <a class="reference external" h
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-10-6">
+</section>
+<section id="exercise-10-6">
 <h2>Exercise 10.6<a class="headerlink" href="#exercise-10-6" title="Permalink to this headline">#</a></h2>
 <p>Using <code class="docutils literal notranslate"><span class="pre">requests</span></code> and <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>, create a list of all the countries mentioned on <a class="reference external" href="https://www.scrapethissite.com/pages/simple/">https://www.scrapethissite.com/pages/simple/</a>.</p>
 <p>Also collect data about the capital, the population and the area of all of these countries.</p>
-</div>
-<div class="section" id="exercise-10-7">
+</section>
+<section id="exercise-10-7">
 <h2>Exercise 10.7<a class="headerlink" href="#exercise-10-7" title="Permalink to this headline">#</a></h2>
 <p>Download all the images shown on the following page: <a class="reference external" href="https://www.bbc.com/news/in-pictures-61014501">https://www.bbc.com/news/in-pictures-61014501</a></p>
 <p>You can follow these steps:</p>
@@ -992,15 +978,15 @@ The basename in a URL can be extracted using the <a class="reference external" h
 <li><p>The <a class="reference external" href="http://bbc.com">bbc.com</a> website uses images as part of the user interface. These images all have the word ‘line’ in their filenames. Try to exclude these images whose file names contain the word ‘line’.</p></li>
 <li><p>Download all the images that you found in this way, using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library. In the <code class="docutils literal notranslate"><span class="pre">Response</span></code> object that is created following a succesful download, you need to work with the <code class="docutils literal notranslate"><span class="pre">content</span></code> property to obtain the actual file.  Save all these images on your computer, using <code class="docutils literal notranslate"><span class="pre">open()</span></code> and <code class="docutils literal notranslate"><span class="pre">write()</span></code>. In the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function, use the code ‘wb’ as a second parameter (instead of only ‘w’) to make sure that the contents are saved as bytes.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "cdsleiden/python-tutorial",
-            ref: "gh-pages",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

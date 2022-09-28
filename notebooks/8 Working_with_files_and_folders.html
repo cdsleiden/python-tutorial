@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>8. Working with files and folders &#8212; Python Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,10 +35,13 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -318,7 +322,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/gh-pages?urlpath=tree/docs/notebooks/8 Working_with_files_and_folders.ipynb"
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/8 Working_with_files_and_folders.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -332,24 +336,6 @@ title="Launch on Binder"
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
 
       </li>
       
@@ -555,9 +541,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="working-with-files-and-folders">
+  <section class="tex2jax_ignore mathjax_ignore" id="working-with-files-and-folders">
 <h1>8. Working with files and folders<a class="headerlink" href="#working-with-files-and-folders" title="Permalink to this headline">#</a></h1>
-<div class="section" id="reading-a-file">
+<section id="reading-a-file">
 <h2>Reading a file<a class="headerlink" href="#reading-a-file" title="Permalink to this headline">#</a></h2>
 <p>If the data that you need to work with in a reseaech project is saved as a file on your computer, you can write a program to read this file and to make its contents available within the context of your code.</p>
 <p>In Python, files can be read using the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function. The result of this function is a new object which is called a file handler (or, more specifically, a <code class="docutils literal notranslate"><span class="pre">TextIOWrapper</span></code> object). Simply put, a file handler is an object which establishes a connection to the text file on your disk. You are free to give this file handler object any name you like.</p>
@@ -604,8 +590,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="writing-to-a-file">
+</section>
+<section id="writing-to-a-file">
 <h2>Writing to a file<a class="headerlink" href="#writing-to-a-file" title="Permalink to this headline">#</a></h2>
 <p>When you run a Python program using the Command Prompt, the full output will normally be printed on the Command Prompt as well. The output of code created in a Jupyter notebook will normally be shown directly underneath the code cell.</p>
 <p>When the program has many lines to print, it can be very difficult to read the output. In such cases, it can useful to create a new text file which will receive all the output. The results of the program can then be inspected by opening this new file in a text editor.</p>
@@ -622,8 +608,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="reading-the-contents-of-a-folder">
+</section>
+<section id="reading-the-contents-of-a-folder">
 <h2>Reading the contents of a folder<a class="headerlink" href="#reading-the-contents-of-a-folder" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">open()</span></code> function can be used, as discussed, to read individual files. It is also possible to read the contents of folders with multiple files. For this purpose, you can make use of the <code class="docutils literal notranslate"><span class="pre">os</span></code> library . The two letters in the name of this library stand for ‘operating system’. The library includes various functions that can help you to work with files and folders. One useful method is <code class="docutils literal notranslate"><span class="pre">listdir()</span></code>, which, expectedly, enables you to list all the files in a given directory.</p>
 <p>To make use of <code class="docutils literal notranslate"><span class="pre">os</span></code>, this library needs to be imported first.</p>
@@ -655,15 +641,15 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
-<div class="section" id="exercise-8-1">
+<section id="exercise-8-1">
 <h2>Exercise 8.1.<a class="headerlink" href="#exercise-8-1" title="Permalink to this headline">#</a></h2>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">listdir()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">os</span></code> library, write code which can list all the files in a given folder on your own computer.</p>
-</div>
-<div class="section" id="exercise-8-2">
+</section>
+<section id="exercise-8-2">
 <h2>Exercise 8.2.<a class="headerlink" href="#exercise-8-2" title="Permalink to this headline">#</a></h2>
 <p>Download the following file:</p>
 <p><a class="reference external" href="https://edu.nl/ggwtf">https://edu.nl/ggwtf</a></p>
@@ -688,8 +674,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-8-3">
+</section>
+<section id="exercise-8-3">
 <h2>Exercise 8.3<a class="headerlink" href="#exercise-8-3" title="Permalink to this headline">#</a></h2>
 <p>Create a new file named ‘data.txt’, which gives information about the following aspects of this poem you have downloaded for exercise 8.2:</p>
 <ul class="simple">
@@ -699,15 +685,15 @@ title="Print to PDF"
 <li><p>The longest line of the sonnet (i.e. the line with the highest number of characters)</p></li>
 </ul>
 <p>The average number of characters per line can be calculated by dividing the total number of characters by the number of lines.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "cdsleiden/python-tutorial",
-            ref: "gh-pages",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
