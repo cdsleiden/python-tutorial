@@ -793,17 +793,8 @@ title="Print to PDF"
 <p>The situation becomes more complicated when you want to combine strings and numbers. This can be the case when you want to print a longer sentence which includes the results of a calculation based on numeric variables you created earlier. In such a composite sentence the integers in this sentence need to be converted into strings first, via the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function. It may be accomplished as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;string1&#39;</span> <span class="o">+</span> <span class="s1">&#39;string2&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
-
-
 
 <span class="nb">print</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; plus &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="p">)</span> <span class="p">)</span>
 
@@ -860,11 +851,6 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nr_weeks</span> <span class="o">=</span> <span class="s2">&quot;4&quot;</span>
 <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Number of days: &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="n">nr_weeks</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of days: 4444444
 </pre></div>
 </div>
 </div>
