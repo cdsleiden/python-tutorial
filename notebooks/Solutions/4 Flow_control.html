@@ -502,8 +502,8 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nr_weeks</span> <span class="o">=</span> <span class="mi">12</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nr_weeks</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;Week </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="p">)</span>
+<span class="k">for</span> <span class="n">week_number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nr_weeks</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;Week </span><span class="si">{</span><span class="n">week_number</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -516,13 +516,14 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hour</span> <span class="o">=</span> <span class="mi">19</span>
 
-<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;It is now </span><span class="si">{</span><span class="n">hour</span><span class="si">}</span><span class="s2"> </span><span class="se">\&#39;</span><span class="s2">o clock&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;It is now </span><span class="si">{</span><span class="n">hour</span><span class="si">}</span><span class="s2"> o&#39;clock&quot;</span> <span class="p">)</span>
 
-<span class="k">if</span> <span class="mi">6</span> <span class="o">&lt;</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+<span class="c1"># You can check a variable against two values at once</span>
+<span class="k">if</span> <span class="mi">6</span> <span class="o">&lt;=</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good morning!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="mi">12</span> <span class="o">&lt;</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">17</span><span class="p">:</span>
+<span class="k">elif</span> <span class="mi">12</span> <span class="o">&lt;=</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">17</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good afternoon!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="mi">17</span> <span class="o">&lt;</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">23</span><span class="p">:</span>
+<span class="k">elif</span> <span class="mi">17</span> <span class="o">&lt;=</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">23</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good evening!&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good night!&quot;</span><span class="p">)</span>
@@ -541,9 +542,10 @@ title="Print to PDF"
 Note that it is possible to combine two different Boolean expressions using the word <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;Please enter a year: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We ask the user for a year and convert it to a number</span>
+<span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;Please enter a year: &quot;</span><span class="p">)</span> <span class="p">)</span>
 
-
+<span class="c1"># Figure out which century the year is in</span>
 <span class="k">if</span> <span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">1500</span> <span class="ow">and</span> <span class="n">year</span> <span class="o">&lt;</span> <span class="mi">1600</span><span class="p">:</span>
     <span class="n">century</span> <span class="o">=</span> <span class="s2">&quot;the sixteenth century&quot;</span>
 <span class="k">elif</span> <span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">1600</span> <span class="ow">and</span> <span class="n">year</span> <span class="o">&lt;</span> <span class="mi">1700</span><span class="p">:</span>
@@ -552,10 +554,12 @@ Note that it is possible to combine two different Boolean expressions using the 
     <span class="n">century</span> <span class="o">=</span> <span class="s2">&quot;the eighteenth century&quot;</span>
 <span class="k">elif</span> <span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">1800</span> <span class="ow">and</span> <span class="n">year</span> <span class="o">&lt;</span> <span class="mi">1900</span><span class="p">:</span>
     <span class="n">century</span> <span class="o">=</span> <span class="s2">&quot;the nineteenth century&quot;</span>
-<span class="k">else</span><span class="p">:</span>
+<span class="k">elif</span> <span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">1900</span> <span class="ow">and</span> <span class="n">year</span> <span class="o">&lt;</span> <span class="mi">2000</span><span class="p">:</span>
     <span class="n">century</span> <span class="o">=</span> <span class="s2">&quot;the twentienth century&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">century</span> <span class="o">=</span> <span class="s2">&quot;the twenty-first century&quot;</span>
     
-    
+<span class="c1"># Answer in a sentence    </span>
 <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;The year </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> is in </span><span class="si">{</span><span class="n">century</span><span class="si">}</span><span class="s2">.&quot;</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -570,22 +574,22 @@ Note that it is possible to combine two different Boolean expressions using the 
 <p>When the user enters a value which is too low or too high, this information is communicated to the user via a print statement. To test whether the number that is guesses is correct, you can work with the equality (<code class="docutils literal notranslate"><span class="pre">==</span></code>) and the inequality (<code class="docutils literal notranslate"><span class="pre">!=</span></code>) operators.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
 
 <span class="n">max_number</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">max_number</span><span class="p">)</span>
+<span class="n">number_to_guess</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">max_number</span><span class="p">)</span>
 
 <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;Guess a number in between 1 and </span><span class="si">{</span><span class="n">max_number</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span> <span class="p">)</span>
 
-<span class="k">while</span> <span class="n">guess</span> <span class="o">!=</span> <span class="n">number</span><span class="p">:</span>
+<span class="k">while</span> <span class="n">guess</span> <span class="o">!=</span> <span class="n">number_to_guess</span><span class="p">:</span>
 
-    <span class="k">if</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">number</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">number_to_guess</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lower!&quot;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number_to_guess</span><span class="p">:</span> <span class="c1"># this could be &#39;else:&#39;</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Higher!&quot;</span><span class="p">)</span>
     <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Guess again ... </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;The correct number is indeed </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">.&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;The correct number is indeed </span><span class="si">{</span><span class="n">number_to_guess</span><span class="si">}</span><span class="s2">.&quot;</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
