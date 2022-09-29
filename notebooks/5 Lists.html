@@ -459,12 +459,12 @@ title="Print to PDF"
      Presence in a list
     </a>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counting-items">
+     Counting items
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#counting-items">
-   Counting items
-  </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises">
@@ -493,7 +493,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-5-5">
-     Exercise 5.5
+     Exercise 5.5.
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -557,12 +557,12 @@ title="Print to PDF"
      Presence in a list
     </a>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counting-items">
+     Counting items
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#counting-items">
-   Counting items
-  </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises">
@@ -591,7 +591,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-5-5">
-     Exercise 5.5
+     Exercise 5.5.
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -613,31 +613,48 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="lists">
 <h1>5. Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h1>
-<p>The variables that were discussed in the previous tutorials were all assigned single values, such as strings, integers or floating point numbers. Alternatively, it is also possible to work with variables that contain collections of values.</p>
-<p>One example of a variable type that can hold multiple values is the list. Lists can be created by surrounding all the values that you want to gather by square brackets. The individual values within such lists need to be separated by commas. The statement below creates a list containing the five days of the working week:</p>
+<p>The variables that were discussed in the previous tutorials were all assigned single values, such as strings, integers or floating point numbers.
+It is also possible to work with variables that contain collections of values.</p>
+<p>One example of a variable type that can hold multiple values is the <em>list</em>.
+Lists can be created by surrounding all the values that you want to gather by square brackets. The individual values within such lists need to be separated by commas.</p>
+<p>The statement below creates a list containing the five days of the working week:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">week</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;Monday&quot;</span> <span class="p">,</span> <span class="s2">&quot;Tuesday&quot;</span> <span class="p">,</span> <span class="s2">&quot;Wednesday&quot;</span> <span class="p">,</span> <span class="s2">&quot;Thursday&quot;</span> <span class="p">,</span> <span class="s2">&quot;Friday&quot;</span> <span class="p">]</span>  
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">week</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;Monday&quot;</span><span class="p">,</span> <span class="s2">&quot;Tuesday&quot;</span><span class="p">,</span> <span class="s2">&quot;Wednesday&quot;</span><span class="p">,</span> <span class="s2">&quot;Thursday&quot;</span><span class="p">,</span> <span class="s2">&quot;Friday&quot;</span> <span class="p">]</span>  
 </pre></div>
 </div>
 </div>
 </div>
-<p>The elements in the list above are all strings. The elements do not all have to be of the same type, however. It is also allowed to mix strings with integers, for instance.</p>
+<p>The we may call the things that are in the list <em>elements</em> or <em>items</em>.
+The elements in <code class="docutils literal notranslate"><span class="pre">week</span></code> are all strings. The elements do not all have to be of the same type, however. It is allowed to mix strings with integers, for instance.</p>
 <section id="accessing-individual-items">
 <h2>Accessing individual items<a class="headerlink" href="#accessing-individual-items" title="Permalink to this headline">#</a></h2>
-<p>When lists are created in this manner, the items in this list are given a certain order. Python numbers the elements in the array automatically, following the order in which these values given. These numbers will function as indices that can be used to access the individual items in the array. Bear in mind that Python starts counting at 0. In the example above, the element “Monday” is assigned the index “0”, and the element “Thursday” will have the index “3”. As is the case for strings and their individual characters, the separate elements in the list can be accessed using the bracket operator.</p>
+<p>When lists are created in this manner, the items in this list are given a certain order.
+Python numbers the elements in the list automatically, following the order in which these values were given. These numbers will function as <em>indices</em> that can be used to access the individual items in the list. Bear in mind that Python starts counting at 0.</p>
+<p>In the example above, the element <code class="docutils literal notranslate"><span class="pre">&quot;Monday&quot;</span></code> is assigned the index 0, and the element <code class="docutils literal notranslate"><span class="pre">&quot;Thursday&quot;</span></code> will have the index 3. As is the case for strings and their individual characters, the separate elements in the list can be accessed using the square bracket notation.</p>
 <p>Another similarity between lists and strings is that the lengths of both types of variables can be found using the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function. In the case of lists, <code class="docutils literal notranslate"><span class="pre">len()</span></code> returns the number of elements in the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">week</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;Monday&quot;</span> <span class="p">,</span> <span class="s2">&quot;Tuesday&quot;</span> <span class="p">,</span> <span class="s2">&quot;Wednesday&quot;</span> <span class="p">,</span> <span class="s2">&quot;Thursday&quot;</span> <span class="p">,</span> <span class="s2">&quot;Friday&quot;</span> <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Same as above:</span>
+<span class="c1"># week = [ &quot;Monday&quot; , &quot;Tuesday&quot; , &quot;Wednesday&quot; , &quot;Thursday&quot; , &quot;Friday&quot; ]</span>
 
 <span class="nb">print</span><span class="p">(</span> <span class="n">week</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">)</span>
 <span class="c1"># This prints &quot;Thursday&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span> <span class="n">week</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">week</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
 <span class="c1"># This prints &quot;Friday&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">week</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">week</span><span class="p">)</span> <span class="p">)</span>
 <span class="c1"># This prints 5</span>
 </pre></div>
 </div>
@@ -646,19 +663,31 @@ title="Print to PDF"
 </section>
 <section id="list-slicing">
 <h2>List slicing<a class="headerlink" href="#list-slicing" title="Permalink to this headline">#</a></h2>
-<p>Like strings, lists can also be sliced. To do this, you need to type in a set of square brackets directly following the name of the list. Within these brackets, you need to give a pair of indices, specifying the first and the last item you want to retrieve. These two numbers need to be separated by a colon. The item identified via the index that follows the column is not included in the selection. If you state that the selection should stop at index 3, for instance, the last item in the selection will be the item with index 2.</p>
-<p>If you leave out the first number, Python will simply start at the beginning of the list. If you omit the second number, the selection will continue until the very last item in the list.</p>
+<p>Like strings, lists can also be sliced. <em>Slicing</em> means selecting a part of a list (or string).
+To do this, you need to type in a set of square brackets directly following the name of the list. Within these brackets, you need to give a pair of indices, specifying the first and the last item you want to retrieve. These two numbers need to be separated by a colon.
+The item whose index is to the right of the colon is not included in the selection. If you state that the selection should stop at index 3, for instance, the last item in the selection will be the item with index 2.</p>
+<p>If you leave out the first number, Python will start at the beginning of the list. If you omit the second number, the selection will continue until the very last item in the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">week_part</span> <span class="o">=</span> <span class="n">week</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 <span class="c1">## Selects Tuesday&#39; and &#39;Wednesday&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">week_part</span><span class="p">)</span>
-
-<span class="n">week_part</span> <span class="o">=</span> <span class="n">week</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">week_part</span> <span class="o">=</span> <span class="n">week</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
 <span class="c1">## Selects &#39;Monday&#39; and &#39;Tuesday&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">week_part</span><span class="p">)</span>
-
-<span class="n">week_part</span> <span class="o">=</span> <span class="n">week</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">week_part</span> <span class="o">=</span> <span class="n">week</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
 <span class="c1">## Selects &#39;Thursday&#39;and &#39;Friday&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">week_part</span><span class="p">)</span>
 </pre></div>
@@ -668,7 +697,9 @@ title="Print to PDF"
 </section>
 <section id="adding-items-to-a-list">
 <h2>Adding items to a list<a class="headerlink" href="#adding-items-to-a-list" title="Permalink to this headline">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">append()</span></code> method can be used to add items to an existing list. Note that methods, in contrast to functions, need to be pasted onto variables using the period. See the code below for an illustration.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">append()</span></code> method can be used to add items to an existing list.
+This is a <em>method</em>, which is part of the list and therefore needs to be called in the <code class="docutils literal notranslate"><span class="pre">my_list.append(new_item)</span></code> syntax.
+Functions and methods will be discussed later in the tutorial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">week</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Saturday&quot;</span><span class="p">)</span>
@@ -684,10 +715,10 @@ title="Print to PDF"
 </section>
 <section id="sorting">
 <h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">#</a></h2>
-<p>Finally, the items in a list can be arranged alphabetically or numerically by making use of the <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> function.</p>
+<p>Finally, the items in a list can be arranged alphabetically or numerically using the <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unsorted_list</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">5</span> <span class="p">,</span> <span class="mi">8</span> <span class="p">,</span> <span class="mi">2</span> <span class="p">,</span> <span class="mi">9</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">,</span> <span class="mi">8</span> <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unsorted_list</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span> <span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span> <span class="nb">sorted</span><span class="p">(</span> <span class="n">unsorted_list</span> <span class="p">)</span> <span class="p">)</span>
 
 <span class="c1">## The output is as follows:</span>
@@ -699,9 +730,15 @@ title="Print to PDF"
 </section>
 <section id="navigating-a-list">
 <h2>Navigating a list<a class="headerlink" href="#navigating-a-list" title="Permalink to this headline">#</a></h2>
-<p>To move through all the elements in a list, you can use the <code class="docutils literal notranslate"><span class="pre">for</span></code> keyword. As can be seen in the code below, <code class="docutils literal notranslate"><span class="pre">for</span></code> needs to be used in combination with <code class="docutils literal notranslate"><span class="pre">in</span></code>. After <code class="docutils literal notranslate"><span class="pre">in</span></code>, you need to mention the name of the list whose elements you want to retrieve. After <code class="docutils literal notranslate"><span class="pre">for</span></code>, you need to supply the name of a new variable.</p>
-<p>In the example below, this new variable is named ‘day’. During each cycle, the value of the variable ‘day’ will be different; it will
-consecutively be assigned the various elements in the list named ‘week’. The loop will continue as long as there are items in the list.</p>
+<p>To move through all the elements in a list, you can use the <code class="docutils literal notranslate"><span class="pre">for</span></code> keyword. We also talk about <em>iterating over a list</em>.
+We have learned in the section on iteration that <code class="docutils literal notranslate"><span class="pre">for</span></code> needs to be used in combination with <code class="docutils literal notranslate"><span class="pre">in</span></code>.
+After <code class="docutils literal notranslate"><span class="pre">for</span></code>, you first supply the name of a (new) variable that you can use to refer to the current element.
+After <code class="docutils literal notranslate"><span class="pre">in</span></code>, you give the name of the list whose elements you want to retrieve.</p>
+<p>In the example below, we print the names of the days in the week.
+We assign the current element to a new variable <code class="docutils literal notranslate"><span class="pre">day</span></code>.
+During each cycle, the value of the variable <code class="docutils literal notranslate"><span class="pre">day</span></code> will be different; it will
+consecutively be assigned the various elements in the list named <code class="docutils literal notranslate"><span class="pre">week</span></code>.
+The loop will continue as long as there are items in the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">week</span><span class="p">:</span>
@@ -713,7 +750,19 @@ consecutively be assigned the various elements in the list named ‘week’. The
 </section>
 <section id="presence-in-a-list">
 <h2>Presence in a list<a class="headerlink" href="#presence-in-a-list" title="Permalink to this headline">#</a></h2>
-<p>If you want to know whether a list contains a given item, you can work with the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator. This operator takes two parameters. To the left of <code class="docutils literal notranslate"><span class="pre">in</span></code>, you mention the item you want to search for. The second parameter must mention the list in which you want to search. Using <code class="docutils literal notranslate"><span class="pre">in</span></code>, you can create a Boolean expression, an expression which can be either true of false.</p>
+<p>If you want to know whether a list contains a given item, you use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.
+This operator takes two operands, i.e. things to operate on.
+To the left of <code class="docutils literal notranslate"><span class="pre">in</span></code>, you mention the item you want to search for.
+On the right you mention the list in which you want to search.
+Using <code class="docutils literal notranslate"><span class="pre">in</span></code>, you can create a Boolean expression, an expression which can be either true or false.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Is 2 in [1, 2, 3]? Yes, so this returns True</span>
+<span class="mi">2</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;Monday&#39;</span> <span class="ow">in</span> <span class="n">week</span><span class="p">:</span>
@@ -723,10 +772,15 @@ consecutively be assigned the various elements in the list named ‘week’. The
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="counting-items">
-<h1>Counting items<a class="headerlink" href="#counting-items" title="Permalink to this headline">#</a></h1>
-<p>You can count the number of times an item occurs in a list by making use of the <code class="docutils literal notranslate"><span class="pre">count</span></code> method. This method needs to be appended after the name of the list, using a dot. As a parameter to this method, you provide the item that you want to count. The code below gives an example.</p>
+<section id="counting-items">
+<h2>Counting items<a class="headerlink" href="#counting-items" title="Permalink to this headline">#</a></h2>
+<p>You can count the number of times an item occurs in a list by making use of the <code class="docutils literal notranslate"><span class="pre">count()</span></code> method.</p>
+<p>This method needs to be appended after the name of the list, using a dot.
+As a parameter to this method, you provide the item that you want to count.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">item_to_count</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As an example, we ask how many times the string <code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;</span></code> appears in the list of animals.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;cat&#39;</span> <span class="p">,</span> <span class="s1">&#39;dog&#39;</span> <span class="p">,</span> <span class="s1">&#39;rabbit&#39;</span> <span class="p">,</span> <span class="s1">&#39;elephant&#39;</span> <span class="p">,</span> <span class="s1">&#39;cat&#39;</span> <span class="p">,</span> <span class="s1">&#39;cat&#39;</span> <span class="p">,</span> <span class="s1">&#39;giraffe&#39;</span><span class="p">]</span>
@@ -737,6 +791,7 @@ consecutively be assigned the various elements in the list named ‘week’. The
 </div>
 </div>
 </section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
 <section id="exercise-5-1">
@@ -744,16 +799,30 @@ consecutively be assigned the various elements in the list named ‘week’. The
 <p>Create the following list:</p>
 <p><code class="docutils literal notranslate"><span class="pre">colours</span> <span class="pre">=</span> <span class="pre">['green','blue','red']</span></code></p>
 <p>Add the colours ‘orange’, ‘yellow’ to this list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colours</span> <span class="o">=</span> 
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="exercise-5-2">
 <h2>Exercise 5.2.<a class="headerlink" href="#exercise-5-2" title="Permalink to this headline">#</a></h2>
-<p>Create two lists:</p>
-<p><code class="docutils literal notranslate"><span class="pre">first</span> <span class="pre">=</span> <span class="pre">[4,</span> <span class="pre">9,</span> <span class="pre">1,</span> <span class="pre">17,</span> <span class="pre">11,</span> <span class="pre">26,</span> <span class="pre">28,</span> <span class="pre">54,</span> <span class="pre">63]</span>&#160; <span class="pre">second</span> <span class="pre">=</span> <span class="pre">[8,</span> <span class="pre">9,</span> <span class="pre">74,</span> <span class="pre">21,</span> <span class="pre">45,</span> <span class="pre">11,</span> <span class="pre">63,</span> <span class="pre">28,</span> <span class="pre">26]</span> </code></p>
-<p>Write code which can extract those numbers from the first list which are NOT in the second list.</p>
+<p>We have two lists of numbers and would like to know which numbers in the first list are not in the second list.</p>
+<p>Write code which can extract those numbers from the first list that are <strong>not</strong> in the second list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">63</span><span class="p">]</span> 
 <span class="n">second</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">26</span><span class="p">]</span>
+
+<span class="n">numbers_not_in_second</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Add the numbers from `first` that are not in `second` to `numbers_not_in_second`</span>
+
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers_not_in_second</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -762,51 +831,75 @@ consecutively be assigned the various elements in the list named ‘week’. The
 <section id="exercise-5-3">
 <h2>Exercise 5.3.<a class="headerlink" href="#exercise-5-3" title="Permalink to this headline">#</a></h2>
 <p>The list below contains the titles of first twelve plays written by William Shakespeare.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plays</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Comedy of Errors&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Henry VI, Part I&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Henry VI, Part II&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Henry VI, Part III&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Richard III&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Taming of the Shrew&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Titus Andronicus&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Romeo and Juliet&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Two Gentlemen of Verona&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Love</span><span class="se">\&#39;</span><span class="s1">s Labour</span><span class="se">\&#39;</span><span class="s1">s Lost&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Richard II&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Midsummer Night</span><span class="se">\&#39;</span><span class="s1">s Dream&#39;</span> <span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plays</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Comedy of Errors&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Henry VI, Part I&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Henry VI, Part II&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Henry VI, Part III&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Richard III&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Taming of the Shrew&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Titus Andronicus&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Romeo and Juliet&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Two Gentlemen of Verona&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Love</span><span class="se">\&#39;</span><span class="s1">s Labour</span><span class="se">\&#39;</span><span class="s1">s Lost&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Richard II&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Midsummer Night</span><span class="se">\&#39;</span><span class="s1">s Dream&#39;</span>
+<span class="p">]</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Add the following two titles to this list:</p>
 <ul class="simple">
 <li><p>Macbeth</p></li>
 <li><p>Othello</p></li>
 </ul>
-<p>Next, count the number of plays in this list and print the titles of the first and the last plays in the list, using the index of these items.
-Print the full list in alphabetical order using the ‘for’ keyword.</p>
+<p>Next, count the number of plays in this list.</p>
+<p>Print the titles of the first and the last plays in the list, using the index of these items.</p>
+<p>Print the full list in alphabetical order using the <code class="docutils literal notranslate"><span class="pre">for</span></code> keyword.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> 
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="exercise-5-4">
 <h2>Exercise 5.4.<a class="headerlink" href="#exercise-5-4" title="Permalink to this headline">#</a></h2>
-<p>Copy the code below.</p>
-<p><code class="docutils literal notranslate"><span class="pre">sites</span> <span class="pre">=</span> <span class="pre">[</span> <span class="pre">'https://www.universiteitleiden.nl'</span> <span class="pre">,</span> <span class="pre">'https://www.stanford.edu'</span> <span class="pre">,</span> <span class="pre">'https://www.uu.nl'</span> <span class="pre">,</span> <span class="pre">'http://www.ox.ac.uk'</span> <span class="pre">,</span> <span class="pre">'https://www.rug.nl'</span> <span class="pre">,</span> <span class="pre">'https://www.hu-berlin.de'</span> <span class="pre">,</span> <span class="pre">'https://www.uva.nl'</span> <span class="pre">]</span></code></p>
-<p>Write some additional code which can select the Dutch websites from this list.
-Tip: You may want to reuse some of the code developed for  exercise 3.4.</p>
+<p>We have a list of websites and are interested to find the Dutch ones.</p>
+<p>Write some code to select the Dutch websites from this list.
+Tip: You may want to reuse some of the code developed for exercise 3.4.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sites</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;https://www.universiteitleiden.nl&#39;</span> <span class="p">,</span> <span class="s1">&#39;https://www.stanford.edu&#39;</span> <span class="p">,</span> <span class="s1">&#39;https://www.uu.nl&#39;</span> <span class="p">,</span> <span class="s1">&#39;http://www.ox.ac.uk&#39;</span> <span class="p">,</span> <span class="s1">&#39;https://www.rug.nl&#39;</span> <span class="p">,</span> <span class="s1">&#39;https://www.hu-berlin.de&#39;</span> <span class="p">,</span> <span class="s1">&#39;https://www.uva.nl&#39;</span> <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">websites</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;https://www.universiteitleiden.nl&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.stanford.edu&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.uu.nl&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;http://www.ox.ac.uk&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.rug.nl&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.hu-berlin.de&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.uva.nl&#39;</span>
+<span class="p">]</span>
+
+<span class="c1"># Print the URLs that belong to Dutch institutions</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="exercise-5-5">
-<h2>Exercise 5.5<a class="headerlink" href="#exercise-5-5" title="Permalink to this headline">#</a></h2>
-<p>Define a Python list named <code class="docutils literal notranslate"><span class="pre">years</span></code>, containing the following values:</p>
-<p><code class="docutils literal notranslate"><span class="pre">years</span> <span class="pre">=</span> <span class="pre">[</span> <span class="pre">1756,</span> <span class="pre">1575,</span> <span class="pre">2002,</span> <span class="pre">1984</span> <span class="pre">,1626</span> <span class="pre">,1791,</span> <span class="pre">1714,</span> <span class="pre">1873,</span> <span class="pre">1991</span> <span class="pre">]</span></code></p>
-<p>Use the keywords <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">if</span></code> to select years that are in the 18th century.
-Note that, after <code class="docutils literal notranslate"><span class="pre">if</span></code>, you can combine multiple Boolean expressions using <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
+<h2>Exercise 5.5.<a class="headerlink" href="#exercise-5-5" title="Permalink to this headline">#</a></h2>
+<p>We have a list <code class="docutils literal notranslate"><span class="pre">years</span></code> that contains – well – years.</p>
+<p>Use the keywords <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">if</span></code> to select years from this list that are in the 18th century.
+Remember that you can combine multiple Boolean expressions using <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1756</span><span class="p">,</span> <span class="mi">1575</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="mi">1984</span> <span class="p">,</span><span class="mi">1626</span> <span class="p">,</span><span class="mi">1791</span><span class="p">,</span> <span class="mi">1714</span><span class="p">,</span> <span class="mi">1873</span><span class="p">,</span> <span class="mi">1991</span> <span class="p">]</span>
+
+<span class="c1"># Print years that are in the 18th century</span>
 </pre></div>
 </div>
 </div>
@@ -814,18 +907,37 @@ Note that, after <code class="docutils literal notranslate"><span class="pre">if
 </section>
 <section id="exercise-5-6">
 <h2>Exercise 5.6.<a class="headerlink" href="#exercise-5-6" title="Permalink to this headline">#</a></h2>
-<p>Convert the following quotation from E.M. Forster’s <em>A Room with a View</em> to a list of words, using the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method. This function can convert a string into a list, based on the spaces that occur in this string. This <code class="docutils literal notranslate"><span class="pre">split()</span></code> method must be added after the the string variable, using a dot, as follows:</p>
-<p><code class="docutils literal notranslate"><span class="pre">quote.split()</span></code></p>
-<p>Use this <code class="docutils literal notranslate"><span class="pre">split()</span></code> function to give information about the total number of words in this quote. Print the last word in the quote, and count the number of occurrences of the word “place”.</p>
-<div class="highlight-quote notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
+<p>We have a quote from E.M. Forster’s <em>A Room with a View</em> below and want to get a few statistics about it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quote</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;We cast a shadow on something wherever we stand, and it is no good </span>
 <span class="s1">moving from place to place to save things; because the shadow always follows. Choose </span>
 <span class="s1">a place where you won’t do harm - yes, choose a place where you won’t do very much </span>
 <span class="s1">harm, and stand in it for all you are worth, facing the sunshine.&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First we’d like to know the total number of words. Here we say that the words are all the strings separated by spaces.
+That means “won’t” is a word in the quote, as well as “stand,” (including the comma).
+It depends on the context of the research if this is okay, or that you need to further process the words before you count them.</p>
+<p>We can convert a string to a list of words, using the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method.
+This method can convert a string into a list, based on a character or space that occurs in this string.
+This <code class="docutils literal notranslate"><span class="pre">split()</span></code> method must be added after the the string variable, using a dot, as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quote</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">string_to_split_on</span><span class="p">)</span>
+<span class="n">quote</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="c1"># Not specifying what to split on is the same as splitting by a space, like this:</span>
+<span class="n">quote</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use this <code class="docutils literal notranslate"><span class="pre">split()</span></code> method to give information about the total number of words in this quote.</p>
+<p>Print the last word in the quote, and count the number of occurrences of the word “place”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the last word</span>
+
+
+<span class="c1"># Count the number of occurrences of &quot;place&quot; in the quote</span>
 </pre></div>
 </div>
 </div>
