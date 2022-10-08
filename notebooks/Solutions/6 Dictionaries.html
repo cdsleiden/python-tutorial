@@ -507,24 +507,43 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">isbn</span> <span class="o">=</span> <span class="p">{</span>
-<span class="mi">9780143105985</span> <span class="p">:</span> <span class="s1">&#39;White Noise&#39;</span> <span class="p">,</span>
-<span class="mi">9780241984536</span> <span class="p">:</span> <span class="s1">&#39;Libra&#39;</span> <span class="p">,</span>
-<span class="mi">9781925480665</span> <span class="p">:</span> <span class="s1">&#39;Mao II&#39;</span> <span class="p">,</span>
-<span class="mi">9781447289395</span> <span class="p">:</span> <span class="s1">&#39;Underworld&#39;</span> <span class="p">,</span>
-<span class="mi">9780743595728</span> <span class="p">:</span> <span class="s1">&#39;The Body Artist&#39;</span> <span class="p">,</span>
-<span class="mi">9781925480665</span> <span class="p">:</span> <span class="s1">&#39;Cosmopolis&#39;</span> <span class="p">,</span>
-<span class="mi">9780330524919</span> <span class="p">:</span> <span class="s1">&#39;Falling man&#39;</span> <span class="p">,</span>
-<span class="mi">9781439169971</span> <span class="p">:</span> <span class="s1">&#39;Point Omega&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the dictionary</span>
+<span class="n">books_by_isbn</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">9780143105985</span> <span class="p">:</span> <span class="s1">&#39;White Noise&#39;</span><span class="p">,</span>
+    <span class="mi">9780241984536</span> <span class="p">:</span> <span class="s1">&#39;Libra&#39;</span><span class="p">,</span>
+    <span class="mi">9781925480665</span> <span class="p">:</span> <span class="s1">&#39;Mao II&#39;</span><span class="p">,</span>
+    <span class="mi">9781447289395</span> <span class="p">:</span> <span class="s1">&#39;Underworld&#39;</span><span class="p">,</span>
+    <span class="mi">9780743595728</span> <span class="p">:</span> <span class="s1">&#39;The Body Artist&#39;</span><span class="p">,</span>
+    <span class="mi">9781925480665</span> <span class="p">:</span> <span class="s1">&#39;Cosmopolis&#39;</span><span class="p">,</span>
+    <span class="mi">9780330524919</span> <span class="p">:</span> <span class="s1">&#39;Falling man&#39;</span><span class="p">,</span>
+    <span class="mi">9781439169971</span> <span class="p">:</span> <span class="s1">&#39;Point Omega&#39;</span>
 <span class="p">}</span>
-
-<span class="n">isbn</span><span class="p">[</span><span class="mi">9781501138072</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Zero K&#39;</span>
-
-<span class="n">index</span> <span class="o">=</span> <span class="mi">9781447289395</span>
-<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The ISBN of the novel &#39;</span><span class="si">{</span><span class="n">isbn</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="si">}</span><span class="s2">&#39; is </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="p">)</span>
-
-<span class="k">for</span> <span class="n">novel</span> <span class="ow">in</span> <span class="n">isbn</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="n">isbn</span><span class="p">[</span><span class="n">novel</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; (&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">novel</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Add the novel Zero K to the dictionary. This novel has ISBN 9781501138072.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">books_by_isbn</span><span class="p">[</span><span class="mi">9781501138072</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Zero K&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Write some code which can print the title that corresponds to ISBN 9781447289395.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="mi">9781447289395</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The ISBN of the novel &#39;</span><span class="si">{</span><span class="n">books_by_isbn</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="si">}</span><span class="s2">&#39; is </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print a list of all the novels. Display both the ISBN and the title.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">isbn</span> <span class="ow">in</span> <span class="n">books_by_isbn</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">books_by_isbn</span><span class="p">[</span><span class="n">isbn</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; (&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">isbn</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -532,34 +551,31 @@ title="Print to PDF"
 </section>
 <section id="exercise-6-2">
 <h2>Exercise 6.2.<a class="headerlink" href="#exercise-6-2" title="Permalink to this headline">#</a></h2>
-<p>Using the dictionary <code class="docutils literal notranslate"><span class="pre">data</span></code> below, print the following sentence: “Louis Elsevier was a printer. He was born in 1540 in Leuven and died in 1617 in Leiden.”</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;firstName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;louis&#39;</span>
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;lastName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;elsevier&#39;</span>
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;profession&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;printer&#39;</span>
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;yob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1540</span>
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;yod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1617</span>
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;pob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leuven&#39;</span>
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;pod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leiden&#39;</span>
-</pre></div>
-</div>
+<p>Using the dictionary <code class="docutils literal notranslate"><span class="pre">person_data</span></code> below, print the following sentence: “Louis Elsevier was a printer. He was born in 1540 in Leuven and died in 1617 in Leiden.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;firstName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;louis&#39;</span>
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;lastName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;elsevier&#39;</span>
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;profession&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;printer&#39;</span>
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;yob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1540</span>
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;yod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1617</span>
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;pob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leuven&#39;</span>
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;pod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leiden&#39;</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;firstName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;louis&#39;</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;lastName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;elsevier&#39;</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;profession&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;printer&#39;</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;yob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1540</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;yod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1617</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;pob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leuven&#39;</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;pod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leiden&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We first construct the sentence, to keep the code a bit more readable.</p>
+<p>Remember that you can use <code class="docutils literal notranslate"><span class="pre">some_string.title()</span></code> to capitalise the first character.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span> <span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;firstName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;lastName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> was a </span><span class="si">{</span><span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;profession&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">. &quot;</span>
+<span class="n">sentence</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;He was born in </span><span class="si">{</span><span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;yob&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">person_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pob&#39;</span> <span class="p">,</span> <span class="s1">&#39;[Unknown]&#39;</span> <span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">sentence</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; and died in </span><span class="si">{</span><span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;yod&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">person_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pod&#39;</span> <span class="p">,</span> <span class="s1">&#39;[Unknown]&#39;</span> <span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span>
 
-<span class="n">sentence</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;firstName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;lastName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> was a </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;profession&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">. &quot;</span>
-<span class="n">sentence</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;He was born in </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;yob&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pob&#39;</span> <span class="p">,</span> <span class="s1">&#39;[Unknown]&#39;</span> <span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">sentence</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; and died in </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;yod&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pod&#39;</span> <span class="p">,</span> <span class="s1">&#39;[Unknown]&#39;</span> <span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span>
-
+<span class="c1"># Print the sentence</span>
 
 <span class="nb">print</span><span class="p">(</span> <span class="n">sentence</span> <span class="p">)</span>
 </pre></div>
@@ -569,43 +585,53 @@ title="Print to PDF"
 </section>
 <section id="exercise-6-3">
 <h2>Exercise 6.3.<a class="headerlink" href="#exercise-6-3" title="Permalink to this headline">#</a></h2>
-<p>Copy the code below in your code editor. Using the dictionary <code class="docutils literal notranslate"><span class="pre">eu</span></code>, print a sentence which gives information about the current number of countries in the EU. Add some code which can print a list of all the countries of the EU in alphabetical order. Finally, for each country, print the following sentence: “The capital of [ <em>country</em> ] is [ <em>capital</em> ].”</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">eu</span> <span class="o">=</span> <span class="p">{</span>
-<span class="s1">&#39;Italy&#39;</span><span class="p">:</span><span class="s1">&#39;Rome&#39;</span> <span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">:</span><span class="s1">&#39;Luxembourg&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Belgium&#39;</span><span class="p">:</span><span class="s1">&#39;Brussels&#39;</span> <span class="p">,</span> <span class="s1">&#39;Denmark&#39;</span><span class="p">:</span><span class="s1">&#39;Copenhagen&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Finland&#39;</span><span class="p">:</span><span class="s1">&#39;Helsinki&#39;</span> <span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">:</span><span class="s1">&#39;Paris&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Slovakia&#39;</span><span class="p">:</span><span class="s1">&#39;Bratislava&#39;</span> <span class="p">,</span> <span class="s1">&#39;Slovenia&#39;</span><span class="p">:</span><span class="s1">&#39;Ljubljana&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Germany&#39;</span><span class="p">:</span><span class="s1">&#39;Berlin&#39;</span> <span class="p">,</span> <span class="s1">&#39;Greece&#39;</span><span class="p">:</span><span class="s1">&#39;Athens&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Ireland&#39;</span><span class="p">:</span><span class="s1">&#39;Dublin&#39;</span> <span class="p">,</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">:</span><span class="s1">&#39;Amsterdam&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Portugal&#39;</span><span class="p">:</span><span class="s1">&#39;Lisbon&#39;</span> <span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">:</span><span class="s1">&#39;Madrid&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Sweden&#39;</span><span class="p">:</span><span class="s1">&#39;Stockholm&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Cyprus&#39;</span><span class="p">:</span><span class="s1">&#39;Nicosia&#39;</span> <span class="p">,</span> <span class="s1">&#39;Lithuania&#39;</span><span class="p">:</span><span class="s1">&#39;Vilnius&#39;</span> <span class="p">,</span> <span class="s1">&#39;Czech</span>
-<span class="n">Republic</span><span class="s1">&#39;:&#39;</span><span class="n">Prague</span><span class="s1">&#39; , &#39;</span><span class="n">Estonia</span><span class="s1">&#39;:&#39;</span><span class="n">Tallin</span><span class="s1">&#39; ,</span>
-<span class="s1">&#39;Hungary&#39;</span><span class="p">:</span><span class="s1">&#39;Budapest&#39;</span> <span class="p">,</span> <span class="s1">&#39;Latvia&#39;</span><span class="p">:</span><span class="s1">&#39;Riga&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Malta&#39;</span><span class="p">:</span><span class="s1">&#39;Valetta&#39;</span> <span class="p">,</span> <span class="s1">&#39;Austria&#39;</span><span class="p">:</span><span class="s1">&#39;Vienna&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Poland&#39;</span><span class="p">:</span><span class="s1">&#39;Warsaw&#39;</span> <span class="p">,</span> <span class="s1">&#39;Croatia&#39;</span><span class="p">:</span><span class="s1">&#39;Zagreb&#39;</span>
-<span class="p">,</span><span class="s1">&#39;Romania&#39;</span><span class="p">:</span><span class="s1">&#39;Bucharest&#39;</span> <span class="p">,</span> <span class="s1">&#39;Bulgaria&#39;</span><span class="p">:</span><span class="s1">&#39;Sofia&#39;</span> <span class="p">}</span>
-</pre></div>
-</div>
+<p>We have a dictionary of countries in the European Union and their capitals.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eu</span> <span class="o">=</span> <span class="p">{</span>
-<span class="s1">&#39;Italy&#39;</span><span class="p">:</span><span class="s1">&#39;Rome&#39;</span> <span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">:</span><span class="s1">&#39;Luxembourg&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">:</span><span class="s1">&#39;Brussels&#39;</span> <span class="p">,</span> <span class="s1">&#39;Denmark&#39;</span><span class="p">:</span><span class="s1">&#39;Copenhagen&#39;</span> <span class="p">,</span> <span class="s1">&#39;Finland&#39;</span><span class="p">:</span><span class="s1">&#39;Helsinki&#39;</span> <span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">:</span><span class="s1">&#39;Paris&#39;</span> <span class="p">,</span> <span class="s1">&#39;Slovakia&#39;</span><span class="p">:</span><span class="s1">&#39;Bratislava&#39;</span> <span class="p">,</span> <span class="s1">&#39;Slovenia&#39;</span><span class="p">:</span><span class="s1">&#39;Ljubljana&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span><span class="p">:</span><span class="s1">&#39;Berlin&#39;</span> <span class="p">,</span> <span class="s1">&#39;Greece&#39;</span><span class="p">:</span><span class="s1">&#39;Athens&#39;</span> <span class="p">,</span> <span class="s1">&#39;Ireland&#39;</span><span class="p">:</span><span class="s1">&#39;Dublin&#39;</span> <span class="p">,</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">:</span><span class="s1">&#39;Amsterdam&#39;</span> <span class="p">,</span> <span class="s1">&#39;Portugal&#39;</span><span class="p">:</span><span class="s1">&#39;Lisbon&#39;</span> <span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">:</span><span class="s1">&#39;Madrid&#39;</span> <span class="p">,</span> <span class="s1">&#39;Sweden&#39;</span><span class="p">:</span><span class="s1">&#39;Stockholm&#39;</span> <span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">:</span><span class="s1">&#39;London&#39;</span> <span class="p">,</span> <span class="s1">&#39;Cyprus&#39;</span><span class="p">:</span><span class="s1">&#39;Nicosia&#39;</span> <span class="p">,</span> <span class="s1">&#39;Lithuania&#39;</span><span class="p">:</span><span class="s1">&#39;Vilnius&#39;</span> <span class="p">,</span> <span class="s1">&#39;Czech Republic&#39;</span><span class="p">:</span><span class="s1">&#39;Prague&#39;</span> <span class="p">,</span> <span class="s1">&#39;Estonia&#39;</span><span class="p">:</span><span class="s1">&#39;Tallin&#39;</span> <span class="p">,</span> <span class="s1">&#39;Hungary&#39;</span><span class="p">:</span><span class="s1">&#39;Budapest&#39;</span> <span class="p">,</span> <span class="s1">&#39;Latvia&#39;</span><span class="p">:</span><span class="s1">&#39;Riga&#39;</span> <span class="p">,</span> <span class="s1">&#39;Malta&#39;</span><span class="p">:</span><span class="s1">&#39;Valetta&#39;</span> <span class="p">,</span> <span class="s1">&#39;Austria&#39;</span><span class="p">:</span><span class="s1">&#39;Vienna&#39;</span> <span class="p">,</span> <span class="s1">&#39;Poland&#39;</span><span class="p">:</span><span class="s1">&#39;Warsaw&#39;</span> <span class="p">,</span> <span class="s1">&#39;Croatia&#39;</span><span class="p">:</span><span class="s1">&#39;Zagreb&#39;</span> <span class="p">,</span><span class="s1">&#39;Romania&#39;</span><span class="p">:</span><span class="s1">&#39;Bucharest&#39;</span> <span class="p">,</span> <span class="s1">&#39;Bulgaria&#39;</span><span class="p">:</span><span class="s1">&#39;Sofia&#39;</span> <span class="p">}</span>
-
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;The EU currently has </span><span class="si">{}</span><span class="s1"> member countries:&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">eu</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
-
-
-<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">eu</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the dictionary</span>
+<span class="n">eu_capitals</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Italy&#39;</span><span class="p">:</span> <span class="s1">&#39;Rome&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">:</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Belgium&#39;</span><span class="p">:</span> <span class="s1">&#39;Brussels&#39;</span><span class="p">,</span> <span class="s1">&#39;Denmark&#39;</span><span class="p">:</span> <span class="s1">&#39;Copenhagen&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Finland&#39;</span><span class="p">:</span> <span class="s1">&#39;Helsinki&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">:</span> <span class="s1">&#39;Paris&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Slovakia&#39;</span><span class="p">:</span> <span class="s1">&#39;Bratislava&#39;</span><span class="p">,</span> <span class="s1">&#39;Slovenia&#39;</span><span class="p">:</span> <span class="s1">&#39;Ljubljana&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Germany&#39;</span><span class="p">:</span> <span class="s1">&#39;Berlin&#39;</span><span class="p">,</span> <span class="s1">&#39;Greece&#39;</span><span class="p">:</span> <span class="s1">&#39;Athens&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Ireland&#39;</span><span class="p">:</span> <span class="s1">&#39;Dublin&#39;</span><span class="p">,</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">:</span> <span class="s1">&#39;Amsterdam&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Portugal&#39;</span><span class="p">:</span> <span class="s1">&#39;Lisbon&#39;</span><span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">:</span> <span class="s1">&#39;Madrid&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Sweden&#39;</span><span class="p">:</span> <span class="s1">&#39;Stockholm&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Cyprus&#39;</span><span class="p">:</span> <span class="s1">&#39;Nicosia&#39;</span><span class="p">,</span> <span class="s1">&#39;Lithuania&#39;</span><span class="p">:</span> <span class="s1">&#39;Vilnius&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;Czech Republic&#39;</span><span class="p">:</span> <span class="s1">&#39;Prague&#39;</span><span class="p">,</span> <span class="s1">&#39;Estonia&#39;</span><span class="p">:</span> <span class="s1">&#39;Tallin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Hungary&#39;</span><span class="p">:</span> <span class="s1">&#39;Budapest&#39;</span><span class="p">,</span> <span class="s1">&#39;Latvia&#39;</span><span class="p">:</span> <span class="s1">&#39;Riga&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Malta&#39;</span><span class="p">:</span> <span class="s1">&#39;Valetta&#39;</span><span class="p">,</span> <span class="s1">&#39;Austria&#39;</span><span class="p">:</span> <span class="s1">&#39;Vienna&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Poland&#39;</span><span class="p">:</span> <span class="s1">&#39;Warsaw&#39;</span><span class="p">,</span> <span class="s1">&#39;Croatia&#39;</span><span class="p">:</span> <span class="s1">&#39;Zagreb&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Romania&#39;</span><span class="p">:</span> <span class="s1">&#39;Bucharest&#39;</span><span class="p">,</span> <span class="s1">&#39;Bulgaria&#39;</span><span class="p">:</span> <span class="s1">&#39;Sofia&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using this dictionary, print a sentence which gives information about the current number of countries in the EU.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;The EU currently has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">eu_capitals</span><span class="p">)</span><span class="si">}</span><span class="s1"> member countries:&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print a list of all the countries of the EU in alphabetical order.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The keys of the dictionary are the countries</span>
+<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">eu_capitals</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span> <span class="n">country</span> <span class="p">)</span>
-
-    
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">-----------</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-
-
-<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">eu</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;The capital of </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">eu</span><span class="p">[</span><span class="n">country</span><span class="p">]</span><span class="si">}</span><span class="s1">.&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, for each country, print the following sentence: “The capital of [ <em>country</em> ] is [ <em>capital</em> ].”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">eu_capitals</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;The capital of </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">eu_capitals</span><span class="p">[</span><span class="n">country</span><span class="p">]</span><span class="si">}</span><span class="s1">.&#39;</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
