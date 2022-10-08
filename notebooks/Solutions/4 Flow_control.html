@@ -518,6 +518,30 @@ title="Print to PDF"
 
 <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;It is now </span><span class="si">{</span><span class="n">hour</span><span class="si">}</span><span class="s2"> o&#39;clock&quot;</span> <span class="p">)</span>
 
+<span class="c1"># We check for two conditions at once using `and`</span>
+<span class="k">if</span> <span class="mi">6</span> <span class="o">&lt;=</span> <span class="n">hour</span> <span class="ow">and</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good morning!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">12</span> <span class="o">&lt;=</span> <span class="n">hour</span> <span class="ow">and</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">17</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good afternoon!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">17</span> <span class="o">&lt;=</span> <span class="n">hour</span> <span class="ow">and</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">23</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good evening!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good night!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that we expect the value of <code class="docutils literal notranslate"><span class="pre">hour</span></code> to be reasonable for our code to work as expected.
+For example, we don’t check whether <code class="docutils literal notranslate"><span class="pre">hour</span></code> is at least 0 or at most 23.
+It is advisable to include these checks in code that you rely on.</p>
+<p>In case you wondered if you can make the comparisons more compact, you can!
+You can compare a number to two numbers at the same time, as demonstrated below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hour</span> <span class="o">=</span> <span class="mi">19</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;It is now </span><span class="si">{</span><span class="n">hour</span><span class="si">}</span><span class="s2"> o&#39;clock&quot;</span> <span class="p">)</span>
+
 <span class="c1"># You can check a variable against two values at once</span>
 <span class="k">if</span> <span class="mi">6</span> <span class="o">&lt;=</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good morning!&quot;</span><span class="p">)</span>
