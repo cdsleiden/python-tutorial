@@ -1,0 +1,676 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Europeana SPARQL endpoint &#8212; LOD tutorial</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Europeana - Exploration of a collection" href="Europeana_Collection.html" />
+    <link rel="prev" title="Introduction" href="Introduction.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">LOD tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorial
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Module1.html">
+   Module 1: Basic Principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Module2.html">
+   Module 2: Creating LOD
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Module3.html">
+   Module 3: SPARQL queries
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   The Europeana SPARQL endpoint
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Europeana_Collection.html">
+   Europeana - Exploration of a collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Wikidata_Basics.html">
+   Wikidata
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RKD_SPARQL.html">
+   RKD Artists
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/Europeana_Basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The Europeana SPARQL endpoint</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="the-europeana-sparql-endpoint">
+<h1>The Europeana SPARQL endpoint<a class="headerlink" href="#the-europeana-sparql-endpoint" title="Permalink to this headline">#</a></h1>
+<p>Europeana is an initiative of the European Union aimed at enhancing the digital access to the collections of more than 3000 cultural heritage institutions acress Europe. Over the past few years, more than 50 million objects have been accumulated from these institutions. On the platform, users can find detailed information about a wide variety of cultural heritage artefacts, including paintings, books, music, and videos and audio files. The metadata that have been collected can also be searched using SPARQL on Europeana’s SPARQL endpoint, available at <a class="reference external" href="http://sparql.europeana.eu/">http://sparql.europeana.eu/</a>.</p>
+<p>The cell below defines the SPARQL endpoint and creates a function to run queries against this endpoint.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">SPARQLWrapper</span> <span class="kn">import</span> <span class="n">SPARQLWrapper</span><span class="p">,</span> <span class="n">JSON</span>
+<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">endpoint</span> <span class="o">=</span> <span class="s1">&#39;http://sparql.europeana.eu/&#39;</span>
+<span class="n">sparql</span> <span class="o">=</span> <span class="n">SPARQLWrapper</span><span class="p">(</span><span class="n">endpoint</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">run_query</span><span class="p">(</span><span class="n">sparql_query</span><span class="p">):</span>
+    <span class="n">sparql</span><span class="o">.</span><span class="n">setQuery</span><span class="p">(</span><span class="n">sparql_query</span><span class="p">)</span>
+    <span class="n">sparql</span><span class="o">.</span><span class="n">setReturnFormat</span><span class="p">(</span><span class="n">JSON</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">sparql</span><span class="o">.</span><span class="n">query</span><span class="p">()</span><span class="o">.</span><span class="n">convert</span><span class="p">()</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">][</span><span class="s1">&#39;bindings&#39;</span><span class="p">])</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">print_results</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;value$&#39;</span> <span class="p">,</span> <span class="n">column</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s1"> =&gt; </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before you start to work with the Europeana data, it is useful to develop a good understanding of the Europeana data model. The model is somewhat complicated, and this module will only explain the basics that you need to know about to build your first queries.</p>
+<p>A central resource in the datamodel is <code class="docutils literal notranslate"><span class="pre">edm:providedCHO</span></code>. This resource represents the cultural heritage object provided by the local institution. This <code class="docutils literal notranslate"><span class="pre">edm:providedCHO</span></code> is part of two <code class="docutils literal notranslate"><span class="pre">ore:Aggregations</span></code>. The term ‘Aggregation’ is taken from the <a class="reference external" href="https://www.openarchives.org/ore/"><em>Object Reuse and Exchange</em></a> vocabulary, which was developed to describe compound digital objects. There are in fact two aggregations. Europeana makes a distinction between the metadata that are supplied by the local data provider on the one hand, and the metadata that has been added by Europeana on the other. These two aggregation also have different types. There is a local ‘ore:Aggregation’, next to an ‘edm:EuropeanaAggregation’.</p>
+<p>Both aggregations contain ore:Proxy resources. These resources contain most of the descriptive metadata about the heritage objects. The ‘local’ Proxy, first of all, contains most of the metadata that have been supplied by the contributing instution. More detailed information about the Europeana Data Model can be found in the <a class="reference external" href="http://www.openarchives.org/ore/1.0/primer.html">Primer</a>.</p>
+<p>The model can be visualised as follows:</p>
+<p><img alt="" src="../_images/Europeana.svg" /></p>
+<p>This model may indeed look slightly complicated, but, to work with the Europeana data, you mainly need to know which predicates can be used for which resources.</p>
+<p>The following properties all have the local <code class="docutils literal notranslate"><span class="pre">ore:Proxy</span></code> resource as their domain:</p>
+<ul class="simple">
+<li><p>dc:title</p></li>
+<li><p>dc:creator</p></li>
+<li><p>dc:relation</p></li>
+<li><p>dc:type</p></li>
+<li><p>dcterms:created</p></li>
+<li><p>dcterms:extent</p></li>
+<li><p>dc:publisher</p></li>
+<li><p>dc:identifier</p></li>
+<li><p>dc:created</p></li>
+<li><p>dc:source</p></li>
+<li><p>edm:type</p></li>
+<li><p>dc:coverage</p></li>
+<li><p>dc:description</p></li>
+<li><p>dc:format</p></li>
+<li><p>dc:language</p></li>
+<li><p>dc:subject</p></li>
+<li><p>dcterms:isPartOf</p></li>
+<li><p>dcterms:spatial</p></li>
+</ul>
+<p>You can use these predicates to search metadata harvested from the local data provider.</p>
+<p>The query below selects the title, the type and the date of creation of a small list of ten objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;PREFIX dc:      &lt;http://purl.org/dc/elements/1.1/&gt;</span>
+<span class="s1">PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;</span>
+<span class="s1">PREFIX edm:     &lt;http://www.europeana.eu/schemas/edm/&gt;</span>
+<span class="s1">PREFIX ore:     &lt;http://www.openarchives.org/ore/terms/&gt;</span>
+
+<span class="s1">SELECT ?title ?type ?date </span>
+<span class="s1">WHERE {</span>
+
+<span class="s1">    ?object dc:title ?title .</span>
+<span class="s1">    ?object dc:type ?type .</span>
+<span class="s1">    ?object dcterms:created ?date .</span>
+
+<span class="s1">}</span>
+<span class="s1">ORDER BY ?title</span>
+<span class="s1">LIMIT 10</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10, 6)
+</pre></div>
+</div>
+</div>
+</div>
+<p><a href="http://grlc.io/api-git/peterverhaar/sparql_queries/europeana_basic_1?endpoint=http%3A%2F%2Fsparql.europeana.eu%2F" target="_blank">See the result</a></p>
+<p>The query explained above searches in all the 50 million objects available in Europeana, so it may be useful to search more specifilly for certain types of objects. You can state that the objects should be of type ‘IMAGE’. You can do this by making use of the dc:type property.</p>
+<p>It must be noted, however, that the values in the dc:type predicate have not been entered consistently by all institutions. As a results of this, you will not necessarily receive all images.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;PREFIX dc:      &lt;http://purl.org/dc/elements/1.1/&gt;</span>
+<span class="s1">PREFIX edm:     &lt;http://www.europeana.eu/schemas/edm/&gt;</span>
+<span class="s1">PREFIX ore:     &lt;http://www.openarchives.org/ore/terms/&gt;</span>
+
+<span class="s1">SELECT ?title ?type ?date</span>
+<span class="s1">WHERE {</span>
+
+<span class="s1">    ?object dc:title ?title .</span>
+<span class="s1">    ?object dc:date ?date .</span>
+<span class="s1">    ?object dc:type ?type .</span>
+<span class="s1">    ?object dc:identifier ?id</span>
+<span class="s1">    OPTIONAL{</span>
+<span class="s1">    ?object dc:publisher ?pub .</span>
+<span class="s1">    ?object dc:created ?cr . } .</span>
+<span class="s1">    </span>
+<span class="s1">    ?object dc:type &#39;IMAGE&#39; . </span>
+
+<span class="s1">}</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10000, 6)
+</pre></div>
+</div>
+</div>
+</div>
+<p><a href="http://grlc.io/api-git/peterverhaar/sparql_queries/europeana_basic_2?endpoint=http%3A%2F%2Fsparql.europeana.eu%2F" target="_blank">See the result</a></p>
+<p>The ore:Proxy object in the local ore:Aggregation has descriptive metadata supplied by the data provided. Data about the data provider itself and about the rights associated with the object can be found in the <code class="docutils literal notranslate"><span class="pre">ore:Aggregation</span></code> Resource this local Proxy belongs to. The <code class="docutils literal notranslate"><span class="pre">ore:Proxy</span></code> is connected to the <code class="docutils literal notranslate"><span class="pre">ore:Aggregation</span></code> via the <code class="docutils literal notranslate"><span class="pre">ore:proxyIn</span></code> predicate.</p>
+<p>In Europeana, the local <code class="docutils literal notranslate"><span class="pre">ore:Aggregation</span></code> is described using the following properties:</p>
+<ul class="simple">
+<li><p>edm:dataProvider</p></li>
+<li><p>edm:rights</p></li>
+<li><p>edm:isShownAt</p></li>
+<li><p>edm:isShownBy</p></li>
+<li><p>edm:object</p></li>
+<li><p>edm:provider</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">edm:isShownBy</span></code> predicate is generally followed by the link to the digital object. <code class="docutils literal notranslate"><span class="pre">edm:isShownAt</span></code> mostly contains a link to the landing page describing the object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;PREFIX dc:      &lt;http://purl.org/dc/elements/1.1/&gt;</span>
+<span class="s1">PREFIX edm:     &lt;http://www.europeana.eu/schemas/edm/&gt;</span>
+<span class="s1">PREFIX ore:     &lt;http://www.openarchives.org/ore/terms/&gt;</span>
+
+<span class="s1">SELECT ?title ?type ?institution ?rights </span>
+<span class="s1">WHERE {</span>
+
+<span class="s1">    ?object dc:title ?title .</span>
+<span class="s1">    ?object dc:date ?date .</span>
+<span class="s1">    ?object dc:type ?type .</span>
+<span class="s1">    ?object dc:identifier ?id .</span>
+<span class="s1">    </span>
+<span class="s1">    ?object ore:proxyIn ?aggr .</span>
+<span class="s1">    </span>
+<span class="s1">    ?aggr edm:dataProvider ?institution .</span>
+<span class="s1">    ?aggr edm:rights ?rights .</span>
+<span class="s1">    </span>
+
+<span class="s1">}</span>
+<span class="s1">LIMIT 10</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10, 8)
+</pre></div>
+</div>
+</div>
+</div>
+<p><a href="http://grlc.io/api-git/peterverhaar/sparql_queries/europeana_basic_3?endpoint=http%3A%2F%2Fsparql.europeana.eu%2F" target="_blank">See the result</a></p>
+<p>Once you have set up a connection between a local <code class="docutils literal notranslate"><span class="pre">ore:Proxy</span></code> and a local <code class="docutils literal notranslate"><span class="pre">ore:Aggregation</span></code>, you can search for objects contributed by a specific data provider, such as the Rijksmuseum.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">PREFIX dc: &lt;http://purl.org/dc/elements/1.1/&gt;</span>
+<span class="s2">PREFIX edm: &lt;http://www.europeana.eu/schemas/edm/&gt;</span>
+<span class="s2">PREFIX ore: &lt;http://www.openarchives.org/ore/terms/&gt;</span>
+<span class="s2">PREFIX html: &lt;http://www.w3.org/1999/xhtml/vocab#&gt;</span>
+
+<span class="s2">SELECT ?title ?object ?local_aggr</span>
+<span class="s2">WHERE {</span>
+
+<span class="s2">?object dc:title ?title .</span>
+<span class="s2">?object ore:proxyIn ?local_aggr .</span>
+
+<span class="s2">?local_aggr edm:dataProvider &quot;Rijksmuseum&quot; .</span>
+<span class="s2">}</span>
+<span class="s2">LIMIT 40</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(40, 7)
+</pre></div>
+</div>
+</div>
+</div>
+<p><a href="http://grlc.io/api-git/peterverhaar/sparql_queries/europeana_basic_4?endpoint=http%3A%2F%2Fsparql.europeana.eu%2F" target="_blank">See the result</a></p>
+<p>You can also request the links of the digital objects. This link is usually provided as an object followung the edm:isShownAt predicate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">PREFIX dc: &lt;http://purl.org/dc/elements/1.1/&gt;</span>
+<span class="s2">PREFIX edm: &lt;http://www.europeana.eu/schemas/edm/&gt;</span>
+<span class="s2">PREFIX ore: &lt;http://www.openarchives.org/ore/terms/&gt;</span>
+<span class="s2">PREFIX html: &lt;http://www.w3.org/1999/xhtml/vocab#&gt;</span>
+
+<span class="s2">SELECT ?title ?url </span>
+<span class="s2">WHERE {</span>
+
+<span class="s2">?object dc:title ?title .</span>
+<span class="s2">?object ore:proxyIn ?local_aggr .</span>
+<span class="s2">?local_aggr edm:isShownAt ?url .</span>
+<span class="s2">?local_aggr edm:dataProvider &quot;Rijksmuseum&quot; .</span>
+<span class="s2">}</span>
+<span class="s2">LIMIT 40</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(40, 5)
+</pre></div>
+</div>
+</div>
+</div>
+<p><a href="http://grlc.io/api-git/peterverhaar/sparql_queries/europeana_basic_5?endpoint=http%3A%2F%2Fsparql.europeana.eu%2F" target="_blank">See the result</a></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">edm:aggregatedCHO</span></code> is also part of an <code class="docutils literal notranslate"><span class="pre">edm:EuropeanaAggregation</span></code>. This resource can be described using the following predicates:</p>
+<ul class="simple">
+<li><p>edm:collectionName</p></li>
+<li><p>edm:country</p></li>
+<li><p>edm:landingPage</p></li>
+<li><p>edm:language</p></li>
+</ul>
+<p>Once you have found the <code class="docutils literal notranslate"><span class="pre">edm:EuropeanaAggregation</span></code> associated with an <code class="docutils literal notranslate"><span class="pre">edm:aggregatedCHO</span></code>, you search for objects managed by a cultural heritage institution in a specific langauge, or for objects in a specific langauge.</p>
+<p>The SPARQL query below searches for images supplied by an institution located in Belgium in the Dutch language.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">PREFIX dc: &lt;http://purl.org/dc/elements/1.1/&gt;</span>
+<span class="s2">PREFIX edm: &lt;http://www.europeana.eu/schemas/edm/&gt;</span>
+<span class="s2">PREFIX ore: &lt;http://www.openarchives.org/ore/terms/&gt;</span>
+<span class="s2">PREFIX html: &lt;http://www.w3.org/1999/xhtml/vocab#&gt;</span>
+
+<span class="s2">SELECT ?title ?creator ?img_url ?eur_aggr</span>
+<span class="s2">WHERE {</span>
+<span class="s2">?object edm:type &quot;IMAGE&quot; .</span>
+<span class="s2">?object dc:title ?title .</span>
+<span class="s2">?object dc:creator ?creator .</span>
+
+<span class="s2">?object ore:proxyIn ?local_aggr .</span>
+<span class="s2">?object ore:proxyFor ?cho .</span>
+
+<span class="s2">?eur_aggr edm:aggregatedCHO ?cho .</span>
+<span class="s2">?eur_aggr a edm:EuropeanaAggregation .</span>
+
+<span class="s2">?local_aggr edm:provider ?glam_inst .</span>
+<span class="s2">?eur_aggr edm:country &#39;belgium&#39; .</span>
+<span class="s2">?eur_aggr edm:language ?lang .</span>
+<span class="s2">?eur_aggr edm:language &#39;nl&#39; .</span>
+
+<span class="s2">OPTIONAL{ ?local_aggr edm:object ?img_url . } .</span>
+
+
+<span class="s2">}</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10000, 10)
+</pre></div>
+</div>
+</div>
+</div>
+<p><a href="http://grlc.io/api-git/peterverhaar/sparql_queries/europeana_basic_6?endpoint=http%3A%2F%2Fsparql.europeana.eu%2F" target="_blank">See the result</a></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "peterverhaar/network-cultural-heritage",
+            ref: "gh-pages",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Introduction.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introduction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Europeana_Collection.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Europeana - Exploration of a collection</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Karin de Wild and Peter Verhaar<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

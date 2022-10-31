@@ -1,0 +1,6684 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wikidata SPARQL &#8212; LOD tutorial</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="RKD Artists" href="RKD_SPARQL.html" />
+    <link rel="prev" title="Wikidata" href="Wikidata_Basics.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">LOD tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorial
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Module1.html">
+   Module 1: Basic Principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Module2.html">
+   Module 2: Creating LOD
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Module3.html">
+   Module 3: SPARQL queries
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Europeana_Basics.html">
+   The Europeana SPARQL endpoint
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Europeana_Collection.html">
+   Europeana - Exploration of a collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Wikidata_Basics.html">
+   Wikidata
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Wikidata SPARQL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RKD_SPARQL.html">
+   RKD Artists
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/Wikidata_SPARQL.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Wikidata SPARQL</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="wikidata-sparql">
+<h1>Wikidata SPARQL<a class="headerlink" href="#wikidata-sparql" title="Permalink to this headline">#</a></h1>
+<p>The cell below lists all the authors who have received the Nobel Prize for Literature. The wikidata id of this prize is wd:Q37922.</p>
+<p>Try to adjust the query below to find the laureates of the following awards and prizes:</p>
+<ul class="simple">
+<li><p>Booker Prize (wd:Q160082)</p></li>
+<li><p>Pulitzer Prize (wd:Q46525)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">SPARQLWrapper</span> <span class="kn">import</span> <span class="n">SPARQLWrapper</span><span class="p">,</span> <span class="n">JSON</span>
+
+<span class="n">endpoint</span> <span class="o">=</span> <span class="s1">&#39;https://query.wikidata.org/sparql&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SELECT ?author ?authorLabel ?image ?genderLabel ?nationalityLabel ?birth_date ?birth_placeLabel ?educationLabel</span>
+
+<span class="s2">WHERE {</span>
+<span class="s2">?author wdt:P1411 wd:Q37922 .</span>
+<span class="s2">?author wdt:P31 wd:Q5 .</span>
+<span class="s2">OPTIONAL { ?author wdt:P21 ?gender . } . </span>
+<span class="s2">OPTIONAL { ?author wdt:P27 ?nationality . } . </span>
+<span class="s2">OPTIONAL { ?author wdt:P569 ?birth_date .} . </span>
+<span class="s2">OPTIONAL { ?author wdt:P19 ?birth_place .} . </span>
+<span class="s2">OPTIONAL { ?author wdt:P69 ?education . } . </span>
+<span class="s2">OPTIONAL { ?author wdt:P18 ?image . } .</span>
+<span class="s2">                                                                                                            </span>
+<span class="s2"> SERVICE wikibase:label { bd:serviceParam wikibase:language &quot;[AUTO_LANGUAGE],en&quot;.}</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+
+<span class="n">sparql</span> <span class="o">=</span> <span class="n">SPARQLWrapper</span><span class="p">(</span><span class="n">endpoint</span><span class="p">)</span>
+<span class="n">sparql</span><span class="o">.</span><span class="n">setQuery</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="n">sparql</span><span class="o">.</span><span class="n">setReturnFormat</span><span class="p">(</span><span class="n">JSON</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">sparql</span><span class="o">.</span><span class="n">query</span><span class="p">()</span><span class="o">.</span><span class="n">convert</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+SSLCertVerificationError                  Traceback (most recent call last)
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py in do_open(self, http_class, req, **http_conn_args)
+   1349                 h.request(req.get_method(), req.selector, req.data, headers,
+-&gt; 1350                           encode_chunked=req.has_header(&#39;Transfer-encoding&#39;))
+   1351             except OSError as err: # timeout error
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py in request(self, method, url, body, headers, encode_chunked)
+   1276         &quot;&quot;&quot;Send a complete request to the server.&quot;&quot;&quot;
+-&gt; 1277         self._send_request(method, url, body, headers, encode_chunked)
+   1278 
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py in _send_request(self, method, url, body, headers, encode_chunked)
+   1322             body = _encode(body, &#39;body&#39;)
+-&gt; 1323         self.endheaders(body, encode_chunked=encode_chunked)
+   1324 
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py in endheaders(self, message_body, encode_chunked)
+   1271             raise CannotSendHeader()
+-&gt; 1272         self._send_output(message_body, encode_chunked=encode_chunked)
+   1273 
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py in _send_output(self, message_body, encode_chunked)
+   1031         del self._buffer[:]
+-&gt; 1032         self.send(msg)
+   1033 
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py in send(self, data)
+    971             if self.auto_open:
+--&gt; 972                 self.connect()
+    973             else:
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py in connect(self)
+   1446             self.sock = self._context.wrap_socket(self.sock,
+-&gt; 1447                                                   server_hostname=server_hostname)
+   1448 
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py in wrap_socket(self, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, session)
+    422             context=self,
+--&gt; 423             session=session
+    424         )
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py in _create(cls, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, context, session)
+    869                         raise ValueError(&quot;do_handshake_on_connect should not be specified for non-blocking sockets&quot;)
+--&gt; 870                     self.do_handshake()
+    871             except (OSError, ValueError):
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py in do_handshake(self, block)
+   1138                 self.settimeout(None)
+-&gt; 1139             self._sslobj.do_handshake()
+   1140         finally:
+
+SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1091)
+
+During handling of the above exception, another exception occurred:
+
+URLError                                  Traceback (most recent call last)
+/var/folders/nf/35gdwksd0fx8kzbsljz4dz6hnrcnxq/T/ipykernel_89677/2521994260.py in &lt;module&gt;
+     20 sparql.setQuery(query)
+     21 sparql.setReturnFormat(JSON)
+---&gt; 22 data = sparql.query().convert()
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/SPARQLWrapper/Wrapper.py in query(self)
+    958         :rtype: :class:`QueryResult` instance
+    959         &quot;&quot;&quot;
+--&gt; 960         return QueryResult(self._query())
+    961 
+    962     def queryAndConvert(self) -&gt; &quot;QueryResult.ConvertResult&quot;:
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/SPARQLWrapper/Wrapper.py in _query(self)
+    924                 response = urlopener(request, timeout=self.timeout)
+    925             else:
+--&gt; 926                 response = urlopener(request)
+    927             return response, self.returnFormat
+    928         except urllib.error.HTTPError as e:
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py in urlopen(url, data, timeout, cafile, capath, cadefault, context)
+    220     else:
+    221         opener = _opener
+--&gt; 222     return opener.open(url, data, timeout)
+    223 
+    224 def install_opener(opener):
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py in open(self, fullurl, data, timeout)
+    523             req = meth(req)
+    524 
+--&gt; 525         response = self._open(req, data)
+    526 
+    527         # post-process response
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py in _open(self, req, data)
+    541         protocol = req.type
+    542         result = self._call_chain(self.handle_open, protocol, protocol +
+--&gt; 543                                   &#39;_open&#39;, req)
+    544         if result:
+    545             return result
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py in _call_chain(self, chain, kind, meth_name, *args)
+    501         for handler in handlers:
+    502             func = getattr(handler, meth_name)
+--&gt; 503             result = func(*args)
+    504             if result is not None:
+    505                 return result
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py in https_open(self, req)
+   1391         def https_open(self, req):
+   1392             return self.do_open(http.client.HTTPSConnection, req,
+-&gt; 1393                 context=self._context, check_hostname=self._check_hostname)
+   1394 
+   1395         https_request = AbstractHTTPHandler.do_request_
+
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py in do_open(self, http_class, req, **http_conn_args)
+   1350                           encode_chunked=req.has_header(&#39;Transfer-encoding&#39;))
+   1351             except OSError as err: # timeout error
+-&gt; 1352                 raise URLError(err)
+   1353             r = h.getresponse()
+   1354         except:
+
+URLError: &lt;urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1091)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">][</span><span class="s1">&#39;bindings&#39;</span><span class="p">])</span>   
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">ids</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;author.value&#39;</span><span class="p">]</span>
+<span class="n">unique</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">author_id</span> <span class="ow">in</span> <span class="n">unique</span><span class="p">:</span>
+    <span class="n">author_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;author.value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">author_id</span> <span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Name: &#39;</span> <span class="o">+</span> <span class="n">author_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;authorLabel.value&#39;</span><span class="p">]</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">author_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;image.value&#39;</span><span class="p">]</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Gender: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">author_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;genderLabel.value&#39;</span><span class="p">])</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Nationality: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">author_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;nationalityLabel.value&#39;</span><span class="p">])</span> <span class="p">)</span>
+    <span class="n">dob</span> <span class="o">=</span> <span class="n">author_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;birth_date.value&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;T&#39;</span> <span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">dob</span><span class="p">)</span> <span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Date of birth: &#39;</span> <span class="o">+</span> <span class="n">dob</span><span class="p">[:</span><span class="n">dob</span><span class="o">.</span><span class="n">rindex</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)]</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Place of birth: &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">author_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;birth_placeLabel.value&#39;</span><span class="p">])</span> <span class="p">)</span>
+    
+    
+    <span class="n">edu</span> <span class="o">=</span> <span class="n">author_df</span><span class="p">[</span><span class="s1">&#39;educationLabel.value&#39;</span><span class="p">]</span>
+    <span class="n">edu</span> <span class="o">=</span> <span class="n">edu</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">edu</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="p">,</span> <span class="n">education</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span> <span class="n">edu</span><span class="o">.</span><span class="n">values</span> <span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span><span class="p">(</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">education</span><span class="p">)</span> <span class="p">):</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Education:&#39;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">education</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: J. B. Priestley
+http://commons.wikimedia.org/wiki/Special:FilePath/J%20B%20Priestley%20at%20work%20in%20his%20study%2C%201940.%20%287893553148%29.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1894-09-13
+Place of birth: 
+Education:
+Trinity Hall
+
+
+Name: Armando Palacio Valdés
+http://commons.wikimedia.org/wiki/Special:FilePath/Armando%20Palacio%20Vald%C3%A9s%2C%20de%20Compa%C3%B1y%2C%20en%20Mundo%20Gr%C3%A1fico.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1853-10-04
+Place of birth: 
+Education:
+University of Oviedo
+
+
+Name: John Lubbock, 1st Baron Avebury
+http://commons.wikimedia.org/wiki/Special:FilePath/John%20Lubbock72.jpg
+Gender: male
+Nationality: United Kingdom of Great Britain and Ireland
+Date of birth: 1834-04-30
+Place of birth: 
+Education:
+Eton College
+
+
+Name: Eliza Orzeszkowa
+http://commons.wikimedia.org/wiki/Special:FilePath/Eliza%20Orzeszkowa.PNG
+Gender: female
+Nationality: Russian Empire
+Date of birth: 1841-06-06
+Place of birth: 
+
+
+Name: Rudolf Pfeiffer
+nan
+Gender: male
+Nationality: Germany
+Date of birth: 1889-09-20
+Place of birth: 
+Education:
+Ludwig Maximilian University of Munich
+
+
+Name: Ramón Pérez de Ayala
+http://commons.wikimedia.org/wiki/Special:FilePath/Ram%C3%B3n%20P%C3%A9rez%20de%20Ayala.JPG
+Gender: male
+Nationality: Spain
+Date of birth: 1880-08-09
+Place of birth: 
+Education:
+University of Oviedo
+
+
+Name: Harald Høffding
+http://commons.wikimedia.org/wiki/Special:FilePath/Harald%20H%C3%B8ffding.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1843-03-11
+Place of birth: 
+Education:
+University of Copenhagen
+
+
+Name: Franz Theodor Csokor
+nan
+Gender: male
+Nationality: Austria
+Date of birth: 1885-09-06
+Place of birth: 
+
+
+Name: Andrés Manjón
+http://commons.wikimedia.org/wiki/Special:FilePath/Andr%C3%A9s%20Manj%C3%B3n.png
+Gender: male
+Nationality: Spain
+Date of birth: 1846-11-30
+Place of birth: 
+Education:
+University of Valladolid
+
+
+Name: George Lansing Raymond
+http://commons.wikimedia.org/wiki/Special:FilePath/George%20Lansing%20Raymond.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1839-09-03
+Place of birth: 
+Education:
+Phillips Academy
+
+
+Name: G. M. Trevelyan
+http://commons.wikimedia.org/wiki/Special:FilePath/GM%20Trevelyan%20by%20Beresford.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1876-02-16
+Place of birth: 
+Education:
+Trinity College
+Harrow School
+Wixenford School
+
+
+Name: Léopold Sédar Senghor
+http://commons.wikimedia.org/wiki/Special:FilePath/L%C3%A9opold%20S%C3%A9dar%20Senghor.jpg
+Gender: male
+Nationality: France
+Date of birth: 1906-10-09
+Place of birth: 
+Education:
+École normale supérieure
+Lycée Louis-le-Grand
+Faculty of Arts of Paris
+
+
+Name: Carl Spitteler
+http://commons.wikimedia.org/wiki/Special:FilePath/Carl%20spitteler%201905.jpg
+Gender: male
+Nationality: Switzerland
+Date of birth: 1845-04-24
+Place of birth: 
+Education:
+University of Zurich
+
+
+Name: André Chamson
+http://commons.wikimedia.org/wiki/Special:FilePath/Andre%20Chamson%201962.jpg
+Gender: male
+Nationality: France
+Date of birth: 1900-06-06
+Place of birth: 
+Education:
+École des Chartes
+lycée Jean-Baptiste-Dumas
+
+
+Name: Ingemar Düring
+http://commons.wikimedia.org/wiki/Special:FilePath/Gustaf%20VI%20Adolf%2C%20Ingemar%20D%C3%BCring%20och%20Dag%20Hammarkj%C3%B6ld%201954-03-12.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1903-09-02
+Place of birth: 
+Education:
+University of Gothenburg
+
+
+Name: Georg Bonne
+nan
+Gender: male
+Nationality: Germany
+Date of birth: 1859-08-12
+Place of birth: 
+
+
+Name: Jean-Paul Sartre
+http://commons.wikimedia.org/wiki/Special:FilePath/Jean%20Paul%20Sartre%201965.jpg
+Gender: male
+Nationality: France
+Date of birth: 1905-06-21
+Place of birth: 
+Education:
+École normale supérieure
+University of Paris
+Lycée Louis-le-Grand
+Lycée Henri-IV
+Cours Hattemer
+
+
+Name: Eugène Ionesco
+http://commons.wikimedia.org/wiki/Special:FilePath/Eugene%20Ionesco%2004.jpg
+Gender: male
+Nationality: France
+Date of birth: 1909-11-26
+Place of birth: 
+Education:
+University of Bucharest
+
+
+Name: Anatole France
+http://commons.wikimedia.org/wiki/Special:FilePath/Anatole%20France%20young%20years.jpg
+Gender: male
+Nationality: France
+Date of birth: 1844-04-16
+Place of birth: 
+Education:
+Collège Stanislas de Paris
+
+
+Name: Väinö Linna
+http://commons.wikimedia.org/wiki/Special:FilePath/Vaino%20Linna%20color.jpg
+Gender: male
+Nationality: Finland
+Date of birth: 1920-12-20
+Place of birth: 
+
+
+Name: Manfred Hausmann
+http://commons.wikimedia.org/wiki/Special:FilePath/Stamp%20Germany%201998%20MiNr2012%20Manfred%20Hausmann.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1898-09-10
+Place of birth: 
+
+
+Name: Martin Greif
+http://commons.wikimedia.org/wiki/Special:FilePath/Martin%20Greif%20von%20Hans%20Thoma.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1839-06-18
+Place of birth: 
+
+
+Name: Anna Seghers
+http://commons.wikimedia.org/wiki/Special:FilePath/Anna%20Seghers%20%28Bundesarchiv-Bild%20183-F0114-0204-003%29%20%E2%80%93%20retouched%20by%20Carschten.jpg
+Gender: female
+Nationality: Germany
+Date of birth: 1900-11-19
+Place of birth: 
+Education:
+University of Cologne
+Heidelberg University
+
+
+Name: Ludwig von Pastor
+http://commons.wikimedia.org/wiki/Special:FilePath/Ludwig%20von%20Pastor.JPG
+Gender: male
+Nationality: Austria-Hungary
+Date of birth: 1854-01-31
+Place of birth: 
+Education:
+University of Bonn
+University of Vienna
+
+
+Name: Charles de Gaulle
+http://commons.wikimedia.org/wiki/Special:FilePath/General%20Charles%20de%20Gaulle%20in%201945.jpg
+Gender: male
+Nationality: France
+Date of birth: 1890-11-22
+Place of birth: 
+Education:
+École Spéciale Militaire de Saint-Cyr
+Collège Stanislas de Paris
+
+
+Name: Edmund Blunden
+http://commons.wikimedia.org/wiki/Special:FilePath/Edmund%20Blunden%20by%20Lady%20Ottoline%20Morrell%20vintage%20snapshot%20print%2C%201923.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1896-11-01
+Place of birth: 
+Education:
+The Queen&#39;s College
+Christ&#39;s Hospital
+
+
+Name: Henry Handel Richardson
+http://commons.wikimedia.org/wiki/Special:FilePath/Henry%20Handel%20Richardson%2C%20author%2C%20ca.%201920-1935%2C%20photographers%20Elliott%20%26%20Fry%20%286963289973%29.jpg
+Gender: female
+Nationality: Australia
+Date of birth: 1870-01-03
+Place of birth: 
+Education:
+Presbyterian Ladies&#39; College
+
+
+Name: Dora Melegari
+http://commons.wikimedia.org/wiki/Special:FilePath/Dora%20Melegari%2002.jpg
+Gender: female
+Nationality: Switzerland
+Date of birth: 1849-06-27
+Place of birth: 
+
+
+Name: Salvatore Quasimodo
+http://commons.wikimedia.org/wiki/Special:FilePath/Salvatore%20Quasimodo%201959.jpg
+Gender: male
+Nationality: Italy
+Date of birth: 1901-08-20
+Place of birth: 
+
+
+Name: Ferenc Kemény
+http://commons.wikimedia.org/wiki/Special:FilePath/Kem%C3%A9ny%20Ferenc%20%281860-1944%29.jpg
+Gender: male
+Nationality: Hungary
+Date of birth: 1860-07-17
+Place of birth: 
+Education:
+Collège de France
+University of Paris
+Eötvös Loránd University
+
+
+Name: Doris Kareva
+http://commons.wikimedia.org/wiki/Special:FilePath/Kareva%20Doris.IMG%203153.JPG
+Gender: female
+Nationality: Estonia
+Date of birth: 1958-11-28
+Place of birth: 
+Education:
+University of Tartu
+
+
+Name: Yrjö Hirn
+http://commons.wikimedia.org/wiki/Special:FilePath/Yrj%C3%B6%20Hirn.jpg
+Gender: male
+Nationality: Finland
+Date of birth: 1870-12-07
+Place of birth: 
+
+
+Name: Sully Prudhomme
+http://commons.wikimedia.org/wiki/Special:FilePath/Sully%20Prudhomme%2C%20Ren%C3%A9-Fran%C3%A7ois-Armand%2C%20BNF%20Gallica.jpg
+Gender: male
+Nationality: France
+Date of birth: 1839-03-16
+Place of birth: 
+Education:
+Lycée Condorcet
+
+
+Name: Sinclair Lewis
+http://commons.wikimedia.org/wiki/Special:FilePath/Lewis-Sinclair-LOC.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1885-02-07
+Place of birth: 
+Education:
+Yale University
+Oberlin College
+Oberlin Academy
+
+
+Name: Émile Mâle
+http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89mile%20M%C3%A2le.png
+Gender: male
+Nationality: France
+Date of birth: 1862-06-02
+Place of birth: 
+Education:
+École normale supérieure
+Lycée Louis-le-Grand
+
+
+Name: Mohammad-Ali Jamalzadeh
+http://commons.wikimedia.org/wiki/Special:FilePath/Jamalzadeh1915.jpg
+Gender: male
+Nationality: Iran
+Date of birth: 1892-01-13
+Place of birth: 
+Education:
+University of Burgundy
+University of Lausanne
+
+
+Name: Knud Rasmussen
+http://commons.wikimedia.org/wiki/Special:FilePath/Knud%20Rasmussen%2001.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1879-06-07
+Place of birth: 
+
+
+Name: Halldór Laxness
+http://commons.wikimedia.org/wiki/Special:FilePath/Halld%C3%B3r%20Kiljan%20Laxness%201955.jpg
+Gender: male
+Nationality: Iceland
+Date of birth: 1902-04-23
+Place of birth: 
+
+
+Name: Ivan Grozev
+http://commons.wikimedia.org/wiki/Special:FilePath/BASA-1772K-1-380-1-Ivan%20Grozev.JPG
+Gender: male
+Nationality: Bulgaria
+Date of birth: 1872-06-23
+Place of birth: 
+Education:
+Sofia University
+
+
+Name: Hans Egon Holthusen
+nan
+Gender: male
+Nationality: Germany
+Date of birth: 1913-04-15
+Place of birth: 
+Education:
+Ludwig Maximilian University of Munich
+Humboldt University of Berlin
+University of Tübingen
+
+
+Name: Veikko Antero Koskenniemi
+http://commons.wikimedia.org/wiki/Special:FilePath/Veikko%20Antero%20Koskenniemi.jpg
+Gender: male
+Nationality: Finland
+Date of birth: 1885-07-08
+Place of birth: 
+Education:
+University of Helsinki
+Oulun Lyseon Lukio
+
+
+Name: Arthur Bryant
+nan
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1899-02-18
+Place of birth: 
+Education:
+The Queen&#39;s College
+Harrow School
+
+
+Name: Jarl Hemmer
+http://commons.wikimedia.org/wiki/Special:FilePath/Jarl-Hemmer.jpg
+Gender: male
+Nationality: Finland
+Date of birth: 1893-09-18
+Place of birth: 
+Education:
+University of Helsinki
+
+
+Name: Frédéric Mistral
+http://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20frederic%20mistral.jpg
+Gender: male
+Nationality: France
+Date of birth: 1830-09-08
+Place of birth: 
+Education:
+Aix-Marseille University
+
+
+Name: Katherine Anne Porter
+nan
+Gender: female
+Nationality: United States of America
+Date of birth: 1890-05-15
+Place of birth: 
+
+
+Name: Max Beerbohm
+http://commons.wikimedia.org/wiki/Special:FilePath/Max%20Beerbohm%201901%20retouched.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1872-08-24
+Place of birth: 
+Education:
+Merton College
+Charterhouse School
+
+
+Name: Dezső Szabó
+http://commons.wikimedia.org/wiki/Special:FilePath/Szab%C3%B3%20Dezs%C5%91%20%C3%ADr%C3%B3.jpg
+Gender: male
+Nationality: Hungary
+Date of birth: 1879-06-10
+Place of birth: 
+
+
+Name: Pablo Neruda
+http://commons.wikimedia.org/wiki/Special:FilePath/Pablo%20Neruda%201963.jpg
+Gender: male
+Nationality: Chile
+Date of birth: 1904-07-12
+Place of birth: 
+Education:
+University of Chile
+
+
+Name: Vladimir Nabokov
+http://commons.wikimedia.org/wiki/Special:FilePath/Vladimir%20Nabokov%201973.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1899-04-22
+Place of birth: 
+Education:
+University of Cambridge
+Trinity College
+
+
+Name: Sigfrid Siwertz
+http://commons.wikimedia.org/wiki/Special:FilePath/Sigfrid%20Siwertz.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1882-01-24
+Place of birth: 
+Education:
+Uppsala University
+
+
+Name: Verner von Heidenstam
+http://commons.wikimedia.org/wiki/Special:FilePath/Johan%20Krouth%C3%A9n%20-%20Portr%C3%A4tt%20av%20Verner%20von%20Heidenstam.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1859-07-06
+Place of birth: 
+
+
+Name: Jean Cocteau
+http://commons.wikimedia.org/wiki/Special:FilePath/Jean%20Cocteau%20b%20Meurisse%201923.jpg
+Gender: male
+Nationality: France
+Date of birth: 1889-07-05
+Place of birth: 
+Education:
+Lycée Condorcet
+
+
+Name: Theodor Zahn
+http://commons.wikimedia.org/wiki/Special:FilePath/Theodor%20Zahn%20ca%201908.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1838-10-10
+Place of birth: 
+Education:
+Humboldt University of Berlin
+
+
+Name: Benedetto Croce
+http://commons.wikimedia.org/wiki/Special:FilePath/B.Croce.jpg
+Gender: male
+Nationality: Italy
+Date of birth: 1866-02-25
+Place of birth: 
+Education:
+University of Naples Federico II
+
+
+Name: Hugh Walpole
+http://commons.wikimedia.org/wiki/Special:FilePath/Hugh%20Walpole%2C%201934.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1884-03-13
+Place of birth: 
+Education:
+Emmanuel College
+Durham School
+Sir William Borlase&#39;s Grammar School
+
+
+Name: Paul Claudel
+http://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Claudel%2001.jpg
+Gender: male
+Nationality: France
+Date of birth: 1868-08-05
+Place of birth: 
+Education:
+École Libre des Sciences Politiques
+Lycée Louis-le-Grand
+
+
+Name: Gustav Frenssen
+http://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20183-S42619%2C%20Gustav%20Frenssen.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1863-10-19
+Place of birth: 
+Education:
+Humboldt University of Berlin
+University of Tübingen
+University of Kiel
+
+
+Name: Seán O&#39;Casey
+http://commons.wikimedia.org/wiki/Special:FilePath/Sean%20ocasey%201924.jpg
+Gender: male
+Nationality: Ireland
+Date of birth: 1880-03-30
+Place of birth: 
+
+
+Name: Leonid Leonov
+http://commons.wikimedia.org/wiki/Special:FilePath/Leonid%20Leonov.jpg
+Gender: male
+Nationality: Russia
+Date of birth: 1899-05-19
+Place of birth: 
+Education:
+Q4030708
+
+
+Name: Carlos María Ocantos
+http://commons.wikimedia.org/wiki/Special:FilePath/CarliosMariaOcantos.JPG
+Gender: male
+Nationality: Argentina
+Date of birth: 1860-01-01
+Place of birth: 
+
+
+Name: Boris Pasternak
+http://commons.wikimedia.org/wiki/Special:FilePath/Boris%20Pasternak%201969.jpg
+Gender: male
+Nationality: Soviet Union
+Date of birth: 1890-02-10
+Place of birth: 
+Education:
+Moscow State University
+University of Marburg
+Moscow State University, Faculty of Law
+
+
+Name: Boris Zaytsev
+http://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%BE%D1%80%D0%B8%D1%81%20%D0%97%D0%B0%D0%B9%D1%86%D0%B5%D0%B2.jpg
+Gender: male
+Nationality: France
+Date of birth: 1881-02-10
+Place of birth: 
+
+
+Name: Arthur van Schendel
+http://commons.wikimedia.org/wiki/Special:FilePath/Arthur%20van%20Schendel%20te%20Ede.gif
+Gender: male
+Nationality: Kingdom of the Netherlands
+Date of birth: 1874-03-05
+Place of birth: 
+
+
+Name: Charles Langbridge Morgan
+nan
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1894-01-22
+Place of birth: 
+Education:
+Brasenose College
+
+
+Name: C. P. Snow
+nan
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1905-10-15
+Place of birth: 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Education:
+University of London
+Christ&#39;s College
+University of Leicester
+
+
+Name: Robert Graves
+http://commons.wikimedia.org/wiki/Special:FilePath/Robert%20Graves%201929%20%28cropped%29.jpg
+Gender: male
+Nationality: British Empire
+Date of birth: 1895-07-24
+Place of birth: 
+Education:
+St John&#39;s College
+Charterhouse School
+Copthorne Preparatory School
+King&#39;s College School
+
+
+Name: Johan Huizinga
+http://commons.wikimedia.org/wiki/Special:FilePath/Johan-huizinga1.jpg
+Gender: male
+Nationality: Kingdom of the Netherlands
+Date of birth: 1872-12-07
+Place of birth: 
+Education:
+Leiden University
+University of Groningen
+
+
+Name: Ivan Bunin
+http://commons.wikimedia.org/wiki/Special:FilePath/Ivan%20Bunin%20%28sepia%29.jpg
+Gender: male
+Nationality: France
+Date of birth: 1870-10-22
+Place of birth: 
+
+
+Name: Karel Čapek
+http://commons.wikimedia.org/wiki/Special:FilePath/Karel-capek.jpg
+Gender: male
+Nationality: Austria-Hungary
+Date of birth: 1890-01-09
+Place of birth: 
+Education:
+Humboldt University of Berlin
+Faculty of Arts, Charles University in Prague
+
+
+Name: José Ortega y Gasset
+http://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Ortega%20y%20Gasset.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1883-05-09
+Place of birth: 
+Education:
+University of Deusto
+Universidad Central
+
+
+Name: Grazia Deledda
+http://commons.wikimedia.org/wiki/Special:FilePath/Grazia%20Deledda%201926.jpg
+Gender: female
+Nationality: Kingdom of Italy
+Date of birth: 1871-09-27
+Place of birth: 
+Education:
+homeschooling
+
+
+Name: Ferdinand Avenarius
+http://commons.wikimedia.org/wiki/Special:FilePath/Ferdinand%20Avenarius%2C%20portrait%202.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1856-12-20
+Place of birth: 
+
+
+Name: Max Neuburger
+http://commons.wikimedia.org/wiki/Special:FilePath/Photograph%2C%20Max%20Neuburger%3B%201928%20Wellcome%20M0013994.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1868-12-08
+Place of birth: 
+Education:
+University of Vienna
+
+
+Name: Thornton Wilder
+http://commons.wikimedia.org/wiki/Special:FilePath/Thornton%20Wilder%20Yale%20graduation%20photo%201920.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1897-04-17
+Place of birth: 
+Education:
+Princeton University
+Yale University
+Oberlin College
+Berkeley High School
+The Thacher School
+
+
+Name: Georges Duhamel
+http://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Duhamel%201930.jpg
+Gender: male
+Nationality: France
+Date of birth: 1884-06-30
+Place of birth: 
+Education:
+Lycée Buffon
+
+
+Name: Peter Rosegger
+http://commons.wikimedia.org/wiki/Special:FilePath/Rosegger3.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1843-07-31
+Place of birth: 
+Education:
+University of Graz
+
+
+Name: Karl Heinrich Waggerl
+http://commons.wikimedia.org/wiki/Special:FilePath/Waggerl%2C%20Karl%20Heinrich%20memorial.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1897-12-10
+Place of birth: 
+
+
+Name: Luigi Pirandello
+http://commons.wikimedia.org/wiki/Special:FilePath/Luigi%20Pirandello%201932.jpg
+Gender: male
+Nationality: Kingdom of Italy
+Date of birth: 1867-06-28
+Place of birth: 
+Education:
+University of Bonn
+
+
+Name: Gunnar Heiberg
+http://commons.wikimedia.org/wiki/Special:FilePath/Gunnar%20Heiberg%201928.png
+Gender: male
+Nationality: Norway
+Date of birth: 1857-11-18
+Place of birth: 
+
+
+Name: Herman Teirlinck
+http://commons.wikimedia.org/wiki/Special:FilePath/Teirlink1905.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1879-02-24
+Place of birth: 
+
+
+Name: Matilde Serao
+http://commons.wikimedia.org/wiki/Special:FilePath/Photo%20of%20Matilde%20Serao.jpg
+Gender: female
+Nationality: Italy
+Date of birth: 1856-03-07
+Place of birth: 
+
+
+Name: Mario Roques
+nan
+Gender: male
+Nationality: France
+Date of birth: 1875-07-01
+Place of birth: 
+Education:
+École normale supérieure
+École pratique des hautes études, PSL University
+
+
+Name: Manuel Gálvez
+http://commons.wikimedia.org/wiki/Special:FilePath/ManuelGalvez.JPG
+Gender: male
+Nationality: Argentina
+Date of birth: 1882-07-18
+Place of birth: 
+Education:
+University of Buenos Aires
+Colegio Nacional de Buenos Aires
+
+
+Name: Cécile Tormay
+http://commons.wikimedia.org/wiki/Special:FilePath/Torma%20Cecile%20Napkelet%20grafika.png
+Gender: female
+Nationality: Hungary
+Date of birth: 1875-10-08
+Place of birth: 
+
+
+Name: Gabriel Marcel
+http://commons.wikimedia.org/wiki/Special:FilePath/Gabriel%20Marcel%20%281969%29.jpg
+Gender: male
+Nationality: France
+Date of birth: 1889-12-07
+Place of birth: 
+Education:
+University of Paris
+
+
+Name: Jean Anouilh
+http://commons.wikimedia.org/wiki/Special:FilePath/Anouilh%201940%202b.jpg
+Gender: male
+Nationality: France
+Date of birth: 1910-06-23
+Place of birth: 
+Education:
+Lycée Francais
+
+
+Name: Ernst von der Recke
+nan
+Gender: male
+Nationality: Denmark
+Date of birth: 1848-08-14
+Place of birth: 
+
+
+Name: Sven Hedin
+http://commons.wikimedia.org/wiki/Special:FilePath/Sven%20Hedin%2001.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1865-02-19
+Place of birth: 
+Education:
+University of Halle-Wittenberg
+Humboldt University of Berlin
+Uppsala University
+Stockholm University
+
+
+Name: Miroslav Krleža
+http://commons.wikimedia.org/wiki/Special:FilePath/Miroslav%20Krle%C5%BEa%201953.jpg
+Gender: male
+Nationality: Austria-Hungary
+Date of birth: 1893-07-07
+Place of birth: 
+Education:
+Ludovica Military Academy
+
+
+Name: Paul Celan
+http://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Celan%20%281938%29.jpg
+Gender: male
+Nationality: France
+Date of birth: 1920-11-23
+Place of birth: 
+Education:
+Chernivtsi University
+
+
+Name: Arvid Mörne
+http://commons.wikimedia.org/wiki/Special:FilePath/Arvid%20M%C3%B6rne.jpg
+Gender: male
+Nationality: Finland
+Date of birth: 1876-05-06
+Place of birth: 
+Education:
+University of Helsinki
+
+
+Name: Henry James
+http://commons.wikimedia.org/wiki/Special:FilePath/Henry%20James%20by%20John%20Singer%20Sargent%20cleaned.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1843-04-15
+Place of birth: 
+Education:
+Harvard University
+
+
+Name: Martin Andersen Nexø
+http://commons.wikimedia.org/wiki/Special:FilePath/Martin%20Andersen%20Nex%C3%B82.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1869-06-26
+Place of birth: 
+
+
+Name: Arnold Wesker
+http://commons.wikimedia.org/wiki/Special:FilePath/Arnold%20Wesker.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1932-05-24
+Place of birth: 
+Education:
+University College School
+
+
+Name: Rabindranath Tagore
+http://commons.wikimedia.org/wiki/Special:FilePath/Rabindranath%20Tagore%20in%201909.jpg
+Gender: male
+Nationality: British India
+Date of birth: 1861-05-06
+Place of birth: 
+Education:
+University College London
+
+
+Name: Jean Guitton
+nan
+Gender: male
+Nationality: France
+Date of birth: 1901-08-18
+Place of birth: 
+Education:
+École normale supérieure
+Lycée Louis-le-Grand
+
+
+Name: Max Frisch
+http://commons.wikimedia.org/wiki/Special:FilePath/ETH-BIB-Max%20Frisch-Com%20C20-015-023-001.tif
+Gender: male
+Nationality: Switzerland
+Date of birth: 1911-05-15
+Place of birth: 
+Education:
+ETH Zürich
+University of Zurich
+
+
+Name: Edvard Westermarck
+http://commons.wikimedia.org/wiki/Special:FilePath/Edward%20westermarck.jpg
+Gender: male
+Nationality: Finland
+Date of birth: 1862-11-20
+Place of birth: 
+Education:
+University of Helsinki
+
+
+Name: Ivan Vazov
+http://commons.wikimedia.org/wiki/Special:FilePath/BASA-937K-1-410-7-Ivan%20Vazov%20%28cropped%29.JPG
+Gender: male
+Nationality: Bulgaria
+Date of birth: 1850-06-27
+Place of birth: 
+
+
+Name: James Gould Cozzens
+nan
+Gender: male
+Nationality: United States of America
+Date of birth: 1903-08-19
+Place of birth: 
+Education:
+Kent School
+
+
+Name: Carl Erik Soya
+nan
+Gender: male
+Nationality: Denmark
+Date of birth: 1896-10-30
+Place of birth: 
+
+
+Name: Guðmundur Kamban
+nan
+Gender: male
+Nationality: Iceland
+Date of birth: 1888-06-08
+Place of birth: 
+
+
+Name: Tadeusz Stefan Zieliński
+http://commons.wikimedia.org/wiki/Special:FilePath/Tadeusz%20Zieli%C5%84ski%20poczt%C3%B3wka%20%28cropped%29.jpg
+Gender: male
+Nationality: Russian Empire
+Date of birth: 1859-09-14
+Place of birth: 
+Education:
+Leipzig University
+University of Vienna
+University of Tartu
+Annenschule
+Imperial University of Dorpat
+Imperial St. Petersburg University
+
+
+Name: Karl Adolph Gjellerup
+http://commons.wikimedia.org/wiki/Special:FilePath/Karl%20Gjellerup.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1857-06-02
+Place of birth: 
+
+
+Name: Gaspar Núñez de Arce
+http://commons.wikimedia.org/wiki/Special:FilePath/N%C3%BA%C3%B1ez%20de%20Arce.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1832-08-04
+Place of birth: 
+
+
+Name: Heinrich Böll
+http://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20B%20145%20Bild-F062164-0004%2C%20Bonn%2C%20Heinrich%20B%C3%B6ll.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1917-12-21
+Place of birth: 
+Education:
+University of Cologne
+
+
+Name: Arnold Bennett
+http://commons.wikimedia.org/wiki/Special:FilePath/Arnold%20Bennett%20-%20Project%20Gutenberg%20etext%2013635.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1867-05-27
+Place of birth: 
+Education:
+Wedgwood Institute
+
+
+Name: Robert Lowell
+http://commons.wikimedia.org/wiki/Special:FilePath/Robert-lowell-by-elsa-dorfman.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1917-03-01
+Place of birth: 
+Education:
+Harvard University
+Harvard College
+Kenyon College
+St. Mark&#39;s School
+
+
+Name: Aggelos Sikelianos
+http://commons.wikimedia.org/wiki/Special:FilePath/Sikelianos.jpg
+Gender: male
+Nationality: Greece
+Date of birth: 1884-03-28
+Place of birth: 
+Education:
+National and Kapodistrian University of Athens
+
+
+Name: Arvid Järnefelt
+http://commons.wikimedia.org/wiki/Special:FilePath/Arvid%20jarnefelt.png
+Gender: male
+Nationality: Finland
+Date of birth: 1861-11-16
+Place of birth: 
+
+
+Name: Sally Salminen
+http://commons.wikimedia.org/wiki/Special:FilePath/Sally-Salminen-1941.jpg
+Gender: female
+Nationality: Finland
+Date of birth: 1906-04-25
+Place of birth: 
+
+
+Name: Hermann Stehr
+http://commons.wikimedia.org/wiki/Special:FilePath/Stehr%2CHermann%201864-1940.JPG
+Gender: male
+Nationality: German Reich
+Date of birth: 1864-02-16
+Place of birth: 
+
+
+Name: William Somerset Maugham
+http://commons.wikimedia.org/wiki/Special:FilePath/Somerset%20Maugham%20%281934%29.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1874-01-25
+Place of birth: 
+Education:
+Heidelberg University
+King&#39;s College London
+
+
+Name: Arnold J. Toynbee
+http://commons.wikimedia.org/wiki/Special:FilePath/Arnold%20J.%20Toynbee%20Anefo.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1889-04-14
+Place of birth: 
+Education:
+Balliol College
+Winchester College
+
+
+Name: Paul Vialar
+http://commons.wikimedia.org/wiki/Special:FilePath/Vialar%20Harcourt%201948.jpg
+Gender: male
+Nationality: France
+Date of birth: 1898-09-18
+Place of birth: 
+Education:
+HEC Paris
+
+
+Name: Elisaveta Bagriana
+http://commons.wikimedia.org/wiki/Special:FilePath/BASA-65K-2-1498-1-Elisaveta%20Bagryana.jpg
+Gender: female
+Nationality: Bulgaria
+Date of birth: 1893-04-16
+Place of birth: 
+Education:
+Sofiĭski universitet. Istoricheski fakultet
+
+
+Name: Upton Sinclair
+http://commons.wikimedia.org/wiki/Special:FilePath/Upton%20Beall%20Sinclair%20Jr.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1878-09-20
+Place of birth: 
+Education:
+Columbia University
+City College of New York
+
+
+Name: Johannes V. Jensen
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://commons.wikimedia.org/wiki/Special:FilePath/Johannes%20Vilhelm%20Jensen%201944.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1873-01-20
+Place of birth: 
+Education:
+University of Copenhagen
+Viborg Katedralskole
+
+
+Name: Robert Penn Warren
+http://commons.wikimedia.org/wiki/Special:FilePath/Robert%20Penn%20Warren.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1905-04-24
+Place of birth: 
+Education:
+Vanderbilt University
+University of Oxford
+Yale University
+University of California, Berkeley
+Clarksville Senior High School
+
+
+Name: António Correia de Oliveira
+http://commons.wikimedia.org/wiki/Special:FilePath/Ant%C3%B3nio%20Corr%C3%AAa%20d%E2%80%99Oliveira%20in%20%C2%ABContempor%C3%A2nea%C2%BB%20%281915%29%20cut.png
+Gender: male
+Nationality: Portugal
+Date of birth: 1878-07-30
+Place of birth: 
+
+
+Name: Erich Maria Remarque
+http://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20183-R04034%2C%20Erich%20Maria%20Remarque%20%28cropped%29.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1898-06-22
+Place of birth: 
+
+
+Name: Wilbur Cortez Abbott
+nan
+Gender: male
+Nationality: United States of America
+Date of birth: 1869-12-28
+Place of birth: 
+Education:
+University of Oxford
+Cornell University
+Wabash College
+
+
+Name: Enrique Larreta
+http://commons.wikimedia.org/wiki/Special:FilePath/Enrique%20Larreta%201914%20%281%29.jpg
+Gender: male
+Nationality: Argentina
+Date of birth: 1875-03-04
+Place of birth: 
+Education:
+University of Buenos Aires
+Colegio Nacional de Buenos Aires
+
+
+Name: Gertrud von Le Fort
+http://commons.wikimedia.org/wiki/Special:FilePath/Gertrud%20v%20Le%20Fort%20c1935.jpg
+Gender: female
+Nationality: Germany
+Date of birth: 1876-10-11
+Place of birth: 
+Education:
+Heidelberg University
+University of Marburg
+
+
+Name: Wesley LaViolette
+nan
+Gender: male
+Nationality: United States of America
+Date of birth: 1894-01-04
+Place of birth: 
+
+
+Name: Edvarts Virza
+http://commons.wikimedia.org/wiki/Special:FilePath/Edvarts%20Virza.jpg
+Gender: male
+Nationality: Latvia
+Date of birth: 1883-12-27
+Place of birth: 
+
+
+Name: Edmund Wilson
+http://commons.wikimedia.org/wiki/Special:FilePath/Edmund%20Wilson.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1895-05-08
+Place of birth: 
+Education:
+Princeton University
+Columbia University
+The Hill School
+
+
+Name: Jaroslav Vrchlický
+http://commons.wikimedia.org/wiki/Special:FilePath/Vrchlicky%2001.jpg
+Gender: male
+Nationality: Austria-Hungary
+Date of birth: 1853-02-17
+Place of birth: 
+Education:
+Charles University
+Faculty of Arts, Charles University in Prague
+
+
+Name: Robert Langton Douglas
+nan
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1864-01-01
+Place of birth: 
+Education:
+New College
+
+
+Name: René Char
+http://commons.wikimedia.org/wiki/Special:FilePath/Ren%C3%A9%20Char%20Capitaine%20Alexandre.jpg
+Gender: male
+Nationality: France
+Date of birth: 1907-06-14
+Place of birth: 
+
+
+Name: Giorgos Theotokás
+http://commons.wikimedia.org/wiki/Special:FilePath/%CE%93%CE%B9%CF%8E%CF%81%CE%B3%CE%BF%CF%82%20%CE%98%CE%B5%CE%BF%CF%84%CE%BF%CE%BA%CE%AC%CF%82%2C%20%CE%A0%CE%AC%CF%81%CE%BA%CE%BF%20%CE%95%CE%BB%CE%BB%CE%AE%CE%BD%CF%89%CE%BD%20%CE%9B%CE%BF%CE%B3%CE%BF%CF%84%CE%B5%CF%87%CE%BD%CF%8E%CE%BD.jpg
+Gender: male
+Nationality: Greece
+Date of birth: 1905-01-01
+Place of birth: 
+Education:
+National and Kapodistrian University of Athens
+
+
+Name: Anna de Noailles
+http://commons.wikimedia.org/wiki/Special:FilePath/Laszlo%20-%20Anna%20de%20Noailles.jpg
+Gender: female
+Nationality: France
+Date of birth: 1876-01-01
+Place of birth: 
+
+
+Name: Martin Buber
+http://commons.wikimedia.org/wiki/Special:FilePath/Martin%20Buber%20portrait.jpg
+Gender: male
+Nationality: Israel
+Date of birth: 1878-02-08
+Place of birth: 
+Education:
+Humboldt University of Berlin
+Leipzig University
+University of Vienna
+University of Zurich
+
+
+Name: Archibald Robertson
+http://commons.wikimedia.org/wiki/Special:FilePath/Archibald%20Robertson.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1853-06-29
+Place of birth: 
+Education:
+Trinity College
+Bradfield College
+
+
+Name: Elio Vittorini
+http://commons.wikimedia.org/wiki/Special:FilePath/ElioVittorini.jpg
+Gender: male
+Nationality: Italy
+Date of birth: 1908-07-23
+Place of birth: 
+
+
+Name: Arnulf Øverland
+http://commons.wikimedia.org/wiki/Special:FilePath/Portrett%20av%20Arnulf%20%C3%98verland.jpg
+Gender: male
+Nationality: Norway
+Date of birth: 1889-04-27
+Place of birth: 
+Education:
+Oslo Cathedral School
+
+
+Name: José María Pemán
+http://commons.wikimedia.org/wiki/Special:FilePath/Jos%C3%A9%20Mar%C3%ADa%20Pem%C3%A1n.png
+Gender: male
+Nationality: Spain
+Date of birth: 1897-05-08
+Place of birth: 
+
+
+Name: Wilhelm Lehmann
+http://commons.wikimedia.org/wiki/Special:FilePath/Wilhelm-Lehmann-Bueste%20Eckernf%C3%B6rde%20rechts.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1882-05-04
+Place of birth: 
+
+
+Name: Hermann Broch
+http://commons.wikimedia.org/wiki/Special:FilePath/Hermann%20Broch%20portrait%20photograph%2C%201909.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1886-11-01
+Place of birth: 
+Education:
+University of Vienna
+
+
+Name: Anton Wildgans
+http://commons.wikimedia.org/wiki/Special:FilePath/Anton%20Wildgans%20%281881%E2%80%931932%29%201932.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1881-04-17
+Place of birth: 
+Education:
+University of Vienna
+
+
+Name: Juan Antonio Zunzunegui
+http://commons.wikimedia.org/wiki/Special:FilePath/Portugalete%20Juan%20Antonio%20de%20Zunzunegui.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1900-12-21
+Place of birth: 
+
+
+Name: María Raquel Adler
+nan
+Gender: female
+Nationality: Argentina
+Date of birth: 1899-10-12
+Place of birth: 
+
+
+Name: Blanca de los Ríos
+http://commons.wikimedia.org/wiki/Special:FilePath/Blanca%20de%20los%20R%C3%ADos.png
+Gender: female
+Nationality: Spain
+Date of birth: 1859-08-15
+Place of birth: 
+
+
+Name: Albert Schweitzer
+http://commons.wikimedia.org/wiki/Special:FilePath/Albert%20Schweitzer%2C%20Etching%20by%20Arthur%20William%20Heintzelman.jpg
+Gender: male
+Nationality: France
+Date of birth: 1875-01-14
+Place of birth: 
+Education:
+University of Tübingen
+University of Strasbourg
+College of Philosophy of the Prague German University
+
+
+Name: Sigrid Undset
+http://commons.wikimedia.org/wiki/Special:FilePath/Sigrid%20Undset%201928.jpg
+Gender: female
+Nationality: Norway
+Date of birth: 1882-05-20
+Place of birth: 
+Education:
+Q11970414
+
+
+Name: Max Mell
+http://commons.wikimedia.org/wiki/Special:FilePath/Gedenktafel%20Max%20Mell%20Pernegg.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1882-11-10
+Place of birth: 
+
+
+Name: Paul Elmer More
+http://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Paul%20Elmer%20More.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1864-12-12
+Place of birth: 
+Education:
+Harvard University
+Washington University in St. Louis
+
+
+Name: René Bazin
+http://commons.wikimedia.org/wiki/Special:FilePath/Rene%20Bazin.jpg
+Gender: male
+Nationality: France
+Date of birth: 1853-12-26
+Place of birth: 
+Education:
+Catholic University of the West
+Paris Law Faculty
+
+
+Name: João Gonçalves Zarco da Câmara
+http://commons.wikimedia.org/wiki/Special:FilePath/D.%20Jo%C3%A3o%20da%20C%C3%A2mara%20-%20Ser%C3%B5es%20%28Fev1908%29.png
+Gender: male
+Nationality: Portugal
+Date of birth: 1852-12-27
+Place of birth: 
+
+
+Name: Alberto Moravia
+http://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Monti%20-%20Servizio%20fotografico%20-%20BEIC%206361580.jpg
+Gender: male
+Nationality: Italy
+Date of birth: 1907-11-28
+Place of birth: 
+
+
+Name: Edith Wharton
+http://commons.wikimedia.org/wiki/Special:FilePath/Edith%20Newbold%20Jones%20Wharton.jpg
+Gender: female
+Nationality: United States of America
+Date of birth: 1862-01-24
+Place of birth: 
+
+
+Name: Ernest Hemingway
+http://commons.wikimedia.org/wiki/Special:FilePath/ErnestHemingway.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1899-07-21
+Place of birth: 
+Education:
+Oak Park and River Forest High School
+
+
+Name: Gösta Carlberg
+http://commons.wikimedia.org/wiki/Special:FilePath/Carlberg%2C%20G%C3%B6sta%20i%20VJ%201943.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1909-09-23
+Place of birth: 
+
+
+Name: Henryk Sienkiewicz
+http://commons.wikimedia.org/wiki/Special:FilePath/J%C3%B3zef%20Buchbinder%20Portret%20H.%20Sienkiewicza.jpg
+Gender: male
+Nationality: Austria-Hungary
+Date of birth: 1846-05-05
+Place of birth: 
+Education:
+University of Warsaw
+
+
+Name: Stefan George
+http://commons.wikimedia.org/wiki/Special:FilePath/Stefan%20George%201910%20Foto%20Jakob%20Hilsdorf.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1868-07-12
+Place of birth: 
+
+
+Name: Maurice Bowra
+nan
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1898-04-08
+Place of birth: 
+Education:
+Cheltenham College
+New College
+
+
+Name: Louis Artus
+http://commons.wikimedia.org/wiki/Special:FilePath/CFP-3%20Artus%2C%20L.jpg
+Gender: male
+Nationality: France
+Date of birth: 1870-01-10
+Place of birth: 
+
+
+Name: James Thurber
+http://commons.wikimedia.org/wiki/Special:FilePath/James%20Thurber%20NYWTS.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1894-12-08
+Place of birth: 
+Education:
+Ohio State University
+East High School
+
+
+Name: Maria Jotuni
+http://commons.wikimedia.org/wiki/Special:FilePath/Jotuni.jpg
+Gender: female
+Nationality: Finland
+Date of birth: 1880-04-09
+Place of birth: 
+
+
+Name: Henrik Pontoppidan
+http://commons.wikimedia.org/wiki/Special:FilePath/Henrik%20Pontoppidan%201917.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1857-07-24
+Place of birth: 
+
+
+Name: Miguel de Unamuno
+http://commons.wikimedia.org/wiki/Special:FilePath/Miguel%20de%20Unamuno%20Meurisse%201925.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1864-09-29
+Place of birth: 
+Education:
+Complutense University of Madrid
+Universidad Central
+
+
+Name: Franz Karl Ginzkey
+http://commons.wikimedia.org/wiki/Special:FilePath/Picture%20of%20Franz%20Karl%20Ginzkey.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1871-09-08
+Place of birth: 
+
+
+Name: Walter de la Mare
+http://commons.wikimedia.org/wiki/Special:FilePath/Walter%20de%20la%20Mare%20by%20Lady%20Ottoline%20Morrell.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1873-04-25
+Place of birth: 
+Education:
+St Paul&#39;s Cathedral School
+
+
+Name: Jacques Pirenne
+http://commons.wikimedia.org/wiki/Special:FilePath/Jacques%20Pirenne%20%281910%29.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1891-06-26
+Place of birth: 
+Education:
+Ghent University
+
+
+Name: Rabindranath Datta
+http://commons.wikimedia.org/wiki/Special:FilePath/Roby%20Datta.jpg
+Gender: male
+Nationality: British India
+Date of birth: 1883-10-01
+Place of birth: 
+
+
+Name: Alicia Ghiragossian
+http://commons.wikimedia.org/wiki/Special:FilePath/Alisia%20Kirakosyan.JPG
+Gender: female
+Nationality: Argentina
+Date of birth: 1936-07-13
+Place of birth: 
+
+
+Name: Valery Larbaud
+http://commons.wikimedia.org/wiki/Special:FilePath/Valery%20Larbaud.jpg
+Gender: male
+Nationality: France
+Date of birth: 1881-08-29
+Place of birth: 
+Education:
+Lycée Louis-le-Grand
+
+
+Name: Karl Löwith
+nan
+Gender: male
+Nationality: Germany
+Date of birth: 1897-01-09
+Place of birth: 
+Education:
+Ludwig Maximilian University of Munich
+University of Freiburg
+
+
+Name: Wilhelm Röpke
+http://commons.wikimedia.org/wiki/Special:FilePath/Wilhelm%20R%C3%B6pke.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1899-10-10
+Place of birth: 
+Education:
+University of Marburg
+
+
+Name: Étiemble
+http://commons.wikimedia.org/wiki/Special:FilePath/Ren%C3%A9%20%C3%89tiemble%20en%201998.png
+Gender: male
+Nationality: France
+Date of birth: 1909-01-26
+Place of birth: 
+Education:
+École normale supérieure
+Lycée Louis-le-Grand
+Lyceum Ambroise Paré
+École nationale des langues orientales vivantes
+
+
+Name: Judith Wright
+nan
+Gender: female
+Nationality: Australia
+Date of birth: 1915-05-31
+Place of birth: 
+Education:
+University of Sydney
+
+
+Name: Thomas Mann
+http://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Mann%201929.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1875-06-06
+Place of birth: 
+Education:
+Ludwig Maximilian University of Munich
+Technical University of Munich
+
+
+Name: Rudolf Alexander Schröder
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://commons.wikimedia.org/wiki/Special:FilePath/Nicola%20Perscheid%20-%20Rudolf%20Alexander%20Schr%C3%B6der.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1878-01-26
+Place of birth: 
+
+
+Name: Guglielmo Ferrero
+http://commons.wikimedia.org/wiki/Special:FilePath/Guglielmo%20Ferrero.jpg
+Gender: male
+Nationality: Kingdom of Italy
+Date of birth: 1871-06-21
+Place of birth: 
+Education:
+University of Bologna
+University of Turin
+University of Pisa
+
+
+Name: W. H. Auden
+http://commons.wikimedia.org/wiki/Special:FilePath/AudenVanVechten1939.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1907-02-21
+Place of birth: 
+Education:
+University of Oxford
+Gresham&#39;s School
+Christ Church
+St Edmund&#39;s School
+
+
+Name: Ingeborg Bachmann
+http://commons.wikimedia.org/wiki/Special:FilePath/Klagenfurt%20-%20Musilhaus%20-%20Ingeborg%20Bachmann.jpg
+Gender: female
+Nationality: Austria
+Date of birth: 1926-06-25
+Place of birth: 
+
+
+Name: Herbert Spencer
+http://commons.wikimedia.org/wiki/Special:FilePath/Herbert%20Spencer.jpg
+Gender: male
+Nationality: United Kingdom of Great Britain and Ireland
+Date of birth: 1820-04-27
+Place of birth: 
+
+
+Name: André Schwarz-Bart
+http://commons.wikimedia.org/wiki/Special:FilePath/Schwarz-Bart-67.jpg
+Gender: male
+Nationality: France
+Date of birth: 1928-05-28
+Place of birth: 
+
+
+Name: Francesco Chiesa
+nan
+Gender: male
+Nationality: Switzerland
+Date of birth: 1871-07-01
+Place of birth: 
+Education:
+University of Pavia
+
+
+Name: Alceu Amoroso Lima
+http://commons.wikimedia.org/wiki/Special:FilePath/Manuel%20Bandeira%2C%20Alceu%20Amoroso%20Lima%2C%20H%C3%A9lder%20C%C3%A2mara%2C%20Louren%C3%A7o%20Filho%2C%20Roquette%20Pinto%20e%20Gustavo%20Capanema.jpg
+Gender: male
+Nationality: Brazil
+Date of birth: 1893-12-11
+Place of birth: 
+Education:
+Federal University of Rio de Janeiro Faculty of Law
+
+
+Name: Fernand Baldensperger
+http://commons.wikimedia.org/wiki/Special:FilePath/Colleges%20and%20Universities%20-%20Columbia%20University%20-%20Ferdinand%20Baldensperget%20at%20Columbia%20University%2C%20New%20York%2C%20Commencement%2C%201918%20-%20NARA%20-%2026425600%20%28cropped%29.jpg
+Gender: male
+Nationality: France
+Date of birth: 1871-05-04
+Place of birth: 
+
+
+Name: Dorothy Canfield Fisher
+http://commons.wikimedia.org/wiki/Special:FilePath/Dorothy%20Canfield%20Fisher.jpg
+Gender: female
+Nationality: United States of America
+Date of birth: 1879-02-17
+Place of birth: 
+Education:
+Columbia University
+University of Paris
+Ohio State University
+
+
+Name: John Macmillan Brown
+nan
+Gender: male
+Nationality: New Zealand
+Date of birth: 1845-05-05
+Place of birth: 
+Education:
+University of Edinburgh
+Dollar Academy
+
+
+Name: Hans Henrik Holm
+http://commons.wikimedia.org/wiki/Special:FilePath/Forfatter%20Hans%20H.%20Holm%20-%20no-nb%20digifoto%2020160216%2000460%20NB%20NS%20000706V%20%28cropped%29.jpg
+Gender: male
+Nationality: Norway
+Date of birth: 1896-01-18
+Place of birth: 
+
+
+Name: Vilhelm Ekelund
+http://commons.wikimedia.org/wiki/Special:FilePath/Vilhelm%20ekelund%20m.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1880-10-14
+Place of birth: 
+
+
+Name: Ronald Syme
+http://commons.wikimedia.org/wiki/Special:FilePath/Ronald%20Syme.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1903-03-11
+Place of birth: 
+Education:
+Oriel College
+University of Auckland
+Victoria University of Wellington
+
+
+Name: Werner Bergengruen
+http://commons.wikimedia.org/wiki/Special:FilePath/WP%20Werner%20Bergengruen.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1892-09-16
+Place of birth: 
+Education:
+Ludwig Maximilian University of Munich
+University of Marburg
+Katharineum
+Gymnasium Philippinum Marburg
+
+
+Name: Eugène Baie
+nan
+Gender: male
+Nationality: Belgium
+Date of birth: 1874-08-03
+Place of birth: 
+
+
+Name: Aquilino Ribeiro
+http://commons.wikimedia.org/wiki/Special:FilePath/Aquilino%20Ribeiro.JPG
+Gender: male
+Nationality: Portugal
+Date of birth: 1885-09-13
+Place of birth: 
+
+
+Name: James George Frazer
+http://commons.wikimedia.org/wiki/Special:FilePath/JamesGeorgeFrazer.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1854-01-01
+Place of birth: 
+Education:
+University of Cambridge
+University of Glasgow
+Trinity College
+Lomond School
+
+
+Name: Ole Hallesby
+http://commons.wikimedia.org/wiki/Special:FilePath/Ole%20Hallesby%20OB.%C3%9849%200661%20cropped.jpg
+Gender: male
+Nationality: Norway
+Date of birth: 1879-08-05
+Place of birth: 
+
+
+Name: Rufino Blanco-Fombona
+http://commons.wikimedia.org/wiki/Special:FilePath/Rufino%20Blanco%20Fombona%2C%20de%20Kaulak.jpg
+Gender: male
+Nationality: Venezuela
+Date of birth: 1874-06-17
+Place of birth: 
+
+
+Name: Erich Kästner
+http://commons.wikimedia.org/wiki/Special:FilePath/Erich%20K%C3%A4stner%201961.jpg
+Gender: male
+Nationality: West Germany
+Date of birth: 1899-02-23
+Place of birth: 
+Education:
+Leipzig University
+
+
+Name: H. D. F. Kitto
+nan
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1897-02-06
+Place of birth: 
+Education:
+St John&#39;s College
+The Crypt School
+
+
+Name: Alejo Carpentier
+http://commons.wikimedia.org/wiki/Special:FilePath/Alejocarpentier.jpg
+Gender: male
+Nationality: Cuba
+Date of birth: 1904-12-26
+Place of birth: 
+
+
+Name: Arnold Zweig
+http://commons.wikimedia.org/wiki/Special:FilePath/Arnold%20Zweig%20%281887%E2%80%931968%29%20%C2%A9%20Max%20Fenichel%20%281885%E2%80%931942%29%20OeNB%2020431579%20A.png
+Gender: male
+Nationality: East Germany
+Date of birth: 1887-11-10
+Place of birth: 
+
+
+Name: William Butler Yeats
+http://commons.wikimedia.org/wiki/Special:FilePath/William%20Butler%20Yeats%20by%20George%20Charles%20Beresford.jpg
+Gender: male
+Nationality: Ireland
+Date of birth: 1865-06-13
+Place of birth: 
+Education:
+National College of Art and Design
+
+
+Name: Charles Plisnier
+http://commons.wikimedia.org/wiki/Special:FilePath/Marie-Th%C3%A9r%C3%A8se%20Bodart%20et%20Charles%20Plisnier%201945.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1896-12-13
+Place of birth: 
+Education:
+Free University of Brussels
+
+
+Name: Charles Bernard Renouvier
+http://commons.wikimedia.org/wiki/Special:FilePath/Charles%20Renouvier.png
+Gender: male
+Nationality: France
+Date of birth: 1815-01-01
+Place of birth: 
+Education:
+École polytechnique
+
+
+Name: F. R. Leavis
+http://commons.wikimedia.org/wiki/Special:FilePath/F.%20R.%20Leavis.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1895-07-14
+Place of birth: 
+Education:
+Emmanuel College
+The Perse School
+
+
+Name: Riccardo Bacchelli
+http://commons.wikimedia.org/wiki/Special:FilePath/Riccardo%20Bacchelli%201950s.jpg
+Gender: male
+Nationality: Italy
+Date of birth: 1891-04-19
+Place of birth: 
+Education:
+University of Bologna
+
+
+Name: James Cousins
+http://commons.wikimedia.org/wiki/Special:FilePath/James%20Henry%20Cousins.png
+Gender: male
+Nationality: Ireland
+Date of birth: 1873-07-22
+Place of birth: 
+
+
+Name: Jean Schlumberger
+http://commons.wikimedia.org/wiki/Special:FilePath/Jean%20Schlumberger.jpg
+Gender: male
+Nationality: France
+Date of birth: 1877-05-26
+Place of birth: 
+
+
+Name: Simone de Beauvoir
+http://commons.wikimedia.org/wiki/Special:FilePath/Simone%20de%20Beauvoir.jpg
+Gender: female
+Nationality: France
+Date of birth: 1908-01-09
+Place of birth: 
+Education:
+University of Paris
+
+
+Name: Henri Troyat
+http://commons.wikimedia.org/wiki/Special:FilePath/Henri%20Troyat.jpg
+Gender: male
+Nationality: France
+Date of birth: 1911-11-01
+Place of birth: 
+Education:
+Lycée Pasteur
+
+
+Name: Edith Annie Howes
+http://commons.wikimedia.org/wiki/Special:FilePath/Edith%20Annie%20Howes%20in%201900s.jpg
+Gender: female
+Nationality: New Zealand
+Date of birth: 1872-08-29
+Place of birth: 
+
+
+Name: Michael Sadleir
+nan
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1888-12-25
+Place of birth: 
+Education:
+Balliol College
+Rugby School
+
+
+Name: René Béhaine
+nan
+Gender: male
+Nationality: France
+Date of birth: 1880-06-17
+Place of birth: 
+
+
+Name: Ernst Jünger
+http://commons.wikimedia.org/wiki/Special:FilePath/Ernst%20J%C3%BCnger%20vers%201920.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1895-03-29
+Place of birth: 
+Education:
+Leipzig University
+
+
+Name: Grigorios Xenopoulos
+http://commons.wikimedia.org/wiki/Special:FilePath/Grigorios%20Xenopoulos.JPG
+Gender: male
+Nationality: Greece
+Date of birth: 1867-12-09
+Place of birth: 
+Education:
+National and Kapodistrian University of Athens
+
+
+Name: Karl Kraus
+http://commons.wikimedia.org/wiki/Special:FilePath/Karl%20Kraus.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1874-03-28
+Place of birth: 
+Education:
+University of Vienna
+
+
+Name: Eyvind Johnson
+http://commons.wikimedia.org/wiki/Special:FilePath/Eyvind.JPG
+Gender: male
+Nationality: Sweden
+Date of birth: 1900-07-29
+Place of birth: 
+
+
+Name: Elise Richter
+http://commons.wikimedia.org/wiki/Special:FilePath/Elise%20Richter%20%28Wiener%20Bilder%201907%29.png
+Gender: female
+Nationality: Austria
+Date of birth: 1865-03-02
+Place of birth: 
+Education:
+University of Vienna
+
+
+Name: Julien Gracq
+nan
+Gender: male
+Nationality: France
+Date of birth: 1910-07-27
+Place of birth: 
+Education:
+École normale supérieure
+École Libre des Sciences Politiques
+Lycée Henri-IV
+
+
+Name: Bei Dao
+http://commons.wikimedia.org/wiki/Special:FilePath/Bei%20Dao.IMG%203385.JPG
+Gender: male
+Nationality: United States of America
+Date of birth: 1949-08-02
+Place of birth: 
+Education:
+Beijing No.4 High School
+
+
+Name: Darrell Figgis
+http://commons.wikimedia.org/wiki/Special:FilePath/Darrell%20Figgis%20%2825348349727%29.jpg
+Gender: male
+Nationality: Irish Free State
+Date of birth: 1882-09-17
+Place of birth: 
+
+
+Name: Marcel Barrière
+nan
+Gender: male
+Nationality: France
+Date of birth: 1860-11-03
+Place of birth: 
+
+
+Name: Julius Gersdorff
+nan
+Gender: male
+Nationality: Germany
+Date of birth: 1849-06-15
+Place of birth: 
+
+
+Name: Giorgos Seferis
+http://commons.wikimedia.org/wiki/Special:FilePath/Giorgos%20Seferis%201963.jpg
+Gender: male
+Nationality: Greece
+Date of birth: 1900-03-13
+Place of birth: 
+Education:
+University of Paris 1 Pantheon-Sorbonne
+
+
+Name: John Morley, 1st Viscount Morley of Blackburn
+http://commons.wikimedia.org/wiki/Special:FilePath/Morley-John-Viscount.jpg
+Gender: male
+Nationality: United Kingdom of Great Britain and Ireland
+Date of birth: 1838-12-24
+Place of birth: 
+Education:
+Lincoln College
+Cheltenham College
+University College School
+
+
+Name: Francisco García Calderón Rey
+http://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20Garcia%20Calderon%20Rey.jpg
+Gender: male
+Nationality: Peru
+Date of birth: 1883-04-08
+Place of birth: 
+Education:
+National University of San Marcos
+
+
+Name: Adolf von Harnack
+http://commons.wikimedia.org/wiki/Special:FilePath/Adolf%20Harnack.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1851-05-07
+Place of birth: 
+Education:
+Leipzig University
+Imperial University of Dorpat
+
+
+Name: Johann Rump
+nan
+Gender: male
+Nationality: German Reich
+Date of birth: 1871-10-23
+Place of birth: 
+
+
+Name: Kate Roberts
+http://commons.wikimedia.org/wiki/Special:FilePath/Kate%20Roberts%201923.jpg
+Gender: female
+Nationality: United Kingdom
+Date of birth: 1891-02-13
+Place of birth: 
+Education:
+Bangor University
+
+
+Name: Friedrich Dürrenmatt
+http://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%20duerrenmatt%2019890427.jpg
+Gender: male
+Nationality: Switzerland
+Date of birth: 1921-01-05
+Place of birth: 
+Education:
+University of Zurich
+University of Bern
+
+
+Name: Enrica von Handel-Mazzetti
+http://commons.wikimedia.org/wiki/Special:FilePath/Enrica%20Handel-Mazzett%20c%201889.jpg
+Gender: female
+Nationality: Austria
+Date of birth: 1871-01-10
+Place of birth: 
+
+
+Name: Eduard Meyer
+http://commons.wikimedia.org/wiki/Special:FilePath/Eduard%20Meyer.jpg
+Gender: male
+Nationality: Germany
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date of birth: 1855-01-25
+Place of birth: 
+Education:
+University of Bonn
+Leipzig University
+
+
+Name: Gaston Paris
+http://commons.wikimedia.org/wiki/Special:FilePath/Gaston%20Paris.jpg
+Gender: male
+Nationality: France
+Date of birth: 1839-08-09
+Place of birth: 
+Education:
+École des Chartes
+
+
+Name: Josep Carner
+http://commons.wikimedia.org/wiki/Special:FilePath/Josep%20Carner%201970.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1884-02-09
+Place of birth: 
+
+
+Name: Hans Fallada
+http://commons.wikimedia.org/wiki/Special:FilePath/DBP%201993%201683%20Hans%20Fallada.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1893-07-21
+Place of birth: 
+
+
+Name: Sigmund Freud
+http://commons.wikimedia.org/wiki/Special:FilePath/Sigmund%20Freud%2C%20by%20Max%20Halberstadt%20%28cropped%29.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1856-05-06
+Place of birth: 
+Education:
+University of Vienna
+
+
+Name: João Bonança
+http://commons.wikimedia.org/wiki/Special:FilePath/Jo%C3%A3o%20Bonan%C3%A7a%20-%20O%20Occidente%20%281%20Jun.%201889%29.png
+Gender: male
+Nationality: Portugal
+Date of birth: 1836-01-01
+Place of birth: 
+
+
+Name: Harry Martinson
+http://commons.wikimedia.org/wiki/Special:FilePath/Harry%20Martinson.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1904-05-06
+Place of birth: 
+
+
+Name: Henri Queffélec
+nan
+Gender: male
+Nationality: France
+Date of birth: 1910-01-29
+Place of birth: 
+Education:
+École normale supérieure
+Lycée Louis-le-Grand
+
+
+Name: Enrique González Martínez
+http://commons.wikimedia.org/wiki/Special:FilePath/ENRIQUE%20GONZALEZ%20MARTINEZ%201871%20-%201952%20POETA%20MEXICANO%20%2813451188195%29.jpg
+Gender: male
+Nationality: Mexico
+Date of birth: 1871-04-13
+Place of birth: 
+
+
+Name: José Echegaray
+http://commons.wikimedia.org/wiki/Special:FilePath/Jos%C3%A9%20Echegaray%20y%20Eizaguirre.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1832-04-19
+Place of birth: 
+Education:
+Escuela Técnica Superior de Ingenieros de Caminos, Canales y Puertos (Universidad Politécnica de Madrid)
+
+
+Name: Giuseppe Ungaretti
+http://commons.wikimedia.org/wiki/Special:FilePath/Ungaretti%20Giovane.jpg
+Gender: male
+Nationality: Italy
+Date of birth: 1888-02-08
+Place of birth: 
+Education:
+University of Paris
+
+
+Name: John Galsworthy
+http://commons.wikimedia.org/wiki/Special:FilePath/John%20Galsworthy%202.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1867-08-14
+Place of birth: 
+Education:
+Harrow School
+New College
+
+
+Name: Gustave Vanzype
+http://commons.wikimedia.org/wiki/Special:FilePath/Gustave%20Vanzype%201910.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1869-06-10
+Place of birth: 
+
+
+Name: Herbert John Clifford Grierson
+nan
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1866-01-16
+Place of birth: 
+Education:
+University of Aberdeen
+Christ Church
+
+
+Name: Albert Sorel
+http://commons.wikimedia.org/wiki/Special:FilePath/Albert%20Sorel.jpg
+Gender: male
+Nationality: France
+Date of birth: 1842-08-13
+Place of birth: 
+
+
+Name: Erik Axel Karlfeldt
+http://commons.wikimedia.org/wiki/Special:FilePath/Anders%20Zorn%20-%20Erik%20Axel%20Karlfeldt%20i%20Zorng%C3%A5rdens%20matsal%20%281906%29.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1864-07-20
+Place of birth: 
+Education:
+Uppsala University
+
+
+Name: J.-H. Rosny aîné
+http://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Henri%20Honor%C3%A9%20Boex.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1856-02-17
+Place of birth: 
+
+
+Name: Rudolf Kassner
+http://commons.wikimedia.org/wiki/Special:FilePath/Ernst%20Noether%20-%20Portrait%20Rudolf%20Kassner.%20Kreidezeichnung%201907.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1873-11-09
+Place of birth: 
+
+
+Name: Hermann Hesse
+http://commons.wikimedia.org/wiki/Special:FilePath/Hermann%20Hesse%202.jpg
+Gender: male
+Nationality: Switzerland
+Date of birth: 1877-07-02
+Place of birth: 
+Education:
+Johannes-Kepler-Gymnasium
+
+
+Name: Taha Hussein
+http://commons.wikimedia.org/wiki/Special:FilePath/Taha%20Hussein.jpg
+Gender: male
+Nationality: Egypt
+Date of birth: 1889-11-14
+Place of birth: 
+Education:
+Al-Azhar University
+Cairo University
+University of Montpellier
+Faculty of Arts of Paris
+
+
+Name: Jules Romains
+http://commons.wikimedia.org/wiki/Special:FilePath/Jules%20Romains-crop.jpg
+Gender: male
+Nationality: France
+Date of birth: 1885-08-26
+Place of birth: 
+Education:
+École normale supérieure
+Lycée Condorcet
+
+
+Name: Étienne Gilson
+http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89tienne%20Gilson.jpg
+Gender: male
+Nationality: France
+Date of birth: 1884-06-13
+Place of birth: 
+Education:
+Lycée Henri-IV
+Faculty of Arts of Paris
+
+
+Name: Robert Frost
+http://commons.wikimedia.org/wiki/Special:FilePath/Robert%20Frost%20NYWTS.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1874-03-24
+Place of birth: 
+Education:
+Harvard University
+Dartmouth College
+Lawrence High School
+
+
+Name: Edouard Rod
+http://commons.wikimedia.org/wiki/Special:FilePath/Edouard%20Rod%207.jpg
+Gender: male
+Nationality: Switzerland
+Date of birth: 1857-03-31
+Place of birth: 
+Education:
+University of Lausanne
+
+
+Name: Johan Bojer
+http://commons.wikimedia.org/wiki/Special:FilePath/Johan%20Bojer%201927.jpg
+Gender: male
+Nationality: Norway
+Date of birth: 1872-03-06
+Place of birth: 
+
+
+Name: Julien Benda
+http://commons.wikimedia.org/wiki/Special:FilePath/Julien%20Benda.jpg
+Gender: male
+Nationality: France
+Date of birth: 1867-12-26
+Place of birth: 
+Education:
+École Centrale Paris
+University of Paris
+
+
+Name: Israel Zangwill
+http://commons.wikimedia.org/wiki/Special:FilePath/Israel%20Zangwill.jpg
+Gender: male
+Nationality: United Kingdom of Great Britain and Ireland
+Date of birth: 1864-01-21
+Place of birth: 
+Education:
+University of London
+York University
+JFS
+
+
+Name: Carlos Vaz Ferreira
+http://commons.wikimedia.org/wiki/Special:FilePath/Vaz%20ferreira%20carlos.jpg
+Gender: male
+Nationality: Uruguay
+Date of birth: 1872-10-15
+Place of birth: 
+Education:
+Universidad de la República - Udelar
+
+
+Name: Andrew Lang
+http://commons.wikimedia.org/wiki/Special:FilePath/Andrew%20Lang.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1844-03-31
+Place of birth: 
+Education:
+Loretto School
+University of St Andrews
+Balliol College
+Edinburgh Academy
+Selkirk High School
+
+
+Name: Edwin Arlington Robinson
+http://commons.wikimedia.org/wiki/Special:FilePath/Edwin%20Arlington%20Robinson.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1869-12-22
+Place of birth: 
+Education:
+Harvard University
+
+
+Name: John Watson
+http://commons.wikimedia.org/wiki/Special:FilePath/Ian%20Maclaren%20001.jpg
+Gender: male
+Nationality: United Kingdom of Great Britain and Ireland
+Date of birth: 1850-11-03
+Place of birth: 
+Education:
+University of Edinburgh
+
+
+Name: Konstantin Paustovsky
+http://commons.wikimedia.org/wiki/Special:FilePath/Paustovsky.jpg
+Gender: male
+Nationality: Soviet Union
+Date of birth: 1892-05-31
+Place of birth: 
+Education:
+Moscow State University
+
+
+Name: Adrien Albert Marie de Mun
+http://commons.wikimedia.org/wiki/Special:FilePath/Albert%20de%20Mun%20by%20Isidore%20Alphonse%20Chalot.jpg
+Gender: male
+Nationality: France
+Date of birth: 1841-02-28
+Place of birth: 
+Education:
+École Spéciale Militaire de Saint-Cyr
+
+
+Name: Shmuel Yosef Agnon
+http://commons.wikimedia.org/wiki/Special:FilePath/%D7%A4%D7%95%D7%A8%D7%98%D7%A8%D7%98%20%D7%A9%22%D7%99%20%D7%A2%D7%92%D7%A0%D7%95%D7%9F%20%28cropped%29.jpg
+Gender: male
+Nationality: Israel
+Date of birth: 1888-07-17
+Place of birth: 
+
+
+Name: Carl Jung
+http://commons.wikimedia.org/wiki/Special:FilePath/ETH-BIB-Jung%2C%20Carl%20Gustav%20%281875-1961%29-Portrait-Portr%2014163%20%28cropped%29.tif
+Gender: male
+Nationality: Switzerland
+Date of birth: 1875-07-26
+Place of birth: 
+Education:
+University of Basel
+
+
+Name: Charles Montagu Doughty
+http://commons.wikimedia.org/wiki/Special:FilePath/Charles%20Montagu%20Doughty.jpg
+Gender: male
+Nationality: United Kingdom of Great Britain and Ireland
+Date of birth: 1843-08-19
+Place of birth: 
+Education:
+King&#39;s College London
+Gonville and Caius College
+
+
+Name: Valdemar Rørdam
+http://commons.wikimedia.org/wiki/Special:FilePath/Valdemar%20R%C3%B8rdam.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1872-09-23
+Place of birth: 
+
+
+Name: Molly Elliot Seawell
+http://commons.wikimedia.org/wiki/Special:FilePath/Molly%20Elliot%20Seawell%20002.jpg
+Gender: female
+Nationality: United States of America
+Date of birth: 1860-10-23
+Place of birth: 
+
+
+Name: Henri Bergson
+http://commons.wikimedia.org/wiki/Special:FilePath/Henri%20Bergson%2002.jpg
+Gender: male
+Nationality: France
+Date of birth: 1859-10-18
+Place of birth: 
+Education:
+École normale supérieure
+University of Paris
+Lycée Condorcet
+
+
+Name: Paul Valéry
+http://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Val%C3%A9ry%20-%20photo%20Henri%20Manuel.jpg
+Gender: male
+Nationality: France
+Date of birth: 1871-10-30
+Place of birth: 
+Education:
+Lycée Condorcet
+
+
+Name: Ivan Shmelyov
+http://commons.wikimedia.org/wiki/Special:FilePath/%D0%98.%D0%A1.%20%D0%A8%D0%BC%D0%B5%D0%BB%D0%B5%D0%B2.jpg
+Gender: male
+Nationality: Russian Empire
+Date of birth: 1873-10-03
+Place of birth: 
+Education:
+Moscow Imperial University, Faculty of Law
+
+
+Name: Kostis Palamas
+http://commons.wikimedia.org/wiki/Special:FilePath/%CE%9A%CF%89%CF%83%CF%84%CE%AE%CF%82%20%CE%A0%CE%B1%CE%BB%CE%B1%CE%BC%CE%AC%CF%82.jpg
+Gender: male
+Nationality: Greece
+Date of birth: 1859-01-13
+Place of birth: 
+Education:
+National and Kapodistrian University of Athens
+
+
+Name: William Faulkner
+http://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Van%20Vechten%20-%20William%20Faulkner%20%28greyscale%20and%20cropped%29.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1897-09-25
+Place of birth: 
+Education:
+University of Virginia
+University of Mississippi
+
+
+Name: Paul Raynal
+http://commons.wikimedia.org/wiki/Special:FilePath/Fotothek%20df%20pk%200000045%20015%20Szenenbilder.jpg
+Gender: male
+Nationality: France
+Date of birth: 1885-07-25
+Place of birth: 
+
+
+Name: Hayim Nahman Bialik
+http://commons.wikimedia.org/wiki/Special:FilePath/Hayyim%20Nahman%20Bialik%201923.jpg
+Gender: male
+Nationality: Russian Empire
+Date of birth: 1873-01-09
+Place of birth: 
+
+
+Name: Jarosław Iwaszkiewicz
+http://commons.wikimedia.org/wiki/Special:FilePath/Jaroslaw%20Iwaszkiewicz.jpg
+Gender: male
+Nationality: Poland
+Date of birth: 1894-02-20
+Place of birth: 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Education:
+Taras Shevchenko National University of Kyiv
+
+
+Name: Francesco D&#39;Ovidio
+nan
+Gender: male
+Nationality: Kingdom of Italy
+Date of birth: 1849-12-05
+Place of birth: 
+Education:
+University of Pisa
+Scuola Normale Superiore
+
+
+Name: Charles Mauron
+nan
+Gender: male
+Nationality: France
+Date of birth: 1899-06-27
+Place of birth: 
+
+
+Name: Antonio Fogazzaro
+http://commons.wikimedia.org/wiki/Special:FilePath/Antonio%20Fogazzaro2.jpg
+Gender: male
+Nationality: Kingdom of Italy
+Date of birth: 1842-03-25
+Place of birth: 
+Education:
+University of Turin
+
+
+Name: Troels Frederik Lund
+http://commons.wikimedia.org/wiki/Special:FilePath/Troels%20Lund%20september%201920.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1840-09-05
+Place of birth: 
+Education:
+University of Copenhagen
+
+
+Name: Maurice Magre
+nan
+Gender: male
+Nationality: France
+Date of birth: 1877-03-02
+Place of birth: 
+
+
+Name: Carl Friedrich Glasenapp
+http://commons.wikimedia.org/wiki/Special:FilePath/Carl-Friedrich-Glasenapp-%281847-1915%3B%20vor%201908%29.jpg
+Gender: male
+Nationality: Russian Empire
+Date of birth: 1847-10-03
+Place of birth: 
+
+
+Name: Margaret Mitchell
+http://commons.wikimedia.org/wiki/Special:FilePath/Margaret%20Mitchell%20NYWTS.jpg
+Gender: female
+Nationality: United States of America
+Date of birth: 1900-11-08
+Place of birth: 
+Education:
+Smith College
+The Westminster Schools
+
+
+Name: Jorge Guillén
+nan
+Gender: male
+Nationality: Spain
+Date of birth: 1893-01-18
+Place of birth: 
+Education:
+Facultad de Filosofía y Letras (Universidad de Granada)
+Universidad Central
+
+
+Name: Ivo Andrić
+http://commons.wikimedia.org/wiki/Special:FilePath/S.%20Kragujevic%2C%20Ivo%20Andric%2C%201961.jpg
+Gender: male
+Nationality: Socialist Federal Republic of Yugoslavia
+Date of birth: 1892-10-10
+Place of birth: 
+Education:
+University of Vienna
+University of Graz
+Faculty of Humanities and Social Sciences, University of Zagreb
+Faculty of Philosophy of the Jagiellonian University
+
+
+Name: Maria Madalena de Martel Patrício
+nan
+Gender: female
+Nationality: Portugal
+Date of birth: 1884-01-01
+Place of birth: 
+
+
+Name: Michel de Ghelderode
+http://commons.wikimedia.org/wiki/Special:FilePath/Michel%20de%20Ghelderode.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1898-04-03
+Place of birth: 
+
+
+Name: Arthur Waley
+http://commons.wikimedia.org/wiki/Special:FilePath/Arthur%20Waley%20by%20Ray%20Strachey.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1889-08-19
+Place of birth: 
+Education:
+King&#39;s College
+Rugby School
+
+
+Name: Mikhail Sholokhov
+http://commons.wikimedia.org/wiki/Special:FilePath/%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87%20%D0%A8%D0%BE%D0%BB%D0%BE%D1%85%D0%BE%D0%B2.jpg
+Gender: male
+Nationality: Soviet Union
+Date of birth: 1905-05-24
+Place of birth: 
+
+
+Name: Elizabeth Goudge
+nan
+Gender: female
+Nationality: United Kingdom
+Date of birth: 1900-04-24
+Place of birth: 
+
+
+Name: Toyohiko Kagawa
+http://commons.wikimedia.org/wiki/Special:FilePath/KAGAWA%20Toyohiko%20young.JPG
+Gender: male
+Nationality: Japan
+Date of birth: 1888-07-10
+Place of birth: 
+
+
+Name: Romain Rolland
+http://commons.wikimedia.org/wiki/Special:FilePath/Romain%20Rolland%201915.jpg
+Gender: male
+Nationality: France
+Date of birth: 1866-01-29
+Place of birth: 
+Education:
+École normale supérieure
+Lycée Saint-Louis
+Lycée Louis-le-Grand
+Sorbonne
+
+
+Name: Edmond Picard
+http://commons.wikimedia.org/wiki/Special:FilePath/EdmondPicardd%27apr%C3%A8sMascr%C3%A9.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1836-12-15
+Place of birth: 
+
+
+Name: Hans E. Kinck
+http://commons.wikimedia.org/wiki/Special:FilePath/Hans%20E.%20Kinck%20%287602646518%29.jpg
+Gender: male
+Nationality: Norway
+Date of birth: 1865-10-11
+Place of birth: 
+
+
+Name: Pierre Loti
+http://commons.wikimedia.org/wiki/Special:FilePath/Pierre%20Loti%20en%20acad%C3%A9micien.jpg
+Gender: male
+Nationality: France
+Date of birth: 1850-01-14
+Place of birth: 
+Education:
+École Navale
+Lycée Henri-IV
+
+
+Name: Giosuè Carducci
+http://commons.wikimedia.org/wiki/Special:FilePath/Giosu%C3%A8%20Carducci3%20%28cropped%29.jpg
+Gender: male
+Nationality: Kingdom of Italy
+Date of birth: 1835-07-27
+Place of birth: 
+Education:
+University of Pisa
+Scuola Normale Superiore
+
+
+Name: Paul Bourget
+http://commons.wikimedia.org/wiki/Special:FilePath/PaulBourget.jpg
+Gender: male
+Nationality: France
+Date of birth: 1852-09-02
+Place of birth: 
+Education:
+University of Paris
+École pratique des hautes études, PSL University
+Lycée Louis-le-Grand
+Collège Sainte-Barbe
+
+
+Name: Dmitry Merezhkovsky
+http://commons.wikimedia.org/wiki/Special:FilePath/Merezhkovskiy%20in%20NNovgorod.jpg
+Gender: male
+Nationality: Russian Empire
+Date of birth: 1865-08-14
+Place of birth: 
+Education:
+Saint Petersburg State University
+
+
+Name: Rudolf Hans Bartsch
+http://commons.wikimedia.org/wiki/Special:FilePath/WP%20Rudolf%20Hans%20Bartsch.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1872-02-11
+Place of birth: 
+
+
+Name: Adolf Frey
+http://commons.wikimedia.org/wiki/Special:FilePath/%28UAZ%29%20AB.1.0277%20Frey.tif
+Gender: male
+Nationality: Switzerland
+Date of birth: 1855-02-18
+Place of birth: 
+
+
+Name: Colette
+http://commons.wikimedia.org/wiki/Special:FilePath/Colette%20-%20photo%20Henri%20Manuel.jpg
+Gender: female
+Nationality: France
+Date of birth: 1873-01-28
+Place of birth: 
+
+
+Name: Pyotr Krasnov
+http://commons.wikimedia.org/wiki/Special:FilePath/Pyotr%20Nikolayevich%20Krasnov.jpg
+Gender: male
+Nationality: Nazi Germany
+Date of birth: 1869-09-22
+Place of birth: 
+Education:
+Pavel Military School
+
+
+Name: Henri Michaux
+nan
+Gender: male
+Nationality: Belgium
+Date of birth: 1899-05-24
+Place of birth: 
+Education:
+Free University of Brussels
+
+
+Name: Hu Shih
+http://commons.wikimedia.org/wiki/Special:FilePath/Hu%20Shih%201960%20color.jpg
+Gender: male
+Nationality: Taiwan
+Date of birth: 1891-12-17
+Place of birth: 
+Education:
+Columbia University
+Cornell University
+National University
+Teachers College
+
+
+Name: André Gide
+http://commons.wikimedia.org/wiki/Special:FilePath/Gide%201920%20cropped.jpg
+Gender: male
+Nationality: France
+Date of birth: 1869-11-22
+Place of birth: 
+Education:
+Lycée Henri-IV
+École alsacienne
+
+
+Name: William Dean Howells
+http://commons.wikimedia.org/wiki/Special:FilePath/William%20Dean%20Howells%20%28ca1870%29.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1837-03-01
+Place of birth: 
+
+
+Name: Olaf Bull
+http://commons.wikimedia.org/wiki/Special:FilePath/Olaf%20Bull.jpg
+Gender: male
+Nationality: Norway
+Date of birth: 1883-11-10
+Place of birth: 
+Education:
+Oslo Cathedral School
+
+
+Name: Aurobindo Ghosh
+http://commons.wikimedia.org/wiki/Special:FilePath/Sri%20aurobindo.jpg
+Gender: male
+Nationality: India
+Date of birth: 1872-08-15
+Place of birth: 
+Education:
+King&#39;s College
+St Paul&#39;s School
+
+
+Name: Frederik van Eeden
+http://commons.wikimedia.org/wiki/Special:FilePath/Frederik%20van%20Eeden%20-%20writer%2C%201860%20%E2%80%93%201932.jpg
+Gender: male
+Nationality: Kingdom of the Netherlands
+Date of birth: 1860-04-03
+Place of birth: 
+Education:
+University of Strasbourg
+
+
+Name: Émile Faguet
+http://commons.wikimedia.org/wiki/Special:FilePath/EmileFaguet.jpg
+Gender: male
+Nationality: France
+Date of birth: 1847-12-17
+Place of birth: 
+Education:
+École normale supérieure
+Lycée Charlemagne
+
+
+Name: Pierre Emmanuel
+http://commons.wikimedia.org/wiki/Special:FilePath/Pierre%20Emmanuel%20%28Acad%C3%A9mie%20fran%C3%A7aise%29.jpg
+Gender: male
+Nationality: France
+Date of birth: 1916-05-03
+Place of birth: 
+Education:
+University of Lyon
+
+
+Name: Saint-John Perse
+http://commons.wikimedia.org/wiki/Special:FilePath/Saint-John%20Perse%201960.jpg
+Gender: male
+Nationality: France
+Date of birth: 1887-05-31
+Place of birth: 
+Education:
+University of Bordeaux
+Lycée Louis-Barthou
+
+
+Name: L. P. Hartley
+http://commons.wikimedia.org/wiki/Special:FilePath/Sir%20Maurice%20Bowra%3B%20Sylvester%20Govett%20Gates%3B%20L.P.%20Hartley%2C%20by%20Lady%20Ottoline%20Morrell.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1895-12-30
+Place of birth: 
+Education:
+Balliol College
+Harrow School
+Clifton College
+
+
+Name: Jacinto Benavente
+http://commons.wikimedia.org/wiki/Special:FilePath/Jacinto%20Benavente%20y%20Martinez.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1866-08-12
+Place of birth: 
+Education:
+Complutense University of Madrid
+
+
+Name: Erwin Guido Kolbenheyer
+http://commons.wikimedia.org/wiki/Special:FilePath/Erwin%20Guido%20Kolbenheyer%2C%20um%201920.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1878-12-30
+Place of birth: 
+
+
+Name: Selma Lagerlöf
+http://commons.wikimedia.org/wiki/Special:FilePath/Selma%20Lagerl%C3%B6f.jpg
+Gender: female
+Nationality: Sweden
+Date of birth: 1858-11-20
+Place of birth: 
+Education:
+Högre lärarinneseminariet
+
+
+Name: Pencho Slaveykov
+http://commons.wikimedia.org/wiki/Special:FilePath/BASA-1771K-1-1115-1-Pencho%20Slaveykov.jpeg
+Gender: male
+Nationality: Bulgaria
+Date of birth: 1866-04-27
+Place of birth: 
+
+
+Name: Louis Franck
+http://commons.wikimedia.org/wiki/Special:FilePath/FranckLouis.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1868-11-28
+Place of birth: 
+Education:
+Université libre de Bruxelles
+Free University of Brussels
+
+
+Name: Gilbert Cesbron
+http://commons.wikimedia.org/wiki/Special:FilePath/Cesbron%20Harcourt%201947%203.jpg
+Gender: male
+Nationality: France
+Date of birth: 1913-01-13
+Place of birth: 
+Education:
+École Libre des Sciences Politiques
+Lycée Condorcet
+
+
+Name: Tennessee Williams
+http://commons.wikimedia.org/wiki/Special:FilePath/Tennessee%20Williams%20NYWTS.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1911-03-26
+Place of birth: 
+Education:
+University of Iowa
+University of Missouri
+New School
+Washington University in St. Louis
+Soldan International Studies High School
+University City High School
+
+
+Name: Sotíris Skípis
+http://commons.wikimedia.org/wiki/Special:FilePath/Emeric%20Tauss%20Torday%202013-09-09%2016-40.png
+Gender: male
+Nationality: Greece
+Date of birth: 1881-01-01
+Place of birth: 
+
+
+Name: Anna Akhmatova
+http://commons.wikimedia.org/wiki/Special:FilePath/Kuzma%20Petrov-Vodkin.%20Portrait%20of%20Anna%20Akhmatova.%201922.jpg
+Gender: female
+Nationality: Soviet Union
+Date of birth: 1889-06-23
+Place of birth: 
+Education:
+Q12110298
+
+
+Name: G. K. Chesterton
+http://commons.wikimedia.org/wiki/Special:FilePath/Gilbert%20Chesterton.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1874-05-29
+Place of birth: 
+Education:
+University College London
+St Paul&#39;s School
+Slade School of Fine Art
+Colet Court
+
+
+Name: Marie Under
+http://commons.wikimedia.org/wiki/Special:FilePath/Marie%20Under%20circa%201903%20by%20Max%20Meixner%20of%20Reval%20%28Tallinn%29.jpg
+Gender: female
+Nationality: Sweden
+Date of birth: 1883-03-27
+Place of birth: 
+
+
+Name: Gaston Boissier
+http://commons.wikimedia.org/wiki/Special:FilePath/Gaston%20Boissier%2002.jpg
+Gender: male
+Nationality: France
+Date of birth: 1823-08-15
+Place of birth: 
+Education:
+École normale supérieure
+
+
+Name: Arnold Schering
+nan
+Gender: male
+Nationality: East Germany
+Date of birth: 1877-04-02
+Place of birth: 
+Education:
+Kreuzschule
+
+
+Name: Pierre Jean Jouve
+http://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20de%20Pierre%20Jean%20Jouve.jpg
+Gender: male
+Nationality: France
+Date of birth: 1887-10-11
+Place of birth: 
+
+
+Name: Rafael Altamira y Crevea
+http://commons.wikimedia.org/wiki/Special:FilePath/Rafael%20Altamira.%20Retrato%20de%20Sorolla..jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1866-02-10
+Place of birth: 
+Education:
+Complutense University of Madrid
+University of Valencia
+
+
+Name: Felix Timmermans
+http://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20102-12722%2C%20Felix%20Timmermanns.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1886-07-05
+Place of birth: 
+
+
+Name: Émile Zola
+http://commons.wikimedia.org/wiki/Special:FilePath/Emile%20Zola%201902.jpg
+Gender: male
+Nationality: France
+Date of birth: 1840-04-02
+Place of birth: 
+Education:
+Lycée Saint-Louis
+
+
+Name: Michel Butor
+http://commons.wikimedia.org/wiki/Special:FilePath/Michel-Butor.jpg
+Gender: male
+Nationality: France
+Date of birth: 1926-09-14
+Place of birth: 
+Education:
+Lycée Louis-le-Grand
+
+
+Name: Ada Negri
+http://commons.wikimedia.org/wiki/Special:FilePath/Ada%20Negri%201913.jpg
+Gender: female
+Nationality: Kingdom of Italy
+Date of birth: 1870-02-03
+Place of birth: 
+
+
+Name: Ismail Kadare
+http://commons.wikimedia.org/wiki/Special:FilePath/Ismail%20Kadare.jpg
+Gender: male
+Nationality: Albania
+Date of birth: 1936-01-28
+Place of birth: 
+Education:
+University of Tirana
+Maxim Gorky Literature Institute
+
+
+Name: Georgios Souris
+http://commons.wikimedia.org/wiki/Special:FilePath/Georgios%20Souris%20122.JPG
+Gender: male
+Nationality: Greece
+Date of birth: 1853-02-02
+Place of birth: 
+
+
+Name: Carl Zuckmayer
+http://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20146-2005-0008%2C%20Carl%20Zuckmayer.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1896-12-27
+Place of birth: 
+Education:
+Goethe University Frankfurt
+
+
+Name: Ernest Lavisse
+http://commons.wikimedia.org/wiki/Special:FilePath/Ernest%20Lavisse%201913.jpg
+Gender: male
+Nationality: France
+Date of birth: 1842-12-17
+Place of birth: 
+Education:
+École normale supérieure
+Lycée Charlemagne
+Institution Massin
+
+
+Name: Hossein Ghods-Nakhai
+http://commons.wikimedia.org/wiki/Special:FilePath/NakhaiPortrait.JPG
+Gender: male
+Nationality: Iran
+Date of birth: 1911-01-01
+Place of birth: 
+
+
+Name: Jakob Knudsen
+http://commons.wikimedia.org/wiki/Special:FilePath/Jakob%20Knudsen%2C%20Danish%20writer.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1858-09-14
+Place of birth: 
+
+
+Name: Giovanni Papini
+http://commons.wikimedia.org/wiki/Special:FilePath/Picture%20of%20Giovanni%20Papini.jpg
+Gender: male
+Nationality: Italy
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date of birth: 1881-01-09
+Place of birth: 
+
+
+Name: Ventura García Calderón
+http://commons.wikimedia.org/wiki/Special:FilePath/Ventura%20Garcia%20Calderon.jpg
+Gender: male
+Nationality: Frances
+Date of birth: 1886-02-23
+Place of birth: 
+Education:
+National University of San Marcos
+
+
+Name: Roberto Bracco
+http://commons.wikimedia.org/wiki/Special:FilePath/Roberto%20Bracco%2002.jpg
+Gender: male
+Nationality: Kingdom of Italy
+Date of birth: 1861-11-10
+Place of birth: 
+
+
+Name: Ignazio Silone
+http://commons.wikimedia.org/wiki/Special:FilePath/Silone.JPG
+Gender: male
+Nationality: Italy
+Date of birth: 1900-05-01
+Place of birth: 
+
+
+Name: Miguel Torga
+http://commons.wikimedia.org/wiki/Special:FilePath/Miguel%20Torga%20100anos.png
+Gender: male
+Nationality: Portugal
+Date of birth: 1907-08-12
+Place of birth: 
+Education:
+University of Coimbra
+
+
+Name: Louis Aragon
+http://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20Aragon.jpg
+Gender: male
+Nationality: France
+Date of birth: 1897-10-03
+Place of birth: 
+Education:
+Lycée Carnot
+
+
+Name: Gustav Falke
+http://commons.wikimedia.org/wiki/Special:FilePath/Gustav%20Falke%201905.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1853-01-11
+Place of birth: 
+
+
+Name: Karl Schönherr
+http://commons.wikimedia.org/wiki/Special:FilePath/Wenzl%20Weis%20-%20Karl%20Sch%C3%B6nherr.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1867-02-24
+Place of birth: 
+
+
+Name: Georg Brandes
+http://commons.wikimedia.org/wiki/Special:FilePath/Georg%20Brandes%20by%20L%20Szacinski.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1842-02-04
+Place of birth: 
+Education:
+University of Copenhagen
+
+
+Name: George Santayana
+http://commons.wikimedia.org/wiki/Special:FilePath/George%20Santayana.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1863-10-02
+Place of birth: 
+Education:
+Harvard University
+Harvard College
+Boston Latin School
+Humboldt University of Berlin
+King&#39;s College
+
+
+Name: Elisabeth Förster-Nietzsche
+http://commons.wikimedia.org/wiki/Special:FilePath/Elisabeth%20f%C3%B6rster%201894a.JPG
+Gender: female
+Nationality: Germany
+Date of birth: 1846-07-10
+Place of birth: 
+
+
+Name: Samuel Parsons Scott
+http://commons.wikimedia.org/wiki/Special:FilePath/Samuel%20Parsons%20Scott.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1846-07-08
+Place of birth: 
+Education:
+Miami University
+
+
+Name: Maria Dąbrowska
+http://commons.wikimedia.org/wiki/Special:FilePath/Maria%20Dabrowska.gif
+Gender: female
+Nationality: Poland
+Date of birth: 1889-10-06
+Place of birth: 
+Education:
+University of Lausanne
+
+
+Name: William Heinesen
+http://commons.wikimedia.org/wiki/Special:FilePath/William%20Heinesen.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1900-01-15
+Place of birth: 
+
+
+Name: Gonzague de Reynold
+http://commons.wikimedia.org/wiki/Special:FilePath/Gonzague%20de%20Reynold.jpg
+Gender: male
+Nationality: Switzerland
+Date of birth: 1880-07-15
+Place of birth: 
+
+
+Name: Leopold Staff
+http://commons.wikimedia.org/wiki/Special:FilePath/Leopold%20Staff%20poczt%C3%B3wka%20%28cropped%29.jpg
+Gender: male
+Nationality: Poland
+Date of birth: 1878-11-14
+Place of birth: 
+Education:
+Lviv University
+
+
+Name: Juan Ramón Jiménez
+http://commons.wikimedia.org/wiki/Special:FilePath/JRJimenez.JPG
+Gender: male
+Nationality: Spain
+Date of birth: 1881-12-24
+Place of birth: 
+Education:
+University of Seville
+Institución Libre de Enseñanza
+
+
+Name: Bernard O&#39;Dowd
+http://commons.wikimedia.org/wiki/Special:FilePath/Bernard%20ODowd%2C%201904.jpg
+Gender: male
+Nationality: Australia
+Date of birth: 1866-04-11
+Place of birth: 
+
+
+Name: Lewis Morris
+http://commons.wikimedia.org/wiki/Special:FilePath/Lewis%20Morris%20woodburytype.png
+Gender: male
+Nationality: Wales
+Date of birth: 1833-01-23
+Place of birth: 
+Education:
+Jesus College
+Sherborne School
+
+
+Name: Gyula Illyés
+http://commons.wikimedia.org/wiki/Special:FilePath/Illyes%20Gyula%20%28Bahget%20Iskander%29.jpg
+Gender: male
+Nationality: Hungary
+Date of birth: 1902-11-02
+Place of birth: 
+Education:
+University of Paris
+
+
+Name: Rudolf Christoph Eucken
+http://commons.wikimedia.org/wiki/Special:FilePath/Eucken-im-Alter.png
+Gender: male
+Nationality: Germany
+Date of birth: 1846-01-05
+Place of birth: 
+Education:
+Humboldt University of Berlin
+University of Göttingen
+
+
+Name: Yukio Mishima
+http://commons.wikimedia.org/wiki/Special:FilePath/Yukio%20Mishima%2001.jpg
+Gender: male
+Nationality: Japan
+Date of birth: 1925-01-14
+Place of birth: 
+Education:
+University of Tokyo Graduate School for Law and Politics
+
+
+Name: Marie Luise Kaschnitz
+nan
+Gender: female
+Nationality: Germany
+Date of birth: 1901-01-31
+Place of birth: 
+
+
+Name: Armand Godoy
+nan
+Gender: male
+Nationality: France
+Date of birth: 1880-04-01
+Place of birth: 
+
+
+Name: Pär Lagerkvist
+http://commons.wikimedia.org/wiki/Special:FilePath/Lagerkvist.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1891-05-23
+Place of birth: 
+Education:
+Uppsala University
+
+
+Name: Concha Espina
+http://commons.wikimedia.org/wiki/Special:FilePath/1920%2C%20Historia%20de%20la%20lengua%20y%20literatura%20castellana%2C%20Concha%20Espina.jpg
+Gender: female
+Nationality: Spain
+Date of birth: 1869-05-15
+Place of birth: 
+
+
+Name: Edmondo de Amicis
+http://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Edmondo%20De%20Amicis.jpg
+Gender: male
+Nationality: Kingdom of Italy
+Date of birth: 1846-10-21
+Place of birth: 
+
+
+Name: Jaan Kaplinski
+http://commons.wikimedia.org/wiki/Special:FilePath/KaplinskiIMGP5904.JPG
+Gender: male
+Nationality: Estonia
+Date of birth: 1941-01-22
+Place of birth: 
+Education:
+University of Tartu
+Hugo Treffner Gymnasium
+
+
+Name: Edgar Lee Masters
+http://commons.wikimedia.org/wiki/Special:FilePath/Young%20Edgar%20Lee%20Masters%202.png
+Gender: male
+Nationality: United States of America
+Date of birth: 1868-08-23
+Place of birth: 
+Education:
+Knox College
+
+
+Name: Gunnar Gunnarsson
+http://commons.wikimedia.org/wiki/Special:FilePath/Gunnar%20Gunnarsson.jpg
+Gender: male
+Nationality: Iceland
+Date of birth: 1889-05-18
+Place of birth: 
+Education:
+Askov Højskole
+
+
+Name: Angelo de Gubernatis
+http://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20de%20Gubernatis.jpg
+Gender: male
+Nationality: Kingdom of Italy
+Date of birth: 1840-04-07
+Place of birth: 
+Education:
+University of Turin
+
+
+Name: Robert Bridges
+http://commons.wikimedia.org/wiki/Special:FilePath/Robert%20Bridges.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1844-10-23
+Place of birth: 
+Education:
+Eton College
+Corpus Christi College
+
+
+Name: Alfred Jules Émile Fouillée Teorista
+http://commons.wikimedia.org/wiki/Special:FilePath/Nadar%20-%20Alfred%20Fouill%C3%A9e%201.jpg
+Gender: male
+Nationality: France
+Date of birth: 1838-10-18
+Place of birth: 
+
+
+Name: María Enriqueta Camarillo
+http://commons.wikimedia.org/wiki/Special:FilePath/Mar%C3%ADa%20Enriqueta%20Camarillo.JPG
+Gender: female
+Nationality: Mexico
+Date of birth: 1872-01-19
+Place of birth: 
+
+
+Name: Ernest Claes
+http://commons.wikimedia.org/wiki/Special:FilePath/ErnestClaes%28persp.%29.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1885-10-02
+Place of birth: 
+
+
+Name: Horace Kallen
+nan
+Gender: male
+Nationality: United States of America
+Date of birth: 1882-08-11
+Place of birth: 
+Education:
+Harvard University
+Princeton University
+University of Oxford
+University of Wisconsin–Madison
+
+
+Name: Gabriela Mistral
+http://commons.wikimedia.org/wiki/Special:FilePath/Gabriela%20Mistral%201945.jpg
+Gender: female
+Nationality: Chile
+Date of birth: 1889-04-07
+Place of birth: 
+Education:
+Instituto Pedagógico
+
+
+Name: Albert Verwey
+http://commons.wikimedia.org/wiki/Special:FilePath/Portret%20van%20Albert%20Verwey%20Rijksmuseum%20SK-C-1680.jpeg
+Gender: male
+Nationality: Kingdom of the Netherlands
+Date of birth: 1865-05-15
+Place of birth: 
+Education:
+Leiden University
+
+
+Name: Carl Weitbrecht
+http://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Weitbrecht.jpg
+Gender: male
+Nationality: German Empire
+Date of birth: 1847-12-08
+Place of birth: 
+
+
+Name: Jacinto Grau
+nan
+Gender: male
+Nationality: Spain
+Date of birth: 1872-04-06
+Place of birth: 
+
+
+Name: Edmond Rostand
+http://commons.wikimedia.org/wiki/Special:FilePath/Edmond%20Rostand.jpg
+Gender: male
+Nationality: France
+Date of birth: 1868-04-01
+Place of birth: 
+Education:
+Collège Stanislas de Paris
+Lycée Thiers
+
+
+Name: Ezequiel Martínez Estrada
+http://commons.wikimedia.org/wiki/Special:FilePath/EzequielMart%C3%ADnezEstrada.jpg
+Gender: male
+Nationality: Argentina
+Date of birth: 1895-09-14
+Place of birth: 
+
+
+Name: Camilo José Cela
+http://commons.wikimedia.org/wiki/Special:FilePath/Camilo%20Jos%C3%A9%20Cela.%20Fototeca.%20Biblioteca%20Virtual%20del%20Patrimonio%20Bibliogr%C3%A1fico.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1916-05-11
+Place of birth: 
+Education:
+Centro Universitario Villanueva
+
+
+Name: Knut Hamsun
+http://commons.wikimedia.org/wiki/Special:FilePath/1495.%20Knut%20Hamsun%20-%20no-nb%20digifoto%2020150126%2000002%20bldsa%20HA0239%20%28cropped%29.jpg
+Gender: male
+Nationality: Norway
+Date of birth: 1859-08-04
+Place of birth: 
+
+
+Name: Gerhart Hauptmann
+http://commons.wikimedia.org/wiki/Special:FilePath/Gerhart%20Hauptmann%20nobel.jpg
+Gender: male
+Nationality: German Empire
+Date of birth: 1862-11-15
+Place of birth: 
+Education:
+University of Jena
+
+
+Name: Francesco Orestano
+nan
+Gender: male
+Nationality: Kingdom of Italy
+Date of birth: 1873-04-14
+Place of birth: 
+Education:
+University of Palermo
+
+
+Name: Aldous Huxley
+http://commons.wikimedia.org/wiki/Special:FilePath/Aldous%20Huxley%201947.png
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1894-07-26
+Place of birth: 
+Education:
+Eton College
+Balliol College
+
+
+Name: Rómulo Gallegos
+http://commons.wikimedia.org/wiki/Special:FilePath/R%C3%B3mulo%20Gallegos.jpg
+Gender: male
+Nationality: Venezuela
+Date of birth: 1884-08-02
+Place of birth: 
+Education:
+Central University of Venezuela
+
+
+Name: Adriaan Roland Holst
+http://commons.wikimedia.org/wiki/Special:FilePath/A.%20Roland%20Holst%2C%20Bestanddeelnr%20921-7233.jpg
+Gender: male
+Nationality: Kingdom of the Netherlands
+Date of birth: 1888-05-23
+Place of birth: 
+
+
+Name: Avetis Aharonyan
+http://commons.wikimedia.org/wiki/Special:FilePath/Avetis%20Aharonian.jpg
+Gender: male
+Nationality: Russian Empire
+Date of birth: 1866-01-09
+Place of birth: 
+Education:
+University of Lausanne
+Faculty of Arts of Paris
+Gevorkian Theological Seminary
+
+
+Name: T. S. Eliot
+http://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Stearns%20Eliot%20by%20Lady%20Ottoline%20Morrell%20%281934%29.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1888-09-26
+Place of birth: 
+Education:
+Harvard University
+Harvard College
+Merton College
+University of Paris
+Milton Academy
+
+
+Name: Yasunari Kawabata
+http://commons.wikimedia.org/wiki/Special:FilePath/Yasunari%20Kawabata%201938.jpg
+Gender: male
+Nationality: Japan
+Date of birth: 1899-06-11
+Place of birth: 
+Education:
+University of Tokyo
+
+
+Name: Ossip Lourié
+nan
+Gender: male
+Nationality: France
+Date of birth: 1868-01-28
+Place of birth: 
+
+
+Name: Erico Verissimo
+http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89rico%20Ver%C3%ADssimo%2C%20sem%20data.tif
+Gender: male
+Nationality: Brazil
+Date of birth: 1905-12-17
+Place of birth: 
+
+
+Name: Pearl S. Buck
+http://commons.wikimedia.org/wiki/Special:FilePath/Pearl%20Buck.jpg
+Gender: female
+Nationality: United States of America
+Date of birth: 1892-06-26
+Place of birth: 
+Education:
+Cornell University
+Randolph–Macon College
+
+
+Name: Cale Young Rice
+http://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Cale%20Young%20Rice.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1872-12-11
+Place of birth: 
+Education:
+Harvard University
+Cumberland University
+
+
+Name: Elizabeth Bowen
+nan
+Gender: female
+Nationality: Ireland
+Date of birth: 1899-06-07
+Place of birth: 
+Education:
+University of Oxford
+Downe House
+
+
+Name: Igor Gouzenko
+nan
+Gender: male
+Nationality: Soviet Union
+Date of birth: 1919-01-13
+Place of birth: 
+
+
+Name: Sven Lönborg
+nan
+Gender: male
+Nationality: Sweden
+Date of birth: 1871-03-16
+Place of birth: 
+
+
+Name: Pêr-Jakez Helias
+http://commons.wikimedia.org/wiki/Special:FilePath/La%20Maison%20du%20P%C3%A2t%C3%A9%20H%C3%A9naff%20-%20livres%2003.jpg
+Gender: male
+Nationality: France
+Date of birth: 1914-02-17
+Place of birth: 
+Education:
+University of Rennes
+
+
+Name: Simon Vestdijk
+http://commons.wikimedia.org/wiki/Special:FilePath/Vestdijk1940.jpg
+Gender: male
+Nationality: Kingdom of the Netherlands
+Date of birth: 1898-10-17
+Place of birth: 
+Education:
+University of Amsterdam
+
+
+Name: Gaston Bachelard
+http://commons.wikimedia.org/wiki/Special:FilePath/Gaston%20Bachelard%201965.jpg
+Gender: male
+Nationality: France
+Date of birth: 1884-06-27
+Place of birth: 
+Education:
+Faculty of Arts of Paris
+
+
+Name: Algernon Charles Swinburne
+http://commons.wikimedia.org/wiki/Special:FilePath/Picture%20of%20Algernon%20C.%20Swinburne.jpg
+Gender: male
+Nationality: United Kingdom of Great Britain and Ireland
+Date of birth: 1837-04-05
+Place of birth: 
+Education:
+Eton College
+Balliol College
+
+
+Name: Benito Pérez Galdós
+http://commons.wikimedia.org/wiki/Special:FilePath/Photo%20of%20Benito%20P%C3%A9rez%20Gald%C3%B3s.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1843-05-10
+Place of birth: 
+
+
+Name: Knuth Becker
+nan
+Gender: male
+Nationality: Denmark
+Date of birth: 1891-01-21
+Place of birth: 
+
+
+Name: Maila Talvio
+http://commons.wikimedia.org/wiki/Special:FilePath/Maila-Talvio-1910s.jpg
+Gender: female
+Nationality: Finland
+Date of birth: 1871-10-17
+Place of birth: 
+
+
+Name: Heimito von Doderer
+nan
+Gender: male
+Nationality: Austria
+Date of birth: 1896-09-05
+Place of birth: 
+Education:
+University of Vienna
+
+
+Name: Arno Holz
+http://commons.wikimedia.org/wiki/Special:FilePath/Arno%20Holz%20ca%201913.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1863-04-26
+Place of birth: 
+
+
+Name: Christopher Fry
+nan
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1907-12-18
+Place of birth: 
+Education:
+Bedford Modern School
+
+
+Name: Sofía Casanova
+http://commons.wikimedia.org/wiki/Special:FilePath/Lo%20eterno.%20Sof%C3%ADa%20Casanova.%20Madrid%2C%201917.%201%C2%AA%20edici%C3%B3n.%20Imprenta%20Prensa%20Popular.%20Director%20Jose%20de%20Urquia.jpg
+Gender: female
+Nationality: Spain
+Date of birth: 1861-09-30
+Place of birth: 
+
+
+Name: Alexandru Dimitrie Xenopol
+http://commons.wikimedia.org/wiki/Special:FilePath/A.%20D.%20Xenopol%20%281%29.jpg
+Gender: male
+Nationality: Romania
+Date of birth: 1847-03-23
+Place of birth: 
+Education:
+Alexandru Ioan Cuza University
+
+
+Name: Carlo Levi
+http://commons.wikimedia.org/wiki/Special:FilePath/Carlolevi.jpg
+Gender: male
+Nationality: Italy
+Date of birth: 1902-11-29
+Place of birth: 
+Education:
+University of Turin
+
+
+Name: Katharine Susannah Prichard
+http://commons.wikimedia.org/wiki/Special:FilePath/Katharine%20Susannah%20Prichard%20%28cropped%29.jpg
+Gender: female
+Nationality: Australia
+Date of birth: 1883-12-04
+Place of birth: 
+
+
+Name: Cesare Pascarella
+http://commons.wikimedia.org/wiki/Special:FilePath/Cesare%20Pascarella.JPG
+Gender: male
+Nationality: Kingdom of Italy
+Date of birth: 1858-04-28
+Place of birth: 
+
+
+Name: Sacheverell Sitwell
+http://commons.wikimedia.org/wiki/Special:FilePath/Sacheverell%20Sitwell%20in%201927.png
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1897-11-15
+Place of birth: 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Education:
+Eton College
+Balliol College
+
+
+Name: Eugenio Montale
+http://commons.wikimedia.org/wiki/Special:FilePath/Eugenio%20Montale.jpg
+Gender: male
+Nationality: Italy
+Date of birth: 1896-10-12
+Place of birth: 
+
+
+Name: Roger Martin du Gard
+http://commons.wikimedia.org/wiki/Special:FilePath/Roger%20Martin%20du%20Gard%201937.jpg
+Gender: male
+Nationality: France
+Date of birth: 1881-03-23
+Place of birth: 
+Education:
+École du Louvre
+École des Chartes
+Lycée Condorcet
+Lycée Janson-de-Sailly
+
+
+Name: André Breton
+http://commons.wikimedia.org/wiki/Special:FilePath/AndreBreton.jpg
+Gender: male
+Nationality: France
+Date of birth: 1896-02-18
+Place of birth: 
+Education:
+Lycée Francais
+
+
+Name: Giovannino Guareschi
+http://commons.wikimedia.org/wiki/Special:FilePath/Giovannino%20Guareschi.jpg
+Gender: male
+Nationality: Italy
+Date of birth: 1908-05-01
+Place of birth: 
+Education:
+University of Parma
+Romagnosi
+
+
+Name: Vilhelm Moberg
+http://commons.wikimedia.org/wiki/Special:FilePath/Vilhelm%20Moberg%201967.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1898-08-20
+Place of birth: 
+
+
+Name: Juhani Aho
+http://commons.wikimedia.org/wiki/Special:FilePath/Juhani%20Aho.jpg
+Gender: male
+Nationality: Finland
+Date of birth: 1861-09-11
+Place of birth: 
+Education:
+University of Helsinki
+
+
+Name: Ole Edvart Rølvaag
+http://commons.wikimedia.org/wiki/Special:FilePath/Ole%20Edvart%20R%C3%B8lvaag.jpg
+Gender: male
+Nationality: Norway
+Date of birth: 1876-04-22
+Place of birth: 
+
+
+Name: Cora Sandel
+http://commons.wikimedia.org/wiki/Special:FilePath/Cora%20sandel.jpg
+Gender: female
+Nationality: Norway
+Date of birth: 1880-12-20
+Place of birth: 
+
+
+Name: Axel Munthe
+http://commons.wikimedia.org/wiki/Special:FilePath/Axel%20Munthe.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1857-10-31
+Place of birth: 
+Education:
+Uppsala University
+
+
+Name: Ivan Franko
+http://commons.wikimedia.org/wiki/Special:FilePath/%D0%86%D0%B2%D0%B0%D0%BD%20%D0%AF%D0%BA%D0%BE%D0%B2%D0%B8%D1%87%20%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D0%BE.jpg
+Gender: male
+Nationality: Austria-Hungary
+Date of birth: 1856-08-27
+Place of birth: 
+Education:
+Lviv University
+University of Vienna
+Chernivtsi University
+
+
+Name: Sarvepalli Radhakrishnan
+http://commons.wikimedia.org/wiki/Special:FilePath/Radhakrishnan.jpg
+Gender: male
+Nationality: India
+Date of birth: 1888-09-05
+Place of birth: 
+Education:
+University of Delhi
+University of Calcutta
+University of Madras
+Madras Christian College
+
+
+Name: Henry Muller
+nan
+Gender: male
+Nationality: France
+Date of birth: 1902-08-21
+Place of birth: 
+
+
+Name: Hartmann Grisar
+http://commons.wikimedia.org/wiki/Special:FilePath/Hartmann%20Grisar%202%20%28cropped%29.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1845-09-22
+Place of birth: 
+
+
+Name: Bertel Gripenberg
+http://commons.wikimedia.org/wiki/Special:FilePath/Bertel%20Gripenberg.png
+Gender: male
+Nationality: Finland
+Date of birth: 1878-09-19
+Place of birth: 
+
+
+Name: Nevill Coghill
+nan
+Gender: male
+Nationality: Ireland
+Date of birth: 1899-04-19
+Place of birth: 
+Education:
+Exeter College
+Haileybury and Imperial Service College
+
+
+Name: James Thomas Farrell
+http://commons.wikimedia.org/wiki/Special:FilePath/James%20T.%20Farrell%201950s.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1904-02-27
+Place of birth: 
+Education:
+University of Chicago
+
+
+Name: Marguerite Yourcenar
+http://commons.wikimedia.org/wiki/Special:FilePath/Marguerite%20Yourcenar-Bailleul-1982.10.04.Bernhard%20De%20Grendel%20%2810%29.jpg
+Gender: female
+Nationality: United States of America
+Date of birth: 1903-06-07
+Place of birth: 
+
+
+Name: Ezra Pound
+http://commons.wikimedia.org/wiki/Special:FilePath/Ezra%20Pound%201963.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1885-10-30
+Place of birth: 
+Education:
+University of Pennsylvania
+Hamilton College
+
+
+Name: Johannes Jørgensen
+http://commons.wikimedia.org/wiki/Special:FilePath/Johannes%20J%C3%B8rgensen.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1866-11-06
+Place of birth: 
+
+
+Name: Hans Erich Nossack
+http://commons.wikimedia.org/wiki/Special:FilePath/Nossack.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1901-01-30
+Place of birth: 
+
+
+Name: Thomas Head Raddall
+nan
+Gender: male
+Nationality: Canada
+Date of birth: 1903-11-13
+Place of birth: 
+
+
+Name: Vicente Huidobro
+http://commons.wikimedia.org/wiki/Special:FilePath/Vicente%20huidobro.jpg
+Gender: male
+Nationality: Nicaragua
+Date of birth: 1893-01-10
+Place of birth: 
+Education:
+Colegio San Ignacio
+Instituto Pedagógico
+
+
+Name: Ludwig Klages
+http://commons.wikimedia.org/wiki/Special:FilePath/LudwigKlages1902.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1872-12-10
+Place of birth: 
+Education:
+Leipzig University
+
+
+Name: Karl Jaspers
+http://commons.wikimedia.org/wiki/Special:FilePath/Karl%20Jaspers%201946.jpg
+Gender: male
+Nationality: Switzerland
+Date of birth: 1883-02-23
+Place of birth: 
+Education:
+Heidelberg University
+
+
+Name: Marcel Pagnol
+http://commons.wikimedia.org/wiki/Special:FilePath/Pagnol%20Harcourt%201948.jpg
+Gender: male
+Nationality: France
+Date of birth: 1895-02-28
+Place of birth: 
+Education:
+Lycée Thiers
+
+
+Name: J. Dover Wilson
+nan
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1881-07-13
+Place of birth: 
+Education:
+Gonville and Caius College
+
+
+Name: Jean Revel
+http://commons.wikimedia.org/wiki/Special:FilePath/D%C3%A9tail%20buste%20Jean%20Revel%20-%20square%20Verdrel.jpg
+Gender: male
+Nationality: France
+Date of birth: 1848-09-22
+Place of birth: 
+
+
+Name: Henrik Ibsen
+http://commons.wikimedia.org/wiki/Special:FilePath/Henrik%20Ibsen%20av%20Eilif%20Peterssen%201895.jpg
+Gender: male
+Nationality: Norway
+Date of birth: 1828-03-20
+Place of birth: 
+
+
+Name: Tudor Arghezi
+http://commons.wikimedia.org/wiki/Special:FilePath/Tudor%20Arghezi.jpg
+Gender: male
+Nationality: Romania
+Date of birth: 1880-05-21
+Place of birth: 
+Education:
+Saint Sava College
+
+
+Name: Paul Ernst
+http://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Ernst%20und%20seine%20Familie%20in%20Weimar%2C%20c.%201904.png
+Gender: male
+Nationality: Germany
+Date of birth: 1866-03-07
+Place of birth: 
+
+
+Name: J. R. R. Tolkien
+http://commons.wikimedia.org/wiki/Special:FilePath/J.%20R.%20R.%20Tolkien%2C%201940s.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1892-01-03
+Place of birth: 
+Education:
+University of Oxford
+Exeter College
+King Edward&#39;s School
+St. Philip&#39;s School
+
+
+Name: Leo Tolstoy
+http://commons.wikimedia.org/wiki/Special:FilePath/L.N.Tolstoy%20Prokudin-Gorsky.jpg
+Gender: male
+Nationality: Russian Empire
+Date of birth: 1828-09-09
+Place of birth: 
+Education:
+Kazan Federal University
+
+
+Name: Melchior de Vogüé
+http://commons.wikimedia.org/wiki/Special:FilePath/Eug%C3%A8ne-Melchior%20de%20Vog%C3%BC%C3%A9%20by%20Nadar.jpg
+Gender: male
+Nationality: France
+Date of birth: 1848-02-25
+Place of birth: 
+
+
+Name: Ricardo Rojas
+http://commons.wikimedia.org/wiki/Special:FilePath/Ricardo%20Rojas%201926.png
+Gender: male
+Nationality: Argentina
+Date of birth: 1882-09-16
+Place of birth: 
+Education:
+Colegio Nacional de Buenos Aires
+
+
+Name: Manfred Kyber
+nan
+Gender: male
+Nationality: Germany
+Date of birth: 1880-03-01
+Place of birth: 
+
+
+Name: Gunnar Gunnarson
+nan
+Gender: male
+Nationality: Sweden
+Date of birth: 1918-01-01
+Place of birth: 
+
+
+Name: Víctor Manuel Rendón
+http://commons.wikimedia.org/wiki/Special:FilePath/Exposition%20universelle%20de%201900%20-%20portraits%20des%20commissaires%20g%C3%A9n%C3%A9raux-V%C3%ADctor%20Manuel%20Rend%C3%B3n.jpg
+Gender: male
+Nationality: Ecuador
+Date of birth: 1859-12-02
+Place of birth: 
+Education:
+University of Paris
+Collège Stanislas de Paris
+
+
+Name: François Coppée
+http://commons.wikimedia.org/wiki/Special:FilePath/Fran%C3%A7ois%20Copp%C3%A9e.jpg
+Gender: male
+Nationality: France
+Date of birth: 1842-01-12
+Place of birth: 
+Education:
+Lycée Saint-Louis
+
+
+Name: Paul Heyse
+http://commons.wikimedia.org/wiki/Special:FilePath/Adolf%20Friedrich%20Erdmann%20von%20Menzel%20042.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1830-03-13
+Place of birth: 
+Education:
+Humboldt University of Berlin
+University of Bonn
+
+
+Name: Einar Hjörleifsson Kvaran
+nan
+Gender: male
+Nationality: Iceland
+Date of birth: 1859-12-06
+Place of birth: 
+
+
+Name: E. M. Forster
+http://commons.wikimedia.org/wiki/Special:FilePath/E.%20M.%20Forster%20von%20Dora%20Carrington%2C%201924-25.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1879-01-01
+Place of birth: 
+Education:
+King&#39;s College
+Tonbridge School
+
+
+Name: Carl Gustaf Estlander
+http://commons.wikimedia.org/wiki/Special:FilePath/Valtioneuvos%20Carl%20Gustaf%20Estlander.jpg
+Gender: male
+Nationality: Grand Duchy of Finland
+Date of birth: 1834-01-31
+Place of birth: 
+Education:
+University of Helsinki
+Q11899972
+
+
+Name: Ina Seidel
+nan
+Gender: female
+Nationality: Germany
+Date of birth: 1885-09-15
+Place of birth: 
+
+
+Name: John Masefield
+http://commons.wikimedia.org/wiki/Special:FilePath/JohnMasefield1912.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1878-06-01
+Place of birth: 
+Education:
+Warwick School
+
+
+Name: Osbert Sitwell
+http://commons.wikimedia.org/wiki/Special:FilePath/Osbert%20Sitwell%20in%20The%20Bookman%20volume%2057%20December%201919%20p.%20102.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1892-12-06
+Place of birth: 
+Education:
+Eton College
+Ludgrove School
+
+
+Name: René Vallery-Radot
+http://commons.wikimedia.org/wiki/Special:FilePath/Ren%C3%A9%20Vallery-Radot.png
+Gender: male
+Nationality: France
+Date of birth: 1853-10-01
+Place of birth: 
+Education:
+collège de l&#39;Immaculée-Conception
+
+
+Name: Hugo von Hofmannsthal
+http://commons.wikimedia.org/wiki/Special:FilePath/Hofmannsthal%201893.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1874-02-01
+Place of birth: 
+Education:
+University of Vienna
+
+
+Name: Shaul Tchernichovsky
+http://commons.wikimedia.org/wiki/Special:FilePath/Shaul%20Tchernichovsky%201927.jpg
+Gender: male
+Nationality: Soviet Union
+Date of birth: 1875-08-20
+Place of birth: 
+Education:
+Heidelberg University
+University of Lausanne
+Imperial University of St. Vladimir
+
+
+Name: Carl Sandburg
+http://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Sandburg%20NYWTS.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1878-01-06
+Place of birth: 
+Education:
+Lombard College
+
+
+Name: Henrik Schück
+http://commons.wikimedia.org/wiki/Special:FilePath/Swedish%20professor%20henrik%20sch%C3%BCck.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1855-11-02
+Place of birth: 
+Education:
+Uppsala University
+
+
+Name: Johan Falkberget
+http://commons.wikimedia.org/wiki/Special:FilePath/Dr.%20philos.%20Johan%20Falkberget%20%287602646362%29.jpg
+Gender: male
+Nationality: Norway
+Date of birth: 1879-09-30
+Place of birth: 
+
+
+Name: Alfred Noyes
+http://commons.wikimedia.org/wiki/Special:FilePath/Alfred%20Noyes.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1880-09-16
+Place of birth: 
+Education:
+Exeter College
+
+
+Name: Vilhelm Grønbech
+http://commons.wikimedia.org/wiki/Special:FilePath/Vilhelm%20Gr%C3%B8nbech.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1873-06-14
+Place of birth: 
+
+
+Name: Emile Verhaeren
+http://commons.wikimedia.org/wiki/Special:FilePath/Emile%20Verhaeren01.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1855-05-21
+Place of birth: 
+Education:
+Old University of Leuven
+Catholic University of Louvain
+
+
+Name: Gustav Suits
+http://commons.wikimedia.org/wiki/Special:FilePath/Gustav%20Suits.jpg
+Gender: male
+Nationality: Estonia
+Date of birth: 1883-11-30
+Place of birth: 
+Education:
+University of Helsinki
+
+
+Name: Émile Boutroux
+http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89mile%20Boutroux.jpg
+Gender: male
+Nationality: France
+Date of birth: 1845-07-28
+Place of birth: 
+Education:
+École normale supérieure
+Heidelberg University
+Lycée Henri-IV
+
+
+Name: Lawrence Durrell
+http://commons.wikimedia.org/wiki/Special:FilePath/Lawrence%20Durrell.png
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1912-02-27
+Place of birth: 
+Education:
+St Olave&#39;s and St Saviour&#39;s Grammar School
+Pancyprian Gymnasium
+St Edmund&#39;s School
+
+
+Name: Jean Guéhenno
+http://commons.wikimedia.org/wiki/Special:FilePath/Jean%20Guehenno%20plaque%20-%2035-37%20rue%20Pierre%20Nicole%2C%20Paris%205.jpg
+Gender: male
+Nationality: France
+Date of birth: 1890-03-25
+Place of birth: 
+Education:
+École normale supérieure
+
+
+Name: Joseph Bédier
+http://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Bedier%20portrait.jpg
+Gender: male
+Nationality: France
+Date of birth: 1864-01-28
+Place of birth: 
+Education:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>École normale supérieure
+Lycée Louis-le-Grand
+
+
+Name: Clotilde Crespo de Arvelo
+nan
+Gender: female
+Nationality: Venezuela
+Date of birth: 1887-01-01
+Place of birth: 
+
+
+Name: Vasco Pratolini
+http://commons.wikimedia.org/wiki/Special:FilePath/Luigi%20Silori%20e%20Vasco%20Pratolini%20al%20ridotto%20del%20Teatro%20Eliseo%20di%20Roma%20%281959%29.jpg
+Gender: male
+Nationality: Italy
+Date of birth: 1913-10-19
+Place of birth: 
+Education:
+University of Florence
+
+
+Name: José Maria Ferreira de Castro
+http://commons.wikimedia.org/wiki/Special:FilePath/Ferreira%20de%20Castro%20-%20Ilustra%C3%A7%C3%A3o%20%281Nov1933%29.png
+Gender: male
+Nationality: Portugal
+Date of birth: 1898-05-24
+Place of birth: 
+
+
+Name: Hans Driesch
+http://commons.wikimedia.org/wiki/Special:FilePath/Driesch1.jpg
+Gender: male
+Nationality: Nazi Germany
+Date of birth: 1867-10-28
+Place of birth: 
+Education:
+University of Freiburg
+University of Jena
+
+
+Name: Alfonso Reyes
+http://commons.wikimedia.org/wiki/Special:FilePath/ALFONSO%20REYES%201889%20-%201959%20ESCRITOR%20MEXICANO%20%2813451343033%29.jpg
+Gender: male
+Nationality: Mexico
+Date of birth: 1889-05-17
+Place of birth: 
+Education:
+National Autonomous University of Mexico
+
+
+Name: Zalman Shneur
+http://commons.wikimedia.org/wiki/Special:FilePath/Zalman%20Shneor.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1887-02-11
+Place of birth: 
+Education:
+University of Paris
+
+
+Name: Edward Dowden
+http://commons.wikimedia.org/wiki/Special:FilePath/Edward%20Dowden.png
+Gender: male
+Nationality: Ireland
+Date of birth: 1843-05-03
+Place of birth: 
+Education:
+Trinity College Dublin
+
+
+Name: Theodore Dreiser
+http://commons.wikimedia.org/wiki/Special:FilePath/Theodore%20Dreiser.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1871-08-27
+Place of birth: 
+
+
+Name: Edith Sitwell
+http://commons.wikimedia.org/wiki/Special:FilePath/Roger%20Fry%20-%20Edith%20Sitwell.jpg
+Gender: female
+Nationality: United Kingdom
+Date of birth: 1887-09-07
+Place of birth: 
+
+
+Name: Ricarda Huch
+http://commons.wikimedia.org/wiki/Special:FilePath/Ricarda%20Huch.jpg
+Gender: female
+Nationality: Germany
+Date of birth: 1864-07-18
+Place of birth: 
+Education:
+University of Zurich
+
+
+Name: Władysław Reymont
+http://commons.wikimedia.org/wiki/Special:FilePath/Wyczolkowski-portretReymonta.jpg
+Gender: male
+Nationality: Russian Empire
+Date of birth: 1867-05-07
+Place of birth: 
+
+
+Name: Jun&#39;ichirō Tanizaki
+http://commons.wikimedia.org/wiki/Special:FilePath/Junichiro%20Tanizaki%201913.jpg
+Gender: male
+Nationality: Japan
+Date of birth: 1886-07-24
+Place of birth: 
+Education:
+University of Tokyo
+
+
+Name: Alois Jirásek
+http://commons.wikimedia.org/wiki/Special:FilePath/Jan%20Vil%C3%ADmek%20-%20Alois%20Jir%C3%A1sek.jpg
+Gender: male
+Nationality: Czechoslovakia
+Date of birth: 1851-08-23
+Place of birth: 
+Education:
+Charles University
+
+
+Name: Olav Duun
+http://commons.wikimedia.org/wiki/Special:FilePath/Portrett%20av%20Olav%20Duun.jpg
+Gender: male
+Nationality: Norway
+Date of birth: 1876-11-21
+Place of birth: 
+
+
+Name: John Steinbeck
+http://commons.wikimedia.org/wiki/Special:FilePath/John%20Steinbeck%201962.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1902-02-27
+Place of birth: 
+Education:
+Stanford University
+Salinas High School
+
+
+Name: Mika Waltari
+http://commons.wikimedia.org/wiki/Special:FilePath/Mika%20Waltari.jpg
+Gender: male
+Nationality: Finland
+Date of birth: 1908-09-19
+Place of birth: 
+Education:
+University of Helsinki
+
+
+Name: Holger Drachmann
+http://commons.wikimedia.org/wiki/Special:FilePath/Portr%C3%A6t%20af%20Holger%20Drachmann.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1846-10-09
+Place of birth: 
+Education:
+Royal Danish Academy of Fine Arts
+
+
+Name: William Inge
+http://commons.wikimedia.org/wiki/Special:FilePath/Deaninge.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1860-06-06
+Place of birth: 
+Education:
+Eton College
+King&#39;s College
+
+
+Name: Ventura López
+nan
+Gender: male
+Nationality: Spain
+Date of birth: 1866-07-14
+Place of birth: 
+
+
+Name: Winston Churchill
+http://commons.wikimedia.org/wiki/Special:FilePath/Sir%20Winston%20Churchill%20-%2019086236948.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1874-11-30
+Place of birth: 
+Education:
+Harrow School
+St George&#39;s School, Ascot
+Stoke Brunswick School
+Royal Military College, Sandhurst
+
+
+Name: Aksel Sandemose
+http://commons.wikimedia.org/wiki/Special:FilePath/Aksel%20Sandemose%201934.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1899-03-19
+Place of birth: 
+
+
+Name: Josef Svatopluk Machar
+http://commons.wikimedia.org/wiki/Special:FilePath/Machar%20JS%201923.jpg
+Gender: male
+Nationality: Czechoslovakia
+Date of birth: 1864-02-29
+Place of birth: 
+
+
+Name: Ruth Comfort Mitchell
+nan
+Gender: female
+Nationality: United States of America
+Date of birth: 1882-01-01
+Place of birth: 
+
+
+Name: Jean Giono
+http://commons.wikimedia.org/wiki/Special:FilePath/Eug%C3%A8ne%20Martel%20Portrait%20de%20Jean%20Giono%20en%201937.jpg
+Gender: male
+Nationality: France
+Date of birth: 1895-03-30
+Place of birth: 
+
+
+Name: Alexander Baumgartner
+nan
+Gender: male
+Nationality: Switzerland
+Date of birth: 1841-06-27
+Place of birth: 
+
+
+Name: Henri Bosco
+http://commons.wikimedia.org/wiki/Special:FilePath/62285403henri-bosco-jpg.jpg
+Gender: male
+Nationality: France
+Date of birth: 1888-11-16
+Place of birth: 
+Education:
+Grenoble Alpes University
+
+
+Name: Theodor W. Adorno
+http://commons.wikimedia.org/wiki/Special:FilePath/Adorno.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1903-09-11
+Place of birth: 
+Education:
+Goethe University Frankfurt
+Merton College
+
+
+Name: Pierre-Henri Simon
+http://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20de%20Pierre-Henri%20Simon.JPG
+Gender: male
+Nationality: France
+Date of birth: 1903-01-16
+Place of birth: 
+Education:
+École normale supérieure
+
+
+Name: Lion Feuchtwanger
+http://commons.wikimedia.org/wiki/Special:FilePath/Lf%20muchen%201909%20b1.jpeg
+Gender: male
+Nationality: United States of America
+Date of birth: 1884-07-07
+Place of birth: 
+Education:
+Ludwig Maximilian University of Munich
+Humboldt University of Berlin
+
+
+Name: Ivana Brlić-Mažuranić
+http://commons.wikimedia.org/wiki/Special:FilePath/Ivana%20brlic%20mazuranic%20II.jpg
+Gender: female
+Nationality: Kingdom of Yugoslavia
+Date of birth: 1874-04-18
+Place of birth: 
+
+
+Name: Grigol Robakidze
+http://commons.wikimedia.org/wiki/Special:FilePath/Young%20Grigol%20Robakidze.jpg
+Gender: male
+Nationality: Switzerland
+Date of birth: 1882-10-28
+Place of birth: 
+Education:
+Leipzig University
+University of Tartu
+Kutaisi classical gymnasium
+
+
+Name: Bertrand Russell
+http://commons.wikimedia.org/wiki/Special:FilePath/Bertrand%20Russell%20transparent%20bg.png
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1872-05-18
+Place of birth: 
+Education:
+University of Cambridge
+Trinity College
+
+
+Name: Marcel Jouhandeau
+http://commons.wikimedia.org/wiki/Special:FilePath/Marcel%20Jouhandeau%2C%20ann%C3%A9es%201930.jpg
+Gender: male
+Nationality: France
+Date of birth: 1888-07-26
+Place of birth: 
+Education:
+Lycée Henri-IV
+
+
+Name: Otokar Březina
+http://commons.wikimedia.org/wiki/Special:FilePath/Brezina%20otokar.jpg
+Gender: male
+Nationality: Czechoslovakia
+Date of birth: 1868-09-13
+Place of birth: 
+
+
+Name: Joseph Victor Widmann
+nan
+Gender: male
+Nationality: Switzerland
+Date of birth: 1842-02-20
+Place of birth: 
+
+
+Name: Juana de Ibarbourou
+http://commons.wikimedia.org/wiki/Special:FilePath/Juana%20de%20Ibarbourou%20from%20Estampas%20de%20la%20Biblia.jpg
+Gender: female
+Nationality: Uruguay
+Date of birth: 1892-03-08
+Place of birth: 
+
+
+Name: Georgios Drossinis
+http://commons.wikimedia.org/wiki/Special:FilePath/Georgios%20Drosinis.JPG
+Gender: male
+Nationality: Greece
+Date of birth: 1859-12-21
+Place of birth: 
+Education:
+Humboldt University of Berlin
+Leipzig University
+Dresden Academy of Fine Arts
+National and Kapodistrian University of Athens
+Varvakeio
+
+
+Name: Alberto Hidalgo
+http://commons.wikimedia.org/wiki/Special:FilePath/AlbertoHidalgo1.jpg
+Gender: male
+Nationality: Argentina
+Date of birth: 1897-05-23
+Place of birth: 
+Education:
+National University of St Augustin of Arequipa
+
+
+Name: François Mauriac
+http://commons.wikimedia.org/wiki/Special:FilePath/Fran%C3%A7ois%20Mauriac%20redux.jpg
+Gender: male
+Nationality: France
+Date of birth: 1885-10-11
+Place of birth: 
+Education:
+University of Bordeaux
+École des Chartes
+Q3268942
+
+
+Name: Lionel Trilling
+nan
+Gender: male
+Nationality: United States of America
+Date of birth: 1905-07-04
+Place of birth: 
+Education:
+Columbia University
+DeWitt Clinton High School
+
+
+Name: Alan Sillitoe
+http://commons.wikimedia.org/wiki/Special:FilePath/Alan%20Sillitoe%20%282009%29.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1928-03-04
+Place of birth: 
+
+
+Name: Violet Clifton
+nan
+Gender: female
+Nationality: United Kingdom
+Date of birth: 1883-11-02
+Place of birth: 
+
+
+Name: Stefan Andres
+http://commons.wikimedia.org/wiki/Special:FilePath/Niederpruemer-hof-stefan-andres-gedenktafel.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1906-06-26
+Place of birth: 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Education:
+University of Cologne
+Humboldt University of Berlin
+University of Jena
+
+
+Name: Jérôme Carcopino
+http://commons.wikimedia.org/wiki/Special:FilePath/J%C3%A9r%C3%B4me%20Carcopino.jpg
+Gender: male
+Nationality: France
+Date of birth: 1881-06-27
+Place of birth: 
+Education:
+École normale supérieure
+
+
+Name: Reinhold Schneider
+http://commons.wikimedia.org/wiki/Special:FilePath/Reinhold-Schneider-Briefmark.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1903-05-13
+Place of birth: 
+
+
+Name: Miguel Ángel Asturias Rosales
+http://commons.wikimedia.org/wiki/Special:FilePath/Miguel%20Angel%20Asturias.jpg
+Gender: male
+Nationality: Guatemala
+Date of birth: 1899-10-19
+Place of birth: 
+Education:
+University of Paris
+Universidad de San Carlos de Guatemala
+
+
+Name: John Hersey
+http://commons.wikimedia.org/wiki/Special:FilePath/Johnhersey.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1914-06-17
+Place of birth: 
+Education:
+University of Cambridge
+Yale University
+Hotchkiss School
+Briarcliff High School
+
+
+Name: Thomas Hardy
+http://commons.wikimedia.org/wiki/Special:FilePath/Thomashardy%20restored.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1840-06-02
+Place of birth: 
+Education:
+King&#39;s College London
+
+
+Name: Iwan Gilkin
+http://commons.wikimedia.org/wiki/Special:FilePath/IwanGilkin.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1858-01-07
+Place of birth: 
+
+
+Name: Anatoly Koni
+http://commons.wikimedia.org/wiki/Special:FilePath/Koni%20by%20Repin.jpg
+Gender: male
+Nationality: Russian Soviet Federative Socialist Republic
+Date of birth: 1844-02-09
+Place of birth: 
+Education:
+The Second Saint Petersburg Gymnasium
+Annenschule
+Moscow Imperial University, Faculty of Law
+
+
+Name: Sholem Asch
+http://commons.wikimedia.org/wiki/Special:FilePath/Sholem%20Asch.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1880-01-01
+Place of birth: 
+
+
+Name: Shen Congwen
+nan
+Gender: male
+Nationality: People&#39;s Republic of China
+Date of birth: 1902-12-28
+Place of birth: 
+Education:
+Peking University
+
+
+Name: Ramón Menéndez Pidal
+http://commons.wikimedia.org/wiki/Special:FilePath/Ram%C3%B3n%20Men%C3%A9ndez%20Pidal%2001.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1869-03-13
+Place of birth: 
+Education:
+Complutense University of Madrid
+
+
+Name: Junzaburō Nishiwaki
+http://commons.wikimedia.org/wiki/Special:FilePath/Nishiwaki%20Junzaburo.jpg
+Gender: male
+Nationality: Japan
+Date of birth: 1894-01-20
+Place of birth: 
+Education:
+Keio University
+New College
+
+
+Name: Flavio de Carvalho
+nan
+Gender: male
+Nationality: Brazil
+Date of birth: 1899-08-10
+Place of birth: 
+Education:
+Durham University
+
+
+Name: Karen Blixen
+http://commons.wikimedia.org/wiki/Special:FilePath/Karen%20Blixen%20cropped%20from%20larger%20original.jpg
+Gender: female
+Nationality: Denmark
+Date of birth: 1885-04-17
+Place of birth: 
+
+
+Name: Lin Yutang
+http://commons.wikimedia.org/wiki/Special:FilePath/Linyutang.jpg
+Gender: male
+Nationality: People&#39;s Republic of China
+Date of birth: 1895-10-10
+Place of birth: 
+Education:
+Harvard University
+Leipzig University
+St. John&#39;s University
+
+
+Name: Houston Stewart Chamberlain
+http://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20119-1600-06%2C%20Houston%20Stewart%20Chamberlain.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1855-09-09
+Place of birth: 
+Education:
+Cheltenham College
+University of Geneva
+Stubbington House School
+
+
+Name: Salvatore Farina
+nan
+Gender: male
+Nationality: Kingdom of Italy
+Date of birth: 1846-01-10
+Place of birth: 
+Education:
+University of Turin
+
+
+Name: Marie Noël
+nan
+Gender: female
+Nationality: France
+Date of birth: 1883-02-16
+Place of birth: 
+
+
+Name: Max Haushofer
+http://commons.wikimedia.org/wiki/Special:FilePath/Max%20Haushofer%20by%20Paul%20Heyse.jpeg
+Gender: male
+Nationality: German Empire
+Date of birth: 1840-04-23
+Place of birth: 
+
+
+Name: Jules Supervielle
+http://commons.wikimedia.org/wiki/Special:FilePath/Supervielle%20Harcourt%201948%202.jpg
+Gender: male
+Nationality: Uruguay
+Date of birth: 1884-01-16
+Place of birth: 
+
+
+Name: Georg von Below
+nan
+Gender: male
+Nationality: Kingdom of Prussia
+Date of birth: 1858-01-19
+Place of birth: 
+Education:
+University of Bonn
+
+
+Name: Gustaf Fröding
+http://commons.wikimedia.org/wiki/Special:FilePath/Gustav%20Fr%C3%B6ding.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1860-08-22
+Place of birth: 
+Education:
+Uppsala University
+
+
+Name: Rudyard Kipling
+http://commons.wikimedia.org/wiki/Special:FilePath/Kipling%20nd.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1865-12-30
+Place of birth: 
+Education:
+United Services College
+
+
+Name: Ernst Robert Curtius
+nan
+Gender: male
+Nationality: Germany
+Date of birth: 1886-04-14
+Place of birth: 
+Education:
+Humboldt University of Berlin
+University of Bonn
+University of Strasbourg
+
+
+Name: Graham Greene
+http://commons.wikimedia.org/wiki/Special:FilePath/Graham%20Greene%2C%20Bassano.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1904-10-02
+Place of birth: 
+Education:
+Balliol College
+Berkhamsted School
+
+
+Name: Maxim Gorki
+http://commons.wikimedia.org/wiki/Special:FilePath/Maxim%20Gorky%20LOC%20Restored%20edit1.jpg
+Gender: male
+Nationality: Soviet Union
+Date of birth: 1868-03-28
+Place of birth: 
+
+
+Name: Theodor Mommsen
+http://commons.wikimedia.org/wiki/Special:FilePath/Theodor%20Mommsen%202.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1817-11-30
+Place of birth: 
+Education:
+University of Kiel
+University of Zurich
+Christianeum Hamburg
+
+
+Name: Max Bewer
+http://commons.wikimedia.org/wiki/Special:FilePath/Max%20Bewer.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1861-01-19
+Place of birth: 
+
+
+Name: Eduardo Benot
+http://commons.wikimedia.org/wiki/Special:FilePath/Eduardo%20Benot%20%28cropped%29.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1822-11-26
+Place of birth: 
+
+
+Name: Stijn Streuvels
+http://commons.wikimedia.org/wiki/Special:FilePath/Stijn%20Streuvels%20by%20Modest%20Huys%20%28cropped%29.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1871-10-03
+Place of birth: 
+
+
+Name: Gustav Warneck
+http://commons.wikimedia.org/wiki/Special:FilePath/Gustav%20Warneck.jpg
+Gender: male
+Nationality: Kingdom of Prussia
+Date of birth: 1834-03-06
+Place of birth: 
+
+
+Name: Jean Price-Mars
+http://commons.wikimedia.org/wiki/Special:FilePath/Jean%20Price-Mars.jpg
+Gender: male
+Nationality: Haiti
+Date of birth: 1876-10-15
+Place of birth: 
+
+
+Name: Otto Ernst
+http://commons.wikimedia.org/wiki/Special:FilePath/Otto%20Ernst%201905.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1862-10-07
+Place of birth: 
+
+
+Name: Pietro Ubaldi
+http://commons.wikimedia.org/wiki/Special:FilePath/Pietro%20Ubaldi.jpg
+Gender: male
+Nationality: Italy
+Date of birth: 1886-08-18
+Place of birth: 
+Education:
+Sapienza University of Rome
+
+
+Name: Hans Carossa
+nan
+Gender: male
+Nationality: Germany
+Date of birth: 1878-12-15
+Place of birth: 
+Education:
+Ludwig Maximilian University of Munich
+
+
+Name: John Cowper Powys
+http://commons.wikimedia.org/wiki/Special:FilePath/John-Cowper-Powys%202.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1872-10-08
+Place of birth: 
+Education:
+Corpus Christi College
+Sherborne School
+
+
+Name: Gustave Thibon
+http://commons.wikimedia.org/wiki/Special:FilePath/Gustave%20Thibon%201982.png
+Gender: male
+Nationality: France
+Date of birth: 1903-09-02
+Place of birth: 
+
+
+Name: Michael Blümelhuber
+http://commons.wikimedia.org/wiki/Special:FilePath/Micheal%20Bl%C3%BCmelhuber%201865%201932.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1865-09-23
+Place of birth: 
+
+
+Name: Alfred L Hutchinson
+nan
+Gender: male
+Nationality: United States of America
+Date of birth: 1859-01-01
+Place of birth: 
+
+
+Name: Franz Werfel
+http://commons.wikimedia.org/wiki/Special:FilePath/Werfel.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1890-09-10
+Place of birth: 
+
+
+Name: Nikos Kazantzakis
+http://commons.wikimedia.org/wiki/Special:FilePath/Nikos%20Kazantzakis.jpg
+Gender: male
+Nationality: Greece
+Date of birth: 1883-03-02
+Place of birth: 
+Education:
+National and Kapodistrian University of Athens
+
+
+Name: Marie von Ebner-Eschenbach
+http://commons.wikimedia.org/wiki/Special:FilePath/Blaas%20%E2%80%93%20Marie%20von%20Ebner-Eschenbach.jpg
+Gender: female
+Nationality: Austria-Hungary
+Date of birth: 1830-09-13
+Place of birth: 
+
+
+Name: Ferenc Herczeg
+http://commons.wikimedia.org/wiki/Special:FilePath/Herczeg%20Ferenc.jpg
+Gender: male
+Nationality: Hungary
+Date of birth: 1863-09-22
+Place of birth: 
+Education:
+Piarist High School, Timișoara
+
+
+Name: Louis Ducros
+nan
+Gender: male
+Nationality: France
+Date of birth: 1846-12-27
+Place of birth: 
+
+
+Name: Bjørnstjerne Bjørnson
+http://commons.wikimedia.org/wiki/Special:FilePath/Bj%C3%B8rnstjerne%20Bj%C3%B8rnson%20%28Stories%20By%20Foreign%20Authors%29.jpg
+Gender: male
+Nationality: Norway
+Date of birth: 1832-12-08
+Place of birth: 
+Education:
+University of Oslo
+
+
+Name: Dimitrios Vernardakis
+http://commons.wikimedia.org/wiki/Special:FilePath/%CE%94%CE%B7%CE%BC%CE%AE%CF%84%CF%81%CE%B9%CE%BF%CF%82%20%CE%9D.%20%CE%92%CE%B5%CF%81%CE%BD%CE%B1%CF%81%CE%B4%CE%AC%CE%BA%CE%B7%CF%82.jpg
+Gender: male
+Nationality: Greece
+Date of birth: 1833-12-03
+Place of birth: 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Education:
+Ludwig Maximilian University of Munich
+National and Kapodistrian University of Athens
+
+
+Name: Georges Simenon
+http://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Simenon%20%281965%29.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1903-02-13
+Place of birth: 
+
+
+Name: Willem Kloos
+http://commons.wikimedia.org/wiki/Special:FilePath/Willem%20Kloos.jpg
+Gender: male
+Nationality: Kingdom of the Netherlands
+Date of birth: 1859-05-06
+Place of birth: 
+Education:
+University of Amsterdam
+
+
+Name: Bertolt Brecht
+http://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20183-W0409-300%2C%20Bertolt%20Brecht.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1898-02-10
+Place of birth: 
+Education:
+Ludwig Maximilian University of Munich
+
+
+Name: Júlio Dantas
+http://commons.wikimedia.org/wiki/Special:FilePath/Tenente%20m%C3%A9dico%20Dr.%20J%C3%BAlio%20Dantas.jpg
+Gender: male
+Nationality: Portugal
+Date of birth: 1876-05-19
+Place of birth: 
+
+
+Name: Ebenezer Howard
+http://commons.wikimedia.org/wiki/Special:FilePath/Ebenezer%20Howard.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1850-01-29
+Place of birth: 
+
+
+Name: Branislav Petronijević
+http://commons.wikimedia.org/wiki/Special:FilePath/Branislav%20Petronijevic.jpg
+Gender: male
+Nationality: Serbia
+Date of birth: 1875-04-06
+Place of birth: 
+Education:
+Leipzig University
+
+
+Name: Nelly Sachs
+http://commons.wikimedia.org/wiki/Special:FilePath/Nelly%20Sachs%201910.jpg
+Gender: female
+Nationality: Sweden
+Date of birth: 1891-12-10
+Place of birth: 
+
+
+Name: Tarjei Vesaas
+http://commons.wikimedia.org/wiki/Special:FilePath/Tarjei%20Vesaas.jpg
+Gender: male
+Nationality: Norway
+Date of birth: 1897-08-20
+Place of birth: 
+
+
+Name: Nicolai Berdyaev
+http://commons.wikimedia.org/wiki/Special:FilePath/Bierdiajew%20phixr.jpg
+Gender: male
+Nationality: France
+Date of birth: 1874-03-18
+Place of birth: 
+Education:
+Taras Shevchenko National University of Kyiv
+
+
+Name: Herbert Samuel, 1st Viscount Samuel
+http://commons.wikimedia.org/wiki/Special:FilePath/Gws%20samuel%2001.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1870-11-06
+Place of birth: 
+Education:
+Balliol College
+University College School
+
+
+Name: John Dewey
+http://commons.wikimedia.org/wiki/Special:FilePath/John%20Dewey%2C%20sem%20data.tif
+Gender: male
+Nationality: United States of America
+Date of birth: 1859-10-20
+Place of birth: 
+Education:
+Johns Hopkins University
+University of Vermont
+
+
+Name: Mircea Eliade
+http://commons.wikimedia.org/wiki/Special:FilePath/Horia%20Photo%203%20English%20%28cropped%29.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1907-03-09
+Place of birth: 
+Education:
+University of Bucharest
+University of Calcutta
+
+
+Name: Stratis Myrivilis
+http://commons.wikimedia.org/wiki/Special:FilePath/MIRIVILIS-PAGKRATI-0968.JPG
+Gender: male
+Nationality: Greece
+Date of birth: 1890-06-30
+Place of birth: 
+Education:
+National and Kapodistrian University of Athens
+
+
+Name: Laura Mestre Hevia
+nan
+Gender: female
+Nationality: Cuba
+Date of birth: 1867-04-04
+Place of birth: 
+
+
+Name: Maurice Maeterlinck
+http://commons.wikimedia.org/wiki/Special:FilePath/Maurice%20Maeterlinck%202.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1862-08-29
+Place of birth: 
+Education:
+Society of Jesus
+Ghent University
+
+
+Name: Borden Parker Bowne
+nan
+Gender: male
+Nationality: United States of America
+Date of birth: 1847-01-14
+Place of birth: 
+Education:
+New York University
+
+
+Name: Salvador de Madariaga
+http://commons.wikimedia.org/wiki/Special:FilePath/Salvador%20de%20Madariaga.JPG
+Gender: male
+Nationality: Spain
+Date of birth: 1886-07-23
+Place of birth: 
+Education:
+University of Oxford
+École polytechnique
+Mines ParisTech
+Lycée Francais
+
+
+Name: Ramón J. Sender
+http://commons.wikimedia.org/wiki/Special:FilePath/Ramon%20J%20Sender.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1901-02-03
+Place of birth: 
+Education:
+University of Madrid
+
+
+Name: William Booth
+http://commons.wikimedia.org/wiki/Special:FilePath/William-Booth-c1900.jpg
+Gender: male
+Nationality: England
+Date of birth: 1829-04-10
+Place of birth: 
+
+
+Name: Samuel Beckett
+http://commons.wikimedia.org/wiki/Special:FilePath/Samuel%20Beckett%2C%20Pic%2C%201%20%28cropped%29.jpg
+Gender: male
+Nationality: Ireland
+Date of birth: 1906-04-13
+Place of birth: 
+Education:
+Trinity College Dublin
+
+
+Name: Édouard Estaunié
+http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Estauni%C3%A9%201923.jpg
+Gender: male
+Nationality: France
+Date of birth: 1862-02-04
+Place of birth: 
+Education:
+École Libre des Sciences Politiques
+École polytechnique
+Télécom Paris
+
+
+Name: Albert Camus
+http://commons.wikimedia.org/wiki/Special:FilePath/Albert%20Camus%2C%20gagnant%20de%20prix%20Nobel%2C%20portrait%20en%20buste%2C%20pos%C3%A9%20au%20bureau%2C%20faisant%20face%20%C3%A0%20gauche%2C%20cigarette%20de%20tabagisme.jpg
+Gender: male
+Nationality: France
+Date of birth: 1913-11-07
+Place of birth: 
+Education:
+University of Algiers
+
+
+Name: Marcelino Menéndez y Pelayo
+http://commons.wikimedia.org/wiki/Special:FilePath/Marcelino%20Men%C3%A9ndez%20Pelayo%2C%20por%20Kaulak.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1856-01-01
+Place of birth: 
+Education:
+University of Barcelona
+University of Valladolid
+
+
+Name: J.C. Bloem
+http://commons.wikimedia.org/wiki/Special:FilePath/JCBloem.jpg
+Gender: male
+Nationality: Kingdom of the Netherlands
+Date of birth: 1887-05-10
+Place of birth: 
+
+
+Name: Gunnar Ekelöf
+http://commons.wikimedia.org/wiki/Special:FilePath/G%20Ekel%C3%B6f%20%28cropped%29.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1907-09-15
+Place of birth: 
+Education:
+Uppsala University
+
+
+Name: Roman Jakobson
+http://commons.wikimedia.org/wiki/Special:FilePath/Roman%20Yakobson.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1896-09-28
+Place of birth: 
+Education:
+Faculty of History and Philology of Moscow University
+College of Philosophy of the Prague German University
+
+
+Name: Jean-Henri Fabre
+http://commons.wikimedia.org/wiki/Special:FilePath/Jean-henri%20fabre.jpg
+Gender: male
+Nationality: France
+Date of birth: 1823-12-21
+Place of birth: 
+
+
+Name: Rudolf Maria Holzapfel
+http://commons.wikimedia.org/wiki/Special:FilePath/Rudolf%20Maria%20Holzapfel%20%281874%E2%80%931930%29.jpg
+Gender: male
+Nationality: Austria
+Date of birth: 1874-01-01
+Place of birth: 
+
+
+Name: Albert Steffen
+http://commons.wikimedia.org/wiki/Special:FilePath/Albert%20Steffen%20-%201916.jpg
+Gender: male
+Nationality: Switzerland
+Date of birth: 1884-12-10
+Place of birth: 
+
+
+Name: Salvador Rueda
+http://commons.wikimedia.org/wiki/Special:FilePath/Salvador%20Rueda.png
+Gender: male
+Nationality: Spain
+Date of birth: 1857-12-03
+Place of birth: 
+
+
+Name: Frans Eemil Sillanpää
+http://commons.wikimedia.org/wiki/Special:FilePath/FransEemilSillanp%C3%A4%C3%A4.jpg
+Gender: male
+Nationality: Finland
+Date of birth: 1888-09-16
+Place of birth: 
+Education:
+University of Helsinki
+Tampereen lyseon lukio
+Jumesniemi Church School
+Haukijärvi School
+
+
+Name: Konstantin Balmont
+http://commons.wikimedia.org/wiki/Special:FilePath/Konstantin%20Balmont%20by%20Valentin%20Serov%201905.jpg
+Gender: male
+Nationality: France
+Date of birth: 1867-06-15
+Place of birth: 
+Education:
+Moscow State University
+
+
+Name: Jaroslav Seifert
+http://commons.wikimedia.org/wiki/Special:FilePath/Jaroslav%20Seifert%201981%20foto%20Hana%20Hamplov%C3%A1.jpg
+Gender: male
+Nationality: Czechoslovakia
+Date of birth: 1901-09-23
+Place of birth: 
+
+
+Name: Franz Hellens
+http://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hellens%20by%20Amedeo%20Modigliani.jpg
+Gender: male
+Nationality: Belgium
+Date of birth: 1881-01-01
+Place of birth: 
+Education:
+Ghent University
+
+
+Name: George Bernard Shaw
+http://commons.wikimedia.org/wiki/Special:FilePath/George%20bernard%20shaw.jpg
+Gender: male
+Nationality: Ireland
+Date of birth: 1856-07-26
+Place of birth: 
+Education:
+Royal Academy of Dramatic Art
+
+
+Name: Stefan Żeromski
+http://commons.wikimedia.org/wiki/Special:FilePath/Portret%20Stefana%20%C5%BBeromskiego.jpg
+Gender: male
+Nationality: Poland
+Date of birth: 1864-10-14
+Place of birth: 
+
+
+Name: Gottfried Benn
+http://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv-Bild-183-1984-1116-500%2C-Gottfried-Benn-Arzt-und-Schriftsteller%20cropped.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1886-05-02
+Place of birth: 
+Education:
+University of Bonn
+University of Jena
+University of Marburg
+
+
+Name: Alf Larsen
+nan
+Gender: male
+Nationality: Norway
+Date of birth: 1885-07-22
+Place of birth: 
+
+
+Name: Per Hallström
+http://commons.wikimedia.org/wiki/Special:FilePath/Author%20Per%20Hallstr%C3%B6m%20and%20his%20wife%20Helga%201904.jpg
+Gender: male
+Nationality: Sweden
+Date of birth: 1866-09-29
+Place of birth: 
+
+
+Name: Jeppe Aakjær
+http://commons.wikimedia.org/wiki/Special:FilePath/Jeppe%20Aakjaer.jpg
+Gender: male
+Nationality: Denmark
+Date of birth: 1866-09-10
+Place of birth: 
+
+
+Name: Ilias Venezis
+http://commons.wikimedia.org/wiki/Special:FilePath/Elias%20Venezis.jpg
+Gender: male
+Nationality: Greece
+Date of birth: 1904-03-04
+Place of birth: 
+
+
+Name: Eugene O&#39;Neill
+http://commons.wikimedia.org/wiki/Special:FilePath/Eugene%20O%27Neill%201936.jpg
+Gender: male
+Nationality: United States of America
+Date of birth: 1888-10-16
+Place of birth: 
+Education:
+Princeton University
+
+
+Name: Hugh MacDiarmid
+http://commons.wikimedia.org/wiki/Special:FilePath/Hugh%20MacDiarmid%20-%20geograph.org.uk%20-%201518563.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1892-08-11
+Place of birth: 
+Education:
+Edinburgh College of Art
+Langholm Academy
+
+
+Name: Marthe Bibesco
+http://commons.wikimedia.org/wiki/Special:FilePath/Martha%20Bibescu%202000%20Romania%20stamp.jpg
+Gender: female
+Nationality: France
+Date of birth: 1886-01-28
+Place of birth: 
+
+
+Name: William Chapman
+http://commons.wikimedia.org/wiki/Special:FilePath/William%20Chapman.png
+Gender: male
+Nationality: Canada
+Date of birth: 1850-12-13
+Place of birth: 
+
+
+Name: Theodor Däubler
+http://commons.wikimedia.org/wiki/Special:FilePath/Hugo%20Erfurth%20-%20Portrait%20Theodor%20D%C3%A4ubler%2C%201921.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1876-08-17
+Place of birth: 
+
+
+Name: George Meredith
+http://commons.wikimedia.org/wiki/Special:FilePath/George%20Meredith%20by%20George%20Frederic%20Watts.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1828-02-12
+Place of birth: 
+
+
+Name: H. G. Wells
+http://commons.wikimedia.org/wiki/Special:FilePath/H.G.%20Wells%20by%20Beresford.jpg
+Gender: male
+Nationality: United Kingdom
+Date of birth: 1866-09-21
+Place of birth: 
+Education:
+University of London
+Imperial School of Jurisprudence
+Royal College of Science
+
+
+Name: Frank Thiess
+http://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20183-D0430-0050-010%2C%20Frank%20Thiess.jpg
+Gender: male
+Nationality: Germany
+Date of birth: 1890-03-13
+Place of birth: 
+
+
+Name: Henriette Charasson
+http://commons.wikimedia.org/wiki/Special:FilePath/Henriette%20Charasson%20photographi%C3%A9%20par%20Henri%20Manuel.jpg
+Gender: female
+Nationality: France
+Date of birth: 1884-02-13
+Place of birth: 
+
+
+Name: Jan Parandowski
+http://commons.wikimedia.org/wiki/Special:FilePath/Alfons%20Karny%2C%20Parandowski%20z%201954r.jpg
+Gender: male
+Nationality: Poland
+Date of birth: 1895-05-11
+Place of birth: 
+Education:
+Lviv University
+
+
+Name: Lennox Robinson
+http://commons.wikimedia.org/wiki/Special:FilePath/Lennox%20Robinson%20-%20Project%20Gutenberg%20eText%2019028.jpg
+Gender: male
+Nationality: Ireland
+Date of birth: 1886-10-04
+Place of birth: 
+Education:
+Bandon Grammar School
+
+
+Name: Martin Heidegger
+http://commons.wikimedia.org/wiki/Special:FilePath/Heidegger%202%20%281960%29.jpg
+Gender: male
+Nationality: Nazi Germany
+Date of birth: 1889-09-26
+Place of birth: 
+Education:
+University of Freiburg
+
+
+Name: Josip Kosor
+nan
+Gender: male
+Nationality: nan
+Date of birth: 1879-01-27
+Place of birth: 
+
+
+Name: Jorge Luis Borges
+http://commons.wikimedia.org/wiki/Special:FilePath/Jorge%20Luis%20Borges%201951%2C%20by%20Grete%20Stern.jpg
+Gender: male
+Nationality: Argentina
+Date of birth: 1899-08-24
+Place of birth: 
+Education:
+Collège Calvin
+
+
+Name: Henriette Roland Holst
+http://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Henri%C3%ABtte%20Roland%20Holst%20before%201918.jpg
+Gender: female
+Nationality: Kingdom of the Netherlands
+Date of birth: 1869-12-24
+Place of birth: 
+
+
+Name: Edward Plunkett, 18th Baron of Dunsany
+http://commons.wikimedia.org/wiki/Special:FilePath/Lord%20Edward%20John%20Moreton%20Drax%20Plunkett%20Dunsany%2C%20half-length%20portrait%2C%20facing%20slightly%20left%20LCCN91780992.jpg
+Gender: male
+Nationality: Ireland
+Date of birth: 1878-07-24
+Place of birth: 
+Education:
+Eton College
+Cheam School
+Royal Military College, Sandhurst
+
+
+Name: Malwida von Meysenbug
+http://commons.wikimedia.org/wiki/Special:FilePath/Malwida%20von%20Meysenbug%2C%20portrait%20par%20Franz%20von%20Lenbach.jpg
+Gender: female
+Nationality: Germany
+Date of birth: 1816-10-28
+Place of birth: 
+
+
+Name: Arne Garborg
+http://commons.wikimedia.org/wiki/Special:FilePath/Garborg%20portrett.jpg
+Gender: male
+Nationality: Norway
+Date of birth: 1851-01-25
+Place of birth: 
+
+
+Name: Henry de Montherlant
+http://commons.wikimedia.org/wiki/Special:FilePath/Montherlant%20par%20J-Emile%20Blanche%201922.jpg
+Gender: male
+Nationality: France
+Date of birth: 1895-04-20
+Place of birth: 
+Education:
+Lycée Janson-de-Sailly
+
+
+Name: Ángel Guimerà
+http://commons.wikimedia.org/wiki/Special:FilePath/Guimer%C3%A0.jpg
+Gender: male
+Nationality: Spain
+Date of birth: 1845-05-06
+Place of birth: 
+
+
+Name: Juan Zorrilla de San Martín
+http://commons.wikimedia.org/wiki/Special:FilePath/JuanZorrillaDeSanMartin.jpg
+Gender: male
+Nationality: Uruguay
+Date of birth: 1855-12-28
+Place of birth: 
+
+
+Name: André Malraux
+http://commons.wikimedia.org/wiki/Special:FilePath/Andr%C3%A9%20Malraux%2C%20Pic%2C%2022.jpg
+Gender: male
+Nationality: France
+Date of birth: 1901-11-03
+Place of birth: 
+Education:
+Lycée Condorcet
+Institut national des langues et civilisations orientales
+Lycée Turgot
+
+
+Name: Bernard Bosanquet
+http://commons.wikimedia.org/wiki/Special:FilePath/BernardBosanquetPhilosopher.jpg
+Gender: male
+Nationality: United Kingdom of Great Britain and Ireland
+Date of birth: 1848-06-14
+Place of birth: 
+Education:
+Balliol College
+Harrow School
+
+
+Name: Teixeira de Pascoaes
+http://commons.wikimedia.org/wiki/Special:FilePath/Teixeira%20de%20Pascoaes.jpg
+Gender: male
+Nationality: Portugal
+Date of birth: 1877-11-02
+Place of birth: 
+Education:
+Law School of the University of Coimbra
+
+
+Name: Francis Jammes
+http://commons.wikimedia.org/wiki/Special:FilePath/Francis%20Jammes%20en%201917.jpg
+Gender: male
+Nationality: France
+Date of birth: 1868-12-02
+Place of birth: 
+
+
+Name: Charles Ferdinand Ramuz
+http://commons.wikimedia.org/wiki/Special:FilePath/CHF200%208%20front%20extract.jpg
+Gender: male
+Nationality: Switzerland
+Date of birth: 1878-09-24
+Place of birth: 
+Education:
+University of Lausanne
+
+
+Name: Mark Aldanov
+http://commons.wikimedia.org/wiki/Special:FilePath/Aldanov.jpg
+Gender: male
+Nationality: Russian Empire
+Date of birth: 1886-11-07
+Place of birth: 
+Education:
+Taras Shevchenko National University of Kyiv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: Charles Wagner
+http://commons.wikimedia.org/wiki/Special:FilePath/Charles%20Wagner.jpg
+Gender: male
+Nationality: France
+Date of birth: 1852-01-03
+Place of birth: 
+Education:
+Protestant Faculty of Theology in Paris
+Faculté de théologie protestante de Strasbourg
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "peterverhaar/network-cultural-heritage",
+            ref: "gh-pages",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Wikidata_Basics.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Wikidata</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="RKD_SPARQL.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">RKD Artists</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Karin de Wild and Peter Verhaar<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
