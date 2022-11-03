@@ -51,6 +51,19 @@ filename_title_split_character : '_'  # If inferring titles based on filename, s
 number_equations               : false  # Whether to automatically number all block equations with MathJax
 
 ########################
+# Sphinx settings
+########################
+sphinx:
+  recursive_update: true
+  config:
+    version: "1.0"
+    # epub_description: "Testing"
+    epub_author: Peter Verhaar & Ben Companjen
+    epub_publisher: "Centre for Digital Scholarship, Leiden University Libraries"
+    epub_identifier: "https://cdsleiden.github.io/python-tutorial/"
+    epub_scheme: URL
+
+########################
 # Interact link settings
 ########################
 
@@ -99,49 +112,49 @@ custom_static_url         : "/assets/custom" # Path to user's custom CSS/JS file
 #######################################################################################
 # Jekyll build settings (only modify if you know what you're doing)
 
-# Site settings
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "default"
-      toc: true
-      toc_label: "  On this page"
-      toc_icon: "list-ul"
-      excerpt: ''
+# # Site settings
+# defaults:
+#   - scope:
+#       path: ""
+#     values:
+#       layout: "default"
+#       toc: true
+#       toc_label: "  On this page"
+#       toc_icon: "list-ul"
+#       excerpt: ''
 
-favicon_path: "images/logo/favicon.ico"
+# favicon_path: "images/logo/favicon.ico"
 
-# Markdown Processing
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+# # Markdown Processing
+# markdown: kramdown
+# kramdown:
+#   input: GFM
+#   syntax_highlighter: rouge
 
-sass:
-  style: compressed
+# sass:
+#   style: compressed
 
-collections:
-  build:
-    output: true
-    permalink: /:path:output_ext
+# collections:
+#   build:
+#     output: true
+#     permalink: /:path:output_ext
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-exclude:
-  - scripts/
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+# # Exclude from processing.
+# # The following items will not be processed, by default. Create a custom list
+# # to override the default setting.
+# exclude:
+#   - scripts/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
 
-plugins:
-  - jekyll-redirect-from
-  - jekyll-scholar
+# plugins:
+#   - jekyll-redirect-from
+#   - jekyll-scholar
 
 # Jupyter Book version - DO NOT CHANGE THIS. It is generated when a new book is created
 jupyter_book_version: "0.6.4"
