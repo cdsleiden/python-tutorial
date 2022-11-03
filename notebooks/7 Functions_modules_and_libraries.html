@@ -1,0 +1,1032 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>7. Functions, Modules and Libraries &#8212; Python Tutorial</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8. Working with files and folders" href="8%20Working_with_files_and_folders.html" />
+    <link rel="prev" title="6. Dictionaries" href="6%20Dictionaries.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Python Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorial
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1%20Variables_and_data_types.html">
+   1. Variables and data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2%20Operators.html">
+   2. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20Working_with_strings.html">
+   3. Working with strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4%20Flow_control.html">
+   4. Flow control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5%20Lists.html">
+   5. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6%20Dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   7. Functions, Modules and Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8%20Working_with_files_and_folders.html">
+   8. Working with files and folders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9%20Regular_expressions.html">
+   9. Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10%20Data_acquisition.html">
+   10. Data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11%20Pandas.html">
+   11. Data analysis with pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12%20Visualisation.html">
+   12. Data Visualisation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Practical information
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Jupyter_notebook_basics.html">
+   Jupyter Notebook basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Installation.html">
+   Installation guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Other_resources.html">
+   Other resources
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Solutions to the exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">
+   1. Variables and data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/2%20Operators.html">
+   2. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/3%20Working_with_strings.html">
+   3. Working with strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/4%20Flow_control.html">
+   4. Flow control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/5%20Lists.html">
+   5. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/6%20Dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/7%20Functions_modules_and_libraries.html">
+   7. Functions, Modules and Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/8%20Working_with_files_and_folders.html">
+   8. Working with files and folders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/9%20Regular_expressions.html">
+   9. Regular expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/10%20Data_acquisition.html">
+   10. Data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/11%20Pandas.html">
+   11. Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/12%20Visualisation.html">
+   12. Visualisation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/7 Functions_modules_and_libraries.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/7 Functions_modules_and_libraries.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   7. Functions, Modules and Libraries
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions">
+     Functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#parameters-and-arguments">
+       Parameters and arguments
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#defining-functions">
+       Defining functions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methods-and-classes">
+     Methods (and classes)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#combining-functionality-modules-packages-and-the-library">
+     Combining functionality: modules, packages and the Library
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-from-modules">
+     Importing (from) modules
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-functionality">
+     Finding functionality
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-7-1">
+     Exercise 7.1.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-7-2">
+     Exercise 7.2.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-7-3">
+     Exercise 7.3.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-7-4">
+     Exercise 7.4.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>7. Functions, Modules and Libraries</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   7. Functions, Modules and Libraries
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions">
+     Functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#parameters-and-arguments">
+       Parameters and arguments
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#defining-functions">
+       Defining functions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methods-and-classes">
+     Methods (and classes)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#combining-functionality-modules-packages-and-the-library">
+     Combining functionality: modules, packages and the Library
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-from-modules">
+     Importing (from) modules
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-functionality">
+     Finding functionality
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-7-1">
+     Exercise 7.1.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-7-2">
+     Exercise 7.2.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-7-3">
+     Exercise 7.3.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-7-4">
+     Exercise 7.4.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="functions-modules-and-libraries">
+<h1>7. Functions, Modules and Libraries<a class="headerlink" href="#functions-modules-and-libraries" title="Permalink to this headline">#</a></h1>
+<p>So far we have seen and used small pieces of code that perform small tasks.
+If we wanted to use the same code with a different input, we either changed the original code or copied the whole <em>block</em> and changed that copy.
+That is not only inefficient, it is easier to lose overview of what the code does.</p>
+<p>In this section we will look at ways to combine and reuse pieces of code.
+We introduce quite a few new terms, so please don’t get discouraged.</p>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
+<p>Imagine that you want to write a program in Python which can calculate the final grades earned by students who have followed a certain course.
+Such grades are normally calculated using a fixed formula (e.g. a mid-term assignment which counts for 40% and a final exam which counts for 60%).
+To calculate the final grades, this formula needs to be applied repeatedly with different values.
+In such a situation, it would be quite inefficient if you simply repeated the code that is needed for every single student.
+Fortunately, we can reuse fragments of code by defining them as functions.</p>
+<p>A <em>function</em> is essentially a set of statements which can be addressed collectively via a single name.
+The idea of a function comes from mathematics, in which a function takes one or more <em>inputs</em> and produces an <em>output</em>.
+Functions work the same in programming: you give (or <em>pass</em>) something to a function and the function <em>returns</em> an output. The output is the result of the function.</p>
+<p>Up to this point we have seen a few functions that Python provides ‘out of the box’:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> takes one or more values and ‘writes’ them to the screen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code> takes a string, list or dictionary and returns its length (i.e. number of characters or items)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict()</span></code> takes no inputs and returns an empty dictionary</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sorted()</span></code> takes a list and returns a sorted copy of that list</p></li>
+</ul>
+<p>These are just some of the functions we have seen so far and there is more nuance to their descriptions.
+You can find <a class="reference external" href="https://docs.python.org/3/library/functions.html">all built-in functions in the Python documentation</a>.
+If you see a function in a programme that you do not understand, you could ask what it does using
+<code class="docutils literal notranslate"><span class="pre">help(name_of_function)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ask for documentation of the print function</span>
+<span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the tutorial we have already used these functions.
+When you use a function, you often say that you are <em>calling a function</em>.
+To call a function, you to refer to its name followed by parentheses.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Returns an empty list</span>
+<span class="nb">list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Returns an empty dictionary</span>
+<span class="nb">dict</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you don’t include the parentheses, you don’t call the function, but get it as a value.
+This is often not what you want.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Returns the function, but does not *call* it</span>
+<span class="nb">print</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function print&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="parameters-and-arguments">
+<h3>Parameters and arguments<a class="headerlink" href="#parameters-and-arguments" title="Permalink to this headline">#</a></h3>
+<p>When a function accepts an input, it is said to have a <em>parameter</em>.
+Functions can define zero or more parameters.
+Parameters can be made <em>optional</em> by setting default values.</p>
+<p>For example, the in-built function <code class="docutils literal notranslate"><span class="pre">round()</span></code>, which rounds numbers, takes two parameters.
+The first parameter is a floating point number, the number to round.
+The second parameter is the number of digits you would like to see following the decimal point.
+This second parameter is optional: if you don’t specify it, the number is rounded to zero decimals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Keep 2 decimals</span>
+<span class="nb">round</span><span class="p">(</span><span class="mf">4.55892</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Round to zero decimals and return an integer</span>
+<span class="nb">round</span><span class="p">(</span><span class="mf">4.55892</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Somewhat confusingly, when we call a function, we say that the values we ‘give’ to the function are <em>arguments</em>.
+So a function defines <em>parameters</em>, and we as programmers give it <em>arguments</em>.
+This distinction is not too important at this point, but you may come across both terms.</p>
+</section>
+<section id="defining-functions">
+<h3>Defining functions<a class="headerlink" href="#defining-functions" title="Permalink to this headline">#</a></h3>
+<p>Next to working with in-built functions, it is also possible to write your own functions.
+Working with functions can often be very effective.
+It enables you to decompose specific problem into smaller sub-problems and into units which can be reused as often as needed.
+As illustrated in the code below, functions can be created using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword, a function name and parentheses that may contain parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_final_mark</span><span class="p">(</span> <span class="n">mid_term</span><span class="p">,</span> <span class="n">exam</span> <span class="p">):</span>
+    <span class="n">final_mark</span> <span class="o">=</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">mid_term</span>
+    <span class="n">final_mark</span> <span class="o">+=</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">exam</span>
+    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">final_mark</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code above defines the function <code class="docutils literal notranslate"><span class="pre">calculate_final_mark()</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword needs to be followed by the name of the function and a set of parentheses.
+When you choose a name, make sure to make it descriptive and do not use an existing one or reserved keyword.
+The Python community has <a class="reference external" href="https://peps.python.org/pep-0008/#function-and-variable-names">guidelines for naming functions</a>: “Function names should be lowercase,
+with words separated by underscores to improve readability.”</p>
+<p>Within the parentheses, you can optionally mention the parameters, i.e. the values the function should operate on.
+If there are two or more parameters, they need to be separated by commas.
+Our function takes two parameters to create an output.
+The output is said to be <em>returned</em> and we use <code class="docutils literal notranslate"><span class="pre">return</span></code> to do so.</p>
+<!-- When Python evaluates `return`, the execution of the function stops. -->
+<!-- It's possible that a function doesn't return a value. -->
+<p>Once the function has been defined, it can be called, or invoked, in other locations in your program.
+The <code class="docutils literal notranslate"><span class="pre">print</span></code> statements show the result of the calculation that is returned by the function, using the values that are mentioned within the parentheses (as <em>arguments</em>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;Final grade: </span><span class="si">{</span><span class="n">calculate_final_mark</span><span class="p">(</span> <span class="mi">8</span> <span class="p">,</span> <span class="mi">9</span> <span class="p">)</span><span class="si">}</span><span class="s1"> &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;Final grade: </span><span class="si">{</span><span class="n">calculate_final_mark</span><span class="p">(</span> <span class="mi">4</span> <span class="p">,</span> <span class="mi">10</span> <span class="p">)</span><span class="si">}</span><span class="s1"> &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;Final grade: </span><span class="si">{</span><span class="n">calculate_final_mark</span><span class="p">(</span> <span class="mi">6</span> <span class="p">,</span> <span class="mi">7</span> <span class="p">)</span><span class="si">}</span><span class="s1"> &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="methods-and-classes">
+<h2>Methods (and classes)<a class="headerlink" href="#methods-and-classes" title="Permalink to this headline">#</a></h2>
+<p>When we worked with strings, lists and dictionaries, we referred to some <em>methods</em> that were ‘part of’ the variables, such as:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">my_string.title()</span></code> returns a copy of the string in ‘Title Case’;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_dictionary.get(a_key,</span> <span class="pre">&quot;Default</span> <span class="pre">value&quot;)</span></code> returns the value associated to <code class="docutils literal notranslate"><span class="pre">a_key</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;Default</span> <span class="pre">value&quot;</span></code> if there is no <code class="docutils literal notranslate"><span class="pre">a_key</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_list.count(value_to_count)</span></code> returns the number of times <code class="docutils literal notranslate"><span class="pre">value_to_count</span></code> is in the list.</p></li>
+</ul>
+<p>These methods are functions that only exist within the variable and usually operate on its value(s).
+To understand how this works, we will have to introduce classes and objects.</p>
+<p>When we introduced data types, we only mentioned a few.
+But we can create new data types too, by defining <em>classes</em>.
+A <em>class</em> combines variables and/or functions that are related.
+Within a class, variables are called <em>properties</em> (or <em>fields</em>) and functions are <em>methods</em>.
+After defining a class, you can use it as a data type.
+This may make your code more readable and understandable.
+For example, if you create a calendar application, it would be easier to work with an <code class="docutils literal notranslate"><span class="pre">Event</span></code> class that has properties for start time, end time and description, than to use a dictionary with these elements.
+This <code class="docutils literal notranslate"><span class="pre">Event</span></code> class can have methods for determining if it is a past event or future event, or if its end time is not before its start time.
+In the example below, we define a class <code class="docutils literal notranslate"><span class="pre">Book</span></code> with properties named <code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">isbn</span></code>, and a method named <code class="docutils literal notranslate"><span class="pre">describe()</span></code>.</p>
+<p>This paradigm of creating classes with properties and methods is known as <em>object-oriented programming</em>.</p>
+<p>You use a class by <em>instantiating</em> it, i.e. creating an instance.
+This instance is called an <em>object</em>, and this object can be assigned to a variable.
+As we have seen before, you can access the properties and methods of the object using <code class="docutils literal notranslate"><span class="pre">object_name.property_name()</span></code> and <code class="docutils literal notranslate"><span class="pre">object_name.method_name()</span></code>.
+This notation is called the <em>period syntax</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Book</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">isbn</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">isbn</span> <span class="o">=</span> <span class="n">isbn</span>
+
+    <span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Title: &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ISBN: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">isbn</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Note: this is advanced material</em></p>
+<p>This class has two methods, <code class="docutils literal notranslate"><span class="pre">__init__</span></code> and <code class="docutils literal notranslate"><span class="pre">describe</span></code>.
+The first parameter of a method is always <code class="docutils literal notranslate"><span class="pre">self</span></code> and refers to the instance of the class that the method is being called on.
+Through the <code class="docutils literal notranslate"><span class="pre">self</span></code> reference, you can refer to an object’s properties (<code class="docutils literal notranslate"><span class="pre">self.title</span></code> and <code class="docutils literal notranslate"><span class="pre">self.isbn</span></code> in this case) and methods.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is special: it is called when you create <em>a new Book</em>.
+Below is how you would do that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title1</span> <span class="o">=</span> <span class="n">Book</span><span class="p">(</span><span class="s2">&quot;A Room with a View&quot;</span><span class="p">,</span> <span class="s2">&quot;978-1420925432&quot;</span><span class="p">)</span>
+<span class="n">title1</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we created a new <code class="docutils literal notranslate"><span class="pre">Book</span></code>, and assigned it to the variable <code class="docutils literal notranslate"><span class="pre">title1</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method defines two parameters, <code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">isbn</span></code>, so we need to provide values to match these.
+Now that we have a <code class="docutils literal notranslate"><span class="pre">Book</span></code> object called <code class="docutils literal notranslate"><span class="pre">title1</span></code>, we can call its method <code class="docutils literal notranslate"><span class="pre">describe()</span></code>, which prints a description based on this object’s properties.</p>
+<p>We have only touched the surface of object-oriented programming.
+But perhaps you can see how strings, lists and dictionaries have methods: they are instances of classes.
+For example, all strings are saved as instances of the general <code class="docutils literal notranslate"><span class="pre">str</span></code> (string) class.
+This class defines the methods that we used, such as <code class="docutils literal notranslate"><span class="pre">lower()</span></code>, <code class="docutils literal notranslate"><span class="pre">strip()</span></code> and <code class="docutils literal notranslate"><span class="pre">index()</span></code>.</p>
+</section>
+<section id="combining-functionality-modules-packages-and-the-library">
+<h2>Combining functionality: modules, packages and the Library<a class="headerlink" href="#combining-functionality-modules-packages-and-the-library" title="Permalink to this headline">#</a></h2>
+<p><em>Note: the terms in this section are easily confused. It is not too important to get them right.</em></p>
+<p>When you have a number of functions or classes that perform similar or related activities,
+these can all be placed together in a Python file.
+Such a file containing related functions, statements or classes is called a <em>module</em>.
+Modules can be <em>imported</em> into scripts (or other modules) to access and reuse their functionality.</p>
+<!-- A module, in short, is a file with code that you can reuse across different programs.  -->
+<p>When you install Python, you get a lot of modules ‘in the box’.
+This collection of preinstalled modules is called the
+<a class="reference external" href="https://docs.python.org/3/library/index.html"><em>Python Standard Library</em></a>.
+Earlier in the tutorial we encountered the <code class="docutils literal notranslate"><span class="pre">math</span></code> and <code class="docutils literal notranslate"><span class="pre">random</span></code> modules,
+which contain mathematical functions and constants and functions for random numbers respectively,
+but there are many more.</p>
+<p>Python has multiple meanings for the word ‘package’.
+For our purposes, a <em>package</em> is a collection of related modules,
+often distributed over the web.
+We will get back to this later.</p>
+</section>
+<section id="importing-from-modules">
+<h2>Importing (from) modules<a class="headerlink" href="#importing-from-modules" title="Permalink to this headline">#</a></h2>
+<p>To access functionality in a module, we need to <em>import</em> it using the <code class="docutils literal notranslate"><span class="pre">import</span></code> keyword.</p>
+<p>The Standard Library has a module named <code class="docutils literal notranslate"><span class="pre">os</span></code> that contains various functions for working with files and folders on your operating system.
+To work with this module, you need to import it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">os</span></code> stands for ‘Operating System’. This module will be discussed in more detail in the section focusing on working with files and directories.</p>
+<p>Once imported, all the functions and the classes that are defined within this module can be used via the period syntax. The function <code class="docutils literal notranslate"><span class="pre">listdir()</span></code>, for instance, can be invoked using the code below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;Solutions&#39;</span><span class="p">)</span>
+<span class="n">files</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively, it is also possible to import individual functions from a module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This second way of importing code has the advantage that it is no longer necessary to use the period syntax. The function can then be used without referencing the name of the module:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;Solutions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="finding-functionality">
+<h2>Finding functionality<a class="headerlink" href="#finding-functionality" title="Permalink to this headline">#</a></h2>
+<p>Next to the Standard Library there are hundreds of thousands of projects that you can install from the web.
+Many people publish their code (in modules) as packages on the <a class="reference external" href="https://pypi.org/">Python Package Index</a>.
+With the amount of packages available, there is a good chance that someone else has already published functionality that you could reuse.</p>
+<p>In practice, you often start with packages that are well-known in general, or that may be recommened by your colleagues.
+That not only makes getting started easier, but you can also be reasonably certain that the packages do not contain malware.
+It is rare, but unfortunately it happens.</p>
+<p>Some well known packages (most of which we have worked with):</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://numpy.org">NumPy</a> for working with multi-dimensional arrays of numbers</p></li>
+<li><p><a class="reference external" href="https://www.sympy.org">Sympy</a> for working with symbolic mathematics</p></li>
+<li><p><a class="reference external" href="https://tensorflow.org/">Tensorflow</a> and <a class="reference external" href="https://pytorch.org/">PyTorch</a> for machine learning with neural networks</p></li>
+<li><p><a class="reference external" href="https://opencv.org/">OpenCV</a> for image manipulation and analysis</p></li>
+<li><p><a class="reference external" href="https://spacy.io">spaCy</a> and <a class="reference external" href="https://www.nltk.org/">nltk</a> for text analysis</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/">matplotlib</a>, <a class="reference external" href="https://bokeh.org/">Bokeh</a> and <a class="reference external" href="https://seaborn.pydata.org/">seaborn</a> for data visualisation</p></li>
+</ul>
+<p>Each of these projects, as well as the others on the PyPI, can often be installed using a single command, like:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install nltk
+</pre></div>
+</div>
+<p>We will not go deeper into installing these packages now.
+If you would like to use any of these, you can usually find installation instructions on the project website.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
+<section id="exercise-7-1">
+<h2>Exercise 7.1.<a class="headerlink" href="#exercise-7-1" title="Permalink to this headline">#</a></h2>
+<p>In a given university course, the final grade is determined by grade for essay and by the grade for a presentation. The presentation counts for 30% and the essay for 70%.</p>
+<p>Write two functions:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">calculate_mark</span></code> should calculate the final grade based on a set of partial grades according to the given formula.
+Grades must be rounded to integers. 5.4, for example, becomes 5 and 6.6 becomes 7.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_pass</span></code> should determine whether a given grade is at a pass level (i.e. equal to or higher than 6).
+This function must return a string value, ‘pass’ or ‘fail’.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function calculate_mark determines the final mark</span>
+
+
+<span class="c1"># Function is_pass determines &#39;Pass&#39; or &#39;Fail&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s try them:</span>
+<span class="n">essay1</span> <span class="o">=</span> <span class="mf">7.0</span>
+<span class="n">presentation1</span> <span class="o">=</span> <span class="mf">8.5</span>
+<span class="n">final1</span> <span class="o">=</span> <span class="n">calculate_mark</span><span class="p">(</span><span class="n">essay1</span><span class="p">,</span> <span class="n">presentation1</span><span class="p">)</span>
+<span class="c1"># We expect the grade 7 (pass)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;final grade: </span><span class="si">{</span><span class="n">final1</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">is_pass</span><span class="p">(</span><span class="n">final1</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="p">)</span>
+
+<span class="n">essay2</span> <span class="o">=</span> <span class="mf">4.5</span>
+<span class="n">presentation2</span> <span class="o">=</span> <span class="mf">5.5</span>
+<span class="n">final2</span> <span class="o">=</span> <span class="n">calculate_mark</span><span class="p">(</span><span class="n">essay2</span><span class="p">,</span> <span class="n">presentation2</span><span class="p">)</span>
+<span class="c1"># We expect the grade 5 (fail)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;final grade: </span><span class="si">{</span><span class="n">final2</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">is_pass</span><span class="p">(</span><span class="n">final2</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-7-2">
+<h2>Exercise 7.2.<a class="headerlink" href="#exercise-7-2" title="Permalink to this headline">#</a></h2>
+<p>Import the math module, as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>This command imports all the available functions from the <code class="docutils literal notranslate"><span class="pre">math</span></code> module. Use the functions <code class="docutils literal notranslate"><span class="pre">log10()</span></code>, <code class="docutils literal notranslate"><span class="pre">pow()</span></code>, <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> and <code class="docutils literal notranslate"><span class="pre">cos()</span></code> to generate the following numbers:</p>
+<ul class="simple">
+<li><p>The base-10 logarithm of 5.</p></li>
+<li><p>3 raised to the power of 4</p></li>
+<li><p>The square root of 144</p></li>
+<li><p>The cosine of 60 radians.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the library</span>
+
+
+<span class="c1"># Print the four numbers</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-7-3">
+<h2>Exercise 7.3.<a class="headerlink" href="#exercise-7-3" title="Permalink to this headline">#</a></h2>
+<p>Write a function which can convert a given temperature in degrees Celcius into the equivalent in Fahrenheit. Use the following formula: F = 1.8 * C + 32.</p>
+<p>Once the function is ready, test it with a number of values. 20 degrees Celcius ought to be converted into 68 degrees Fahrenheit, and 37 degrees Celcius should equal 98.6 degrees Fahrenheit.</p>
+</section>
+<section id="exercise-7-4">
+<h2>Exercise 7.4.<a class="headerlink" href="#exercise-7-4" title="Permalink to this headline">#</a></h2>
+<p>Following Pythagoras’ theorem (A<sup>2</sup> + B<sup>2</sup> = C<sup>2</sup>), calculate the length of the hypothenuse in a right trangle in which the other two sides have a length of 6 and 7. Make use of the math module.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="6%20Dictionaries.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">6. Dictionaries</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="8%20Working_with_files_and_folders.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">8. Working with files and folders</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Peter Verhaar and Ben Companjen<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

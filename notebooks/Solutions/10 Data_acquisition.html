@@ -1,0 +1,986 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>10. Data acquisition &#8212; Python Tutorial</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11. Pandas" href="11%20Pandas.html" />
+    <link rel="prev" title="9. Regular expressions" href="9%20Regular_expressions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Python Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorial
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1%20Variables_and_data_types.html">
+   1. Variables and data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2%20Operators.html">
+   2. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3%20Working_with_strings.html">
+   3. Working with strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4%20Flow_control.html">
+   4. Flow control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5%20Lists.html">
+   5. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6%20Dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../7%20Functions_modules_and_libraries.html">
+   7. Functions, Modules and Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../8%20Working_with_files_and_folders.html">
+   8. Working with files and folders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../9%20Regular_expressions.html">
+   9. Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10%20Data_acquisition.html">
+   10. Data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11%20Pandas.html">
+   11. Data analysis with pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../12%20Visualisation.html">
+   12. Data Visualisation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Practical information
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Jupyter_notebook_basics.html">
+   Jupyter Notebook basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Installation.html">
+   Installation guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Other_resources.html">
+   Other resources
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Solutions to the exercises
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1%20Variables_and_data_types.html">
+   1. Variables and data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2%20Operators.html">
+   2. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20Working_with_strings.html">
+   3. Working with strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4%20Flow_control.html">
+   4. Flow control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5%20Lists.html">
+   5. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6%20Dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7%20Functions_modules_and_libraries.html">
+   7. Functions, Modules and Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8%20Working_with_files_and_folders.html">
+   8. Working with files and folders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9%20Regular_expressions.html">
+   9. Regular expressions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   10. Data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11%20Pandas.html">
+   11. Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12%20Visualisation.html">
+   12. Visualisation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/Solutions/10 Data_acquisition.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notebooks/Solutions/10 Data_acquisition.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-1">
+   Exercise 10.1.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-2">
+   Exercise 10.2.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-3">
+   Exercise 10.3.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-4">
+   Exercise 10.4.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-5">
+   Exercise 10.5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-6">
+   Exercise 10.6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-7">
+   Exercise 10.7
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>10. Data acquisition</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-1">
+   Exercise 10.1.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-2">
+   Exercise 10.2.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-3">
+   Exercise 10.3.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-4">
+   Exercise 10.4.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-5">
+   Exercise 10.5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-6">
+   Exercise 10.6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-7">
+   Exercise 10.7
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="data-acquisition">
+<h1>10. Data acquisition<a class="headerlink" href="#data-acquisition" title="Permalink to this headline">#</a></h1>
+<section id="exercise-10-1">
+<h2>Exercise 10.1.<a class="headerlink" href="#exercise-10-1" title="Permalink to this headline">#</a></h2>
+<p>The list below contains a number of URLs. They are the web addresses of texts created for the <a class="reference external" href="https://www.gutenberg.org">Project Gutenberg</a> website.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;https://www.gutenberg.org/files/580/580-0.txt&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;https://www.gutenberg.org/files/1400/1400-0.txt&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;https://www.gutenberg.org/files/786/786-0.txt&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;https://www.gutenberg.org/files/766/766-0.txt&#39;</span> 
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Write a program in Python that downloads all the files in this list and stores them in the current directory.
+As filenames, use the same names that are used by Project Gutenberg (e.g. ‘580-0.txt’ or ‘1400-0.txt’).
+The basename in a URL can be extracted using the <a class="reference external" href="https://docs.python.org/3/library/os.path.html#os.path.basename"><code class="docutils literal notranslate"><span class="pre">os.path.basename()</span></code></a> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span> 
+
+<span class="c1"># Recreate the given list using copy and paste</span>
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;https://www.gutenberg.org/files/580/580-0.txt&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;https://www.gutenberg.org/files/1400/1400-0.txt&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;https://www.gutenberg.org/files/786/786-0.txt&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;https://www.gutenberg.org/files/766/766-0.txt&#39;</span> 
+<span class="p">]</span>
+
+<span class="c1"># We use a for-loop to take the same steps for each item in the list:</span>
+<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
+    <span class="c1"># 1. Download the file contents</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="c1"># 1a. Force the textual contents to be interpreted as UTF-8 encoded, because the website does not send the text encoding</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span>
+    <span class="c1"># 2. Use basename to get a suitable filename</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="c1"># 3. Open the file in write mode and write the downloaded file contents to the file</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span> <span class="n">filename</span> <span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span> <span class="p">)</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span> <span class="p">)</span>
+    <span class="c1"># 4. Close the file</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-2">
+<h2>Exercise 10.2.<a class="headerlink" href="#exercise-10-2" title="Permalink to this headline">#</a></h2>
+<p>Write Python code which can download the titles and the URLs of Wikipedia articles whose titles contain the word ‘Dutch’. Your code needs to display the first 30 results only.</p>
+<p><em>Hint: the tutorial covers the Wikipedia API.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="c1"># Let&#39;s construct the full API call (which is a URL) piece by piece</span>
+<span class="n">baseURL</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/w/api.php?action=opensearch&#39;</span>
+
+<span class="n">searchTerm</span> <span class="o">=</span> <span class="s2">&quot;Dutch&quot;</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">data_format</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span>
+
+<span class="n">apiCall</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&amp;search=</span><span class="si">{}</span><span class="s1">&amp;limit=</span><span class="si">{}</span><span class="s1">&amp;format=</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">baseURL</span><span class="p">,</span> <span class="n">searchTerm</span> <span class="p">,</span> <span class="n">limit</span> <span class="p">,</span> <span class="n">data_format</span> <span class="p">)</span>
+
+<span class="c1"># Get the data using the Requests library</span>
+<span class="n">responseData</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">apiCall</span> <span class="p">)</span>
+
+<span class="c1"># Because we asked for and got JSON-formatted data, Requests lets us access</span>
+<span class="c1"># the data as a Python data structure using the .json() method</span>
+<span class="n">wikiResults</span> <span class="o">=</span> <span class="n">responseData</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="c1"># Now we print the search results </span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">0</span> <span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">wikiResults</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Title: &#39;</span> <span class="o">+</span> <span class="n">wikiResults</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Tagline: &#39;</span> <span class="o">+</span> <span class="n">wikiResults</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Url: &#39;</span> <span class="o">+</span> <span class="n">wikiResults</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-3">
+<h2>Exercise 10.3.<a class="headerlink" href="#exercise-10-3" title="Permalink to this headline">#</a></h2>
+<p>Write an application in Python that extracts all the publications that have been added to a specific ORCID account, using the ORCID API.</p>
+<p>Information about individual ORCID accounts can be obtained by appending their ID to the base URL <a class="reference external" href="https://pub.orcid.org/v2.0/">https://pub.orcid.org/v2.0/</a>. The ORCID API returns data in XML by default. In the XML, the list of publications can be found using the XPath <code class="docutils literal notranslate"><span class="pre">r:record/a:activities-summary/a:works/a:group</span></code> (using the namespace declarations given below).</p>
+<p><em>Note: we use the <a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html">ElementTree</a> library to process the XML data. It is very powerful, but has a quite steep learning curve.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orcid</span> <span class="o">=</span> <span class="s1">&#39;0000-0002-8469-6804&#39;</span>
+
+
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
+
+<span class="c1"># Declare namespace abbreviations</span>
+<span class="n">ns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;o&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/orcid&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;s&#39;</span> <span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/search&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/history&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/person&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;pd&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/personal-details&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/activities&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/employment&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/common&#39;</span> <span class="p">,</span> 
+<span class="s1">&#39;w&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/work&#39;</span><span class="p">,</span>
+<span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/record&#39;</span><span class="p">}</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Construct the API call and retrieve the data</span>
+    <span class="n">orcidUrl</span> <span class="o">=</span> <span class="s2">&quot;https://pub.orcid.org/v2.0/&quot;</span> <span class="o">+</span> <span class="n">orcid</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">orcidUrl</span> <span class="p">)</span>
+    
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">orcidUrl</span> <span class="p">)</span>
+    
+    <span class="c1"># Parse XML string into its Python ElementTree object representation</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    
+    <span class="c1"># Find and print the ORCID creation date</span>
+    <span class="n">creationDate</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h:history/h:submission-date&#39;</span> <span class="p">,</span> <span class="n">ns</span> <span class="p">)</span><span class="o">.</span><span class="n">text</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">ORCID created on:&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">creationDate</span><span class="p">)</span>
+    
+    <span class="c1"># Print the title and DOI of each work (DOI only when available)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Works:&#39;</span><span class="p">)</span>
+    
+    <span class="n">works</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;a:activities-summary/a:works/a:group&#39;</span> <span class="p">,</span> <span class="n">ns</span> <span class="p">)</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">works</span><span class="p">:</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;w:work-summary/w:title/c:title&#39;</span> <span class="p">,</span> <span class="n">ns</span> <span class="p">)</span><span class="o">.</span><span class="n">text</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+        <span class="n">doiEl</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;c:external-ids/c:external-id/c:external-id-url&#39;</span> <span class="p">,</span> <span class="n">ns</span> <span class="p">)</span>
+        <span class="k">if</span> <span class="n">doiEl</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">doi</span> <span class="o">=</span> <span class="n">doiEl</span><span class="o">.</span><span class="n">text</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">doi</span><span class="p">)</span>
+            
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data could not be downloaded&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-4">
+<h2>Exercise 10.4.<a class="headerlink" href="#exercise-10-4" title="Permalink to this headline">#</a></h2>
+<p>The API developed by <a class="reference external" href="https://www.openstreetmap.org/">OpenStreetMap</a> can be used, among other things, to find the precise geographic coordinates of a specific location. The base URL of this API is <a class="reference external" href="https://nominatim.openstreetmap.org/search">https://nominatim.openstreetmap.org/search</a>. Following the <code class="docutils literal notranslate"><span class="pre">q</span></code> parameter, you need to supply a string describing the locations whose latitude and longitude you want to find. As values for the <code class="docutils literal notranslate"><span class="pre">format</span></code> parameter, you can use <code class="docutils literal notranslate"><span class="pre">xml</span></code> for XML-formatted data or <code class="docutils literal notranslate"><span class="pre">json</span></code> for JSON-formatted data. Use this API to find the longitude and the latitude of the addresses in the following list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">urllib.parse</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span> <span class="p">,</span> <span class="n">isdir</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
+
+
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">addresses</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://nominatim.openstreetmap.org/search?q=&#39;</span><span class="o">+</span> <span class="n">a_encoded</span> <span class="o">+</span> <span class="s1">&#39;&amp;format=json&#39;</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">url</span> <span class="p">)</span>
+    <span class="n">json_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> 
+    <span class="n">latitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+    <span class="n">longitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">latitude</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">longitude</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code below also creates an interactive map, with markers on the locations described in the list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">urllib.parse</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span> <span class="p">,</span> <span class="n">isdir</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
+
+<span class="n">locations_coord</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">addresses</span><span class="p">:</span>
+    <span class="n">a_encoded</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://nominatim.openstreetmap.org/search?q=&#39;</span><span class="o">+</span> <span class="n">a_encoded</span> <span class="o">+</span> <span class="s1">&#39;&amp;format=json&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">url</span> <span class="p">)</span>
+    <span class="n">json_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> 
+    <span class="n">latitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+    <span class="n">longitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
+    <span class="n">locations_coord</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">latitude</span><span class="p">,</span><span class="n">longitude</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">latitude</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">longitude</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+<span class="n">out</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span> <span class="s1">&#39;map.html&#39;</span> <span class="p">,</span> <span class="s1">&#39;w&#39;</span> <span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;!DOCTYPE html&gt;</span>
+<span class="s1">&lt;html&gt;</span>
+<span class="s1">&lt;head&gt;</span>
+
+<span class="s1">                &lt;title&gt;Locations&lt;/title&gt;</span>
+
+<span class="s1">                &lt;meta charset=&quot;utf-8&quot; /&gt;</span>
+<span class="s1">                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span>
+
+<span class="s1">                &lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;docs/images/favicon.ico&quot; /&gt;</span>
+
+<span class="s1">    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/leaflet@1.7.1/dist/leaflet.css&quot; integrity=&quot;sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==&quot; crossorigin=&quot;&quot;/&gt;</span>
+<span class="s1">    &lt;script src=&quot;https://unpkg.com/leaflet@1.7.1/dist/leaflet.js&quot; integrity=&quot;sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==&quot; crossorigin=&quot;&quot;&gt;&lt;/script&gt;</span>
+
+
+
+<span class="s1">&lt;/head&gt;</span>
+<span class="s1">&lt;body&gt;</span>
+
+
+
+<span class="s1">&lt;div id=&quot;mapid&quot; style=&quot;width: 800px; height: 600px;&quot;&gt;&lt;/div&gt;</span>
+<span class="s1">&lt;script&gt;</span>
+
+<span class="s1">                var mymap = L.map(&#39;mapid&#39;).setView([52.1568157,4.4850392], 6);</span>
+
+<span class="s1">                L.tileLayer(&#39;https://api.mapbox.com/styles/v1/</span><span class="si">{id}</span><span class="s1">/tiles/</span><span class="si">{z}</span><span class="s1">/</span><span class="si">{x}</span><span class="s1">/</span><span class="si">{y}</span><span class="s1">?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw&#39;, {</span>
+<span class="s1">                                maxZoom: 18,</span>
+<span class="s1">                                attribution: &#39;Map data &amp;copy; &lt;a href=&quot;https://www.openstreetmap.org/&quot;&gt;OpenStreetMap&lt;/a&gt; contributors, &#39; +</span>
+<span class="s1">                                                &#39;&lt;a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;&gt;CC-BY-SA&lt;/a&gt;, &#39; +</span>
+<span class="s1">                                                &#39;Imagery  &lt;a href=&quot;https://www.mapbox.com/&quot;&gt;Mapbox&lt;/a&gt;&#39;,</span>
+<span class="s1">                                id: &#39;mapbox/streets-v11&#39;,</span>
+<span class="s1">                                tileSize: 512,</span>
+<span class="s1">                                zoomOffset: -1</span>
+<span class="s1">                }).addTo(mymap); </span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">locations_coord</span><span class="p">:</span>
+    <span class="n">display_name</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span> <span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">&#39;</span> <span class="p">,</span> <span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">l</span> <span class="p">)</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39; L.marker([ </span><span class="si">{</span> <span class="n">locations_coord</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="si">}</span><span class="s1">, </span><span class="si">{</span> <span class="n">locations_coord</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="si">}</span><span class="s1">  ]).addTo(mymap) &#39;</span><span class="p">)</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot; .bindPopup(&#39;</span><span class="si">{</span><span class="n">display_name</span><span class="si">}</span><span class="s2">.&#39;) &quot;</span><span class="p">)</span>  
+    <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;;&#39;</span> <span class="p">)</span>
+    
+<span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">&lt;/script&gt;</span>
+
+
+
+<span class="sd">&lt;/body&gt;</span>
+<span class="sd">&lt;/html&gt;</span>
+
+<span class="sd">&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">out</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-5">
+<h2>Exercise 10.5<a class="headerlink" href="#exercise-10-5" title="Permalink to this headline">#</a></h2>
+<p>The webpage below offers access to the complete work of the author H.P. Lovecraft.</p>
+<p><a class="reference external" href="http://www.hplovecraft.com/writings/texts/">http://www.hplovecraft.com/writings/texts/</a></p>
+<p>Write code in Python to find the URLs of all the texts that are listed. The links are all encoded in an element named &lt;a&gt;. The attribute <code class="docutils literal notranslate"><span class="pre">href</span></code> mentions the links, and the body of the &lt;a&gt; element mentions the title. List only the web pages that end in ‘.aspx’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;http://www.hplovecraft.com/writings/texts/&quot;</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base_url</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="p">:</span> 
+    <span class="c1">#print(response.text)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span> <span class="p">,</span><span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">string</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;aspx$&#39;</span> <span class="p">,</span> <span class="n">url</span><span class="p">):</span> 
+                <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-6">
+<h2>Exercise 10.6<a class="headerlink" href="#exercise-10-6" title="Permalink to this headline">#</a></h2>
+<p>Using <code class="docutils literal notranslate"><span class="pre">requests</span></code> and <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>, create a list of all the countries mentioned on <a class="reference external" href="https://www.scrapethissite.com/pages/simple/">https://www.scrapethissite.com/pages/simple/</a>.</p>
+<p>Also collect data about the capital, the population and the area of all of these countries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.scrapethissite.com/pages/simple/&#39;</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span>
+    <span class="n">html_page</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+    
+    
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span> <span class="n">html_page</span><span class="p">,</span><span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+    
+<span class="n">countries</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;col-md-4 country&#39;</span><span class="p">}</span> <span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+    
+    <span class="n">name</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h3&#39;</span> <span class="p">,</span> <span class="p">{</span> <span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;country-name&#39;</span><span class="p">})</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    
+    <span class="c1"># find all &lt;span&gt; elements underneath &lt;h3 class=&#39;country_name&#39;&gt;</span>
+    <span class="n">span</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;span&quot;</span> <span class="p">)</span>
+    
+    <span class="n">capital</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">population</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">span</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;country-capital&#39;</span><span class="p">:</span>
+            <span class="n">capital</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">text</span>
+        
+        <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;country-population&#39;</span><span class="p">:</span>
+            <span class="n">population</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">text</span>
+            
+        <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;country-area&#39;</span><span class="p">:</span>
+            <span class="n">area</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">text</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  Capital: </span><span class="si">{</span><span class="n">capital</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  Population: </span><span class="si">{</span><span class="n">population</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  Area: </span><span class="si">{</span><span class="n">area</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-7">
+<h2>Exercise 10.7<a class="headerlink" href="#exercise-10-7" title="Permalink to this headline">#</a></h2>
+<p>Download all the images shown on the following page: <a class="reference external" href="https://www.bbc.com/news/in-pictures-61014501">https://www.bbc.com/news/in-pictures-61014501</a></p>
+<p>You can follow these steps:</p>
+<ul class="simple">
+<li><p>Download the HTML file</p></li>
+<li><p>‘Scrape’ the HTML file you downloaded. As images in HTML are encoded using the <code class="docutils literal notranslate"><span class="pre">img</span></code> element, try to create a list containing all occurrences of this element.</p></li>
+<li><p>Find the URLS of all the images. Witnin these <code class="docutils literal notranslate"><span class="pre">img</span></code> element, there should be a <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute containing the URL of the image.</p></li>
+<li><p>The <a class="reference external" href="http://bbc.com">bbc.com</a> website uses images as part of the user interface. These images all have the word ‘line’ in their filenames. Try to exclude these images whose file names contain the word ‘line’.</p></li>
+<li><p>Download all the images that you found in this way, using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library. In the <code class="docutils literal notranslate"><span class="pre">Response</span></code> object that is created following a succesful download, you need to work with the <code class="docutils literal notranslate"><span class="pre">content</span></code> property to obtain the actual file.  Save all these images on your computer, using <code class="docutils literal notranslate"><span class="pre">open()</span></code> and <code class="docutils literal notranslate"><span class="pre">write()</span></code>. In the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function, use the code ‘wb’ as a second parameter (instead of only ‘w’) to make sure that the contents are saved as bytes.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.bbc.com/news/in-pictures-61014501&#39;</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+    <span class="n">html_page</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span> <span class="n">html_page</span><span class="p">,</span><span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+    <span class="n">images</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
+        <span class="n">img_url</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s1">&#39;line&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">img_url</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+                <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+                <span class="n">out</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span> <span class="n">file_name</span> <span class="p">,</span> <span class="s1">&#39;wb&#39;</span> <span class="p">)</span>
+                <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+                <span class="n">out</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/Solutions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="9%20Regular_expressions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">9. Regular expressions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="11%20Pandas.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">11. Pandas</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Peter Verhaar and Ben Companjen<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

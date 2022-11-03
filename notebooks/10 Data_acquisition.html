@@ -1,0 +1,1050 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>10. Data acquisition &#8212; Python Tutorial</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="11. Data analysis with pandas" href="11%20Pandas.html" />
+    <link rel="prev" title="9. Regular Expressions" href="9%20Regular_expressions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Python Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorial
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1%20Variables_and_data_types.html">
+   1. Variables and data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2%20Operators.html">
+   2. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20Working_with_strings.html">
+   3. Working with strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4%20Flow_control.html">
+   4. Flow control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5%20Lists.html">
+   5. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6%20Dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7%20Functions_modules_and_libraries.html">
+   7. Functions, Modules and Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8%20Working_with_files_and_folders.html">
+   8. Working with files and folders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9%20Regular_expressions.html">
+   9. Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   10. Data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11%20Pandas.html">
+   11. Data analysis with pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12%20Visualisation.html">
+   12. Data Visualisation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Practical information
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Jupyter_notebook_basics.html">
+   Jupyter Notebook basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Installation.html">
+   Installation guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Other_resources.html">
+   Other resources
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Solutions to the exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">
+   1. Variables and data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/2%20Operators.html">
+   2. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/3%20Working_with_strings.html">
+   3. Working with strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/4%20Flow_control.html">
+   4. Flow control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/5%20Lists.html">
+   5. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/6%20Dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/7%20Functions_modules_and_libraries.html">
+   7. Functions, Modules and Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/8%20Working_with_files_and_folders.html">
+   8. Working with files and folders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/9%20Regular_expressions.html">
+   9. Regular expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/10%20Data_acquisition.html">
+   10. Data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/11%20Pandas.html">
+   11. Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/12%20Visualisation.html">
+   12. Visualisation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/10 Data_acquisition.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/10 Data_acquisition.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   10. Data acquisition
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#direct-downloads">
+     Direct downloads
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acquiring-data-via-apis">
+     Acquiring data via APIs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-wikipedia-search-api">
+       Example: Wikipedia search API
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#webscraping">
+     Webscraping
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#advanced-scraping-scrapy">
+       Advanced scraping: Scrapy
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-1">
+     Exercise 10.1.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-2">
+     Exercise 10.2.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-3">
+     Exercise 10.3.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-4">
+     Exercise 10.4.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-5">
+     Exercise 10.5
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-6">
+     Exercise 10.6
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-7">
+     Exercise 10.7
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>10. Data acquisition</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   10. Data acquisition
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#direct-downloads">
+     Direct downloads
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acquiring-data-via-apis">
+     Acquiring data via APIs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-wikipedia-search-api">
+       Example: Wikipedia search API
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#webscraping">
+     Webscraping
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#advanced-scraping-scrapy">
+       Advanced scraping: Scrapy
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-1">
+     Exercise 10.1.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-2">
+     Exercise 10.2.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-3">
+     Exercise 10.3.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-4">
+     Exercise 10.4.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-5">
+     Exercise 10.5
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-6">
+     Exercise 10.6
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-7">
+     Exercise 10.7
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="data-acquisition">
+<h1>10. Data acquisition<a class="headerlink" href="#data-acquisition" title="Permalink to this headline">#</a></h1>
+<p>Data science projects typically start with the acquisition of data. In many cases, such data sets consist of secondary data made available by commercial or non-commercial organisations. This part of the tutorial explains how you can obtain such online data sets.</p>
+<p>In this tutorial, we distinguish three methods of data acquisition: downloading data files, accessing data through APIs and webscraping.
+You usually choose one of these methods to get your data based on what the data provider offers.</p>
+<section id="direct-downloads">
+<h2>Direct downloads<a class="headerlink" href="#direct-downloads" title="Permalink to this headline">#</a></h2>
+<p>If the resources that you are interested in are available directly via the web (i.e. via HTTP or HTTPS), you can download these files by making use of the <a class="reference external" href="https://requests.readthedocs.io/"><code class="docutils literal notranslate"><span class="pre">requests</span></code></a> library.
+As is the case for all libraries, the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library needs to be imported before you can use it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To download data from a certain web address, you can make a GET request. In Python, such a request can be sent using the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method in <code class="docutils literal notranslate"><span class="pre">requests</span></code>, as demonstrated below. Evidently, it is important that you are online when you run the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="s1">&#39;https://www.universiteitleiden.nl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This method returns a so-called <code class="docutils literal notranslate"><span class="pre">Response</span></code> object. It is an object which represents information about the downloaded web resource. In the example above, the result of the method is assigned to a variable named <code class="docutils literal notranslate"><span class="pre">response</span></code>.</p>
+<p>Once this <code class="docutils literal notranslate"><span class="pre">Response</span></code> object has been created successfully, you can use various pieces of information about the resource that was downloaded.
+The property <code class="docutils literal notranslate"><span class="pre">status_code</span></code>, for instance, indicates the HTTP status code that was returned by the server.
+The status code 200 indicates that the request was successful and the infamous status code 404 indicates that the file was not found.</p>
+<p>If the status code is indeed 200, the contents of the resource is accessible in the response’s <code class="docutils literal notranslate"><span class="pre">body</span></code> property. However, this property holds the contents as bytes. Typically, when we downloaded a webpage, we want to use the data as text. In these cases the <code class="docutils literal notranslate"><span class="pre">text</span></code> property of the <code class="docutils literal notranslate"><span class="pre">Response</span></code> object contains the full contents of the downloaded website, dataset or other kind of file as a string.</p>
+<p>One word of caution however: <code class="docutils literal notranslate"><span class="pre">requests</span></code> may not always automatically understand a file’s <a class="reference external" href="https://www.w3.org/International/questions/qa-what-is-encoding">character encoding</a>. You can set the correct character encoding explicitly using the <code class="docutils literal notranslate"><span class="pre">encoding</span></code> property.</p>
+<p>When you run the code that is given below, the contents of the webpage that is specified at the beginning (or more specifically, the HTML code that was created to build the webpage) becomes available as a string, assigned to the variable named <code class="docutils literal notranslate"><span class="pre">contents</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">contents</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.universiteitleiden.nl&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">contents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library, you can basically download any type of file from the web, as long as it is retrievable via HTTP(s). The code below, for instance, downloads a specific text file from the Project Gutenberg website.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.gutenberg.org/files/98/98-0.txt&quot;</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span> 
+    <span class="nb">print</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">if</span></code> keyword in the code above does not explicitly test whether the response code is 200. The Response object, which is created when you use the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method from requests, automatically returns <code class="docutils literal notranslate"><span class="pre">True</span></code> when the status code is 200.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">requests</span></code> library can also be used to retrieve data from an API.</p>
+</section>
+<section id="acquiring-data-via-apis">
+<h2>Acquiring data via APIs<a class="headerlink" href="#acquiring-data-via-apis" title="Permalink to this headline">#</a></h2>
+<p>Organisations which aim to make their data available for reuse often do this through an Application Programming Interface (API).
+An API, simply put, is the interface through which (online) services and applications provide access to their information and functionalities.</p>
+<p>It enables organisations to share some of the data that they have in a strucured format, so that these other external parties can make use of these data in new applications.</p>
+<p>The communication between the sender and the recipient of such requests needs to take place according to a specific protocol; the requests need to be formulated according to certain rules. Many APIs allow accessing selections of data collections, for example.</p>
+<p>For many APIs, you need to create an access key before you can send requests. This is the case, for instance, for the Twitter API.</p>
+<section id="example-wikipedia-search-api">
+<h3>Example: Wikipedia search API<a class="headerlink" href="#example-wikipedia-search-api" title="Permalink to this headline">#</a></h3>
+<p>There are also many APIs which are fully open, however, such as the Wikipedia API. You can send requests to this API without having to provide an access key. The endpoint of this API is available at <a class="reference external" href="https://en.wikipedia.org/w/api.php">https://en.wikipedia.org/w/api.php</a>.</p>
+<p>You can use this API to search for Wikipedia articles containing a given search term. You can work with the following parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">opensearch</span>
+<span class="n">search</span> <span class="o">=</span> <span class="p">[</span><span class="n">search</span> <span class="n">term</span><span class="p">]</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="p">[</span><span class="n">number</span><span class="p">]</span>
+<span class="nb">format</span> <span class="o">=</span> <span class="p">[</span><span class="n">json</span> <span class="ow">or</span> <span class="n">xml</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The search term, to be provided after ‘search’, is the word that must occur in the title of the Wikipedia page. If the ‘limit’ parameter is omitted, the API will return 10 results by default.</p>
+<p>The following API call returns 20 Wikipedia pages whose titles contain the word ‘Leiden’. The call returns the requested data in the JSON format.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/w/api.php?action=opensearch&amp;amp;search=Leiden&amp;amp;limit=20&amp;amp;namespace=0&amp;amp;format=json">https://en.wikipedia.org/w/api.php?action=opensearch&amp;amp;search=Leiden&amp;amp;limit=20&amp;amp;namespace=0&amp;amp;format=json</a></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">json()</span></code> method parses the JSON data into a regular Python data structure for further processing. Note that the results are grouped by field, not by result.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="n">baseUrl</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/w/api.php?action=opensearch&#39;</span>
+
+
+<span class="n">search</span><span class="o">=</span> <span class="s1">&#39;leiden&#39;</span> 
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">20</span> 
+<span class="c1"># We cannot use &#39;format&#39; as a variable name, as this </span>
+<span class="c1"># is reserved Python term</span>
+<span class="n">data_format</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span> 
+
+
+<span class="n">apiCall</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">baseUrl</span><span class="si">}</span><span class="s1">&amp;search=</span><span class="si">{</span><span class="n">search</span><span class="si">}</span><span class="s1">&amp;limit=</span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s1">&amp;format=</span><span class="si">{</span><span class="n">data_format</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">apiCall</span><span class="p">)</span>
+
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">apiCall</span> <span class="p">)</span>
+<span class="n">wikiResults</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">0</span> <span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">wikiResults</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Title: &#39;</span> <span class="o">+</span> <span class="n">wikiResults</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Tagline: &#39;</span> <span class="o">+</span> <span class="n">wikiResults</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Url: &#39;</span> <span class="o">+</span> <span class="n">wikiResults</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="webscraping">
+<h2>Webscraping<a class="headerlink" href="#webscraping" title="Permalink to this headline">#</a></h2>
+<p>When a website does not offer access to its structured data via a well-defined API, it may be an option to acquire the data that can be viewed on a site by making use of web scraping. It is a process in which a computer program tries to process the contents of given webpage, and to extract the data values that are needed. The aim of such an application is generally to copy information on a web page and to paste it into a local database.</p>
+<p>To get the most out of webscraping, you need to have a basic understanding of HTML. Many <a class="reference external" href="https://bookandbyte.universiteitleiden.nl/DMT/PDF/HTML.pdf">basic introductions</a> can be found on the web. Web scraping should be used with caution, because it may be not be allowed to download large quantities of data from a specific website. In this tutorial we will only look at extracting information from single pages.</p>
+<p>To scrape webpages, you firstly need to download them. This can be done using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library that was explained above. The code below scrapes data from a page on the <a class="reference external" href="https://www.gutenberg.org">Internet Movie Database</a> website, listing the top rated movies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.imdb.com/chart/top?ref_=ft_250&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">url</span> <span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span>
+    <span class="n">html_page</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once you have obtained the contents of a webpage, in the form of an HTML document, you can begin to extract the data values that you are interested in. This tutorial explains how you can extract the title of these movies and the URLs of the pages on IMDB using web scraping.</p>
+<p>If you inspect the output of the previous cell (the HTML code), you can see that the information about the movies is encoded as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">td</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;titleColumn&quot;</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;/title/tt0068646/&quot;</span><span class="o">&gt;</span>
+<span class="n">The</span> <span class="n">Godfather</span>
+<span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+
+</pre></div>
+</div>
+<p>The data can found in a &lt;td&gt; element whose ‘class’ attribute has value ‘titleColumn’. The actual title in given in a hyperlink, encoded using &lt;a&gt;. The URL to the page for the movie is given in an ‘href’ attribute. ‘Scraping’ the page really means that we need to extract the values we need from these HTML elements.</p>
+<p>One of the libraries that you can use in Python for scraping online resources is <code class="docutils literal notranslate"><span class="pre">Beautiful</span> <span class="pre">Soup</span></code>. The code below firstly transforms the HTML code that was downloaded into a BeautifulSoup object. If the <code class="docutils literal notranslate"><span class="pre">bs4</span></code> library has been imported, you can use its <code class="docutils literal notranslate"><span class="pre">BeautifulSoup()</span></code> method. This method demands the full contents of an HTML document as a first parameter. As a second parameter, you need to provide the name one of the parsers that are available. Generally, a parser is an application which can process and analyse data. In this context, it refers to a program which can analyse the HTML file. One of the parsers that we can use is <code class="docutils literal notranslate"><span class="pre">lxml</span></code>. Using this parser, the <code class="docutils literal notranslate"><span class="pre">BeautifulSoup()</span></code> method converts the downloaded HTML page into a BeautifulSoup object.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">prettify()</span></code> method of this object creates a more readable version of the HTML file by adding indents and end of line characters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span> <span class="n">html_page</span><span class="p">,</span><span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">soup</span><span class="o">.</span><span class="n">prettify</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The BeautifulSoup object that was created above has a <code class="docutils literal notranslate"><span class="pre">find_all()</span></code> method, which you can use to find all occurrences of a specific HTML tag. The name of the tag (or element) needs to be mentioned as the first parameter.</p>
+<p>In our example, we need to focus on specific types of &lt;td&gt; elements: those which have a ‘class’ attribute with value ‘titleColumn’. Such criteria for the attributes can be given as the second parameter in <code class="docutils literal notranslate"><span class="pre">find_all()</span></code>.</p>
+<p>As we saw in the HTML snippet above, the &lt;td&gt; elements do not contain the title and the url directly. These values are given in the &lt;a&gt; child element. Such child elements, or subelements, can be found using <code class="docutils literal notranslate"><span class="pre">findChildren()</span></code>. As a parameter, you need to give the name of the tag you want to find underneath the current element. In the code below, the variable <code class="docutils literal notranslate"><span class="pre">children</span></code> represents all the &lt;a&gt; elements found underneath &lt;td&gt;.</p>
+<p>To retrieve only the text of the tag (i.e. the text which is encoded using the tag), we can use the <code class="docutils literal notranslate"><span class="pre">text</span></code> property. To retrieve the value of an attribute of this element, we can use the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method. As an argument, this method demands the name of the attibute we are interested in, <code class="docutils literal notranslate"><span class="pre">href</span></code> in this case.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movies</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;titleColumn&#39;</span><span class="p">}</span> <span class="p">)</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">movies</span><span class="p">:</span>
+    <span class="c1"># Find links (a elements) within the cell\n&quot;,</span>
+    <span class="n">children</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">findChildren</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+        <span class="n">movie_title</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span>
+        <span class="c1">## This is an internal link, so we need to prepand the base url</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://imdb.com&#39;</span> <span class="o">+</span> <span class="n">url</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">movie_title</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once you have created a list of URLs using the method outlined above, you can also download all the texts that were found, using the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method from <code class="docutils literal notranslate"><span class="pre">requests</span></code> library.</p>
+<p>As you can see, web scraping can easily become rather difficult. You need to inspect the structure of the HTML source quite carefully, and you often need to work with fairly complicated code to extract only the values that you need.</p>
+<section id="advanced-scraping-scrapy">
+<h3>Advanced scraping: Scrapy<a class="headerlink" href="#advanced-scraping-scrapy" title="Permalink to this headline">#</a></h3>
+<p>This tutorial has only touched the surface of web scraping. To get specific data from webpages or APIs, you will need to dig into the data that you get and probably learn more about the data formats. A more advanced framework (or toolkit) for webscraping with Python is <a class="reference external" href="https://scrapy.org">Scrapy</a>. This framework simlified the process of building a scraper/crawler considerably by providing basic functionalities out of the box. Although Scrapy does not understand what parts of webpages are of interest to you, it does many things for you, such as making sure you don’t send too many requests at the same time or retrying requests that fail. Feel free to look at the <a class="reference external" href="https://docs.scrapy.org/en/latest/intro/tutorial.html">Scrapy tutorial</a> if you want to experiment with this library.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
+<section id="exercise-10-1">
+<h2>Exercise 10.1.<a class="headerlink" href="#exercise-10-1" title="Permalink to this headline">#</a></h2>
+<p>The list below contains a number of URLs. They are the web addresses of texts created for the <a class="reference external" href="https://www.gutenberg.org">Project Gutenberg</a> website.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;https://www.gutenberg.org/files/580/580-0.txt&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;https://www.gutenberg.org/files/1400/1400-0.txt&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;https://www.gutenberg.org/files/786/786-0.txt&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;https://www.gutenberg.org/files/766/766-0.txt&#39;</span> 
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Write a program in Python that downloads all the files in this list and stores them in the current directory.
+As filenames, use the same names that are used by Project Gutenberg (e.g. ‘580-0.txt’ or ‘1400-0.txt’).
+The basename in a URL can be extracted using the <a class="reference external" href="https://docs.python.org/3/library/os.path.html#os.path.basename"><code class="docutils literal notranslate"><span class="pre">os.path.basename()</span></code></a> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span> 
+
+<span class="c1"># Recreate the given list using copy and paste</span>
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>  
+<span class="p">]</span>
+
+<span class="c1"># We use a for-loop to take the same steps for each item in the list:</span>
+<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
+    <span class="c1"># 1. Download the file contents</span>
+    
+    <span class="c1"># 1a. Force the textual contents to be interpreted as UTF-8 encoded, because the website does not send the text encoding</span>
+    
+    <span class="c1"># 2. Use basename to get a suitable filename</span>
+    
+    <span class="c1"># 3. Open the file in write mode and write the downloaded file contents to the file</span>
+    
+    <span class="c1"># 4. Close the file</span>
+    
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-2">
+<h2>Exercise 10.2.<a class="headerlink" href="#exercise-10-2" title="Permalink to this headline">#</a></h2>
+<p>Write Python code which can download the titles and the URLs of Wikipedia articles whose titles contain the word ‘Dutch’. Your code needs to display the first 30 results only.</p>
+<p><em>Hint: the tutorial covers the Wikipedia API.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">baseURL</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/w/api.php?action=opensearch&#39;</span>
+
+<span class="c1"># Get the search results and display them</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-3">
+<h2>Exercise 10.3.<a class="headerlink" href="#exercise-10-3" title="Permalink to this headline">#</a></h2>
+<p>Write an application in Python that extracts all the publications that have been added to a specific ORCID account, using the ORCID API.</p>
+<p>Information about individual ORCID accounts can be obtained by appending their ID to the base URL <a class="reference external" href="https://pub.orcid.org/v2.0/">https://pub.orcid.org/v2.0/</a>. The ORCID API returns data in XML by default. In the XML, the list of publications can be found using the XPath <code class="docutils literal notranslate"><span class="pre">r:record/a:activities-summary/a:works/a:group</span></code> (using the namespace declarations given below).</p>
+<p><em>Note: we use the <a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html">ElementTree</a> library to process the XML data. It is very powerful, but has a quite steep learning curve.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Choose an ORCID to look up, e.g. 0000-0002-8469-6804</span>
+<span class="n">orcid</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
+
+
+<span class="n">ns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;o&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/orcid&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;s&#39;</span> <span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/search&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/history&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/person&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;pd&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/personal-details&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/activities&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/employment&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/common&#39;</span> <span class="p">,</span> 
+<span class="s1">&#39;w&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/work&#39;</span><span class="p">}</span>
+
+<span class="c1"># We expect that there may be an error and therefore use `try` and `except`</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Construct the API call</span>
+    <span class="n">orcidUrl</span> <span class="o">=</span> <span class="s2">&quot;https://pub.orcid.org/v2.0/&quot;</span> <span class="o">+</span> <span class="n">orcid</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">orcidUrl</span> <span class="p">)</span>
+    
+    <span class="c1"># Find and print the record creation date</span>
+    
+    
+    <span class="c1"># Find and print the titles of the publications</span>
+
+            
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data could not be downloaded&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-4">
+<h2>Exercise 10.4.<a class="headerlink" href="#exercise-10-4" title="Permalink to this headline">#</a></h2>
+<p>The API developed by <a class="reference external" href="https://www.openstreetmap.org/">OpenStreetMap</a> can be used, among other things, to find the precise geographic coordinates of a specific location. The base URL of this API is <a class="reference external" href="https://nominatim.openstreetmap.org/search">https://nominatim.openstreetmap.org/search</a>. Following the <code class="docutils literal notranslate"><span class="pre">q</span></code> parameter, you need to supply a string describing the locations whose latitude and longitude you want to find. As values for the <code class="docutils literal notranslate"><span class="pre">format</span></code> parameter, you can use <code class="docutils literal notranslate"><span class="pre">xml</span></code> for XML-formatted data or <code class="docutils literal notranslate"><span class="pre">json</span></code> for JSON-formatted data. Use this API to find the longitude and the latitude of the addresses in the following list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The JSON data received via the OpenStreetMap API can be converted to regular Python lists and dictionaries using the <code class="docutils literal notranslate"><span class="pre">json()</span></code> method:</p>
+<p><code class="docutils literal notranslate"><span class="pre">json_data</span> <span class="pre">=</span> <span class="pre">response.json()</span></code></p>
+<p>If the result is saved as variable named <code class="docutils literal notranslate"><span class="pre">json_data</span></code>, you should be able to access the latitude and the longitude as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">latitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+<span class="n">longitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">urllib.parse</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span> <span class="p">,</span> <span class="n">isdir</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> 
+             <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span><span class="p">,</span><span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> 
+             <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">addresses</span><span class="p">:</span>
+    <span class="c1"># create the API call, with the address in the &#39;q&#39; parameter</span>
+    
+    <span class="c1"># Get the JSON data and process the data using json()</span>
+    
+    <span class="c1"># Find the latitude and the longitude</span>
+    <span class="c1">#latitude = json_data[0][&#39;lat&#39;]</span>
+    <span class="c1">#longitude = json_data[0][&#39;lon&#39;]</span>
+    
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-5">
+<h2>Exercise 10.5<a class="headerlink" href="#exercise-10-5" title="Permalink to this headline">#</a></h2>
+<p>The webpage below offers access to the complete work of the author H.P. Lovecraft.</p>
+<p><a class="reference external" href="http://www.hplovecraft.com/writings/texts/">http://www.hplovecraft.com/writings/texts/</a></p>
+<p>Write code in Python to find the URLs of all the texts that are listed. The links are all encoded in an element named &lt;a&gt;. The attribute <code class="docutils literal notranslate"><span class="pre">href</span></code> mentions the links, and the body of the &lt;a&gt; element mentions the title. List only the web pages that end in ‘.aspx’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;http://www.hplovecraft.com/writings/texts/&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-6">
+<h2>Exercise 10.6<a class="headerlink" href="#exercise-10-6" title="Permalink to this headline">#</a></h2>
+<p>Using <code class="docutils literal notranslate"><span class="pre">requests</span></code> and <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>, create a list of all the countries mentioned on <a class="reference external" href="https://www.scrapethissite.com/pages/simple/">https://www.scrapethissite.com/pages/simple/</a>.</p>
+<p>Also collect data about the capital, the population and the area of all of these countries.</p>
+</section>
+<section id="exercise-10-7">
+<h2>Exercise 10.7<a class="headerlink" href="#exercise-10-7" title="Permalink to this headline">#</a></h2>
+<p>Download all the images shown on the following page: <a class="reference external" href="https://www.bbc.com/news/in-pictures-61014501">https://www.bbc.com/news/in-pictures-61014501</a></p>
+<p>You can follow these steps:</p>
+<ul class="simple">
+<li><p>Download the HTML file</p></li>
+<li><p>‘Scrape’ the HTML file you downloaded. As images in HTML are encoded using the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> element, try to create a list containing all occurrences of this element.</p></li>
+<li><p>Find the URLS of all the images. Witnin these <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> element, there should be a <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute containing the URL of the image.</p></li>
+<li><p>The <a class="reference external" href="http://bbc.com">bbc.com</a> website uses images as part of the user interface. These images all have the word ‘line’ in their filenames. Try to exclude these images whose file names contain the word ‘line’.</p></li>
+<li><p>Download all the images that you found in this way, using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library. In the <code class="docutils literal notranslate"><span class="pre">Response</span></code> object that is created following a succesful download, you need to work with the <code class="docutils literal notranslate"><span class="pre">content</span></code> property to obtain the actual file.  Save all these images on your computer, using <code class="docutils literal notranslate"><span class="pre">open()</span></code> and <code class="docutils literal notranslate"><span class="pre">write()</span></code>. In the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function, use the code ‘wb’ as a second parameter (instead of only ‘w’) to make sure that the contents are saved as bytes.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="9%20Regular_expressions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">9. Regular Expressions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="11%20Pandas.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">11. Data analysis with pandas</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Peter Verhaar and Ben Companjen<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

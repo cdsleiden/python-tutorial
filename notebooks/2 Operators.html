@@ -1,0 +1,931 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2. Operators &#8212; Python Tutorial</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Working with strings" href="3%20Working_with_strings.html" />
+    <link rel="prev" title="1. Variables and data types" href="1%20Variables_and_data_types.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Python Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorial
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1%20Variables_and_data_types.html">
+   1. Variables and data types
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20Working_with_strings.html">
+   3. Working with strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4%20Flow_control.html">
+   4. Flow control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5%20Lists.html">
+   5. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6%20Dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7%20Functions_modules_and_libraries.html">
+   7. Functions, Modules and Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8%20Working_with_files_and_folders.html">
+   8. Working with files and folders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9%20Regular_expressions.html">
+   9. Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10%20Data_acquisition.html">
+   10. Data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11%20Pandas.html">
+   11. Data analysis with pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12%20Visualisation.html">
+   12. Data Visualisation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Practical information
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Jupyter_notebook_basics.html">
+   Jupyter Notebook basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Installation.html">
+   Installation guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Other_resources.html">
+   Other resources
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Solutions to the exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">
+   1. Variables and data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/2%20Operators.html">
+   2. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/3%20Working_with_strings.html">
+   3. Working with strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/4%20Flow_control.html">
+   4. Flow control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/5%20Lists.html">
+   5. Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/6%20Dictionaries.html">
+   6. Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/7%20Functions_modules_and_libraries.html">
+   7. Functions, Modules and Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/8%20Working_with_files_and_folders.html">
+   8. Working with files and folders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/9%20Regular_expressions.html">
+   9. Regular expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/10%20Data_acquisition.html">
+   10. Data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/11%20Pandas.html">
+   11. Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions/12%20Visualisation.html">
+   12. Visualisation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/2 Operators.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/2 Operators.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   2. Operators
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mathematical-operators">
+     Mathematical operators
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boolean-operators">
+     Boolean operators
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#printing-the-values-of-variables">
+     Printing the values of variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-1">
+     Exercise 2.1.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-2">
+     Exercise 2.2.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-3">
+     Exercise 2.3.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-4">
+     Exercise 2.4.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-5">
+     Exercise 2.5.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>2. Operators</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   2. Operators
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mathematical-operators">
+     Mathematical operators
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boolean-operators">
+     Boolean operators
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#printing-the-values-of-variables">
+     Printing the values of variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-1">
+     Exercise 2.1.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-2">
+     Exercise 2.2.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-3">
+     Exercise 2.3.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-4">
+     Exercise 2.4.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-5">
+     Exercise 2.5.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="operators">
+<h1>2. Operators<a class="headerlink" href="#operators" title="Permalink to this headline">#</a></h1>
+<section id="mathematical-operators">
+<h2>Mathematical operators<a class="headerlink" href="#mathematical-operators" title="Permalink to this headline">#</a></h2>
+<p>In the previous section, you saw that variables can be assigned different types of values. Such values can be further processed or manipulated by making use of so-called operators: symbols that represent specific actions. They can be applied to values, or to variables representing certain values. The values that are combined with these operators are called the <em>operands</em>.</p>
+<p>Numerical values can be used in combination with mathematical operators:</p>
+<p>
+<table width="100%; " style="text-align: left; font-size: 1.0em;  ">
+<tr style="text-align: left; " >
+    <td width="35%" style="text-align: center; ">+</td>    
+<td style="text-align: left; padding-right: 40%;"  width="65%">Addition</td>    
+</tr> 
+    <tr style="text-align: left; ">
+    <td width="35%" style="text-align: center; ">-</td>    
+<td style="text-align: left; " width="65%" >Subtraction</td>    
+</tr>
+      <tr style="text-align: left; ">
+    <td width="35%" style="text-align: center; " >*</td>    
+<td style="text-align: left; "  width="65%">Multiplication</td>    
+</tr>
+   <tr style="text-align: left; ">
+    <td width="35%" style="text-align: center; ">/</td>    
+<td style="text-align: left; "  width="65%">Division</td>    
+</tr>
+   <tr style="text-align: left; ">
+       <td width="35%" style="text-align: center; ">**</td>    
+<td style="text-align: left; " width="65%" >to the power of</td>    
+</tr>
+</table>
+  </p>
+<p>The code below contains a number of examples of how such mathematical operators can be used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Firstly, we create two values a and b</span>
+<span class="c1"># and assign them numerical values</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="c1"># c now has value 7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="c1">#c now has value 12 (4 times 3)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="c1"># c has value 1 (4 minus 3)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">+</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="c1">#c now has value 2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="c1"># c now has value 3.</span>
+<span class="c1"># c += 1 is a shorthand notation for  c = c + 1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">**</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="c1"># c now has value 64 </span>
+<span class="c1"># a multiplied with itself b times: a*a*a</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="boolean-operators">
+<h2>Boolean operators<a class="headerlink" href="#boolean-operators" title="Permalink to this headline">#</a></h2>
+<p>Boolean operators are operators which compare values. Unlike mathematical operators, such comparisons do not return a number, but a value representing either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. Such a value is called a Boolean value. You can work with the following Boolean operators:</p>
+<p>
+<table width="100%; " style="text-align: left; font-size: 1.0em; ">
+    <tr style="text-align: left; " >
+    <td width="15%" style="text-align: center; ">Operator</td>    
+<td style="text-align: left; padding-right: 40%;">Description</td>    
+</tr> 
+<tr style="text-align: left; " >
+    <td width="15%" style="text-align: center; ">==</td>    
+<td style="text-align: left; padding-right: 40%;">equal to</td>    
+</tr> 
+<tr style="text-align: left; " >
+    <td width="15%" style="text-align: center; ">!=</td>    
+<td style="text-align: left; padding-right: 40%;">not equal to / different from</td>    
+</tr> 
+    <tr style="text-align: left; ">
+    <td width="15%" style="text-align: center; ">&gt;</td>    
+<td style="text-align: left; " >greater than</td>    
+</tr>
+      <tr style="text-align: left; ">
+    <td width="15%" style="text-align: center; " >&lt;</td>    
+<td style="text-align: left; " >less than</td>    
+</tr>
+   <tr style="text-align: left; ">
+    <td width="15%" style="text-align: center; ">&gt;=</td>    
+<td style="text-align: left; " >greater than or equal to</td>    
+</tr>
+      <tr style="text-align: left; ">
+    <td width="15%" style="text-align: center; ">&lt;=</td>    
+<td style="text-align: left; " >less than or equal to</td>    
+</tr>
+</table>
+  </p>
+<p>There is an important difference between the single equals sign (<code class="docutils literal notranslate"><span class="pre">=</span></code>) and the double equals sign (<code class="docutils literal notranslate"><span class="pre">==</span></code>). The single equals sign is the assignment operator. It can be used to associate a value with a variable. The double equals sign is a Boolean operator which tests whether two operands are equal. The exclamation mark and the equals sign (<code class="docutils literal notranslate"><span class="pre">!=</span></code>) tests whether two operands are different.</p>
+<p>The code below demonstrates how such Boolean operators can be used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">)</span>
+<span class="c1">## prints &#39;False&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="mi">8</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="p">)</span>
+<span class="c1">## prints &#39;True&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="p">(</span><span class="mi">10</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">8</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span>
+<span class="c1">## prints &#39;True&#39;; both expressions represent value 5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When Boolean operators are combined with operands, as in the examples above, this combination is referred to as an expression. An expression cannot be an independent statement in itself. Such expressions form the building blocks of statements.</p>
+<p>Indivual expressions may also be combined with other expressions to form more complicated expressions. To create such compound Boolean expressions you can make use of the bitwise operators <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> or the symbols <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code>.</p>
+<p>
+<table width="100%; " style="text-align: left; font-size: 1.0em; ">
+    <tr style="text-align: left; " >
+    <td width="25%" style="text-align: center; ">Operator as word</td>
+          <td width="35%" style="text-align: center; ">Operator as symbol</td>
+<td style="text-align: left; padding-right: 40%;">Description</td>    
+</tr> 
+<tr style="text-align: left; " >
+    <td width="25%" style="text-align: center; ">and</td>  
+       <td width="35%" style="text-align: center; ">&amp;</td>  
+<td style="text-align: left; padding-right: 40%;">Logical and</td>    
+</tr> 
+    <tr style="text-align: left; ">
+    <td width="25%" style="text-align: center; ">or</td> 
+        <td width="35%" style="text-align: center; ">|</td> 
+<td style="text-align: left; " >Logical or</td>    
+</tr>
+      <tr style="text-align: left; ">
+           <td width="25%" style="text-align: center; " >not</td>  
+    <td width="40%" style="text-align: center; " ></td>    
+<td style="text-align: left; " >Negation</td>    
+</tr>
+   </table>
+  </p>
+<br/>
+<p>Note that there is no symbol for the negation. To negate a Boolean expression, you can simply place <code class="docutils literal notranslate"><span class="pre">not</span></code> in front of the expression. A number of examples can be found below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="mi">6</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="p">)</span>
+<span class="c1"># prints &#39;False&#39;; 7 &lt; 8 is True, but 6 &lt; 3 is False. they are not both True!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="mi">6</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="o">|</span> <span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="p">)</span>
+<span class="c1"># prints &#39;True&#39;. One of the expressions given is indeed true. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="ow">not</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">6</span>  <span class="p">)</span>
+<span class="c1"># prints &#39;False&#39;. 3 &lt; 6 is True; the negation is False. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>These Boolean expressions can be used both with numbers and with strings. When you use the ‘greater than’ operator in combination with two strings, Python will sort the two strings alphabetically and evaluate whether the first string comes before the second string. The expression on the example below will be evaluated as ‘True’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="s1">&#39;Pear&#39;</span> <span class="o">&gt;</span> <span class="s1">&#39;Apple&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The equality operator, (<code class="docutils literal notranslate"><span class="pre">==</span></code>), can be used to test whether two string have exactly the same characters. The Boolean expression below is evaluated as ‘False’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string_to_test</span> <span class="o">=</span> <span class="s1">&#39;Apple&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span>  <span class="n">string_to_test</span> <span class="o">==</span> <span class="s1">&#39;Pear&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="printing-the-values-of-variables">
+<h2>Printing the values of variables<a class="headerlink" href="#printing-the-values-of-variables" title="Permalink to this headline">#</a></h2>
+<p>As was discussed above, you can use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function to communicate the output of your programme. This <code class="docutils literal notranslate"><span class="pre">print()</span></code> function can only take string variables as input. If you use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function in combination with a single numerical value, Python will convert this number to a string automatically.</p>
+<p>The situation becomes more complicated when you want to combine strings and numbers. This can be the case when you want to print a longer sentence which includes the results of a calculation based on numeric variables you created earlier. In such a composite sentence the integers in this sentence need to be converted into strings first, via the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function. It may be accomplished as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; plus &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="c1">## This prints &#39;5 plus 7 is 12&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Having to convert all integers to strings may be slightly cumbersome. An alternative solution is to make use of so-called f-strings. The ‘f’ stands for ‘format’. These f-strings have been available since Python 3.6. To create this type of string, you need to place the character ‘f’ immediately before the opening quote of your string. Within the string that is created in this way, it is possible to include one or more curly brackets, containing the name of a variable. The output of such an f-string is a string containing the <em>values</em> of the variabes you refer to in these curly brackets.</p>
+<p>The code below gives an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;Variable a: </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="se">\n</span><span class="s1">Variable b: </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> plus </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+
+<span class="c1">## This also prints &#39;5 plus 7 is 12&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As a third possibility, you can work with the <code class="docutils literal notranslate"><span class="pre">format()</span></code> method. This method needs to be appended to the end of the string that you want to print. As parameters, you need to supply the values you want to print. The stirng to be printed needs to contain sets of curly brackets, on the locations on whch those values need to appear. These brackets function as placeholders. They need to reman empty.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> plus </span><span class="si">{}</span><span class="s1"> is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">a</span> <span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">))</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
+<section id="exercise-2-1">
+<h2>Exercise 2.1.<a class="headerlink" href="#exercise-2-1" title="Permalink to this headline">#</a></h2>
+<p>Declare three numerical variables with arbitrary values. What is the average of these three values?</p>
+</section>
+<section id="exercise-2-2">
+<h2>Exercise 2.2.<a class="headerlink" href="#exercise-2-2" title="Permalink to this headline">#</a></h2>
+<p>Declare two numerical variables and assign them arbitrary numerical values. Using Boolean operators, test whether the first value is less than, greater than, or equal to the second value. Add <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements which can output either ‘True’ or ‘False’</p>
+</section>
+<section id="exercise-2-3">
+<h2>Exercise 2.3.<a class="headerlink" href="#exercise-2-3" title="Permalink to this headline">#</a></h2>
+<p>Write code which can calculate the number of seconds in seven days.</p>
+</section>
+<section id="exercise-2-4">
+<h2>Exercise 2.4.<a class="headerlink" href="#exercise-2-4" title="Permalink to this headline">#</a></h2>
+<p>Debug the code below. The code does not contain a syntax error but a semantic error. Do you understand what happens in the code as given?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nr_weeks</span> <span class="o">=</span> <span class="s2">&quot;4&quot;</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Number of days: &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="n">nr_weeks</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-5">
+<h2>Exercise 2.5.<a class="headerlink" href="#exercise-2-5" title="Permalink to this headline">#</a></h2>
+<p>Given an exchange rate of 1.2409 (euros to American dollars), how many dollars can you buy for 150 euros? Use the in-built round() function to ensure that the floating point number that results from the calculation is shown as an actual amount, indicating the number of cents. The first parameter of ‘round()’ is the number to be rounded, and the second number is the number of digits beyond the decimal point.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="1%20Variables_and_data_types.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">1. Variables and data types</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="3%20Working_with_strings.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3. Working with strings</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Peter Verhaar and Ben Companjen<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
