@@ -500,20 +500,16 @@ title="Print to PDF"
 <p>Download the CSV file ‘nobel.csv’:
 <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a></p>
 <p>Using the data in this file, try to answer the following questions:</p>
-<ul class="simple">
-<li><p>How many Nobel laureates are described in this file?</p></li>
-<li><p>How many of these are from the Netherlands? What are the names of the Dutch Nobel prize winners?</p></li>
-<li><p>How many female Nobel laureates are there in this data set? What are their names?</p></li>
-<li><p>Who was the youngest person ever to receive the Nobel Prize? Who was the oldest person?
-Tip: create a new column called ‘Age’, in which the year in which the prize was awarded is subtracted from the year of birth. The year of birth can be extracted from the date of birth using the following code:</p></li>
-</ul>
+<p>11.1.a. How many Nobel laureates are described in this file?</p>
+<p>11.1.b. How many of these are from the Netherlands? What are the names of the Dutch Nobel prize winners?</p>
+<p>11.1.c. How many female Nobel laureates are there in this data set? What are their names?</p>
+<p>11.1.d. Who was the youngest person ever to receive the Nobel Prize? Who was the oldest person?</p>
+<p>Tip: create a new column called ‘Age’, in which the year in which the prize was awarded is subtracted from the year of birth. The year of birth can be extracted from the date of birth using the following code:</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">nobel['Birth</span> <span class="pre">Year']</span> <span class="pre">=</span> <span class="pre">pd.to_datetime(nobel['Birth</span> <span class="pre">Date']).dt.year</span></code></p>
 </div></blockquote>
-<ul class="simple">
-<li><p>For each discipline, calculate the average age of the Nobel laureates.</p></li>
-<li><p>Create a list of all the unique countries, and calculate the number of Nobel laureates per country.</p></li>
-</ul>
+<p>11.1.e. For each discipline, calculate the average age of the Nobel laureates.</p>
+<p>11.1.f. Create a list of all the unique countries, and calculate the number of Nobel laureates per country.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>

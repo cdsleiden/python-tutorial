@@ -669,10 +669,14 @@ title="Print to PDF"
 <p>As can be seen, this import statement also assigns an alias, namely <code class="docutils literal notranslate"><span class="pre">pd</span></code>. This is an abbreviated reference to the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library. Without this alias, the full name of the library would have to be typed in each time a method from this library is needed.</p>
 <section id="reading-a-csv-file">
 <h2>Reading a CSV file<a class="headerlink" href="#reading-a-csv-file" title="Permalink to this headline">#</a></h2>
-<p>If your data set is stored in the CSV format, it can be accessed using the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function.</p>
+<p>The folder containing all the notebooks for this tutorial also includes a subfolder named ‘Data’. This subfolder contains a CSV file unoriginally named ‘data.csv’.</p>
+<p>If you want to work with a data set that is stored in the CSV format, it can be accessed using the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;data.csv&#39;</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="s1">&#39;data.csv&#39;</span><span class="p">)</span>
+
+<span class="n">data_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="n">path_to_csv</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -682,7 +686,7 @@ title="Print to PDF"
 <p>For more information, see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table">guide</a> on <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;data.csv&#39;</span> <span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="n">path_to_csv</span> <span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -690,20 +694,24 @@ title="Print to PDF"
 <p>If the data set includes floating point numbers, it can also be useful to specify the character that is used as a decimal point via the <code class="docutils literal notranslate"><span class="pre">decimal</span></code> parameter. Floating point numbers are typically represented using either the period or the comma.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;data.csv&#39;</span> <span class="p">,</span> <span class="n">decimal</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="n">path_to_csv</span> <span class="p">,</span> <span class="n">decimal</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Your CSV file may of course contain missing values. If, in the CSV file, all missing values are represented using codes such as ‘NULL’, ‘NaN’, or ‘NA’, pandas will automically recognised these missing values as such. Pandas represents missing values via the code ‘NaN’, which stands for ‘Not a Number’.</p>
 </section>
 <section id="reading-an-excel-spreadsheet">
 <h2>Reading an Excel spreadsheet<a class="headerlink" href="#reading-an-excel-spreadsheet" title="Permalink to this headline">#</a></h2>
-<p>The Pandas library also offers a method named <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code>. You can use this function, unsurprisingly, to process data stored in an Excel spreadsheet. The method needs to be used with two parameters. The first parameter is simply the name of the Excel file that you want to work with. Secondly, as a value to a parameter named <code class="docutils literal notranslate"><span class="pre">sheet_name</span></code>, you need to provide the name of the sheet within the spreadsheet that you want to read. Similarly to the way in which <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> processes data, <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code> loads the data on the sheet that you mention into a data frame.</p>
+<p>The Pandas library also offers a method named <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code>. You can use this function, unsurprisingly, to process data stored in an Excel spreadsheet. The method needs to be used with two parameters. The first parameter is the name of the Excel file that you want to work with. Secondly, as a value to a parameter named <code class="docutils literal notranslate"><span class="pre">sheet_name</span></code>, you need to provide the name of the sheet within the spreadsheet that you want to read.</p>
+<p>Similarly to the way in which <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> processes data, <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code> loads the data on the sheet that you mention into a data frame.</p>
+<p>The cell below illustrates the use of the <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code> file using the Excel file provided in the ‘Data’ subfolder.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span> <span class="s1">&#39;Data.xlsx&#39;</span> <span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s2">&quot;Sheet1&quot;</span><span class="p">)</span>
+<span class="n">path_to_excel</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="s1">&#39;data.xlsx&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span> <span class="n">path_to_excel</span> <span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s2">&quot;Sheet1&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1003,69 +1011,86 @@ title="Print to PDF"
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
 <section id="exercise-11-1">
 <h2>Exercise 11.1.<a class="headerlink" href="#exercise-11-1" title="Permalink to this headline">#</a></h2>
-<p>Download the CSV file ‘nobel.csv’:
-<a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a></p>
-<p>Using the data in this file, try to answer the following questions:</p>
-<ul class="simple">
-<li><p>How many Nobel laureates are described in this file?</p></li>
-<li><p>How many of these are from the Netherlands? What are the names of the Dutch Nobel prize winners?</p></li>
-<li><p>How many female Nobel laureates are there in this data set? What are their names?</p></li>
-<li><p>Who was the youngest person ever to receive the Nobel Prize? Who was the oldest person?
-Tip: create a new column called ‘Age’, in which the year in which the prize was awarded is subtracted from the year of birth. The year of birth can be extracted from the date of birth using the following code:</p></li>
-</ul>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">nobel['Birth</span> <span class="pre">Year']</span> <span class="pre">=</span> <span class="pre">pd.to_datetime(nobel['Birth</span> <span class="pre">Date']).dt.year</span></code></p>
-</div></blockquote>
-<ul class="simple">
-<li><p>For each discipline, calculate the average age of the Nobel laureates.</p></li>
-<li><p>Create a list of all the unique countries, and calculate the number of Nobel laureates per country.</p></li>
-</ul>
+<p>In the data folder for this tutorial, you can find a CSV file named ‘nobel.csv’. If, for whichever reason, you cannot locate this file, you can download it from the following address: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">nobel</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;nobel.csv&#39;</span> <span class="p">)</span>
-
-
-<span class="c1"># Each row describes a nobel laureate</span>
+<span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="s1">&#39;nobel.csv&#39;</span><span class="p">)</span>
+<span class="n">nobel</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="n">path_to_csv</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the data in this file, try to answer the following questions:</p>
+<p>11.1.a. How many Nobel laureates are described in this file?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Each row describes a nobel laureate</span>
 <span class="c1"># The number of rows and columns can be found using &#39;shape&#39;</span>
 <span class="c1"># &#39;shape&#39; results in a so-called tuple, with two values. To print only the first value,</span>
 <span class="c1"># use shape[0]</span>
-
-<span class="c1">## Number of Dutch Nobel laureates</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>11.1.b. How many of these are from the Netherlands? What are the names of the Dutch Nobel prize winners?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Number of Dutch Nobel laureates</span>
 
 <span class="c1">## Names of Dutch Nobel laureates</span>
-    
-    
-<span class="c1">## Number of female Nobel laureates</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>11.1.c. How many female Nobel laureates are there in this data set? What are their names?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="c1">## Number of female Nobel laureates</span>
 
 <span class="c1">## Names of female Nobel laureates</span>
-        
-
-<span class="c1"># create a new column called ‘Age’: </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>11.1.d. Who was the youngest person ever to receive the Nobel Prize? Who was the oldest person?</p>
+<p>Tip: create a new column called ‘Age’, in which the year in which the prize was awarded is subtracted from the year of birth. The year of birth can be extracted from the date of birth using the following code:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">nobel['Birth</span> <span class="pre">Year']</span> <span class="pre">=</span> <span class="pre">pd.to_datetime(nobel['Birth</span> <span class="pre">Date']).dt.year</span></code></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new column called ‘Age’: </span>
 <span class="c1"># (the year in which the prize was awarded) minus (year of birth)</span>
 
     
 <span class="c1"># find minimum and maximum in column &#39;Age&#39;</span>
 
 <span class="c1"># print the names of these Nobel laureates, using iterrows()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>11.1.e. For each discipline, calculate the average age of the Nobel laureates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, divide the data frame into groups based on &#39;Category&#39;, using groupby(&#39;Category&#39;)</span>
 
-
-
-<span class="c1"># For each discipline, calculate the average age of the Nobel laureates.</span>
-<span class="c1"># First, divide the data frame into groups based on &#39;Category&#39;, using groupby(&#39;Category&#39;)</span>
 <span class="c1"># In these groups, select only the &#39;Age&#39; column, by appending [&#39;Age&#39;]</span>
 <span class="c1"># Next calculate the mean. </span>
-
-
-    
-<span class="c1"># For each country, the number of nobel laureates</span>
-<span class="c1"># First, divide the data frame into groups based on &#39;Birth Country&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>11.1.f. Create a list of all the unique countries, and calculate the number of Nobel laureates per country.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, divide the data frame into groups based on &#39;Birth Country&#39;</span>
 
 <span class="c1"># In these groups, select only the &#39;Laureate ID&#39; column, by appending [&#39;Laureate ID&#39;]</span>
 <span class="c1"># Next, calculate the number of rows in each group, using count() </span>
-
-    
 </pre></div>
 </div>
 </div>
@@ -1073,8 +1098,7 @@ Tip: create a new column called ‘Age’, in which the year in which the prize 
 </section>
 <section id="exercise-11-2">
 <h2>Exercise 11.2.<a class="headerlink" href="#exercise-11-2" title="Permalink to this headline">#</a></h2>
-<p>Download the Excel file names ‘Grades.xsl’ from the following address:</p>
-<p><a class="reference external" href="https://edu.nl/m6w8n">https://edu.nl/m6w8n</a></p>
+<p>In the data folder for this tutorial, you can find a CSV file named ‘Grades.xlsx’. If you cannot locate this file, you can download it from the following address: <a class="reference external" href="https://edu.nl/m6w8n">https://edu.nl/m6w8n</a></p>
 <p>This spreadsheet contains the partial grades received in a certain course.</p>
 <p>Write code which can calculate and print the final grade for each student. The essay and the exam both count for 40% the grade. The remaining 20% is determined by the presentation. All grades should have one digit after the decimal point.</p>
 <p>Print a list with the full names of the students, together with their final grade for the course.</p>
@@ -1092,7 +1116,7 @@ Tip: create a new column called ‘Age’, in which the year in which the prize 
 <div><p>Fatah-Black, Dr KJ (Leiden University) (2017): Lijsten van de leveranties, met de namen van de kopers en betaalde prijzen op de verkopingen van de VOC kamer Zeeland, 1725 – 1777. DANS. <a class="reference external" href="https://doi.org/10.17026/dans-23z-ez6f">https://doi.org/10.17026/dans-23z-ez6f</a></p>
 </div></blockquote>
 <p>This data set lists the goods that have been sold at VOC auctions in Zeeland in the 18th century. For each transaction, data is available about the name of the buyer, the product that was bought, the date of the transaction and the price that was paid. The price is specified in Flemish pounds and groten. 1 Flemish pound was equal to 20 groten.</p>
-<p>For the purpose of this exercise, the original data set has been changed slightly. Some rows containing invalid data were removed. Column names and values were also translated into English. The modified CSV file can be downloaded from <a class="reference external" href="https://tdm.universiteitleiden.nl/Python/voc-data.csv">https://tdm.universiteitleiden.nl/Python/voc-data.csv</a></p>
+<p>For the purpose of this exercise, the original data set has been changed slightly. Some rows containing invalid data were removed. Column names and values were also translated into English. The modified CSV file is available in the data folder for this tutorial, and it can also be downloaded from the following address: <a class="reference external" href="https://edu.nl/wvmxp">https://edu.nl/wvmxp</a></p>
 <p>As this data set offers information about the sale of coffee only, we can use these data to trace the historical development of the price of one pound of coffee during the period that is covered by the data set. <strong>Try to create a CSV file containing the following two columns: the full date and the average price of a pound of coffee on that date</strong>.</p>
 <p>Follow the steps below.</p>
 <p>Firstly, add code below to download the data set. The code to write the file to disk is already provided.</p>
