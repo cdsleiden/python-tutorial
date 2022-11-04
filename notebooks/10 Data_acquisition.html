@@ -440,8 +440,8 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-wikipedia-search-api">
-       Example: Wikipedia search API
+      <a class="reference internal nav-link" href="#example-musicbrainz">
+       Example: MusicBrainz
       </a>
      </li>
     </ul>
@@ -498,6 +498,16 @@ title="Print to PDF"
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-10-7">
      Exercise 10.7
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-8">
+     Exercise 10.8
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-9">
+     Exercise 10.9
     </a>
    </li>
   </ul>
@@ -537,8 +547,8 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-wikipedia-search-api">
-       Example: Wikipedia search API
+      <a class="reference internal nav-link" href="#example-musicbrainz">
+       Example: MusicBrainz
       </a>
      </li>
     </ul>
@@ -597,6 +607,16 @@ title="Print to PDF"
      Exercise 10.7
     </a>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-8">
+     Exercise 10.8
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10-9">
+     Exercise 10.9
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -611,13 +631,11 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="data-acquisition">
 <h1>10. Data acquisition<a class="headerlink" href="#data-acquisition" title="Permalink to this headline">#</a></h1>
-<p>Data science projects typically start with the acquisition of data. In many cases, such data sets consist of secondary data made available by commercial or non-commercial organisations. This part of the tutorial explains how you can obtain such online data sets.</p>
-<p>In this tutorial, we distinguish three methods of data acquisition: downloading data files, accessing data through APIs and webscraping.
-You usually choose one of these methods to get your data based on what the data provider offers.</p>
+<p>Data science projects typically start with the acquisition of data. In many cases, such data sets consist of secondary data made available on the web by commercial or non-commercial organisations. This part of the tutorial explains how you can obtain such online data sets.</p>
+<p>In this tutorial, we distinguish three methods of data acquisition: downloading data files, accessing data through APIs and webscraping. You usually choose one of these methods to acquire your data, based on what the data provider offers.</p>
 <section id="direct-downloads">
 <h2>Direct downloads<a class="headerlink" href="#direct-downloads" title="Permalink to this headline">#</a></h2>
-<p>If the resources that you are interested in are available directly via the web (i.e. via HTTP or HTTPS), you can download these files by making use of the <a class="reference external" href="https://requests.readthedocs.io/"><code class="docutils literal notranslate"><span class="pre">requests</span></code></a> library.
-As is the case for all libraries, the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library needs to be imported before you can use it.</p>
+<p>If the resources that you are interested in are available directly via the web, you can download these files by making use of the <a class="reference external" href="https://requests.readthedocs.io/"><code class="docutils literal notranslate"><span class="pre">requests</span></code></a> library. As is the case for all libraries, the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library needs to be imported before you can use it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -625,7 +643,8 @@ As is the case for all libraries, the <code class="docutils literal notranslate"
 </div>
 </div>
 </div>
-<p>To download data from a certain web address, you can make a GET request. In Python, such a request can be sent using the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method in <code class="docutils literal notranslate"><span class="pre">requests</span></code>, as demonstrated below. Evidently, it is important that you are online when you run the code below.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">requests</span></code> library can be used to make requests according to the Hypertext Transfer Protocol (HTTP), which was developed to enable the exchange of information across computers. The computer that can provide information is typically referred to as a server, and the computer that requests information from this server is referred to as a client. In the HTTP protocol, the GET method is used to request data from a specified server.</p>
+<p>In Python, such a GET request can be sent to a server using the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method in <code class="docutils literal notranslate"><span class="pre">requests</span></code>, as demonstrated below. Evidently, it is important that you are online when you run this code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="s1">&#39;https://www.universiteitleiden.nl&#39;</span><span class="p">)</span>
@@ -637,8 +656,8 @@ As is the case for all libraries, the <code class="docutils literal notranslate"
 <p>Once this <code class="docutils literal notranslate"><span class="pre">Response</span></code> object has been created successfully, you can use various pieces of information about the resource that was downloaded.
 The property <code class="docutils literal notranslate"><span class="pre">status_code</span></code>, for instance, indicates the HTTP status code that was returned by the server.
 The status code 200 indicates that the request was successful and the infamous status code 404 indicates that the file was not found.</p>
-<p>If the status code is indeed 200, the contents of the resource is accessible in the response’s <code class="docutils literal notranslate"><span class="pre">body</span></code> property. However, this property holds the contents as bytes. Typically, when we downloaded a webpage, we want to use the data as text. In these cases the <code class="docutils literal notranslate"><span class="pre">text</span></code> property of the <code class="docutils literal notranslate"><span class="pre">Response</span></code> object contains the full contents of the downloaded website, dataset or other kind of file as a string.</p>
-<p>One word of caution however: <code class="docutils literal notranslate"><span class="pre">requests</span></code> may not always automatically understand a file’s <a class="reference external" href="https://www.w3.org/International/questions/qa-what-is-encoding">character encoding</a>. You can set the correct character encoding explicitly using the <code class="docutils literal notranslate"><span class="pre">encoding</span></code> property.</p>
+<p>If the status code is indeed 200, the contents of the resource is accessible in the response’s <code class="docutils literal notranslate"><span class="pre">body</span></code> property. However, this property holds the contents as bytes. Typically, when we downloaded a webpage, we want to work with the data as text. In these cases, the <code class="docutils literal notranslate"><span class="pre">text</span></code> property of the <code class="docutils literal notranslate"><span class="pre">Response</span></code> object contains the full contents of the downloaded website, dataset or other kind of file as a string.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">requests</span></code> may not always understand a file’s <a class="reference external" href="https://www.w3.org/International/questions/qa-what-is-encoding">character encoding</a> automatically. You can set the correct character encoding explicitly using the <code class="docutils literal notranslate"><span class="pre">encoding</span></code> property.</p>
 <p>When you run the code that is given below, the contents of the webpage that is specified at the beginning (or more specifically, the HTML code that was created to build the webpage) becomes available as a string, assigned to the variable named <code class="docutils literal notranslate"><span class="pre">contents</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -675,51 +694,58 @@ The status code 200 indicates that the request was successful and the infamous s
 </section>
 <section id="acquiring-data-via-apis">
 <h2>Acquiring data via APIs<a class="headerlink" href="#acquiring-data-via-apis" title="Permalink to this headline">#</a></h2>
-<p>Organisations which aim to make their data available for reuse often do this through an Application Programming Interface (API).
-An API, simply put, is the interface through which (online) services and applications provide access to their information and functionalities.</p>
-<p>It enables organisations to share some of the data that they have in a strucured format, so that these other external parties can make use of these data in new applications.</p>
-<p>The communication between the sender and the recipient of such requests needs to take place according to a specific protocol; the requests need to be formulated according to certain rules. Many APIs allow accessing selections of data collections, for example.</p>
+<p>Organisations which aim to make their data available for reuse often do this through an <em>Application Programming Interface</em> (API). An API, simply put, is the interface through which (online) services and applications provide access to their information and functionalities.</p>
+<p>It enables organisations to share some of the data that they have in a strucured format, so that other external parties can make use of these data in new applications.</p>
+<p>The communication between the sender and the recipient of such requests needs to take place according to a specific protocol. The requests need to be formulated according to certain rules.</p>
 <p>For many APIs, you need to create an access key before you can send requests. This is the case, for instance, for the Twitter API.</p>
-<section id="example-wikipedia-search-api">
-<h3>Example: Wikipedia search API<a class="headerlink" href="#example-wikipedia-search-api" title="Permalink to this headline">#</a></h3>
-<p>There are also many APIs which are fully open, however, such as the Wikipedia API. You can send requests to this API without having to provide an access key. The endpoint of this API is available at <a class="reference external" href="https://en.wikipedia.org/w/api.php">https://en.wikipedia.org/w/api.php</a>.</p>
-<p>You can use this API to search for Wikipedia articles containing a given search term. You can work with the following parameters:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">opensearch</span>
-<span class="n">search</span> <span class="o">=</span> <span class="p">[</span><span class="n">search</span> <span class="n">term</span><span class="p">]</span>
-<span class="n">limit</span> <span class="o">=</span> <span class="p">[</span><span class="n">number</span><span class="p">]</span>
-<span class="nb">format</span> <span class="o">=</span> <span class="p">[</span><span class="n">json</span> <span class="ow">or</span> <span class="n">xml</span><span class="p">]</span>
+<section id="example-musicbrainz">
+<h3>Example: MusicBrainz<a class="headerlink" href="#example-musicbrainz" title="Permalink to this headline">#</a></h3>
+<p>There are also many APIs which are fully open, however. One example is the <a class="reference external" href="https://musicbrainz.org/doc/MusicBrainz_API">MusicBrainz</a> API. <em>MusicBrainz</em> is a large online encyclopedia containing information about musicians and their work. You can send requests to this API without having to provide an access key.</p>
+<p>The root URL of this API is <a class="reference external" href="https://musicbrainz.org/ws/2/">https://musicbrainz.org/ws/2/</a></p>
+<p>On <em>MusicBrainz</em>, you can request information a number of different entities, including artists, genres, instruments, labels and releases. The enity type you are interested in firstly needs to be appended the root URL. If you want to want to search for information about an artist, for example, you need to work with the following URL structure: <a class="reference external" href="https://musicbrainz.org/ws/2/artist">https://musicbrainz.org/ws/2/artist</a></p>
+<p>You can then work with the following parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="p">[</span><span class="n">search</span> <span class="n">term</span><span class="p">]</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="p">[</span><span class="n">json</span> <span class="ow">or</span> <span class="n">xml</span><span class="p">]</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="p">[</span><span class="n">integer</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The search term, to be provided after ‘search’, is the word that must occur in the title of the Wikipedia page. If the ‘limit’ parameter is omitted, the API will return 10 results by default.</p>
-<p>The following API call returns 20 Wikipedia pages whose titles contain the word ‘Leiden’. The call returns the requested data in the JSON format.</p>
-<p><a class="reference external" href="https://en.wikipedia.org/w/api.php?action=opensearch&amp;amp;search=Leiden&amp;amp;limit=20&amp;amp;namespace=0&amp;amp;format=json">https://en.wikipedia.org/w/api.php?action=opensearch&amp;amp;search=Leiden&amp;amp;limit=20&amp;amp;namespace=0&amp;amp;format=json</a></p>
-<p>The <code class="docutils literal notranslate"><span class="pre">json()</span></code> method parses the JSON data into a regular Python data structure for further processing. Note that the results are grouped by field, not by result.</p>
+<p>Following the <code class="docutils literal notranslate"><span class="pre">query</span></code> parameter, you can supply the name of the artist you want to search for. Using the <code class="docutils literal notranslate"><span class="pre">fmt</span></code> parameter, you can specify whether you want to receive the result in <a class="reference external" href="https://www.w3.org/XML/">XML</a> or in <a class="reference external" href="https://www.json.org/">JSON</a> format. The API returns XML data by default. If the API results many results, you can reduce the number of results by working with the <code class="docutils literal notranslate"><span class="pre">limit</span></code> parameter.</p>
+<p>The following API call returns information about <em>The Beatles</em> in the JSON format.</p>
+<p><a class="reference external" href="https://musicbrainz.org/ws/2/artist?query=The%20Beatles&amp;fmt=json">https://musicbrainz.org/ws/2/artist?query=The Beatles&amp;fmt=json</a></p>
+<p>In Python, you can also send out such API calls using the requests library.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">requests.utils</span> <span class="kn">import</span> <span class="n">requote_uri</span>
 
+<span class="n">root_url</span> <span class="o">=</span> <span class="s1">&#39;https://musicbrainz.org/ws/2/&#39;</span>
 
-<span class="n">baseUrl</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/w/api.php?action=opensearch&#39;</span>
+<span class="c1">## The parameters for the API call are defined as variables</span>
+<span class="n">entity</span> <span class="o">=</span> <span class="s1">&#39;artist&#39;</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;David Bowie&#39;</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span>
 
+<span class="n">query</span> <span class="o">=</span> <span class="n">requote_uri</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 
-<span class="n">search</span><span class="o">=</span> <span class="s1">&#39;leiden&#39;</span> 
-<span class="n">limit</span> <span class="o">=</span> <span class="mi">20</span> 
-<span class="c1"># We cannot use &#39;format&#39; as a variable name, as this </span>
-<span class="c1"># is reserved Python term</span>
-<span class="n">data_format</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span> 
+<span class="n">api_call</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root_url</span><span class="si">}{</span><span class="n">entity</span><span class="si">}</span><span class="s1">?query=</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s1">&amp;fmt=</span><span class="si">{</span><span class="n">fmt</span><span class="si">}</span><span class="s1">&amp;limit=</span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">api_call</span><span class="p">)</span>
 
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">api_call</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the code above, the data that are returned by the <em>MusicBrainz</em> API are saved as an object named <code class="docutils literal notranslate"><span class="pre">response</span></code>. These data are structured according the format we specified, namely, JSON. To process these data, we can work with the <code class="docutils literal notranslate"><span class="pre">json()</span></code> method from the <code class="docutils literal notranslate"><span class="pre">request</span></code> library. This method parses the JSON data into regular Python data structures. JSON objects are converted into dictionaries, and JSON lists become regular Python lists.</p>
+<p>The JSON object that is returned by <em>MusicBrainz</em> returns an object in which the ‘artists’ key contains all the artists whose names or descriptions contains the search term you provided. For each individual artist, we can retrieve the name, using the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute, and the <code class="docutils literal notranslate"><span class="pre">type</span></code>, among many other properties.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">musicbrainz_results</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
-<span class="n">apiCall</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">baseUrl</span><span class="si">}</span><span class="s1">&amp;search=</span><span class="si">{</span><span class="n">search</span><span class="si">}</span><span class="s1">&amp;limit=</span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s1">&amp;format=</span><span class="si">{</span><span class="n">data_format</span><span class="si">}</span><span class="s1">&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">apiCall</span><span class="p">)</span>
-
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">apiCall</span> <span class="p">)</span>
-<span class="n">wikiResults</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">0</span> <span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">wikiResults</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Title: &#39;</span> <span class="o">+</span> <span class="n">wikiResults</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Tagline: &#39;</span> <span class="o">+</span> <span class="n">wikiResults</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Url: &#39;</span> <span class="o">+</span> <span class="n">wikiResults</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="n">musicbrainz_results</span><span class="p">[</span><span class="s1">&#39;artists&#39;</span><span class="p">]:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+    <span class="n">artist_type</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">artist_type</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -978,6 +1004,88 @@ The basename in a URL can be extracted using the <a class="reference external" h
 <li><p>The <a class="reference external" href="http://bbc.com">bbc.com</a> website uses images as part of the user interface. These images all have the word ‘line’ in their filenames. Try to exclude these images whose file names contain the word ‘line’.</p></li>
 <li><p>Download all the images that you found in this way, using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library. In the <code class="docutils literal notranslate"><span class="pre">Response</span></code> object that is created following a succesful download, you need to work with the <code class="docutils literal notranslate"><span class="pre">content</span></code> property to obtain the actual file.  Save all these images on your computer, using <code class="docutils literal notranslate"><span class="pre">open()</span></code> and <code class="docutils literal notranslate"><span class="pre">write()</span></code>. In the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function, use the code ‘wb’ as a second parameter (instead of only ‘w’) to make sure that the contents are saved as bytes.</p></li>
 </ul>
+</section>
+<section id="exercise-10-8">
+<h2>Exercise 10.8<a class="headerlink" href="#exercise-10-8" title="Permalink to this headline">#</a></h2>
+<p>As was discussed in this notebook, you can use the <em>MusicBrainz</em> API to request information about musicians. Via the code that is provided, you can request the names and the type (i.e. are we dealing with a person or with a group?). This specific API can make much more information available, however. Try to add some code with can add the following data about each artist:</p>
+<ul class="simple">
+<li><p>The date of birth (in the case of a person) or formation (in the case of a group)</p></li>
+<li><p>The date of death or breakup</p></li>
+<li><p>The place of birth or formation</p></li>
+<li><p>The place of death or breakup</p></li>
+<li><p>Aliases</p></li>
+<li><p>Tags associated with the artist</p></li>
+</ul>
+<p>Tip: ‘Uncomment’ the print statement in the second cell to be able explore the structure of the JSON data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">requests.utils</span> <span class="kn">import</span> <span class="n">requote_uri</span>
+
+
+<span class="n">root_url</span> <span class="o">=</span> <span class="s1">&#39;https://musicbrainz.org/ws/2/&#39;</span>
+
+<span class="c1">## The parameters for the API call are defined as variables</span>
+<span class="n">entity</span> <span class="o">=</span> <span class="s1">&#39;artist&#39;</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;David Bowie&#39;</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="n">requote_uri</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+<span class="n">api_call</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root_url</span><span class="si">}{</span><span class="n">entity</span><span class="si">}</span><span class="s1">?query=</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s1">&amp;fmt=</span><span class="si">{</span><span class="n">fmt</span><span class="si">}</span><span class="s1">&amp;limit=</span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">api_call</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">musicbrainz_results</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="n">musicbrainz_results</span><span class="p">[</span><span class="s1">&#39;artists&#39;</span><span class="p">]:</span>
+    <span class="c1">#print(json.dumps(artist, indent=4))</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+    <span class="n">artist_type</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">artist_type</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+    <span class="c1">## Add your code below</span>
+    
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-9">
+<h2>Exercise 10.9<a class="headerlink" href="#exercise-10-9" title="Permalink to this headline">#</a></h2>
+<p><em><a class="reference external" href="https://journals.plos.org/plosone/">PLOS One</a></em> is a peer reviewed open access journal. The <em>PLOS One</em> API can be used to request metadata about all the articles that have been published in the journal. In this API, you can refer to specific articles using their <a class="reference external" href="https://www.doi.org/">DOI</a>.</p>
+<p>Such requests can be sent using API calls with the following structure:</p>
+<p><a class="reference external" href="https://api.plos.org/search?q=id:%7Bdoi%7D">https://api.plos.org/search?q=id:{doi}</a></p>
+<p>To acquire data about the article with DOI <a class="reference external" href="https://doi.org/10.1371/journal.pone.0270739">10.1371/journal.pone.0270739</a>, for example, you can use the following API call:</p>
+<p><a class="reference external" href="https://api.plos.org/search?q=id:10.1371/journal.pone.0270739">https://api.plos.org/search?q=id:10.1371/journal.pone.0270739</a></p>
+<p>Try to write code which can get hold of metadata about the articles with the following DOIs:</p>
+<ul class="simple">
+<li><p>10.1371/journal.pone.0169045</p></li>
+<li><p>10.1371/journal.pone.0271074</p></li>
+<li><p>10.1371/journal.pone.0268993</p></li>
+</ul>
+<p>For each article, print the title, the publication date, the article type, a list of all the authors and the abstract.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">dois</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;10.1371/journal.pone.0169045&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;10.1371/journal.pone.0268993&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;10.1371/journal.pone.0271074&#39;</span> <span class="p">]</span>
+
+
+    
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 

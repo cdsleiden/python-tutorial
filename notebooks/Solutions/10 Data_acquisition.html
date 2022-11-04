@@ -459,6 +459,16 @@ title="Print to PDF"
    Exercise 10.7
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-8">
+   Exercise 10.8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-9">
+   Exercise 10.9
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -511,6 +521,16 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-10-7">
    Exercise 10.7
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-8">
+   Exercise 10.8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-10-9">
+   Exercise 10.9
   </a>
  </li>
 </ul>
@@ -910,6 +930,155 @@ The basename in a URL can be extracted using the <a class="reference external" h
                 <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
                 <span class="n">out</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-8">
+<h2>Exercise 10.8<a class="headerlink" href="#exercise-10-8" title="Permalink to this headline">#</a></h2>
+<p>As was discussed in this notebook, you can use the <em>MusicBrainz</em> API to request information about musicians. Via the code that is provided, you can request the names and the type (i.e. are we dealing with a person or with a group?). This specific API can make much more information available, however. Try to add some code with can add the following data about each artist:</p>
+<ul class="simple">
+<li><p>The date of birth (in the case of a person) or formation (in the case of a group)</p></li>
+<li><p>The date of death or breakup</p></li>
+<li><p>The place of birth or formation</p></li>
+<li><p>The place of death or breakup</p></li>
+<li><p>Aliases</p></li>
+<li><p>Tags associated with the artist</p></li>
+</ul>
+<p>Tip: ‘Uncomment’ the print statement in the second cell to be able explore the structure of the JSON data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">requests.utils</span> <span class="kn">import</span> <span class="n">requote_uri</span>
+
+
+<span class="n">root_url</span> <span class="o">=</span> <span class="s1">&#39;https://musicbrainz.org/ws/2/&#39;</span>
+
+<span class="c1">## The parameters for the API call are defined as variables</span>
+<span class="n">entity</span> <span class="o">=</span> <span class="s1">&#39;artist&#39;</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;David Bowie&#39;</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="n">requote_uri</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+<span class="n">api_call</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root_url</span><span class="si">}{</span><span class="n">entity</span><span class="si">}</span><span class="s1">?query=</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s1">&amp;fmt=</span><span class="si">{</span><span class="n">fmt</span><span class="si">}</span><span class="s1">&amp;limit=</span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">api_call</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">musicbrainz_results</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="n">musicbrainz_results</span><span class="p">[</span><span class="s1">&#39;artists&#39;</span><span class="p">]:</span>
+    <span class="c1">#print(json.dumps(artist, indent=4))</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+    <span class="n">artist_type</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">artist_type</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+
+    <span class="n">begin</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    
+    <span class="k">if</span> <span class="s1">&#39;life-span&#39;</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">:</span>
+        <span class="n">begin</span> <span class="o">=</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;life-span&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;begin&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;life-span&#39;</span><span class="p">][</span><span class="s1">&#39;ended&#39;</span><span class="p">]:</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;life-span&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+            
+    <span class="k">if</span> <span class="s1">&#39;begin-area&#39;</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">:</span>
+        <span class="n">begin</span> <span class="o">+=</span> <span class="s1">&#39; in &#39;</span> <span class="o">+</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;begin-area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sort-name&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;end-area&#39;</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">:</span>
+        <span class="n">end</span> <span class="o">+=</span> <span class="s1">&#39; in &#39;</span> <span class="o">+</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;end-area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sort-name&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+        
+    <span class="c1">## Add your code below</span>
+    <span class="k">if</span> <span class="n">artist_type</span> <span class="o">==</span> <span class="s1">&#39;Person&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Born&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Formation&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">begin</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">end</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">artist_type</span> <span class="o">==</span> <span class="s1">&#39;Person&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Died&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Breakup&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+    
+    <span class="n">aliases</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="s1">&#39;aliases&#39;</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">alias</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;aliases&#39;</span><span class="p">]:</span>
+            <span class="n">aliases</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alias</span><span class="p">[</span><span class="s1">&#39;sort-name&#39;</span><span class="p">])</span>
+        
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">aliases</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Aliases&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">aliases</span><span class="p">)</span> <span class="p">)</span>
+        
+    <span class="n">tags</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="s1">&#39;tags&#39;</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;tags&#39;</span><span class="p">]:</span>
+            <span class="n">tags</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tag</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+        
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tags&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span> <span class="p">)</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    
+
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-9">
+<h2>Exercise 10.9<a class="headerlink" href="#exercise-10-9" title="Permalink to this headline">#</a></h2>
+<p><em><a class="reference external" href="https://journals.plos.org/plosone/">PLOS One</a></em> is a peer reviewed open access journal. The <em>PLOS One</em> API can be used to request metadata about all the articles that have been published in the journal. In this API, you can refer to specific articles using their <a class="reference external" href="https://www.doi.org/">DOI</a>.</p>
+<p>Such requests can be sent using API calls with the following structure:</p>
+<p><a class="reference external" href="https://api.plos.org/search?q=id:%7Bdoi%7D">https://api.plos.org/search?q=id:{doi}</a></p>
+<p>To acquire data about the article with DOI <a class="reference external" href="https://doi.org/10.1371/journal.pone.0270739">10.1371/journal.pone.0270739</a>, for example, you can use the following API call:</p>
+<p><a class="reference external" href="https://api.plos.org/search?q=id:10.1371/journal.pone.0270739">https://api.plos.org/search?q=id:10.1371/journal.pone.0270739</a></p>
+<p>Try to write code which can get hold of metadata about the articles with the following DOIs:</p>
+<ul class="simple">
+<li><p>10.1371/journal.pone.0169045</p></li>
+<li><p>10.1371/journal.pone.0271074</p></li>
+<li><p>10.1371/journal.pone.0268993</p></li>
+</ul>
+<p>For each article, print the title, the publication date, the article type, a list of all the authors and the abstract.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">dois</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;10.1371/journal.pone.0169045&#39;</span><span class="p">,</span><span class="s1">&#39;10.1371/journal.pone.0268993&#39;</span><span class="p">,</span><span class="s1">&#39;10.1371/journal.pone.0271074&#39;</span> <span class="p">]</span>
+
+
+<span class="n">root_url</span> <span class="o">=</span> <span class="s1">&#39;https://api.plos.org/search?q=id:&#39;</span>
+
+<span class="c1">## The parameters for the API call are defined as variables</span>
+<span class="k">for</span> <span class="n">doi</span> <span class="ow">in</span> <span class="n">dois</span><span class="p">:</span>
+
+    <span class="n">api_call</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root_url</span><span class="si">}{</span><span class="n">doi</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">api_call</span><span class="p">)</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">api_call</span> <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">response</span><span class="p">:</span> 
+        <span class="n">plos_results</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">plos_results</span><span class="p">[</span><span class="s1">&#39;response&#39;</span><span class="p">][</span><span class="s1">&#39;docs&#39;</span><span class="p">]:</span>
+            <span class="c1">#print(article)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">article</span><span class="p">[</span><span class="s1">&#39;title_display&#39;</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">article</span><span class="p">[</span><span class="s1">&#39;article_type&#39;</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">article</span><span class="p">[</span><span class="s1">&#39;publication_date&#39;</span><span class="p">])</span>
+            <span class="n">authors</span> <span class="o">=</span> <span class="n">article</span><span class="p">[</span><span class="s1">&#39;author_display&#39;</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">author</span> <span class="ow">in</span> <span class="n">authors</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">author</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">article</span><span class="p">[</span><span class="s1">&#39;abstract&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
