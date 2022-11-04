@@ -43,3 +43,9 @@ pull requests.
 
 Each merged pull request will update the website and create a release that
 includes a zipfile containing the original notebooks for students to use.
+
+## Authors
+
+The course materials have been created by Peter Verhaar and Ben Companjen,
+except where noted otherwise.
+The copyright is held by Leiden University Libraries.
