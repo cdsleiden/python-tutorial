@@ -1,0 +1,771 @@
+location,subject,year,pisa_read,pisa_math,location_name,continent
+AUS,BOY,2000,513.0,NA,Australia,Australia
+AUS,BOY,2003,506.0,527.0,Australia,Australia
+AUS,BOY,2006,495.0,527.0,Australia,Australia
+AUS,BOY,2009,496.0,519.0,Australia,Australia
+AUS,BOY,2012,495.09,510.115,Australia,Australia
+AUS,BOY,2015,487.0,497.0,Australia,Australia
+AUS,BOY,2018,487.0,494.0,Australia,Australia
+AUS,GIRL,2000,546.0,NA,Australia,Australia
+AUS,GIRL,2003,545.0,522.0,Australia,Australia
+AUS,GIRL,2006,532.0,513.0,Australia,Australia
+AUS,GIRL,2009,533.0,509.0,Australia,Australia
+AUS,GIRL,2012,529.5419999999999,497.82099999999997,Australia,Australia
+AUS,GIRL,2015,519.0,491.0,Australia,Australia
+AUS,GIRL,2018,519.0,488.0,Australia,Australia
+AUT,BOY,2000,476.0,NA,Austria,Europe
+AUT,BOY,2003,467.0,509.0,Austria,Europe
+AUT,BOY,2006,468.0,517.0,Austria,Europe
+AUT,BOY,2012,471.093,516.682,Austria,Europe
+AUT,BOY,2015,475.0,510.0,Austria,Europe
+AUT,BOY,2018,471.0,505.0,Austria,Europe
+AUT,GIRL,2000,509.0,NA,Austria,Europe
+AUT,GIRL,2003,514.0,502.0,Austria,Europe
+AUT,GIRL,2006,513.0,494.0,Austria,Europe
+AUT,GIRL,2012,508.02099999999996,494.462,Austria,Europe
+AUT,GIRL,2015,495.0,483.0,Austria,Europe
+AUT,GIRL,2018,499.0,492.0,Austria,Europe
+BEL,BOY,2000,492.0,NA,Belgium,Europe
+BEL,BOY,2003,489.0,533.0,Belgium,Europe
+BEL,BOY,2006,482.0,524.0,Belgium,Europe
+BEL,BOY,2009,493.0,526.0,Belgium,Europe
+BEL,BOY,2012,492.755,520.081,Belgium,Europe
+BEL,BOY,2015,491.0,514.0,Belgium,Europe
+BEL,BOY,2018,482.0,514.0,Belgium,Europe
+BEL,GIRL,2000,525.0,NA,Belgium,Europe
+BEL,GIRL,2003,526.0,525.0,Belgium,Europe
+BEL,GIRL,2006,522.0,517.0,Belgium,Europe
+BEL,GIRL,2009,520.0,504.0,Belgium,Europe
+BEL,GIRL,2012,524.602,508.935,Belgium,Europe
+BEL,GIRL,2015,507.0,500.0,Belgium,Europe
+BEL,GIRL,2018,504.0,502.0,Belgium,Europe
+CAN,BOY,2000,519.0,NA,Canada,North America
+CAN,BOY,2003,514.0,541.0,Canada,North America
+CAN,BOY,2006,511.0,534.0,Canada,North America
+CAN,BOY,2009,507.0,533.0,Canada,North America
+CAN,BOY,2012,505.51199999999994,523.154,Canada,North America
+CAN,BOY,2015,514.0,520.0,Canada,North America
+CAN,BOY,2018,506.0,514.0,Canada,North America
+CAN,GIRL,2000,551.0,NA,Canada,North America
+CAN,GIRL,2003,546.0,530.0,Canada,North America
+CAN,GIRL,2006,543.0,520.0,Canada,North America
+CAN,GIRL,2009,542.0,521.0,Canada,North America
+CAN,GIRL,2012,540.6569999999999,513.0219999999999,Canada,North America
+CAN,GIRL,2015,540.0,511.0,Canada,North America
+CAN,GIRL,2018,535.0,510.0,Canada,North America
+CZE,BOY,2000,473.0,NA,Czech Republic,Europe
+CZE,BOY,2003,473.0,524.0,Czech Republic,Europe
+CZE,BOY,2006,463.0,514.0,Czech Republic,Europe
+CZE,BOY,2009,456.0,495.0,Czech Republic,Europe
+CZE,BOY,2012,473.983,504.71,Czech Republic,Europe
+CZE,BOY,2015,475.0,496.0,Czech Republic,Europe
+CZE,BOY,2018,474.0,501.0,Czech Republic,Europe
+CZE,GIRL,2000,510.0,NA,Czech Republic,Europe
+CZE,GIRL,2003,504.0,509.0,Czech Republic,Europe
+CZE,GIRL,2006,509.0,504.0,Czech Republic,Europe
+CZE,GIRL,2009,504.0,490.0,Czech Republic,Europe
+CZE,GIRL,2012,512.79,492.903,Czech Republic,Europe
+CZE,GIRL,2015,501.0,489.0,Czech Republic,Europe
+CZE,GIRL,2018,507.0,498.0,Czech Republic,Europe
+DNK,BOY,2000,485.0,NA,Denmark,Europe
+DNK,BOY,2003,479.0,523.0,Denmark,Europe
+DNK,BOY,2006,480.0,518.0,Denmark,Europe
+DNK,BOY,2009,480.0,511.0,Denmark,Europe
+DNK,BOY,2012,480.89,506.95300000000003,Denmark,Europe
+DNK,BOY,2015,489.0,516.0,Denmark,Europe
+DNK,BOY,2018,486.0,511.0,Denmark,Europe
+DNK,GIRL,2000,510.0,NA,Denmark,Europe
+DNK,GIRL,2003,505.0,506.0,Denmark,Europe
+DNK,GIRL,2006,509.0,508.0,Denmark,Europe
+DNK,GIRL,2009,509.0,495.0,Denmark,Europe
+DNK,GIRL,2012,511.529,493.029,Denmark,Europe
+DNK,GIRL,2015,511.0,506.0,Denmark,Europe
+DNK,GIRL,2018,516.0,507.0,Denmark,Europe
+FIN,BOY,2000,520.0,NA,Finland,Europe
+FIN,BOY,2003,521.0,548.0,Finland,Europe
+FIN,BOY,2006,521.0,554.0,Finland,Europe
+FIN,BOY,2009,508.0,542.0,Finland,Europe
+FIN,BOY,2012,494.006,517.391,Finland,Europe
+FIN,BOY,2015,504.0,507.0,Finland,Europe
+FIN,BOY,2018,495.0,504.0,Finland,Europe
+FIN,GIRL,2000,571.0,NA,Finland,Europe
+FIN,GIRL,2003,565.0,541.0,Finland,Europe
+FIN,GIRL,2006,572.0,543.0,Finland,Europe
+FIN,GIRL,2009,563.0,539.0,Finland,Europe
+FIN,GIRL,2012,555.7080000000001,520.185,Finland,Europe
+FIN,GIRL,2015,551.0,515.0,Finland,Europe
+FIN,GIRL,2018,546.0,510.0,Finland,Europe
+FRA,BOY,2000,490.0,NA,France,Europe
+FRA,BOY,2003,476.0,515.0,France,Europe
+FRA,BOY,2006,470.0,499.0,France,Europe
+FRA,BOY,2009,475.0,505.0,France,Europe
+FRA,BOY,2012,482.972,499.355,France,Europe
+FRA,BOY,2015,485.0,496.0,France,Europe
+FRA,BOY,2018,480.0,499.0,France,Europe
+FRA,GIRL,2000,519.0,NA,France,Europe
+FRA,GIRL,2003,514.0,507.0,France,Europe
+FRA,GIRL,2006,505.0,492.0,France,Europe
+FRA,GIRL,2009,515.0,489.0,France,Europe
+FRA,GIRL,2012,526.765,490.853,France,Europe
+FRA,GIRL,2015,514.0,490.0,France,Europe
+FRA,GIRL,2018,505.0,492.0,France,Europe
+DEU,BOY,2000,468.0,NA,Germany,Europe
+DEU,BOY,2003,471.0,508.0,Germany,Europe
+DEU,BOY,2006,475.0,513.0,Germany,Europe
+DEU,BOY,2009,478.0,520.0,Germany,Europe
+DEU,BOY,2012,486.0,520.19,Germany,Europe
+DEU,BOY,2015,499.0,514.0,Germany,Europe
+DEU,BOY,2018,486.0,503.0,Germany,Europe
+DEU,GIRL,2000,502.0,NA,Germany,Europe
+DEU,GIRL,2003,513.0,499.0,Germany,Europe
+DEU,GIRL,2006,517.0,494.0,Germany,Europe
+DEU,GIRL,2009,518.0,505.0,Germany,Europe
+DEU,GIRL,2012,530.119,506.625,Germany,Europe
+DEU,GIRL,2015,520.0,498.0,Germany,Europe
+DEU,GIRL,2018,512.0,496.0,Germany,Europe
+GRC,BOY,2000,456.0,NA,Greece,Europe
+GRC,BOY,2003,453.0,455.0,Greece,Europe
+GRC,BOY,2006,432.0,462.0,Greece,Europe
+GRC,BOY,2009,459.0,473.0,Greece,Europe
+GRC,BOY,2012,451.718,457.039,Greece,Europe
+GRC,BOY,2015,449.0,454.0,Greece,Europe
+GRC,BOY,2018,437.0,452.0,Greece,Europe
+GRC,GIRL,2000,493.0,NA,Greece,Europe
+GRC,GIRL,2003,490.0,436.0,Greece,Europe
+GRC,GIRL,2006,488.0,457.0,Greece,Europe
+GRC,GIRL,2009,506.0,459.0,Greece,Europe
+GRC,GIRL,2012,502.19800000000004,448.98400000000004,Greece,Europe
+GRC,GIRL,2015,486.0,454.0,Greece,Europe
+GRC,GIRL,2018,479.0,451.0,Greece,Europe
+HUN,BOY,2000,465.0,NA,Hungary,Europe
+HUN,BOY,2003,467.0,494.0,Hungary,Europe
+HUN,BOY,2006,463.0,496.0,Hungary,Europe
+HUN,BOY,2009,475.0,496.0,Hungary,Europe
+HUN,BOY,2012,467.964,481.749,Hungary,Europe
+HUN,BOY,2015,457.0,481.0,Hungary,Europe
+HUN,BOY,2018,463.0,486.0,Hungary,Europe
+HUN,GIRL,2000,496.0,NA,Hungary,Europe
+HUN,GIRL,2003,498.0,486.0,Hungary,Europe
+HUN,GIRL,2006,503.0,486.0,Hungary,Europe
+HUN,GIRL,2009,513.0,484.0,Hungary,Europe
+HUN,GIRL,2012,507.54900000000004,472.664,Hungary,Europe
+HUN,GIRL,2015,482.0,473.0,Hungary,Europe
+HUN,GIRL,2018,489.0,477.0,Hungary,Europe
+ISL,BOY,2000,488.0,NA,Iceland,Europe
+ISL,BOY,2003,464.0,508.0,Iceland,Europe
+ISL,BOY,2006,460.0,503.0,Iceland,Europe
+ISL,BOY,2009,478.0,508.0,Iceland,Europe
+ISL,BOY,2012,457.275,489.72,Iceland,Europe
+ISL,BOY,2015,460.0,487.0,Iceland,Europe
+ISL,BOY,2018,454.0,490.0,Iceland,Europe
+ISL,GIRL,2000,528.0,NA,Iceland,Europe
+ISL,GIRL,2003,522.0,523.0,Iceland,Europe
+ISL,GIRL,2006,509.0,508.0,Iceland,Europe
+ISL,GIRL,2009,522.0,505.0,Iceland,Europe
+ISL,GIRL,2012,508.39,495.94699999999995,Iceland,Europe
+ISL,GIRL,2015,502.0,489.0,Iceland,Europe
+ISL,GIRL,2018,494.0,500.0,Iceland,Europe
+IRL,BOY,2000,513.0,NA,Ireland,Europe
+IRL,BOY,2003,501.0,510.0,Ireland,Europe
+IRL,BOY,2006,500.0,507.0,Ireland,Europe
+IRL,BOY,2009,476.0,491.0,Ireland,Europe
+IRL,BOY,2012,509.153,509.035,Ireland,Europe
+IRL,BOY,2015,515.0,512.0,Ireland,Europe
+IRL,BOY,2018,506.0,503.0,Ireland,Europe
+IRL,GIRL,2000,542.0,NA,Ireland,Europe
+IRL,GIRL,2003,530.0,495.0,Ireland,Europe
+IRL,GIRL,2006,534.0,496.0,Ireland,Europe
+IRL,GIRL,2009,515.0,483.0,Ireland,Europe
+IRL,GIRL,2012,537.669,493.705,Ireland,Europe
+IRL,GIRL,2015,527.0,495.0,Ireland,Europe
+IRL,GIRL,2018,530.0,497.0,Ireland,Europe
+ITA,BOY,2000,469.0,NA,Italy,Europe
+ITA,BOY,2003,455.0,475.0,Italy,Europe
+ITA,BOY,2006,448.0,470.0,Italy,Europe
+ITA,BOY,2009,464.0,490.0,Italy,Europe
+ITA,BOY,2012,470.93800000000005,494.199,Italy,Europe
+ITA,BOY,2015,477.0,500.0,Italy,Europe
+ITA,BOY,2018,464.0,494.0,Italy,Europe
+ITA,GIRL,2000,507.0,NA,Italy,Europe
+ITA,GIRL,2003,495.0,457.0,Italy,Europe
+ITA,GIRL,2006,489.0,453.0,Italy,Europe
+ITA,GIRL,2009,510.0,475.0,Italy,Europe
+ITA,GIRL,2012,509.945,475.79400000000004,Italy,Europe
+ITA,GIRL,2015,493.0,480.0,Italy,Europe
+ITA,GIRL,2018,489.0,479.0,Italy,Europe
+JPN,BOY,2000,507.0,NA,Japan,Asia
+JPN,BOY,2003,487.0,539.0,Japan,Asia
+JPN,BOY,2006,483.0,533.0,Japan,Asia
+JPN,BOY,2009,501.0,534.0,Japan,Asia
+JPN,BOY,2012,526.618,544.884,Japan,Asia
+JPN,BOY,2015,509.0,539.0,Japan,Asia
+JPN,BOY,2018,493.0,532.0,Japan,Asia
+JPN,GIRL,2000,537.0,NA,Japan,Asia
+JPN,GIRL,2003,509.0,530.0,Japan,Asia
+JPN,GIRL,2006,513.0,513.0,Japan,Asia
+JPN,GIRL,2009,540.0,524.0,Japan,Asia
+JPN,GIRL,2012,550.724,527.011,Japan,Asia
+JPN,GIRL,2015,523.0,525.0,Japan,Asia
+JPN,GIRL,2018,514.0,522.0,Japan,Asia
+KOR,BOY,2000,519.0,NA,Korea,Asia
+KOR,BOY,2003,525.0,552.0,Korea,Asia
+KOR,BOY,2006,539.0,552.0,Korea,Asia
+KOR,BOY,2009,523.0,548.0,Korea,Asia
+KOR,BOY,2012,524.965,562.114,Korea,Asia
+KOR,BOY,2015,498.0,521.0,Korea,Asia
+KOR,BOY,2018,503.0,528.0,Korea,Asia
+KOR,GIRL,2000,533.0,NA,Korea,Asia
+KOR,GIRL,2003,547.0,528.0,Korea,Asia
+KOR,GIRL,2006,574.0,543.0,Korea,Asia
+KOR,GIRL,2009,558.0,544.0,Korea,Asia
+KOR,GIRL,2012,548.207,544.193,Korea,Asia
+KOR,GIRL,2015,539.0,528.0,Korea,Asia
+KOR,GIRL,2018,526.0,524.0,Korea,Asia
+LUX,BOY,2000,429.0,NA,Luxembourg,Europe
+LUX,BOY,2003,463.0,502.0,Luxembourg,Europe
+LUX,BOY,2006,464.0,498.0,Luxembourg,Europe
+LUX,BOY,2009,453.0,499.0,Luxembourg,Europe
+LUX,BOY,2012,473.046,502.19300000000004,Luxembourg,Europe
+LUX,BOY,2015,471.0,491.0,Luxembourg,Europe
+LUX,BOY,2018,456.0,487.0,Luxembourg,Europe
+LUX,GIRL,2000,456.0,NA,Luxembourg,Europe
+LUX,GIRL,2003,496.0,485.0,Luxembourg,Europe
+LUX,GIRL,2006,495.0,482.0,Luxembourg,Europe
+LUX,GIRL,2009,492.0,479.0,Luxembourg,Europe
+LUX,GIRL,2012,503.024,477.11699999999996,Luxembourg,Europe
+LUX,GIRL,2015,492.0,480.0,Luxembourg,Europe
+LUX,GIRL,2018,485.0,480.0,Luxembourg,Europe
+MEX,BOY,2000,411.0,NA,Mexico,South America
+MEX,BOY,2003,389.0,391.0,Mexico,South America
+MEX,BOY,2006,393.0,410.0,Mexico,South America
+MEX,BOY,2009,413.0,425.0,Mexico,South America
+MEX,BOY,2012,411.365,420.411,Mexico,South America
+MEX,BOY,2015,416.0,412.0,Mexico,South America
+MEX,BOY,2018,415.0,415.0,Mexico,South America
+MEX,GIRL,2000,432.0,NA,Mexico,South America
+MEX,GIRL,2003,410.0,380.0,Mexico,South America
+MEX,GIRL,2006,427.0,401.0,Mexico,South America
+MEX,GIRL,2009,438.0,412.0,Mexico,South America
+MEX,GIRL,2012,435.272,406.42699999999996,Mexico,South America
+MEX,GIRL,2015,431.0,404.0,Mexico,South America
+MEX,GIRL,2018,426.0,403.0,Mexico,South America
+NLD,BOY,2003,503.0,540.0,Netherlands,Europe
+NLD,BOY,2006,495.0,537.0,Netherlands,Europe
+NLD,BOY,2009,496.0,534.0,Netherlands,Europe
+NLD,BOY,2012,498.31699999999995,527.967,Netherlands,Europe
+NLD,BOY,2015,491.0,513.0,Netherlands,Europe
+NLD,BOY,2018,470.0,520.0,Netherlands,Europe
+NLD,GIRL,2003,524.0,535.0,Netherlands,Europe
+NLD,GIRL,2006,519.0,524.0,Netherlands,Europe
+NLD,GIRL,2009,521.0,517.0,Netherlands,Europe
+NLD,GIRL,2012,524.761,517.738,Netherlands,Europe
+NLD,GIRL,2015,515.0,511.0,Netherlands,Europe
+NLD,GIRL,2018,499.0,519.0,Netherlands,Europe
+NZL,BOY,2000,507.0,NA,New Zealand,Australia
+NZL,BOY,2003,508.0,531.0,New Zealand,Australia
+NZL,BOY,2006,502.0,527.0,New Zealand,Australia
+NZL,BOY,2009,499.0,523.0,New Zealand,Australia
+NZL,BOY,2012,495.365,507.11199999999997,New Zealand,Australia
+NZL,BOY,2015,493.0,499.0,New Zealand,Australia
+NZL,BOY,2018,491.0,499.0,New Zealand,Australia
+NZL,GIRL,2000,553.0,NA,New Zealand,Australia
+NZL,GIRL,2003,535.0,516.0,New Zealand,Australia
+NZL,GIRL,2006,539.0,517.0,New Zealand,Australia
+NZL,GIRL,2009,544.0,515.0,New Zealand,Australia
+NZL,GIRL,2012,529.765,492.05699999999996,New Zealand,Australia
+NZL,GIRL,2015,526.0,491.0,New Zealand,Australia
+NZL,GIRL,2018,520.0,490.0,New Zealand,Australia
+NOR,BOY,2000,486.0,NA,Norway,Europe
+NOR,BOY,2003,475.0,498.0,Norway,Europe
+NOR,BOY,2006,462.0,493.0,Norway,Europe
+NOR,BOY,2009,480.0,500.0,Norway,Europe
+NOR,BOY,2012,481.284,490.399,Norway,Europe
+NOR,BOY,2015,494.0,501.0,Norway,Europe
+NOR,BOY,2018,476.0,497.0,Norway,Europe
+NOR,GIRL,2000,529.0,NA,Norway,Europe
+NOR,GIRL,2003,525.0,492.0,Norway,Europe
+NOR,GIRL,2006,508.0,487.0,Norway,Europe
+NOR,GIRL,2009,527.0,495.0,Norway,Europe
+NOR,GIRL,2012,527.771,488.293,Norway,Europe
+NOR,GIRL,2015,533.0,503.0,Norway,Europe
+NOR,GIRL,2018,523.0,505.0,Norway,Europe
+POL,BOY,2000,461.0,NA,Poland,Europe
+POL,BOY,2003,477.0,493.0,Poland,Europe
+POL,BOY,2006,487.0,500.0,Poland,Europe
+POL,BOY,2009,476.0,497.0,Poland,Europe
+POL,BOY,2012,496.70599999999996,519.564,Poland,Europe
+POL,BOY,2015,491.0,510.0,Poland,Europe
+POL,BOY,2018,495.0,516.0,Poland,Europe
+POL,GIRL,2000,497.0,NA,Poland,Europe
+POL,GIRL,2003,516.0,487.0,Poland,Europe
+POL,GIRL,2006,528.0,491.0,Poland,Europe
+POL,GIRL,2009,525.0,493.0,Poland,Europe
+POL,GIRL,2012,538.687,515.533,Poland,Europe
+POL,GIRL,2015,521.0,499.0,Poland,Europe
+POL,GIRL,2018,528.0,515.0,Poland,Europe
+PRT,BOY,2000,458.0,NA,Portugal,Europe
+PRT,BOY,2003,459.0,472.0,Portugal,Europe
+PRT,BOY,2006,455.0,474.0,Portugal,Europe
+PRT,BOY,2009,470.0,493.0,Portugal,Europe
+PRT,BOY,2012,468.39,492.70300000000003,Portugal,Europe
+PRT,BOY,2015,490.0,497.0,Portugal,Europe
+PRT,BOY,2018,480.0,497.0,Portugal,Europe
+PRT,GIRL,2000,482.0,NA,Portugal,Europe
+PRT,GIRL,2003,495.0,460.0,Portugal,Europe
+PRT,GIRL,2006,488.0,459.0,Portugal,Europe
+PRT,GIRL,2009,508.0,481.0,Portugal,Europe
+PRT,GIRL,2012,507.56199999999995,481.296,Portugal,Europe
+PRT,GIRL,2015,507.0,487.0,Portugal,Europe
+PRT,GIRL,2018,504.0,488.0,Portugal,Europe
+SVK,BOY,2003,453.0,507.0,Slovak Republic,Europe
+SVK,BOY,2006,446.0,499.0,Slovak Republic,Europe
+SVK,BOY,2009,452.0,498.0,Slovak Republic,Europe
+SVK,BOY,2012,444.08099999999996,486.134,Slovak Republic,Europe
+SVK,BOY,2015,435.0,478.0,Slovak Republic,Europe
+SVK,BOY,2018,441.0,488.0,Slovak Republic,Europe
+SVK,GIRL,2003,486.0,489.0,Slovak Republic,Europe
+SVK,GIRL,2006,488.0,485.0,Slovak Republic,Europe
+SVK,GIRL,2009,503.0,495.0,Slovak Republic,Europe
+SVK,GIRL,2012,483.30300000000005,476.712,Slovak Republic,Europe
+SVK,GIRL,2015,471.0,472.0,Slovak Republic,Europe
+SVK,GIRL,2018,475.0,484.0,Slovak Republic,Europe
+ESP,BOY,2000,481.0,NA,Spain,Europe
+ESP,BOY,2003,461.0,490.0,Spain,Europe
+ESP,BOY,2006,443.0,484.0,Spain,Europe
+ESP,BOY,2009,467.0,493.0,Spain,Europe
+ESP,BOY,2012,473.806,492.42199999999997,Spain,Europe
+ESP,BOY,2015,485.0,494.0,Spain,Europe
+ESP,GIRL,2000,505.0,NA,Spain,Europe
+ESP,GIRL,2003,500.0,481.0,Spain,Europe
+ESP,GIRL,2006,479.0,476.0,Spain,Europe
+ESP,GIRL,2009,496.0,474.0,Spain,Europe
+ESP,GIRL,2012,502.51099999999997,475.965,Spain,Europe
+ESP,GIRL,2015,506.0,478.0,Spain,Europe
+SWE,BOY,2000,499.0,NA,Sweden,Europe
+SWE,BOY,2003,496.0,512.0,Sweden,Europe
+SWE,BOY,2006,488.0,505.0,Sweden,Europe
+SWE,BOY,2009,475.0,493.0,Sweden,Europe
+SWE,BOY,2012,457.991,476.916,Sweden,Europe
+SWE,BOY,2015,481.0,493.0,Sweden,Europe
+SWE,BOY,2018,489.0,502.0,Sweden,Europe
+SWE,GIRL,2000,536.0,NA,Sweden,Europe
+SWE,GIRL,2003,533.0,506.0,Sweden,Europe
+SWE,GIRL,2006,528.0,500.0,Sweden,Europe
+SWE,GIRL,2009,521.0,495.0,Sweden,Europe
+SWE,GIRL,2012,509.135,479.629,Sweden,Europe
+SWE,GIRL,2015,520.0,495.0,Sweden,Europe
+SWE,GIRL,2018,523.0,503.0,Sweden,Europe
+CHE,BOY,2000,480.0,NA,Switzerland,Europe
+CHE,BOY,2003,482.0,535.0,Switzerland,Europe
+CHE,BOY,2006,484.0,536.0,Switzerland,Europe
+CHE,BOY,2009,481.0,544.0,Switzerland,Europe
+CHE,BOY,2012,491.074,537.369,Switzerland,Europe
+CHE,BOY,2015,480.0,527.0,Switzerland,Europe
+CHE,BOY,2018,469.0,519.0,Switzerland,Europe
+CHE,GIRL,2000,510.0,NA,Switzerland,Europe
+CHE,GIRL,2003,517.0,518.0,Switzerland,Europe
+CHE,GIRL,2006,515.0,523.0,Switzerland,Europe
+CHE,GIRL,2009,520.0,524.0,Switzerland,Europe
+CHE,GIRL,2012,527.064,524.4730000000001,Switzerland,Europe
+CHE,GIRL,2015,505.0,515.0,Switzerland,Europe
+CHE,GIRL,2018,500.0,512.0,Switzerland,Europe
+TUR,BOY,2003,426.0,430.0,Turkey,Asia
+TUR,BOY,2006,427.0,427.0,Turkey,Asia
+TUR,BOY,2009,443.0,451.0,Turkey,Asia
+TUR,BOY,2012,452.843,451.934,Turkey,Asia
+TUR,BOY,2015,414.0,423.0,Turkey,Asia
+TUR,BOY,2018,453.0,456.0,Turkey,Asia
+TUR,GIRL,2003,459.0,415.0,Turkey,Asia
+TUR,GIRL,2006,471.0,421.0,Turkey,Asia
+TUR,GIRL,2009,486.0,440.0,Turkey,Asia
+TUR,GIRL,2012,498.64,443.94800000000004,Turkey,Asia
+TUR,GIRL,2015,442.0,418.0,Turkey,Asia
+TUR,GIRL,2018,478.0,451.0,Turkey,Asia
+GBR,BOY,2006,480.0,504.0,United Kingdom,Europe
+GBR,BOY,2009,481.0,503.0,United Kingdom,Europe
+GBR,BOY,2012,486.631,500.295,United Kingdom,Europe
+GBR,BOY,2015,487.0,498.0,United Kingdom,Europe
+GBR,BOY,2018,494.0,508.0,United Kingdom,Europe
+GBR,GIRL,2006,510.0,487.0,United Kingdom,Europe
+GBR,GIRL,2009,507.0,482.0,United Kingdom,Europe
+GBR,GIRL,2012,511.534,487.815,United Kingdom,Europe
+GBR,GIRL,2015,509.0,487.0,United Kingdom,Europe
+GBR,GIRL,2018,514.0,496.0,United Kingdom,Europe
+USA,BOY,2000,490.0,NA,United States,North America
+USA,BOY,2003,479.0,486.0,United States,North America
+USA,BOY,2009,488.0,497.0,United States,North America
+USA,BOY,2012,482.49800000000005,483.647,United States,North America
+USA,BOY,2015,487.0,474.0,United States,North America
+USA,BOY,2018,494.0,482.0,United States,North America
+USA,GIRL,2000,518.0,NA,United States,North America
+USA,GIRL,2003,511.0,480.0,United States,North America
+USA,GIRL,2009,513.0,477.0,United States,North America
+USA,GIRL,2012,513.269,478.995,United States,North America
+USA,GIRL,2015,507.0,465.0,United States,North America
+USA,GIRL,2018,517.0,474.0,United States,North America
+BRA,BOY,2000,388.0,NA,Brazil,South America
+BRA,BOY,2003,384.0,365.0,Brazil,South America
+BRA,BOY,2006,376.0,380.0,Brazil,South America
+BRA,BOY,2009,397.0,394.0,Brazil,South America
+BRA,BOY,2012,394.184,400.769,Brazil,South America
+BRA,BOY,2015,395.0,385.0,Brazil,South America
+BRA,BOY,2018,400.0,388.0,Brazil,South America
+BRA,GIRL,2000,404.0,NA,Brazil,South America
+BRA,GIRL,2003,419.0,348.0,Brazil,South America
+BRA,GIRL,2006,408.0,361.0,Brazil,South America
+BRA,GIRL,2009,425.0,379.0,Brazil,South America
+BRA,GIRL,2012,424.73400000000004,382.925,Brazil,South America
+BRA,GIRL,2015,419.0,370.0,Brazil,South America
+BRA,GIRL,2018,426.0,379.0,Brazil,South America
+CHL,BOY,2000,396.0,NA,Chile,South America
+CHL,BOY,2006,434.0,424.0,Chile,South America
+CHL,BOY,2009,439.0,431.0,Chile,South America
+CHL,BOY,2012,429.69599999999997,435.525,Chile,South America
+CHL,BOY,2015,453.0,432.0,Chile,South America
+CHL,BOY,2018,442.0,421.0,Chile,South America
+CHL,GIRL,2000,421.0,NA,Chile,South America
+CHL,GIRL,2006,451.0,396.0,Chile,South America
+CHL,GIRL,2009,461.0,410.0,Chile,South America
+CHL,GIRL,2012,452.371,410.543,Chile,South America
+CHL,GIRL,2015,465.0,413.0,Chile,South America
+CHL,GIRL,2018,462.0,414.0,Chile,South America
+EST,BOY,2006,478.0,515.0,Estonia,Europe
+EST,BOY,2009,480.0,516.0,Estonia,Europe
+EST,BOY,2012,494.319,523.214,Estonia,Europe
+EST,BOY,2015,505.0,522.0,Estonia,Europe
+EST,BOY,2018,508.0,528.0,Estonia,Europe
+EST,GIRL,2006,524.0,514.0,Estonia,Europe
+EST,GIRL,2009,524.0,508.0,Estonia,Europe
+EST,GIRL,2012,537.8330000000001,517.93,Estonia,Europe
+EST,GIRL,2015,533.0,517.0,Estonia,Europe
+EST,GIRL,2018,538.0,519.0,Estonia,Europe
+IDN,BOY,2000,360.0,NA,Indonesia,Asia
+IDN,BOY,2003,369.0,362.0,Indonesia,Asia
+IDN,BOY,2006,384.0,399.0,Indonesia,Asia
+IDN,BOY,2009,383.0,371.0,Indonesia,Asia
+IDN,BOY,2012,382.254,377.376,Indonesia,Asia
+IDN,BOY,2015,386.0,385.0,Indonesia,Asia
+IDN,BOY,2018,358.0,374.0,Indonesia,Asia
+IDN,GIRL,2000,380.0,NA,Indonesia,Asia
+IDN,GIRL,2003,394.0,358.0,Indonesia,Asia
+IDN,GIRL,2006,402.0,382.0,Indonesia,Asia
+IDN,GIRL,2009,420.0,372.0,Indonesia,Asia
+IDN,GIRL,2012,410.408,372.785,Indonesia,Asia
+IDN,GIRL,2015,409.0,387.0,Indonesia,Asia
+IDN,GIRL,2018,383.0,383.0,Indonesia,Asia
+ISR,BOY,2000,444.0,NA,Israel,Asia
+ISR,BOY,2006,417.0,448.0,Israel,Asia
+ISR,BOY,2009,452.0,451.0,Israel,Asia
+ISR,BOY,2012,463.46,472.398,Israel,Asia
+ISR,BOY,2015,467.0,474.0,Israel,Asia
+ISR,BOY,2018,445.0,458.0,Israel,Asia
+ISR,GIRL,2000,459.0,NA,Israel,Asia
+ISR,GIRL,2006,460.0,436.0,Israel,Asia
+ISR,GIRL,2009,495.0,443.0,Israel,Asia
+ISR,GIRL,2012,507.45099999999996,460.749,Israel,Asia
+ISR,GIRL,2015,490.0,466.0,Israel,Asia
+ISR,GIRL,2018,493.0,467.0,Israel,Asia
+RUS,BOY,2000,443.0,NA,Russia,Europe
+RUS,BOY,2003,428.0,473.0,Russia,Europe
+RUS,BOY,2009,437.0,469.0,Russia,Europe
+RUS,BOY,2012,455.147,481.394,Russia,Europe
+RUS,BOY,2015,481.0,497.0,Russia,Europe
+RUS,BOY,2018,466.0,490.0,Russia,Europe
+RUS,GIRL,2000,481.0,NA,Russia,Europe
+RUS,GIRL,2003,456.0,463.0,Russia,Europe
+RUS,GIRL,2009,482.0,467.0,Russia,Europe
+RUS,GIRL,2012,495.144,482.944,Russia,Europe
+RUS,GIRL,2015,507.0,491.0,Russia,Europe
+RUS,GIRL,2018,491.0,485.0,Russia,Europe
+SVN,BOY,2006,467.0,507.0,Slovenia,Europe
+SVN,BOY,2009,456.0,502.0,Slovenia,Europe
+SVN,BOY,2012,454.466,502.74800000000005,Slovenia,Europe
+SVN,BOY,2015,484.0,512.0,Slovenia,Europe
+SVN,BOY,2018,475.0,509.0,Slovenia,Europe
+SVN,GIRL,2006,521.0,502.0,Slovenia,Europe
+SVN,GIRL,2009,511.0,501.0,Slovenia,Europe
+SVN,GIRL,2012,510.15,499.38699999999994,Slovenia,Europe
+SVN,GIRL,2015,528.0,508.0,Slovenia,Europe
+SVN,GIRL,2018,517.0,509.0,Slovenia,Europe
+LVA,BOY,2015,467.0,481.0,Latvia,Europe
+LVA,BOY,2018,462.0,500.0,Latvia,Europe
+LVA,GIRL,2015,509.0,483.0,Latvia,Europe
+LVA,GIRL,2018,495.0,493.0,Latvia,Europe
+AUS,TOT,2000,528.0,NA,Australia,Australia
+AUS,TOT,2003,525.0,524.0,Australia,Australia
+AUS,TOT,2006,513.0,520.0,Australia,Australia
+AUS,TOT,2009,515.0,514.0,Australia,Australia
+AUS,TOT,2012,512.0,504.0,Australia,Australia
+AUS,TOT,2015,503.0,494.0,Australia,Australia
+AUS,TOT,2018,503.0,491.0,Australia,Australia
+AUT,TOT,2000,492.0,NA,Austria,Europe
+AUT,TOT,2003,491.0,506.0,Austria,Europe
+AUT,TOT,2006,490.0,505.0,Austria,Europe
+AUT,TOT,2012,490.0,506.0,Austria,Europe
+AUT,TOT,2015,485.0,497.0,Austria,Europe
+AUT,TOT,2018,484.0,499.0,Austria,Europe
+BEL,TOT,2000,507.0,NA,Belgium,Europe
+BEL,TOT,2003,507.0,529.0,Belgium,Europe
+BEL,TOT,2006,501.0,520.0,Belgium,Europe
+BEL,TOT,2009,506.0,515.0,Belgium,Europe
+BEL,TOT,2012,509.0,515.0,Belgium,Europe
+BEL,TOT,2015,499.0,507.0,Belgium,Europe
+BEL,TOT,2018,493.0,508.0,Belgium,Europe
+CAN,TOT,2000,534.0,NA,Canada,North America
+CAN,TOT,2003,528.0,532.0,Canada,North America
+CAN,TOT,2006,527.0,527.0,Canada,North America
+CAN,TOT,2009,524.0,527.0,Canada,North America
+CAN,TOT,2012,523.0,518.0,Canada,North America
+CAN,TOT,2015,527.0,516.0,Canada,North America
+CAN,TOT,2018,520.0,512.0,Canada,North America
+CZE,TOT,2000,492.0,NA,Czech Republic,Europe
+CZE,TOT,2003,489.0,516.0,Czech Republic,Europe
+CZE,TOT,2006,483.0,510.0,Czech Republic,Europe
+CZE,TOT,2009,478.0,493.0,Czech Republic,Europe
+CZE,TOT,2012,493.0,499.0,Czech Republic,Europe
+CZE,TOT,2015,487.0,492.0,Czech Republic,Europe
+CZE,TOT,2018,490.0,499.0,Czech Republic,Europe
+DNK,TOT,2000,497.0,NA,Denmark,Europe
+DNK,TOT,2003,492.0,514.0,Denmark,Europe
+DNK,TOT,2006,494.0,513.0,Denmark,Europe
+DNK,TOT,2009,495.0,503.0,Denmark,Europe
+DNK,TOT,2012,496.0,500.0,Denmark,Europe
+DNK,TOT,2015,500.0,511.0,Denmark,Europe
+DNK,TOT,2018,501.0,509.0,Denmark,Europe
+FIN,TOT,2000,546.0,NA,Finland,Europe
+FIN,TOT,2003,543.0,544.0,Finland,Europe
+FIN,TOT,2006,547.0,548.0,Finland,Europe
+FIN,TOT,2009,536.0,541.0,Finland,Europe
+FIN,TOT,2012,524.0,519.0,Finland,Europe
+FIN,TOT,2015,526.0,511.0,Finland,Europe
+FIN,TOT,2018,520.0,507.0,Finland,Europe
+FRA,TOT,2000,505.0,NA,France,Europe
+FRA,TOT,2003,496.0,511.0,France,Europe
+FRA,TOT,2006,488.0,496.0,France,Europe
+FRA,TOT,2009,496.0,497.0,France,Europe
+FRA,TOT,2012,505.0,495.0,France,Europe
+FRA,TOT,2015,499.0,493.0,France,Europe
+FRA,TOT,2018,493.0,495.0,France,Europe
+DEU,TOT,2000,484.0,NA,Germany,Europe
+DEU,TOT,2003,491.0,503.0,Germany,Europe
+DEU,TOT,2006,495.0,504.0,Germany,Europe
+DEU,TOT,2009,497.0,513.0,Germany,Europe
+DEU,TOT,2012,508.0,514.0,Germany,Europe
+DEU,TOT,2015,509.0,506.0,Germany,Europe
+DEU,TOT,2018,498.0,500.0,Germany,Europe
+GRC,TOT,2000,474.0,NA,Greece,Europe
+GRC,TOT,2003,472.0,445.0,Greece,Europe
+GRC,TOT,2006,460.0,459.0,Greece,Europe
+GRC,TOT,2009,483.0,466.0,Greece,Europe
+GRC,TOT,2012,477.0,453.0,Greece,Europe
+GRC,TOT,2015,467.0,454.0,Greece,Europe
+GRC,TOT,2018,457.0,451.0,Greece,Europe
+HUN,TOT,2000,480.0,NA,Hungary,Europe
+HUN,TOT,2003,482.0,490.0,Hungary,Europe
+HUN,TOT,2006,482.0,491.0,Hungary,Europe
+HUN,TOT,2009,494.0,490.0,Hungary,Europe
+HUN,TOT,2012,488.0,477.0,Hungary,Europe
+HUN,TOT,2015,470.0,477.0,Hungary,Europe
+HUN,TOT,2018,476.0,481.0,Hungary,Europe
+ISL,TOT,2000,507.0,NA,Iceland,Europe
+ISL,TOT,2003,492.0,515.0,Iceland,Europe
+ISL,TOT,2006,484.0,506.0,Iceland,Europe
+ISL,TOT,2009,500.0,507.0,Iceland,Europe
+ISL,TOT,2012,483.0,493.0,Iceland,Europe
+ISL,TOT,2015,482.0,488.0,Iceland,Europe
+ISL,TOT,2018,474.0,495.0,Iceland,Europe
+IRL,TOT,2000,527.0,NA,Ireland,Europe
+IRL,TOT,2003,515.0,503.0,Ireland,Europe
+IRL,TOT,2006,517.0,501.0,Ireland,Europe
+IRL,TOT,2009,496.0,487.0,Ireland,Europe
+IRL,TOT,2012,523.0,501.0,Ireland,Europe
+IRL,TOT,2015,521.0,504.0,Ireland,Europe
+IRL,TOT,2018,518.0,500.0,Ireland,Europe
+ITA,TOT,2000,487.0,NA,Italy,Europe
+ITA,TOT,2003,476.0,466.0,Italy,Europe
+ITA,TOT,2006,469.0,462.0,Italy,Europe
+ITA,TOT,2009,486.0,483.0,Italy,Europe
+ITA,TOT,2012,490.0,485.0,Italy,Europe
+ITA,TOT,2015,485.0,490.0,Italy,Europe
+ITA,TOT,2018,476.0,487.0,Italy,Europe
+JPN,TOT,2000,522.0,NA,Japan,Asia
+JPN,TOT,2003,498.0,534.0,Japan,Asia
+JPN,TOT,2006,498.0,523.0,Japan,Asia
+JPN,TOT,2009,520.0,529.0,Japan,Asia
+JPN,TOT,2012,538.0,536.0,Japan,Asia
+JPN,TOT,2015,516.0,532.0,Japan,Asia
+JPN,TOT,2018,504.0,527.0,Japan,Asia
+KOR,TOT,2000,525.0,NA,Korea,Asia
+KOR,TOT,2003,534.0,542.0,Korea,Asia
+KOR,TOT,2006,556.0,547.0,Korea,Asia
+KOR,TOT,2009,539.0,546.0,Korea,Asia
+KOR,TOT,2012,536.0,554.0,Korea,Asia
+KOR,TOT,2015,517.0,524.0,Korea,Asia
+KOR,TOT,2018,514.0,526.0,Korea,Asia
+LUX,TOT,2003,479.0,493.0,Luxembourg,Europe
+LUX,TOT,2006,479.0,490.0,Luxembourg,Europe
+LUX,TOT,2009,472.0,489.0,Luxembourg,Europe
+LUX,TOT,2012,488.0,490.0,Luxembourg,Europe
+LUX,TOT,2015,481.0,486.0,Luxembourg,Europe
+LUX,TOT,2018,470.0,483.0,Luxembourg,Europe
+MEX,TOT,2000,422.0,NA,Mexico,South America
+MEX,TOT,2003,400.0,385.0,Mexico,South America
+MEX,TOT,2006,410.0,406.0,Mexico,South America
+MEX,TOT,2009,425.0,419.0,Mexico,South America
+MEX,TOT,2012,424.0,413.0,Mexico,South America
+MEX,TOT,2015,423.0,408.0,Mexico,South America
+MEX,TOT,2018,420.0,409.0,Mexico,South America
+NLD,TOT,2003,513.0,538.0,Netherlands,Europe
+NLD,TOT,2006,507.0,531.0,Netherlands,Europe
+NLD,TOT,2009,508.0,526.0,Netherlands,Europe
+NLD,TOT,2012,511.0,523.0,Netherlands,Europe
+NLD,TOT,2015,503.0,512.0,Netherlands,Europe
+NLD,TOT,2018,485.0,519.0,Netherlands,Europe
+NZL,TOT,2000,529.0,NA,New Zealand,Australia
+NZL,TOT,2003,522.0,523.0,New Zealand,Australia
+NZL,TOT,2006,521.0,522.0,New Zealand,Australia
+NZL,TOT,2009,521.0,519.0,New Zealand,Australia
+NZL,TOT,2012,512.0,500.0,New Zealand,Australia
+NZL,TOT,2015,509.0,495.0,New Zealand,Australia
+NZL,TOT,2018,506.0,494.0,New Zealand,Australia
+NOR,TOT,2000,505.0,NA,Norway,Europe
+NOR,TOT,2003,500.0,495.0,Norway,Europe
+NOR,TOT,2006,484.0,490.0,Norway,Europe
+NOR,TOT,2009,503.0,498.0,Norway,Europe
+NOR,TOT,2012,504.0,489.0,Norway,Europe
+NOR,TOT,2015,513.0,502.0,Norway,Europe
+NOR,TOT,2018,499.0,501.0,Norway,Europe
+POL,TOT,2000,479.0,NA,Poland,Europe
+POL,TOT,2003,497.0,490.0,Poland,Europe
+POL,TOT,2006,508.0,495.0,Poland,Europe
+POL,TOT,2009,500.0,495.0,Poland,Europe
+POL,TOT,2012,518.0,518.0,Poland,Europe
+POL,TOT,2015,506.0,504.0,Poland,Europe
+POL,TOT,2018,512.0,516.0,Poland,Europe
+PRT,TOT,2000,470.0,NA,Portugal,Europe
+PRT,TOT,2003,478.0,466.0,Portugal,Europe
+PRT,TOT,2006,472.0,466.0,Portugal,Europe
+PRT,TOT,2009,489.0,487.0,Portugal,Europe
+PRT,TOT,2012,488.0,487.0,Portugal,Europe
+PRT,TOT,2015,498.0,492.0,Portugal,Europe
+PRT,TOT,2018,492.0,492.0,Portugal,Europe
+SVK,TOT,2003,469.0,498.0,Slovak Republic,Europe
+SVK,TOT,2006,466.0,492.0,Slovak Republic,Europe
+SVK,TOT,2009,477.0,497.0,Slovak Republic,Europe
+SVK,TOT,2012,463.0,482.0,Slovak Republic,Europe
+SVK,TOT,2015,453.0,475.0,Slovak Republic,Europe
+SVK,TOT,2018,458.0,486.0,Slovak Republic,Europe
+ESP,TOT,2000,493.0,NA,Spain,Europe
+ESP,TOT,2003,481.0,485.0,Spain,Europe
+ESP,TOT,2006,461.0,480.0,Spain,Europe
+ESP,TOT,2009,481.0,483.0,Spain,Europe
+ESP,TOT,2012,488.0,484.0,Spain,Europe
+ESP,TOT,2015,496.0,486.0,Spain,Europe
+SWE,TOT,2000,516.0,NA,Sweden,Europe
+SWE,TOT,2003,514.0,509.0,Sweden,Europe
+SWE,TOT,2006,507.0,502.0,Sweden,Europe
+SWE,TOT,2009,497.0,494.0,Sweden,Europe
+SWE,TOT,2012,483.0,478.0,Sweden,Europe
+SWE,TOT,2015,500.0,494.0,Sweden,Europe
+SWE,TOT,2018,506.0,502.0,Sweden,Europe
+CHE,TOT,2000,494.0,NA,Switzerland,Europe
+CHE,TOT,2003,499.0,527.0,Switzerland,Europe
+CHE,TOT,2006,499.0,530.0,Switzerland,Europe
+CHE,TOT,2009,501.0,534.0,Switzerland,Europe
+CHE,TOT,2012,509.0,531.0,Switzerland,Europe
+CHE,TOT,2015,492.0,521.0,Switzerland,Europe
+CHE,TOT,2018,484.0,515.0,Switzerland,Europe
+TUR,TOT,2003,441.0,423.0,Turkey,Asia
+TUR,TOT,2006,447.0,424.0,Turkey,Asia
+TUR,TOT,2009,464.0,445.0,Turkey,Asia
+TUR,TOT,2012,475.0,448.0,Turkey,Asia
+TUR,TOT,2015,428.0,420.0,Turkey,Asia
+TUR,TOT,2018,466.0,454.0,Turkey,Asia
+GBR,TOT,2006,495.0,495.0,United Kingdom,Europe
+GBR,TOT,2009,494.0,492.0,United Kingdom,Europe
+GBR,TOT,2012,499.0,494.0,United Kingdom,Europe
+GBR,TOT,2015,498.0,492.0,United Kingdom,Europe
+GBR,TOT,2018,504.0,502.0,United Kingdom,Europe
+USA,TOT,2000,504.0,NA,United States,North America
+USA,TOT,2003,495.0,483.0,United States,North America
+USA,TOT,2009,500.0,487.0,United States,North America
+USA,TOT,2012,498.0,481.0,United States,North America
+USA,TOT,2015,497.0,470.0,United States,North America
+USA,TOT,2018,505.0,478.0,United States,North America
+BRA,TOT,2000,396.0,NA,Brazil,South America
+BRA,TOT,2003,403.0,356.0,Brazil,South America
+BRA,TOT,2006,393.0,370.0,Brazil,South America
+BRA,TOT,2009,412.0,386.0,Brazil,South America
+BRA,TOT,2012,407.0,389.0,Brazil,South America
+BRA,TOT,2015,407.0,377.0,Brazil,South America
+BRA,TOT,2018,413.0,384.0,Brazil,South America
+CHL,TOT,2000,410.0,NA,Chile,South America
+CHL,TOT,2006,442.0,411.0,Chile,South America
+CHL,TOT,2009,449.0,421.0,Chile,South America
+CHL,TOT,2012,441.0,423.0,Chile,South America
+CHL,TOT,2015,459.0,423.0,Chile,South America
+CHL,TOT,2018,452.0,417.0,Chile,South America
+EST,TOT,2006,501.0,515.0,Estonia,Europe
+EST,TOT,2009,501.0,512.0,Estonia,Europe
+EST,TOT,2012,516.0,521.0,Estonia,Europe
+EST,TOT,2015,519.0,520.0,Estonia,Europe
+EST,TOT,2018,523.0,523.0,Estonia,Europe
+IDN,TOT,2000,371.0,NA,Indonesia,Asia
+IDN,TOT,2003,382.0,360.0,Indonesia,Asia
+IDN,TOT,2006,393.0,391.0,Indonesia,Asia
+IDN,TOT,2009,402.0,371.0,Indonesia,Asia
+IDN,TOT,2012,396.0,375.0,Indonesia,Asia
+IDN,TOT,2015,397.0,386.0,Indonesia,Asia
+IDN,TOT,2018,371.0,379.0,Indonesia,Asia
+ISR,TOT,2000,452.0,NA,Israel,Asia
+ISR,TOT,2006,439.0,442.0,Israel,Asia
+ISR,TOT,2009,474.0,447.0,Israel,Asia
+ISR,TOT,2012,486.0,466.0,Israel,Asia
+ISR,TOT,2015,479.0,470.0,Israel,Asia
+ISR,TOT,2018,470.0,463.0,Israel,Asia
+LVA,TOT,2000,458.0,NA,Latvia,Europe
+LVA,TOT,2003,491.0,483.0,Latvia,Europe
+LVA,TOT,2006,479.0,486.0,Latvia,Europe
+LVA,TOT,2009,484.0,482.0,Latvia,Europe
+LVA,TOT,2012,489.0,491.0,Latvia,Europe
+LVA,TOT,2015,488.0,482.0,Latvia,Europe
+LVA,TOT,2018,479.0,496.0,Latvia,Europe
+RUS,TOT,2000,462.0,NA,Russia,Europe
+RUS,TOT,2003,442.0,468.0,Russia,Europe
+RUS,TOT,2006,440.0,476.0,Russia,Europe
+RUS,TOT,2009,459.0,468.0,Russia,Europe
+RUS,TOT,2012,475.0,482.0,Russia,Europe
+RUS,TOT,2015,495.0,494.0,Russia,Europe
+RUS,TOT,2018,479.0,488.0,Russia,Europe
+SGP,BOY,2015,525.0,564.0,Singapore,Asia
+SGP,GIRL,2015,546.0,564.0,Singapore,Asia
+SVN,TOT,2006,494.0,504.0,Slovenia,Europe
+SVN,TOT,2009,483.0,501.0,Slovenia,Europe
+SVN,TOT,2012,481.0,501.0,Slovenia,Europe
+SVN,TOT,2015,505.0,510.0,Slovenia,Europe
+SVN,TOT,2018,495.0,509.0,Slovenia,Europe
+COL,TOT,2015,425.0,390.0,Colombia,South America
+COL,TOT,2018,412.0,391.0,Colombia,South America
+COL,BOY,2015,417.0,395.0,Colombia,South America
+COL,BOY,2018,407.0,401.0,Colombia,South America
+COL,GIRL,2015,432.0,384.0,Colombia,South America
+COL,GIRL,2018,417.0,381.0,Colombia,South America
+HKG,TOT,2015,527.0,548.0,Hong Kong,Asia
+HKG,BOY,2015,513.0,549.0,Hong Kong,Asia
+HKG,GIRL,2015,541.0,547.0,Hong Kong,Asia
+PER,TOT,2015,398.0,387.0,Peru,South America
+PER,BOY,2015,394.0,391.0,Peru,South America
+PER,GIRL,2015,401.0,382.0,Peru,South America
+SGP,TOT,2015,535.0,564.0,Singapore,Asia
+TWN,TOT,2015,497.0,542.0,Chinese Taipei,Asia
+TWN,BOY,2015,485.0,545.0,Chinese Taipei,Asia
+TWN,GIRL,2015,510.0,539.0,Chinese Taipei,Asia
+MAC,TOT,2015,509.0,544.0,Macau,Asia
+MAC,BOY,2015,493.0,540.0,Macau,Asia
+MAC,GIRL,2015,525.0,548.0,Macau,Asia
+CRI,TOT,2018,426.0,402.0,Costa Rica,South America
+CRI,BOY,2018,419.0,411.0,Costa Rica,South America
+CRI,GIRL,2018,434.0,394.0,Costa Rica,South America
+LTU,TOT,2018,476.0,481.0,Lithuania,Europe
+LTU,BOY,2018,457.0,480.0,Lithuania,Europe
+LTU,GIRL,2018,496.0,482.0,Lithuania,Europe
