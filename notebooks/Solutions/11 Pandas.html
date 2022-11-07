@@ -513,14 +513,21 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
 
-<span class="n">nobel</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;nobel.csv&#39;</span> <span class="p">)</span>
+<span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="s1">&#39;nobel.csv&#39;</span><span class="p">)</span>
+<span class="n">nobel</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="n">path_to_csv</span> <span class="p">)</span>
 
 <span class="c1"># Each row describes a nobel laureate</span>
 <span class="c1"># The number of rows and columns can be found using &#39;shape&#39;</span>
 <span class="c1"># &#39;shape&#39; results in a so-called tuple, with two values. To print only the first value,</span>
 <span class="c1"># use shape[0]</span>
 <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Number of nobel laureates: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nobel</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of nobel laureates: 969
 </pre></div>
 </div>
 </div>
@@ -537,6 +544,30 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Dutch Nobel laureates: 19
+Jacobus Henricus van &#39;t Hoff
+Hendrik Antoon Lorentz
+Pieter Zeeman
+Johannes Diderik van der Waals
+Tobias Michael Carel Asser
+Heike Kamerlingh Onnes
+Christiaan Eijkman
+Petrus (Peter) Josephus Wilhelmus Debye
+Petrus (Peter) Josephus Wilhelmus Debye
+Frits Zernike
+Jan Tinbergen
+Nikolaas Tinbergen
+Tjalling C. Koopmans
+Nicolaas Bloembergen
+Simon van der Meer
+Paul J. Crutzen
+Gerardus &#39;t Hooft
+Martinus J.G. Veltman
+Bernard L. Feringa
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -547,6 +578,61 @@ title="Print to PDF"
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">female</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Full Name&#39;</span><span class="p">]</span> <span class="p">)</span>
     
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of female Nobel laureates: 50
+Marie Curie, née Sklodowska
+Baroness Bertha Sophie Felicita von Suttner, née Countess Kinsky von Chinic und Tettau
+Selma Ottilia Lovisa Lagerlöf
+Marie Curie, née Sklodowska
+Grazia Deledda
+Sigrid Undset
+Jane Addams
+Irène Joliot-Curie
+Pearl Buck
+Gabriela Mistral
+Emily Greene Balch
+Gerty Theresa Cori, née Radnitz
+Maria Goeppert Mayer
+Dorothy Crowfoot Hodgkin
+Nelly Sachs
+Betty Williams
+Mairead Corrigan
+Rosalyn Yalow
+Mother Teresa
+Alva Myrdal
+Barbara McClintock
+Rita Levi-Montalcini
+Gertrude B. Elion
+Nadine Gordimer
+Aung San Suu Kyi
+Rigoberta Menchú Tum
+Toni Morrison
+Christiane Nüsslein-Volhard
+Wislawa Szymborska
+Jody Williams
+Shirin Ebadi
+Elfriede Jelinek
+Linda B. Buck
+Wangari Muta Maathai
+Doris Lessing
+Françoise Barré-Sinoussi
+Ada E. Yonath
+Elinor Ostrom
+Elinor Ostrom
+Herta Müller
+Elizabeth H. Blackburn
+Carol W. Greider
+Ellen Johnson Sirleaf
+Leymah Gbowee
+Tawakkol Karman
+Alice Munro
+May-Britt Moser
+Malala Yousafzai
+Svetlana Alexievich
+Youyou Tu
 </pre></div>
 </div>
 </div>
@@ -573,6 +659,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The oldest Nobel laureate was Leonid Hurwicz, aged 90.0.
+The youngest Nobel laureate was Malala Yousafzai, aged 17.
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -582,11 +674,21 @@ title="Print to PDF"
 <span class="c1"># Next calculate the mean. The result is a Series object. </span>
 <span class="c1"># You can get the indices of this Series using the &#39;index&#39; property</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">The average age in each category:&#39;</span><span class="p">)</span>
-<span class="n">average_age</span> <span class="o">=</span> <span class="n">nobel</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Category&#39;</span><span class="p">)[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">average_age</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">c</span> <span class="p">,</span> <span class="nb">round</span><span class="p">(</span> <span class="n">average_age</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>  <span class="p">)</span> <span class="p">)</span>
+<span class="n">average_age</span> <span class="o">=</span> <span class="n">nobel</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Category&#39;</span><span class="p">)[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> 
 
-    
+<span class="nb">print</span><span class="p">(</span> <span class="n">average_age</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average age in each category:
+Category
+Chemistry     58.134715
+Economics     67.048193
+Literature    64.672566
+Medicine      57.933921
+Peace         61.394231
+Physics       55.850000
 </pre></div>
 </div>
 </div>
@@ -606,6 +708,132 @@ title="Print to PDF"
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">countries</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">c</span> <span class="p">,</span> <span class="n">countries</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
     
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number of Nobel laureates per country
+Argentina: 4
+Australia: 11
+Austria: 15
+Austria-Hungary (Austria): 2
+Austria-Hungary (Bosnia and Herzegovina): 1
+Austria-Hungary (Croatia): 1
+Austria-Hungary (Czech Republic): 4
+Austria-Hungary (Hungary): 3
+Austria-Hungary (Poland): 1
+Austria-Hungary (Slovenia): 1
+Austria-Hungary (Ukraine): 1
+Austrian Empire (Austria): 2
+Austrian Empire (Czech Republic): 1
+Austrian Empire (Italy): 1
+Bavaria (Germany): 1
+Belgium: 9
+Bosnia (Bosnia and Herzegovina): 1
+Brazil: 1
+British India (Bangladesh): 1
+British India (India): 1
+British Mandate of Palestine (Israel): 5
+British Protectorate of Palestine (Israel): 1
+British West Indies (Saint Lucia): 1
+Bulgaria: 1
+Burma (Myanmar): 1
+Canada: 18
+Chile: 2
+China: 12
+Colombia: 2
+Costa Rica: 1
+Crete (Greece): 1
+Cyprus: 1
+Czechoslovakia (Czech Republic): 1
+Denmark: 11
+East Friesland (Germany): 1
+East Timor: 2
+Egypt: 6
+Faroe Islands (Denmark): 1
+Finland: 2
+France: 53
+Free City of Danzig (Poland): 1
+French Algeria (Algeria): 3
+German-occupied Poland (Poland): 1
+Germany: 70
+Germany (France): 3
+Germany (Poland): 10
+Germany (Russia): 3
+Gold Coast (Ghana): 1
+Guadeloupe Island: 1
+Guatemala: 2
+Hesse-Kassel (Germany): 1
+Hungary: 6
+Hungary (Slovakia): 1
+Iceland: 1
+India: 7
+India (Pakistan): 3
+Iran: 1
+Ireland: 5
+Italy: 18
+Japan: 29
+Java, Dutch East Indies (Indonesia): 1
+Kenya: 1
+Korea (South Korea): 2
+Liberia: 2
+Lithuania: 1
+Luxembourg: 2
+Madagascar: 1
+Mecklenburg (Germany): 1
+Mexico: 3
+Morocco: 2
+Netherlands: 19
+New Zealand: 3
+Nigeria: 1
+Northern Ireland: 5
+Norway: 13
+Ottoman Empire (Republic of Macedonia): 1
+Ottoman Empire (Turkey): 1
+Pakistan: 1
+Persia (Iran): 1
+Peru: 1
+Poland: 6
+Poland (Belarus): 1
+Poland (Lithuania): 1
+Poland (Ukraine): 1
+Portugal: 3
+Prussia (Germany): 7
+Prussia (Poland): 6
+Prussia (Russia): 1
+Romania: 5
+Russia: 20
+Russian Empire (Azerbaijan): 1
+Russian Empire (Belarus): 2
+Russian Empire (Finland): 3
+Russian Empire (Latvia): 1
+Russian Empire (Lithuania): 1
+Russian Empire (Poland): 5
+Russian Empire (Russia): 2
+Russian Empire (Ukraine): 2
+Saint Lucia: 1
+Schleswig (Germany): 2
+Scotland: 9
+South Africa: 9
+Southern Rhodesia (Zimbabwe): 1
+Spain: 7
+Sweden: 30
+Switzerland: 17
+Taiwan: 1
+Tibet (People&#39;s Republic of China): 1
+Trinidad: 1
+Turkey: 2
+Tuscany (Italy): 1
+Ukraine: 1
+Union of Soviet Socialist Republics (Belarus): 1
+Union of Soviet Socialist Republics (Russia): 4
+United Kingdom: 88
+United States of America: 276
+Venezuela: 1
+Vietnam: 1
+W&amp;uuml;rttemberg (Germany): 1
+West Germany (Germany): 5
+Yemen: 1
 </pre></div>
 </div>
 </div>
@@ -653,6 +881,55 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">The following students received an insufficient mark for the exam:&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">index</span> <span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">insufficient_exam</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;First&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Last&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Exam&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="mi">35</span><span class="n">gdwksd0fx8kzbsljz4dz6hnrcnxq</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_89446</span><span class="o">/</span><span class="mf">2564310518.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span> <span class="s1">&#39;Grades.xlsx&#39;</span> <span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s2">&quot;Sheet1&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="nn">/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>                     <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span>                 <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">311</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span> 
+<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, comment, skipfooter, convert_float, mangle_dupe_cols, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span>         <span class="n">should_close</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">364</span>         <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>     <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+
+<span class="nn">/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">__init__</span><span class="nt">(self, path_or_buffer, engine, storage_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1190</span>             <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span>                 <span class="n">ext</span> <span class="o">=</span> <span class="n">inspect_excel_format</span><span class="p">(</span>
+<span class="ne">-&gt; </span><span class="mi">1192</span>                     <span class="n">content_or_path</span><span class="o">=</span><span class="n">path_or_buffer</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span>
+<span class="g g-Whitespace">   </span><span class="mi">1193</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1194</span>                 <span class="k">if</span> <span class="n">ext</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">inspect_excel_format</span><span class="nt">(content_or_path, storage_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1069</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1070</span>     <span class="k">with</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="ne">-&gt; </span><span class="mi">1071</span>         <span class="n">content_or_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">is_text</span><span class="o">=</span><span class="kc">False</span>
+<span class="g g-Whitespace">   </span><span class="mi">1072</span>     <span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1073</span>         <span class="n">stream</span> <span class="o">=</span> <span class="n">handle</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">708</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">709</span>             <span class="c1"># Binary mode</span>
+<span class="ne">--&gt; </span><span class="mi">710</span>             <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">711</span>         <span class="n">handles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">712</span> 
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;Grades.xlsx&#39;
 </pre></div>
 </div>
 </div>
