@@ -434,18 +434,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-12-3">
-   Exercise 12.3
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-12-4">
-   Exercise 12.4
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-12-5">
-   Exercise 12.5
+  <a class="reference internal nav-link" href="#id1">
+   Exercise 12.1
   </a>
  </li>
 </ul>
@@ -478,18 +468,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-12-3">
-   Exercise 12.3
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-12-4">
-   Exercise 12.4
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-12-5">
-   Exercise 12.5
+  <a class="reference internal nav-link" href="#id1">
+   Exercise 12.1
   </a>
  </li>
 </ul>
@@ -506,259 +486,30 @@ title="Print to PDF"
 <h1>12. Visualisation<a class="headerlink" href="#visualisation" title="Permalink to this headline">#</a></h1>
 <section id="exercise-12-1">
 <h2>Exercise 12.1<a class="headerlink" href="#exercise-12-1" title="Permalink to this headline">#</a></h2>
-<p>In exercise 11.3, you created a CSV file named ‘prices_of_coffee_over_time.csv’, containing data about the average price of a pound of coffee on a range of dates. Use this CSV file to create a line chart which visualises the development of these prices over time.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;prices_of_coffee_over_time.csv&#39;</span><span class="p">)</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
-
-<span class="o">%</span><span class="k">matplotlib</span> inline
-
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_per_pound&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#930d08&#39;</span> <span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;solid&#39;</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Price per pound&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span> <span class="mi">90</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span> <span class="s1">&#39;VOC Coffee auctions&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-12-2">
-<h2>Exercise 12.2<a class="headerlink" href="#exercise-12-2" title="Permalink to this headline">#</a></h2>
-<p>Download the following data set:</p>
-<p><a class="reference external" href="https://edu.nl/bcm4x">https://edu.nl/bcm4x</a></p>
-<p>This file contains data collected for the <a class="reference external" href="https://stats.oecd.org/index.aspx?DataSetCode=BLI">2018 Better Life Index</a>, which was created by the OECD to visuale some of the key factors  that contribute to well-being in OECD countries, including education, income, housing and environment.</p>
-<p>Using <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code>, create a bar chart which can be used to compare either the ‘personal_earnings’ or the ‘life_satisfaction’ in the various OECD countries. The colours of the bars should give information about the continents.</p>
-<p>Customise the graph as follows:</p>
-<ul class="simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">hls</span></code> colour palette</p></li>
-<li><p>The size of the figure must be 14x10</p></li>
-<li><p>x-tick labels must be rotated by 90 degrees</p></li>
-<li><p>The legend must be placed outside of the plot</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://edu.nl/bcm4x&#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">response</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;bli.csv&#39;</span> <span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv</span><span class="p">:</span>
-        <span class="n">csv</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bli.csv&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="n">x_axis</span> <span class="o">=</span> <span class="s1">&#39;country&#39;</span>
-<span class="n">y_axis</span> <span class="o">=</span> <span class="s1">&#39;personal_earnings&#39;</span>
-
-<span class="n">colours</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;hls&#39;</span> <span class="p">)</span>
-
-<span class="c1"># Remove missing values and sort the values in a descending order</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span> <span class="o">=</span> <span class="p">[</span> <span class="n">y_axis</span> <span class="p">])</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span> <span class="n">y_axis</span><span class="p">]</span> <span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span> <span class="mi">14</span> <span class="p">,</span> <span class="mi">10</span> <span class="p">)</span> <span class="p">)</span>
-
-<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span>  <span class="n">df</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x_axis</span> <span class="p">,</span> <span class="n">y</span><span class="o">=</span> <span class="n">y_axis</span> <span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;continent&#39;</span> <span class="p">,</span> <span class="n">dodge</span> <span class="o">=</span> <span class="kc">False</span> <span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">colours</span> <span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span> <span class="mi">90</span><span class="p">)</span>
-
-<span class="c1"># this next line makes sure that the legend is shown outside of the graph</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/12 Visualisation_5_0.png" src="../../_images/12 Visualisation_5_0.png" />
-</div>
-</div>
-<p>The bar chart can also be created using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> alone, but the code is more complicated.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colours</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;colorblind&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">classColours</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-
-<span class="n">unique_categories</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="nb">set</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span> <span class="n">unique_categories</span> <span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">colours</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">unique_categories</span> <span class="p">)</span> <span class="p">):</span>
-        <span class="n">classColours</span><span class="p">[</span> <span class="n">unique_categories</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="p">]</span> <span class="o">=</span> <span class="n">colours</span><span class="p">[</span><span class="n">u</span><span class="p">]</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You have more than </span><span class="si">{}</span><span class="s2"> categories. You need to add colours to the list!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">colours</span><span class="p">)</span> <span class="p">))</span>
-
-<span class="n">colours</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]:</span>
-    <span class="n">colours</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">classColours</span><span class="p">[</span><span class="n">category</span><span class="p">]</span> <span class="p">)</span>
-    
-
-<span class="o">%</span><span class="k">matplotlib</span> inline
-
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span> <span class="mi">14</span> <span class="p">,</span> <span class="mi">10</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
-
-
-<span class="n">bar_width</span> <span class="o">=</span> <span class="mf">0.45</span>
-<span class="n">opacity</span> <span class="o">=</span> <span class="mf">0.8</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">y_axis</span><span class="p">]</span> <span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">bar_width</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">opacity</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">colours</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span> <span class="mi">90</span><span class="p">)</span>
-
-
-<span class="n">patchList</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">classColours</span><span class="p">:</span>
-    <span class="n">data_key</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Patch</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">classColours</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">key</span><span class="p">)</span>
-    <span class="n">patchList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_key</span><span class="p">)</span>
-    
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">patchList</span> <span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span> <span class="p">,</span> <span class="n">frameon</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
-
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Countries&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;Earnings&#39;</span> <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span> <span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span> <span class="s1">&#39;OECD Better Life Index&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span> <span class="p">)</span>
-
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/12 Visualisation_7_0.png" src="../../_images/12 Visualisation_7_0.png" />
-</div>
-</div>
-</section>
-<section id="exercise-12-3">
-<h2>Exercise 12.3<a class="headerlink" href="#exercise-12-3" title="Permalink to this headline">#</a></h2>
-<p>Use the CSV file that you have downloaded for exercise in 12.2 to create a scatter plot. The X-axis must visualise the values in the column ‘self-reported_health’, and the Y-axis must show the ‘employment_rate’. The size of the points must represent the ‘educational_attainment’ and the colour of the points ust indicate the values collected for ‘air_pollution’.</p>
-<p>Apply the following specifications:</p>
-<ul class="simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">'whitegrid'</span></code> style.</p></li>
-<li><p>Work with the <code class="docutils literal notranslate"><span class="pre">'Greens'</span></code> colour palette.</p></li>
-<li><p>Sizes of the dots should range from 100 to 1000.</p></li>
-<li><p>The size of the figure must be 10x10</p></li>
-<li><p>The legend must be placed outside of the plot</p></li>
-<li><p>Add labels to all of the dots, explaining the names of the countries that are represented. The font size must be 12.8.</p></li>
-</ul>
-<p>N.B. Names of exiting colour palettes can be found at <a class="reference external" href="https://python-graph-gallery.com/101-make-a-color-palette-with-seaborn/">https://python-graph-gallery.com/101-make-a-color-palette-with-seaborn/</a> or at <a class="reference external" href="https://seaborn.pydata.org/tutorial/color_palettes.html">https://seaborn.pydata.org/tutorial/color_palettes.html</a>. Examples include: “Blues”, “BuGn”, “YlOrRd”, “GnBu”, “OrRd”, “Greens”, “Reds”. You may also experimnent with some other colour palettes in this exercise.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="n">x_axis</span> <span class="o">=</span> <span class="s1">&#39;self-reported_health&#39;</span>
-<span class="n">y_axis</span> <span class="o">=</span>  <span class="s1">&#39;employment_rate&#39;</span>
-<span class="n">point_size</span> <span class="o">=</span>  <span class="s1">&#39;educational_attainment&#39;</span>
-<span class="n">point_colour</span> <span class="o">=</span> <span class="s1">&#39;air_pollution&#39;</span> 
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bli.csv&#39;</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_axis</span><span class="p">,</span> <span class="n">y_axis</span><span class="p">])</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span><span class="mi">10</span> <span class="p">))</span>
-
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
-
-
-<span class="c1">## and also adds spacing in between the lines of the legend </span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">rc</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;legend.labelspacing&#39;</span><span class="p">:</span> <span class="mf">1.6</span><span class="p">})</span>
-
-
-<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_axis</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_axis</span>  <span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span> <span class="n">point_colour</span> <span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;Greens&quot;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">point_size</span> <span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="p">(</span> <span class="mi">100</span> <span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">)</span>
-
-<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span> <span class="n">row</span><span class="p">[</span><span class="n">x_axis</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="n">y_axis</span><span class="p">]</span> <span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mf">12.8</span><span class="p">)</span>
-
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span> <span class="s1">&#39;Self reported health&#39;</span>  <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span> <span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;Employment rate&#39;</span>  <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span> <span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span> <span class="s1">&#39;OECD Better Life Index&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span> <span class="p">)</span>
-
-
-<span class="c1"># this next line makes sure that the legend is shown outside of the graph</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/12 Visualisation_9_0.png" src="../../_images/12 Visualisation_9_0.png" />
-</div>
-</div>
-</section>
-<section id="exercise-12-4">
-<h2>Exercise 12.4<a class="headerlink" href="#exercise-12-4" title="Permalink to this headline">#</a></h2>
 <p>PISA is the OECD’s <a class="reference external" href="https://www.oecd.org/pisa/">Programme for International Student Assessment</a>. This programme evaluates educational systems globally by measuring the performance of 15 year-old-children in mathematics, science and reading. The latest study is from 2018.</p>
-<p>The CSV file ‘<a class="reference external" href="https://edu.nl/p97ma">pisa.csv</a>’ contains all the scores measured for mathematics and reading in between 2000 and 2018.</p>
+<p>The data folder of this tutorial includes a CSV file named ‘<a class="reference external" href="https://edu.nl/p97ma">pisa.csv</a>’. It contains all the scores measured for mathematics and reading in between 2000 and 2018.</p>
 <p>Using Pandas, Matplotlib and Seaborn, create visualisations which can help to answer the following questions:</p>
-<ol class="simple">
-<li><p>How did the various countries that were examined in 2018 perform on the reading tests? Which countries had the highest scores, and which countries had the lowest scores? Try to answer this question via a bar plot. You can limit the analyses to the the ‘total’ scores (i.e. those records in which column ‘object’ has value ‘TOT’). Create a figure with a size of 10x7, rotate the x-tick labels by 90 degrees and use the colour ‘#910c26’’ fpor all the bars.</p></li>
-<li><p>Same as (1), but try to give information about the continents as well. Use distinctive colours for each continent.</p></li>
-<li><p>How do the scores for reading compare to the scores for mathematics? Focus on the scvores obtained in 2018. Answer this question by creating a scatter plot.</p></li>
-<li><p>Same as (3), but add labels to indicate the scores for the countries captured in the list named <code class="docutils literal notranslate"><span class="pre">countries</span></code>, defined below.</p></li>
-</ol>
+<p>12.1.1. How did the various countries that were examined in 2018 perform on the reading tests? Which countries had the highest scores, and which countries had the lowest scores? Try to answer this question via a bar plot. You can limit the analyses to the the ‘total’ scores (i.e. those records in which column ‘object’ has value ‘TOT’). Create a figure with a size of 10x7, rotate the x-tick labels by 90 degrees and use the colour ‘#910c26’’ fpor all the bars.</p>
+<p>12.1.2. Same as (1), but try to give information about the continents as well. Use distinctive colours for each continent.</p>
+<p>12.1.3. How do the scores for reading compare to the scores for mathematics? Focus on the scvores obtained in 2018. Answer this question by creating a scatter plot.</p>
+<p>12.1.4. Same as (3), but add labels to indicate the scores for the countries captured in the list named <code class="docutils literal notranslate"><span class="pre">countries</span></code>, defined below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">,</span><span class="s1">&#39;Italy&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<ol class="simple">
-<li><p>How did the scores for reading develop in the Netherlands in between 2000 and 2018? Focus on the total scores.</p></li>
-<li><p>How did the scores for maths develop in the Netherlands in between 2000 and 2018? Focus on the score for boys and for girls separately.</p></li>
-<li><p>Have the scores remained relatively stable over the years if we look at the total scores? Or has there been some variation? How does the variation of the scores for the Netherlands compare to the scores in France, Germany, Belgium and Luxembourg? Try to answer this question by crearing a boxplot.</p></li>
-</ol>
-<p>Firstly, download the CSV file and read its contents using <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> method from pandas.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://edu.nl/p97ma&#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">response</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pisa.csv&#39;</span> <span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv</span><span class="p">:</span>
-        <span class="n">csv</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;pisa.csv&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>To answer question (1), create a new data frame containing the total scores measured in the year 2018. We can subset the dataframe using square brackets. These brackets should contain a criterium that can serve as a filter.</p>
+<p>12.1.5. How did the scores for reading develop in the Netherlands in between 2000 and 2018? Focus on the total scores.</p>
+<p>12.1.6. How did the scores for maths develop in the Netherlands in between 2000 and 2018? Focus on the score for boys and for girls separately.</p>
+<p>12.1.7. Have the scores remained relatively stable over the years if we look at the total scores? Or has there been some variation? How does the variation of the scores for the Netherlands compare to the scores in France, Germany, Belgium and Luxembourg? Try to answer this question by crearing a boxplot.</p>
+<p>To answer question 12.1.1, create a new data frame containing the total scores measured in the year 2018. We can subset the dataframe using square brackets. These brackets should contain a criterium that can serve as a filter.</p>
 <p>the <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method can be used to sort the dataframe. The <code class="docutils literal notranslate"><span class="pre">by</span></code> parameter specifies the column you want to sort on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2018</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;TOT&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">)</span>  <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="s1">&#39;pisa.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_to_csv</span><span class="p">)</span>
+
+<span class="n">df_2018</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;TOT&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">)</span>  <span class="p">]</span>
 <span class="n">df_2018</span> <span class="o">=</span> <span class="n">df_2018</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span> <span class="s1">&#39;pisa_read&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -770,7 +521,6 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
-<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;darkgrid&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span><span class="mi">7</span> <span class="p">))</span>
@@ -788,27 +538,19 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/12 Visualisation_16_0.png" src="../../_images/12 Visualisation_16_0.png" />
+<img alt="../../_images/12 Visualisation_5_01.png" src="../../_images/12 Visualisation_5_01.png" />
 </div>
 </div>
 <p>To vary the colours of the bars along with the continents (question 2), name the ‘continent’ column in the <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="o">%</span><span class="k">matplotlib</span> inline
-
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;darkgrid&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;darkgrid&#39;</span><span class="p">)</span>
 <span class="n">colours</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;colorblind&#39;</span> <span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span><span class="mi">7</span> <span class="p">))</span>
 
-<span class="c1"># &#39;hue&#39; determines the colours of the bars. It can be </span>
-<span class="c1"># connected to one of the variables in the</span>
-<span class="c1"># data frame</span>
 
-
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df_2018</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;location_name&#39;</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;pisa_read&#39;</span> <span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;continent&#39;</span> <span class="p">,</span> <span class="n">dodge</span> <span class="o">=</span> <span class="kc">False</span>  <span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">colours</span> <span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df_2018</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;location_name&#39;</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;pisa_read&#39;</span> <span class="p">,</span> 
+            <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;continent&#39;</span> <span class="p">,</span> <span class="n">dodge</span> <span class="o">=</span> <span class="kc">False</span>  <span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">colours</span> <span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span> <span class="n">rotation</span> <span class="o">=</span> <span class="mi">80</span> <span class="p">)</span>
@@ -818,7 +560,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/12 Visualisation_18_0.png" src="../../_images/12 Visualisation_18_0.png" />
+<img alt="../../_images/12 Visualisation_7_01.png" src="../../_images/12 Visualisation_7_01.png" />
 </div>
 </div>
 <p>To examine the correlation between <code class="docutils literal notranslate"><span class="pre">pisa_read</span></code> and <code class="docutils literal notranslate"><span class="pre">pisa_math</span></code> (question 3), we can visualise these two variables using a scatter plot. We can work with the dataframe named <code class="docutils literal notranslate"><span class="pre">df_2018</span></code> that we created earlier.</p>
@@ -846,7 +588,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/12 Visualisation_20_0.png" src="../../_images/12 Visualisation_20_0.png" />
+<img alt="../../_images/12 Visualisation_9_01.png" src="../../_images/12 Visualisation_9_01.png" />
 </div>
 </div>
 <p>Text labels for the dots in a scatter plot (see question 4) can be added using <code class="docutils literal notranslate"><span class="pre">plt.text()</span></code>. The method demands at least parameters:</p>
@@ -869,7 +611,6 @@ title="Print to PDF"
 <span class="n">x_axis</span> <span class="o">=</span> <span class="s1">&#39;pisa_read&#39;</span>
 <span class="n">y_axis</span> <span class="o">=</span> <span class="s1">&#39;pisa_math&#39;</span>
 
-
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
@@ -888,15 +629,15 @@ title="Print to PDF"
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="n">df_2018</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;location_name&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span> <span class="n">row</span><span class="p">[</span><span class="n">x_axis</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="n">y_axis</span><span class="p">]</span> <span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;location_name&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mf">12.8</span> <span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">)</span>
-
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span> <span class="n">row</span><span class="p">[</span><span class="n">x_axis</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="n">y_axis</span><span class="p">]</span> <span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;location_name&#39;</span><span class="p">]</span> <span class="p">,</span> 
+                 <span class="n">fontsize</span><span class="o">=</span><span class="mf">12.8</span> <span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;scatterplot.png&#39;</span> <span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">300</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/12 Visualisation_22_0.png" src="../../_images/12 Visualisation_22_0.png" />
+<img alt="../../_images/12 Visualisation_11_01.png" src="../../_images/12 Visualisation_11_01.png" />
 </div>
 </div>
 <p>The code below creates a new data frame, based on the original data frame that was created out of the original CSV file. It selects the scores obtained by pupils in the Netherlands during the period in between 2004 and 2018.</p>
@@ -915,7 +656,6 @@ title="Print to PDF"
 
 <span class="n">graph</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df_nl_tot</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;pisa_read&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#94321c&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span> <span class="p">)</span>
 
-
 <span class="n">graph</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Years&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">16</span> <span class="p">)</span>
 <span class="n">graph</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Scores&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">16</span> <span class="p">)</span>
 <span class="n">graph</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span> <span class="s1">&#39;Reading performance in the Netherlands&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">22</span> <span class="p">)</span>
@@ -926,7 +666,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/12 Visualisation_26_0.png" src="../../_images/12 Visualisation_26_0.png" />
+<img alt="../../_images/12 Visualisation_15_01.png" src="../../_images/12 Visualisation_15_01.png" />
 </div>
 </div>
 <p>To display the score for boys and for girls separately (question 6), we firstly need to create a dataframe which contains the scores for boys and girls. In other words, we need to select rows in which the <code class="docutils literal notranslate"><span class="pre">subject</span></code> column either has ‘BOY’ or ‘GIRL’ as a value.</p>
@@ -947,9 +687,6 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">6</span><span class="p">,</span><span class="mi">4</span> <span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
 
-<span class="c1">#, &#39;#3242a8&#39;</span>
-
-<span class="c1">#plt.style.use(&#39;seaborn-whitegrid&#39;)</span>
 
 <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df_nl_bg</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;year&#39;</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;pisa_math&#39;</span> <span class="p">,</span>  <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;subject&#39;</span> <span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;#078217&#39;</span> <span class="p">,</span> <span class="s1">&#39;#f5ce4e&#39;</span> <span class="p">]</span> <span class="p">,</span>  <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span> <span class="p">)</span>
 
@@ -967,15 +704,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/12 Visualisation_30_0.png" src="../../_images/12 Visualisation_30_0.png" />
+<img alt="../../_images/12 Visualisation_19_0.png" src="../../_images/12 Visualisation_19_0.png" />
 </div>
 </div>
 <p>A box plot, finally, can be created using the <code class="docutils literal notranslate"><span class="pre">boxplot()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-
-<span class="n">countries</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">]</span>
 <span class="n">colours</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;colorblind&#39;</span> <span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">countries</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="p">)</span>
@@ -990,13 +725,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/12 Visualisation_32_0.png" src="../../_images/12 Visualisation_32_0.png" />
+<img alt="../../_images/12 Visualisation_21_0.png" src="../../_images/12 Visualisation_21_0.png" />
 </div>
 </div>
 </section>
-<section id="exercise-12-5">
-<h2>Exercise 12.5<a class="headerlink" href="#exercise-12-5" title="Permalink to this headline">#</a></h2>
-<p>Download the CSV file ‘nobel.csv’: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a>. If you have done exercise 11.1 of this tutorial, you have downloaded this file already. Visualise the data in this data set in the followng ways.</p>
+<section id="exercise-12-2">
+<h2>Exercise 12.2<a class="headerlink" href="#exercise-12-2" title="Permalink to this headline">#</a></h2>
+<p>The data folder of this tutorial includes a CSV file named ‘nobel.csv’. If necessary you can also download this file from the following address: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a>.</p>
+<p>Visualise the data in this data set in the following ways.</p>
 <ul class="simple">
 <li><p>Create a linechart in Seaborn to visualize the number of Nobel laureates per year. Can we find support for the claim that people increasingly need to share their Nobel Prizes with colleagues?</p></li>
 <li><p>What are the nationalities of the Nobel laureates in the data set? Try to generate a bar plot which displays the various countries on the x-axis and the number of Nobel Prize winners produced by these countries on the y-axis. Limit your analysis to the countries listed in <code class="docutils literal notranslate"><span class="pre">countries</span></code> below.</p></li>
@@ -1014,18 +750,11 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://edu.nl/3xmbd&#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">response</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;nobel.csv&#39;</span> <span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv</span><span class="p">:</span>
-        <span class="n">csv</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;nobel.csv&#39;</span><span class="p">)</span>
+<span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="s1">&#39;nobel.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_to_csv</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1052,6 +781,9 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/12 Visualisation_24_0.png" src="../../_images/12 Visualisation_24_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1085,7 +817,7 @@ title="Print to PDF"
 
 <span class="n">graph</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">lpg_df</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Country&#39;</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;Number&#39;</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#0fa838&#39;</span> <span class="p">)</span>
 
-<span class="n">graph</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Number of Nobel laureates per year&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span> 
+<span class="n">graph</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Number of Nobel laureates per countries&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span> 
 <span class="n">graph</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span> 
 <span class="n">graph</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of laureates&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
 
@@ -1093,6 +825,9 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/12 Visualisation_26_0.png" src="../../_images/12 Visualisation_26_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1109,6 +844,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_chem</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">]</span>
+<span class="n">df_chem</span> <span class="o">=</span> <span class="n">df_chem</span><span class="p">[</span> <span class="n">df_chem</span><span class="p">[</span><span class="s1">&#39;Birth Year&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1930</span> <span class="p">]</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 
@@ -1125,6 +861,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/12 Visualisation_28_0.png" src="../../_images/12 Visualisation_28_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1137,6 +876,44 @@ title="Print to PDF"
 <span class="n">graph</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Age distribution per category&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span> 
 <span class="n">graph</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Category&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span> 
 <span class="n">graph</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/12 Visualisation_29_01.png" src="../../_images/12 Visualisation_29_01.png" />
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Exercise 12.1<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>In exercise 11.3, you created a CSV file named ‘prices_of_coffee_over_time.csv’, containing data about the average price of a pound of coffee on a range of dates. Use this CSV file to create a line chart which visualises the development of these prices over time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;prices_of_coffee_over_time.csv&#39;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_per_pound&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#930d08&#39;</span> <span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;solid&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Price per pound&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span> <span class="mi">90</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span> <span class="s1">&#39;VOC Coffee auctions&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
