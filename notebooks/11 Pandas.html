@@ -465,6 +465,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting">
+     Sorting
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#selecting-subsets">
      Selecting subsets
     </a>
@@ -494,6 +499,11 @@ title="Print to PDF"
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#grouping-items-and-aggregation">
      Grouping items and aggregation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-dates">
+     Working with dates
     </a>
    </li>
   </ul>
@@ -585,6 +595,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting">
+     Sorting
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#selecting-subsets">
      Selecting subsets
     </a>
@@ -614,6 +629,11 @@ title="Print to PDF"
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#grouping-items-and-aggregation">
      Grouping items and aggregation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-dates">
+     Working with dates
     </a>
    </li>
   </ul>
@@ -723,14 +743,14 @@ title="Print to PDF"
 <p>When you pass this list into <code class="docutils literal notranslate"><span class="pre">Dataframe()</span></code>, the method converts this data structure into a colelction of rows and columns. The <code class="docutils literal notranslate"><span class="pre">columns</span></code> parameter may be used to supply column names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;Class1&#39;</span><span class="p">],</span> 
-<span class="p">[</span><span class="mi">14</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;Class1&#39;</span><span class="p">],</span> 
-<span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="s1">&#39;Class1&#39;</span><span class="p">],</span> 
-<span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;Class2&#39;</span><span class="p">],</span> 
-<span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;Class2&#39;</span><span class="p">],</span> 
-<span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">),</span><span class="s1">&#39;Class2&#39;</span><span class="p">]</span> <span class="p">]</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;Class1&#39;</span><span class="p">,</span><span class="s1">&#39;01-05-2022&#39;</span><span class="p">],</span> 
+<span class="p">[</span><span class="mi">14</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;Class1&#39;</span><span class="p">,</span><span class="s1">&#39;01-06-2022&#39;</span><span class="p">],</span> 
+<span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="s1">&#39;Class1&#39;</span><span class="p">,</span><span class="s1">&#39;01-07-2022&#39;</span><span class="p">],</span> 
+<span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;Class2&#39;</span><span class="p">,</span><span class="s1">&#39;01-08-2022&#39;</span><span class="p">],</span> 
+<span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;Class2&#39;</span><span class="p">,</span><span class="s1">&#39;01-09-2022&#39;</span><span class="p">],</span> 
+<span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">),</span><span class="s1">&#39;Class2&#39;</span><span class="p">,</span><span class="s1">&#39;01-10-2022&#39;</span><span class="p">]</span> <span class="p">]</span> 
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span> <span class="p">,</span> <span class="s1">&#39;C&#39;</span> <span class="p">,</span> <span class="s1">&#39;D&#39;</span> <span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="p">)</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span> <span class="p">,</span> <span class="s1">&#39;C&#39;</span> <span class="p">,</span> <span class="s1">&#39;D&#39;</span> <span class="p">,</span> <span class="s1">&#39;E&#39;</span> <span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">]</span> <span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -746,18 +766,30 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-</div>
-<p>The output looks as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">A</span>   <span class="n">B</span>   <span class="n">C</span>     <span class="n">D</span>       <span class="n">E</span>
-<span class="mi">0</span>  <span class="mi">12</span>   <span class="mi">5</span>   <span class="mi">6</span>  <span class="mf">12.0</span>  <span class="n">Class1</span>
-<span class="mi">1</span>  <span class="mi">14</span>  <span class="mi">11</span>  <span class="mi">17</span>  <span class="mf">20.0</span>  <span class="n">Class1</span>
-<span class="mi">2</span>  <span class="mi">15</span>   <span class="mi">6</span>   <span class="mi">8</span>  <span class="mf">19.0</span>  <span class="n">Class1</span>
-<span class="mi">3</span>   <span class="mi">8</span>   <span class="mi">3</span>  <span class="mi">21</span>   <span class="mf">5.0</span>  <span class="n">Class2</span>
-<span class="mi">4</span>  <span class="mi">10</span>   <span class="mi">9</span>  <span class="mi">14</span>   <span class="mf">7.0</span>  <span class="n">Class2</span>
-<span class="mi">5</span>   <span class="mi">7</span>   <span class="mi">5</span>  <span class="mi">16</span>   <span class="n">NaN</span>  <span class="n">Class2</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    A   B   C     D       E           F
+0  12   5   6  12.0  Class1  01-05-2022
+1  14  11  17  20.0  Class1  01-06-2022
+2  15   6   8  19.0  Class1  01-07-2022
+3   8   3  21   5.0  Class2  01-08-2022
+4  10   9  14   7.0  Class2  01-09-2022
+5   7   5  16   NaN  Class2  01-10-2022
 </pre></div>
 </div>
-<p>As you can see, this is a data set consting of five columns and six rows. The first line defines the names of the columns. The actual values are on the six lines that follow. The first columns contain numbers, and the fifth column, named ‘E’, classifies the data into two separate classes. Also note that, on the final line, the value for column D is missing.</p>
+</div>
+</div>
+<p>The output looks as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">A</span>   <span class="n">B</span>   <span class="n">C</span>     <span class="n">D</span>       <span class="n">E</span>           <span class="n">F</span>
+<span class="mi">0</span>  <span class="mi">12</span>   <span class="mi">5</span>   <span class="mi">6</span>  <span class="mf">12.0</span>  <span class="n">Class1</span>  <span class="mi">01</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">2022</span>
+<span class="mi">1</span>  <span class="mi">14</span>  <span class="mi">11</span>  <span class="mi">17</span>  <span class="mf">20.0</span>  <span class="n">Class1</span>  <span class="mi">01</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">2022</span>
+<span class="mi">2</span>  <span class="mi">15</span>   <span class="mi">6</span>   <span class="mi">8</span>  <span class="mf">19.0</span>  <span class="n">Class1</span>  <span class="mi">01</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">2022</span>
+<span class="mi">3</span>   <span class="mi">8</span>   <span class="mi">3</span>  <span class="mi">21</span>   <span class="mf">5.0</span>  <span class="n">Class2</span>  <span class="mi">01</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">2022</span>
+<span class="mi">4</span>  <span class="mi">10</span>   <span class="mi">9</span>  <span class="mi">14</span>   <span class="mf">7.0</span>  <span class="n">Class2</span>  <span class="mi">01</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">2022</span>
+<span class="mi">5</span>   <span class="mi">7</span>   <span class="mi">5</span>  <span class="mi">16</span>   <span class="n">NaN</span>  <span class="n">Class2</span>  <span class="mi">01</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">2022</span>
+
+</pre></div>
+</div>
+<p>As you can see, this is a data set consting of six columns and six rows. The first line specifies the names of the columns. The actual values are on the six lines that follow. The first columns contain numbers. The fifth column, named ‘E’, classifies the data into two separate classes, and the sixth column, named ‘F’, contains dates. Also note that, on the final line, the value for column D is missing.</p>
 <p>As you can see, Pandas has assigned number to all the rows. These numbers are referred to as ‘indices’ (the plural form of ‘index’).</p>
 <p>Additionally, the columns have all been given a name. In this particular example, the columns names have been taken from the <code class="docutils literal notranslate"><span class="pre">columns</span></code> parameter in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> method used to create the dataframe.</p>
 <p>When you create a dataframe out of a CSV file, using <code class="docutils literal notranslate"><span class="pre">read_csv</span></code>, these columns names are usually copied from the header of the CSV file. The header consists of a number of strings, delimited by commas, and it should be on the very first line of the CSV file. Following the execution of the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> method, these separate strings all become available as column names.</p>
@@ -772,12 +804,80 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    A   B   C     D       E           F
+0  12   5   6  12.0  Class1  01-05-2022
+1  14  11  17  20.0  Class1  01-06-2022
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+      <th>F</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12</td>
+      <td>5</td>
+      <td>6</td>
+      <td>12.0</td>
+      <td>Class1</td>
+      <td>01-05-2022</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14</td>
+      <td>11</td>
+      <td>17</td>
+      <td>20.0</td>
+      <td>Class1</td>
+      <td>01-06-2022</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15</td>
+      <td>6</td>
+      <td>8</td>
+      <td>19.0</td>
+      <td>Class1</td>
+      <td>01-07-2022</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">shape</span></code> property can also come in handy. It returns information about the number of rows and columns. Note that <code class="docutils literal notranslate"><span class="pre">shape</span></code> needs to be used WITHOUT parentheses, as it is a property and not a method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span> <span class="p">)</span>
-<span class="c1"># In the current example, the shape property has the value (6, 5)</span>
+<span class="c1"># In the current example, the shape property has the value (6, 6)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6, 6)
 </pre></div>
 </div>
 </div>
@@ -787,6 +887,12 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Column headings:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Column headings:
+[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;]
 </pre></div>
 </div>
 </div>
@@ -801,6 +907,17 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    12
+1    14
+2    15
+3     8
+4    10
+5     7
+Name: A, dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <p>The code above will print all the values in the column named ‘A’. Pandas stores the values in the columns using a data structure that is known as a <code class="docutils literal notranslate"><span class="pre">Series</span></code>. Simply put, a Series is a variable that brings together multiple values. A series is similar to a regular list in Python. An important difference between regular Python lists and the Series used in Pandas is that, in the latter data structure, the individual items consist of two values: (1) the actual items and (2) the indices of these items. When you print the Series using the code that was shown, you also see these two rows of values.</p>
 <p>It can be useful, in some situations, to convert a given Series into a regular list. There is a simple method named <code class="docutils literal notranslate"><span class="pre">tolist()</span></code> which you can use for this purpose:</p>
@@ -810,11 +927,21 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12, 14, 15, 8, 10, 7]
+</pre></div>
+</div>
+</div>
 </div>
 <p>In Python, there are often multiple ways of doing the same thing. Instead of working with the <code class="docutils literal notranslate"><span class="pre">tolist()</span></code> method, you can also invoke the standard <code class="docutils literal notranslate"><span class="pre">list()</span></code> function, as follows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12, 14, 15, 8, 10, 7]
 </pre></div>
 </div>
 </div>
@@ -839,12 +966,31 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+3
+13.666666666666666
+63.0
+</pre></div>
+</div>
+</div>
 </div>
 <p>If you would like to perform statistical analyses on all the columns of the dataframe, you can also append the name of the method you need directly to the data frame variable, without specifying a column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="p">)</span>
 <span class="c1">## This will print the sum of the values of all the columns n the data set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A                                                   66
+B                                                   39
+C                                                   82
+D                                                 63.0
+E                 Class1Class1Class1Class2Class2Class2
+F    01-05-202201-06-202201-07-202201-08-202201-09-...
+dtype: object
 </pre></div>
 </div>
 </div>
@@ -859,6 +1005,76 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span> <span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+11
+6
+3
+9
+5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sorting">
+<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">#</a></h2>
+<p>It is also possible to <em>sort</em> all the values in dataframe. The method to be used for this purpose is <code class="docutils literal notranslate"><span class="pre">sortvalues()</span></code>. The <code class="docutils literal notranslate"><span class="pre">by</span></code> parameter of this method specifies the column to sort by.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    A   B   C     D       E           F
+5   7   5  16   NaN  Class2  01-10-2022
+3   8   3  21   5.0  Class2  01-08-2022
+4  10   9  14   7.0  Class2  01-09-2022
+0  12   5   6  12.0  Class1  01-05-2022
+1  14  11  17  20.0  Class1  01-06-2022
+2  15   6   8  19.0  Class1  01-07-2022
+</pre></div>
+</div>
+</div>
+</div>
+<p>After <code class="docutils literal notranslate"><span class="pre">by</span></code>, you can also mention multiple columns as a list. In the example below, pandas will sort the values firstly by column ‘A’ and secondly by column ‘B’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">])</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    A   B   C     D       E           F
+5   7   5  16   NaN  Class2  01-10-2022
+3   8   3  21   5.0  Class2  01-08-2022
+4  10   9  14   7.0  Class2  01-09-2022
+0  12   5   6  12.0  Class1  01-05-2022
+1  14  11  17  20.0  Class1  01-06-2022
+2  15   6   8  19.0  Class1  01-07-2022
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method sorts values in an ascending order by default (i.e. from the lowest to highest value). If you want to see the values in a descending order (i.e. highest to lowest), you need to add a parameter named <code class="docutils literal notranslate"><span class="pre">ascending</span></code>, and set it to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    A   B   C     D       E           F
+3   8   3  21   5.0  Class2  01-08-2022
+1  14  11  17  20.0  Class1  01-06-2022
+5   7   5  16   NaN  Class2  01-10-2022
+4  10   9  14   7.0  Class2  01-09-2022
+2  15   6   8  19.0  Class1  01-07-2022
+0  12   5   6  12.0  Class1  01-05-2022
 </pre></div>
 </div>
 </div>
@@ -877,6 +1093,17 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A            15
+B             6
+C             8
+D          19.0
+E        Class1
+F    01-07-2022
+Name: 2, dtype: object
+</pre></div>
+</div>
+</div>
 </div>
 <p>We can also select a number of rows simultaneously. To do this, we need to specify where the range should start and where it should end. These two numbers need to be separated by a colon. Note that the row with the index that is mentioned secondly will NOT be in the subset.</p>
 <div class="cell docutils container">
@@ -886,6 +1113,55 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+      <th>F</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12</td>
+      <td>5</td>
+      <td>6</td>
+      <td>12.0</td>
+      <td>Class1</td>
+      <td>01-05-2022</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14</td>
+      <td>11</td>
+      <td>17</td>
+      <td>20.0</td>
+      <td>Class1</td>
+      <td>01-06-2022</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>If the first value is 0, as in the examole above, it can also be omitted. The code that was given can be reformulated as <code class="docutils literal notranslate"><span class="pre">df.iloc[:2]</span></code></p>
 <p>It is also possible to filter the columns, on the basis of their indices. The indices ranges for the rows and the columns need to be separated by a comma.</p>
@@ -896,6 +1172,43 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>14</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="filtering-by-values">
@@ -905,6 +1218,16 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">new_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    A   B   C     D       E           F
+0  12   5   6  12.0  Class1  01-05-2022
+1  14  11  17  20.0  Class1  01-06-2022
+2  15   6   8  19.0  Class1  01-07-2022
+4  10   9  14   7.0  Class2  01-09-2022
+5   7   5  16   NaN  Class2  01-10-2022
 </pre></div>
 </div>
 </div>
@@ -968,12 +1291,30 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    17
+1    25
+2    21
+3    11
+4    19
+5    12
+dtype: int64
+0    12
+1    34
+2    16
+3    42
+4    28
+5    32
+Name: C, dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <p>The results of these calculations can also be stored within the data frame itself. In the code below, a new column named ‘F’ will be added to df, and it will receive the result of the calculation to the right of the equals sign.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add the same number 3 to all the values in column D</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">3</span>
 </pre></div>
 </div>
 </div>
@@ -988,6 +1329,64 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>F</th>
+      <th>G</th>
+    </tr>
+    <tr>
+      <th>E</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Class1</th>
+      <td>15</td>
+      <td>11</td>
+      <td>17</td>
+      <td>20.0</td>
+      <td>01-07-2022</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>Class2</th>
+      <td>10</td>
+      <td>9</td>
+      <td>21</td>
+      <td>7.0</td>
+      <td>01-10-2022</td>
+      <td>10.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>As was indicated above, Column E of the data frame <code class="docutils literal notranslate"><span class="pre">df</span></code> contains labels which place the rows either in ‘Class1’ or in ‘Class2’. The name of this column can be used as a parameter for <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>. The method then creates the various groups, based on the values it finds in the column that is mentioned. Once the groups have been established, you can apply statistical functions to each of theses. Examples of such statistical functions include <code class="docutils literal notranslate"><span class="pre">mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">sum()</span></code> or <code class="docutils literal notranslate"><span class="pre">max()</span></code>.</p>
 <div class="cell docutils container">
@@ -996,11 +1395,217 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>G</th>
+    </tr>
+    <tr>
+      <th>E</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Class1</th>
+      <td>13.666667</td>
+      <td>7.333333</td>
+      <td>10.333333</td>
+      <td>17.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>Class2</th>
+      <td>8.333333</td>
+      <td>5.666667</td>
+      <td>17.000000</td>
+      <td>6.0</td>
+      <td>9.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>In the output above, you can see that Pandas performs calculations for all the columns in the data frame. If you would like to see the values for only one column, you can simply append the name of this column in square brackets, directly following the <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E
+Class1    12
+Class2     7
+Name: A, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="working-with-dates">
+<h2>Working with dates<a class="headerlink" href="#working-with-dates" title="Permalink to this headline">#</a></h2>
+<p>In the sample data set you have worked with in this notebook, the column named ‘F’ contains strings which represent dates. As you can see, these strings use two digits for the days, two digits for the months and four digits for the years. These components are separated by hyphens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    A   B   C     D       E           F     G
+0  12   5   6  12.0  Class1  01-05-2022  15.0
+1  14  11  17  20.0  Class1  01-06-2022  23.0
+2  15   6   8  19.0  Class1  01-07-2022  22.0
+3   8   3  21   5.0  Class2  01-08-2022   8.0
+4  10   9  14   7.0  Class2  01-09-2022  10.0
+5   7   5  16   NaN  Class2  01-10-2022   NaN
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you want to work with dates in Pandas, it is generally best to interpret these not as basic strings, but, rather, as <code class="docutils literal notranslate"><span class="pre">datetime</span></code> objects. When the dates are interpreted in this specific data type, it becomes much easier to analyse or to compare dates.</p>
+<p>Pandas contains a method called <code class="docutils literal notranslate"><span class="pre">to_datetime()</span></code> which can be used for these types of conversions. It takes a string representing a date as input, and produces a <code class="docutils literal notranslate"><span class="pre">datetime</span></code> object as output. The method can also be used with a <code class="docutils literal notranslate"><span class="pre">Series</span></code> containing multuiple dates, as in our sample data set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">-%m-%Y&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To make sure that the various components of the dates are interpreted correctly, it is advisable to explain the format of the original date in the <code class="docutils literal notranslate"><span class="pre">format</span></code> parameter.  This parameter expects specific codes representing the various components of the dates: days, months and years. You can find more information on these codes in <a class="reference external" href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior">the documentation of the datetime module</a>. By default, the <code class="docutils literal notranslate"><span class="pre">to_datetime()</span></code> function expects dates in the format ‘mm-dd-yyyy’.</p>
+<p>One great advantage of <code class="docutils literal notranslate"><span class="pre">datatime</span></code> objects is that you can easliy retrieve days, months and years separately, using the <code class="docutils literal notranslate"><span class="pre">dt.year</span></code>, <code class="docutils literal notranslate"><span class="pre">dt.month</span></code> and <code class="docutils literal notranslate"><span class="pre">dt.day</span></code> properties, respectively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2022
+1    2022
+2    2022
+3    2022
+4    2022
+5    2022
+Name: datetime, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     5
+1     6
+2     7
+3     8
+4     9
+5    10
+Name: datetime, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1
+1    1
+2    1
+3    1
+4    1
+5    1
+Name: datetime, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">datetime</span></code> module also allows you to find the week number of a given date.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()</span><span class="o">.</span><span class="n">week</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    17
+1    22
+2    26
+3    31
+4    35
+5    39
+Name: week, dtype: UInt32
+</pre></div>
+</div>
+</div>
+</div>
+<p>Working with <code class="docutils literal notranslate"><span class="pre">datetime</span></code> objects, you can also find the day in the week for any given date. In the result of the <code class="docutils literal notranslate"><span class="pre">dayofweek()</span></code> method, number <code class="docutils literal notranslate"><span class="pre">0</span></code> stands for the Monday, and number ‘7’ stands for the Sunday.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">dayofweek</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    6
+1    2
+2    4
+3    0
+4    3
+5    5
+Name: datetime, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also select all dates after a given other datem as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">&#39;2022-07-15&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">date</span> <span class="o">&gt;</span> <span class="n">test_date</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 00:00:00
+2022-09-01 00:00:00
+2022-10-01 00:00:00
 </pre></div>
 </div>
 </div>
@@ -1134,6 +1739,18 @@ title="Print to PDF"
 <span class="c1"># Write to voc-data.csv in the current working directory</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;voc-data.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
     <span class="n">output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">nf</span><span class="o">/</span><span class="mi">35</span><span class="n">gdwksd0fx8kzbsljz4dz6hnrcnxq</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_35031</span><span class="o">/</span><span class="mf">1553556897.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Write to voc-data.csv in the current working directory</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;voc-data.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="n">output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data_file</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;data_file&#39; is not defined
 </pre></div>
 </div>
 </div>

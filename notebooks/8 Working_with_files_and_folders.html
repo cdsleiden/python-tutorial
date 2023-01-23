@@ -564,7 +564,8 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;tweet.txt&quot;</span> <span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span> <span class="p">)</span>
-<span class="n">fullText</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">full_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">full_text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -582,7 +583,7 @@ title="Print to PDF"
 <p>Context handlers are created using the <code class="docutils literal notranslate"><span class="pre">with</span></code> keyword. After <code class="docutils literal notranslate"><span class="pre">with</span></code>, yu need to use the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function. This <code class="docutils literal notranslate"><span class="pre">open()</span></code> function needs to be followed by the words <code class="docutils literal notranslate"><span class="pre">as</span></code> and the name you would like to give to the file handler. In the code block underneath <code class="docutils literal notranslate"><span class="pre">with</span></code>, you can access the contents of this file handler. It is generally useful to assign the contents of the text file to a variable. When the code block underneath <code class="docutils literal notranslate"><span class="pre">with</span></code> ends, the file handler is closed automatically. This is actually a great advantage of a context handler. You don’t risk forgetting to include the <code class="docutils literal notranslate"><span class="pre">close()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;ATaleOfTwoCities.txt&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;BraveNewWorld.txt&quot;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">text</span><span class="p">:</span>
     <span class="n">contents</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -617,7 +618,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-<span class="nb">dir</span> <span class="o">=</span> <span class="s1">&#39;Corpus&#39;</span>
+<span class="nb">dir</span> <span class="o">=</span> <span class="s1">&#39;Solutions&#39;</span>
 
 <span class="k">for</span> <span class="n">fileName</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span> <span class="nb">dir</span> <span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span> <span class="n">fileName</span> <span class="p">)</span>
@@ -627,12 +628,12 @@ title="Print to PDF"
 </div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">join()</span></code>, which is part of the <code class="docutils literal notranslate"><span class="pre">path</span></code> module of <code class="docutils literal notranslate"><span class="pre">os</span></code>, can be used to create a string representing the path to a certain file. If you have one variable which records the base directory of a file, and a second variable which captures the filename, the <code class="docutils literal notranslate"><span class="pre">join()</span></code> function can concatenate the values of these two variables to create the full path to this file. The <code class="docutils literal notranslate"><span class="pre">join()</span></code> function always follows the conventions that are in place on a given operating system for representing paths. There can often be certain differences. While Mac OS uses forward slashes, for instance, Windows uses back slashes. Working with <code class="docutils literal notranslate"><span class="pre">join()</span></code> makes your code more platform-independent.</p>
 <p>Another useful function in <code class="docutils literal notranslate"><span class="pre">os</span></code> is <code class="docutils literal notranslate"><span class="pre">isfile()</span></code>. As you list the files in a certain directory, using <code class="docutils literal notranslate"><span class="pre">listdir()</span></code>, you can apply this function to check whether you are dealing with a file or with something else ( e.g. a subdirectory).</p>
-<p>The code below offers a demostration of these two functions. It lists all the files in the directory that is mentiond, but it ignores all the subdirctories. Note that the first line imports the two functions that have been discussed above. As a result of this, it is no longer necessary to use the period syntax for <code class="docutils literal notranslate"><span class="pre">isfile()</span></code> and <code class="docutils literal notranslate"><span class="pre">join()</span></code>.</p>
+<p>The code below offers a demostration of these two functions. It lists all the files in the directory that is mentiond, and makes sure that all the subdirectories are ignored. Note that the first line imports the two functions that have been discussed above. As a result of this, it is no longer necessary to use the period syntax for <code class="docutils literal notranslate"><span class="pre">isfile()</span></code> and <code class="docutils literal notranslate"><span class="pre">join()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span> <span class="p">,</span> <span class="n">join</span>
 
-<span class="nb">dir</span> <span class="o">=</span> <span class="s1">&#39;Corpus&#39;</span>
+<span class="nb">dir</span> <span class="o">=</span> <span class="s1">&#39;Solutions&#39;</span>
 
 <span class="k">for</span> <span class="n">fileName</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span> <span class="nb">dir</span> <span class="p">):</span>
     <span class="k">if</span> <span class="n">isfile</span><span class="p">(</span> <span class="n">join</span><span class="p">(</span> <span class="nb">dir</span> <span class="p">,</span> <span class="n">fileName</span> <span class="p">)</span> <span class="p">):</span>
@@ -647,7 +648,9 @@ title="Print to PDF"
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
 <section id="exercise-8-1">
 <h2>Exercise 8.1.<a class="headerlink" href="#exercise-8-1" title="Permalink to this headline">#</a></h2>
-<p>Using the <code class="docutils literal notranslate"><span class="pre">listdir()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">os</span></code> library, write code which can list all the files in a given folder on your own computer.</p>
+<p>Find a directory on your own computer which contains both files and subfolders. Define the path to this folder, as a variable named <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p>
+<p>Next, write some code that can list only the subdirectories in this directories, and which ignores the individual files, using the functions <code class="docutils literal notranslate"><span class="pre">listdir()</span></code> and <code class="docutils literal notranslate"><span class="pre">isfile</span></code>.</p>
+<p>Finally, also try to list all the files in one of these subdirectories.</p>
 </section>
 <section id="exercise-8-2">
 <h2>Exercise 8.2.<a class="headerlink" href="#exercise-8-2" title="Permalink to this headline">#</a></h2>

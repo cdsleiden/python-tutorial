@@ -739,15 +739,22 @@ title="Print to PDF"
 <h2>Printing output<a class="headerlink" href="#printing-output" title="Permalink to this headline">#</a></h2>
 <p>Programs usually produce some output. This output can be the result of a calculation, for instance. The <code class="docutils literal notranslate"><span class="pre">print()</span></code> function can be used to communicate the output of the program to the user. As will be explained in more detail later, a function is a named collection of statements.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">print()</span></code> function is always used with parentheses. Inside the parentheses, you can provide the string that you would like the computer to display. A string, as was explained above, is a sequence of alphanumerical characters and spaces.</p>
+<p>The print() function adds a line break after the string by default.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This program works!&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is on a second line!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This sentence is on a second line.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This program works!
+This sentence is on a second line.
 </pre></div>
 </div>
 </div>
 </div>
-<p>You can also format the text, to some extent. The character ‘\t’ prints a tab, and ‘\n’ creates a hard return. Note that the print() function also adds a line breaks itself.</p>
+<p>You can also add some formatting to the text, to some extent. The character ‘\t’ prints a tab, and ‘\n’ creates a hard return.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This sentence is followed by two line breaks. </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -755,12 +762,33 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This sentence is followed by two line breaks. 
+
+This line contains 	a tab. 
+</pre></div>
 </div>
-<p>When you provide the name of a variable inside the <code class="docutils literal notranslate"><span class="pre">print()</span></code> fuction, this will display the <em>value</em> of assigned to this variable.</p>
+</div>
+</div>
+<p>When you provide the name of a variable inside the <code class="docutils literal notranslate"><span class="pre">print()</span></code> fuction, this will display the <em>value</em> that is assigned to this variable, and not the <em>name</em> of this variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159265359</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As mentioned, the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function places a line break (i.e. a hard return) after the text provided in parentheses. If you would like to replace this standard line break with another character, you can specify this character in the <code class="docutils literal notranslate"><span class="pre">end</span></code> parameter of the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is the string sentence&#39;</span> <span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This second string is printed on the same line.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is the string sentence; This second string is printed on the same line.
 </pre></div>
 </div>
 </div>
