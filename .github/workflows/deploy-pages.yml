@@ -61,7 +61,7 @@ jobs:
         zip -r notebooks.zip notebooks
     - name: Create release title
       id: set-title
-      run: echo "::set-output name=title::v$(date +'%Y.%m.%d.%H.%M')"
+      run: echo "title=v$(date +'%Y.%m.%d.%H.%M')" >> "$GITHUB_OUTPUT"
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
