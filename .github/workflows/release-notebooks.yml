@@ -1,0 +1,29 @@
+name: deploy-book
+
+# Only run this when anything in `notebooks/` changes on the main branch
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - 'notebooks/**'
+
+# This job creates a release from the notebooks with data and solutions
+jobs:
+  zip-notebooks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Zip notebooks
+      run: |
+        zip -r notebooks.zip notebooks
+    - name: Create release title
+      id: set-title
+      run: echo "title=v$(date +'%Y.%m.%d.%H.%M')" >> "$GITHUB_OUTPUT"
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "${{ steps.set-title.outputs.title }}"
+        prerelease: false
+        files: |
+          notebooks.zip
