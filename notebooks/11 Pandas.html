@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>11. Data analysis with pandas &#8212; Python Tutorial</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,56 +61,87 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/11 Pandas';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="12. Data Visualisation" href="12%20Visualisation.html" />
     <link rel="prev" title="10. Data acquisition" href="10%20Data_acquisition.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">Python Tutorial</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="../Welcome.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Python Tutorial</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -108,575 +150,272 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Tutorial
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1%20Variables_and_data_types.html">
-   1. Variables and data types
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2%20Operators.html">
-   2. Operators
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3%20Working_with_strings.html">
-   3. Working with strings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4%20Flow_control.html">
-   4. Flow control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5%20Lists.html">
-   5. Lists
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="6%20Dictionaries.html">
-   6. Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7%20Functions_modules_and_libraries.html">
-   7. Functions, Modules and Libraries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="8%20Working_with_files_and_folders.html">
-   8. Working with files and folders
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="9%20Regular_expressions.html">
-   9. Regular Expressions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10%20Data_acquisition.html">
-   10. Data acquisition
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   11. Data analysis with pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="12%20Visualisation.html">
-   12. Data Visualisation
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Variables and data types</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="3%20Working_with_strings.html">3. Working with strings</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="4%20Flow_control.html">4. Flow control</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="5%20Lists.html">5. Lists</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="6%20Dictionaries.html">6. Dictionaries</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="9%20Regular_expressions.html">9. Regular Expressions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="10%20Data_acquisition.html">10. Data acquisition</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Data analysis with pandas</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12%20Visualisation.html">12. Data Visualisation</a></li>
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Practical information
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practical information</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Jupyter_notebook_basics.html">
-   Jupyter Notebook basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Installation.html">
-   Installation guidelines
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Other_resources.html">
-   Other resources
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="Jupyter_notebook_basics.html">Jupyter Notebook basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Other_resources.html">Other resources</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Solutions to the exercises
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Solutions to the exercises</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">
-   1. Variables and data types
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/2%20Operators.html">
-   2. Operators
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/3%20Working_with_strings.html">
-   3. Working with strings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/4%20Flow_control.html">
-   4. Flow control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/5%20Lists.html">
-   5. Lists
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/6%20Dictionaries.html">
-   6. Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/7%20Functions_modules_and_libraries.html">
-   7. Functions, Modules and Libraries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/8%20Working_with_files_and_folders.html">
-   8. Working with files and folders
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/9%20Regular_expressions.html">
-   9. Regular expressions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/10%20Data_acquisition.html">
-   10. Data acquisition
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/11%20Pandas.html">
-   11. Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/12%20Visualisation.html">
-   12. Visualisation
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">1. Variables and data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/2%20Operators.html">2. Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/3%20Working_with_strings.html">3. Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/4%20Flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/5%20Lists.html">5. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/6%20Dictionaries.html">6. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/9%20Regular_expressions.html">9. Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/10%20Data_acquisition.html">10. Data acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/11%20Pandas.html">11. Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/12%20Visualisation.html">12. Visualisation</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/11 Pandas.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/11 Pandas.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/11 Pandas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/notebooks/11 Pandas.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   11. Data analysis with pandas
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reading-a-csv-file">
-     Reading a CSV file
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reading-an-excel-spreadsheet">
-     Reading an Excel spreadsheet
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#converting-a-list-into-a-data-frame">
-     Converting a list into a data frame
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#basic-information-about-the-data-frame">
-     Basic information about the data frame
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#series">
-     Series
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#statistical-functions">
-     Statistical functions
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#navigating-a-data-frame">
-     Navigating a data frame
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sorting">
-     Sorting
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-subsets">
-     Selecting subsets
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-by-index">
-       Filtering by index
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-by-values">
-       Filtering by values
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#subsets-of-columns">
-       Subsets of columns
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculations">
-     Calculations
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grouping-items-and-aggregation">
-     Grouping items and aggregation
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#working-with-dates">
-     Working with dates
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-11-1">
-     Exercise 11.1.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-11-2">
-     Exercise 11.2.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-11-3">
-     Exercise 11.3
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-11-4">
-     Exercise 11.4
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>11. Data analysis with pandas</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   11. Data analysis with pandas
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reading-a-csv-file">
-     Reading a CSV file
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reading-an-excel-spreadsheet">
-     Reading an Excel spreadsheet
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#converting-a-list-into-a-data-frame">
-     Converting a list into a data frame
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#basic-information-about-the-data-frame">
-     Basic information about the data frame
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#series">
-     Series
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#statistical-functions">
-     Statistical functions
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#navigating-a-data-frame">
-     Navigating a data frame
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sorting">
-     Sorting
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-subsets">
-     Selecting subsets
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-by-index">
-       Filtering by index
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-by-values">
-       Filtering by values
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#subsets-of-columns">
-       Subsets of columns
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculations">
-     Calculations
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grouping-items-and-aggregation">
-     Grouping items and aggregation
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#working-with-dates">
-     Working with dates
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-11-1">
-     Exercise 11.1.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-11-2">
-     Exercise 11.2.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-11-3">
-     Exercise 11.3
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-11-4">
-     Exercise 11.4
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>11. Data analysis with pandas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. Data analysis with pandas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-csv-file">Reading a CSV file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-an-excel-spreadsheet">Reading an Excel spreadsheet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-a-list-into-a-data-frame">Converting a list into a data frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-information-about-the-data-frame">Basic information about the data frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series">Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-functions">Statistical functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-data-frame">Navigating a data frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting">Sorting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-subsets">Selecting subsets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-index">Filtering by index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-values">Filtering by values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsets-of-columns">Subsets of columns</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-items-and-aggregation">Grouping items and aggregation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-dates">Working with dates</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-1">Exercise 11.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-2">Exercise 11.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-3">Exercise 11.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-4">Exercise 11.4</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="data-analysis-with-pandas">
-<h1>11. Data analysis with pandas<a class="headerlink" href="#data-analysis-with-pandas" title="Permalink to this headline">#</a></h1>
+<h1>11. Data analysis with pandas<a class="headerlink" href="#data-analysis-with-pandas" title="Permalink to this heading">#</a></h1>
 <p>‘Pandas’ is a Python library which was developed for the manipulation and the analysis of data sets. It is available for Python version 2.7 and higher. The name of the library loosely stands for “Python Data Analysis Library”. Pandas contains methods that enable programmers to read data from and write data to a wide range of file formats, including CSV, TSV, Excel spreadsheets and MySQL databases, and it offers numerous statistical methods that can be used to analyse these data.</p>
 <p>If pandas has been installed successfully on your computer, this library can be imported into your program using the <code class="docutils literal notranslate"><span class="pre">import</span></code> keyword.</p>
 <div class="cell docutils container">
@@ -688,7 +427,7 @@ title="Print to PDF"
 </div>
 <p>As can be seen, this import statement also assigns an alias, namely <code class="docutils literal notranslate"><span class="pre">pd</span></code>. This is an abbreviated reference to the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library. Without this alias, the full name of the library would have to be typed in each time a method from this library is needed.</p>
 <section id="reading-a-csv-file">
-<h2>Reading a CSV file<a class="headerlink" href="#reading-a-csv-file" title="Permalink to this headline">#</a></h2>
+<h2>Reading a CSV file<a class="headerlink" href="#reading-a-csv-file" title="Permalink to this heading">#</a></h2>
 <p>The folder containing all the notebooks for this tutorial also includes a subfolder named ‘Data’. This subfolder contains a CSV file unoriginally named ‘data.csv’.</p>
 <p>If you want to work with a data set that is stored in the CSV format, it can be accessed using the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function.</p>
 <div class="cell docutils container">
@@ -722,7 +461,7 @@ title="Print to PDF"
 <p>Your CSV file may of course contain missing values. If, in the CSV file, all missing values are represented using codes such as ‘NULL’, ‘NaN’, or ‘NA’, pandas will automically recognised these missing values as such. Pandas represents missing values via the code ‘NaN’, which stands for ‘Not a Number’.</p>
 </section>
 <section id="reading-an-excel-spreadsheet">
-<h2>Reading an Excel spreadsheet<a class="headerlink" href="#reading-an-excel-spreadsheet" title="Permalink to this headline">#</a></h2>
+<h2>Reading an Excel spreadsheet<a class="headerlink" href="#reading-an-excel-spreadsheet" title="Permalink to this heading">#</a></h2>
 <p>The Pandas library also offers a method named <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code>. You can use this function, unsurprisingly, to process data stored in an Excel spreadsheet. The method needs to be used with two parameters. The first parameter is the name of the Excel file that you want to work with. Secondly, as a value to a parameter named <code class="docutils literal notranslate"><span class="pre">sheet_name</span></code>, you need to provide the name of the sheet within the spreadsheet that you want to read.</p>
 <p>Similarly to the way in which <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> processes data, <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code> loads the data on the sheet that you mention into a data frame.</p>
 <p>The cell below illustrates the use of the <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code> file using the Excel file provided in the ‘Data’ subfolder.</p>
@@ -738,7 +477,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="converting-a-list-into-a-data-frame">
-<h2>Converting a list into a data frame<a class="headerlink" href="#converting-a-list-into-a-data-frame" title="Permalink to this headline">#</a></h2>
+<h2>Converting a list into a data frame<a class="headerlink" href="#converting-a-list-into-a-data-frame" title="Permalink to this heading">#</a></h2>
 <p>It is also possible to convert an existing Python list into a data frame, using the <code class="docutils literal notranslate"><span class="pre">DataFrame()</span></code> method. In the code below, the list named <code class="docutils literal notranslate"><span class="pre">data</span></code> is a two-dimensional array. Each item is in fact a list in itself.</p>
 <p>When you pass this list into <code class="docutils literal notranslate"><span class="pre">Dataframe()</span></code>, the method converts this data structure into a colelction of rows and columns. The <code class="docutils literal notranslate"><span class="pre">columns</span></code> parameter may be used to supply column names.</p>
 <div class="cell docutils container">
@@ -757,7 +496,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="basic-information-about-the-data-frame">
-<h2>Basic information about the data frame<a class="headerlink" href="#basic-information-about-the-data-frame" title="Permalink to this headline">#</a></h2>
+<h2>Basic information about the data frame<a class="headerlink" href="#basic-information-about-the-data-frame" title="Permalink to this heading">#</a></h2>
 <p>Once a data frame has been created, the data set can be examined using a number of methods that are available within the Pandas library. These methods will be explained using the simple data set that was shown above.</p>
 <p>After you have run the cell above, you can inspect the contents by using a print command, as follows:</p>
 <div class="cell docutils container">
@@ -814,7 +553,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="series">
-<h2>Series<a class="headerlink" href="#series" title="Permalink to this headline">#</a></h2>
+<h2>Series<a class="headerlink" href="#series" title="Permalink to this heading">#</a></h2>
 <p>The values in a column of a data frame can be accessed separately using the name of the column. This assumes, obviously, that such column names have been defined. In order to obtain the data in a specific column, the name of the column must be appended to the name of the full data frame using square brackets, as follows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -842,7 +581,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="statistical-functions">
-<h2>Statistical functions<a class="headerlink" href="#statistical-functions" title="Permalink to this headline">#</a></h2>
+<h2>Statistical functions<a class="headerlink" href="#statistical-functions" title="Permalink to this heading">#</a></h2>
 <p>Within Pandas, you can use methods such as <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code>, <code class="docutils literal notranslate"><span class="pre">mean()</span></code> to receive basic statistical information about numerical values in your data set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -873,7 +612,7 @@ title="Print to PDF"
 <p>Note that this particular method for calculating summations will only produce meaningful results in the case of numerical values. If the column contains strings, as in the case of column ‘E’ of our sample data set, this method will simply concatenate all the string values in the Series.</p>
 </section>
 <section id="navigating-a-data-frame">
-<h2>Navigating a data frame<a class="headerlink" href="#navigating-a-data-frame" title="Permalink to this headline">#</a></h2>
+<h2>Navigating a data frame<a class="headerlink" href="#navigating-a-data-frame" title="Permalink to this heading">#</a></h2>
 <p>To iterate across all the rows in a data frame, you can make use of the iterrows() method. This method processes the data frame row by row. When you use <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code>, pandas will create a new Series for each individual row. This Series will contain all the individual values on that row. Secondly, the method also returns each row’s index.</p>
 <p>In the code below, the method <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code> navigates across all the rows in the data frame. During each iteration, the compound variable named row will be assigned all the values that are available on a given row. When the variable row is used in combination with a column name, this variable will represent the data value in that particular column. The method <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code> can also return the index of each row, but that index is not actually used in the fragment that follows.</p>
 <div class="cell docutils container">
@@ -886,7 +625,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="sorting">
-<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">#</a></h2>
+<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this heading">#</a></h2>
 <p>It is also possible to <em>sort</em> all the values in dataframe. The method to be used for this purpose is <code class="docutils literal notranslate"><span class="pre">sortvalues()</span></code>. The <code class="docutils literal notranslate"><span class="pre">by</span></code> parameter of this method specifies the column to sort by.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -913,10 +652,10 @@ title="Print to PDF"
 </div>
 </section>
 <section id="selecting-subsets">
-<h2>Selecting subsets<a class="headerlink" href="#selecting-subsets" title="Permalink to this headline">#</a></h2>
+<h2>Selecting subsets<a class="headerlink" href="#selecting-subsets" title="Permalink to this heading">#</a></h2>
 <p>In the pandas library, it is also possible to filter data sets. In other words, we can create new data sets containing only some of the rows or the columns of the original data sets. Such filtered data sets are also referred to as subsets. This process of ‘subsetting’ a data frame takes place on the basis of specific criteria. Different types of criteria are possible.</p>
 <section id="filtering-by-index">
-<h3>Filtering by index<a class="headerlink" href="#filtering-by-index" title="Permalink to this headline">#</a></h3>
+<h3>Filtering by index<a class="headerlink" href="#filtering-by-index" title="Permalink to this heading">#</a></h3>
 <p>As a first possibility, we can use the indices of rows and of columns as criteria. These indices need to be added to the data frame using the <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> indexer.</p>
 <p>When we want to select all the values on the third row of the data frame (i.e. the row with index 2), this can be accomplished using the code below. The third row has index number ‘2’, because pandas start counting at zero.</p>
 <div class="cell docutils container">
@@ -947,7 +686,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="filtering-by-values">
-<h3>Filtering by values<a class="headerlink" href="#filtering-by-values" title="Permalink to this headline">#</a></h3>
+<h3>Filtering by values<a class="headerlink" href="#filtering-by-values" title="Permalink to this heading">#</a></h3>
 <p>A potential disadvantage of this <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> selector is that you need to know the exact values for the indices. In most situations, it is more useful to create subsets on the basis of criteria applied to the values in the data set. Imagine, for instance, that you are only interested in rows in which the column B contains a value of 5 or higher. To select those rows, you can work with the Boolean expression <code class="docutils literal notranslate"><span class="pre">df['B']</span> <span class="pre">&gt;=</span> <span class="pre">5</span></code>. This Boolean expression can be added to the original data frame in square brackets. In the code that follows, the subset is assigned to a new data frame, one named <code class="docutils literal notranslate"><span class="pre">new_df</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -983,7 +722,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="subsets-of-columns">
-<h3>Subsets of columns<a class="headerlink" href="#subsets-of-columns" title="Permalink to this headline">#</a></h3>
+<h3>Subsets of columns<a class="headerlink" href="#subsets-of-columns" title="Permalink to this heading">#</a></h3>
 <p>Next to subsets of rows, it is also possible to create subsets of columns. More specifically, this means that we create new data frame, by copying only some of the columns that are available in another data frame. The easiest way to accomplish this is by supplying a list of the column names that you want to keep within the square brackets appended to data frame that needs to be filtered. After running the code below, the data frame named <code class="docutils literal notranslate"><span class="pre">new_df</span></code> has the exact same number of rows as df, but it only contains three of its columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1004,7 +743,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="calculations">
-<h2>Calculations<a class="headerlink" href="#calculations" title="Permalink to this headline">#</a></h2>
+<h2>Calculations<a class="headerlink" href="#calculations" title="Permalink to this heading">#</a></h2>
 <p>One of the great strengths of Pandas is that it can make calculations using the values captured in data frames. Such calculations can be carried out using the regular mathematical operators in Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1028,7 +767,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="grouping-items-and-aggregation">
-<h2>Grouping items and aggregation<a class="headerlink" href="#grouping-items-and-aggregation" title="Permalink to this headline">#</a></h2>
+<h2>Grouping items and aggregation<a class="headerlink" href="#grouping-items-and-aggregation" title="Permalink to this heading">#</a></h2>
 <p>Pandas also offers a method named <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> which can be very useful when your data set contains labels or categories for specific records. Using <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>, the records which have been assigned the same category can all be placed in a single group. Subsequently, it becomes possible to perform calcutions for each group that has been created. This process is demonstrated below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1055,7 +794,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="working-with-dates">
-<h2>Working with dates<a class="headerlink" href="#working-with-dates" title="Permalink to this headline">#</a></h2>
+<h2>Working with dates<a class="headerlink" href="#working-with-dates" title="Permalink to this heading">#</a></h2>
 <p>In the sample data set you have worked with in this notebook, the column named ‘F’ contains strings which represent dates. As you can see, these strings use two digits for the days, two digits for the months and four digits for the years. These components are separated by hyphens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1127,9 +866,9 @@ title="Print to PDF"
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
 <section id="exercise-11-1">
-<h2>Exercise 11.1.<a class="headerlink" href="#exercise-11-1" title="Permalink to this headline">#</a></h2>
+<h2>Exercise 11.1.<a class="headerlink" href="#exercise-11-1" title="Permalink to this heading">#</a></h2>
 <p>In the data folder for this tutorial, you can find a CSV file named ‘nobel.csv’. If, for whichever reason, you cannot locate this file, you can download it from the following address: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1219,7 +958,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="exercise-11-2">
-<h2>Exercise 11.2.<a class="headerlink" href="#exercise-11-2" title="Permalink to this headline">#</a></h2>
+<h2>Exercise 11.2.<a class="headerlink" href="#exercise-11-2" title="Permalink to this heading">#</a></h2>
 <p>In the data folder for this tutorial, you can find a CSV file named ‘Grades.xlsx’. If you cannot locate this file, you can download it from the following address: <a class="reference external" href="https://edu.nl/m6w8n">https://edu.nl/m6w8n</a></p>
 <p>This spreadsheet contains the partial grades received in a certain course.</p>
 <p>Write code which can calculate and print the final grade for each student. The essay and the exam both count for 40% the grade. The remaining 20% is determined by the presentation. All grades should have one digit after the decimal point.</p>
@@ -1232,7 +971,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="exercise-11-3">
-<h2>Exercise 11.3<a class="headerlink" href="#exercise-11-3" title="Permalink to this headline">#</a></h2>
+<h2>Exercise 11.3<a class="headerlink" href="#exercise-11-3" title="Permalink to this heading">#</a></h2>
 <p>In the exercise, we make use of the following data set:</p>
 <blockquote>
 <div><p>Fatah-Black, Dr KJ (Leiden University) (2017): Lijsten van de leveranties, met de namen van de kopers en betaalde prijzen op de verkopingen van de VOC kamer Zeeland, 1725 – 1777. DANS. <a class="reference external" href="https://doi.org/10.17026/dans-23z-ez6f">https://doi.org/10.17026/dans-23z-ez6f</a></p>
@@ -1288,7 +1027,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="exercise-11-4">
-<h2>Exercise 11.4<a class="headerlink" href="#exercise-11-4" title="Permalink to this headline">#</a></h2>
+<h2>Exercise 11.4<a class="headerlink" href="#exercise-11-4" title="Permalink to this heading">#</a></h2>
 <p>Download the CSV file ‘gutenberg_metadata.csv’ via the url <a class="reference external" href="https://edu.nl/xcm3q">https://edu.nl/xcm3q</a>.</p>
 <p>Using this CSV file, create a dataframe which only contains the English texts written by Charles Dickens. In the data set, this name is given as ‘Dickens, Charles’. Use the code ‘en’ for ‘English’.</p>
 <p>Two different conditions can be combined using the amoersand (’&amp;’). The combined criteria must be given in brackets.</p>
@@ -1322,7 +1061,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
@@ -1330,50 +1069,132 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="10%20Data_acquisition.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">10. Data acquisition</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="10%20Data_acquisition.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">10. Data acquisition</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="12%20Visualisation.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="12%20Visualisation.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">12. Data Visualisation</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Peter Verhaar and Ben Companjen<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. Data analysis with pandas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-csv-file">Reading a CSV file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-an-excel-spreadsheet">Reading an Excel spreadsheet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-a-list-into-a-data-frame">Converting a list into a data frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-information-about-the-data-frame">Basic information about the data frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series">Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-functions">Statistical functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-data-frame">Navigating a data frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting">Sorting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-subsets">Selecting subsets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-index">Filtering by index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-values">Filtering by values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsets-of-columns">Subsets of columns</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-items-and-aggregation">Grouping items and aggregation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-dates">Working with dates</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-1">Exercise 11.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-2">Exercise 11.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-3">Exercise 11.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-4">Exercise 11.4</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Peter Verhaar and Ben Companjen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>3. Working with strings &#8212; Python Tutorial</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,56 +61,87 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/3 Working_with_strings';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4. Flow control" href="4%20Flow_control.html" />
     <link rel="prev" title="2. Operators" href="2%20Operators.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">Python Tutorial</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="../Welcome.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Python Tutorial</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -108,478 +150,265 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Tutorial
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1%20Variables_and_data_types.html">
-   1. Variables and data types
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2%20Operators.html">
-   2. Operators
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   3. Working with strings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4%20Flow_control.html">
-   4. Flow control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5%20Lists.html">
-   5. Lists
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="6%20Dictionaries.html">
-   6. Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7%20Functions_modules_and_libraries.html">
-   7. Functions, Modules and Libraries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="8%20Working_with_files_and_folders.html">
-   8. Working with files and folders
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="9%20Regular_expressions.html">
-   9. Regular Expressions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10%20Data_acquisition.html">
-   10. Data acquisition
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11%20Pandas.html">
-   11. Data analysis with pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="12%20Visualisation.html">
-   12. Data Visualisation
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Variables and data types</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Working with strings</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="4%20Flow_control.html">4. Flow control</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="5%20Lists.html">5. Lists</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="6%20Dictionaries.html">6. Dictionaries</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="9%20Regular_expressions.html">9. Regular Expressions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="10%20Data_acquisition.html">10. Data acquisition</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="11%20Pandas.html">11. Data analysis with pandas</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12%20Visualisation.html">12. Data Visualisation</a></li>
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Practical information
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practical information</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Jupyter_notebook_basics.html">
-   Jupyter Notebook basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Installation.html">
-   Installation guidelines
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Other_resources.html">
-   Other resources
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="Jupyter_notebook_basics.html">Jupyter Notebook basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Other_resources.html">Other resources</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Solutions to the exercises
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Solutions to the exercises</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">
-   1. Variables and data types
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/2%20Operators.html">
-   2. Operators
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/3%20Working_with_strings.html">
-   3. Working with strings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/4%20Flow_control.html">
-   4. Flow control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/5%20Lists.html">
-   5. Lists
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/6%20Dictionaries.html">
-   6. Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/7%20Functions_modules_and_libraries.html">
-   7. Functions, Modules and Libraries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/8%20Working_with_files_and_folders.html">
-   8. Working with files and folders
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/9%20Regular_expressions.html">
-   9. Regular expressions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/10%20Data_acquisition.html">
-   10. Data acquisition
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/11%20Pandas.html">
-   11. Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/12%20Visualisation.html">
-   12. Visualisation
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">1. Variables and data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/2%20Operators.html">2. Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/3%20Working_with_strings.html">3. Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/4%20Flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/5%20Lists.html">5. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/6%20Dictionaries.html">6. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/9%20Regular_expressions.html">9. Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/10%20Data_acquisition.html">10. Data acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/11%20Pandas.html">11. Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/12%20Visualisation.html">12. Visualisation</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/3 Working_with_strings.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/3 Working_with_strings.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/3 Working_with_strings.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/notebooks/3 Working_with_strings.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   3. Working with strings
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#concatenation">
-     Concatenation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions-and-methods-for-strings">
-   Functions and methods for strings
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-individual-characters-of-a-string">
-     Selecting individual characters of a string
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-index-method">
-     The index() method
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-1">
-     Exercise 3.1.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-2">
-     Exercise 3.2.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-3">
-     Exercise 3.3.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-4">
-     Exercise 3.4.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-5">
-     Exercise 3.5.
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>3. Working with strings</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   3. Working with strings
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#concatenation">
-     Concatenation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions-and-methods-for-strings">
-   Functions and methods for strings
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-individual-characters-of-a-string">
-     Selecting individual characters of a string
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-index-method">
-     The index() method
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-1">
-     Exercise 3.1.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-2">
-     Exercise 3.2.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-3">
-     Exercise 3.3.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-4">
-     Exercise 3.4.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-5">
-     Exercise 3.5.
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>3. Working with strings</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Working with strings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">Concatenation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-and-methods-for-strings">Functions and methods for strings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-individual-characters-of-a-string">Selecting individual characters of a string</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-index-method">The index() method</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-1">Exercise 3.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-2">Exercise 3.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="working-with-strings">
-<h1>3. Working with strings<a class="headerlink" href="#working-with-strings" title="Permalink to this headline">#</a></h1>
+<h1>3. Working with strings<a class="headerlink" href="#working-with-strings" title="Permalink to this heading">#</a></h1>
 <p>Strings, as has been explained, consists of sequences of characters. They can be created using single, double and triple quotes. The single and the double quotes are used most commonly. Once created, such strings can be changed in a number of ways.</p>
 <section id="concatenation">
-<h2>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">#</a></h2>
+<h2>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this heading">#</a></h2>
 <p>One of the operators that you can use in combination with strings is the concatenation operator. Its symbol is the plus (‘+’). You can use this operator to combine two or more existing strings into a longer string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -599,7 +428,7 @@ title="Print to PDF"
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="functions-and-methods-for-strings">
-<h1>Functions and methods for strings<a class="headerlink" href="#functions-and-methods-for-strings" title="Permalink to this headline">#</a></h1>
+<h1>Functions and methods for strings<a class="headerlink" href="#functions-and-methods-for-strings" title="Permalink to this heading">#</a></h1>
 <p>To get information about the number of characters in a string, you can make use of the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function. The characters ‘len’ stand for ‘length’.</p>
 <p>The value a of string variable can also be manipulated by making use of methods. A method is similar to a function. A method, like a function, is a word that represents a certain action. The difference between methods and functions will be explained in more detail in another part of this tutorial. While functions can be used independently, methods are always associated with a specific type of variable such as a string. We can call a method by appending the name of the method to the name of the variable. The variable and the method must be delimited by a period. The following methods are available for string objects:</p>
 <table width="100%; " style="font-size: 1.0em; text-align: left; ">
@@ -666,7 +495,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="selecting-individual-characters-of-a-string">
-<h2>Selecting individual characters of a string<a class="headerlink" href="#selecting-individual-characters-of-a-string" title="Permalink to this headline">#</a></h2>
+<h2>Selecting individual characters of a string<a class="headerlink" href="#selecting-individual-characters-of-a-string" title="Permalink to this heading">#</a></h2>
 <p>When you create a string, it is useful to bear in mind that all the inividual characters that make up the string are numbered behind the scenes. These numbers are referred to as indices. The first character is given the index 0. Individual characters can be accessed by appending a set of square brackets to the name of the string variable, and by supplying the index of the character you want to access within these brackets. Using these indices, it becomes possible to extract specific characters from variables. When you use negative numbers (e.g. -1 or -2), Python starts selecting characters at the end of the string and moves back.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -722,7 +551,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="the-index-method">
-<h2>The index() method<a class="headerlink" href="#the-index-method" title="Permalink to this headline">#</a></h2>
+<h2>The index() method<a class="headerlink" href="#the-index-method" title="Permalink to this heading">#</a></h2>
 <p>The method ‘index()’ can help you to find the index of a given character. This method can be used productively in string slices.</p>
 <p>The method firstly determines whether a string contains a given substring. If it does, the method returns a number indicating the starting position (i.e. the index) of this substring. The function always returns the index of the first occurrence of the substring. If the string does not contain the substring that is mentioned as a parameter, the method produces an error message.</p>
 <div class="cell docutils container">
@@ -760,13 +589,13 @@ title="Print to PDF"
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
 <section id="exercise-3-1">
-<h2>Exercise 3.1.<a class="headerlink" href="#exercise-3-1" title="Permalink to this headline">#</a></h2>
+<h2>Exercise 3.1.<a class="headerlink" href="#exercise-3-1" title="Permalink to this heading">#</a></h2>
 <p>Create two string variables. The first variable must be assigned the value ‘unique’ and the second variable should be assigned the value ‘biodiversity’. Create a third variable with the value ‘university’, by firstly slicing the first two string variables, and by subsequently concatenating the substrings.</p>
 </section>
 <section id="exercise-3-2">
-<h2>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Permalink to this headline">#</a></h2>
+<h2>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Permalink to this heading">#</a></h2>
 <p>Create the following two string variables:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;vladimir&#39;</span>
 <span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;nabokov&#39;</span>
@@ -775,11 +604,11 @@ title="Print to PDF"
 <p>Using these two existing variables, create a third variable named ‘fullName’ with the following value: “Nabokov, Vladimir”. Note that the first character of the first name and the last name must be in upper case. Also try to print the initials of the author in upper case, as follows: ‘VN’</p>
 </section>
 <section id="exercise-3-3">
-<h2>Exercise 3.3.<a class="headerlink" href="#exercise-3-3" title="Permalink to this headline">#</a></h2>
+<h2>Exercise 3.3.<a class="headerlink" href="#exercise-3-3" title="Permalink to this heading">#</a></h2>
 <p>Create a variable and assign it your full name as a string. Next, print the number of characters in your name, excluding the space.</p>
 </section>
 <section id="exercise-3-4">
-<h2>Exercise 3.4.<a class="headerlink" href="#exercise-3-4" title="Permalink to this headline">#</a></h2>
+<h2>Exercise 3.4.<a class="headerlink" href="#exercise-3-4" title="Permalink to this heading">#</a></h2>
 <p>Create a variable named <code class="docutils literal notranslate"><span class="pre">url</span></code> and assign it following string: <code class="docutils literal notranslate"><span class="pre">https://www.universiteitleiden.nl</span></code>.</p>
 <p>Try to write code which can extract the top level domain (i.e. the country code) from this url.
 Tip: this problem can be solved by creating a string slice with the last two characters only, but top domain levels may of course consists of more than two characters. An alternative approach is to make use of the <code class="docutils literal notranslate"><span class="pre">rindex()</span></code> function, which returns the LAST occurrence of a character.</p>
@@ -792,7 +621,7 @@ Tip: this problem can be solved by creating a string slice with the last two cha
 </div>
 </section>
 <section id="exercise-3-5">
-<h2>Exercise 3.5.<a class="headerlink" href="#exercise-3-5" title="Permalink to this headline">#</a></h2>
+<h2>Exercise 3.5.<a class="headerlink" href="#exercise-3-5" title="Permalink to this heading">#</a></h2>
 <p>Create a variable named ‘filename’ and assign it the value ‘README.txt’. Next, write some code in Python which can extract the filename without the extension.</p>
 </section>
 </section>
@@ -809,7 +638,7 @@ Tip: this problem can be solved by creating a string slice with the last two cha
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
@@ -817,50 +646,122 @@ Tip: this problem can be solved by creating a string slice with the last two cha
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="2%20Operators.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">2. Operators</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2%20Operators.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2. Operators</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="4%20Flow_control.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="4%20Flow_control.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">4. Flow control</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Peter Verhaar and Ben Companjen<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Working with strings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">Concatenation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-and-methods-for-strings">Functions and methods for strings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-individual-characters-of-a-string">Selecting individual characters of a string</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-index-method">The index() method</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-1">Exercise 3.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-2">Exercise 3.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Peter Verhaar and Ben Companjen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

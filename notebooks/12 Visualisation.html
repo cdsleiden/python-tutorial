@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>12. Data Visualisation &#8212; Python Tutorial</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,56 +61,87 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/12 Visualisation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Jupyter Notebook basics" href="Jupyter_notebook_basics.html" />
     <link rel="prev" title="11. Data analysis with pandas" href="11%20Pandas.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">Python Tutorial</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="../Welcome.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Python Tutorial</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -108,587 +150,277 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Tutorial
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1%20Variables_and_data_types.html">
-   1. Variables and data types
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2%20Operators.html">
-   2. Operators
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3%20Working_with_strings.html">
-   3. Working with strings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4%20Flow_control.html">
-   4. Flow control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5%20Lists.html">
-   5. Lists
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="6%20Dictionaries.html">
-   6. Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7%20Functions_modules_and_libraries.html">
-   7. Functions, Modules and Libraries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="8%20Working_with_files_and_folders.html">
-   8. Working with files and folders
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="9%20Regular_expressions.html">
-   9. Regular Expressions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10%20Data_acquisition.html">
-   10. Data acquisition
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11%20Pandas.html">
-   11. Data analysis with pandas
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   12. Data Visualisation
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Variables and data types</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="3%20Working_with_strings.html">3. Working with strings</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="4%20Flow_control.html">4. Flow control</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="5%20Lists.html">5. Lists</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="6%20Dictionaries.html">6. Dictionaries</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="9%20Regular_expressions.html">9. Regular Expressions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="10%20Data_acquisition.html">10. Data acquisition</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="11%20Pandas.html">11. Data analysis with pandas</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Data Visualisation</a></li>
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Practical information
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practical information</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Jupyter_notebook_basics.html">
-   Jupyter Notebook basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Installation.html">
-   Installation guidelines
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Other_resources.html">
-   Other resources
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="Jupyter_notebook_basics.html">Jupyter Notebook basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Other_resources.html">Other resources</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Solutions to the exercises
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Solutions to the exercises</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">
-   1. Variables and data types
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/2%20Operators.html">
-   2. Operators
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/3%20Working_with_strings.html">
-   3. Working with strings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/4%20Flow_control.html">
-   4. Flow control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/5%20Lists.html">
-   5. Lists
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/6%20Dictionaries.html">
-   6. Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/7%20Functions_modules_and_libraries.html">
-   7. Functions, Modules and Libraries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/8%20Working_with_files_and_folders.html">
-   8. Working with files and folders
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/9%20Regular_expressions.html">
-   9. Regular expressions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/10%20Data_acquisition.html">
-   10. Data acquisition
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/11%20Pandas.html">
-   11. Pandas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Solutions/12%20Visualisation.html">
-   12. Visualisation
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">1. Variables and data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/2%20Operators.html">2. Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/3%20Working_with_strings.html">3. Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/4%20Flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/5%20Lists.html">5. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/6%20Dictionaries.html">6. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/9%20Regular_expressions.html">9. Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/10%20Data_acquisition.html">10. Data acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/11%20Pandas.html">11. Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/12%20Visualisation.html">12. Visualisation</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/12 Visualisation.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/12 Visualisation.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/12 Visualisation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/notebooks/12 Visualisation.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   12. Data Visualisation
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-data-to-be-visualised">
-     The data to be visualised
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#importing-seaborn-and-matplotlib">
-     Importing seaborn and matplotlib
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-bar-plot">
-     A bar plot
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#customisations">
-     Customisations
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#categorical-variables">
-     Categorical variables
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#colour-palettes">
-     Colour palettes
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-scatter-plot">
-     A scatter plot
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#annotating-text-annotation-on-a-scatterplot">
-     Annotating text annotation on a scatterplot
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conveying-information-via-sizes-and-colours">
-     Conveying information via sizes and colours
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#changing-the-plot-style">
-     Changing the plot style
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#saving-an-image">
-     Saving an image
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-line-plot">
-     A line plot
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-count-plot">
-     A count plot
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-histogram">
-     A histogram
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-boxplot">
-     A boxplot
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-heatmap">
-     A heatmap
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#density-plot">
-     Density plot
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-12-1">
-     Exercise 12.1
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-12-2">
-     Exercise 12.2
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-12-3">
-     Exercise 12.3
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>12. Data Visualisation</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   12. Data Visualisation
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-data-to-be-visualised">
-     The data to be visualised
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#importing-seaborn-and-matplotlib">
-     Importing seaborn and matplotlib
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-bar-plot">
-     A bar plot
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#customisations">
-     Customisations
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#categorical-variables">
-     Categorical variables
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#colour-palettes">
-     Colour palettes
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-scatter-plot">
-     A scatter plot
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#annotating-text-annotation-on-a-scatterplot">
-     Annotating text annotation on a scatterplot
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conveying-information-via-sizes-and-colours">
-     Conveying information via sizes and colours
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#changing-the-plot-style">
-     Changing the plot style
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#saving-an-image">
-     Saving an image
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-line-plot">
-     A line plot
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-count-plot">
-     A count plot
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-histogram">
-     A histogram
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-boxplot">
-     A boxplot
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-heatmap">
-     A heatmap
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#density-plot">
-     Density plot
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-12-1">
-     Exercise 12.1
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-12-2">
-     Exercise 12.2
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-12-3">
-     Exercise 12.3
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>12. Data Visualisation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">12. Data Visualisation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-to-be-visualised">The data to be visualised</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-seaborn-and-matplotlib">Importing seaborn and matplotlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-bar-plot">A bar plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customisations">Customisations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-variables">Categorical variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colour-palettes">Colour palettes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-scatter-plot">A scatter plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotating-text-annotation-on-a-scatterplot">Annotating text annotation on a scatterplot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conveying-information-via-sizes-and-colours">Conveying information via sizes and colours</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-plot-style">Changing the plot style</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-an-image">Saving an image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-line-plot">A line plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-count-plot">A count plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-histogram">A histogram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-boxplot">A boxplot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-heatmap">A heatmap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density-plot">Density plot</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-1">Exercise 12.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-2">Exercise 12.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-3">Exercise 12.3</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="data-visualisation">
-<h1>12. Data Visualisation<a class="headerlink" href="#data-visualisation" title="Permalink to this headline">#</a></h1>
+<h1>12. Data Visualisation<a class="headerlink" href="#data-visualisation" title="Permalink to this heading">#</a></h1>
 <p>Data visualisations such as graphs and diagrams often make it easier for researchers to explore patterns and trends within large data sets, or to identify notable exceptions to the trends that can be observed.</p>
 <p>During the last number of years, a large number of visualisation libraries have been developed for the Python language. Examples include <a class="reference external" href="https://bokeh.org/">Bokeh</a>, <a class="reference external" href="https://plotly.com/python/">Plotly</a>, <a class="reference external" href="https://altair-viz.github.io/">Altair</a> and <a class="reference external" href="https://python-visualization.github.io/folium/">Folium</a>.</p>
 <p>One of the earliest visualisation libraries in Python is called <a class="reference external" href="https://matplotlib.org/">matplotlib</a>. This library is very powerful, but its code can easily get quite complicated and wieldy. The visualisation library <a class="reference external" href="https://seaborn.pydata.org/api.html">seaborn</a> can be viewed as  as extention and a simplification of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. According to its <a class="reference external" href="http://seaborn.pydata.org/index.html">documentation</a>, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> “provides a high-level interface for drawing attractive and informative statistical graphics”. You can use <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> to create fairly complicated visualisations using a limited number of functions, and, fortunately, much of the processing takes place behind the scenes. A second important advantage of <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> is that it works well in combination with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, a Python library for data analysis.</p>
 <p>This tutorial also explains a number of visualisations that can be created using <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <section id="the-data-to-be-visualised">
-<h2>The data to be visualised<a class="headerlink" href="#the-data-to-be-visualised" title="Permalink to this headline">#</a></h2>
+<h2>The data to be visualised<a class="headerlink" href="#the-data-to-be-visualised" title="Permalink to this heading">#</a></h2>
 <p>Data visualisations are obviously based on data. This tutorial makes use of a dataset named ‘bli.csv’. This file contains data collected for the 2018 Better Life Index, which was created by the <a class="reference external" href="https://www.oecdbetterlifeindex.org/">OECD</a> to visuale some of the key factors that contribute to well-being in OECD countries, including education, income, housing and environment. The data set is included in the ‘Data’ folder created for this tutorial. If you cannot locate this dataset, you can also download it from the following address: <a class="reference external" href="https://edu.nl/bcm4x">https://edu.nl/bcm4x</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -703,7 +435,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="importing-seaborn-and-matplotlib">
-<h2>Importing seaborn and matplotlib<a class="headerlink" href="#importing-seaborn-and-matplotlib" title="Permalink to this headline">#</a></h2>
+<h2>Importing seaborn and matplotlib<a class="headerlink" href="#importing-seaborn-and-matplotlib" title="Permalink to this heading">#</a></h2>
 <p>Before you can work with <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, you need to import this package. It is customary to import <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> under the alias ‘sns’.</p>
 <p>We also need to import <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>’s <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> module. The code below uses the alias ‘plt’. The <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> module can be used to customise <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> plots. The <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> module can be used to change the nature and the appearance of plots.</p>
 <div class="cell docutils container">
@@ -716,7 +448,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="a-bar-plot">
-<h2>A bar plot<a class="headerlink" href="#a-bar-plot" title="Permalink to this headline">#</a></h2>
+<h2>A bar plot<a class="headerlink" href="#a-bar-plot" title="Permalink to this heading">#</a></h2>
 <p>Bar plots can be created using the <code class="docutils literal notranslate"><span class="pre">barplot()</span></code> method. It demands a <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter, which need to refer to a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe containing the values you want to visualise.</p>
 <p>Additionally, we need supply two variables: (1) the values to be shown on the X-axis and (2) the values to be shown on the Y-axis. These values need to be passed as the <code class="docutils literal notranslate"><span class="pre">x</span></code> and the <code class="docutils literal notranslate"><span class="pre">y</span></code> parameters, respectively. The <code class="docutils literal notranslate"><span class="pre">y</span></code> parameter, more concretely, specifies the height of the bars that are drawn. Optionally, you can also use the <code class="docutils literal notranslate"><span class="pre">color</span></code> parameter to specify a fixed fill colour for the bars in the plot. This parameter need to be assigned a hexadecimal code for colours. To find such hexadecimal codes, you can make use of a <a class="reference external" href="https://g.co/kgs/9W4qA3">colour picker tool</a>.</p>
 <p>The code below visualises the level of air pollution in the various countries described in the BLI dataset. Note that the code also sorts the values found for the variable ‘air_pollution’ in a descending order, using the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> method <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code>. As a result of this, the values will be shown in a specific order: from highest to lowest.</p>
@@ -738,12 +470,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_5_0.png" src="../_images/12 Visualisation_5_0.png" />
+<img alt="../_images/285f806cf04b0bce9ac5b3e0ce7df9eae444a681eb6516e7b166ce5c57ec90e8.png" src="../_images/285f806cf04b0bce9ac5b3e0ce7df9eae444a681eb6516e7b166ce5c57ec90e8.png" />
 </div>
 </div>
 </section>
 <section id="customisations">
-<h2>Customisations<a class="headerlink" href="#customisations" title="Permalink to this headline">#</a></h2>
+<h2>Customisations<a class="headerlink" href="#customisations" title="Permalink to this heading">#</a></h2>
 <p>Clearly, the appearance of the barplot can still be improved in a number of ways. One difficulty is that the label on the X-axis cannot be read, because of the fact that they overlap. We may also want to increase the size of the plot, to enhance the readability. Customisations such as these can be done via <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> methods.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">figure()</span></code> method, firstly, has a <code class="docutils literal notranslate"><span class="pre">figsize</span></code> parameter, which can be assigned a tuple with two integer values. The first of these specifies the width, and the second integer specifies the height.
 As values for the <code class="docutils literal notranslate"><span class="pre">figsize</span></code> parameter, you can specify the width and the height of the graph in inches.</p>
@@ -769,7 +501,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_7_0.png" src="../_images/12 Visualisation_7_0.png" />
+<img alt="../_images/f58051c471884dc1456fc0bd8f4261ef544d08d2d3acee977466de84a944d220.png" src="../_images/f58051c471884dc1456fc0bd8f4261ef544d08d2d3acee977466de84a944d220.png" />
 </div>
 </div>
 <p>It is good practice, furthermore, to annotate the plot to make it easier for viewers to understand what the visualisation actually shows. To do this, you can work with a number of <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> methods.</p>
@@ -802,12 +534,12 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_9_0.png" src="../_images/12 Visualisation_9_0.png" />
+<img alt="../_images/f5eacad955e54d538bb286d3ef25b1fd1c176971e7aa4a7db71639cc36056a54.png" src="../_images/f5eacad955e54d538bb286d3ef25b1fd1c176971e7aa4a7db71639cc36056a54.png" />
 </div>
 </div>
 </section>
 <section id="categorical-variables">
-<h2>Categorical variables<a class="headerlink" href="#categorical-variables" title="Permalink to this headline">#</a></h2>
+<h2>Categorical variables<a class="headerlink" href="#categorical-variables" title="Permalink to this heading">#</a></h2>
 <p>Categorical variables are variables which can be used to divide observations into smaller groups. They can divide the observations in the dataset over a number of categories. The values for such categorical variables are usually taken from a limited set of options. These options are often strings, such as ‘low’, ‘medium’ or ‘high’.</p>
 <p>In a <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> barplot, you can easily visualise the different categories that are available via the fill colour of the bars. In the <code class="docutils literal notranslate"><span class="pre">barplot()</span></code> method, you can work with a parameter named <code class="docutils literal notranslate"><span class="pre">hue</span></code>. When you mention the name of a categorirical variable as a value for this <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter, the different groups that can be created will all be shown in a different colour. In addition, a legend will be added to clarify the meaning of these colours.</p>
 <p>To avoid overlapping bars, you need to set the value of the <code class="docutils literal notranslate"><span class="pre">dodge</span></code> parameter to ‘False’.</p>
@@ -842,7 +574,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_11_0.png" src="../_images/12 Visualisation_11_0.png" />
+<img alt="../_images/1a72555c759e02b2050c7a34fa476efebfa50f16b486dc00c02a782c866aae1e.png" src="../_images/1a72555c759e02b2050c7a34fa476efebfa50f16b486dc00c02a782c866aae1e.png" />
 </div>
 </div>
 <p>If you don’t particularly like the colour that <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> has chosen, it is good to know that it is also possible to select the colours yourself. As a first step, you can create a list of the colours you want to work with.</p>
@@ -894,12 +626,12 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_15_0.png" src="../_images/12 Visualisation_15_0.png" />
+<img alt="../_images/44e5794b1b716173fc59f86e991f48dce341973201d9e972f73dc0be5d01014f.png" src="../_images/44e5794b1b716173fc59f86e991f48dce341973201d9e972f73dc0be5d01014f.png" />
 </div>
 </div>
 </section>
 <section id="colour-palettes">
-<h2>Colour palettes<a class="headerlink" href="#colour-palettes" title="Permalink to this headline">#</a></h2>
+<h2>Colour palettes<a class="headerlink" href="#colour-palettes" title="Permalink to this heading">#</a></h2>
 <p>Next to specifying all the colours yourself, you can also make use of one of <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>’s predefined <a class="reference external" href="https://seaborn.pydata.org/tutorial/color_palettes.html">colour pallettes</a>. You can choose from several tens of predefined palettes. The list below only mentions some of the possibilities.</p>
 <ul class="simple">
 <li><p>hls</p></li>
@@ -990,12 +722,12 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_23_0.png" src="../_images/12 Visualisation_23_0.png" />
+<img alt="../_images/c4216aa802e33ba8ec8d176ec68da355f9a8062b602bcf90731f42d375d2abd1.png" src="../_images/c4216aa802e33ba8ec8d176ec68da355f9a8062b602bcf90731f42d375d2abd1.png" />
 </div>
 </div>
 </section>
 <section id="a-scatter-plot">
-<h2>A scatter plot<a class="headerlink" href="#a-scatter-plot" title="Permalink to this headline">#</a></h2>
+<h2>A scatter plot<a class="headerlink" href="#a-scatter-plot" title="Permalink to this heading">#</a></h2>
 <p>A scatter plot is a data visualisation that makes use of dots to represent the values of two numerical variables. Scatter plots can be created using the <code class="docutils literal notranslate"><span class="pre">scatterplot()</span></code> method. The parameters for this method are largely the same as those for <code class="docutils literal notranslate"><span class="pre">barplot()</span></code>. The <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter needs to refer to a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe containing the dataset you want to visualise. The parameters <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> specify the variables (i.e. the columns) from this dataset that you want to display on the X-axis and the Y-axis, respectively.</p>
 <p>You can specify a fixed colour for the points using the <code class="docutils literal notranslate"><span class="pre">color</span></code> parameter, and the size of the points can be set using the <code class="docutils literal notranslate"><span class="pre">s</span></code> parameter.</p>
 <p>As is the case for the barplot, you can change the size of the figure via the <code class="docutils literal notranslate"><span class="pre">figure()</span></code> method from <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>’s <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> module.</p>
@@ -1013,12 +745,12 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_25_0.png" src="../_images/12 Visualisation_25_0.png" />
+<img alt="../_images/ff86fe06d65ecd0449f4d12af08c2303b0eed928cf8b545a2bcd7aa66a896b3c.png" src="../_images/ff86fe06d65ecd0449f4d12af08c2303b0eed928cf8b545a2bcd7aa66a896b3c.png" />
 </div>
 </div>
 </section>
 <section id="annotating-text-annotation-on-a-scatterplot">
-<h2>Annotating text annotation on a scatterplot<a class="headerlink" href="#annotating-text-annotation-on-a-scatterplot" title="Permalink to this headline">#</a></h2>
+<h2>Annotating text annotation on a scatterplot<a class="headerlink" href="#annotating-text-annotation-on-a-scatterplot" title="Permalink to this heading">#</a></h2>
 <p>In the scatterplot above, it is clearly difficult to understand what the various dots mean. Which countries are actually shown on this plot? Once you have created the scatterplot, you can use the <code class="docutils literal notranslate"><span class="pre">text()</span></code> method from <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> to add descriptive labels to the points.</p>
 <p>You need to provide values for the following parameters:</p>
 <ul class="simple">
@@ -1054,7 +786,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_27_0.png" src="../_images/12 Visualisation_27_0.png" />
+<img alt="../_images/86dc6a9bbd8a37bc1a33e261321a3a845693518b60c69892794b191c4a6ba630.png" src="../_images/86dc6a9bbd8a37bc1a33e261321a3a845693518b60c69892794b191c4a6ba630.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">text()</span></code> method places the start of the label on the exact same spot as the dots in the scatterplot. For aesthetic reasons, you may want to change the location of the labels just slightly. To change the initial location of the label, you can add or subtract some values to the positions on the X-axis and the Y-axis. Finding the suitable values often demands some trial and error.</p>
@@ -1082,12 +814,12 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_29_0.png" src="../_images/12 Visualisation_29_0.png" />
+<img alt="../_images/b2a01147f31d2d88e02c10fb5778172551260fdcf8919d4d6ba6866cb2b3f99e.png" src="../_images/b2a01147f31d2d88e02c10fb5778172551260fdcf8919d4d6ba6866cb2b3f99e.png" />
 </div>
 </div>
 </section>
 <section id="conveying-information-via-sizes-and-colours">
-<h2>Conveying information via sizes and colours<a class="headerlink" href="#conveying-information-via-sizes-and-colours" title="Permalink to this headline">#</a></h2>
+<h2>Conveying information via sizes and colours<a class="headerlink" href="#conveying-information-via-sizes-and-colours" title="Permalink to this heading">#</a></h2>
 <p>As we saw earlier, the <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter can be used to visualise the values of a categorical variable through the use of colour. This <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter can be used in a scatterplot as well. When you associate the <code class="docutils literal notranslate"><span class="pre">hue</span></code> with a categorical variable, the colours of the points in the scatter plot will indicate the categories they belong to.</p>
 <p>Secondly, you can also specify that the <em>sizes</em> of the points should vary along with the values in a specific column. You can do this by supplying the name of this column as the value of the <code class="docutils literal notranslate"><span class="pre">size</span></code> parameter.</p>
 <p>When the actual values in the column that you associate with the <code class="docutils literal notranslate"><span class="pre">size</span></code> parameter are too small or too big, you can rescale these values using the <code class="docutils literal notranslate"><span class="pre">sizes</span></code> parameter. This parameter demands two values: a minimum size and a maximum size. The values of the column that is mentioned in <code class="docutils literal notranslate"><span class="pre">size</span></code> will then be rescaled, on the range that is determined by these minimum and maximum values.</p>
@@ -1128,12 +860,12 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_31_0.png" src="../_images/12 Visualisation_31_0.png" />
+<img alt="../_images/b17906d699ec0d8d86d7db4b246e743d2d339b51acdc5694c58fa46ce51e2442.png" src="../_images/b17906d699ec0d8d86d7db4b246e743d2d339b51acdc5694c58fa46ce51e2442.png" />
 </div>
 </div>
 </section>
 <section id="changing-the-plot-style">
-<h2>Changing the plot style<a class="headerlink" href="#changing-the-plot-style" title="Permalink to this headline">#</a></h2>
+<h2>Changing the plot style<a class="headerlink" href="#changing-the-plot-style" title="Permalink to this heading">#</a></h2>
 <p>The overall style of the plot, including the background colour and the presence of the of grid lines, can be modified using <code class="docutils literal notranslate"><span class="pre">set_style()</span></code>.</p>
 <p>The following styles have been defined in <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>:</p>
 <ul class="simple">
@@ -1152,7 +884,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </section>
 <section id="saving-an-image">
-<h2>Saving an image<a class="headerlink" href="#saving-an-image" title="Permalink to this headline">#</a></h2>
+<h2>Saving an image<a class="headerlink" href="#saving-an-image" title="Permalink to this heading">#</a></h2>
 <p>To save the image that is created, you can work with the <code class="docutils literal notranslate"><span class="pre">savefig()</span></code> method. Within the parentheses, you should firstly supply a filename for the image. You can optionally provide the <code class="docutils literal notranslate"><span class="pre">dpi</span></code> method as well. This parameters specific the number of dots per inch.</p>
 <p>Next to opening the graph in a viewer on your screen, using show(), it is also possible to instruct Python to create an image file on your computer, via the <code class="docutils literal notranslate"><span class="pre">savefig()</span></code> method. As the first parameter to this function, you must provide a filename. The filename must include an extension, such as ‘jpeg’, ‘tiff’, ‘png’ or ‘pdf’. The methods savefig() and show() are mutually exclusive. When you use one of these, you cannot use the other.</p>
 <div class="cell docutils container">
@@ -1169,7 +901,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </section>
 <section id="a-line-plot">
-<h2>A line plot<a class="headerlink" href="#a-line-plot" title="Permalink to this headline">#</a></h2>
+<h2>A line plot<a class="headerlink" href="#a-line-plot" title="Permalink to this heading">#</a></h2>
 <p>With <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, we can also create many other types of visualisations. To create a line plot, for example, you can use the <code class="docutils literal notranslate"><span class="pre">lineplot()</span></code> method. The line plot can be customised via the following parameters:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>: the color of the line</p></li>
@@ -1200,12 +932,12 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_37_0.png" src="../_images/12 Visualisation_37_0.png" />
+<img alt="../_images/9e6d681a54da9c5535d5476d4a35b26fdbc91e787aa003c6696bff5e562a8740.png" src="../_images/9e6d681a54da9c5535d5476d4a35b26fdbc91e787aa003c6696bff5e562a8740.png" />
 </div>
 </div>
 </section>
 <section id="a-count-plot">
-<h2>A count plot<a class="headerlink" href="#a-count-plot" title="Permalink to this headline">#</a></h2>
+<h2>A count plot<a class="headerlink" href="#a-count-plot" title="Permalink to this heading">#</a></h2>
 <p>You can see that, using seaborn, you can create fairly advanced plots with only a few lines of code. If you want to see the number of items for each of the categories in a categorical variable, you can work with the <code class="docutils literal notranslate"><span class="pre">countplot()</span></code> method.</p>
 <p>The code below indicates that the OECD dataset mostly concentrates on countries in Europe.</p>
 <div class="cell docutils container">
@@ -1218,12 +950,12 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_39_0.png" src="../_images/12 Visualisation_39_0.png" />
+<img alt="../_images/83c669c733ea194d5bca598d5242b35481f768d7745798cccb7f239cf65020f7.png" src="../_images/83c669c733ea194d5bca598d5242b35481f768d7745798cccb7f239cf65020f7.png" />
 </div>
 </div>
 </section>
 <section id="a-histogram">
-<h2>A histogram<a class="headerlink" href="#a-histogram" title="Permalink to this headline">#</a></h2>
+<h2>A histogram<a class="headerlink" href="#a-histogram" title="Permalink to this heading">#</a></h2>
 <p>A countplot can be used to clarify the distribution across the options that are available for a categorical varable.</p>
 <p>To explore the distibution of the values of a quantitative variable, you can work with a histogram. You can create such a histogram with <code class="docutils literal notranslate"><span class="pre">histplot()</span></code>. To generate such a plot, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> divives the available values evenly in a number of ranges and then counts the number of observations belonging to each of these groups. You can also specify the number of groups to be craeted explicitly using the <code class="docutils literal notranslate"><span class="pre">bins</span></code> parameter.</p>
 <div class="cell docutils container">
@@ -1235,12 +967,12 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_41_0.png" src="../_images/12 Visualisation_41_0.png" />
+<img alt="../_images/d7355f659eea98b2c2c17accc77c4eb414317ab66c862f08cfb43b88b0271c50.png" src="../_images/d7355f659eea98b2c2c17accc77c4eb414317ab66c862f08cfb43b88b0271c50.png" />
 </div>
 </div>
 </section>
 <section id="a-boxplot">
-<h2>A boxplot<a class="headerlink" href="#a-boxplot" title="Permalink to this headline">#</a></h2>
+<h2>A boxplot<a class="headerlink" href="#a-boxplot" title="Permalink to this heading">#</a></h2>
 <p>A boxplot is a diagram which visualises the minimum, the maximum, the median and the first and third quartiles. It can be created using the <code class="docutils literal notranslate"><span class="pre">boxplot()</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1253,12 +985,12 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_43_0.png" src="../_images/12 Visualisation_43_0.png" />
+<img alt="../_images/5e940503c9b3ee53d361049b72a48ac0e320b1d1bf61c125d1d4db6a0c1eebbe.png" src="../_images/5e940503c9b3ee53d361049b72a48ac0e320b1d1bf61c125d1d4db6a0c1eebbe.png" />
 </div>
 </div>
 </section>
 <section id="a-heatmap">
-<h2>A heatmap<a class="headerlink" href="#a-heatmap" title="Permalink to this headline">#</a></h2>
+<h2>A heatmap<a class="headerlink" href="#a-heatmap" title="Permalink to this heading">#</a></h2>
 <p>Heatmaps often offer a useful way of visualising correlations in a dataset. Such correlations can be calculated using the <code class="docutils literal notranslate"><span class="pre">corr()</span></code> method from <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, such a heatmap clarifying the correlations among the variables in the data set can be created using only a few lines of code. The method to be used is named <code class="docutils literal notranslate"><span class="pre">heatmap()</span></code>. This method demands a two-dimensional matrix containing the values to be shown. The colours can be specified using the <code class="docutils literal notranslate"><span class="pre">cmap</span></code> parameter. As values, you can use the colour palettes that are predefined by <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>.</p>
 <div class="cell docutils container">
@@ -1281,12 +1013,12 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_46_0.png" src="../_images/12 Visualisation_46_0.png" />
+<img alt="../_images/405e7e165b1e1802b070f789a04bcd3045017d1abfa588a5e254f4f332e4a20b.png" src="../_images/405e7e165b1e1802b070f789a04bcd3045017d1abfa588a5e254f4f332e4a20b.png" />
 </div>
 </div>
 </section>
 <section id="density-plot">
-<h2>Density plot<a class="headerlink" href="#density-plot" title="Permalink to this headline">#</a></h2>
+<h2>Density plot<a class="headerlink" href="#density-plot" title="Permalink to this heading">#</a></h2>
 <p>Density regions can be shown using <code class="docutils literal notranslate"><span class="pre">kdeplot()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1296,16 +1028,16 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12 Visualisation_48_0.png" src="../_images/12 Visualisation_48_0.png" />
+<img alt="../_images/d7f2161424579da33a50dc5b8dd9dddc628be638d658a4412401c293dd2e2b6a.png" src="../_images/d7f2161424579da33a50dc5b8dd9dddc628be638d658a4412401c293dd2e2b6a.png" />
 </div>
 </div>
 <p>Many other types are diagrams can be created. For more information, visit the <a class="reference external" href="https://seaborn.pydata.org/examples/index.html">gallery</a> or the <a class="reference external" href="https://seaborn.pydata.org/tutorial.html">tutorials</a> on the seaborn website.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
 <section id="exercise-12-1">
-<h2>Exercise 12.1<a class="headerlink" href="#exercise-12-1" title="Permalink to this headline">#</a></h2>
+<h2>Exercise 12.1<a class="headerlink" href="#exercise-12-1" title="Permalink to this heading">#</a></h2>
 <p>PISA is the OECD’s <a class="reference external" href="https://www.oecd.org/pisa/">Programme for International Student Assessment</a>. This programme evaluates educational systems globally by measuring the performance of 15 year-old-children in mathematics, science and reading. The latest study is from 2018.</p>
 <p>The data folder of this tutorial includes a CSV file named ‘<a class="reference external" href="https://edu.nl/p97ma">pisa.csv</a>’. It contains all the scores measured for mathematics and reading in between 2000 and 2018.</p>
 <p>Using Pandas, Matplotlib and Seaborn, create visualisations which can help to answer the following questions:</p>
@@ -1366,7 +1098,7 @@ How do the scores for reading compare to the scores for mathematics? Focus on th
 <p>2.1.7. Have the scores remained relatively stable over the years if we look at the total scores? Or has there been some variation? How does the variation of the scores for the Netherlands compare to the scores in France, Germany, Belgium and Luxembourg? Try to answer this question by crearing a boxplot.</p>
 </section>
 <section id="exercise-12-2">
-<h2>Exercise 12.2<a class="headerlink" href="#exercise-12-2" title="Permalink to this headline">#</a></h2>
+<h2>Exercise 12.2<a class="headerlink" href="#exercise-12-2" title="Permalink to this heading">#</a></h2>
 <p>The data folder of this tutorial includes a CSV file named ‘nobel.csv’. If necessary you can also download this file from the following address: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a>.</p>
 <p>Visualise the data in this data set in the following ways.</p>
 <ul class="simple">
@@ -1445,7 +1177,7 @@ How do the scores for reading compare to the scores for mathematics? Focus on th
 </div>
 </section>
 <section id="exercise-12-3">
-<h2>Exercise 12.3<a class="headerlink" href="#exercise-12-3" title="Permalink to this headline">#</a></h2>
+<h2>Exercise 12.3<a class="headerlink" href="#exercise-12-3" title="Permalink to this heading">#</a></h2>
 <p>In exercise 11.3, you created a CSV file named ‘prices_of_coffee_over_time.csv’, containing data about the average price of a pound of coffee on a range of dates. Use this CSV file to create a line chart which visualises the development of these prices over time.</p>
 </section>
 </section>
@@ -1462,7 +1194,7 @@ How do the scores for reading compare to the scores for mathematics? Focus on th
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
@@ -1470,50 +1202,131 @@ How do the scores for reading compare to the scores for mathematics? Focus on th
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="11%20Pandas.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">11. Data analysis with pandas</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="11%20Pandas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">11. Data analysis with pandas</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Jupyter_notebook_basics.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Jupyter_notebook_basics.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Jupyter Notebook basics</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Peter Verhaar and Ben Companjen<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">12. Data Visualisation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-to-be-visualised">The data to be visualised</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-seaborn-and-matplotlib">Importing seaborn and matplotlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-bar-plot">A bar plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customisations">Customisations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-variables">Categorical variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colour-palettes">Colour palettes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-scatter-plot">A scatter plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotating-text-annotation-on-a-scatterplot">Annotating text annotation on a scatterplot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conveying-information-via-sizes-and-colours">Conveying information via sizes and colours</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-plot-style">Changing the plot style</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-an-image">Saving an image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-line-plot">A line plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-count-plot">A count plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-histogram">A histogram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-boxplot">A boxplot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-heatmap">A heatmap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density-plot">Density plot</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-1">Exercise 12.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-2">Exercise 12.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-3">Exercise 12.3</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Peter Verhaar and Ben Companjen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
