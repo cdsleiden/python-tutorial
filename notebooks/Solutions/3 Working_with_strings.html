@@ -153,11 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../1%20Variables_and_data_types.html">1. Variables and data types</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../2%20Operators.html">2. Operators</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../3%20Working_with_strings.html">3. Working with strings</a></li>
-
 
 <li class="toctree-l1"><a class="reference internal" href="../4%20Flow_control.html">4. Flow control</a></li>
 
@@ -380,6 +377,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-6">Exercise 3.6.</a></li>
 </ul>
             </nav>
         </div>
@@ -395,6 +393,34 @@ document.write(`
 <h1>3. Working with strings<a class="headerlink" href="#working-with-strings" title="Permalink to this heading">#</a></h1>
 <section id="exercise-3-1">
 <h2>Exercise 3.1.<a class="headerlink" href="#exercise-3-1" title="Permalink to this heading">#</a></h2>
+<p>Declare a variable named year, and assign it an integer with the value 1879. Next, use this variable to print the following sentence: “Albert Einstein was born in 1879”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="mi">1879</span>
+<span class="n">year</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+<span class="n">sentence</span> <span class="o">=</span> <span class="s1">&#39;Albert Einstein was born in &#39;</span> <span class="o">+</span> <span class="n">year</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-2">
+<h2>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Permalink to this heading">#</a></h2>
+<p>Create a variable and assign it your full name as a string. Next, print the number of characters in your name, excluding the space.</p>
+<p>Tip: to remove the spaces, you can replace these with an exmpty string (‘’).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Albert Einstein&#39;</span>
+<span class="n">name_no_space</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">name_no_space</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-3">
+<h2>Exercise 3.3.<a class="headerlink" href="#exercise-3-3" title="Permalink to this heading">#</a></h2>
 <p>Create two string variables. The first variable must be assigned the value ‘unique’ and the second variable should be assigned the value ‘biodiversity’. Create a third variable with the value ‘university’, by firstly slicing the first two string variables, and by subsequently concatenating the substrings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -413,14 +439,14 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="exercise-3-2">
-<h2>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Permalink to this heading">#</a></h2>
+<section id="exercise-3-4">
+<h2>Exercise 3.4.<a class="headerlink" href="#exercise-3-4" title="Permalink to this heading">#</a></h2>
 <p>Create the following two string variables:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;vladimir&#39;</span>
 <span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;nabokov&#39;</span>
 </pre></div>
 </div>
-<p>Using these two existing variables, create a third variable named ‘fullName’ with the following value: “Nabokov, Vladimir”. Note that the first character of the first name and the last name must be in upper case. Also try to print the initials of the author in upper case, as follows: ‘VN’</p>
+<p>Using these two existing variables, create a third variable named ‘fullName’ with the following value: “Nabokov, Vladimir”. Note that the first character of the first name and the last name must be in upper case.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;vladimir&#39;</span>
@@ -433,34 +459,13 @@ document.write(`
 
 <span class="c1"># Check the full name</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">fullName</span> <span class="p">)</span>
-
-<span class="c1"># Create the initials</span>
-
-<span class="n">initials</span> <span class="o">=</span> <span class="n">first</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">last</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">initials</span> <span class="o">=</span> <span class="n">initials</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> 
-
-<span class="c1"># Check the initials</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">initials</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-3-3">
-<h2>Exercise 3.3.<a class="headerlink" href="#exercise-3-3" title="Permalink to this heading">#</a></h2>
-<p>Create a variable and assign it your full name as a string. Next, print the number of characters in your name, excluding the space.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Albert Einstein&#39;</span>
-<span class="n">name_no_space</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">name_no_space</span><span class="p">)</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-3-4">
-<h2>Exercise 3.4.<a class="headerlink" href="#exercise-3-4" title="Permalink to this heading">#</a></h2>
+<section id="exercise-3-5">
+<h2>Exercise 3.5.<a class="headerlink" href="#exercise-3-5" title="Permalink to this heading">#</a></h2>
 <p>Create a variable named <code class="docutils literal notranslate"><span class="pre">url</span></code> and assign it following string: <code class="docutils literal notranslate"><span class="pre">https://www.universiteitleiden.nl</span></code>.</p>
 <p>Try to write code which can extract the top level domain (i.e. the country code) from this url.
 Tip: this problem can be solved by creating a string slice with the last two characters only, but top domain levels may of course consists of more than two characters. An alternative, and better, approach is to make use of the <code class="docutils literal notranslate"><span class="pre">rindex()</span></code> function, which returns the LAST occurrence of a character.</p>
@@ -479,15 +484,15 @@ Tip: this problem can be solved by creating a string slice with the last two cha
 </div>
 </div>
 </section>
-<section id="exercise-3-5">
-<h2>Exercise 3.5.<a class="headerlink" href="#exercise-3-5" title="Permalink to this heading">#</a></h2>
+<section id="exercise-3-6">
+<h2>Exercise 3.6.<a class="headerlink" href="#exercise-3-6" title="Permalink to this heading">#</a></h2>
 <p>Create a variable named ‘filename’ and assign it the value ‘README.txt’. Next, write some code in Python which can extract the filename without the extension.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;README.txt&#39;</span>
-<span class="n">filename_without_ext</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">filename</span><span class="o">.</span><span class="n">rindex</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">filename_without_ext</span><span class="p">)</span> 
+<span class="n">index_dot</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[:</span><span class="n">index_dot</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -567,6 +572,7 @@ Tip: this problem can be solved by creating a string slice with the last two cha
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-6">Exercise 3.6.</a></li>
 </ul>
   </nav></div>
 

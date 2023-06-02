@@ -153,11 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Variables and data types</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Working with strings</a></li>
-
 
 <li class="toctree-l1"><a class="reference internal" href="4%20Flow_control.html">4. Flow control</a></li>
 
@@ -376,20 +373,24 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Working with strings</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">Concatenation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">Concatenation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-1">Exercise 3.1.</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-and-methods-for-strings">Functions and methods for strings</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-individual-characters-of-a-string">Selecting individual characters of a string</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-index-method">The index() method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-2">Exercise 3.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-individual-characters-of-a-string">Selecting individual characters of a string</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-1">Exercise 3.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-2">Exercise 3.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-index-method">The index() method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-6">Exercise 3.6.</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -409,7 +410,7 @@ document.write(`
 <p>Strings, as has been explained, consists of sequences of characters. They can be created using single, double and triple quotes. The single and the double quotes are used most commonly. Once created, such strings can be changed in a number of ways.</p>
 <section id="concatenation">
 <h2>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this heading">#</a></h2>
-<p>One of the operators that you can use in combination with strings is the concatenation operator. Its symbol is the plus (‘+’). You can use this operator to combine two or more existing strings into a longer string.</p>
+<p>One of the operators that you can use in combination with strings is the <em>concatenation</em> operator. Its symbol is the plus (‘+’). You can use this operator to combine two or more existing strings into a longer string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;Jane&quot;</span>
@@ -425,21 +426,44 @@ document.write(`
 <p>The code above actually contains a number of concatenations. The variables <code class="docutils literal notranslate"><span class="pre">first_name</span></code> and
 <code class="docutils literal notranslate"><span class="pre">second_name</span></code> are firstly combined into the longer variable named <code class="docutils literal notranslate"><span class="pre">full_name</span></code>.</p>
 <p>A very short string, consisting of a space only, is placed in between the first name and the last name. The penultimate line uses the variable <code class="docutils literal notranslate"><span class="pre">full_name</span></code> in a sentence which is printed.</p>
+<p>Note that the more precise function of an operator can vary along with the types of values it is used with. The plus symbol represents addition when it is combined with numbers, but it represents concatenation when it is used with strings.</p>
+<section id="exercise-3-1">
+<h3>Exercise 3.1.<a class="headerlink" href="#exercise-3-1" title="Permalink to this heading">#</a></h3>
+<p>Declare a variable named year, and assign it an integer with the value 1879. Next, use this variable to print the following sentence: “Albert Einstein was born in 1879”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="mi">1879</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="functions-and-methods-for-strings">
 <h1>Functions and methods for strings<a class="headerlink" href="#functions-and-methods-for-strings" title="Permalink to this heading">#</a></h1>
-<p>To get information about the number of characters in a string, you can make use of the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function. The characters ‘len’ stand for ‘length’.</p>
-<p>The value a of string variable can also be manipulated by making use of methods. A method is similar to a function. A method, like a function, is a word that represents a certain action. The difference between methods and functions will be explained in more detail in another part of this tutorial. While functions can be used independently, methods are always associated with a specific type of variable such as a string. We can call a method by appending the name of the method to the name of the variable. The variable and the method must be delimited by a period. The following methods are available for string objects:</p>
+<p>To get information about the number of characters in a string, you can make use of the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function. The characters ‘len’ stand for ‘length’. A function, as will be explained in a later tutorial, is a chunk of code that can be reused. A function always has a name, which can be used to request the actions that can be carried out via function. Functions such as <code class="docutils literal notranslate"><span class="pre">len()</span></code> can generally be applied to a wide range of variable types.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;   The Hitchhiker&#39;s Guide to the Galaxy   &quot;</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">title</span><span class="p">)</span> <span class="p">)</span>
+<span class="c1">## This prints 42</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A method is very similar to a function. An important difference, however, is that a method can only be run on very specific variable types. A number of methods have been developed specifically for strings, for example. While functions can be used independently, methods are always associated with a specific type of variable. We can call a method by appending the name of the method to the name of the variable. The variable and the method must be delimited by a period. The differences between methods and functions will be explained in more detail in another part of this tutorial.</p>
+<p>The following methods are available for string objects:</p>
 <table width="100%; " style="font-size: 1.0em; text-align: left; ">
       <tr style="font-size: 1.0em; text-align: left; ">
-          <td  width="15%" style="text-align: center;"><b>Function name</b></td><td ><b>Description</b></td>
+          <td  width="15%" style="text-align: center;"><b>Method name</b></td><td ><b>Description</b></td>
     </tr>
     <tr style="font-size: 1.0em; text-align: left; ">
         <td width="15%" style="text-align: center;">lower()</td><td  style="text-align: left; ">Converts all the characters of the string into lower case.</td>
     </tr>
     <tr>
-        <td width="15%" style="text-align: center;">upper()</td><td  style="text-align: left; ">Converts all the characters of the string into lower case.</td>
+        <td width="15%" style="text-align: center;">upper()</td><td  style="text-align: left; ">Converts all the characters of the string into upper case.</td>
     </tr>
        <tr>
         <td  width="15%" style="text-align: center;">replace()</td><td  style="text-align: left; ">Replaces a substring with a new set of characters.</td>
@@ -456,14 +480,6 @@ document.write(`
 <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 <span class="c1">#this removes the spaces before and after the original string</span>
 <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;-</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">-&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">title</span><span class="p">)</span> <span class="p">)</span>
-<span class="c1">## This prints 36</span>
 </pre></div>
 </div>
 </div>
@@ -494,6 +510,11 @@ document.write(`
 </div>
 </div>
 </div>
+<section id="exercise-3-2">
+<h2>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Permalink to this heading">#</a></h2>
+<p>Create a variable and assign it your full name as a string. Next, print the number of characters in your name, excluding the space.</p>
+<p>Tip: to remove the spaces, you can replace these with an exmpty string (‘’).</p>
+</section>
 <section id="selecting-individual-characters-of-a-string">
 <h2>Selecting individual characters of a string<a class="headerlink" href="#selecting-individual-characters-of-a-string" title="Permalink to this heading">#</a></h2>
 <p>When you create a string, it is useful to bear in mind that all the inividual characters that make up the string are numbered behind the scenes. These numbers are referred to as indices. The first character is given the index 0. Individual characters can be accessed by appending a set of square brackets to the name of the string variable, and by supplying the index of the character you want to access within these brackets. Using these indices, it becomes possible to extract specific characters from variables. When you use negative numbers (e.g. -1 or -2), Python starts selecting characters at the end of the string and moves back.</p>
@@ -549,6 +570,19 @@ document.write(`
 </div>
 </div>
 </div>
+<section id="exercise-3-3">
+<h3>Exercise 3.3.<a class="headerlink" href="#exercise-3-3" title="Permalink to this heading">#</a></h3>
+<p>Create two string variables. The first variable must be assigned the value ‘unique’ and the second variable should be assigned the value ‘biodiversity’. Create a third variable with the value ‘university’, by firstly slicing the first two string variables, and by subsequently concatenating the substrings.</p>
+</section>
+<section id="exercise-3-4">
+<h3>Exercise 3.4.<a class="headerlink" href="#exercise-3-4" title="Permalink to this heading">#</a></h3>
+<p>Create the following two string variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;vladimir&#39;</span>
+<span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;nabokov&#39;</span>
+</pre></div>
+</div>
+<p>Using these two existing variables, create a third variable named ‘fullName’ with the following value: “Nabokov, Vladimir”. Note that the first character of the first name and the last name must be in upper case.</p>
+</section>
 </section>
 <section id="the-index-method">
 <h2>The index() method<a class="headerlink" href="#the-index-method" title="Permalink to this heading">#</a></h2>
@@ -586,29 +620,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
-<section id="exercise-3-1">
-<h2>Exercise 3.1.<a class="headerlink" href="#exercise-3-1" title="Permalink to this heading">#</a></h2>
-<p>Create two string variables. The first variable must be assigned the value ‘unique’ and the second variable should be assigned the value ‘biodiversity’. Create a third variable with the value ‘university’, by firstly slicing the first two string variables, and by subsequently concatenating the substrings.</p>
-</section>
-<section id="exercise-3-2">
-<h2>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Permalink to this heading">#</a></h2>
-<p>Create the following two string variables:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;vladimir&#39;</span>
-<span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;nabokov&#39;</span>
-</pre></div>
-</div>
-<p>Using these two existing variables, create a third variable named ‘fullName’ with the following value: “Nabokov, Vladimir”. Note that the first character of the first name and the last name must be in upper case. Also try to print the initials of the author in upper case, as follows: ‘VN’</p>
-</section>
-<section id="exercise-3-3">
-<h2>Exercise 3.3.<a class="headerlink" href="#exercise-3-3" title="Permalink to this heading">#</a></h2>
-<p>Create a variable and assign it your full name as a string. Next, print the number of characters in your name, excluding the space.</p>
-</section>
-<section id="exercise-3-4">
-<h2>Exercise 3.4.<a class="headerlink" href="#exercise-3-4" title="Permalink to this heading">#</a></h2>
+<section id="exercise-3-5">
+<h3>Exercise 3.5.<a class="headerlink" href="#exercise-3-5" title="Permalink to this heading">#</a></h3>
 <p>Create a variable named <code class="docutils literal notranslate"><span class="pre">url</span></code> and assign it following string: <code class="docutils literal notranslate"><span class="pre">https://www.universiteitleiden.nl</span></code>.</p>
 <p>Try to write code which can extract the top level domain (i.e. the country code) from this url.
 Tip: this problem can be solved by creating a string slice with the last two characters only, but top domain levels may of course consists of more than two characters. An alternative approach is to make use of the <code class="docutils literal notranslate"><span class="pre">rindex()</span></code> function, which returns the LAST occurrence of a character.</p>
@@ -620,9 +633,10 @@ Tip: this problem can be solved by creating a string slice with the last two cha
 </div>
 </div>
 </section>
-<section id="exercise-3-5">
-<h2>Exercise 3.5.<a class="headerlink" href="#exercise-3-5" title="Permalink to this heading">#</a></h2>
+<section id="exercise-3-6">
+<h3>Exercise 3.6.<a class="headerlink" href="#exercise-3-6" title="Permalink to this heading">#</a></h3>
 <p>Create a variable named ‘filename’ and assign it the value ‘README.txt’. Next, write some code in Python which can extract the filename without the extension.</p>
+</section>
 </section>
 </section>
 
@@ -694,20 +708,24 @@ Tip: this problem can be solved by creating a string slice with the last two cha
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Working with strings</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">Concatenation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">Concatenation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-1">Exercise 3.1.</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-and-methods-for-strings">Functions and methods for strings</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-individual-characters-of-a-string">Selecting individual characters of a string</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-index-method">The index() method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-2">Exercise 3.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-individual-characters-of-a-string">Selecting individual characters of a string</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-1">Exercise 3.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-2">Exercise 3.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-index-method">The index() method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-6">Exercise 3.6.</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
