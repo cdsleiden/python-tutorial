@@ -152,10 +152,9 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../1%20Variables_and_data_types.html">1. Variables and data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3%20Working_with_strings.html">3. Working with strings</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../4%20Flow_control.html">4. Flow control</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../5%20Lists.html">5. Lists</a></li>
@@ -183,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Solutions to the exercises</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Variables and data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Working with strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4%20Flow_control.html">4. Flow control</a></li>
@@ -372,12 +371,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-1">Exercise 3.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-2">Exercise 3.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-6">Exercise 3.6.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-exercises">Solutions to exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-1">Exercise 3.1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-2">Exercise 3.2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-6">Exercise 3.6.</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -391,14 +393,15 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="working-with-strings">
 <h1>3. Working with strings<a class="headerlink" href="#working-with-strings" title="Permalink to this heading">#</a></h1>
+<section id="solutions-to-exercises">
+<h2>Solutions to exercises<a class="headerlink" href="#solutions-to-exercises" title="Permalink to this heading">#</a></h2>
 <section id="exercise-3-1">
-<h2>Exercise 3.1.<a class="headerlink" href="#exercise-3-1" title="Permalink to this heading">#</a></h2>
-<p>Declare a variable named year, and assign it an integer with the value 1879. Next, use this variable to print the following sentence: “Albert Einstein was born in 1879”.</p>
+<h3>Exercise 3.1.<a class="headerlink" href="#exercise-3-1" title="Permalink to this heading">#</a></h3>
+<p>Declare a variable named <code class="docutils literal notranslate"><span class="pre">year</span></code>, and assign it an integer with the value 1879. Next, use this variable to print the following sentence: “Albert Einstein was born in 1879”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="mi">1879</span>
-<span class="n">year</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
-<span class="n">sentence</span> <span class="o">=</span> <span class="s1">&#39;Albert Einstein was born in &#39;</span> <span class="o">+</span> <span class="n">year</span>
+<span class="n">sentence</span> <span class="o">=</span> <span class="s1">&#39;Albert Einstein was born in &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -406,12 +409,13 @@ document.write(`
 </div>
 </section>
 <section id="exercise-3-2">
-<h2>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Permalink to this heading">#</a></h2>
-<p>Create a variable and assign it your full name as a string. Next, print the number of characters in your name, excluding the space.</p>
+<h3>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Permalink to this heading">#</a></h3>
+<p>Create a variable and assign it your full name as a string. Next, print the number of characters in your name, excluding the space(s).</p>
 <p>Tip: to remove the spaces, you can replace these with an exmpty string (‘’).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Albert Einstein&#39;</span>
+<span class="c1"># .replace(str1, str2) replaces all occurrences of the first string with the second</span>
 <span class="n">name_no_space</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">name_no_space</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
@@ -420,7 +424,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-3-3">
-<h2>Exercise 3.3.<a class="headerlink" href="#exercise-3-3" title="Permalink to this heading">#</a></h2>
+<h3>Exercise 3.3.<a class="headerlink" href="#exercise-3-3" title="Permalink to this heading">#</a></h3>
 <p>Create two string variables. The first variable must be assigned the value ‘unique’ and the second variable should be assigned the value ‘biodiversity’. Create a third variable with the value ‘university’, by firstly slicing the first two string variables, and by subsequently concatenating the substrings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -440,41 +444,43 @@ document.write(`
 </div>
 </section>
 <section id="exercise-3-4">
-<h2>Exercise 3.4.<a class="headerlink" href="#exercise-3-4" title="Permalink to this heading">#</a></h2>
+<h3>Exercise 3.4.<a class="headerlink" href="#exercise-3-4" title="Permalink to this heading">#</a></h3>
 <p>Create the following two string variables:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;vladimir&#39;</span>
 <span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;nabokov&#39;</span>
 </pre></div>
 </div>
-<p>Using these two existing variables, create a third variable named ‘fullName’ with the following value: “Nabokov, Vladimir”. Note that the first character of the first name and the last name must be in upper case.</p>
+<p>Using these two existing variables, create a third variable named <code class="docutils literal notranslate"><span class="pre">full_name</span></code> with the following value: “Nabokov, Vladimir”. Note that the first character of the first name and the last name must be in upper case.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;vladimir&#39;</span>
 <span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;nabokov&#39;</span>
 
-<span class="c1"># Create the full name</span>
-<span class="n">fullName</span> <span class="o">=</span> <span class="n">last</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">last</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="n">fullName</span> <span class="o">+=</span> <span class="s1">&#39;, &#39;</span>
-<span class="n">fullName</span> <span class="o">+=</span> <span class="n">first</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">first</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="c1"># Create the full name in steps, so that our code lines are more readable</span>
+<span class="c1"># Note that += can be used for string concatenation too</span>
+<span class="n">full_name</span> <span class="o">=</span> <span class="n">last</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">last</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">full_name</span> <span class="o">+=</span> <span class="s1">&#39;, &#39;</span>
+<span class="n">full_name</span> <span class="o">+=</span> <span class="n">first</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">first</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 
 <span class="c1"># Check the full name</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">fullName</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">full_name</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="exercise-3-5">
-<h2>Exercise 3.5.<a class="headerlink" href="#exercise-3-5" title="Permalink to this heading">#</a></h2>
+<h3>Exercise 3.5.<a class="headerlink" href="#exercise-3-5" title="Permalink to this heading">#</a></h3>
 <p>Create a variable named <code class="docutils literal notranslate"><span class="pre">url</span></code> and assign it following string: <code class="docutils literal notranslate"><span class="pre">https://www.universiteitleiden.nl</span></code>.</p>
-<p>Try to write code which can extract the top level domain (i.e. the country code) from this url.
-Tip: this problem can be solved by creating a string slice with the last two characters only, but top domain levels may of course consists of more than two characters. An alternative, and better, approach is to make use of the <code class="docutils literal notranslate"><span class="pre">rindex()</span></code> function, which returns the LAST occurrence of a character.</p>
+<p>Try to write code which can extract the top-level domain (i.e. the country code) from this url.
+Tip: this problem can be solved by creating a string slice with the last two characters only, but top-level domains may consist of more than two characters, like ‘.com’ or ‘.amsterdam’.
+A more generic approach is to make use of the <code class="docutils literal notranslate"><span class="pre">rindex()</span></code> method, which returns the LAST occurrence of a character.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the variable and find its Top-Level Domain (TLD)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the variable</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.universiteitleiden.nl&#39;</span>
 
-
+<span class="c1"># and find its Top-Level Domain (TLD)</span>
 <span class="n">tld</span> <span class="o">=</span> <span class="n">url</span><span class="p">[</span> <span class="n">url</span><span class="o">.</span><span class="n">rindex</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span> <span class="p">:</span> <span class="p">]</span>
 
 <span class="c1"># Print the result</span>
@@ -485,8 +491,8 @@ Tip: this problem can be solved by creating a string slice with the last two cha
 </div>
 </section>
 <section id="exercise-3-6">
-<h2>Exercise 3.6.<a class="headerlink" href="#exercise-3-6" title="Permalink to this heading">#</a></h2>
-<p>Create a variable named ‘filename’ and assign it the value ‘README.txt’. Next, write some code in Python which can extract the filename without the extension.</p>
+<h3>Exercise 3.6.<a class="headerlink" href="#exercise-3-6" title="Permalink to this heading">#</a></h3>
+<p>Create a variable named <code class="docutils literal notranslate"><span class="pre">filename</span></code> and assign it the value ‘README.txt’. Next, write some code in Python which can extract the filename without the extension.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;README.txt&#39;</span>
@@ -497,6 +503,7 @@ Tip: this problem can be solved by creating a string slice with the last two cha
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -567,12 +574,15 @@ Tip: this problem can be solved by creating a string slice with the last two cha
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-1">Exercise 3.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-2">Exercise 3.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-6">Exercise 3.6.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-exercises">Solutions to exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-1">Exercise 3.1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-2">Exercise 3.2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-6">Exercise 3.6.</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

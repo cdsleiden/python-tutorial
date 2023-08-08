@@ -152,10 +152,9 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Variables and data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3%20Working_with_strings.html">3. Working with strings</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="4%20Flow_control.html">4. Flow control</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="5%20Lists.html">5. Lists</a></li>
@@ -183,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Solutions to the exercises</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">1. Variables and data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/3%20Working_with_strings.html">3. Working with strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/4%20Flow_control.html">4. Flow control</a></li>
@@ -386,14 +385,14 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="jupyter-notebook-basics">
 <h1>Jupyter Notebook basics<a class="headerlink" href="#jupyter-notebook-basics" title="Permalink to this heading">#</a></h1>
-<p>Jupyter Notebook is an aplicaton which enables you to create documents containing both code and explanations of the code in understandable language. Such documents are called ‘notebooks’. The code that you include in these notebooks can also be run (or executed) directly.</p>
-<p>Jupyter notebook enables you to share your code and the documentation of this code in a very effective way.</p>
+<p>Jupyter Notebook is an aplication that enables you to create documents containing both code and explanations of the code in understandable language. Such documents are called ‘notebooks’. The code that you include in these notebooks can also be run (or executed) directly.</p>
+<p>Creating notebooks enables you to share your code and the documentation of this code in a very effective way.</p>
 <section id="cells">
 <h2>Cells<a class="headerlink" href="#cells" title="Permalink to this heading">#</a></h2>
 <p>A notebook is essentially a collection of cells. We shall be working with two types of cells.</p>
 <ul class="simple">
 <li><p>A <strong>Code cell</strong> contains code to be executed using the so-called Python kernel. When you run a cell, the output will be displayed directly below the cell.</p></li>
-<li><p>A <strong>Markdown cell</strong> contains rich text. The text can be formatted using a langauge named <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a>.</p></li>
+<li><p>A <strong>Markdown cell</strong> contains rich text. The text can be formatted using a language named <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a>.</p></li>
 </ul>
 <p>To view the <em>markdown</em> codes, you need to <strong>double click on the cell</strong> that contains this text. You can try this with this current cell.</p>
 <p>The cell below contains code. Double clicking on this cell and try to edit the code.</p>
@@ -405,7 +404,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Cells can be run by placing the cursor inside the cell and by clicking on [Shift] + [Enter]. Alternatively, you can click on ‘<code class="docutils literal notranslate"><span class="pre">Run</span></code>’ in the menu at the top of the screen. Try to experiment with this. Can you change the output of the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function, for instance?</p>
+<p>Cells can be run by placing the cursor inside the cell and by pressing <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Command</kbd> + <kbd>Enter</kbd> on MacOS). Alternatively, you can click ‘<code class="docutils literal notranslate"><span class="pre">Run</span></code>’ in the menu at the top of the screen. Try to experiment with this. Can you change the output of the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function, for instance?</p>
 <p>Code cells always have the characters <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[</span> <span class="pre">]:</span></code> to their left. While the kernel is still active (i.e. when it is busy running the code), you will see an asterisk (’<code class="docutils literal notranslate"><span class="pre">*</span></code>’) in between the two square brackets. When it has finished running, Jupyter Notebook will display a number. The program keeps track of the order in which you run all the cells.</p>
 <p>You can also add new cells by choosing <code class="docutils literal notranslate"><span class="pre">Insert</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Insert</span> <span class="pre">Cell</span> <span class="pre">Above</span></code> or <code class="docutils literal notranslate"><span class="pre">Insert</span> <span class="pre">Cell</span> <span class="pre">Below</span></code> from the menu. New cells will be code cells by default. If you want to change the newly created cell into a Markdown cell, you can use the drowdown menu at the top of your screen, containing values such as <code class="docutils literal notranslate"><span class="pre">Code</span></code> and <code class="docutils literal notranslate"><span class="pre">Markdown</span></code>.</p>
 <p>To delete a cell, you can choose <code class="docutils literal notranslate"><span class="pre">Edit</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Delete</span> <span class="pre">cells</span></code>.</p>
