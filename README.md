@@ -2,7 +2,7 @@
 
 This is a [Jupyter Book][jb] that serves as the course materials for the
 [Centre for Digital Scholarship][cds]'s courses *Introduction to programming
-with Python* and *Data analysis with Python*.
+with Python* and *Data analysis with Python*, as well as other courses.
 
 During the course, students are asked to run the code in the tutorial notebooks
 and practice their understanding through exercises.
