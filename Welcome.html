@@ -347,7 +347,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -363,6 +365,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-these-materials-cover">What these materials cover</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-these-materials">How to use these materials</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -375,10 +386,19 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="welcome">
 <h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this heading">#</a></h1>
 <p>This website offers a basic and accessible introduction to programming in Python, aimed specifically at researchers and teachers without prior coding skills.</p>
+<section id="what-these-materials-cover">
+<h2>What these materials cover<a class="headerlink" href="#what-these-materials-cover" title="Permalink to this heading">#</a></h2>
 <p>The tutorials that you can follow on this website explain the core features of the Python programming language, including topics such as variables, data types and control structures. Additionally, you can learn learn about the main techniques that can be used to clean, enrich, analyse and visualise data.</p>
-<p>You can download all the notebooks written for this tutorial at the following address:</p>
+</section>
+<section id="how-to-use-these-materials">
+<h2>How to use these materials<a class="headerlink" href="#how-to-use-these-materials" title="Permalink to this heading">#</a></h2>
+<p>The tutorial and supporting sections are written using Jupyter Notebook.
+In both courses, we ask learners to use the notebooks on their own computer.
+They follow the <a class="reference internal" href="Installation.html"><span class="doc std std-doc">Installation instructions</span></a> and download the latest version of the notebooks, so that they can follow along with the instructors.</p>
+<p>You can download the latest version of all the notebooks written for this tutorial at the following address:</p>
 <p><a class="github reference external" href="https://github.com/cdsleiden/python-tutorial/releases/latest/download/notebooks.zip">cdsleiden/python-tutorial</a></p>
 <p>When you download and unzip this folder, make sure that you put the unzipped folder (<em>notebooks</em>) in a location that you can access from the Jupyter Notebook environment. Your home directory should be a good location.</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -436,6 +456,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-these-materials-cover">What these materials cover</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-these-materials">How to use these materials</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
