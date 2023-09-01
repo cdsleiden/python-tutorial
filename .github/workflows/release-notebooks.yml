@@ -1,4 +1,4 @@
-name: deploy-book
+name: Release Notebooks
 
 # Only run this when anything in `notebooks/` changes on the main branch
 on:
