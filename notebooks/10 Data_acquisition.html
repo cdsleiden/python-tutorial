@@ -168,7 +168,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="9%20Regular_expressions.html">9. Regular Expressions</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Data acquisition</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="11%20Pandas.html">11. Data analysis with pandas</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="12%20Visualisation.html">12. Data Visualisation</a></li>
@@ -371,32 +370,30 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">10. Data acquisition</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-downloads">Direct downloads</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-downloads">Direct downloads</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-1">Exercise 10.1.</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acquiring-data-via-apis">Acquiring data via APIs</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-musicbrainz">Example: MusicBrainz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-4">Exercise 10.4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-8">Exercise 10.8.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-9">Exercise 10.9.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#webscraping">Webscraping</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-scraping-scrapy">Advanced scraping: Scrapy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-5">Exercise 10.5.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-6">Exercise 10.6.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-7">Exercise 10.7.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-challenges">Additional challenges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-2">Exercise 10.2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-3">Exercise 10.3.</a></li>
 </ul>
 </li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-1">Exercise 10.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-2">Exercise 10.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-3">Exercise 10.3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-4">Exercise 10.4.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-5">Exercise 10.5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-6">Exercise 10.6</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-7">Exercise 10.7</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-8">Exercise 10.8</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-9">Exercise 10.9</a></li>
-</ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -409,7 +406,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-acquisition">
 <h1>10. Data acquisition<a class="headerlink" href="#data-acquisition" title="Permalink to this heading">#</a></h1>
-<p>Data science projects typically start with the acquisition of data. In many cases, such data sets consist of secondary data made available on the web by commercial or non-commercial organisations. This part of the tutorial explains how you can obtain such online data sets.</p>
+<p>Data science projects typically start with the acquisition of data. In many cases, such data sets consist of secondary data made available on the web by commercial or non-commercial organisations. This part of the tutorial explains how you can obtain such online data sets using code.</p>
+<p>Many data sets can be downloaded manually through your browser, for example, from data portals or repositories. <a class="reference external" href="https://www.re3data.org/">Re3data</a> is a large overview of repositories for research data.
+However, there are good reasons for downloading data sets using a script. Some data sets may consist of many files, or you may want to download files that are updated frequently.
+These are just some examples of when manually downloading is not ideal for your research.</p>
 <p>In this tutorial, we distinguish three methods of data acquisition: downloading data files, accessing data through APIs and webscraping. You usually choose one of these methods to acquire your data, based on what the data provider offers.</p>
 <section id="direct-downloads">
 <h2>Direct downloads<a class="headerlink" href="#direct-downloads" title="Permalink to this heading">#</a></h2>
@@ -421,7 +421,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">requests</span></code> library can be used to make requests according to the Hypertext Transfer Protocol (HTTP), which was developed to enable the exchange of information across computers. The computer that can provide information is typically referred to as a server, and the computer that requests information from this server is referred to as a client. In the HTTP protocol, the GET method is used to request data from a specified server.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">requests</span></code> library can be used to make requests according to the <a class="reference external" href="https://en.wikipedia.org/wiki/HTTP">Hypertext Transfer Protocol (HTTP)</a>, which was developed to enable the exchange of information between computers. The computer that can provide information is typically referred to as a server, and the computer that requests information from this server is referred to as a client. In the HTTP protocol, the GET method is used to request data from a specified server.</p>
 <p>In Python, such a GET request can be sent to a server using the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method in <code class="docutils literal notranslate"><span class="pre">requests</span></code>, as demonstrated below. Evidently, it is important that you are online when you run this code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -431,10 +431,10 @@ document.write(`
 </div>
 </div>
 <p>This method returns a so-called <code class="docutils literal notranslate"><span class="pre">Response</span></code> object. It is an object which represents information about the downloaded web resource. In the example above, the result of the method is assigned to a variable named <code class="docutils literal notranslate"><span class="pre">response</span></code>.</p>
-<p>Once this <code class="docutils literal notranslate"><span class="pre">Response</span></code> object has been created successfully, you can use various pieces of information about the resource that was downloaded.
+<p>Once this <code class="docutils literal notranslate"><span class="pre">Response</span></code> object has been created successfully, you can use various pieces of information about the resource that was requested.
 The property <code class="docutils literal notranslate"><span class="pre">status_code</span></code>, for instance, indicates the HTTP status code that was returned by the server.
 The status code 200 indicates that the request was successful and the infamous status code 404 indicates that the file was not found.</p>
-<p>If the status code is indeed 200, the contents of the resource is accessible in the response’s <code class="docutils literal notranslate"><span class="pre">body</span></code> property. However, this property holds the contents as bytes. Typically, when we downloaded a webpage, we want to work with the data as text. In these cases, the <code class="docutils literal notranslate"><span class="pre">text</span></code> property of the <code class="docutils literal notranslate"><span class="pre">Response</span></code> object contains the full contents of the downloaded website, dataset or other kind of file as a string.</p>
+<p>If the status code is indeed 200, the contents of the resource is accessible in the response’s <code class="docutils literal notranslate"><span class="pre">content</span></code> property. However, this property holds the contents as bytes. Typically, when we downloaded a webpage, we want to work with the data as text. In these cases, the <code class="docutils literal notranslate"><span class="pre">text</span></code> property of the <code class="docutils literal notranslate"><span class="pre">Response</span></code> object contains the full contents of the downloaded website, dataset or other kind of file as a string.</p>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">requests</span></code> may not always understand a file’s <a class="reference external" href="https://www.w3.org/International/questions/qa-what-is-encoding">character encoding</a> automatically. You can set the correct character encoding explicitly using the <code class="docutils literal notranslate"><span class="pre">encoding</span></code> property.</p>
 <p>When you run the code that is given below, the contents of the webpage that is specified at the beginning (or more specifically, the HTML code that was created to build the webpage) becomes available as a string, assigned to the variable named <code class="docutils literal notranslate"><span class="pre">contents</span></code>.</p>
 <div class="cell docutils container">
@@ -469,28 +469,68 @@ The status code 200 indicates that the request was successful and the infamous s
 </div>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">if</span></code> keyword in the code above does not explicitly test whether the response code is 200. The Response object, which is created when you use the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method from requests, automatically returns <code class="docutils literal notranslate"><span class="pre">True</span></code> when the status code is 200.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">requests</span></code> library can also be used to retrieve data from an API.</p>
+<section id="exercise-10-1">
+<h3>Exercise 10.1.<a class="headerlink" href="#exercise-10-1" title="Permalink to this heading">#</a></h3>
+<p>The list below contains a number of URLs. They are the web addresses of texts created for the <a class="reference external" href="https://www.gutenberg.org">Project Gutenberg</a> website.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;https://www.gutenberg.org/files/580/580-0.txt&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;https://www.gutenberg.org/files/1400/1400-0.txt&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;https://www.gutenberg.org/files/786/786-0.txt&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;https://www.gutenberg.org/files/766/766-0.txt&#39;</span> 
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Write a program in Python that downloads all the files in this list and stores them in the current directory.
+As filenames, use the same names that are used by Project Gutenberg (e.g. ‘580-0.txt’ or ‘1400-0.txt’).
+The basename in a URL can be extracted using the <a class="reference external" href="https://docs.python.org/3/library/os.path.html#os.path.basename"><code class="docutils literal notranslate"><span class="pre">os.path.basename()</span></code></a> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+
+<span class="c1"># Recreate the given list using copy and paste</span>
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>  
+<span class="p">]</span>
+
+<span class="c1"># We use a for-loop to take the same steps for each item in the list:</span>
+<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
+    <span class="c1"># 1. Download the file contents</span>
+    
+    <span class="c1"># 1a. Force the textual contents to be interpreted as UTF-8 encoded, because the website does not send the text encoding</span>
+    
+    <span class="c1"># 2. Use basename to get a suitable filename</span>
+    
+    <span class="c1"># 3. Open the file in write mode and write the downloaded file contents to the file</span>
+    
+    <span class="c1"># 4. Close the file</span>
+    
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="acquiring-data-via-apis">
 <h2>Acquiring data via APIs<a class="headerlink" href="#acquiring-data-via-apis" title="Permalink to this heading">#</a></h2>
 <p>Organisations which aim to make their data available for reuse often do this through an <em>Application Programming Interface</em> (API). An API, simply put, is the interface through which (online) services and applications provide access to their information and functionalities.</p>
 <p>It enables organisations to share some of the data that they have in a strucured format, so that other external parties can make use of these data in new applications.</p>
 <p>The communication between the sender and the recipient of such requests needs to take place according to a specific protocol. The requests need to be formulated according to certain rules.</p>
-<p>For many APIs, you need to create an access key before you can send requests. This is the case, for instance, for the Twitter API.</p>
+<p>For many APIs, you need to create an access key (which may or may not require payment) before you can send requests. This is the case, for instance, for the Twitter API.</p>
 <section id="example-musicbrainz">
 <h3>Example: MusicBrainz<a class="headerlink" href="#example-musicbrainz" title="Permalink to this heading">#</a></h3>
-<p>There are also many APIs which are fully open, however. One example is the <a class="reference external" href="https://musicbrainz.org/doc/MusicBrainz_API">MusicBrainz</a> API. <em>MusicBrainz</em> is a large online encyclopedia containing information about musicians and their work. You can send requests to this API without having to provide an access key.</p>
+<p>There are also many APIs that are open, i.e. that do not require registration. For example, the <a class="reference external" href="https://musicbrainz.org/doc/MusicBrainz_API">MusicBrainz API</a> is free for non-commercial use. <em>MusicBrainz</em> is a large online encyclopedia containing information about musicians and their work. You can send requests to this API without having to provide an access key.</p>
 <p>The root URL of this API is <a class="reference external" href="https://musicbrainz.org/ws/2/">https://musicbrainz.org/ws/2/</a></p>
-<p>On <em>MusicBrainz</em>, you can request information a number of different entities, including artists, genres, instruments, labels and releases. The enity type you are interested in firstly needs to be appended the root URL. If you want to want to search for information about an artist, for example, you need to work with the following URL structure: <a class="reference external" href="https://musicbrainz.org/ws/2/artist">https://musicbrainz.org/ws/2/artist</a></p>
+<p>On MusicBrainz, you can request information about different entities, including artists, genres, instruments, labels and releases. The entity type you are interested in firstly needs to be appended to the root URL. If you want to search for information about an artist, for example, you need to work with the following URL structure: <code class="docutils literal notranslate"><span class="pre">https://musicbrainz.org/ws/2/artist[?parameters]</span></code></p>
 <p>You can then work with the following parameters:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="p">[</span><span class="n">search</span> <span class="n">term</span><span class="p">]</span>
 <span class="n">fmt</span> <span class="o">=</span> <span class="p">[</span><span class="n">json</span> <span class="ow">or</span> <span class="n">xml</span><span class="p">]</span>
 <span class="n">limit</span> <span class="o">=</span> <span class="p">[</span><span class="n">integer</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Following the <code class="docutils literal notranslate"><span class="pre">query</span></code> parameter, you can supply the name of the artist you want to search for. Using the <code class="docutils literal notranslate"><span class="pre">fmt</span></code> parameter, you can specify whether you want to receive the result in <a class="reference external" href="https://www.w3.org/XML/">XML</a> or in <a class="reference external" href="https://www.json.org/">JSON</a> format. The API returns XML data by default. If the API results many results, you can reduce the number of results by working with the <code class="docutils literal notranslate"><span class="pre">limit</span></code> parameter.</p>
+<p>Following the <code class="docutils literal notranslate"><span class="pre">query</span></code> parameter, you can supply the name of the artist you want to search for. Using the <code class="docutils literal notranslate"><span class="pre">fmt</span></code> parameter, you can specify whether you want to receive the result in <a class="reference external" href="https://www.w3.org/XML/">XML</a> or in <a class="reference external" href="https://www.json.org/">JSON</a> format. The API returns XML data by default. If the API returns many results, you can reduce the number of results by working with the <code class="docutils literal notranslate"><span class="pre">limit</span></code> parameter.</p>
 <p>The following API call returns information about <em>The Beatles</em> in the JSON format.</p>
 <p><a class="reference external" href="https://musicbrainz.org/ws/2/artist?query=The%20Beatles&amp;amp;fmt=json">https://musicbrainz.org/ws/2/artist?query=The Beatles&amp;fmt=json</a></p>
-<p>In Python, you can also send out such API calls using the requests library.</p>
+<p>In Python, because this API is a Web API, you can also send out such API calls using the requests library.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -521,9 +561,132 @@ The status code 200 indicates that the request was successful and the infamous s
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">musicbrainz_results</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="n">musicbrainz_results</span><span class="p">[</span><span class="s1">&#39;artists&#39;</span><span class="p">]:</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
-    <span class="n">artist_type</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+    <span class="n">artist_type</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">artist_type</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-4">
+<h3>Exercise 10.4.<a class="headerlink" href="#exercise-10-4" title="Permalink to this heading">#</a></h3>
+<p>Find the coordinates for each address in the given list using <a class="reference external" href="https://www.openstreetmap.org/">OpenStreetMap</a>’s Nominatim API.</p>
+<p>The Nominatim API can be used, among other things, to find the precise geographic coordinates of a specific location. The base URL of this API is <a class="reference external" href="https://nominatim.openstreetmap.org/search">https://nominatim.openstreetmap.org/search</a>.</p>
+<p>Following the <code class="docutils literal notranslate"><span class="pre">q</span></code> parameter, you need to supply a string describing the locations whose latitude and longitude you want to find. As values for the <code class="docutils literal notranslate"><span class="pre">format</span></code> parameter, you can use <code class="docutils literal notranslate"><span class="pre">xml</span></code> for XML-formatted data or <code class="docutils literal notranslate"><span class="pre">json</span></code> for JSON-formatted data. Use this API to find the longitude and the latitude of the addresses in the following list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span> <span class="p">,</span>
+<span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The JSON data received via the OpenStreetMap API can be converted to regular Python lists and dictionaries using the <code class="docutils literal notranslate"><span class="pre">json()</span></code> method:</p>
+<p><code class="docutils literal notranslate"><span class="pre">json_data</span> <span class="pre">=</span> <span class="pre">response.json()</span></code></p>
+<p>If the result is saved as variable named <code class="docutils literal notranslate"><span class="pre">json_data</span></code>, you should be able to access the latitude and the longitude as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">latitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+<span class="n">longitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">[0]</span></code> is used to get the results for the first result.</p>
+<p>Print each address and its latitude and longitude coordinates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> 
+             <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span><span class="p">,</span><span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> 
+             <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">addresses</span><span class="p">:</span>
+    <span class="c1"># create the API call, with the address in the &#39;q&#39; parameter</span>
+    
+    <span class="c1"># Get the JSON data and process the data using json()</span>
+    
+    <span class="c1"># Find the latitude and the longitude of the first result</span>
+    <span class="c1">#latitude = json_data[0][&#39;lat&#39;]</span>
+    <span class="c1">#longitude = json_data[0][&#39;lon&#39;]</span>
+    
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-8">
+<h3>Exercise 10.8.<a class="headerlink" href="#exercise-10-8" title="Permalink to this heading">#</a></h3>
+<p>As was discussed in this notebook, you can use the <em>MusicBrainz</em> API to request information about musicians. Via the code that is provided, you can request the names and the type (i.e. are we dealing with a person or with a group?). This specific API can make much more information available, however. Try to add some code with can add the following data about each artist:</p>
+<ul class="simple">
+<li><p>The date of birth (in the case of a person) or formation (in the case of a group)</p></li>
+<li><p>The date of death or breakup</p></li>
+<li><p>The place of birth or formation</p></li>
+<li><p>The place of death or breakup</p></li>
+<li><p>Aliases</p></li>
+<li><p>Tags associated with the artist</p></li>
+</ul>
+<p>Tip: ‘Uncomment’ the print statement in the second cell to be able explore the structure of the JSON data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">requests.utils</span> <span class="kn">import</span> <span class="n">requote_uri</span>
+
+
+<span class="n">root_url</span> <span class="o">=</span> <span class="s1">&#39;https://musicbrainz.org/ws/2/&#39;</span>
+
+<span class="c1">## The parameters for the API call are defined as variables</span>
+<span class="n">entity</span> <span class="o">=</span> <span class="s1">&#39;artist&#39;</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;David Bowie&#39;</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="n">requote_uri</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+<span class="n">api_call</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root_url</span><span class="si">}{</span><span class="n">entity</span><span class="si">}</span><span class="s1">?query=</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s1">&amp;fmt=</span><span class="si">{</span><span class="n">fmt</span><span class="si">}</span><span class="s1">&amp;limit=</span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">api_call</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">musicbrainz_results</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="n">musicbrainz_results</span><span class="p">[</span><span class="s1">&#39;artists&#39;</span><span class="p">]:</span>
+    <span class="c1">#print(json.dumps(artist, indent=4))</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+    <span class="n">artist_type</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">artist_type</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+    <span class="c1">## Add your code below</span>
+    
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-9">
+<h3>Exercise 10.9.<a class="headerlink" href="#exercise-10-9" title="Permalink to this heading">#</a></h3>
+<p><em><a class="reference external" href="https://journals.plos.org/plosone/">PLOS One</a></em> is a peer reviewed open access journal. The <em>PLOS One</em> API can be used to request metadata about all the articles that have been published in the journal. In this API, you can refer to specific articles using their <a class="reference external" href="https://www.doi.org/">DOI</a>.</p>
+<p>Such requests can be sent using API calls with the following structure:</p>
+<p><a class="reference external" href="https://api.plos.org/search?q=id:%7Bdoi%7D">https://api.plos.org/search?q=id:{doi}</a></p>
+<p>To acquire data about the article with DOI <a class="reference external" href="https://doi.org/10.1371/journal.pone.0270739">10.1371/journal.pone.0270739</a>, for example, you can use the following API call:</p>
+<p><a class="reference external" href="https://api.plos.org/search?q=id:10.1371/journal.pone.0270739">https://api.plos.org/search?q=id:10.1371/journal.pone.0270739</a></p>
+<p>Try to write code which can get hold of metadata about the articles with the following DOIs:</p>
+<ul class="simple">
+<li><p>10.1371/journal.pone.0169045</p></li>
+<li><p>10.1371/journal.pone.0271074</p></li>
+<li><p>10.1371/journal.pone.0268993</p></li>
+</ul>
+<p>For each article, print the title, the publication date, the article type, a list of all the authors and the abstract.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">dois</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;10.1371/journal.pone.0169045&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;10.1371/journal.pone.0268993&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;10.1371/journal.pone.0271074&#39;</span> <span class="p">]</span>
+
+
+    
 </pre></div>
 </div>
 </div>
@@ -533,8 +696,8 @@ The status code 200 indicates that the request was successful and the infamous s
 <section id="webscraping">
 <h2>Webscraping<a class="headerlink" href="#webscraping" title="Permalink to this heading">#</a></h2>
 <p>When a website does not offer access to its structured data via a well-defined API, it may be an option to acquire the data that can be viewed on a site by making use of web scraping. It is a process in which a computer program tries to process the contents of given webpage, and to extract the data values that are needed. The aim of such an application is generally to copy information on a web page and to paste it into a local database.</p>
-<p>To get the most out of webscraping, you need to have a basic understanding of HTML. Many <a class="reference external" href="https://bookandbyte.universiteitleiden.nl/DMT/PDF/HTML.pdf">basic introductions</a> can be found on the web. Web scraping should be used with caution, because it may be not be allowed to download large quantities of data from a specific website. In this tutorial we will only look at extracting information from single pages.</p>
-<p>To scrape webpages, you firstly need to download them. This can be done using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library that was explained above. The code below scrapes data from a page on the <a class="reference external" href="https://www.gutenberg.org">Internet Movie Database</a> website, listing the top rated movies.</p>
+<p>To get the most out of webscraping, you need to have a basic understanding of HTML. This <a class="reference external" href="https://bookandbyte.universiteitleiden.nl/DMT/HTML/HTML.pdf">basic introduction</a> may provide a start. Other tutorials can be found on the web. Web scraping should be used with caution, because it may be not be allowed to download large quantities of data from a specific website. In this tutorial we will only look at extracting information from single pages.</p>
+<p>To scrape webpages, you firstly need to download them. This can be done using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library that was explained above. The code below scrapes data from a page on the <a class="reference external" href="https://www.imdb.com/">Internet Movie Database</a> website, listing the top rated movies.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -558,17 +721,17 @@ The status code 200 indicates that the request was successful and the infamous s
 <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
 
 <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
-
 </pre></div>
 </div>
 <p>The data can found in a &lt;td&gt; element whose ‘class’ attribute has value ‘titleColumn’. The actual title in given in a hyperlink, encoded using &lt;a&gt;. The URL to the page for the movie is given in an ‘href’ attribute. ‘Scraping’ the page really means that we need to extract the values we need from these HTML elements.</p>
-<p>One of the libraries that you can use in Python for scraping online resources is <code class="docutils literal notranslate"><span class="pre">Beautiful</span> <span class="pre">Soup</span></code>. The code below firstly transforms the HTML code that was downloaded into a BeautifulSoup object. If the <code class="docutils literal notranslate"><span class="pre">bs4</span></code> library has been imported, you can use its <code class="docutils literal notranslate"><span class="pre">BeautifulSoup()</span></code> method. This method demands the full contents of an HTML document as a first parameter. As a second parameter, you need to provide the name one of the parsers that are available. Generally, a parser is an application which can process and analyse data. In this context, it refers to a program which can analyse the HTML file. One of the parsers that we can use is <code class="docutils literal notranslate"><span class="pre">lxml</span></code>. Using this parser, the <code class="docutils literal notranslate"><span class="pre">BeautifulSoup()</span></code> method converts the downloaded HTML page into a BeautifulSoup object.</p>
+<p>One of the libraries that you can use in Python for scraping online resources is <a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a>.
+The code below firstly transforms the HTML code that was downloaded into a <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> object. From the <code class="docutils literal notranslate"><span class="pre">bs4</span></code> library we import the <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> class. We then <em>construct</em> an object of this class, providing the full contents of an HTML document as a first parameter. As a second parameter, you need to provide the name one of the parsers that are available. Generally, a parser is an application which can process and analyse data. In this context, it refers to a program which can analyse the HTML file. One of the parsers that we can use is <code class="docutils literal notranslate"><span class="pre">lxml</span></code>. Using this parser, the <code class="docutils literal notranslate"><span class="pre">BeautifulSoup()</span></code> method converts the downloaded HTML page into a <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> object.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">prettify()</span></code> method of this object creates a more readable version of the HTML file by adding indents and end of line characters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span> <span class="n">html_page</span><span class="p">,</span><span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_page</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span> <span class="n">soup</span><span class="o">.</span><span class="n">prettify</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
@@ -584,12 +747,12 @@ The status code 200 indicates that the request was successful and the infamous s
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movies</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;titleColumn&#39;</span><span class="p">}</span> <span class="p">)</span>
 
 <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">movies</span><span class="p">:</span>
-    <span class="c1"># Find links (a elements) within the cell\n&quot;,</span>
+    <span class="c1"># Find links (a elements) within the cell&quot;,</span>
     <span class="n">children</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">findChildren</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
         <span class="n">movie_title</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">text</span>
         <span class="n">url</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span>
-        <span class="c1">## This is an internal link, so we need to prepand the base url</span>
+        <span class="c1">## This is an internal link, so we need to prepend the base url</span>
         <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://imdb.com&#39;</span> <span class="o">+</span> <span class="n">url</span>
         <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">movie_title</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>  
 </pre></div>
@@ -602,59 +765,55 @@ The status code 200 indicates that the request was successful and the infamous s
 <h3>Advanced scraping: Scrapy<a class="headerlink" href="#advanced-scraping-scrapy" title="Permalink to this heading">#</a></h3>
 <p>This tutorial has only touched the surface of web scraping. To get specific data from webpages or APIs, you will need to dig into the data that you get and probably learn more about the data formats. A more advanced framework (or toolkit) for webscraping with Python is <a class="reference external" href="https://scrapy.org">Scrapy</a>. This framework simlified the process of building a scraper/crawler considerably by providing basic functionalities out of the box. Although Scrapy does not understand what parts of webpages are of interest to you, it does many things for you, such as making sure you don’t send too many requests at the same time or retrying requests that fail. Feel free to look at the <a class="reference external" href="https://docs.scrapy.org/en/latest/intro/tutorial.html">Scrapy tutorial</a> if you want to experiment with this library.</p>
 </section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
-<section id="exercise-10-1">
-<h2>Exercise 10.1.<a class="headerlink" href="#exercise-10-1" title="Permalink to this heading">#</a></h2>
-<p>The list below contains a number of URLs. They are the web addresses of texts created for the <a class="reference external" href="https://www.gutenberg.org">Project Gutenberg</a> website.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;https://www.gutenberg.org/files/580/580-0.txt&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;https://www.gutenberg.org/files/1400/1400-0.txt&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;https://www.gutenberg.org/files/786/786-0.txt&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;https://www.gutenberg.org/files/766/766-0.txt&#39;</span> 
-<span class="p">]</span>
-</pre></div>
-</div>
-<p>Write a program in Python that downloads all the files in this list and stores them in the current directory.
-As filenames, use the same names that are used by Project Gutenberg (e.g. ‘580-0.txt’ or ‘1400-0.txt’).
-The basename in a URL can be extracted using the <a class="reference external" href="https://docs.python.org/3/library/os.path.html#os.path.basename"><code class="docutils literal notranslate"><span class="pre">os.path.basename()</span></code></a> function.</p>
+<section id="exercise-10-5">
+<h3>Exercise 10.5.<a class="headerlink" href="#exercise-10-5" title="Permalink to this heading">#</a></h3>
+<p>The webpage below offers access to the complete work of the author H.P. Lovecraft.</p>
+<p><a class="reference external" href="https://www.hplovecraft.com/writings/texts/">https://www.hplovecraft.com/writings/texts/</a></p>
+<p>Write code in Python to find and print the URLs of all the texts that are listed. The links are all encoded in an element named &lt;a&gt;. The attribute <code class="docutils literal notranslate"><span class="pre">href</span></code> mentions the links, and the body of the &lt;a&gt; element mentions the title. List only the web pages that end in ‘.aspx’.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">os</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">re</span>
 
-<span class="c1"># Recreate the given list using copy and paste</span>
-<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>  
-<span class="p">]</span>
-
-<span class="c1"># We use a for-loop to take the same steps for each item in the list:</span>
-<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
-    <span class="c1"># 1. Download the file contents</span>
-    
-    <span class="c1"># 1a. Force the textual contents to be interpreted as UTF-8 encoded, because the website does not send the text encoding</span>
-    
-    <span class="c1"># 2. Use basename to get a suitable filename</span>
-    
-    <span class="c1"># 3. Open the file in write mode and write the downloaded file contents to the file</span>
-    
-    <span class="c1"># 4. Close the file</span>
-    
-    
+<span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.hplovecraft.com/writings/texts/&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+<section id="exercise-10-6">
+<h3>Exercise 10.6.<a class="headerlink" href="#exercise-10-6" title="Permalink to this heading">#</a></h3>
+<p>Using <code class="docutils literal notranslate"><span class="pre">requests</span></code> and <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>, create a list of all the countries mentioned on <a class="reference external" href="https://www.scrapethissite.com/pages/simple/">https://www.scrapethissite.com/pages/simple/</a>.</p>
+<p>Also collect and print data about the capital, the population and the area of all of these countries.</p>
+<p>How you print or present the information is not too important here; the challenge in this exercise is to extract the data from the webpage.</p>
+</section>
+<section id="exercise-10-7">
+<h3>Exercise 10.7.<a class="headerlink" href="#exercise-10-7" title="Permalink to this heading">#</a></h3>
+<p>Download all the images shown on the following page: <a class="reference external" href="https://www.bbc.com/news/in-pictures-61014501">https://www.bbc.com/news/in-pictures-61014501</a></p>
+<p>You can follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Download the HTML file</p></li>
+<li><p>‘Scrape’ the HTML file you downloaded. As images in HTML are encoded using the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> element, try to create a list containing all occurrences of this element.</p></li>
+<li><p>Find the URLS of all the images. Within these <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> element, there should be a <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute containing the URL of the image.</p></li>
+<li><p>The <a class="reference external" href="http://bbc.com">bbc.com</a> website uses images as part of the user interface. These images all have the word ‘line’ in their filenames. Try to exclude these images whose file names contain the word ‘line’.</p></li>
+<li><p>Download all the images that you found in this way, using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library. In the <code class="docutils literal notranslate"><span class="pre">Response</span></code> object that is created following a succesful download, you need to work with the <code class="docutils literal notranslate"><span class="pre">content</span></code> property to obtain the actual file.  Save all these images on your computer, using <code class="docutils literal notranslate"><span class="pre">open()</span></code> and <code class="docutils literal notranslate"><span class="pre">write()</span></code>. In the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function, use the string <code class="docutils literal notranslate"><span class="pre">&quot;wb&quot;</span></code> (write binary) as a second parameter (instead of only <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code>) to make sure that the contents are saved as bytes.</p></li>
+</ol>
+</section>
+</section>
+<section id="additional-challenges">
+<h2>Additional challenges<a class="headerlink" href="#additional-challenges" title="Permalink to this heading">#</a></h2>
+<p>These are exercises that require more effort to complete.
+For example, you would need to study the documentation and results of the API to understand how the Wikipedia API works.</p>
+<p>If you need a good challenge, these exercises may be for you!</p>
 <section id="exercise-10-2">
-<h2>Exercise 10.2.<a class="headerlink" href="#exercise-10-2" title="Permalink to this heading">#</a></h2>
+<h3>Exercise 10.2.<a class="headerlink" href="#exercise-10-2" title="Permalink to this heading">#</a></h3>
 <p>Write Python code which can download the titles and the URLs of Wikipedia articles whose titles contain the word ‘Dutch’. Your code needs to display the first 30 results only.</p>
-<p><em>Hint: the tutorial covers the Wikipedia API.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">baseURL</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/w/api.php?action=opensearch&#39;</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/w/api.php?action=opensearch&#39;</span>
 
 <span class="c1"># Get the search results and display them</span>
 </pre></div>
@@ -663,7 +822,7 @@ The basename in a URL can be extracted using the <a class="reference external" h
 </div>
 </section>
 <section id="exercise-10-3">
-<h2>Exercise 10.3.<a class="headerlink" href="#exercise-10-3" title="Permalink to this heading">#</a></h2>
+<h3>Exercise 10.3.<a class="headerlink" href="#exercise-10-3" title="Permalink to this heading">#</a></h3>
 <p>Write an application in Python that extracts all the publications that have been added to a specific ORCID account, using the ORCID API.</p>
 <p>Information about individual ORCID accounts can be obtained by appending their ID to the base URL <a class="reference external" href="https://pub.orcid.org/v2.0/">https://pub.orcid.org/v2.0/</a>. The ORCID API returns data in XML by default. In the XML, the list of publications can be found using the XPath <code class="docutils literal notranslate"><span class="pre">r:record/a:activities-summary/a:works/a:group</span></code> (using the namespace declarations given below).</p>
 <p><em>Note: we use the <a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html">ElementTree</a> library to process the XML data. It is very powerful, but has a quite steep learning curve.</em></p>
@@ -707,164 +866,6 @@ The basename in a URL can be extracted using the <a class="reference external" h
 </div>
 </div>
 </section>
-<section id="exercise-10-4">
-<h2>Exercise 10.4.<a class="headerlink" href="#exercise-10-4" title="Permalink to this heading">#</a></h2>
-<p>The API developed by <a class="reference external" href="https://www.openstreetmap.org/">OpenStreetMap</a> can be used, among other things, to find the precise geographic coordinates of a specific location. The base URL of this API is <a class="reference external" href="https://nominatim.openstreetmap.org/search">https://nominatim.openstreetmap.org/search</a>.</p>
-<p>Following the <code class="docutils literal notranslate"><span class="pre">q</span></code> parameter, you need to supply a string describing the locations whose latitude and longitude you want to find. As values for the <code class="docutils literal notranslate"><span class="pre">format</span></code> parameter, you can use <code class="docutils literal notranslate"><span class="pre">xml</span></code> for XML-formatted data or <code class="docutils literal notranslate"><span class="pre">json</span></code> for JSON-formatted data. Use this API to find the longitude and the latitude of the addresses in the following list:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>The JSON data received via the OpenStreetMap API can be converted to regular Python lists and dictionaries using the <code class="docutils literal notranslate"><span class="pre">json()</span></code> method:</p>
-<p><code class="docutils literal notranslate"><span class="pre">json_data</span> <span class="pre">=</span> <span class="pre">response.json()</span></code></p>
-<p>If the result is saved as variable named <code class="docutils literal notranslate"><span class="pre">json_data</span></code>, you should be able to access the latitude and the longitude as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">latitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
-<span class="n">longitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">urllib.parse</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">string</span>
-<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span> <span class="p">,</span> <span class="n">isdir</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> 
-             <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span><span class="p">,</span><span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> 
-             <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">addresses</span><span class="p">:</span>
-    <span class="c1"># create the API call, with the address in the &#39;q&#39; parameter</span>
-    
-    <span class="c1"># Get the JSON data and process the data using json()</span>
-    
-    <span class="c1"># Find the latitude and the longitude</span>
-    <span class="c1">#latitude = json_data[0][&#39;lat&#39;]</span>
-    <span class="c1">#longitude = json_data[0][&#39;lon&#39;]</span>
-    
-    
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-10-5">
-<h2>Exercise 10.5<a class="headerlink" href="#exercise-10-5" title="Permalink to this heading">#</a></h2>
-<p>The webpage below offers access to the complete work of the author H.P. Lovecraft.</p>
-<p><a class="reference external" href="http://www.hplovecraft.com/writings/texts/">http://www.hplovecraft.com/writings/texts/</a></p>
-<p>Write code in Python to find the URLs of all the texts that are listed. The links are all encoded in an element named &lt;a&gt;. The attribute <code class="docutils literal notranslate"><span class="pre">href</span></code> mentions the links, and the body of the &lt;a&gt; element mentions the title. List only the web pages that end in ‘.aspx’.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;http://www.hplovecraft.com/writings/texts/&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-10-6">
-<h2>Exercise 10.6<a class="headerlink" href="#exercise-10-6" title="Permalink to this heading">#</a></h2>
-<p>Using <code class="docutils literal notranslate"><span class="pre">requests</span></code> and <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>, create a list of all the countries mentioned on <a class="reference external" href="https://www.scrapethissite.com/pages/simple/">https://www.scrapethissite.com/pages/simple/</a>.</p>
-<p>Also collect data about the capital, the population and the area of all of these countries.</p>
-</section>
-<section id="exercise-10-7">
-<h2>Exercise 10.7<a class="headerlink" href="#exercise-10-7" title="Permalink to this heading">#</a></h2>
-<p>Download all the images shown on the following page: <a class="reference external" href="https://www.bbc.com/news/in-pictures-61014501">https://www.bbc.com/news/in-pictures-61014501</a></p>
-<p>You can follow these steps:</p>
-<ul class="simple">
-<li><p>Download the HTML file</p></li>
-<li><p>‘Scrape’ the HTML file you downloaded. As images in HTML are encoded using the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> element, try to create a list containing all occurrences of this element.</p></li>
-<li><p>Find the URLS of all the images. Witnin these <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> element, there should be a <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute containing the URL of the image.</p></li>
-<li><p>The <a class="reference external" href="http://bbc.com">bbc.com</a> website uses images as part of the user interface. These images all have the word ‘line’ in their filenames. Try to exclude these images whose file names contain the word ‘line’.</p></li>
-<li><p>Download all the images that you found in this way, using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library. In the <code class="docutils literal notranslate"><span class="pre">Response</span></code> object that is created following a succesful download, you need to work with the <code class="docutils literal notranslate"><span class="pre">content</span></code> property to obtain the actual file.  Save all these images on your computer, using <code class="docutils literal notranslate"><span class="pre">open()</span></code> and <code class="docutils literal notranslate"><span class="pre">write()</span></code>. In the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function, use the code ‘wb’ as a second parameter (instead of only ‘w’) to make sure that the contents are saved as bytes.</p></li>
-</ul>
-</section>
-<section id="exercise-10-8">
-<h2>Exercise 10.8<a class="headerlink" href="#exercise-10-8" title="Permalink to this heading">#</a></h2>
-<p>As was discussed in this notebook, you can use the <em>MusicBrainz</em> API to request information about musicians. Via the code that is provided, you can request the names and the type (i.e. are we dealing with a person or with a group?). This specific API can make much more information available, however. Try to add some code with can add the following data about each artist:</p>
-<ul class="simple">
-<li><p>The date of birth (in the case of a person) or formation (in the case of a group)</p></li>
-<li><p>The date of death or breakup</p></li>
-<li><p>The place of birth or formation</p></li>
-<li><p>The place of death or breakup</p></li>
-<li><p>Aliases</p></li>
-<li><p>Tags associated with the artist</p></li>
-</ul>
-<p>Tip: ‘Uncomment’ the print statement in the second cell to be able explore the structure of the JSON data.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">requests.utils</span> <span class="kn">import</span> <span class="n">requote_uri</span>
-
-
-<span class="n">root_url</span> <span class="o">=</span> <span class="s1">&#39;https://musicbrainz.org/ws/2/&#39;</span>
-
-<span class="c1">## The parameters for the API call are defined as variables</span>
-<span class="n">entity</span> <span class="o">=</span> <span class="s1">&#39;artist&#39;</span>
-<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;David Bowie&#39;</span>
-<span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span>
-
-<span class="n">query</span> <span class="o">=</span> <span class="n">requote_uri</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-
-<span class="n">api_call</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root_url</span><span class="si">}{</span><span class="n">entity</span><span class="si">}</span><span class="s1">?query=</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s1">&amp;fmt=</span><span class="si">{</span><span class="n">fmt</span><span class="si">}</span><span class="s1">&amp;limit=</span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s1">&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">api_call</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
-
-<span class="n">musicbrainz_results</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="n">musicbrainz_results</span><span class="p">[</span><span class="s1">&#39;artists&#39;</span><span class="p">]:</span>
-    <span class="c1">#print(json.dumps(artist, indent=4))</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
-    <span class="n">artist_type</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">artist_type</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
-    <span class="c1">## Add your code below</span>
-    
-    
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-10-9">
-<h2>Exercise 10.9<a class="headerlink" href="#exercise-10-9" title="Permalink to this heading">#</a></h2>
-<p><em><a class="reference external" href="https://journals.plos.org/plosone/">PLOS One</a></em> is a peer reviewed open access journal. The <em>PLOS One</em> API can be used to request metadata about all the articles that have been published in the journal. In this API, you can refer to specific articles using their <a class="reference external" href="https://www.doi.org/">DOI</a>.</p>
-<p>Such requests can be sent using API calls with the following structure:</p>
-<p><a class="reference external" href="https://api.plos.org/search?q=id:%7Bdoi%7D">https://api.plos.org/search?q=id:{doi}</a></p>
-<p>To acquire data about the article with DOI <a class="reference external" href="https://doi.org/10.1371/journal.pone.0270739">10.1371/journal.pone.0270739</a>, for example, you can use the following API call:</p>
-<p><a class="reference external" href="https://api.plos.org/search?q=id:10.1371/journal.pone.0270739">https://api.plos.org/search?q=id:10.1371/journal.pone.0270739</a></p>
-<p>Try to write code which can get hold of metadata about the articles with the following DOIs:</p>
-<ul class="simple">
-<li><p>10.1371/journal.pone.0169045</p></li>
-<li><p>10.1371/journal.pone.0271074</p></li>
-<li><p>10.1371/journal.pone.0268993</p></li>
-</ul>
-<p>For each article, print the title, the publication date, the article type, a list of all the authors and the abstract.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">dois</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;10.1371/journal.pone.0169045&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;10.1371/journal.pone.0268993&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;10.1371/journal.pone.0271074&#39;</span> <span class="p">]</span>
-
-
-    
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 
@@ -935,32 +936,30 @@ The basename in a URL can be extracted using the <a class="reference external" h
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">10. Data acquisition</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-downloads">Direct downloads</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-downloads">Direct downloads</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-1">Exercise 10.1.</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acquiring-data-via-apis">Acquiring data via APIs</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-musicbrainz">Example: MusicBrainz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-4">Exercise 10.4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-8">Exercise 10.8.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-9">Exercise 10.9.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#webscraping">Webscraping</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-scraping-scrapy">Advanced scraping: Scrapy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-5">Exercise 10.5.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-6">Exercise 10.6.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-7">Exercise 10.7.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-challenges">Additional challenges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-2">Exercise 10.2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-3">Exercise 10.3.</a></li>
 </ul>
 </li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-1">Exercise 10.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-2">Exercise 10.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-3">Exercise 10.3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-4">Exercise 10.4.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-5">Exercise 10.5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-6">Exercise 10.6</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-7">Exercise 10.7</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-8">Exercise 10.8</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-9">Exercise 10.9</a></li>
-</ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
