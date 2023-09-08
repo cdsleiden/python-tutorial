@@ -370,27 +370,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-downloads">Direct downloads</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-1">Exercise 10.1.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acquiring-data-via-apis">Acquiring data via APIs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-4">Exercise 10.4.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-8">Exercise 10.8.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-9">Exercise 10.9.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#webscraping">Webscraping</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-5">Exercise 10.5.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-6">Exercise 10.6.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-7">Exercise 10.7.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-challenges">Additional challenges</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-2">Exercise 10.2.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-3">Exercise 10.3.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-1">Exercise 10.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-2">Exercise 10.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-3">Exercise 10.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-4">Exercise 10.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-5">Exercise 10.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-6">Exercise 10.6.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-7">Exercise 10.7.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-8">Exercise 10.8.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-9">Exercise 10.9.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-10">Exercise 10.10.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-11">Exercise 10.11.</a></li>
 </ul>
             </nav>
         </div>
@@ -404,10 +394,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-acquisition">
 <h1>10. Data acquisition<a class="headerlink" href="#data-acquisition" title="Permalink to this heading">#</a></h1>
-<section id="direct-downloads">
-<h2>Direct downloads<a class="headerlink" href="#direct-downloads" title="Permalink to this heading">#</a></h2>
 <section id="exercise-10-1">
-<h3>Exercise 10.1.<a class="headerlink" href="#exercise-10-1" title="Permalink to this heading">#</a></h3>
+<h2>Exercise 10.1.<a class="headerlink" href="#exercise-10-1" title="Permalink to this heading">#</a></h2>
 <p>The list below contains a number of URLs. They are the web addresses of texts created for the <a class="reference external" href="https://www.gutenberg.org">Project Gutenberg</a> website.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;https://www.gutenberg.org/files/580/580-0.txt&#39;</span> <span class="p">,</span>
 <span class="s1">&#39;https://www.gutenberg.org/files/1400/1400-0.txt&#39;</span> <span class="p">,</span>
@@ -416,9 +404,9 @@ document.write(`
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>Write a program in Python that downloads all the files in this list and stores them in the current directory.
-As filenames, use the same names that are used by Project Gutenberg (e.g. ‘580-0.txt’ or ‘1400-0.txt’).
-The basename in a URL can be extracted using the <a class="reference external" href="https://docs.python.org/3/library/os.path.html#os.path.basename"><code class="docutils literal notranslate"><span class="pre">os.path.basename()</span></code></a> function.</p>
+<p>Write a program in Python that can download all the files in this list and stores them in the current directory.</p>
+<p>As filenames, use the same names that are used by Project Gutenberg (e.g. ‘580-0.txt’ or ‘1400-0.txt’).</p>
+<p>The basename in a URL can be extracted using the <a class="reference external" href="https://docs.python.org/3/library/os.path.html#os.path.basename"><code class="docutils literal notranslate"><span class="pre">os.path.basename()</span></code></a> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -445,19 +433,96 @@ The basename in a URL can be extracted using the <a class="reference external" h
     <span class="c1"># 4. Close the file</span>
     <span class="n">out</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done!&#39;</span><span class="p">)</span>
+    
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+<section id="exercise-10-2">
+<h2>Exercise 10.2.<a class="headerlink" href="#exercise-10-2" title="Permalink to this heading">#</a></h2>
+<p>As was discussed, you can use the <em>MusicBrainz</em> API to request information about musicians. Via the code that is provided, you can request the names and the types of artists. This specific API can make much more information available, however. Try to add some code with can add the following data about each artist:</p>
+<ul class="simple">
+<li><p>The gender (in the case of a person)</p></li>
+<li><p>The date of birth (in the case of a person) or formation (in the case of a group)</p></li>
+<li><p>Aliases</p></li>
+</ul>
+<p>If you want to see the structure of the JSON data, you can ‘uncomment’ the print statement in the second cell to be able explore the structure of the JSON data.</p>
+<p>The information about the date of birth or the date of formation is available via the key <code class="docutils literal notranslate"><span class="pre">life-span</span></code>. The value associated with this key is yet another dictionary. This second dictionary has the keys you need, namely <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">requests.utils</span> <span class="kn">import</span> <span class="n">requote_uri</span>
+
+
+<span class="n">root_url</span> <span class="o">=</span> <span class="s1">&#39;https://musicbrainz.org/ws/2/&#39;</span>
+
+<span class="c1">## The parameters for the API call are defined as variables</span>
+<span class="n">entity</span> <span class="o">=</span> <span class="s1">&#39;artist&#39;</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;David Bowie&#39;</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="n">requote_uri</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+<span class="n">api_call</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root_url</span><span class="si">}{</span><span class="n">entity</span><span class="si">}</span><span class="s1">?query=</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s1">&amp;fmt=</span><span class="si">{</span><span class="n">fmt</span><span class="si">}</span><span class="s1">&amp;limit=</span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">api_call</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">musicbrainz_results</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="n">musicbrainz_results</span><span class="p">[</span><span class="s1">&#39;artists&#39;</span><span class="p">]:</span>
+    <span class="c1">#print(json.dumps(artist, indent=4))</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+    <span class="n">artist_type</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">artist_type</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+    
+    
+    <span class="k">if</span> <span class="n">artist_type</span> <span class="o">==</span> <span class="s1">&#39;Person&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;gender&#39;</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Gender: </span><span class="si">{</span><span class="n">artist</span><span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="n">begin</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    
+    <span class="k">if</span> <span class="s1">&#39;life-span&#39;</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">:</span>
+        <span class="n">begin</span> <span class="o">=</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;life-span&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;begin&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">artist_type</span> <span class="o">==</span> <span class="s1">&#39;Person&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Born&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Formation&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">begin</span><span class="p">)</span>
+    
+    
+    <span class="n">aliases</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="s1">&#39;aliases&#39;</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">alias</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;aliases&#39;</span><span class="p">]:</span>
+            <span class="n">aliases</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alias</span><span class="p">[</span><span class="s1">&#39;sort-name&#39;</span><span class="p">])</span>
+        
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">aliases</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Aliases&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">aliases</span><span class="p">)</span> <span class="p">)</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="acquiring-data-via-apis">
-<h2>Acquiring data via APIs<a class="headerlink" href="#acquiring-data-via-apis" title="Permalink to this heading">#</a></h2>
-<section id="exercise-10-4">
-<h3>Exercise 10.4.<a class="headerlink" href="#exercise-10-4" title="Permalink to this heading">#</a></h3>
+<section id="exercise-10-3">
+<h2>Exercise 10.3.<a class="headerlink" href="#exercise-10-3" title="Permalink to this heading">#</a></h2>
 <p>Find the coordinates for each address in the given list using <a class="reference external" href="https://www.openstreetmap.org/">OpenStreetMap</a>’s Nominatim API.</p>
 <p>The Nominatim API can be used, among other things, to find the precise geographic coordinates of a specific location. The base URL of this API is <a class="reference external" href="https://nominatim.openstreetmap.org/search">https://nominatim.openstreetmap.org/search</a>.</p>
-<p>Following the <code class="docutils literal notranslate"><span class="pre">q</span></code> parameter, you need to supply a string describing the locations whose latitude and longitude you want to find. As values for the <code class="docutils literal notranslate"><span class="pre">format</span></code> parameter, you can use <code class="docutils literal notranslate"><span class="pre">xml</span></code> for XML-formatted data or <code class="docutils literal notranslate"><span class="pre">json</span></code> for JSON-formatted data. Use this API to find the longitude and the latitude of the addresses in the following list:</p>
+<p>Following the <code class="docutils literal notranslate"><span class="pre">q</span></code> parameter, you need to supply a string describing the locations whose latitude and longitude you want to find. As values for the <code class="docutils literal notranslate"><span class="pre">format</span></code> parameter, you can use <code class="docutils literal notranslate"><span class="pre">xml</span></code> for XML-formatted data or <code class="docutils literal notranslate"><span class="pre">json</span></code> for JSON-formatted data.</p>
+<p>Use this API to find the longitude and the latitude of the addresses in the following list:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span> <span class="p">,</span>
 <span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
 </pre></div>
@@ -492,191 +557,9 @@ The basename in a URL can be extracted using the <a class="reference external" h
 </div>
 </div>
 </div>
-<p>The code below also creates an interactive map, with markers on the locations described in the list.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">urllib.parse</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
-
-<span class="n">locations_coord</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-
-
-<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">addresses</span><span class="p">:</span>
-    <span class="c1"># You can &#39;URL-encode&#39; the spaces in the addresses yourself, instead of leaving it to requests</span>
-    <span class="n">a_encoded</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://nominatim.openstreetmap.org/search?q=&#39;</span><span class="o">+</span> <span class="n">a_encoded</span> <span class="o">+</span> <span class="s1">&#39;&amp;format=json&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">url</span> <span class="p">)</span>
-    <span class="n">json_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> 
-    <span class="n">latitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
-    <span class="n">longitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
-    <span class="n">locations_coord</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">latitude</span><span class="p">,</span><span class="n">longitude</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">latitude</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">longitude</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-
-<span class="n">out</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span> <span class="s1">&#39;map.html&#39;</span> <span class="p">,</span> <span class="s1">&#39;w&#39;</span> <span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-
-<span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">&lt;!DOCTYPE html&gt;</span>
-<span class="s1">&lt;html&gt;</span>
-<span class="s1">&lt;head&gt;</span>
-
-<span class="s1">    &lt;title&gt;Locations&lt;/title&gt;</span>
-
-<span class="s1">    &lt;meta charset=&quot;utf-8&quot; /&gt;</span>
-<span class="s1">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span>
-
-<span class="s1">    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/leaflet@1.7.1/dist/leaflet.css&quot; integrity=&quot;sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==&quot; crossorigin=&quot;&quot;/&gt;</span>
-<span class="s1">    &lt;script src=&quot;https://unpkg.com/leaflet@1.7.1/dist/leaflet.js&quot; integrity=&quot;sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==&quot; crossorigin=&quot;&quot;&gt;&lt;/script&gt;</span>
-
-<span class="s1">&lt;/head&gt;</span>
-<span class="s1">&lt;body&gt;</span>
-
-<span class="s1">&lt;div id=&quot;mapid&quot; style=&quot;width: 800px; height: 600px;&quot;&gt;&lt;/div&gt;</span>
-<span class="s1">&lt;script&gt;</span>
-
-<span class="s1">    var mymap = L.map(&#39;mapid&#39;).setView([52.1568157,4.4850392], 6);</span>
-
-<span class="s1">    L.tileLayer(&#39;https://api.mapbox.com/styles/v1/</span><span class="si">{id}</span><span class="s1">/tiles/</span><span class="si">{z}</span><span class="s1">/</span><span class="si">{x}</span><span class="s1">/</span><span class="si">{y}</span><span class="s1">?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw&#39;, {</span>
-<span class="s1">                maxZoom: 18,</span>
-<span class="s1">                attribution: &#39;Map data &amp;copy; &lt;a href=&quot;https://www.openstreetmap.org/&quot;&gt;OpenStreetMap&lt;/a&gt; contributors, &#39; +</span>
-<span class="s1">                             &#39;&lt;a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;&gt;CC-BY-SA&lt;/a&gt;, &#39; +</span>
-<span class="s1">                             &#39;Imagery  &lt;a href=&quot;https://www.mapbox.com/&quot;&gt;Mapbox&lt;/a&gt;&#39;,</span>
-<span class="s1">                id: &#39;mapbox/streets-v11&#39;,</span>
-<span class="s1">                tileSize: 512,</span>
-<span class="s1">                zoomOffset: -1</span>
-<span class="s1">    }).addTo(mymap); </span>
-<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">locations_coord</span><span class="p">:</span>
-    <span class="n">display_name</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span> <span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">&#39;</span> <span class="p">,</span> <span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">l</span> <span class="p">)</span>
-    <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39; L.marker([ </span><span class="si">{</span><span class="w"> </span><span class="n">locations_coord</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="w"> </span><span class="n">locations_coord</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="si">}</span><span class="s1">  ]).addTo(mymap) &#39;</span><span class="p">)</span>
-    <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot; .bindPopup(&#39;</span><span class="si">{</span><span class="n">display_name</span><span class="si">}</span><span class="s2">.&#39;) &quot;</span><span class="p">)</span>  
-    <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;;&#39;</span> <span class="p">)</span>
-    
-<span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">&lt;/script&gt;</span>
-
-<span class="sd">&lt;/body&gt;</span>
-<span class="sd">&lt;/html&gt;</span>
-<span class="sd">&#39;&#39;&#39;</span><span class="p">)</span>
-
-<span class="c1"># Do not forget to close the file handler!</span>
-<span class="n">out</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
-<section id="exercise-10-8">
-<h3>Exercise 10.8.<a class="headerlink" href="#exercise-10-8" title="Permalink to this heading">#</a></h3>
-<p>As was discussed in this notebook, you can use the <em>MusicBrainz</em> API to request information about musicians. Via the code that is provided, you can request the names and the type (i.e. are we dealing with a person or with a group?). This specific API can make much more information available, however. Try to add some code with can add the following data about each artist:</p>
-<ul class="simple">
-<li><p>The date of birth (in the case of a person) or formation (in the case of a group)</p></li>
-<li><p>The date of death or breakup</p></li>
-<li><p>The place of birth or formation</p></li>
-<li><p>The place of death or breakup</p></li>
-<li><p>Aliases</p></li>
-<li><p>Tags associated with the artist</p></li>
-</ul>
-<p>Tip: ‘Uncomment’ the print statement in the second cell to be able explore the structure of the JSON data.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">requests.utils</span> <span class="kn">import</span> <span class="n">requote_uri</span>
-
-
-<span class="n">root_url</span> <span class="o">=</span> <span class="s1">&#39;https://musicbrainz.org/ws/2/&#39;</span>
-
-<span class="c1">## The parameters for the API call are defined as variables</span>
-<span class="n">entity</span> <span class="o">=</span> <span class="s1">&#39;artist&#39;</span>
-<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;David Bowie&#39;</span>
-<span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span>
-
-<span class="n">query</span> <span class="o">=</span> <span class="n">requote_uri</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-
-<span class="n">api_call</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root_url</span><span class="si">}{</span><span class="n">entity</span><span class="si">}</span><span class="s1">?query=</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s1">&amp;fmt=</span><span class="si">{</span><span class="n">fmt</span><span class="si">}</span><span class="s1">&amp;limit=</span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s1">&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">api_call</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
-
-<span class="n">musicbrainz_results</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="n">musicbrainz_results</span><span class="p">[</span><span class="s1">&#39;artists&#39;</span><span class="p">]:</span>
-    <span class="c1">#print(json.dumps(artist, indent=4))</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
-    <span class="n">artist_type</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">artist_type</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
-
-    <span class="n">begin</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    
-    <span class="k">if</span> <span class="s1">&#39;life-span&#39;</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">:</span>
-        <span class="n">begin</span> <span class="o">=</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;life-span&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;begin&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;life-span&#39;</span><span class="p">][</span><span class="s1">&#39;ended&#39;</span><span class="p">]:</span>
-            <span class="n">end</span> <span class="o">=</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;life-span&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
-            
-    <span class="k">if</span> <span class="s1">&#39;begin-area&#39;</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">:</span>
-        <span class="n">begin</span> <span class="o">+=</span> <span class="s1">&#39; in &#39;</span> <span class="o">+</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;begin-area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sort-name&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="s1">&#39;end-area&#39;</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">:</span>
-        <span class="n">end</span> <span class="o">+=</span> <span class="s1">&#39; in &#39;</span> <span class="o">+</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;end-area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sort-name&#39;</span><span class="p">,</span><span class="s1">&#39;[unknown]&#39;</span><span class="p">)</span>
-        
-    <span class="c1">## Add your code below</span>
-    <span class="k">if</span> <span class="n">artist_type</span> <span class="o">==</span> <span class="s1">&#39;Person&#39;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Born&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Formation&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">begin</span><span class="p">)</span>
-    
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">end</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">artist_type</span> <span class="o">==</span> <span class="s1">&#39;Person&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Died&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Breakup&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
-    
-    <span class="n">aliases</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">if</span> <span class="s1">&#39;aliases&#39;</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">alias</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;aliases&#39;</span><span class="p">]:</span>
-            <span class="n">aliases</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alias</span><span class="p">[</span><span class="s1">&#39;sort-name&#39;</span><span class="p">])</span>
-        
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">aliases</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Aliases&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">aliases</span><span class="p">)</span> <span class="p">)</span>
-        
-    <span class="n">tags</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">if</span> <span class="s1">&#39;tags&#39;</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">artist</span><span class="p">[</span><span class="s1">&#39;tags&#39;</span><span class="p">]:</span>
-            <span class="n">tags</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tag</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
-        
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tags&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span> <span class="p">)</span>
-        
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-    
-    
-
-    
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-10-9">
-<h3>Exercise 10.9.<a class="headerlink" href="#exercise-10-9" title="Permalink to this heading">#</a></h3>
+<section id="exercise-10-4">
+<h2>Exercise 10.4.<a class="headerlink" href="#exercise-10-4" title="Permalink to this heading">#</a></h2>
 <p><em><a class="reference external" href="https://journals.plos.org/plosone/">PLOS One</a></em> is a peer reviewed open access journal. The <em>PLOS One</em> API can be used to request metadata about all the articles that have been published in the journal. In this API, you can refer to specific articles using their <a class="reference external" href="https://www.doi.org/">DOI</a>.</p>
 <p>Such requests can be sent using API calls with the following structure:</p>
 <p><a class="reference external" href="https://api.plos.org/search?q=id:%7Bdoi%7D">https://api.plos.org/search?q=id:{doi}</a></p>
@@ -723,11 +606,131 @@ The basename in a URL can be extracted using the <a class="reference external" h
 </div>
 </div>
 </section>
-</section>
-<section id="webscraping">
-<h2>Webscraping<a class="headerlink" href="#webscraping" title="Permalink to this heading">#</a></h2>
 <section id="exercise-10-5">
-<h3>Exercise 10.5.<a class="headerlink" href="#exercise-10-5" title="Permalink to this heading">#</a></h3>
+<h2>Exercise 10.5.<a class="headerlink" href="#exercise-10-5" title="Permalink to this heading">#</a></h2>
+<p>This tutorial has explained how you can extract data about the titles and the prices of all the books that are shown on the web page <a class="reference external" href="http://books.toscrape.com/">http://books.toscrape.com/</a>.</p>
+<p>Can you write code to extract the URLs of all the book covers on this page? These URLs can be found in the <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> elements within the <code class="docutils literal notranslate"><span class="pre">&lt;article&gt;</span></code> about each book. Note that the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> element specifies a relative path. To change the relative path into an absolute path, you need to concatenate the base url (<a class="reference external" href="http://books.toscrape.com/">http://books.toscrape.com/</a> and the relative path to the image.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://books.toscrape.com/&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">url</span> <span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span>
+    <span class="n">html_page</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span> 
+    
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_page</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+
+<span class="n">all_books</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span> <span class="s1">&#39;article&#39;</span> <span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;product_pod&#39;</span><span class="p">}</span> <span class="p">)</span>
+    
+<span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">all_books</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">book</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)</span>
+    <span class="n">image_url</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">image_url</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-6">
+<h2>Exercise 10.6.<a class="headerlink" href="#exercise-10-6" title="Permalink to this heading">#</a></h2>
+<p>On the web page <a class="reference external" href="http://books.toscrape.com/">http://books.toscrape.com/</a>, the menu on the lefthand side contains a list of all the subject categories of the books.</p>
+<p>Try to write some code which can extract all the terms in this list. This list is in an element named <code class="docutils literal notranslate"><span class="pre">div</span></code>, and this <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> has a <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute with the value <code class="docutils literal notranslate"><span class="pre">side_categories</span></code>. The categories themselves are all encoded within an <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> element.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://books.toscrape.com/&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">url</span> <span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span>
+    <span class="n">html_page</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span> 
+    
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_page</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+
+<span class="n">div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span> <span class="s1">&#39;div&#39;</span> <span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;side_categories&#39;</span><span class="p">}</span> <span class="p">)</span>
+
+<span class="n">all_categories</span> <span class="o">=</span> <span class="n">div</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+    
+<span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">all_categories</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">category</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-7">
+<h2>Exercise 10.7.<a class="headerlink" href="#exercise-10-7" title="Permalink to this heading">#</a></h2>
+<p>Write a program in Python which can extract data from the following web page:</p>
+<p><a class="reference external" href="https://www.imdb.com/chart/top/">https://www.imdb.com/chart/top/</a></p>
+<p>This is a page on the <a class="reference external" href="https://www.imdb.com">Internet Movie Database website</a>. It lists the 25 most highly rated movies.</p>
+<p>More specifically, try to extract the titles of these movies and the URLs of the pages on IMDB.</p>
+<p>If you inspect the source code of this web page, you can see that the information about the movies is encoded as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">td</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;titleColumn&quot;</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;/title/tt0068646/&quot;</span><span class="o">&gt;</span>
+<span class="n">The</span> <span class="n">Godfather</span>
+<span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The data can found in a <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> element whose <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute has value <code class="docutils literal notranslate"><span class="pre">titleColumn</span></code>. <code class="docutils literal notranslate"><span class="pre">td</span></code> stands for ‘table data’. This HTML element is used to create a cell in a table. The actual title in given in a hyperlink, encoded using <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code>. The URL to the page for the movie is given in an ‘href’ attribute.</p>
+<p>There is one additional challenge that you need to be aware of. The IMDB website only responds to requests received from web scraping scripts if these requests also specify a ‘User-Agent’ in the a header. Each HTTP request contains a header, which provides important metadata about the request. The ‘User-Agent’ in this header typically gives imformation about the Computer and the browser from which the request was sent.</p>
+<p>The easiest way to find an approproate value for a ‘User-Agent’ is to go to <a class="reference external" href="https://scrapfly.io/blog/how-to-avoid-web-scraping-blocking-headers/">a website listing some common options</a>, and to select the case that applies.</p>
+<p>The information about the ‘User-Agent’ in the header must be provided in the <code class="docutils literal notranslate"><span class="pre">header</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method of <code class="docutils literal notranslate"><span class="pre">requests</span></code>, in the form of a dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.imdb.com/chart/top/&#39;</span>
+
+<span class="c1">## You can use the value below if you use Firefox on a Mac</span>
+<span class="c1">## Adjust the value of user_agent if that is not the case.</span>
+<span class="n">user_agent</span> <span class="o">=</span> <span class="s1">&#39;&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:98.0) Gecko/20100101 Firefox/98.0&quot;&#39;</span>
+<span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="n">user_agent</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">url</span> <span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span>
+    <span class="n">html_page</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movies</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;titleColumn&#39;</span><span class="p">}</span> <span class="p">)</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">movies</span><span class="p">:</span>
+    <span class="c1"># Find links (a elements) within the cell&quot;,</span>
+    <span class="n">children</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">findChildren</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+        <span class="n">movie_title</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span>
+        <span class="c1">## This is an internal link, so we need to prepend the base url</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://imdb.com&#39;</span> <span class="o">+</span> <span class="n">url</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">movie_title</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10-8">
+<h2>Exercise 10.8.<a class="headerlink" href="#exercise-10-8" title="Permalink to this heading">#</a></h2>
 <p>The webpage below offers access to the complete work of the author H.P. Lovecraft.</p>
 <p><a class="reference external" href="https://www.hplovecraft.com/writings/texts/">https://www.hplovecraft.com/writings/texts/</a></p>
 <p>Write code in Python to find and print the URLs of all the texts that are listed. The links are all encoded in an element named &lt;a&gt;. The attribute <code class="docutils literal notranslate"><span class="pre">href</span></code> mentions the links, and the body of the &lt;a&gt; element mentions the title. List only the web pages that end in ‘.aspx’.</p>
@@ -755,8 +758,8 @@ The basename in a URL can be extracted using the <a class="reference external" h
 </div>
 </div>
 </section>
-<section id="exercise-10-6">
-<h3>Exercise 10.6.<a class="headerlink" href="#exercise-10-6" title="Permalink to this heading">#</a></h3>
+<section id="exercise-10-9">
+<h2>Exercise 10.9.<a class="headerlink" href="#exercise-10-9" title="Permalink to this heading">#</a></h2>
 <p>Using <code class="docutils literal notranslate"><span class="pre">requests</span></code> and <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>, create a list of all the countries mentioned on <a class="reference external" href="https://www.scrapethissite.com/pages/simple/">https://www.scrapethissite.com/pages/simple/</a>.</p>
 <p>Also collect and print data about the capital, the population and the area of all of these countries.</p>
 <p>How you print or present the information is not too important here; the challenge in this exercise is to extract the data from the webpage.</p>
@@ -797,8 +800,8 @@ The basename in a URL can be extracted using the <a class="reference external" h
 </div>
 </div>
 </section>
-<section id="exercise-10-7">
-<h3>Exercise 10.7.<a class="headerlink" href="#exercise-10-7" title="Permalink to this heading">#</a></h3>
+<section id="exercise-10-10">
+<h2>Exercise 10.10.<a class="headerlink" href="#exercise-10-10" title="Permalink to this heading">#</a></h2>
 <p>Download all the images shown on the following page: <a class="reference external" href="https://www.bbc.com/news/in-pictures-61014501">https://www.bbc.com/news/in-pictures-61014501</a></p>
 <p>You can follow these steps:</p>
 <ol class="arabic simple">
@@ -836,12 +839,20 @@ The basename in a URL can be extracted using the <a class="reference external" h
 </div>
 </div>
 </section>
-</section>
-<section id="additional-challenges">
-<h2>Additional challenges<a class="headerlink" href="#additional-challenges" title="Permalink to this heading">#</a></h2>
-<section id="exercise-10-2">
-<h3>Exercise 10.2.<a class="headerlink" href="#exercise-10-2" title="Permalink to this heading">#</a></h3>
+<section id="exercise-10-11">
+<h2>Exercise 10.11.<a class="headerlink" href="#exercise-10-11" title="Permalink to this heading">#</a></h2>
 <p>Write Python code which can download the titles and the URLs of Wikipedia articles whose titles contain the word ‘Dutch’. Your code needs to display the first 30 results only.</p>
+<p>You can search for Wikipedia pages containing a certain term using the following base URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/w/api.php?action=opensearch&#39;</span>
+</pre></div>
+</div>
+<p>As you can read in the <a class="reference external" href="https://www.mediawiki.org/w/api.php?action=help&amp;modules=opensearch">documentation of this API</a>, the <code class="docutils literal notranslate"><span class="pre">opensearch</span></code> function accepts the following parameters:</p>
+<ul class="simple">
+<li><p><em>query</em> speficies the search term.</p></li>
+<li><p><em>limit</em> sets a limit to the number of items to return</p></li>
+<li><p>For the <em>format</em>, you can choose either ‘xml’ or ‘json’.</p></li>
+</ul>
+<p>If you request data in the JSON format, and convert the data using the <code class="docutils literal notranslate"><span class="pre">json()</span></code> method of <code class="docutils literal notranslate"><span class="pre">requests</span></code>, these data will be structured in quite a particular way. At the first level, the object is list containing four items. The second item is another list, containing the titles of the articles. The fourth item is yet another list, containing the URLs of all of these articles.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -868,74 +879,10 @@ The basename in a URL can be extracted using the <a class="reference external" h
     <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Title: &#39;</span> <span class="o">+</span> <span class="n">wiki_results</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Tagline: &#39;</span> <span class="o">+</span> <span class="n">wiki_results</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Url: &#39;</span> <span class="o">+</span> <span class="n">wiki_results</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-    
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-10-3">
-<h3>Exercise 10.3.<a class="headerlink" href="#exercise-10-3" title="Permalink to this heading">#</a></h3>
-<p>Write an application in Python that extracts all the publications that have been added to a specific ORCID account, using the ORCID API.</p>
-<p>Information about individual ORCID accounts can be obtained by appending their ID to the base URL <a class="reference external" href="https://pub.orcid.org/v2.0/">https://pub.orcid.org/v2.0/</a>. The ORCID API returns data in XML by default. In the XML, the list of publications can be found using the XPath <code class="docutils literal notranslate"><span class="pre">r:record/a:activities-summary/a:works/a:group</span></code> (using the namespace declarations given below).</p>
-<p><em>Note: we use the <a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html">ElementTree</a> library to process the XML data. It is very powerful, but has a quite steep learning curve.</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orcid</span> <span class="o">=</span> <span class="s1">&#39;0000-0002-8469-6804&#39;</span>
-
-
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
-
-<span class="c1"># Declare namespace abbreviations</span>
-<span class="n">ns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;o&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/orcid&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;s&#39;</span> <span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/search&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/history&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/person&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;pd&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/personal-details&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/activities&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/employment&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/common&#39;</span> <span class="p">,</span> 
-<span class="s1">&#39;w&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/work&#39;</span><span class="p">,</span>
-<span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.orcid.org/ns/record&#39;</span><span class="p">}</span>
-
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="c1"># Construct the API call and retrieve the data</span>
-    <span class="n">orcidUrl</span> <span class="o">=</span> <span class="s2">&quot;https://pub.orcid.org/v2.0/&quot;</span> <span class="o">+</span> <span class="n">orcid</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="n">orcidUrl</span> <span class="p">)</span>
-    
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">orcidUrl</span> <span class="p">)</span>
-    
-    <span class="c1"># Parse XML string into its Python ElementTree object representation</span>
-    <span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-    
-    <span class="c1"># Find and print the ORCID creation date</span>
-    <span class="n">creationDate</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h:history/h:submission-date&#39;</span> <span class="p">,</span> <span class="n">ns</span> <span class="p">)</span><span class="o">.</span><span class="n">text</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">ORCID created on:&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">creationDate</span><span class="p">)</span>
-    
-    <span class="c1"># Print the title and DOI of each work (DOI only when available)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Works:&#39;</span><span class="p">)</span>
-    
-    <span class="n">works</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;a:activities-summary/a:works/a:group&#39;</span> <span class="p">,</span> <span class="n">ns</span> <span class="p">)</span>
-    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">works</span><span class="p">:</span>
-        <span class="n">title</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;w:work-summary/w:title/c:title&#39;</span> <span class="p">,</span> <span class="n">ns</span> <span class="p">)</span><span class="o">.</span><span class="n">text</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-        <span class="n">doiEl</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;c:external-ids/c:external-id/c:external-id-url&#39;</span> <span class="p">,</span> <span class="n">ns</span> <span class="p">)</span>
-        <span class="k">if</span> <span class="n">doiEl</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">doi</span> <span class="o">=</span> <span class="n">doiEl</span><span class="o">.</span><span class="n">text</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">doi</span><span class="p">)</span>
-            
-<span class="k">except</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data could not be downloaded&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 </section>
 
@@ -1006,27 +953,17 @@ The basename in a URL can be extracted using the <a class="reference external" h
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-downloads">Direct downloads</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-1">Exercise 10.1.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acquiring-data-via-apis">Acquiring data via APIs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-4">Exercise 10.4.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-8">Exercise 10.8.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-9">Exercise 10.9.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#webscraping">Webscraping</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-5">Exercise 10.5.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-6">Exercise 10.6.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-7">Exercise 10.7.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-challenges">Additional challenges</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-2">Exercise 10.2.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-3">Exercise 10.3.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-1">Exercise 10.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-2">Exercise 10.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-3">Exercise 10.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-4">Exercise 10.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-5">Exercise 10.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-6">Exercise 10.6.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-7">Exercise 10.7.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-8">Exercise 10.8.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-9">Exercise 10.9.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-10">Exercise 10.10.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-11">Exercise 10.11.</a></li>
 </ul>
   </nav></div>
 
