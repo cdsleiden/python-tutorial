@@ -169,9 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="10%20Data_acquisition.html">10. Data acquisition</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Data analysis with pandas</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="12%20Visualisation.html">12. Data Visualisation</a></li>
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Practical information</span></p>
 <ul class="nav bd-sidenav">
@@ -370,35 +368,44 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. Data analysis with pandas</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-csv-file">Reading a CSV file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-an-excel-spreadsheet">Reading an Excel spreadsheet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-a-list-into-a-data-frame">Converting a list into a data frame</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-information-about-the-data-frame">Basic information about the data frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-a-list-into-a-dataframe">Converting a list into a dataframe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-information-about-the-dataframe">Basic information about the dataframe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-1">Exercise 11.1.</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series">Series</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-functions">Statistical functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-data-frame">Navigating a data frame</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting">Sorting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-subsets">Selecting subsets</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-index">Filtering by index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-2">Exercise 11.2.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-values">Filtering by values</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsets-of-columns">Subsets of columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-3">Exercise 1.3.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-dataframe">Navigating a dataframe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-4">Exercise 1.4.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-items-and-aggregation">Grouping items and aggregation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-dates">Working with dates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-functions">Statistical functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-dates">Working with dates</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-5">Exercise 1.5</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-1">Exercise 11.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-2">Exercise 11.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-3">Exercise 11.3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-4">Exercise 11.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-items-and-aggregation">Grouping items and aggregation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-6">Exercise 1.6.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting">Sorting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-7">Exercise 1.7.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-8">Exercise 11.8.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-9">Exercise 11.9.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-10">Exercise 11.10.</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -435,7 +442,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>The data that are read from the csv file are represented as a specific data structure which is known within the context of pandas as a <em>data frame</em>. A data frame can be compared to a regular table in a database. It is a data structure consisting of rows and columns. In the code above, the data frame is stored in a variable named ‘<em>data_set</em>’.</p>
+<p>The data that are read from the csv file are represented as a specific data structure which is known within the context of pandas as a <em>dataframe</em>. A dataframe can be compared to a regular table in a database. It is a data structure consisting of rows and columns. In the code above, the dataframe is stored in a variable named ‘<em>data_set</em>’.</p>
 <p>As is indicated by the name of the file format, CSV files conventionally separate the individual values in the data set using commas. In some cases however, such files may also work with other types of separators, such as hyphens or semi-colons. In the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> method, it is possible to indicate explicitly which character should function as a separator. When you use the parameter named <code class="docutils literal notranslate"><span class="pre">sep</span></code>, and assign it the value ‘;’, the semi-colon, this character will be used to separate the rows into individual values.</p>
 <p>For more information, see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table">guide</a> on <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>.</p>
 <div class="cell docutils container">
@@ -458,7 +465,7 @@ document.write(`
 <section id="reading-an-excel-spreadsheet">
 <h2>Reading an Excel spreadsheet<a class="headerlink" href="#reading-an-excel-spreadsheet" title="Permalink to this heading">#</a></h2>
 <p>The Pandas library also offers a method named <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code>. You can use this function, unsurprisingly, to process data stored in an Excel spreadsheet. The method needs to be used with two parameters. The first parameter is the name of the Excel file that you want to work with. Secondly, as a value to a parameter named <code class="docutils literal notranslate"><span class="pre">sheet_name</span></code>, you need to provide the name of the sheet within the spreadsheet that you want to read.</p>
-<p>Similarly to the way in which <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> processes data, <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code> loads the data on the sheet that you mention into a data frame.</p>
+<p>Similarly to the way in which <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> processes data, <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code> loads the data on the sheet that you mention into a dataframe.</p>
 <p>The cell below illustrates the use of the <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code> file using the Excel file provided in the ‘Data’ subfolder.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -471,9 +478,9 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="converting-a-list-into-a-data-frame">
-<h2>Converting a list into a data frame<a class="headerlink" href="#converting-a-list-into-a-data-frame" title="Permalink to this heading">#</a></h2>
-<p>It is also possible to convert an existing Python list into a data frame, using the <code class="docutils literal notranslate"><span class="pre">DataFrame()</span></code> method. In the code below, the list named <code class="docutils literal notranslate"><span class="pre">data</span></code> is a two-dimensional array. Each item is in fact a list in itself.</p>
+<section id="converting-a-list-into-a-dataframe">
+<h2>Converting a list into a dataframe<a class="headerlink" href="#converting-a-list-into-a-dataframe" title="Permalink to this heading">#</a></h2>
+<p>It is also possible to convert an existing Python list into a dataframe, using the <code class="docutils literal notranslate"><span class="pre">DataFrame()</span></code> method. In the code below, the list named <code class="docutils literal notranslate"><span class="pre">data</span></code> is a two-dimensional array. Each item is in fact a list in itself.</p>
 <p>When you pass this list into <code class="docutils literal notranslate"><span class="pre">Dataframe()</span></code>, the method converts this data structure into a colelction of rows and columns. The <code class="docutils literal notranslate"><span class="pre">columns</span></code> parameter may be used to supply column names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -490,9 +497,9 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="basic-information-about-the-data-frame">
-<h2>Basic information about the data frame<a class="headerlink" href="#basic-information-about-the-data-frame" title="Permalink to this heading">#</a></h2>
-<p>Once a data frame has been created, the data set can be examined using a number of methods that are available within the Pandas library. These methods will be explained using the simple data set that was shown above.</p>
+<section id="basic-information-about-the-dataframe">
+<h2>Basic information about the dataframe<a class="headerlink" href="#basic-information-about-the-dataframe" title="Permalink to this heading">#</a></h2>
+<p>Once a dataframe has been created, the data set can be examined using a number of methods that are available within the Pandas library. These methods will be explained using the simple data set that was shown above.</p>
 <p>After you have run the cell above, you can inspect the contents by using a print command, as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -517,13 +524,13 @@ document.write(`
 <p>Additionally, the columns have all been given a name. In this particular example, the columns names have been taken from the <code class="docutils literal notranslate"><span class="pre">columns</span></code> parameter in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> method used to create the dataframe.</p>
 <p>When you create a dataframe out of a CSV file, using <code class="docutils literal notranslate"><span class="pre">read_csv</span></code>, these columns names are usually copied from the header of the CSV file. The header consists of a number of strings, delimited by commas, and it should be on the very first line of the CSV file. Following the execution of the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> method, these separate strings all become available as column names.</p>
 <p>Pandas represents the missing value in column E of the row with index 5 using the code <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, which stands for ‘Not a number’. If a column contains a <code class="docutils literal notranslate"><span class="pre">NaN</span></code> value, all the other numbers in this column will be shown as float values.</p>
-<p>In the case of this simple and relatively small set, the print command shown in the cell above will produce a small number of lines of output only. More realistic data science projects typically work with CSV files containing hundreds or thousands of rows, however. When we simply print the full data frame, this does not necessarily help us to develop a better understanding of the structure and the contents of the data set. In such cases, you can use a number of methods to obtain information about the data frame.</p>
-<p>To print only the first few rows of the data frame, we can work with the <code class="docutils literal notranslate"><span class="pre">head()</span></code> method. If no integer is provided within the parentheses, Pandas will show the first five rows by default. The number of rows to be shown can be specified, however, within the parentheses.</p>
+<p>In the case of this simple and relatively small set, the print command shown in the cell above will produce a small number of lines of output only. More realistic data science projects typically work with CSV files containing hundreds or thousands of rows, however. When we simply print the full dataframe, this does not necessarily help us to develop a better understanding of the structure and the contents of the data set. In such cases, you can use a number of methods to obtain information about the dataframe.</p>
+<p>To print only the first few rows of the dataframe, we can work with the <code class="docutils literal notranslate"><span class="pre">head()</span></code> method. If no integer is provided within the parentheses, Pandas will show the first five rows by default. The number of rows to be shown can be specified, however, within the parentheses.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="c1"># This will print the first two records of the data frame.</span>
+<span class="c1"># This will print the first two records of the dataframe.</span>
 </pre></div>
 </div>
 </div>
@@ -537,7 +544,15 @@ document.write(`
 </div>
 </div>
 </div>
-<p>You can request an overview of all the column names that are available in a data frame using the property named <code class="docutils literal notranslate"><span class="pre">columns</span></code>. For the sake of readability, the so-called ‘Index’ object that generated by this property is converted to a list using the tolist() method.</p>
+<p>The data type of this <code class="docutils literal notranslate"><span class="pre">shape</span></code> property is a tuple, a sequence of ordered values. A tuple is very similar to a list. In this context, <code class="docutils literal notranslate"><span class="pre">df.shape</span></code> is a tuple containing two values: the number of rows and the number of columns. You can access the individual items in this tuple using square brackets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The data set contains </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> rows. &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can request an overview of all the column names that are available in a dataframe using the property named <code class="docutils literal notranslate"><span class="pre">columns</span></code>. For the sake of readability, the so-called ‘Index’ object that is generated by this <code class="docutils literal notranslate"><span class="pre">columns</span></code> property can be converted to a list using the <code class="docutils literal notranslate"><span class="pre">tolist()</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Column headings:&quot;</span><span class="p">)</span>
@@ -546,10 +561,23 @@ document.write(`
 </div>
 </div>
 </div>
+<section id="exercise-11-1">
+<h3>Exercise 11.1.<a class="headerlink" href="#exercise-11-1" title="Permalink to this heading">#</a></h3>
+<p>In the data folder for this tutorial, you can find a CSV file named ‘nobel.csv’. This file contains information about Nobel laureates. If, for whichever reason, you cannot locate this file, you can download it from the following address: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a><br />
+First, read in the data using Pandas. Next, print a sentence which gives information about the total number of Nobel laureates. Also print a sentence giving information about the number of columns in this data set.</p>
+<p>Finally, write some code which prints the names of al the columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Each row describes a nobel laureate</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="series">
 <h2>Series<a class="headerlink" href="#series" title="Permalink to this heading">#</a></h2>
-<p>The values in a column of a data frame can be accessed separately using the name of the column. This assumes, obviously, that such column names have been defined. In order to obtain the data in a specific column, the name of the column must be appended to the name of the full data frame using square brackets, as follows.</p>
+<p>The values in a column of a dataframe can be accessed separately using the name of the column. In order to obtain the data in a specific column, the name of the column must be appended to the name of the full dataframe using square brackets, as follows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
@@ -557,8 +585,9 @@ document.write(`
 </div>
 </div>
 </div>
-<p>The code above will print all the values in the column named ‘A’. Pandas stores the values in the columns using a data structure that is known as a <code class="docutils literal notranslate"><span class="pre">Series</span></code>. Simply put, a Series is a variable that brings together multiple values. A series is similar to a regular list in Python. An important difference between regular Python lists and the Series used in Pandas is that, in the latter data structure, the individual items consist of two values: (1) the actual items and (2) the indices of these items. When you print the Series using the code that was shown, you also see these two rows of values.</p>
-<p>It can be useful, in some situations, to convert a given Series into a regular list. There is a simple method named <code class="docutils literal notranslate"><span class="pre">tolist()</span></code> which you can use for this purpose:</p>
+<p>The code above will print all the values in the column named ‘A’.</p>
+<p>Pandas stores the values in the columns using a data structure that is known as a <code class="docutils literal notranslate"><span class="pre">Series</span></code>. Simply put, a Series is a variable that brings together multiple values. A series is similar to a regular list in Python. An important difference between regular Python lists and the Series used in Pandas is that, in the latter data structure, the individual items consist of two values: (1) the actual items and (2) the indices of these items. When you print the Series using the code that was shown, you also see these two rows of values.</p>
+<p>It can be useful, in some situations, to convert a given Series into a regular list. There is a simple method named <code class="docutils literal notranslate"><span class="pre">tolist()</span></code> which you can use for this purpose.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="p">)</span>
@@ -566,7 +595,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>In Python, there are often multiple ways of doing the same thing. Instead of working with the <code class="docutils literal notranslate"><span class="pre">tolist()</span></code> method, you can also invoke the standard <code class="docutils literal notranslate"><span class="pre">list()</span></code> function, as follows.</p>
+<p>In Python, there are often multiple ways of doing the same thing. Instead of working with the <code class="docutils literal notranslate"><span class="pre">tolist()</span></code> method, you can also invoke the standard <code class="docutils literal notranslate"><span class="pre">list()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span> <span class="p">)</span>
@@ -575,84 +604,13 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="statistical-functions">
-<h2>Statistical functions<a class="headerlink" href="#statistical-functions" title="Permalink to this heading">#</a></h2>
-<p>Within Pandas, you can use methods such as <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code>, <code class="docutils literal notranslate"><span class="pre">mean()</span></code> to receive basic statistical information about numerical values in your data set.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="p">)</span>
-<span class="c1">## max() identifies the highest number within the column that is mentioned within the square brackets.</span>
-
-<span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="p">)</span>
-<span class="c1"># min() identifies the lowest number</span>
-
-<span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="p">)</span>
-<span class="c1"># mean() calculates the mean of all the values in a specific column</span>
-
-<span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="p">)</span>
-<span class="c1">## sum() performs an addition of all the numbers in a column</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>If you would like to perform statistical analyses on all the columns of the dataframe, you can also append the name of the method you need directly to the data frame variable, without specifying a column.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="p">)</span>
-<span class="c1">## This will print the sum of the values of all the columns n the data set</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Note that this particular method for calculating summations will only produce meaningful results in the case of numerical values. If the column contains strings, as in the case of column ‘E’ of our sample data set, this method will simply concatenate all the string values in the Series.</p>
-</section>
-<section id="navigating-a-data-frame">
-<h2>Navigating a data frame<a class="headerlink" href="#navigating-a-data-frame" title="Permalink to this heading">#</a></h2>
-<p>To iterate across all the rows in a data frame, you can make use of the iterrows() method. This method processes the data frame row by row. When you use <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code>, pandas will create a new Series for each individual row. This Series will contain all the individual values on that row. Secondly, the method also returns each row’s index.</p>
-<p>In the code below, the method <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code> navigates across all the rows in the data frame. During each iteration, the compound variable named row will be assigned all the values that are available on a given row. When the variable row is used in combination with a column name, this variable will represent the data value in that particular column. The method <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code> can also return the index of each row, but that index is not actually used in the fragment that follows.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span> <span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="sorting">
-<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this heading">#</a></h2>
-<p>It is also possible to <em>sort</em> all the values in dataframe. The method to be used for this purpose is <code class="docutils literal notranslate"><span class="pre">sortvalues()</span></code>. The <code class="docutils literal notranslate"><span class="pre">by</span></code> parameter of this method specifies the column to sort by.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">)</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>After <code class="docutils literal notranslate"><span class="pre">by</span></code>, you can also mention multiple columns as a list. In the example below, pandas will sort the values firstly by column ‘A’ and secondly by column ‘B’.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">])</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method sorts values in an ascending order by default (i.e. from the lowest to highest value). If you want to see the values in a descending order (i.e. highest to lowest), you need to add a parameter named <code class="docutils literal notranslate"><span class="pre">ascending</span></code>, and set it to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span> <span class="p">)</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="selecting-subsets">
 <h2>Selecting subsets<a class="headerlink" href="#selecting-subsets" title="Permalink to this heading">#</a></h2>
-<p>In the pandas library, it is also possible to filter data sets. In other words, we can create new data sets containing only some of the rows or the columns of the original data sets. Such filtered data sets are also referred to as subsets. This process of ‘subsetting’ a data frame takes place on the basis of specific criteria. Different types of criteria are possible.</p>
+<p>In the pandas library, it is also possible to filter data sets. In other words, we can create new data sets containing only some of the rows or the columns of the original data sets. Such filtered data sets are also referred to as subsets. This process of ‘subsetting’ a dataframe takes place on the basis of specific criteria. Different types of criteria are possible.</p>
 <section id="filtering-by-index">
 <h3>Filtering by index<a class="headerlink" href="#filtering-by-index" title="Permalink to this heading">#</a></h3>
-<p>As a first possibility, we can use the indices of rows and of columns as criteria. These indices need to be added to the data frame using the <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> indexer.</p>
-<p>When we want to select all the values on the third row of the data frame (i.e. the row with index 2), this can be accomplished using the code below. The third row has index number ‘2’, because pandas start counting at zero.</p>
+<p>As a first possibility, we can use the indices of rows and of columns as criteria. These indices need to be added to the dataframe using the <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> indexer.</p>
+<p>When we want to select all the values on the third row of the dataframe (i.e. the row with index 2), this can be accomplished using the code below. The third row has index number ‘2’, because pandas start counting at zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
@@ -669,8 +627,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>If the first value is 0, as in the examole above, it can also be omitted. The code that was given can be reformulated as <code class="docutils literal notranslate"><span class="pre">df.iloc[:2]</span></code></p>
-<p>It is also possible to filter the columns, on the basis of their indices. The indices ranges for the rows and the columns need to be separated by a comma.</p>
+<p>If the first value is 0, as in the example above, it can also be omitted. The code that was given can be reformulated as <code class="docutils literal notranslate"><span class="pre">df.iloc[:2]</span></code></p>
+<p>It is also possible to filter the columns on the basis of their indices. The indices ranges for the rows and the columns need to be separated by a comma.</p>
 <p>The next example firstly selects the second and the third row. After the comma in <code class="docutils literal notranslate"><span class="pre">iloc</span></code>, there is another set of indices. These are the indices of the columns. This code additionally selects the first and the second column of the rows that are selected.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -680,9 +638,16 @@ document.write(`
 </div>
 </div>
 </section>
+<section id="exercise-11-2">
+<h3>Exercise 11.2.<a class="headerlink" href="#exercise-11-2" title="Permalink to this heading">#</a></h3>
+<p>As was explained, the <code class="docutils literal notranslate"><span class="pre">head()</span></code> function prints the first five rows of a dataframe. There is a similar finction named <code class="docutils literal notranslate"><span class="pre">tail()</span></code> which returns the <em>last</em> five rows of a dataframe.</p>
+<p>Working with the Nobel laureates data set, try to recreate this functionality using the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> indexer. In other words, use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> to print only the first five and only the last five rows. Note that, as is the case for lists, you can work with negative numbers for the indices.</p>
+<p>Finally, try to use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> again to print only the first and the the second column of the last five rows.</p>
+</section>
 <section id="filtering-by-values">
 <h3>Filtering by values<a class="headerlink" href="#filtering-by-values" title="Permalink to this heading">#</a></h3>
-<p>A potential disadvantage of this <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> selector is that you need to know the exact values for the indices. In most situations, it is more useful to create subsets on the basis of criteria applied to the values in the data set. Imagine, for instance, that you are only interested in rows in which the column B contains a value of 5 or higher. To select those rows, you can work with the Boolean expression <code class="docutils literal notranslate"><span class="pre">df['B']</span> <span class="pre">&gt;=</span> <span class="pre">5</span></code>. This Boolean expression can be added to the original data frame in square brackets. In the code that follows, the subset is assigned to a new data frame, one named <code class="docutils literal notranslate"><span class="pre">new_df</span></code>.</p>
+<p>A potential disadvantage of this <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> selector is that you need to know the exact values for the indices. In most situations, it is more useful to create subsets on the basis of the names of the columns and criteria applied to the values in the data set.</p>
+<p>Imagine, for instance, that you are only interested in rows in which the column B contains a value of 5 or higher. To select those rows, you can work with the Boolean expression <code class="docutils literal notranslate"><span class="pre">df['B']</span> <span class="pre">&gt;=</span> <span class="pre">5</span></code>. This Boolean expression can be added to the original dataframe in square brackets. In the code that follows, the subset is assigned to a new dataframe, one named <code class="docutils literal notranslate"><span class="pre">new_df</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="p">]</span>
@@ -715,10 +680,11 @@ document.write(`
 </div>
 </div>
 </div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> does not actually change the dataframe in any way. If you actually need a dataframe in which the missing values are removed, you need to assign the output of <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> to a new variable.</p>
 </section>
 <section id="subsets-of-columns">
 <h3>Subsets of columns<a class="headerlink" href="#subsets-of-columns" title="Permalink to this heading">#</a></h3>
-<p>Next to subsets of rows, it is also possible to create subsets of columns. More specifically, this means that we create new data frame, by copying only some of the columns that are available in another data frame. The easiest way to accomplish this is by supplying a list of the column names that you want to keep within the square brackets appended to data frame that needs to be filtered. After running the code below, the data frame named <code class="docutils literal notranslate"><span class="pre">new_df</span></code> has the exact same number of rows as df, but it only contains three of its columns.</p>
+<p>Next to subsets of rows, it is also possible to create subsets of columns. More specifically, this means that we create new dataframe, by copying only some of the columns that are available in another dataframe. The easiest way to accomplish this is by supplying a list of the column names that you want to keep within the square brackets appended to dataframe that needs to be filtered. After running the code below, the dataframe named <code class="docutils literal notranslate"><span class="pre">new_df</span></code> has the exact same number of rows as df, but it only contains three of its columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">]</span>
@@ -727,7 +693,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>When you want to delete a single column from a data frame, you can make use of the <code class="docutils literal notranslate"><span class="pre">drop()</span></code> method. The columns parameter of this method needs to mention the name of the column that needs to be removed.</p>
+<p>When you want to delete a single column from a dataframe, you can make use of the <code class="docutils literal notranslate"><span class="pre">drop()</span></code> method. The columns parameter of this method needs to mention the name of the column that needs to be removed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;E&quot;</span><span class="p">)</span>
@@ -736,10 +702,47 @@ document.write(`
 </div>
 </div>
 </section>
+<section id="exercise-1-3">
+<h3>Exercise 1.3.<a class="headerlink" href="#exercise-1-3" title="Permalink to this heading">#</a></h3>
+<p>Working with the Nobel laureates data set, try to answer the following questions:</p>
+<ul class="simple">
+<li><p>How many Dutch Nobel laureates have there been so far?</p></li>
+<li><p>What are the names of the Nobel laureates from the Netherlands?</p></li>
+<li><p>How many Nobel prizes have been awared after the year 2000 to people born in the Netherlands?</p></li>
+</ul>
+</section>
+</section>
+<section id="navigating-a-dataframe">
+<h2>Navigating a dataframe<a class="headerlink" href="#navigating-a-dataframe" title="Permalink to this heading">#</a></h2>
+<p>When you want to print a list of all the values in a column, you iterate across all of the values in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, as folows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With this approach, you can obviously see the values in a single column only. When you want to see the values from different columns, you need to iterate across all the rows in a dataframe. You can do this by making use of the <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code> method. This method processes the dataframe row by row.</p>
+<p>When you use <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code>, pandas will create a new Series for each individual row. This Series will contain all the individual values on that row. The method also returns each row’s index.</p>
+<p>In the code below, the method <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code> navigates across all the rows in the dataframe named <code class="docutils literal notranslate"><span class="pre">df</span></code>. During each iteration, the compound variable named ‘row’ will be assigned all the values that are available on a given row (in other words, all the columns in that row). When the variable ‘row’ is used in combination with a column name, this variable will represent the data value in that particular column on that particular row.</p>
+<p>The method <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code> also returns the index of each row, but that index is not actually used in the fragment that follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span> <span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;A: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\t\t</span><span class="s2">B: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise-1-4">
+<h3>Exercise 1.4.<a class="headerlink" href="#exercise-1-4" title="Permalink to this heading">#</a></h3>
+<p>How many female Nobel laureates are there in this data set? Print a list containing, their names, the category of the award, and the year in which the prize was awarded.</p>
+</section>
 </section>
 <section id="calculations">
 <h2>Calculations<a class="headerlink" href="#calculations" title="Permalink to this heading">#</a></h2>
-<p>One of the great strengths of Pandas is that it can make calculations using the values captured in data frames. Such calculations can be carried out using the regular mathematical operators in Python.</p>
+<p>One of the great strengths of Pandas is that it can make calculations using the values captured in dataframes. Such calculations can be carried out using the regular mathematical operators in Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add the values of columns A and B </span>
@@ -751,7 +754,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>The results of these calculations can also be stored within the data frame itself. In the code below, a new column named ‘F’ will be added to df, and it will receive the result of the calculation to the right of the equals sign.</p>
+<p>The results of these calculations can also be stored within the dataframe itself. In the code below, a new column named ‘F’ will be added to df, and it will receive the result of the calculation to the right of the equals sign.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add the same number 3 to all the values in column D</span>
@@ -761,32 +764,36 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="grouping-items-and-aggregation">
-<h2>Grouping items and aggregation<a class="headerlink" href="#grouping-items-and-aggregation" title="Permalink to this heading">#</a></h2>
-<p>Pandas also offers a method named <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> which can be very useful when your data set contains labels or categories for specific records. Using <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>, the records which have been assigned the same category can all be placed in a single group. Subsequently, it becomes possible to perform calcutions for each group that has been created. This process is demonstrated below.</p>
+<section id="statistical-functions">
+<h2>Statistical functions<a class="headerlink" href="#statistical-functions" title="Permalink to this heading">#</a></h2>
+<p>Within Pandas, you can use methods such as <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code>, <code class="docutils literal notranslate"><span class="pre">mean()</span></code> to receive basic statistical information about numerical values in your data set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="p">)</span>
+<span class="c1">## max() identifies the highest number within the column that is mentioned within the square brackets.</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="p">)</span>
+<span class="c1"># min() identifies the lowest number</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="p">)</span>
+<span class="c1"># mean() calculates the mean of all the values in a specific column</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="p">)</span>
+<span class="c1">## sum() performs an addition of all the numbers in a column</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>As was indicated above, Column E of the data frame <code class="docutils literal notranslate"><span class="pre">df</span></code> contains labels which place the rows either in ‘Class1’ or in ‘Class2’. The name of this column can be used as a parameter for <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>. The method then creates the various groups, based on the values it finds in the column that is mentioned. Once the groups have been established, you can apply statistical functions to each of theses. Examples of such statistical functions include <code class="docutils literal notranslate"><span class="pre">mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">sum()</span></code> or <code class="docutils literal notranslate"><span class="pre">max()</span></code>.</p>
+<p>If you would like to perform statistical analyses on all the columns of the dataframe, you can also append the name of the method you need directly to the dataframe variable, without specifying a column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="p">)</span>
+<span class="c1">## This will print the sum of the values of all the columns n the data set</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>In the output above, you can see that Pandas performs calculations for all the columns in the data frame. If you would like to see the values for only one column, you can simply append the name of this column in square brackets, directly following the <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Note that this particular method for calculating summations will only produce meaningful results in the case of numerical values. If the column contains strings, as in the case of column ‘E’ of our sample data set, this method will simply concatenate all the string values in the Series.</p>
 </section>
 <section id="working-with-dates">
 <h2>Working with dates<a class="headerlink" href="#working-with-dates" title="Permalink to this heading">#</a></h2>
@@ -846,7 +853,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>You can also select all dates after a given other datem as follows:</p>
+<p>You can also select all dates after a given other date, as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">&#39;2022-07-15&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -858,102 +865,107 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
-<section id="exercise-11-1">
-<h2>Exercise 11.1.<a class="headerlink" href="#exercise-11-1" title="Permalink to this heading">#</a></h2>
-<p>In the data folder for this tutorial, you can find a CSV file named ‘nobel.csv’. If, for whichever reason, you cannot locate this file, you can download it from the following address: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="s1">&#39;nobel.csv&#39;</span><span class="p">)</span>
-<span class="n">nobel</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="n">path_to_csv</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Using the data in this file, try to answer the following questions:</p>
-<p>11.1.a. How many Nobel laureates are described in this file?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Each row describes a nobel laureate</span>
-<span class="c1"># The number of rows and columns can be found using &#39;shape&#39;</span>
-<span class="c1"># &#39;shape&#39; results in a so-called tuple, with two values. To print only the first value,</span>
-<span class="c1"># use shape[0]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>11.1.b. How many of these are from the Netherlands? What are the names of the Dutch Nobel prize winners?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Number of Dutch Nobel laureates</span>
-
-<span class="c1">## Names of Dutch Nobel laureates</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>11.1.c. How many female Nobel laureates are there in this data set? What are their names?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="c1">## Number of female Nobel laureates</span>
-
-<span class="c1">## Names of female Nobel laureates</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>11.1.d. Who was the youngest person ever to receive the Nobel Prize? Who was the oldest person?</p>
-<p>Tip: create a new column called ‘Age’, in which the year in which the prize was awarded is subtracted from the year of birth. The year of birth can be extracted from the date of birth using the following code:</p>
+<section id="exercise-1-5">
+<h3>Exercise 1.5<a class="headerlink" href="#exercise-1-5" title="Permalink to this heading">#</a></h3>
+<p>Who was the youngest person ever to receive the Nobel Prize? Who was the oldest person?</p>
+<p>Tip: Create a new column called ‘Age’, in which the year in which the prize was awarded is subtracted from the year of birth. A difficulty here is that we have the full date of birth, and not only the year. The year of birth can be extracted from the date of birth using the following code:</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">nobel['Birth</span> <span class="pre">Year']</span> <span class="pre">=</span> <span class="pre">pd.to_datetime(nobel['Birth</span> <span class="pre">Date']).dt.year</span></code></p>
 </div></blockquote>
+</section>
+</section>
+<section id="grouping-items-and-aggregation">
+<h2>Grouping items and aggregation<a class="headerlink" href="#grouping-items-and-aggregation" title="Permalink to this heading">#</a></h2>
+<p>Pandas also offers a method named <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> which can be very useful when your data set contains labels or categories for specific records. Using <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>, the records which have been assigned the same category can all be placed in a single group. Subsequently, it becomes possible to perform calcutions for each group that has been created. This process is demonstrated below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new column called ‘Age’: </span>
-<span class="c1"># (the year in which the prize was awarded) minus (year of birth)</span>
-
-    
-<span class="c1"># find minimum and maximum in column &#39;Age&#39;</span>
-
-<span class="c1"># print the names of these Nobel laureates, using iterrows()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>11.1.e. For each discipline, calculate the average age of the Nobel laureates.</p>
+<p>As was indicated above, Column E of the dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code> contains labels which place the rows either in ‘Class1’ or in ‘Class2’. The name of this column can be used as a parameter for <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>. The method then creates the various groups, based on the values it finds in the column that is mentioned. Once the groups have been established, you can apply statistical functions to each of theses. Examples of such statistical functions include <code class="docutils literal notranslate"><span class="pre">mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">sum()</span></code> or <code class="docutils literal notranslate"><span class="pre">max()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, divide the data frame into groups based on &#39;Category&#39;, using groupby(&#39;Category&#39;)</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the output above, you can see that Pandas performs calculations for all the columns in the dataframe. If you would like to see the values for only one column, you can simply append the name of this column in square brackets, directly following the <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise-1-6">
+<h3>Exercise 1.6.<a class="headerlink" href="#exercise-1-6" title="Permalink to this heading">#</a></h3>
+<p>For each category, calculate the average age of the Nobel laureates. Note that this exercise builds on the results of exercise 1.5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, divide the dataframe into groups based on &#39;Category&#39;, using groupby(&#39;Category&#39;)</span>
 <span class="c1"># In these groups, select only the &#39;Age&#39; column, by appending [&#39;Age&#39;]</span>
-<span class="c1"># Next, calculate the mean.</span>
-
-<span class="c1"># The result of the groupby() method is a Pandas Series</span>
-<span class="c1"># you can print the full contents of a Series using to_string()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>11.1.f. Create a list of all the unique countries, and calculate the number of Nobel laureates per country.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, divide the data frame into groups based on &#39;Birth Country&#39;</span>
-
-<span class="c1"># In these groups, select only the &#39;Laureate ID&#39; column, by appending [&#39;Laureate ID&#39;]</span>
-<span class="c1"># Next, calculate the number of rows in each group, using count() </span>
+<span class="c1"># Next, calculate the mean. </span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-11-2">
-<h2>Exercise 11.2.<a class="headerlink" href="#exercise-11-2" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="sorting">
+<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this heading">#</a></h2>
+<p>It is also possible to <em>sort</em> all the values in dataframe. The method to be used for this purpose is <code class="docutils literal notranslate"><span class="pre">sortvalues()</span></code>. The <code class="docutils literal notranslate"><span class="pre">by</span></code> parameter of this method specifies the column to sort by.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>After <code class="docutils literal notranslate"><span class="pre">by</span></code>, you can also mention multiple columns as a list. In the example below, pandas will sort the values firstly by column ‘A’ and secondly by column ‘B’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">])</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method sorts values in an ascending order by default (i.e. from the lowest to highest value). If you want to see the values in a descending order (i.e. highest to lowest), you need to add a parameter named <code class="docutils literal notranslate"><span class="pre">ascending</span></code>, and set it to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method can also be applied to an individual Series object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise-1-7">
+<h3>Exercise 1.7.<a class="headerlink" href="#exercise-1-7" title="Permalink to this heading">#</a></h3>
+<p>Create a list of all the unique countries, and calculate the number of Nobel laureates per country. Print a list which is ranked according to the number of Nobel prizes. The country with the highest number of Nobel laureates must be at the top of the list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, divide the dataframe into groups based on &#39;Birth Country&#39;, using groupby(&#39;Category&#39;)</span>
+<span class="c1"># In these groups, select only the &#39;Laureate ID&#39; column, by appending [&#39;Laureate ID&#39;]</span>
+<span class="c1"># Next, calculate the number of rows in each group, using count() </span>
+<span class="c1"># The result is a Series object. </span>
+<span class="c1"># You can sort the series object using sort_vales()</span>
+<span class="c1"># If you want to print a list of all the indices, you can work with the &#39;index&#39; property</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-11-8">
+<h3>Exercise 11.8.<a class="headerlink" href="#exercise-11-8" title="Permalink to this heading">#</a></h3>
 <p>In the data folder for this tutorial, you can find a CSV file named ‘Grades.xlsx’. If you cannot locate this file, you can download it from the following address: <a class="reference external" href="https://edu.nl/m6w8n">https://edu.nl/m6w8n</a></p>
 <p>This spreadsheet contains the partial grades received in a certain course.</p>
 <p>Write code which can calculate and print the final grade for each student. The essay and the exam both count for 40% the grade. The remaining 20% is determined by the presentation. All grades should have one digit after the decimal point.</p>
@@ -965,8 +977,8 @@ document.write(`
 <li><p>How many students have received a 6 or lower for the exam?</p></li>
 </ul>
 </section>
-<section id="exercise-11-3">
-<h2>Exercise 11.3<a class="headerlink" href="#exercise-11-3" title="Permalink to this heading">#</a></h2>
+<section id="exercise-11-9">
+<h3>Exercise 11.9.<a class="headerlink" href="#exercise-11-9" title="Permalink to this heading">#</a></h3>
 <p>In the exercise, we make use of the following data set:</p>
 <blockquote>
 <div><p>Fatah-Black, Dr KJ (Leiden University) (2017): Lijsten van de leveranties, met de namen van de kopers en betaalde prijzen op de verkopingen van de VOC kamer Zeeland, 1725 – 1777. DANS. <a class="reference external" href="https://doi.org/10.17026/dans-23z-ez6f">https://doi.org/10.17026/dans-23z-ez6f</a></p>
@@ -996,7 +1008,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="c1"># Let&#39;s load the data into a data frame named `voc`:</span>
+<span class="c1"># Let&#39;s load the data into a dataframe named `voc`:</span>
 </pre></div>
 </div>
 </div>
@@ -1004,14 +1016,14 @@ document.write(`
 <p>To explore the contents data set, write some code to see the number of rows and columns, the columns names and all the values in te first 5 rows.</p>
 <p>One difficulty in the original data set is that the year, the month and the day are captured in different columns.</p>
 <p>In a time series visualisation, dates can best be represented using a variable of the type <code class="docutils literal notranslate"><span class="pre">datetime</span></code>. Pandas has a convenient method named <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html"><code class="docutils literal notranslate"><span class="pre">pd.to_datetime()</span></code></a> which can assemble a datetime out of multiple columns.</p>
-<p>Write some code to add a new column to the existing data frame which can can create a new <code class="docutils literal notranslate"><span class="pre">datetime</span></code> object by combining the values found in the columns named <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code> and <code class="docutils literal notranslate"><span class="pre">day</span></code>. Save this new datetime object in a column named ‘date’.</p>
+<p>Write some code to add a new column to the existing dataframe which can can create a new <code class="docutils literal notranslate"><span class="pre">datetime</span></code> object by combining the values found in the columns named <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code> and <code class="docutils literal notranslate"><span class="pre">day</span></code>. Save this new datetime object in a column named ‘date’.</p>
 <p>Next, try to calculate the total price that was paid for the product in each individual transaction. Store the result of this calculation in a column named ‘total price’. The total price can be calculated by adding the values in the column ‘flemish_pounds’ and the values in the column ‘groten’, divided by 20.</p>
 <p>To be able to compare the prices, they obviously need to be normalised. This can be done by dividing the total price by the amount of coffee that purchased. All quantities are given in pounds, so if we calculate the values in the ‘total price’ column by the quantities, this should result in the price per point. Save the results of this calculation in a column named ‘price_per_pound’.</p>
 <p>The data set contains a number of records with missing data. In such cases, the values in the empty columns are represented using the code <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, which stands for ‘Not a Number’. To remove all the records in which at least on of the column contains a missing value, we can make use of the dropna() method. If we only want to remove records if the have a <code class="docutils literal notranslate"><span class="pre">NaN</span></code> value in a specific column, we can work with the <code class="docutils literal notranslate"><span class="pre">subset</span></code> parameter, which needs to refer to the name of this column, as follows:</p>
 <p><code class="docutils literal notranslate"><span class="pre">df.dropna(subset</span> <span class="pre">=</span> <span class="pre">['column_name'])</span></code></p>
 <p>Add some code which can remove records in which the ‘price_per_pound’ column has a <code class="docutils literal notranslate"><span class="pre">NaN</span></code> value.</p>
 <p>There is one final operation we need to complete to arrive at the correct values. The original data set contains data about the prices paid in individual transactions. We want to know the average prices per day. Calculate the average prices per day, by making use use of the <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> and the <code class="docutils literal notranslate"><span class="pre">mean()</span></code> function.</p>
-<p>Finally, save the data frame as a CSV file using Panda’s <code class="docutils literal notranslate"><span class="pre">to_csv</span></code> method.</p>
+<p>Finally, save the dataframe as a CSV file using Panda’s <code class="docutils literal notranslate"><span class="pre">to_csv</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use Pandas&#39; built-in functionality</span>
@@ -1021,8 +1033,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="exercise-11-4">
-<h2>Exercise 11.4<a class="headerlink" href="#exercise-11-4" title="Permalink to this heading">#</a></h2>
+<section id="exercise-11-10">
+<h3>Exercise 11.10.<a class="headerlink" href="#exercise-11-10" title="Permalink to this heading">#</a></h3>
 <p>Download the CSV file ‘gutenberg_metadata.csv’ via the URL <a class="reference external" href="https://edu.nl/xcm3q">https://edu.nl/xcm3q</a>.</p>
 <p>Using this CSV file, create a dataframe which only contains the English texts written by Charles Dickens. In the data set, this name is given as ‘Dickens Charles’. Use the code ‘en’ for ‘English’.</p>
 <p>Two different conditions can be combined using the ampersand (’&amp;’). The combined criteria must be given in brackets.</p>
@@ -1036,11 +1048,11 @@ document.write(`
     <span class="n">csv</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;gutenberg_metadata.csv&#39;</span> <span class="p">,</span> <span class="s1">&#39;w&#39;</span> <span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">csv</span><span class="p">)</span>
-        
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -1111,35 +1123,44 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. Data analysis with pandas</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-csv-file">Reading a CSV file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-an-excel-spreadsheet">Reading an Excel spreadsheet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-a-list-into-a-data-frame">Converting a list into a data frame</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-information-about-the-data-frame">Basic information about the data frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-a-list-into-a-dataframe">Converting a list into a dataframe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-information-about-the-dataframe">Basic information about the dataframe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-1">Exercise 11.1.</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series">Series</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-functions">Statistical functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-data-frame">Navigating a data frame</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting">Sorting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-subsets">Selecting subsets</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-index">Filtering by index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-2">Exercise 11.2.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-values">Filtering by values</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsets-of-columns">Subsets of columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-3">Exercise 1.3.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-dataframe">Navigating a dataframe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-4">Exercise 1.4.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-items-and-aggregation">Grouping items and aggregation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-dates">Working with dates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-functions">Statistical functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-dates">Working with dates</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-5">Exercise 1.5</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-1">Exercise 11.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-2">Exercise 11.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-3">Exercise 11.3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-4">Exercise 11.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-items-and-aggregation">Grouping items and aggregation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-6">Exercise 1.6.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting">Sorting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-7">Exercise 1.7.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-8">Exercise 11.8.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-9">Exercise 11.9.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11-10">Exercise 11.10.</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

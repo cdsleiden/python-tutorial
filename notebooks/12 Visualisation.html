@@ -169,9 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="10%20Data_acquisition.html">10. Data acquisition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11%20Pandas.html">11. Data analysis with pandas</a></li>
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Data Visualisation</a></li>
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Practical information</span></p>
 <ul class="nav bd-sidenav">
@@ -370,34 +368,50 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">12. Data Visualisation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-to-be-visualised">The data to be visualised</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-seaborn-and-matplotlib">Importing seaborn and matplotlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-bar-plot">A bar plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customisations">Customisations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-variables">Categorical variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colour-palettes">Colour palettes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-scatter-plot">A scatter plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotating-text-annotation-on-a-scatterplot">Annotating text annotation on a scatterplot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conveying-information-via-sizes-and-colours">Conveying information via sizes and colours</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customisations">Customisations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-1">Exercise 12.1</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-plot-style">Changing the plot style</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-an-image">Saving an image</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-line-plot">A line plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-variables">Categorical variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colour-palettes">Colour palettes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-2">Exercise 12.2.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-scatter-plot">A scatter plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-3">Exercise 12.3.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotating-text-annotation-on-a-scatterplot">Annotating text annotation on a scatterplot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-4">Exercise 12.4.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conveying-information-via-sizes-and-colours">Conveying information via sizes and colours</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-an-image">Saving an image</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-5">Exercise 12.5.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-line-plot">A line plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-6">Exercise 12.6.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecercise-12-7">Ecercise 12.7.</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-count-plot">A count plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-histogram">A histogram</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-boxplot">A boxplot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-boxplot">A boxplot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-8">Exercise 12.8</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-heatmap">A heatmap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density-plot">Density plot</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-1">Exercise 12.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-2">Exercise 12.2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-3">Exercise 12.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density-plot">Density plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-9">Exercise 12.9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-10">Exercise 12.10.</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -532,6 +546,49 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 <img alt="../_images/f5eacad955e54d538bb286d3ef25b1fd1c176971e7aa4a7db71639cc36056a54.png" src="../_images/f5eacad955e54d538bb286d3ef25b1fd1c176971e7aa4a7db71639cc36056a54.png" />
 </div>
 </div>
+<section id="exercise-12-1">
+<h3>Exercise 12.1<a class="headerlink" href="#exercise-12-1" title="Permalink to this heading">#</a></h3>
+<p>PISA is the OECD’s <a class="reference external" href="https://www.oecd.org/pisa/">Programme for International Student Assessment</a>. This programme evaluates educational systems globally by measuring the performance of 15 year-old-children in mathematics, science and reading. The latest study is from 2018.</p>
+<p>The data folder of this tutorial includes a CSV file named ‘<a class="reference external" href="https://edu.nl/p97ma">pisa.csv</a>’. It contains all the scores measured for mathematics and reading in between 2000 and 2018.</p>
+<p>How did the various countries that were examined in 2018 perform on the reading tests? Which countries had the highest scores, and which countries had the lowest scores? ou can limit the analyses to the the ‘total’ scores (i.e. those records in which column ‘object’ has value ‘TOT’).</p>
+<p>Using Pandas, Matplotlib and Seaborn to create a bar plot which can help to answer this question.</p>
+<ul class="simple">
+<li><p>Create a figure with a size of 10x5</p></li>
+<li><p>Rotate the x-tick labels by 90 degrees</p></li>
+<li><p>Use the colour ‘#910c26’’ for all the bars.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="s1">&#39;pisa.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_to_csv</span><span class="p">)</span>
+
+<span class="c1">## All scores received for reading in 2018</span>
+<span class="n">df_2018</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;TOT&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">)</span>  <span class="p">]</span>
+<span class="n">df_2018</span> <span class="o">=</span> <span class="n">df_2018</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span> <span class="s1">&#39;pisa_read&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="changing-the-plot-style">
+<h2>Changing the plot style<a class="headerlink" href="#changing-the-plot-style" title="Permalink to this heading">#</a></h2>
+<p>The overall style of the plot, including the background colour and the presence of the of grid lines, can be modified using <code class="docutils literal notranslate"><span class="pre">set_style()</span></code>.</p>
+<p>The following styles have been defined in <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>:</p>
+<ul class="simple">
+<li><p>darkgrid</p></li>
+<li><p>whitegrid</p></li>
+<li><p>dark</p></li>
+<li><p>white</p></li>
+<li><p>ticks</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="categorical-variables">
 <h2>Categorical variables<a class="headerlink" href="#categorical-variables" title="Permalink to this heading">#</a></h2>
@@ -539,6 +596,14 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 <p>In a <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> barplot, you can easily visualise the different categories that are available via the fill colour of the bars. In the <code class="docutils literal notranslate"><span class="pre">barplot()</span></code> method, you can work with a parameter named <code class="docutils literal notranslate"><span class="pre">hue</span></code>. When you mention the name of a categorirical variable as a value for this <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter, the different groups that can be created will all be shown in a different colour. In addition, a legend will be added to clarify the meaning of these colours.</p>
 <p>To avoid overlapping bars, you need to set the value of the <code class="docutils literal notranslate"><span class="pre">dodge</span></code> parameter to ‘False’.</p>
 <p>If the code still includes a <code class="docutils literal notranslate"><span class="pre">color</span></code> paramater, the plot will clarify the different groups using <em>shades</em> of this specific colour. If <code class="docutils literal notranslate"><span class="pre">hue</span></code> is used <em>without</em> the <code class="docutils literal notranslate"><span class="pre">color</span></code> parameter, and without the <code class="docutils literal notranslate"><span class="pre">palette</span></code> parameter that is discussed below, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> will select the colours for the different groups automatically.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="s1">&#39;bli.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_to_csv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -569,7 +634,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1a72555c759e02b2050c7a34fa476efebfa50f16b486dc00c02a782c866aae1e.png" src="../_images/1a72555c759e02b2050c7a34fa476efebfa50f16b486dc00c02a782c866aae1e.png" />
+<img alt="../_images/432d24105a5855d9aa0dbc7cfbd88c8f0bc7b8e4eb201799f74108049d5ce7d6.png" src="../_images/432d24105a5855d9aa0dbc7cfbd88c8f0bc7b8e4eb201799f74108049d5ce7d6.png" />
 </div>
 </div>
 <p>If you don’t particularly like the colour that <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> has chosen, it is good to know that it is also possible to select the colours yourself. As a first step, you can create a list of the colours you want to work with.</p>
@@ -621,7 +686,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/44e5794b1b716173fc59f86e991f48dce341973201d9e972f73dc0be5d01014f.png" src="../_images/44e5794b1b716173fc59f86e991f48dce341973201d9e972f73dc0be5d01014f.png" />
+<img alt="../_images/cfb5d09e5fefc9878a3314a3be5aa065f644216e0cd754e81c332eed8e25babd.png" src="../_images/cfb5d09e5fefc9878a3314a3be5aa065f644216e0cd754e81c332eed8e25babd.png" />
 </div>
 </div>
 </section>
@@ -717,9 +782,13 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c4216aa802e33ba8ec8d176ec68da355f9a8062b602bcf90731f42d375d2abd1.png" src="../_images/c4216aa802e33ba8ec8d176ec68da355f9a8062b602bcf90731f42d375d2abd1.png" />
+<img alt="../_images/d77ddf096d61baf507f27c455dcd200383dd5bcad87b1c7ca77c418b70bfab9c.png" src="../_images/d77ddf096d61baf507f27c455dcd200383dd5bcad87b1c7ca77c418b70bfab9c.png" />
 </div>
 </div>
+<section id="exercise-12-2">
+<h3>Exercise 12.2.<a class="headerlink" href="#exercise-12-2" title="Permalink to this heading">#</a></h3>
+<p>As for exercise 12.1, make a bar chart which gives information about the total scors for reading in 2018. For this exercise, try to give information about the continents as well. Use distinctive colours for each continent.</p>
+</section>
 </section>
 <section id="a-scatter-plot">
 <h2>A scatter plot<a class="headerlink" href="#a-scatter-plot" title="Permalink to this heading">#</a></h2>
@@ -740,9 +809,20 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ff86fe06d65ecd0449f4d12af08c2303b0eed928cf8b545a2bcd7aa66a896b3c.png" src="../_images/ff86fe06d65ecd0449f4d12af08c2303b0eed928cf8b545a2bcd7aa66a896b3c.png" />
+<img alt="../_images/e196a18efd964adbb30d0e9e303706e902c0af4f5b97d561864e6ff6b3e22d18.png" src="../_images/e196a18efd964adbb30d0e9e303706e902c0af4f5b97d561864e6ff6b3e22d18.png" />
 </div>
 </div>
+<section id="exercise-12-3">
+<h3>Exercise 12.3.<a class="headerlink" href="#exercise-12-3" title="Permalink to this heading">#</a></h3>
+<p>In the PISA data set, how do the scores for reading compare to the scores for mathematics?</p>
+<p>Focus on the scores obtained in 2018. Answer this question by creating a scatter plot.</p>
+<p>Customise the plot according to the following specifications:</p>
+<ul class="simple">
+<li><p>Plot size: 10 x 6</p></li>
+<li><p>Sizes of markers/dots: 100</p></li>
+<li><p>Colour of the markers: ‘#119c2a’</p></li>
+</ul>
+</section>
 </section>
 <section id="annotating-text-annotation-on-a-scatterplot">
 <h2>Annotating text annotation on a scatterplot<a class="headerlink" href="#annotating-text-annotation-on-a-scatterplot" title="Permalink to this heading">#</a></h2>
@@ -781,7 +861,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/86dc6a9bbd8a37bc1a33e261321a3a845693518b60c69892794b191c4a6ba630.png" src="../_images/86dc6a9bbd8a37bc1a33e261321a3a845693518b60c69892794b191c4a6ba630.png" />
+<img alt="../_images/94b994e73325324d7ed8cc9e1d2c6641ca63f01f556c921abe2d10915fd25484.png" src="../_images/94b994e73325324d7ed8cc9e1d2c6641ca63f01f556c921abe2d10915fd25484.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">text()</span></code> method places the start of the label on the exact same spot as the dots in the scatterplot. For aesthetic reasons, you may want to change the location of the labels just slightly. To change the initial location of the label, you can add or subtract some values to the positions on the X-axis and the Y-axis. Finding the suitable values often demands some trial and error.</p>
@@ -809,9 +889,17 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b2a01147f31d2d88e02c10fb5778172551260fdcf8919d4d6ba6866cb2b3f99e.png" src="../_images/b2a01147f31d2d88e02c10fb5778172551260fdcf8919d4d6ba6866cb2b3f99e.png" />
+<img alt="../_images/818df6ec663ff1a6158c36efcd2b3bfa8d2d6a2951900898b6151b1a24e8dc53.png" src="../_images/818df6ec663ff1a6158c36efcd2b3bfa8d2d6a2951900898b6151b1a24e8dc53.png" />
 </div>
 </div>
+<section id="exercise-12-4">
+<h3>Exercise 12.4.<a class="headerlink" href="#exercise-12-4" title="Permalink to this heading">#</a></h3>
+<p>As for exercise 12.3, create a scatterplot which can help to visualise the correlation between the scores for reading and the scores for mathematics. This time, also add labels to indicate the scores for the countries captured in the list named <code class="docutils literal notranslate"><span class="pre">countries</span></code>, defined below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">,</span><span class="s1">&#39;Italy&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The font size of the label must be 12.8 and the font weight must be bold.</p>
+</section>
 </section>
 <section id="conveying-information-via-sizes-and-colours">
 <h2>Conveying information via sizes and colours<a class="headerlink" href="#conveying-information-via-sizes-and-colours" title="Permalink to this heading">#</a></h2>
@@ -855,26 +943,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b17906d699ec0d8d86d7db4b246e743d2d339b51acdc5694c58fa46ce51e2442.png" src="../_images/b17906d699ec0d8d86d7db4b246e743d2d339b51acdc5694c58fa46ce51e2442.png" />
-</div>
-</div>
-</section>
-<section id="changing-the-plot-style">
-<h2>Changing the plot style<a class="headerlink" href="#changing-the-plot-style" title="Permalink to this heading">#</a></h2>
-<p>The overall style of the plot, including the background colour and the presence of the of grid lines, can be modified using <code class="docutils literal notranslate"><span class="pre">set_style()</span></code>.</p>
-<p>The following styles have been defined in <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>:</p>
-<ul class="simple">
-<li><p>darkgrid</p></li>
-<li><p>whitegrid</p></li>
-<li><p>dark</p></li>
-<li><p>white</p></li>
-<li><p>ticks</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
+<img alt="../_images/a21abb912da8fce4fa1f5864a507a4e065b32c3d989384352e5fd805691c8812.png" src="../_images/a21abb912da8fce4fa1f5864a507a4e065b32c3d989384352e5fd805691c8812.png" />
 </div>
 </div>
 </section>
@@ -894,6 +963,19 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 </div>
+<section id="exercise-12-5">
+<h3>Exercise 12.5.<a class="headerlink" href="#exercise-12-5" title="Permalink to this heading">#</a></h3>
+<p>Add a new column to the <code class="docutils literal notranslate"><span class="pre">df_2018</span></code> dataframe which you created for the previous exercises, containing the avrage values for reading and mathematics. You can use the code below for this purpose.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_2018</span><span class="p">[</span><span class="s1">&#39;pisa_mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2018</span><span class="p">[[</span><span class="s1">&#39;pisa_read&#39;</span><span class="p">,</span> <span class="s1">&#39;pisa_math&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, adjust the scatterplot that you created for exercise 12.5 in two ways.</p>
+<ul class="simple">
+<li><p>The sizes of the points should reflect the values in this newly created columns named ‘pisa_mean’. The sizes should range from 50 to 300.</p></li>
+<li><p>The colours of the points should provide information about the continents.</p></li>
+</ul>
+<p>Save the figure as a file named ‘scatterplot.png’. The resolution should be 300 dpi.</p>
+</section>
 </section>
 <section id="a-line-plot">
 <h2>A line plot<a class="headerlink" href="#a-line-plot" title="Permalink to this heading">#</a></h2>
@@ -930,6 +1012,16 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 <img alt="../_images/9e6d681a54da9c5535d5476d4a35b26fdbc91e787aa003c6696bff5e562a8740.png" src="../_images/9e6d681a54da9c5535d5476d4a35b26fdbc91e787aa003c6696bff5e562a8740.png" />
 </div>
 </div>
+<section id="exercise-12-6">
+<h3>Exercise 12.6.<a class="headerlink" href="#exercise-12-6" title="Permalink to this heading">#</a></h3>
+<p>Starting from the full PISA data set, creates a new dataframe containing the scores obtained by pupils in the Netherlands during the period in between 2004 and 2018.</p>
+<p>Use this new dataframe to trace the development of the reading scores in the Netherlands in between 2000 and 2018. Focus on the total scores.</p>
+</section>
+<section id="ecercise-12-7">
+<h3>Ecercise 12.7.<a class="headerlink" href="#ecercise-12-7" title="Permalink to this heading">#</a></h3>
+<p>How did the scores for maths develop in the Netherlands in between 2000 and 2018? Focus on the score for boys and for girls separately.
+Tip: You can also work with the <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter in thae case of line charts.</p>
+</section>
 </section>
 <section id="a-count-plot">
 <h2>A count plot<a class="headerlink" href="#a-count-plot" title="Permalink to this heading">#</a></h2>
@@ -983,6 +1075,16 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 <img alt="../_images/5e940503c9b3ee53d361049b72a48ac0e320b1d1bf61c125d1d4db6a0c1eebbe.png" src="../_images/5e940503c9b3ee53d361049b72a48ac0e320b1d1bf61c125d1d4db6a0c1eebbe.png" />
 </div>
 </div>
+<section id="exercise-12-8">
+<h3>Exercise 12.8<a class="headerlink" href="#exercise-12-8" title="Permalink to this heading">#</a></h3>
+<p>Have the scores remained relatively stable over the years if we look at the total scores? Or has there been some variation? How does the variation of the scores for the Netherlands compare to the scores in France, Germany, Belgium and Luxembourg? Try to answer this question by crearing a boxplot.</p>
+<p>The names of the countries should be displayed on the X-axis, and the values associated with these countries should be displayed along the Y-axis.</p>
+<p>For this exercise, it can be useful to make a list containing the countries you are interesed in, and to filter the dataframe using the <code class="docutils literal notranslate"><span class="pre">isin()</span></code> function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">]</span>
+<span class="n">df_countries</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;location_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span> <span class="p">]</span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="a-heatmap">
 <h2>A heatmap<a class="headerlink" href="#a-heatmap" title="Permalink to this heading">#</a></h2>
@@ -1027,73 +1129,8 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <p>Many other types are diagrams can be created. For more information, visit the <a class="reference external" href="https://seaborn.pydata.org/examples/index.html">gallery</a> or the <a class="reference external" href="https://seaborn.pydata.org/tutorial.html">tutorials</a> on the seaborn website.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
-<section id="exercise-12-1">
-<h2>Exercise 12.1<a class="headerlink" href="#exercise-12-1" title="Permalink to this heading">#</a></h2>
-<p>PISA is the OECD’s <a class="reference external" href="https://www.oecd.org/pisa/">Programme for International Student Assessment</a>. This programme evaluates educational systems globally by measuring the performance of 15 year-old-children in mathematics, science and reading. The latest study is from 2018.</p>
-<p>The data folder of this tutorial includes a CSV file named ‘<a class="reference external" href="https://edu.nl/p97ma">pisa.csv</a>’. It contains all the scores measured for mathematics and reading in between 2000 and 2018.</p>
-<p>Using Pandas, Matplotlib and Seaborn, create visualisations which can help to answer the following questions:</p>
-<p>12.1.1. How did the various countries that were examined in 2018 perform on the reading tests? Which countries had the highest scores, and which countries had the lowest scores? Try to answer this question via a bar plot. You can limit the analyses to the the ‘total’ scores (i.e. those records in which column ‘object’ has value ‘TOT’). Create a figure with a size of 10x7, rotate the x-tick labels by 90 degrees and use the colour ‘#910c26’’ for all the bars.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="s1">&#39;pisa.csv&#39;</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_to_csv</span><span class="p">)</span>
-
-<span class="c1">## All scores received for reading in 2018</span>
-<span class="n">df_2018</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;TOT&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">)</span>  <span class="p">]</span>
-<span class="n">df_2018</span> <span class="o">=</span> <span class="n">df_2018</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span> <span class="s1">&#39;pisa_read&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>12.1.2. Same as 12.1.1., but try to give information about the continents as well. Use distinctive colours for each continent.</p>
-<p>2.1.3.
-How do the scores for reading compare to the scores for mathematics? Focus on the scores obtained in 2018. Answer this question by creating a scatter plot.</p>
-<p>2.1.4. Same as (3), but add labels to indicate the scores for the countries captured in the list named <code class="docutils literal notranslate"><span class="pre">countries</span></code>, defined below.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">,</span><span class="s1">&#39;Italy&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">,</span><span class="s1">&#39;Italy&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>2.1.5. How did the scores for reading develop in the Netherlands in between 2000 and 2018? Focus on the total scores. Create a linepliot with the following specifications:</p>
-<ul class="simple">
-<li><p>color: ‘#94321c’</p></li>
-<li><p>linewidth: 3</p></li>
-<li><p>Size of the plot: 10 x 3</p></li>
-<li><p>Graph title: ‘Reading performance in the Netherlands’</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scores received by Dutch students</span>
-<span class="n">df_nl</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;location_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Netherlands&#39;</span> <span class="p">]</span>
-
-<span class="c1"># Scores received by all Dutch students</span>
-<span class="n">df_nl_tot</span> <span class="o">=</span> <span class="n">df_nl</span><span class="p">[</span> <span class="n">df_nl</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;TOT&#39;</span> <span class="p">]</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<p>2.1.6. How did the scores for maths develop in the Netherlands in between 2000 and 2018? Focus on the score for boys and for girls separately.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scores for boys and girls separately </span>
-<span class="n">df_nl_bg</span> <span class="o">=</span> <span class="n">df_nl</span><span class="p">[</span> <span class="n">df_nl</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span> <span class="p">[</span><span class="s1">&#39;BOY&#39;</span><span class="p">,</span><span class="s1">&#39;GIRL&#39;</span><span class="p">]</span>  <span class="p">)</span> <span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>2.1.7. Have the scores remained relatively stable over the years if we look at the total scores? Or has there been some variation? How does the variation of the scores for the Netherlands compare to the scores in France, Germany, Belgium and Luxembourg? Try to answer this question by crearing a boxplot.</p>
-</section>
-<section id="exercise-12-2">
-<h2>Exercise 12.2<a class="headerlink" href="#exercise-12-2" title="Permalink to this heading">#</a></h2>
+<section id="exercise-12-9">
+<h3>Exercise 12.9<a class="headerlink" href="#exercise-12-9" title="Permalink to this heading">#</a></h3>
 <p>The data folder of this tutorial includes a CSV file named ‘nobel.csv’. If necessary you can also download this file from the following address: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a>.</p>
 <p>Visualise the data in this data set in the following ways.</p>
 <ul class="simple">
@@ -1118,13 +1155,7 @@ How do the scores for reading compare to the scores for mathematics? Focus on th
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://edu.nl/3xmbd&#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">response</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;nobel.csv&#39;</span> <span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv</span><span class="p">:</span>
-        <span class="n">csv</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;nobel.csv&#39;</span><span class="p">)</span>
+<span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="s1">&#39;nobel.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1140,7 +1171,7 @@ How do the scores for reading compare to the scores for mathematics? Focus on th
 <span class="c1">## group by year</span>
 <span class="n">laureates_per_year</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Laureate ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 
-<span class="c1">## convert the result of &#39;group by&#39; to data frame</span>
+<span class="c1">## convert the result of &#39;group by&#39; to dataframe</span>
 <span class="n">lpg_df</span> <span class="o">=</span> <span class="n">laureates_per_year</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
 <span class="n">lpg_df</span> <span class="o">=</span> <span class="n">lpg_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="s1">&#39;Number&#39;</span><span class="p">]</span>
@@ -1171,9 +1202,10 @@ How do the scores for reading compare to the scores for mathematics? Focus on th
 </div>
 </div>
 </section>
-<section id="exercise-12-3">
-<h2>Exercise 12.3<a class="headerlink" href="#exercise-12-3" title="Permalink to this heading">#</a></h2>
+<section id="exercise-12-10">
+<h3>Exercise 12.10.<a class="headerlink" href="#exercise-12-10" title="Permalink to this heading">#</a></h3>
 <p>In exercise 11.3, you created a CSV file named ‘prices_of_coffee_over_time.csv’, containing data about the average price of a pound of coffee on a range of dates. Use this CSV file to create a line chart which visualises the development of these prices over time.</p>
+</section>
 </section>
 </section>
 
@@ -1244,34 +1276,50 @@ How do the scores for reading compare to the scores for mathematics? Focus on th
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">12. Data Visualisation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-to-be-visualised">The data to be visualised</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-seaborn-and-matplotlib">Importing seaborn and matplotlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-bar-plot">A bar plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customisations">Customisations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-variables">Categorical variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colour-palettes">Colour palettes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-scatter-plot">A scatter plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotating-text-annotation-on-a-scatterplot">Annotating text annotation on a scatterplot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conveying-information-via-sizes-and-colours">Conveying information via sizes and colours</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customisations">Customisations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-1">Exercise 12.1</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-plot-style">Changing the plot style</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-an-image">Saving an image</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-line-plot">A line plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-variables">Categorical variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colour-palettes">Colour palettes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-2">Exercise 12.2.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-scatter-plot">A scatter plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-3">Exercise 12.3.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotating-text-annotation-on-a-scatterplot">Annotating text annotation on a scatterplot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-4">Exercise 12.4.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conveying-information-via-sizes-and-colours">Conveying information via sizes and colours</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-an-image">Saving an image</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-5">Exercise 12.5.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-line-plot">A line plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-6">Exercise 12.6.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecercise-12-7">Ecercise 12.7.</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-count-plot">A count plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-histogram">A histogram</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-boxplot">A boxplot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-boxplot">A boxplot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-8">Exercise 12.8</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-heatmap">A heatmap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density-plot">Density plot</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-1">Exercise 12.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-2">Exercise 12.2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-3">Exercise 12.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density-plot">Density plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-9">Exercise 12.9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-10">Exercise 12.10.</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

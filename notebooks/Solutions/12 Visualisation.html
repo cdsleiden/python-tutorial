@@ -168,9 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../10%20Data_acquisition.html">10. Data acquisition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../11%20Pandas.html">11. Data analysis with pandas</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../12%20Visualisation.html">12. Data Visualisation</a></li>
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Practical information</span></p>
 <ul class="nav bd-sidenav">
@@ -370,8 +368,15 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-1">Exercise 12.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-2">Exercise 12.2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise 12.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-2">Exercise 12.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-3">Exercise 12.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-4">Exercise 12.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-5">Exercise 12.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-6">Exercise 12.6.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecercise-12-7">Ecercise 12.7.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-8">Exercise 12.8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-9">Exercise 12.9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-10">Exercise 12.10</a></li>
 </ul>
             </nav>
         </div>
@@ -389,19 +394,13 @@ document.write(`
 <h2>Exercise 12.1<a class="headerlink" href="#exercise-12-1" title="Permalink to this heading">#</a></h2>
 <p>PISA is the OECD’s <a class="reference external" href="https://www.oecd.org/pisa/">Programme for International Student Assessment</a>. This programme evaluates educational systems globally by measuring the performance of 15 year-old-children in mathematics, science and reading. The latest study is from 2018.</p>
 <p>The data folder of this tutorial includes a CSV file named ‘<a class="reference external" href="https://edu.nl/p97ma">pisa.csv</a>’. It contains all the scores measured for mathematics and reading in between 2000 and 2018.</p>
-<p>Using Pandas, Matplotlib and Seaborn, create visualisations which can help to answer the following questions:</p>
-<p>12.1.1. How did the various countries that were examined in 2018 perform on the reading tests? Which countries had the highest scores, and which countries had the lowest scores? Try to answer this question via a bar plot. You can limit the analyses to the the ‘total’ scores (i.e. those records in which column ‘object’ has value ‘TOT’). Create a figure with a size of 10x7, rotate the x-tick labels by 90 degrees and use the colour ‘#910c26’’ fpor all the bars.</p>
-<p>12.1.2. Same as (1), but try to give information about the continents as well. Use distinctive colours for each continent.</p>
-<p>12.1.3. How do the scores for reading compare to the scores for mathematics? Focus on the scvores obtained in 2018. Answer this question by creating a scatter plot.</p>
-<p>12.1.4. Same as (3), but add labels to indicate the scores for the countries captured in the list named <code class="docutils literal notranslate"><span class="pre">countries</span></code>, defined below.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">,</span><span class="s1">&#39;Italy&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>12.1.5. How did the scores for reading develop in the Netherlands in between 2000 and 2018? Focus on the total scores.</p>
-<p>12.1.6. How did the scores for maths develop in the Netherlands in between 2000 and 2018? Focus on the score for boys and for girls separately.</p>
-<p>12.1.7. Have the scores remained relatively stable over the years if we look at the total scores? Or has there been some variation? How does the variation of the scores for the Netherlands compare to the scores in France, Germany, Belgium and Luxembourg? Try to answer this question by crearing a boxplot.</p>
-<p>To answer question 12.1.1, create a new data frame containing the total scores measured in the year 2018. We can subset the dataframe using square brackets. These brackets should contain a criterium that can serve as a filter.</p>
-<p>the <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method can be used to sort the dataframe. The <code class="docutils literal notranslate"><span class="pre">by</span></code> parameter specifies the column you want to sort on.</p>
+<p>How did the various countries that were examined in 2018 perform on the reading tests? Which countries had the highest scores, and which countries had the lowest scores? ou can limit the analyses to the the ‘total’ scores (i.e. those records in which column ‘object’ has value ‘TOT’).</p>
+<p>Using Pandas, Matplotlib and Seaborn to create a bar plot which can help to answer this question.</p>
+<ul class="simple">
+<li><p>Create a figure with a size of 10x5</p></li>
+<li><p>Rotate the x-tick labels by 90 degrees</p></li>
+<li><p>Use the colour ‘#910c26’’ for all the bars.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
@@ -416,7 +415,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Next, we can plot the values in this new data frame using <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code>. This plot should help us to answer question 1.</p>
+<p>Next, we can plot the values in this new dataframe using <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code>. This plot should help us to answer question 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -424,7 +423,7 @@ document.write(`
 
 
 <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;darkgrid&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span><span class="mi">7</span> <span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span><span class="mi">5</span> <span class="p">))</span>
 
 <span class="n">graph</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df_2018</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;location_name&#39;</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;pisa_read&#39;</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#910c26&#39;</span> <span class="p">)</span>
 
@@ -439,16 +438,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a88683798b97ffbb3d8448ae323cdf7d7ad1076254029d84d74a89dec2caa2f3.png" src="../../_images/a88683798b97ffbb3d8448ae323cdf7d7ad1076254029d84d74a89dec2caa2f3.png" />
+<img alt="../../_images/2bcfd6f6bab653d9b47ac0d86f413198dad7abffe76a3e9a2d4858615684f08c.png" src="../../_images/2bcfd6f6bab653d9b47ac0d86f413198dad7abffe76a3e9a2d4858615684f08c.png" />
 </div>
 </div>
-<p>To vary the colours of the bars along with the continents (question 2), name the ‘continent’ column in the <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter.</p>
+</section>
+<section id="exercise-12-2">
+<h2>Exercise 12.2.<a class="headerlink" href="#exercise-12-2" title="Permalink to this heading">#</a></h2>
+<p>As for exercis 12.1, make a bar chart which gives information about the total scors for reading in 2018. For this exercise, try to give information about the continents as well. Use distinctive colours for each continent.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;darkgrid&#39;</span><span class="p">)</span>
 <span class="n">colours</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;colorblind&#39;</span> <span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span><span class="mi">7</span> <span class="p">))</span>
-
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span><span class="mi">5</span> <span class="p">))</span>
 
 <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df_2018</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;location_name&#39;</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;pisa_read&#39;</span> <span class="p">,</span> 
             <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;continent&#39;</span> <span class="p">,</span> <span class="n">dodge</span> <span class="o">=</span> <span class="kc">False</span>  <span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">colours</span> <span class="p">)</span>
@@ -461,10 +462,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0ca5e3a73bea8ae09a40d1ea9f7356cb74bb678b52bfaeace954528a8b455d4d.png" src="../../_images/0ca5e3a73bea8ae09a40d1ea9f7356cb74bb678b52bfaeace954528a8b455d4d.png" />
+<img alt="../../_images/bb1e04423bfdff88fb5e01dbb71b005595be8c0a2a47d39cce9939fece66d6ae.png" src="../../_images/bb1e04423bfdff88fb5e01dbb71b005595be8c0a2a47d39cce9939fece66d6ae.png" />
 </div>
 </div>
-<p>To examine the correlation between <code class="docutils literal notranslate"><span class="pre">pisa_read</span></code> and <code class="docutils literal notranslate"><span class="pre">pisa_math</span></code> (question 3), we can visualise these two variables using a scatter plot. We can work with the dataframe named <code class="docutils literal notranslate"><span class="pre">df_2018</span></code> that we created earlier.</p>
+</section>
+<section id="exercise-12-3">
+<h2>Exercise 12.3.<a class="headerlink" href="#exercise-12-3" title="Permalink to this heading">#</a></h2>
+<p>In the PISA data set, how do the scores for reading compare to the scores for mathematics?</p>
+<p>Focus on the scores obtained in 2018. Answer this question by creating a scatter plot.</p>
+<p>Customise the plot according to the following specifications:</p>
+<ul class="simple">
+<li><p>Plot size: 10 x 6</p></li>
+<li><p>Sizes of markers/dots: 100</p></li>
+<li><p>Colour of the markers: ‘#119c2a’</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -473,7 +484,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">6</span><span class="p">,</span><span class="mi">6</span> <span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span><span class="mi">6</span> <span class="p">))</span>
 
 
 <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
@@ -489,10 +500,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1065a6fa287ae5a10be0fbaabf47058a134b1f579546cacb3e47674da2b3d86d.png" src="../../_images/1065a6fa287ae5a10be0fbaabf47058a134b1f579546cacb3e47674da2b3d86d.png" />
+<img alt="../../_images/52f41496c49283af3f37594336b316437d3542a186d591eb4e365ea38bc9efa0.png" src="../../_images/52f41496c49283af3f37594336b316437d3542a186d591eb4e365ea38bc9efa0.png" />
 </div>
 </div>
-<p>Text labels for the dots in a scatter plot (see question 4) can be added using <code class="docutils literal notranslate"><span class="pre">plt.text()</span></code>. The method demands at least parameters:</p>
+</section>
+<section id="exercise-12-4">
+<h2>Exercise 12.4.<a class="headerlink" href="#exercise-12-4" title="Permalink to this heading">#</a></h2>
+<p>As for exercise 12.3, create a scatterplot which can help to visualise the correlation between the scores for reading and the scores for mathematics. This time, also add labels to indicate the scores for the countries captured in the list named <code class="docutils literal notranslate"><span class="pre">countries</span></code>, defined below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">,</span><span class="s1">&#39;Italy&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The font size of the label must be 12.8 and the font weight must be bold.</p>
+<p>Text labels for the dots in a scatter plot can be added using <code class="docutils literal notranslate"><span class="pre">plt.text()</span></code>. The method demands at least parameters:</p>
 <ul class="simple">
 <li><p>Position on x-axis</p></li>
 <li><p>Position on y-axis</p></li>
@@ -532,8 +551,6 @@ document.write(`
     <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;location_name&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span> <span class="n">row</span><span class="p">[</span><span class="n">x_axis</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="n">y_axis</span><span class="p">]</span> <span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;location_name&#39;</span><span class="p">]</span> <span class="p">,</span> 
                  <span class="n">fontsize</span><span class="o">=</span><span class="mf">12.8</span> <span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;scatterplot.png&#39;</span> <span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">300</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -541,7 +558,71 @@ document.write(`
 <img alt="../../_images/181043575a8adf749a954de22d703f09ec89c997a77a83b94df2bc0ed8b4e7d1.png" src="../../_images/181043575a8adf749a954de22d703f09ec89c997a77a83b94df2bc0ed8b4e7d1.png" />
 </div>
 </div>
-<p>The code below creates a new data frame, based on the original data frame that was created out of the original CSV file. It selects the scores obtained by pupils in the Netherlands during the period in between 2004 and 2018.</p>
+</section>
+<section id="exercise-12-5">
+<h2>Exercise 12.5.<a class="headerlink" href="#exercise-12-5" title="Permalink to this heading">#</a></h2>
+<p>Add a new column to the <code class="docutils literal notranslate"><span class="pre">df_2018</span></code> dataframe which you created for the previous exercises, containing the avrage values for reading and mathematics. You can use the code below for this purpose.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_2018</span><span class="p">[</span><span class="s1">&#39;pisa_mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2018</span><span class="p">[[</span><span class="s1">&#39;pisa_read&#39;</span><span class="p">,</span> <span class="s1">&#39;pisa_math&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, adjust the scatterplot that you created for exercise 12.5 in two ways.</p>
+<ul class="simple">
+<li><p>The sizes of the points should reflect the values in this newly created columns named ‘pisa_mean’. The sizes should range from 50 to 300.</p></li>
+<li><p>The colours of the points should provide information about the continents.</p></li>
+</ul>
+<p>Save the figure as a file named ‘scatterplot.png’. The resolution should be 300 dpi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2018</span><span class="p">[</span><span class="s1">&#39;pisa_mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2018</span><span class="p">[[</span><span class="s1">&#39;pisa_read&#39;</span><span class="p">,</span> <span class="s1">&#39;pisa_math&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">x_axis</span> <span class="o">=</span> <span class="s1">&#39;pisa_read&#39;</span>
+<span class="n">y_axis</span> <span class="o">=</span> <span class="s1">&#39;pisa_math&#39;</span>
+<span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;pisa_mean&#39;</span>
+<span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;continent&#39;</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">countries</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">,</span><span class="s1">&#39;Italy&#39;</span><span class="p">]</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span><span class="mi">6</span> <span class="p">))</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_axis</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_axis</span> <span class="p">,</span> 
+                <span class="n">data</span> <span class="o">=</span> <span class="n">df_2018</span> <span class="p">,</span> 
+                        <span class="n">hue</span> <span class="o">=</span> <span class="n">hue</span> <span class="p">,</span>
+                        <span class="n">size</span> <span class="o">=</span> <span class="n">size</span> <span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="p">(</span> <span class="mi">50</span> <span class="p">,</span> <span class="mi">300</span><span class="p">))</span> 
+
+<span class="n">graph</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Performance on reading&#39;</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Performance on maths&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="n">df_2018</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;location_name&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span> <span class="n">row</span><span class="p">[</span><span class="n">x_axis</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="n">y_axis</span><span class="p">]</span> <span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;location_name&#39;</span><span class="p">]</span> <span class="p">,</span> 
+                 <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span> <span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;scatterplot.png&#39;</span> <span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">300</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cb94b0749ec6ca1733d1565a0e9ef54ec41ab6f877e86aaaa1bf1cb30092eb11.png" src="../../_images/cb94b0749ec6ca1733d1565a0e9ef54ec41ab6f877e86aaaa1bf1cb30092eb11.png" />
+</div>
+</div>
+</section>
+<section id="exercise-12-6">
+<h2>Exercise 12.6.<a class="headerlink" href="#exercise-12-6" title="Permalink to this heading">#</a></h2>
+<p>Starting from the full PISA data set, creates a new dataframe containing the scores obtained by pupils in the Netherlands during the period in between 2004 and 2018.</p>
+<p>Use this new dataframe to trace the development of the reading scores in the Netherlands in between 2000 and 2018. Focus on the total scores.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_nl</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;location_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Netherlands&#39;</span> <span class="p">]</span>
@@ -550,7 +631,6 @@ document.write(`
 </div>
 </div>
 </div>
-<p>The code below shows all the scores received by Dutch students (question 5).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span><span class="mi">5</span> <span class="p">)</span> <span class="p">)</span>
@@ -561,7 +641,6 @@ document.write(`
 <span class="n">graph</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Scores&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">16</span> <span class="p">)</span>
 <span class="n">graph</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span> <span class="s1">&#39;Reading performance in the Netherlands&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">22</span> <span class="p">)</span>
 
-
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -570,6 +649,48 @@ document.write(`
 <img alt="../../_images/f8e9aacc01a589c0a15c7183c9392052fcad28877f3e5469e2c6f0eb0e0bd2b5.png" src="../../_images/f8e9aacc01a589c0a15c7183c9392052fcad28877f3e5469e2c6f0eb0e0bd2b5.png" />
 </div>
 </div>
+</section>
+<section id="ecercise-12-7">
+<h2>Ecercise 12.7.<a class="headerlink" href="#ecercise-12-7" title="Permalink to this heading">#</a></h2>
+<p>How did the scores for maths develop in the Netherlands in between 2000 and 2018? Focus on the score for boys and for girls separately.
+Tip: You can also work with the <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter in thae case of line charts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_nl_bg</span> <span class="o">=</span> <span class="n">df_nl</span><span class="p">[</span> <span class="n">df_nl</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span> <span class="p">[</span><span class="s1">&#39;BOY&#39;</span><span class="p">,</span><span class="s1">&#39;GIRL&#39;</span><span class="p">]</span>  <span class="p">)</span> <span class="p">]</span>
+
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">9</span><span class="p">,</span><span class="mi">4</span> <span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df_nl_bg</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;year&#39;</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;pisa_math&#39;</span> <span class="p">,</span>  <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;subject&#39;</span> <span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;#078217&#39;</span> <span class="p">,</span> <span class="s1">&#39;#f5ce4e&#39;</span> <span class="p">]</span> <span class="p">,</span>  <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span> <span class="p">)</span>
+
+<span class="c1"># this next line makes sure that the legend is shown outside of the graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.</span><span class="p">);</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Years&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">16</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Scores&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">16</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span> <span class="s1">&#39;Performance on maths in the Netherlands&#39;</span> <span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span> <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;maths.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c66dd7dd5bb56dc2aba0a93d07ac38f7992a5467f9621d1e41cd0b5320640c51.png" src="../../_images/c66dd7dd5bb56dc2aba0a93d07ac38f7992a5467f9621d1e41cd0b5320640c51.png" />
+</div>
+</div>
+<p>12.1.7. Have the scores remained relatively stable over the years if we look at the total scores? Or has there been some variation? How does the variation of the scores for the Netherlands compare to the scores in France, Germany, Belgium and Luxembourg? Try to answer this question by crearing a boxplot.</p>
+<p>To answer question 12.1.1, create a new dataframe containing the total scores measured in the year 2018. We can subset the dataframe using square brackets. These brackets should contain a criterium that can serve as a filter.</p>
+<p>the <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method can be used to sort the dataframe. The <code class="docutils literal notranslate"><span class="pre">by</span></code> parameter specifies the column you want to sort on.</p>
+<p>To vary the colours of the bars along with the continents (question 2), name the ‘continent’ column in the <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter.</p>
+<p>The code below creates a new dataframe, based on the original data frame that was created out of the original CSV file. It selects the scores obtained by pupils in the Netherlands during the period in between 2004 and 2018.</p>
+<p>The code below shows all the scores received by Dutch students (question 5).</p>
 <p>To display the score for boys and for girls separately (question 6), we firstly need to create a dataframe which contains the scores for boys and girls. In other words, we need to select rows in which the <code class="docutils literal notranslate"><span class="pre">subject</span></code> column either has ‘BOY’ or ‘GIRL’ as a value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -608,15 +729,26 @@ document.write(`
 <img alt="../../_images/75365ad943e30c9b33a6a9cc90a0ffaef99b53c4a538c69d1d91758eb31d7e6c.png" src="../../_images/75365ad943e30c9b33a6a9cc90a0ffaef99b53c4a538c69d1d91758eb31d7e6c.png" />
 </div>
 </div>
-<p>A box plot, finally, can be created using the <code class="docutils literal notranslate"><span class="pre">boxplot()</span></code> function.</p>
+</section>
+<section id="exercise-12-8">
+<h2>Exercise 12.8<a class="headerlink" href="#exercise-12-8" title="Permalink to this heading">#</a></h2>
+<p>Have the scores remained relatively stable over the years if we look at the total scores? Or has there been some variation? How does the variation of the scores for the Netherlands compare to the scores in France, Germany, Belgium and Luxembourg? Try to answer this question by crearing a boxplot.</p>
+<p>The names of the countries should be displayed on the X-axis, and the values associated with these countries should be displayed along the Y-axis.</p>
+<p>For this exercise, it can be useful to make a list containing the countries you are interesed in, and to filter the dataframe using the <code class="docutils literal notranslate"><span class="pre">isin()</span></code> function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">]</span>
+<span class="n">df_countries</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;location_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span> <span class="p">]</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">]</span>
+<span class="n">df_countries</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;location_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span> <span class="p">]</span>
+
+
 <span class="n">colours</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;colorblind&#39;</span> <span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">countries</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="p">)</span>
 
-<span class="n">df_countries</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;location_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span> <span class="p">]</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
@@ -630,8 +762,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="exercise-12-2">
-<h2>Exercise 12.2<a class="headerlink" href="#exercise-12-2" title="Permalink to this heading">#</a></h2>
+<section id="exercise-12-9">
+<h2>Exercise 12.9<a class="headerlink" href="#exercise-12-9" title="Permalink to this heading">#</a></h2>
 <p>The data folder of this tutorial includes a CSV file named ‘nobel.csv’. If necessary you can also download this file from the following address: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a>.</p>
 <p>Visualise the data in this data set in the following ways.</p>
 <ul class="simple">
@@ -665,7 +797,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## group by year</span>
 <span class="n">laureates_per_year</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Laureate ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 
-<span class="c1">## convert the result of &#39;group by&#39; to data frame</span>
+<span class="c1">## convert the result of &#39;group by&#39; to dataframe</span>
 <span class="n">lpg_df</span> <span class="o">=</span> <span class="n">laureates_per_year</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
 <span class="n">lpg_df</span> <span class="o">=</span> <span class="n">lpg_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="s1">&#39;Number&#39;</span><span class="p">]</span>
@@ -787,8 +919,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="id1">
-<h2>Exercise 12.1<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="exercise-12-10">
+<h2>Exercise 12.10<a class="headerlink" href="#exercise-12-10" title="Permalink to this heading">#</a></h2>
 <p>In exercise 11.3, you created a CSV file named ‘prices_of_coffee_over_time.csv’, containing data about the average price of a pound of coffee on a range of dates. Use this CSV file to create a line chart which visualises the development of these prices over time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -883,8 +1015,15 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-1">Exercise 12.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-2">Exercise 12.2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise 12.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-2">Exercise 12.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-3">Exercise 12.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-4">Exercise 12.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-5">Exercise 12.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-6">Exercise 12.6.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecercise-12-7">Ecercise 12.7.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-8">Exercise 12.8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-9">Exercise 12.9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12-10">Exercise 12.10</a></li>
 </ul>
   </nav></div>
 
