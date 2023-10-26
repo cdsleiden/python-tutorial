@@ -711,15 +711,15 @@ If you would like to use any of these, you can usually find installation instruc
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">calculate_mark</span></code> should calculate the final grade based on a set of partial grades according to the given formula.
 Grades must be rounded to integers. 5.4, for example, becomes 5 and 6.6 becomes 7.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">is_pass</span></code> should determine whether a given grade is at a pass level (i.e. equal to or higher than 6).
-This function must return a string value, ‘pass’ or ‘fail’.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pass_or_fail</span></code> should determine whether a given grade is at a pass level (i.e. equal to or higher than 6).
+This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function calculate_mark determines the final mark</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function calculate_mark determines the final mark, based on the marks for the essay and presentation</span>
 
 
-<span class="c1"># Function is_pass determines &#39;Pass&#39; or &#39;Fail&#39;</span>
+<span class="c1"># Function pass_or_fail determines &#39;Pass&#39; or &#39;Fail&#39;, based on a single mark</span>
 </pre></div>
 </div>
 </div>
@@ -731,13 +731,13 @@ This function must return a string value, ‘pass’ or ‘fail’.</p></li>
 <span class="n">presentation1</span> <span class="o">=</span> <span class="mf">8.5</span>
 <span class="n">final1</span> <span class="o">=</span> <span class="n">calculate_mark</span><span class="p">(</span><span class="n">essay1</span><span class="p">,</span> <span class="n">presentation1</span><span class="p">)</span>
 <span class="c1"># We expect the grade 7 (pass)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;final grade: </span><span class="si">{</span><span class="n">final1</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">is_pass</span><span class="p">(</span><span class="n">final1</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;final grade: </span><span class="si">{</span><span class="n">final1</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">pass_or_fail</span><span class="p">(</span><span class="n">final1</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="p">)</span>
 
 <span class="n">essay2</span> <span class="o">=</span> <span class="mf">4.5</span>
 <span class="n">presentation2</span> <span class="o">=</span> <span class="mf">5.5</span>
 <span class="n">final2</span> <span class="o">=</span> <span class="n">calculate_mark</span><span class="p">(</span><span class="n">essay2</span><span class="p">,</span> <span class="n">presentation2</span><span class="p">)</span>
 <span class="c1"># We expect the grade 5 (fail)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;final grade: </span><span class="si">{</span><span class="n">final2</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">is_pass</span><span class="p">(</span><span class="n">final2</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;final grade: </span><span class="si">{</span><span class="n">final2</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">pass_or_fail</span><span class="p">(</span><span class="n">final2</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>

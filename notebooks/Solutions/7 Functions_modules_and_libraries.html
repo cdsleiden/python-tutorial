@@ -398,31 +398,38 @@ document.write(`
 <h1>7. Functions, Modules and Libraries<a class="headerlink" href="#functions-modules-and-libraries" title="Permalink to this heading">#</a></h1>
 <section id="exercise-7-1">
 <h2>Exercise 7.1.<a class="headerlink" href="#exercise-7-1" title="Permalink to this heading">#</a></h2>
-<p>In a given university course, the final grade is determined by grade for essay and by the grade for a presentation. The presentation counts for 30% and the essay for 70%. Write two functions: (1) one function which can calculate the final grade based on a set of partial grades. Grades must be rounded to integers. 5.4, for example, becomes 5 and 6.6 becomes 7. (2) Write a second function which can determine whether a given grade is at a pass level (i.e. higher than 6). This function must return a boolean value, in which ‘pass’ is true and ‘fail’ equals false.</p>
+<p>In a given university course, the final grade is determined by grade for essay and by the grade for a presentation. The presentation counts for 30% and the essay for 70%.</p>
+<p>Write two functions:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">calculate_mark</span></code> should calculate the final grade based on a set of partial grades according to the given formula.
+Grades must be rounded to integers. 5.4, for example, becomes 5 and 6.6 becomes 7.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pass_or_fail</span></code> should determine whether a given grade is at a pass level (i.e. equal to or higher than 6).
+This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculateMark</span><span class="p">(</span> <span class="n">essay</span><span class="p">,</span> <span class="n">presentation</span> <span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_mark</span><span class="p">(</span> <span class="n">essay</span><span class="p">,</span> <span class="n">presentation</span> <span class="p">):</span>
     <span class="n">partial1</span> <span class="o">=</span> <span class="n">essay</span> <span class="o">*</span> <span class="mf">0.7</span>
     <span class="n">partial2</span> <span class="o">=</span> <span class="n">presentation</span> <span class="o">*</span> <span class="mf">0.3</span>
     <span class="n">final</span> <span class="o">=</span> <span class="n">partial1</span> <span class="o">+</span> <span class="n">partial2</span>
     <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">final</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">isPass</span><span class="p">(</span><span class="n">grade</span><span class="p">):</span>
-    <span class="nb">eval</span> <span class="o">=</span> <span class="s1">&#39;Fail&#39;</span>
-    <span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
-        <span class="nb">eval</span> <span class="o">=</span> <span class="s1">&#39;Pass&#39;</span>
-    <span class="k">return</span> <span class="nb">eval</span>
+<span class="k">def</span> <span class="nf">pass_or_fail</span><span class="p">(</span><span class="n">grade</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;Fail&#39;</span>
+    <span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;Pass&#39;</span>
+    <span class="k">return</span> <span class="n">result</span>
         
 
-<span class="n">essay</span> <span class="o">=</span> <span class="mf">7.0</span>
-<span class="n">presentation</span> <span class="o">=</span> <span class="mf">8.5</span>
-<span class="n">final</span> <span class="o">=</span> <span class="n">calculateMark</span><span class="p">(</span><span class="n">essay</span><span class="p">,</span><span class="n">presentation</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;final grade: </span><span class="si">{}</span><span class="s2"> (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">final</span> <span class="p">,</span> <span class="n">isPass</span><span class="p">(</span><span class="n">final</span><span class="p">)</span> <span class="p">)</span>  <span class="p">)</span> 
+<span class="n">essay1</span> <span class="o">=</span> <span class="mf">7.0</span>
+<span class="n">presentation1</span> <span class="o">=</span> <span class="mf">8.5</span>
+<span class="n">final1</span> <span class="o">=</span> <span class="n">calculate_mark</span><span class="p">(</span><span class="n">essay1</span><span class="p">,</span> <span class="n">presentation1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;final grade: </span><span class="si">{}</span><span class="s2"> (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">final1</span> <span class="p">,</span> <span class="n">pass_or_fail</span><span class="p">(</span><span class="n">final1</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
 
-<span class="n">essay</span> <span class="o">=</span> <span class="mf">4.5</span>
-<span class="n">presentation</span> <span class="o">=</span> <span class="mf">5.5</span>
-<span class="n">final</span> <span class="o">=</span> <span class="n">calculateMark</span><span class="p">(</span><span class="n">essay</span><span class="p">,</span><span class="n">presentation</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;final grade: </span><span class="si">{}</span><span class="s2"> (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">final</span> <span class="p">,</span> <span class="n">isPass</span><span class="p">(</span><span class="n">final</span><span class="p">)</span> <span class="p">)</span>  <span class="p">)</span>
+<span class="n">essay2</span> <span class="o">=</span> <span class="mf">4.5</span>
+<span class="n">presentation2</span> <span class="o">=</span> <span class="mf">5.5</span>
+<span class="n">final2</span> <span class="o">=</span> <span class="n">calculate_mark</span><span class="p">(</span><span class="n">essay2</span><span class="p">,</span> <span class="n">presentation2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;final grade: </span><span class="si">{}</span><span class="s2"> (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">final2</span> <span class="p">,</span> <span class="n">pass_or_fail</span><span class="p">(</span><span class="n">final2</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
