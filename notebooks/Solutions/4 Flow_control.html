@@ -382,7 +382,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-1">Exercise 4.1.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-2">Exercise 4.2.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-3">Exercise 4.3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4.</a></li>
 </ul>
             </nav>
         </div>
@@ -492,11 +492,14 @@ Note that it is possible to combine two different Boolean expressions using the 
 </div>
 </section>
 <section id="exercise-4-4">
-<h2>Exercise 4.4<a class="headerlink" href="#exercise-4-4" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 4.4.<a class="headerlink" href="#exercise-4-4" title="Permalink to this heading">#</a></h2>
 <p>Program a small guessing game. In this game, the player needs to guess a number in between 1 and 50. You can use the code below as a basis.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">randint()</span></code> method from <code class="docutils literal notranslate"><span class="pre">random</span></code> can be used, firstly, to generate a random integer.</p>
-<p>Use the function <code class="docutils literal notranslate"><span class="pre">input()</span></code> to request a value from the user. The function int() needs to be used to convert the input into an integer.</p>
+<p>Use the function <code class="docutils literal notranslate"><span class="pre">input()</span></code> to request a value from the user. The function <code class="docutils literal notranslate"><span class="pre">int()</span></code> needs to be used to convert the input into an integer.</p>
 <p>When the user enters a value which is too low or too high, this information is communicated to the user via a print statement. To test whether the number that is guesses is correct, you can work with the equality (<code class="docutils literal notranslate"><span class="pre">==</span></code>) and the inequality (<code class="docutils literal notranslate"><span class="pre">!=</span></code>) operators.</p>
+<p>Hint: you will need to combine the different kinds of flow control to complete the whole game.
+Start by checking if the guessed number is correct and making sure that this part of the code works as you expect.
+When that works, think which parts of the code need to be repeated to let the player guess until the number was found.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
@@ -588,7 +591,7 @@ Note that it is possible to combine two different Boolean expressions using the 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-1">Exercise 4.1.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-2">Exercise 4.2.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-3">Exercise 4.3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4.</a></li>
 </ul>
   </nav></div>
 

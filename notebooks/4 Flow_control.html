@@ -382,6 +382,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Flow control</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-execution">Conditional execution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">Iteration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aside-getting-user-input">Aside: getting user input</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
@@ -482,6 +483,35 @@ document.write(`
 </div>
 <p>Remember that the code blocks that follow lines starting with <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> all need to be indented.</p>
 </section>
+<section id="aside-getting-user-input">
+<h2>Aside: getting user input<a class="headerlink" href="#aside-getting-user-input" title="Permalink to this heading">#</a></h2>
+<p>In the examples above, we first manually assigned a number (e.g., <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">8</span></code>) that is then used in the rest of the code block.
+That means that we need to change our code if we want to run the code with different input.
+Luckily there is a way to ask for a value at the time that the code is run (also known as <em>at runtime</em>), which is the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">input()</span></code> function takes a string, usually a question or prompt for a value, and returns the value that the user entered as a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What is your name?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you ask for a number using <code class="docutils literal notranslate"><span class="pre">input(&quot;Please</span> <span class="pre">enter</span> <span class="pre">a</span> <span class="pre">number&quot;)</span></code>, the value returned by <code class="docutils literal notranslate"><span class="pre">input</span></code> is still a string.
+You can convert this value to an integer using the <code class="docutils literal notranslate"><span class="pre">int(value)</span></code> function.
+If the string cannot be converted, for example if it is not actually a number, Python will raise an error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_number</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter a number: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The type of my_number is&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">my_number</span><span class="p">))</span>
+
+<span class="n">my_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_number</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The type of my_int is&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">my_int</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
@@ -511,7 +541,18 @@ document.write(`
 Note that it is possible to combine two different Boolean expressions using the keyword <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Please enter a year: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Request a year (which is a number)</span>
+<span class="c1"># and convert it to an integer</span>
+<span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Please enter a year: &quot;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Decide in which century this year is.</span>
+<span class="c1"># If the year is between 1500 and 1599, then we say the year is in the sixteenth century.</span>
+
+<span class="c1"># Else, if the year is ..., then ...</span>
+
+<span class="c1"># ...</span>
+
+<span class="c1"># In all other cases, we say &quot;our knowledge is limited&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -521,8 +562,11 @@ Note that it is possible to combine two different Boolean expressions using the 
 <h2>Exercise 4.4.<a class="headerlink" href="#exercise-4-4" title="Permalink to this heading">#</a></h2>
 <p>Program a small guessing game. In this game, the player needs to guess a number in between 1 and 50. You can use the code below as a basis.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">randint()</span></code> method from <code class="docutils literal notranslate"><span class="pre">random</span></code> can be used, firstly, to generate a random integer.</p>
-<p>Use the function <code class="docutils literal notranslate"><span class="pre">input()</span></code> to request a value from the user. The function int() needs to be used to convert the input into an integer.</p>
+<p>Use the function <code class="docutils literal notranslate"><span class="pre">input()</span></code> to request a value from the user. The function <code class="docutils literal notranslate"><span class="pre">int()</span></code> needs to be used to convert the input into an integer.</p>
 <p>When the user enters a value which is too low or too high, this information is communicated to the user via a print statement. To test whether the number that is guesses is correct, you can work with the equality (<code class="docutils literal notranslate"><span class="pre">==</span></code>) and the inequality (<code class="docutils literal notranslate"><span class="pre">!=</span></code>) operators.</p>
+<p>Hint: you will need to combine the different kinds of flow control to complete the whole game.
+Start by checking if the guessed number is correct and making sure that this part of the code works as you expect.
+When that works, think which parts of the code need to be repeated to let the player guess until the number was found.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
@@ -608,6 +652,7 @@ Note that it is possible to combine two different Boolean expressions using the 
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Flow control</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-execution">Conditional execution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">Iteration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aside-getting-user-input">Aside: getting user input</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
