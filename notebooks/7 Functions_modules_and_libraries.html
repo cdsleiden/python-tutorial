@@ -456,11 +456,6 @@ To call a function, you to refer to its name followed by parentheses.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -469,27 +464,28 @@ To call a function, you to refer to its name followed by parentheses.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
-</pre></div>
 </div>
-</div>
-</div>
-<p>If you don’t include the parentheses, you don’t call the function, but get it as a value.
-This is often not what you want.</p>
+<p>Remember: <strong>always include the parentheses when you call a function</strong>.</p>
+<p>If you don’t include the parentheses, you don’t call the function, you only refer to it.
+There are use cases for this behaviour, although few of these use cases are relevant for beginners.
+The most useful example is using the <code class="docutils literal notranslate"><span class="pre">help</span></code> function: you <em>call</em> the <code class="docutils literal notranslate"><span class="pre">help</span></code> function and “give it” a function that you want help with.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Returns the function, but does not *call* it</span>
-<span class="nb">print</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function print&gt;
+<span class="nb">dict</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;Give&quot; the print function to the help function</span>
+<span class="n">help</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>“Giving” things to functions is the topic of this next section.</p>
 <section id="parameters-and-arguments">
 <h3>Parameters and arguments<a class="headerlink" href="#parameters-and-arguments" title="Permalink to this heading">#</a></h3>
 <p>When a function accepts an input, it is said to have a <em>parameter</em>.
