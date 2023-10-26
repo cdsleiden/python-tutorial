@@ -390,8 +390,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-4">Exercise 10.4.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#webscraping">Webscraping</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-scraping-scrapy">Advanced scraping: Scrapy</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#webscraping">Webscraping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-scraping-scrapy">Advanced scraping: Scrapy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-5">Exercise 10.5.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-6">Exercise 10.6.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-7">Exercise 10.7.</a></li>
@@ -714,12 +714,12 @@ The status code 200 indicates that the request was successful. The infamous stat
 <p>To get the most out of webscraping, you need to have a basic understanding of HTML, the language that is use to make web pages. HTML, in short, encodes information in what are called elements or tags. The elements consist of a code surrounded by angular brackets, such as <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code>. Elements may also have attributes. in the HTML fragment <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">href=&quot;https://example.com/&quot;&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code> is the name of the element and <code class="docutils literal notranslate"><span class="pre">href</span></code> is the attribute. If you want to learn more about HTML, this <a class="reference external" href="https://bookandbyte.universiteitleiden.nl/DMT/HTML/HTML.pdf">basic introduction</a> may provide a start, but many other tutorials are available on the web.</p>
 <p>Web scraping should be used with caution, because it may be not always be allowed to download large quantities of data from a specific website. In this tutorial, we will only discuss code that extracts information from single web pages.</p>
 <p>To scrape web pages, you firstly need to download them. This can be done using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library that was explained above.</p>
-<p>The code below scrapes data from a website which was developed specifically for developers who want to practice their web scraping skills, <span class="xref myst">toscrape.com</span>. It is a safe web scraping sandbox. The web page <a class="reference external" href="http://books.toscrape.com/">http://books.toscrape.com/</a> displays a fictional bookstore.</p>
+<p>The code below scrapes data from a website which was developed specifically for developers who want to practice their web scraping skills, <a class="reference external" href="https://toscrape.com">toscrape.com</a>. It is a safe web scraping sandbox. The web page <a class="reference external" href="https://books.toscrape.com/">books.toscrape.com</a> displays a fictional bookstore.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://books.toscrape.com/&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://books.toscrape.com/&#39;</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">url</span> <span class="p">)</span>
 
@@ -754,23 +754,23 @@ The status code 200 indicates that the request was successful. The infamous stat
 <p>The books are all listed within an element named <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code>. This elements creates an ‘ordered list’. Inside the <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code>, there are separate <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> elements (‘list items’) for each book. Next, within each <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> element, we can find an element named <code class="docutils literal notranslate"><span class="pre">&lt;article&gt;</span></code>, with an attribute named <code class="docutils literal notranslate"><span class="pre">class</span></code>. The value of this attribute is <code class="docutils literal notranslate"><span class="pre">article_pod</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> &lt;article class=&quot;product_pod&quot;&gt;
  
-           &lt;div class=&quot;image_container&quot;&gt;
-            &lt;a href=&quot;catalogue/libertarianism-for-beginners_982/index.html&quot;&gt;
-             &lt;img alt=&quot;Libertarianism for Beginners&quot; class=&quot;thumbnail&quot; src=&quot;media/cache/0b/bc/0bbcd0a6f4bcd81ccb1049a52736406e.jpg&quot;/&gt;
-            &lt;/a&gt;
-           &lt;/div&gt;
+  &lt;div class=&quot;image_container&quot;&gt;
+  &lt;a href=&quot;catalogue/libertarianism-for-beginners_982/index.html&quot;&gt;
+    &lt;img alt=&quot;Libertarianism for Beginners&quot; class=&quot;thumbnail&quot; src=&quot;media/cache/0b/bc/0bbcd0a6f4bcd81ccb1049a52736406e.jpg&quot;/&gt;
+  &lt;/a&gt;
+  &lt;/div&gt;
 
-           &lt;h3&gt;
-            &lt;a href=&quot;catalogue/libertarianism-for-beginners_982/index.html&quot; title=&quot;Libertarianism for Beginners&quot;&gt;
-             Libertarianism for Beginners
-            &lt;/a&gt;
-           &lt;/h3&gt;
-           &lt;div class=&quot;product_price&quot;&gt;
-            &lt;p class=&quot;price_color&quot;&gt;
-             £51.33
-            &lt;/p&gt;
-            
-          &lt;/article&gt;
+  &lt;h3&gt;
+  &lt;a href=&quot;catalogue/libertarianism-for-beginners_982/index.html&quot; title=&quot;Libertarianism for Beginners&quot;&gt;
+    Libertarianism for Beginners
+  &lt;/a&gt;
+  &lt;/h3&gt;
+  &lt;div class=&quot;product_price&quot;&gt;
+  &lt;p class=&quot;price_color&quot;&gt;
+    £51.33
+  &lt;/p&gt;
+  
+&lt;/article&gt;
 </pre></div>
 </div>
 <p>The title of the book can be found in an <code class="docutils literal notranslate"><span class="pre">h3</span></code> element. The price is given in a <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> element, with the class <code class="docutils literal notranslate"><span class="pre">price_color</span></code>. This <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> element is contained within a <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> with the class <code class="docutils literal notranslate"><span class="pre">product_price</span></code>. ‘Scraping’ the page really means that we need to extract the values we need from these HTML elements.</p>
@@ -824,19 +824,19 @@ The status code 200 indicates that the request was successful. The infamous stat
 </div>
 </div>
 </div>
-</section>
 <section id="advanced-scraping-scrapy">
-<h2>Advanced scraping: Scrapy<a class="headerlink" href="#advanced-scraping-scrapy" title="Permalink to this heading">#</a></h2>
+<h3>Advanced scraping: Scrapy<a class="headerlink" href="#advanced-scraping-scrapy" title="Permalink to this heading">#</a></h3>
 <p>As you can see, web scraping can easily become rather difficult. You need to inspect the structure of the HTML source quite carefully, and you often need to work with fairly complicated code to extract only the values that you need. This tutorial has only touched the surface of web scraping. To get specific data from webpages or APIs, you will often need to dig deeply into the data that you get.</p>
 <p>A more advanced framework (or toolkit) for webscraping with Python is <a class="reference external" href="https://scrapy.org">Scrapy</a>. This framework can simplify the process of building a scraper/crawler considerably. Scrapy helps you to ensure that you don’t send too many requests at the same time, for example. The <a class="reference external" href="https://docs.scrapy.org/en/latest/intro/tutorial.html">Scrapy tutorial</a> offers more information on this library.</p>
+</section>
 <section id="exercise-10-5">
 <h3>Exercise 10.5.<a class="headerlink" href="#exercise-10-5" title="Permalink to this heading">#</a></h3>
-<p>This tutorial has explained how you can extract data about the titles and the prices of all the books that are shown on the web page <a class="reference external" href="http://books.toscrape.com/">http://books.toscrape.com/</a>.</p>
-<p>Can you write code to extract the URLs of all the book covers on this page? These URLs can be found in the <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> elements within the <code class="docutils literal notranslate"><span class="pre">&lt;article&gt;</span></code> about each book. Note that the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> element specifies a relative path. To change the relative path into an absolute path, you need to concatenate the base url (<a class="reference external" href="http://books.toscrape.com/">http://books.toscrape.com/</a> and the relative path to the image.</p>
+<p>This tutorial has explained how you can extract data about the titles and the prices of all the books that are shown on the web page <a class="reference external" href="https://books.toscrape.com/">https://books.toscrape.com/</a>.</p>
+<p>Can you write code to extract the URLs of all the book covers on this page? These URLs can be found in the <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> elements within the <code class="docutils literal notranslate"><span class="pre">&lt;article&gt;</span></code> about each book. Note that the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> element specifies a relative path. To change the relative path into an absolute path, you need to concatenate the base url (<a class="reference external" href="https://books.toscrape.com/">https://books.toscrape.com/</a>) and the relative path to the image.</p>
 </section>
 <section id="exercise-10-6">
 <h3>Exercise 10.6.<a class="headerlink" href="#exercise-10-6" title="Permalink to this heading">#</a></h3>
-<p>On the web page <a class="reference external" href="http://books.toscrape.com/">http://books.toscrape.com/</a>, the menu on the lefthand side contains a list of all the subject categories of the books.</p>
+<p>On the web page <a class="reference external" href="https://books.toscrape.com/">https://books.toscrape.com/</a>, the menu on the lefthand side contains a list of all the subject categories of the books.</p>
 <p>Try to write some code which can extract all the terms in this list. This list is in an element named <code class="docutils literal notranslate"><span class="pre">div</span></code>, and this <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> has a <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute with the value <code class="docutils literal notranslate"><span class="pre">side_categories</span></code>. The categories themselves are all encoded within an <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> element.</p>
 </section>
 <section id="exercise-10-7">
@@ -1028,8 +1028,8 @@ The status code 200 indicates that the request was successful. The infamous stat
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-4">Exercise 10.4.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#webscraping">Webscraping</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-scraping-scrapy">Advanced scraping: Scrapy</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#webscraping">Webscraping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-scraping-scrapy">Advanced scraping: Scrapy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-5">Exercise 10.5.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-6">Exercise 10.6.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-7">Exercise 10.7.</a></li>

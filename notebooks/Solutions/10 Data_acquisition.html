@@ -617,14 +617,14 @@ document.write(`
 </section>
 <section id="exercise-10-5">
 <h2>Exercise 10.5.<a class="headerlink" href="#exercise-10-5" title="Permalink to this heading">#</a></h2>
-<p>This tutorial has explained how you can extract data about the titles and the prices of all the books that are shown on the web page <a class="reference external" href="http://books.toscrape.com/">http://books.toscrape.com/</a>.</p>
-<p>Can you write code to extract the URLs of all the book covers on this page? These URLs can be found in the <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> elements within the <code class="docutils literal notranslate"><span class="pre">&lt;article&gt;</span></code> about each book. Note that the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> element specifies a relative path. To change the relative path into an absolute path, you need to concatenate the base url (<a class="reference external" href="http://books.toscrape.com/">http://books.toscrape.com/</a> and the relative path to the image.</p>
+<p>This tutorial has explained how you can extract data about the titles and the prices of all the books that are shown on the web page <a class="reference external" href="https://books.toscrape.com/">https://books.toscrape.com/</a>.</p>
+<p>Can you write code to extract the URLs of all the book covers on this page? These URLs can be found in the <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> elements within the <code class="docutils literal notranslate"><span class="pre">&lt;article&gt;</span></code> about each book. Note that the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> element specifies a relative path. To change the relative path into an absolute path, you need to concatenate the base url (<a class="reference external" href="https://books.toscrape.com/">https://books.toscrape.com/</a>) and the relative path to the image.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://books.toscrape.com/&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://books.toscrape.com/&#39;</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">url</span> <span class="p">)</span>
 
 
@@ -649,14 +649,14 @@ document.write(`
 </section>
 <section id="exercise-10-6">
 <h2>Exercise 10.6.<a class="headerlink" href="#exercise-10-6" title="Permalink to this heading">#</a></h2>
-<p>On the web page <a class="reference external" href="http://books.toscrape.com/">http://books.toscrape.com/</a>, the menu on the lefthand side contains a list of all the subject categories of the books.</p>
+<p>On the web page <a class="reference external" href="https://books.toscrape.com/">https://books.toscrape.com/</a>, the menu on the lefthand side contains a list of all the subject categories of the books.</p>
 <p>Try to write some code which can extract all the terms in this list. This list is in an element named <code class="docutils literal notranslate"><span class="pre">div</span></code>, and this <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> has a <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute with the value <code class="docutils literal notranslate"><span class="pre">side_categories</span></code>. The categories themselves are all encoded within an <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> element.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://books.toscrape.com/&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://books.toscrape.com/&#39;</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">url</span> <span class="p">)</span>
 
 
