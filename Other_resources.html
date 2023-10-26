@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -76,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -132,6 +142,7 @@ const thebe_selector_output = ".output, .cell_output"
   
 
 <a class="navbar-brand logo" href="Welcome.html">
+  
   
   
   
@@ -330,10 +341,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -341,7 +352,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -368,7 +379,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-tutorials">Python Tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-python-tutorials">Complete Python Tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topical-python-tutorials">Topical Python Tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualisation">Data visualisation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-expression-tutorials">Regular Expression Tutorials</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-programming-interface-examples">Application Programming Interface examples</a></li>
 </ul>
@@ -384,19 +397,32 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="other-resources">
 <h1>Other resources<a class="headerlink" href="#other-resources" title="Permalink to this heading">#</a></h1>
-<section id="python-tutorials">
-<h2>Python Tutorials<a class="headerlink" href="#python-tutorials" title="Permalink to this heading">#</a></h2>
+<p>We are aware that other resources exist to help you learn programming in Python.
+This page lists a selection of complete (text or video) tutorials and MOOCs, as well as tutorials and books on specific topics.</p>
+<section id="complete-python-tutorials">
+<h2>Complete Python Tutorials<a class="headerlink" href="#complete-python-tutorials" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Video series on programming in Python</a> recorded by Paul Vierthaler for his Text Mining and Digital Humanities class, taught in 2018-2019.</p></li>
 <li><p><a class="reference external" href="https://www.karsdorp.io/python-course/">Python programming for the Humanities</a> by Folgert Karsdorp.</p></li>
-<li><p><a class="reference external" href="https://programminghistorian.org/en/lessons/?topic=python">Python tutorials</a> on The Programing Historian</p></li>
-<li><p><a class="reference external" href="https://web.archive.org/web/20180418110409/http://www.diveintopython.net/toc/index.html">Dive into Python</a> by Mark Pilgrim</p></li>
+<li><p><a class="reference external" href="https://web.archive.org/web/20180418110409/http://www.diveintopython.net/toc/index.html">Dive into Python</a> by Mark Pilgrim (from 2004).</p></li>
 <li><p>MOOC <a class="reference external" href="https://www.coursera.org/learn/python">Programming for Everybody</a> (Getting Started with Python) offered by the University of Michigan.</p></li>
-<li><p><a class="reference external" href="https://www.datacamp.com/courses/intro-to-python-for-data-science?utm_source=adwords_ppc&amp;utm_campaignid=805200711&amp;utm_adgroupid=43370829484&amp;utm_device=c&amp;utm_keyword=%2Bdatacamp%20%2Bpython&amp;utm_matchtype=b&amp;utm_network=g&amp;utm_adpostion=&amp;utm_creative=255831678431&amp;utm_targetid=aud-334851567295:kwd-414126611260&amp;utm_loc_interest_ms=&amp;utm_loc_physical_ms=9064324&amp;gclid=EAIaIQobChMIrYq53Iuh6AIVjuJ3Ch2jtADUEAAYASABEgIuO_D_BwE">Introduction to Python</a> on DataCamp</p></li>
+<li><p><a class="reference external" href="https://www.datacamp.com/courses/intro-to-python-for-data-science?gclid=EAIaIQobChMIrYq53Iuh6AIVjuJ3Ch2jtADUEAAYASABEgIuO_D_BwE">Introduction to Python</a> on DataCamp.</p></li>
+</ul>
+</section>
+<section id="topical-python-tutorials">
+<h2>Topical Python Tutorials<a class="headerlink" href="#topical-python-tutorials" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://programminghistorian.org/en/lessons/?topic=python">Python tutorials on The Programming Historian</a>.</p></li>
 <li><p><a class="reference external" href="https://www.humanitiesdataanalysis.org/">Humanities Data Analysis</a> by Folgert Karsdorp, Mike Kestemont and Allen Riddell.</p></li>
 <li><p><a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a> by Jake vanderplas.</p></li>
-<li><p><a class="reference external" href="https://github.com/rougier/scientific-visualization-book">Data Visualisation Handbook</a> by Nicolas Rougier.</p></li>
+<li><p><a class="reference external" href="https://github.com/rougier/scientific-visualization-book">Scientific Visualization: Python + Matplotlib Handbook</a> by Nicolas Rougier.</p></li>
 <li><p><a class="reference external" href="https://github.com/sgsinclair/alta/blob/master/ipynb/ArtOfLiteraryTextAnalysis.ipynb">The Art of Literary Text Analysis</a> by Geoffrey Rockwell and Stéfan Sinclair.</p></li>
+</ul>
+</section>
+<section id="data-visualisation">
+<h2>Data visualisation<a class="headerlink" href="#data-visualisation" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/qQ9Wu1IxsYw">Computerphile video on the foundations of data visualisation</a> (11 minutes) by Dr Kai Xu (University of Nottingham) and Sean Riley.</p></li>
 </ul>
 </section>
 <section id="regular-expression-tutorials">
@@ -438,11 +464,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Installation.html"
@@ -462,10 +487,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -480,7 +502,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-tutorials">Python Tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-python-tutorials">Complete Python Tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topical-python-tutorials">Topical Python Tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualisation">Data visualisation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-expression-tutorials">Regular Expression Tutorials</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-programming-interface-examples">Application Programming Interface examples</a></li>
 </ul>
@@ -530,8 +554,8 @@ By Peter Verhaar and Ben Companjen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
 
   <footer class="bd-footer">
   </footer>
