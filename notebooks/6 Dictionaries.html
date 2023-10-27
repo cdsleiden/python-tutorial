@@ -167,15 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3%20Working_with_strings.html">3. Working with strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4%20Flow_control.html">4. Flow control</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="5%20Lists.html">5. Lists</a></li>
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Dictionaries</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="9%20Regular_expressions.html">9. Regular Expressions</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="10%20Data_acquisition.html">10. Data acquisition</a></li>
@@ -379,22 +374,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Dictionaries</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dictionary">Creating a dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dictionary">Creating a dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-1">Exercise 6.1.</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-existing-keys">Non-existing keys</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-way-of-creating-dictionaries">Another way of creating dictionaries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-dictionary">Navigating a dictionary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-a-dictionary">Sorting a dictionary</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-1">Exercise 6.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-2">Exercise 6.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-3">Exercise 6.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-a-dictionary">Sorting a dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-2">Exercise 6.2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-3">Exercise 6.3.</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -408,17 +400,13 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="dictionaries">
 <h1>6. Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h1>
 <p>Like a list, a dictionary is a data structure which can be used to store multiple items. In the case of a dictionary, each item consists of two parts: a <em>key</em> and a <em>value</em>. These keys need to be specified explicitly when you add an item to a dictionary, and they can be of any type.</p>
-<p>We learned how we can look up values in a list by their index, which is always a number.
-In a dictionary, we say that we use a <em>key</em>, not index, to look up the corresponding <em>value</em>.
-Keys can be of any type, but you do need to specify them explicitly when you add an item to a dictionary.
-You will see that keys are often strings, because it makes it easier to understand the code.</p>
 <section id="creating-a-dictionary">
 <h2>Creating a dictionary<a class="headerlink" href="#creating-a-dictionary" title="Permalink to this heading">#</a></h2>
 <p>There are multiple ways to create a dictionary.
 One way is to use the <code class="docutils literal notranslate"><span class="pre">dict()</span></code> function. This function results in an empty dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shakespeare_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">biography_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -427,35 +415,69 @@ One way is to use the <code class="docutils literal notranslate"><span class="pr
 <p>Importantly, each of these keys needs to be unique. In the example below, the keys are all strings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shakespeare_dict</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;William&#39;</span>
-<span class="n">shakespeare_dict</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Shakespeare&#39;</span>
-<span class="n">shakespeare_dict</span><span class="p">[</span><span class="s1">&#39;year_of_birth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1564</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">biography_dict</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Isaac&#39;</span>
+<span class="n">biography_dict</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Newton&#39;</span>
+<span class="n">biography_dict</span><span class="p">[</span><span class="s1">&#39;year_of_birth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1642</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>You can access the individual items of the dictionary by mentioning the keys of these items inside square brackets. The code below prints the <em>values</em> that are associated with the two keys that are provided.</p>
+<p>We saw that, in the case of lists, we can look up values in a list by their index, which is always a number. The items in a dictionary can be accessed in a similar way. We can access the individual items of the dictionary by mentioning the keys of these items inside square brackets. The code below prints the <em>values</em> that are associated with the two keys that are provided.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">shakespeare_dict</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">])</span>
-<span class="c1"># prints &#39;William&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">shakespeare_dict</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">])</span>
-<span class="c1"># prints &#39;Shakespeare&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">biography_dict</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">])</span>
+<span class="c1"># prints &#39;Isaac&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">biography_dict</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">])</span>
+<span class="c1"># prints &#39;Newton&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Just like regular variables, you can overwrite values in dictionaries by assigning a different value to the key.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">biography_dict</span><span class="p">[</span><span class="s1">&#39;year_of_birth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1643</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise-6-1">
+<h3>Exercise 6.1.<a class="headerlink" href="#exercise-6-1" title="Permalink to this heading">#</a></h3>
+<p>Using the dictionary <code class="docutils literal notranslate"><span class="pre">person_data</span></code> below, print the following sentence: “Louis Elsevier was a printer. He was born in 1540 in Leuven and died in 1617 in Leiden.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;firstName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;louis&#39;</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;lastName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;elsevier&#39;</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;profession&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;printer&#39;</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;yob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1540</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;yod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1617</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;pob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leuven&#39;</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;pod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leiden&#39;</span>
+
+<span class="c1"># Print the sentence</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="non-existing-keys">
 <h2>Non-existing keys<a class="headerlink" href="#non-existing-keys" title="Permalink to this heading">#</a></h2>
-<p>As was mentioned, the individual items of the dictionaries can be accessed using their keys. When you reference a key that does not actually exist in the dictionary, however, the code produces an error. It is evidently impossible to retrieve a value for a key that does not exist.</p>
+<p>As was mentioned, the individual items of the dictionaries can be accessed using their keys. When you reference a key that does not actually exist in the dictionary, however, the code produces an error (more specifically: a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>). It is evidently impossible to retrieve a value for a key that does not exist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">biography_dict</span><span class="p">[</span><span class="s1">&#39;number_of_children&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>To avoid such error messages, you can make use of the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method. As the first parameter, you need to mention the key of the item that you want to retrieve. If the key does indeed exist, the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method returns the value associated with this key. If it does not exist, the methods returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">shakespeare_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="s1">&#39;year_of_birth&#39;</span> <span class="p">)</span> <span class="p">)</span>
-<span class="c1"># prints 1564</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">shakespeare_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="s1">&#39;year_of_death&#39;</span> <span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">biography_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="s1">&#39;year_of_birth&#39;</span> <span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">biography_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="s1">&#39;year_of_death&#39;</span> <span class="p">)</span> <span class="p">)</span>
 <span class="c1"># prints None</span>
 </pre></div>
 </div>
@@ -465,7 +487,7 @@ One way is to use the <code class="docutils literal notranslate"><span class="pr
 <p>Because the key ‘number_of_children’ has not been set yet in the dictionary named ‘shakespeare_dict’, the code below prints the number 0, which is the value that is supplied as a second parameter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">shakespeare_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="s1">&#39;number_of_children&#39;</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">biography_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="s1">&#39;number_of_children&#39;</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -522,12 +544,8 @@ Strings are sorted alphabetically and integers and floats are sorted numerically
 </div>
 </div>
 <p>It is also possible to sort a dictionary by its values, but that is outside the scope of this tutorial.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
-<section id="exercise-6-1">
-<h2>Exercise 6.1.<a class="headerlink" href="#exercise-6-1" title="Permalink to this heading">#</a></h2>
+<section id="exercise-6-2">
+<h3>Exercise 6.2.<a class="headerlink" href="#exercise-6-2" title="Permalink to this heading">#</a></h3>
 <p>The code below creates a new dictionary. This dictionary connects a number of ISBNs to the titles of the books they identify.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -550,29 +568,8 @@ Strings are sorted alphabetically and integers and floats are sorted numerically
 <p>Write some code which can print the title that corresponds to ISBN 9781447289395.</p>
 <p>Print a list of all the novels. Display both the ISBN and the title.</p>
 </section>
-<section id="exercise-6-2">
-<h2>Exercise 6.2.<a class="headerlink" href="#exercise-6-2" title="Permalink to this heading">#</a></h2>
-<p>Using the dictionary <code class="docutils literal notranslate"><span class="pre">person_data</span></code> below, print the following sentence: “Louis Elsevier was a printer. He was born in 1540 in Leuven and died in 1617 in Leiden.”</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-
-<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;firstName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;louis&#39;</span>
-<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;lastName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;elsevier&#39;</span>
-<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;profession&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;printer&#39;</span>
-<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;yob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1540</span>
-<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;yod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1617</span>
-<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;pob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leuven&#39;</span>
-<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;pod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leiden&#39;</span>
-
-<span class="c1"># Print the sentence</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="exercise-6-3">
-<h2>Exercise 6.3.<a class="headerlink" href="#exercise-6-3" title="Permalink to this heading">#</a></h2>
+<h3>Exercise 6.3.<a class="headerlink" href="#exercise-6-3" title="Permalink to this heading">#</a></h3>
 <p>We have a dictionary of countries in the European Union and their capitals.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -621,6 +618,7 @@ Strings are sorted alphabetically and integers and floats are sorted numerically
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -687,22 +685,19 @@ Strings are sorted alphabetically and integers and floats are sorted numerically
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Dictionaries</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dictionary">Creating a dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dictionary">Creating a dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-1">Exercise 6.1.</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-existing-keys">Non-existing keys</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-way-of-creating-dictionaries">Another way of creating dictionaries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-dictionary">Navigating a dictionary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-a-dictionary">Sorting a dictionary</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-1">Exercise 6.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-2">Exercise 6.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-3">Exercise 6.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-a-dictionary">Sorting a dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-2">Exercise 6.2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-3">Exercise 6.3.</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

@@ -167,15 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3%20Working_with_strings.html">3. Working with strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4%20Flow_control.html">4. Flow control</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../5%20Lists.html">5. Lists</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../6%20Dictionaries.html">6. Dictionaries</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../9%20Regular_expressions.html">9. Regular Expressions</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../10%20Data_acquisition.html">10. Data acquisition</a></li>
@@ -379,12 +374,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-1">Exercise 5.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-1">Exercise 5.1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-2">Exercise 5.2.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-3">Exercise 5.3.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-4">Exercise 5.4.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-5">Exercise 5.5.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-6">Exercise 5.6.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-7">Exercise 5.7.</a></li>
 </ul>
             </nav>
         </div>
@@ -399,7 +395,36 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="lists">
 <h1>5. Lists<a class="headerlink" href="#lists" title="Permalink to this heading">#</a></h1>
 <section id="exercise-5-1">
-<h2>Exercise 5.1.<a class="headerlink" href="#exercise-5-1" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 5.1<a class="headerlink" href="#exercise-5-1" title="Permalink to this heading">#</a></h2>
+<p>The list named <code class="docutils literal notranslate"><span class="pre">titles</span></code> below brings together a number of book titles. Print a sentence that gives information about the number of books in this list of titles.
+Next, create a new list named <code class="docutils literal notranslate"><span class="pre">last_two</span></code> containing only the last two titles in this series.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Philosopher&#39;s Stone&quot;</span><span class="p">,</span><span class="s2">&quot;Chamber of Secrets&quot;</span><span class="p">,</span><span class="s2">&quot;Prisoner of Azkaban&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Goblet of Fire&quot;</span><span class="p">,</span><span class="s2">&quot;Order of the Phoenix&quot;</span><span class="p">,</span><span class="s2">&quot;Half-Blood Prince&quot;</span><span class="p">,</span><span class="s2">&quot;Deathly Hallows&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;This book series consists of </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">titles</span><span class="p">)</span><span class="si">}</span><span class="s1"> titles.&#39;</span><span class="p">)</span>
+
+<span class="n">last_two</span> <span class="o">=</span> <span class="n">titles</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">last_two</span><span class="p">)</span>
+
+<span class="c1">## An alternative solution with the exact same effect</span>
+<span class="n">last_two</span> <span class="o">=</span> <span class="n">titles</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">last_two</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This book series consists of 7 titles.
+[&#39;Half-Blood Prince&#39;, &#39;Deathly Hallows&#39;]
+[&#39;Half-Blood Prince&#39;, &#39;Deathly Hallows&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-5-2">
+<h2>Exercise 5.2.<a class="headerlink" href="#exercise-5-2" title="Permalink to this heading">#</a></h2>
 <p>Create the following list:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colours</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">]</span>
 </pre></div>
@@ -417,10 +442,38 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;green&#39;, &#39;blue&#39;, &#39;red&#39;, &#39;orange&#39;, &#39;yellow&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section id="exercise-5-2">
-<h2>Exercise 5.2.<a class="headerlink" href="#exercise-5-2" title="Permalink to this heading">#</a></h2>
+<section id="exercise-5-3">
+<h2>Exercise 5.3.<a class="headerlink" href="#exercise-5-3" title="Permalink to this heading">#</a></h2>
+<p>The list named years brings together a number of years. Use the keywords <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">if</span></code> to select the years from this list that are in the 18th century. Remember that you can combine multiple Boolean expressions using <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1756</span><span class="p">,</span> <span class="mi">1575</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="mi">1984</span> <span class="p">,</span><span class="mi">1626</span> <span class="p">,</span><span class="mi">1791</span><span class="p">,</span> <span class="mi">1714</span><span class="p">,</span> <span class="mi">1873</span><span class="p">,</span> <span class="mi">1991</span> <span class="p">]</span>
+
+<span class="c1"># Print years that are in the 18th century</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">year</span> <span class="o">&gt;</span> <span class="mi">1700</span> <span class="ow">and</span> <span class="n">year</span> <span class="o">&lt;</span> <span class="mi">1800</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1"> is in the 18th century.&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1756 is in the 18th century.
+1791 is in the 18th century.
+1714 is in the 18th century.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-5-4">
+<h2>Exercise 5.4.<a class="headerlink" href="#exercise-5-4" title="Permalink to this heading">#</a></h2>
 <p>We have two lists of numbers and would like to know which numbers in the first list are not in the second list.</p>
 <p>Write code which can extract those numbers from the first list that are <strong>not</strong> in the second list.</p>
 <div class="cell docutils container">
@@ -439,10 +492,15 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 1, 17, 54]
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section id="exercise-5-3">
-<h2>Exercise 5.3.<a class="headerlink" href="#exercise-5-3" title="Permalink to this heading">#</a></h2>
+<section id="exercise-5-5">
+<h2>Exercise 5.5.<a class="headerlink" href="#exercise-5-5" title="Permalink to this heading">#</a></h2>
 <p>The list below contains the titles of first twelve plays written by William Shakespeare.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>plays = [ &#39;Comedy of Errors&#39; ,
 &#39;Henry VI, Part I&#39; ,
@@ -508,12 +566,23 @@ Print the full list in alphabetical order using the ‘for’ keyword.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This list contains 14 plays.
+</pre></div>
+</div>
+</div>
 </div>
 <p>Print the titles of the first and the last plays in the list, using the index of these items.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;The first play in the list is &#39;</span><span class="si">{</span><span class="n">plays</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;.&quot;</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;The last play in the list is &#39;</span><span class="si">{</span><span class="n">plays</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;.&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The first play in the list is &#39;Comedy of Errors&#39;.
+The last play in the list is &#39;Othello&#39;.
 </pre></div>
 </div>
 </div>
@@ -527,10 +596,28 @@ Print the full list in alphabetical order using the ‘for’ keyword.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Comedy of Errors
+Henry VI, Part I
+Henry VI, Part II
+Henry VI, Part III
+Love&#39;s Labour&#39;s Lost
+Macbeth
+Midsummer Night&#39;s Dream
+Othello
+Richard II
+Richard III
+Romeo and Juliet
+Taming of the Shrew
+Titus Andronicus
+Two Gentlemen of Verona
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section id="exercise-5-4">
-<h2>Exercise 5.4.<a class="headerlink" href="#exercise-5-4" title="Permalink to this heading">#</a></h2>
+<section id="exercise-5-6">
+<h2>Exercise 5.6.<a class="headerlink" href="#exercise-5-6" title="Permalink to this heading">#</a></h2>
 <p>We have a list of websites and are interested to find the Dutch ones.</p>
 <p>Write some code to select the Dutch websites from this list.
 Tip: You may want to reuse some of the code developed for exercise 3.4.</p>
@@ -557,27 +644,18 @@ Tip: You may want to reuse some of the code developed for exercise 3.4.</p>
 </pre></div>
 </div>
 </div>
-</div>
-</section>
-<section id="exercise-5-5">
-<h2>Exercise 5.5.<a class="headerlink" href="#exercise-5-5" title="Permalink to this heading">#</a></h2>
-<p>We have a list <code class="docutils literal notranslate"><span class="pre">years</span></code> that contains – well – years.</p>
-<p>Use the keywords <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">if</span></code> to select years from this list that are in the 18th century.
-Remember that you can combine multiple Boolean expressions using <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1756</span><span class="p">,</span> <span class="mi">1575</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="mi">1984</span> <span class="p">,</span><span class="mi">1626</span> <span class="p">,</span><span class="mi">1791</span><span class="p">,</span> <span class="mi">1714</span><span class="p">,</span> <span class="mi">1873</span><span class="p">,</span> <span class="mi">1991</span> <span class="p">]</span>
-
-<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">1700</span> <span class="ow">and</span> <span class="n">year</span> <span class="o">&lt;</span> <span class="mi">1800</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://www.universiteitleiden.nl
+https://www.uu.nl
+https://www.rug.nl
+https://www.uva.nl
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-5-6">
-<h2>Exercise 5.6.<a class="headerlink" href="#exercise-5-6" title="Permalink to this heading">#</a></h2>
+<section id="exercise-5-7">
+<h2>Exercise 5.7.<a class="headerlink" href="#exercise-5-7" title="Permalink to this heading">#</a></h2>
 <p>We have a quote from E.M. Forster’s <em>A Room with a View</em> below and want to get a few statistics about it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,6 +690,11 @@ This <code class="docutils literal notranslate"><span class="pre">split()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The quote contains 59 words.
+</pre></div>
+</div>
+</div>
 </div>
 <p>Print the last word in the quote, and count the number of occurrences of the word “place”.</p>
 <div class="cell docutils container">
@@ -633,6 +716,14 @@ This <code class="docutils literal notranslate"><span class="pre">split()</span>
         <span class="n">count</span><span class="o">+=</span> <span class="mi">1</span>
 
 <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;There are </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> occurrences of the word &#39;place&#39;, counted in case-insensitive way.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The last word is &#39;sunshine.&#39;.
+The last word is &#39;sunshine&#39;.
+There are 4 occurrences of the word &#39;place&#39;.
+There are 4 occurrences of the word &#39;place&#39;, counted in case-insensitive way.
 </pre></div>
 </div>
 </div>
@@ -703,12 +794,13 @@ This <code class="docutils literal notranslate"><span class="pre">split()</span>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-1">Exercise 5.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-1">Exercise 5.1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-2">Exercise 5.2.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-3">Exercise 5.3.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-4">Exercise 5.4.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-5">Exercise 5.5.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-6">Exercise 5.6.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-7">Exercise 5.7.</a></li>
 </ul>
   </nav></div>
 

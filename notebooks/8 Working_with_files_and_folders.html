@@ -167,15 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3%20Working_with_strings.html">3. Working with strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4%20Flow_control.html">4. Flow control</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="5%20Lists.html">5. Lists</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="6%20Dictionaries.html">6. Dictionaries</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Working with files and folders</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="9%20Regular_expressions.html">9. Regular Expressions</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="10%20Data_acquisition.html">10. Data acquisition</a></li>
@@ -379,20 +374,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8. Working with files and folders</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-file">Reading a file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-a-file">Writing to a file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-contents-of-a-folder">Reading the contents of a folder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-file">Reading a file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-1">Exercise 8.1.</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-1">Exercise 8.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-2">Exercise 8.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-3">Exercise 8.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-a-file">Writing to a file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-2">Exercise 8.2.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-contents-of-a-folder">Reading the contents of a folder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise 8.1.</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -453,69 +447,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="writing-to-a-file">
-<h2>Writing to a file<a class="headerlink" href="#writing-to-a-file" title="Permalink to this heading">#</a></h2>
-<p>When you run a Python program using the Command Prompt, the full output will normally be printed on the Command Prompt as well. The output of code created in a Jupyter notebook will normally be shown directly underneath the code cell.</p>
-<p>When the program has many lines to print, it can be very difficult to read the output. In such cases, it can useful to create a new text file which will receive all the output. The results of the program can then be inspected by opening this new file in a text editor.</p>
-<p>The function <code class="docutils literal notranslate"><span class="pre">open()</span></code>, which can be used to read files, can also be invoked to create a new file. Instead of referencing a file which already exists on your disk, you need to provide a new file name. Next to this, you also need to supply a second parameter, the character “w”, which stands for “write”. This “w” character makes it clear to Python that you want to write to a file. The <code class="docutils literal notranslate"><span class="pre">open()</span></code> function used with the “w” parameter similarly creates a file handler.</p>
-<p>This handler has a <code class="docutils literal notranslate"><span class="pre">write()</span></code> method, which functions very similarly to the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function. The crucial difference, however, is that the output is not sent to the default output device (e.g. the Command Prompt or Jupyter Notebook), but to the file that is associated with this file handler.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span> <span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
-
-<span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s2">&quot;This text is in a file named &#39;data.txt&#39; &quot;</span> <span class="p">)</span>
-
-<span class="n">out</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="reading-the-contents-of-a-folder">
-<h2>Reading the contents of a folder<a class="headerlink" href="#reading-the-contents-of-a-folder" title="Permalink to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">open()</span></code> function can be used, as discussed, to read individual files. It is also possible to read the contents of folders with multiple files. For this purpose, you can make use of the <code class="docutils literal notranslate"><span class="pre">os</span></code> library . The two letters in the name of this library stand for ‘operating system’. The library includes various functions that can help you to work with files and folders. One useful method is <code class="docutils literal notranslate"><span class="pre">listdir()</span></code>, which, expectedly, enables you to list all the files in a given directory.</p>
-<p>To make use of <code class="docutils literal notranslate"><span class="pre">os</span></code>, this library needs to be imported first.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-
-<span class="nb">dir</span> <span class="o">=</span> <span class="s1">&#39;Solutions&#39;</span>
-
-<span class="k">for</span> <span class="n">fileName</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span> <span class="nb">dir</span> <span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="n">fileName</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The function <code class="docutils literal notranslate"><span class="pre">join()</span></code>, which is part of the <code class="docutils literal notranslate"><span class="pre">path</span></code> module of <code class="docutils literal notranslate"><span class="pre">os</span></code>, can be used to create a string representing the path to a certain file. If you have one variable which records the base directory of a file, and a second variable which captures the filename, the <code class="docutils literal notranslate"><span class="pre">join()</span></code> function can concatenate the values of these two variables to create the full path to this file. The <code class="docutils literal notranslate"><span class="pre">join()</span></code> function always follows the conventions that are in place on a given operating system for representing paths. There can often be certain differences. While Mac OS uses forward slashes, for instance, Windows uses back slashes. Working with <code class="docutils literal notranslate"><span class="pre">join()</span></code> makes your code more platform-independent.</p>
-<p>Another useful function in <code class="docutils literal notranslate"><span class="pre">os</span></code> is <code class="docutils literal notranslate"><span class="pre">isfile()</span></code>. As you list the files in a certain directory, using <code class="docutils literal notranslate"><span class="pre">listdir()</span></code>, you can apply this function to check whether you are dealing with a file or with something else ( e.g. a subdirectory).</p>
-<p>The code below offers a demostration of these two functions. It lists all the files in the directory that is mentiond, and makes sure that all the subdirectories are ignored. Note that the first line imports the two functions that have been discussed above. As a result of this, it is no longer necessary to use the period syntax for <code class="docutils literal notranslate"><span class="pre">isfile()</span></code> and <code class="docutils literal notranslate"><span class="pre">join()</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span> <span class="p">,</span> <span class="n">join</span>
-
-<span class="nb">dir</span> <span class="o">=</span> <span class="s1">&#39;Solutions&#39;</span>
-
-<span class="k">for</span> <span class="n">fileName</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span> <span class="nb">dir</span> <span class="p">):</span>
-    <span class="k">if</span> <span class="n">isfile</span><span class="p">(</span> <span class="n">join</span><span class="p">(</span> <span class="nb">dir</span> <span class="p">,</span> <span class="n">fileName</span> <span class="p">)</span> <span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span> <span class="n">fileName</span> <span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
 <section id="exercise-8-1">
-<h2>Exercise 8.1.<a class="headerlink" href="#exercise-8-1" title="Permalink to this heading">#</a></h2>
-<p>Find a directory on your own computer which contains both files and subfolders. Define the path to this folder, as a variable named <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p>
-<p>Next, write some code that can list only the subdirectories in this directories, and which ignores the individual files, using the functions <code class="docutils literal notranslate"><span class="pre">listdir()</span></code> and <code class="docutils literal notranslate"><span class="pre">isfile</span></code>.</p>
-<p>Finally, also try to list all the files in one of these subdirectories.</p>
-</section>
-<section id="exercise-8-2">
-<h2>Exercise 8.2.<a class="headerlink" href="#exercise-8-2" title="Permalink to this heading">#</a></h2>
+<h3>Exercise 8.1.<a class="headerlink" href="#exercise-8-1" title="Permalink to this heading">#</a></h3>
 <p>Download the following file:</p>
 <p><a class="reference external" href="https://edu.nl/ggwtf">https://edu.nl/ggwtf</a></p>
 <p>The file contains the text of a poem.</p>
@@ -540,16 +473,88 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="exercise-8-3">
-<h2>Exercise 8.3<a class="headerlink" href="#exercise-8-3" title="Permalink to this heading">#</a></h2>
-<p>Create a new file named ‘data.txt’, which gives information about the following aspects of this poem you have downloaded for exercise 8.2:</p>
-<ul class="simple">
-<li><p>The number of lines</p></li>
-<li><p>The total number of characters in the file</p></li>
-<li><p>The average number of characters per line</p></li>
-<li><p>The longest line of the sonnet (i.e. the line with the highest number of characters)</p></li>
-</ul>
-<p>The average number of characters per line can be calculated by dividing the total number of characters by the number of lines.</p>
+</section>
+<section id="writing-to-a-file">
+<h2>Writing to a file<a class="headerlink" href="#writing-to-a-file" title="Permalink to this heading">#</a></h2>
+<p>When you run a Python program using the Command Prompt, the full output will normally be printed on the Command Prompt as well. The output of code created in a Jupyter notebook will normally be shown directly underneath the code cell.</p>
+<p>When the program has many lines to print, it can be very difficult to read the output. In such cases, it can useful to create a new text file which will receive all the output. The results of the program can then be inspected by opening this new file in a text editor.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">open()</span></code>, which can be used to read files, can also be invoked to create a new file. Instead of referencing a file which already exists on your disk, you need to provide a new file name. Next to this, you also need to supply a second parameter, the character “w”, which stands for “write”. This “w” character makes it clear to Python that you want to write to a file. The <code class="docutils literal notranslate"><span class="pre">open()</span></code> function used with the “w” parameter similarly creates a file handler.</p>
+<p>This handler has a <code class="docutils literal notranslate"><span class="pre">write()</span></code> method, which functions very similarly to the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function. The crucial difference, however, is that the output is not sent to the default output device (e.g. the Command Prompt or Jupyter Notebook), but to the file that is associated with this file handler.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span> <span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+<span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s2">&quot;This text is in a file named &#39;data.txt&#39; &quot;</span> <span class="p">)</span>
+
+<span class="n">out</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise-8-2">
+<h3>Exercise 8.2.<a class="headerlink" href="#exercise-8-2" title="Permalink to this heading">#</a></h3>
+<p>The dictionary below is an excerpt from a longer dictionary which connects country codes to the full names of these countries. Working with this dictionary, create a <em>Comma Separated Value</em> (CSV) file with two columns, named ‘code’ and ‘country_name’. The first column should contain the keys of the dictionary, and the second column should contain the values associated with these keys. This new CSV file should be saved under the name ‘country_codes.csv’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">country_codes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;AFG&#39;</span><span class="p">:</span> <span class="s1">&#39;Afghanistan&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ALB&#39;</span><span class="p">:</span> <span class="s1">&#39;Albania&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;DZA&#39;</span><span class="p">:</span> <span class="s1">&#39;Algeria&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ASM&#39;</span><span class="p">:</span> <span class="s1">&#39;American Samoa&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;AND&#39;</span><span class="p">:</span> <span class="s1">&#39;Andorra&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;AGO&#39;</span><span class="p">:</span> <span class="s1">&#39;Angola&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;AIA&#39;</span><span class="p">:</span> <span class="s1">&#39;Anguilla&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ATA&#39;</span><span class="p">:</span> <span class="s1">&#39;Antarctica&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ATG&#39;</span><span class="p">:</span> <span class="s1">&#39;Antigua and Barbuda&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ARG&#39;</span><span class="p">:</span> <span class="s1">&#39;Argentina&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ARM&#39;</span><span class="p">:</span> <span class="s1">&#39;Armenia&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ABW&#39;</span><span class="p">:</span> <span class="s1">&#39;Aruba&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;AUS&#39;</span><span class="p">:</span> <span class="s1">&#39;Australia&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;AUT&#39;</span><span class="p">:</span> <span class="s1">&#39;Austria&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;AZE&#39;</span><span class="p">:</span> <span class="s1">&#39;Azerbaijan&#39;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="reading-the-contents-of-a-folder">
+<h2>Reading the contents of a folder<a class="headerlink" href="#reading-the-contents-of-a-folder" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">open()</span></code> function can be used, as discussed, to read individual files. It is also possible to read the contents of folders with multiple files. For this purpose, you can make use of the <code class="docutils literal notranslate"><span class="pre">os</span></code> library . The two letters in the name of this library stand for ‘operating system’. The library includes various functions that can help you to work with files and folders. One useful method is <code class="docutils literal notranslate"><span class="pre">listdir()</span></code>, which, expectedly, enables you to list all the files in a given directory.</p>
+<p>To make use of <code class="docutils literal notranslate"><span class="pre">os</span></code>, this library needs to be imported first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;Solutions&#39;</span>
+
+<span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span> <span class="n">directory</span> <span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">file_name</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">join()</span></code>, which is part of the <code class="docutils literal notranslate"><span class="pre">path</span></code> module of <code class="docutils literal notranslate"><span class="pre">os</span></code>, can be used to create a string representing the path to a certain file. If you have one variable which records the base directory of a file, and a second variable which captures the filename, the <code class="docutils literal notranslate"><span class="pre">join()</span></code> function can concatenate the values of these two variables to create the full path to this file. The <code class="docutils literal notranslate"><span class="pre">join()</span></code> function always follows the conventions that are in place on a given operating system for representing paths. There can often be certain differences. While Mac OS uses forward slashes, for instance, Windows uses back slashes. Working with <code class="docutils literal notranslate"><span class="pre">join()</span></code> makes your code more platform-independent.</p>
+<p>Another useful function in <code class="docutils literal notranslate"><span class="pre">os</span></code> is <code class="docutils literal notranslate"><span class="pre">isfile()</span></code>. As you list the files in a certain directory, using <code class="docutils literal notranslate"><span class="pre">listdir()</span></code>, you can apply this function to check whether you are dealing with a file or with something else ( e.g. a subdirectory).</p>
+<p>The code below offers a demonstration of these two functions. It lists all the files in the directory that is mentioned, and makes sure that all the subdirectories are ignored. Note that the first line imports the two functions that have been discussed above. As a result of this, it is no longer necessary to use the period syntax for <code class="docutils literal notranslate"><span class="pre">isfile()</span></code> and <code class="docutils literal notranslate"><span class="pre">join()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span> <span class="p">,</span> <span class="n">join</span>
+
+<span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;Solutions&#39;</span>
+
+<span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span> <span class="n">directory</span> <span class="p">):</span>
+    <span class="k">if</span> <span class="n">isfile</span><span class="p">(</span> <span class="n">join</span><span class="p">(</span> <span class="n">directory</span> <span class="p">,</span> <span class="n">file_name</span> <span class="p">)</span> <span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="n">file_name</span> <span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3>Exercise 8.1.<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Find a directory on your own computer which contains both files and subfolders. Define the path to this folder, as a variable named <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p>
+<p>Next, write some code that can list only the subdirectories in this directories, and which ignores the individual files, using the functions <code class="docutils literal notranslate"><span class="pre">listdir()</span></code> and <code class="docutils literal notranslate"><span class="pre">isfile</span></code>.</p>
+<p>Finally, also try to list all the files in one of these subdirectories.</p>
+</section>
 </section>
 </section>
 
@@ -616,20 +621,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8. Working with files and folders</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-file">Reading a file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-a-file">Writing to a file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-contents-of-a-folder">Reading the contents of a folder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-file">Reading a file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-1">Exercise 8.1.</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-1">Exercise 8.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-2">Exercise 8.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-3">Exercise 8.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-a-file">Writing to a file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-2">Exercise 8.2.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-contents-of-a-folder">Reading the contents of a folder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise 8.1.</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

@@ -167,15 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3%20Working_with_strings.html">3. Working with strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4%20Flow_control.html">4. Flow control</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="5%20Lists.html">5. Lists</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="6%20Dictionaries.html">6. Dictionaries</a></li>
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Functions, Modules and Libraries</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="9%20Regular_expressions.html">9. Regular Expressions</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="10%20Data_acquisition.html">10. Data acquisition</a></li>
@@ -379,27 +374,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7. Functions, Modules and Libraries</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions">Built-in functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-and-arguments">Parameters and arguments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-functions">Defining functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-functions">Defining functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-1">Exercise 7.1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-2">Exercise 7.2.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-parameters">Optional parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-3">Exercise 7.3.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-and-classes">Methods (and classes)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-functionality-modules-packages-and-the-library">Combining functionality: modules, packages and the Library</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-from-modules">Importing (from) modules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-functionality">Finding functionality</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-1">Exercise 7.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-2">Exercise 7.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-3">Exercise 7.3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-4">Exercise 7.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-functionality">Finding functionality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-4">Exercise 7.4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-5">Exercise 7.5.</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -412,51 +409,24 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="functions-modules-and-libraries">
 <h1>7. Functions, Modules and Libraries<a class="headerlink" href="#functions-modules-and-libraries" title="Permalink to this heading">#</a></h1>
-<p>So far we have seen and used small pieces of code that perform small tasks.
-If we wanted to use the same code with a different input, we either changed the original code or copied the whole <em>block</em> and changed that copy.
-That is not only inefficient, it is easier to lose overview of what the code does.</p>
-<p>In this section we will look at ways to combine and reuse pieces of code.
-We introduce quite a few new terms, so please don’t get discouraged.</p>
+<p>So far, we have mostly focused on small pieces of code that perform specific tasks. In a program, the same types of tasks may be performed several times in different sections of the code. In such situations, it can be efficient to reuse particular pieces of code.</p>
 <section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
-<p>Imagine that you want to write a program in Python which can calculate the final grades earned by students who have followed a certain course.
-Such grades are normally calculated using a fixed formula (e.g. a mid-term assignment which counts for 40% and a final exam which counts for 60%).
-To calculate the final grades, this formula needs to be applied repeatedly with different values.
-In such a situation, it would be quite inefficient if you simply repeated the code that is needed for every single student.
-Fortunately, we can reuse fragments of code by defining them as functions.</p>
-<p>A <em>function</em> is essentially a set of statements which can be addressed collectively via a single name.
-The idea of a function comes from mathematics, in which a function takes one or more <em>inputs</em> and produces an <em>output</em>.
-Functions work the same in programming: you give (or <em>pass</em>) something to a function and the function <em>returns</em> an output. The output is the result of the function.</p>
+<p>Imagine, for example, that you want to write a program in Python which can calculate the final grades earned by students who have followed a certain course. Such grades are normally calculated using a fixed formula (e.g. a mid-term assignment which counts for 40% and a final exam which counts for 60%). To calculate the final grades, this formula needs to be applied repeatedly with different values. In such a situation, it would be quite inefficient if you simply repeated the code that is needed for every single student. Fortunately, we can reuse fragments of code by defining them as functions.</p>
+<p>A <em>function</em> is essentially a set of statements which can be addressed collectively via a single name. A function may demand some <em>input</em>. The values that need to be provided as input are referred to as <em>parameters</em>. The function may also produce some <em>output</em>. The output is the result of the function.</p>
+</section>
+<section id="built-in-functions">
+<h2>Built-in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this heading">#</a></h2>
 <p>Up to this point we have seen a few functions that Python provides ‘out of the box’:</p>
+<p>Up to this point, we have already encountered some of Python’s built-in functions: the functions that Python provides ‘out of the box’. The list below gives a number of examples.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> takes one or more values and ‘writes’ them to the screen</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code> takes a string, list or dictionary and returns its length (i.e. number of characters or items)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dict()</span></code> takes no inputs and returns an empty dictionary</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sorted()</span></code> takes a list and returns a sorted copy of that list</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> takes one or more values and ‘writes’ these to the screen.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code> takes a string, list or dictionary and returns its length (i.e. the number of characters or items).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float()</span></code> takes a numerical value (e.g. an integer) as input, and converts it into an integer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict()</span></code> takes no inputs and returns an empty dictionary.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sorted()</span></code> takes a list and returns a sorted copy of that list.</p></li>
 </ul>
-<p>These are just some of the functions we have seen so far and there is more nuance to their descriptions.
-You can find <a class="reference external" href="https://docs.python.org/3/library/functions.html">all built-in functions in the Python documentation</a>.
-If you see a function in a programme that you do not understand, you could ask what it does using
-<code class="docutils literal notranslate"><span class="pre">help(name_of_function)</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ask for documentation of the print function</span>
-<span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>In the tutorial we have already used these functions.
-When you use a function, you often say that you are <em>calling a function</em>.
-To call a function, you to refer to its name followed by parentheses.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Returns an empty list</span>
-<span class="nb">list</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>In the tutorial we have already used some of these functions. When you use a function, you often say that you are <em>calling a function</em>. When you call a function, you always include the parentheses after the name of the function, even when there are no parameters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Returns an empty dictionary</span>
@@ -465,36 +435,13 @@ To call a function, you to refer to its name followed by parentheses.</p>
 </div>
 </div>
 </div>
-<p>Remember: <strong>always include the parentheses when you call a function</strong>.</p>
-<p>If you don’t include the parentheses, you don’t call the function, you only refer to it.
-There are use cases for this behaviour, although few of these use cases are relevant for beginners.
-The most useful example is using the <code class="docutils literal notranslate"><span class="pre">help</span></code> function: you <em>call</em> the <code class="docutils literal notranslate"><span class="pre">help</span></code> function and “give it” a function that you want help with.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Returns the function, but does not *call* it</span>
-<span class="nb">dict</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;Give&quot; the print function to the help function</span>
-<span class="n">help</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>“Giving” things to functions is the topic of this next section.</p>
 <section id="parameters-and-arguments">
 <h3>Parameters and arguments<a class="headerlink" href="#parameters-and-arguments" title="Permalink to this heading">#</a></h3>
 <p>When a function accepts an input, it is said to have a <em>parameter</em>.
 Functions can define zero or more parameters.
 Parameters can be made <em>optional</em> by setting default values.</p>
-<p>For example, the in-built function <code class="docutils literal notranslate"><span class="pre">round()</span></code>, which rounds numbers, takes two parameters.
-The first parameter is a floating point number, the number to round.
-The second parameter is the number of digits you would like to see following the decimal point.
-This second parameter is optional: if you don’t specify it, the number is rounded to zero decimals.</p>
+<p>The in-built function <code class="docutils literal notranslate"><span class="pre">round()</span></code>, which rounds numbers, takes two parameters.
+The first parameter is a floating point number that needs to be round. The second parameter is the number of digits you would like to see following the decimal point.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Keep 2 decimals</span>
@@ -503,52 +450,133 @@ This second parameter is optional: if you don’t specify it, the number is roun
 </div>
 </div>
 </div>
+<p>The term <em>parameter</em> is sometimes used interchangeably with the term <em>argument</em>. Strictly speaking, however, a <em>parameter</em> is a value used as input in the <strong>definition</strong> of the function (see below). An <em>argument</em> is the value that is sent to the function when it is called.</p>
+<p>You can find more information about these <a class="reference external" href="https://docs.python.org/3/library/functions.html">built-in functions in the Python documentation</a>.</p>
+<p>If you come across a function that you do not understand, you can also ask for more information using the built-in <code class="docutils literal notranslate"><span class="pre">help()</span></code> function. In this <code class="docutils literal notranslate"><span class="pre">help()</span></code> function, you need to provide the name of the function as an argument, <strong>without the parentheses</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Round to zero decimals and return an integer</span>
-<span class="nb">round</span><span class="p">(</span><span class="mf">4.55892</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ask for documentation of the print function</span>
+<span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Somewhat confusingly, when we call a function, we say that the values we ‘give’ to the function are <em>arguments</em>.
-So a function defines <em>parameters</em>, and we as programmers give it <em>arguments</em>.
-This distinction is not too important at this point, but you may come across both terms.</p>
+</section>
 </section>
 <section id="defining-functions">
-<h3>Defining functions<a class="headerlink" href="#defining-functions" title="Permalink to this heading">#</a></h3>
-<p>Next to working with in-built functions, it is also possible to write your own functions.
-Working with functions can often be very effective.
-It enables you to decompose specific problem into smaller sub-problems and into units which can be reused as often as needed.
-As illustrated in the code below, functions can be created using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword, a function name and parentheses that may contain parameters.</p>
+<h2>Defining functions<a class="headerlink" href="#defining-functions" title="Permalink to this heading">#</a></h2>
+<p>Next to working with in-built functions, it is also possible to write your own functions. Working with functions can often be very effective. It enables you to decompose specific problem into smaller sub-problems and into units which can be reused as often as needed. Follow the steps below to define a new function.</p>
+<ul class="simple">
+<li><p>You begin the definition of the function with <code class="docutils literal notranslate"><span class="pre">def</span></code>.</p></li>
+<li><p>After <code class="docutils literal notranslate"><span class="pre">def</span></code>, you firstly provide the name of the function. Function names need to follow the same rules as variable names.</p></li>
+<li><p>The name of the function is followed by a set of parentheses. Within these parentheses, you mention the parameters: the values that the function works with. If there are two or more parameters, they need to be separated by commas. You always need to type in the parentheses, even if the function does not demand any parameters. In this latter case, you simply provide an empty set of parentheses.</p></li>
+<li><p>Give a colon after the closing bracket.</p></li>
+<li><p>Following the line that starts with <code class="docutils literal notranslate"><span class="pre">def</span></code>, you provide an indented block of code containing all the actual statements that make up the function.</p></li>
+<li><p>If the function also produces <em>output</em>, this final result needs to be given after the keyword <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p></li>
+</ul>
+<p>When you choose a name, make sure to make it descriptive and do not use an existing one or reserved keyword.
+The Python community has <a class="reference external" href="https://peps.python.org/pep-0008/#function-and-variable-names">guidelines for naming functions</a>. You are advised to come up with function names that are “lowercase,
+with words separated by underscores to improve readability”.</p>
+<p>The cell below contains an example. The function that is programmed calculates the area of a rectangle, by multiplying the width and the height.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_final_mark</span><span class="p">(</span> <span class="n">mid_term</span><span class="p">,</span> <span class="n">exam</span> <span class="p">):</span>
-    <span class="n">final_mark</span> <span class="o">=</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">mid_term</span>
-    <span class="n">final_mark</span> <span class="o">+=</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">exam</span>
-    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">final_mark</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_area</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span>
+    <span class="k">return</span> <span class="n">area</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>The code above defines the function <code class="docutils literal notranslate"><span class="pre">calculate_final_mark()</span></code>.
-The <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword needs to be followed by the name of the function and a set of parentheses.
-When you choose a name, make sure to make it descriptive and do not use an existing one or reserved keyword.
-The Python community has <a class="reference external" href="https://peps.python.org/pep-0008/#function-and-variable-names">guidelines for naming functions</a>: “Function names should be lowercase,
-with words separated by underscores to improve readability.”</p>
-<p>Within the parentheses, you can optionally mention the parameters, i.e. the values the function should operate on.
-If there are two or more parameters, they need to be separated by commas.
-Our function takes two parameters to create an output.
-The output is said to be <em>returned</em> and we use <code class="docutils literal notranslate"><span class="pre">return</span></code> to do so.</p>
-<!-- When Python evaluates `return`, the execution of the function stops. -->
-<!-- It's possible that a function doesn't return a value. -->
-<p>Once the function has been defined, it can be called, or invoked, in other locations in your program.
-The <code class="docutils literal notranslate"><span class="pre">print</span></code> statements show the result of the calculation that is returned by the function, using the values that are mentioned within the parentheses (as <em>arguments</em>).</p>
+<p>When you define a function, this does not immediately run the code. The cell above does not produce any output. Defining a function is similar to defining a variable. To run the code, you need to call the function, using actual values for the parameters that are required.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;Final grade: </span><span class="si">{</span><span class="n">calculate_final_mark</span><span class="p">(</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="p">)</span><span class="si">}</span><span class="s1"> &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;Final grade: </span><span class="si">{</span><span class="n">calculate_final_mark</span><span class="p">(</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">)</span><span class="si">}</span><span class="s1"> &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;Final grade: </span><span class="si">{</span><span class="n">calculate_final_mark</span><span class="p">(</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">)</span><span class="si">}</span><span class="s1"> &#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">calculate_area</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once the function has been defined, it can be called, or invoked, in other locations in your program. When you call the function, the parameters named <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> will both be assigned values. The calculation inside the body of the function then operates on the specific values that you supply. The <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement in the cell above ultimately outputs the result of the calculation.</p>
+<p>Remember that a function always returns something. If a function does not include a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, the function automatically returns the value <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<section id="exercise-7-1">
+<h3>Exercise 7.1.<a class="headerlink" href="#exercise-7-1" title="Permalink to this heading">#</a></h3>
+<p>Write a function which can convert a given temperature in degrees Celcius into the equivalent in Fahrenheit. Use the following formula: F = 1.8 * C + 32.</p>
+<p>Once the function is ready, test it with a number of values. 20 degrees Celcius ought to be converted into 68 degrees Fahrenheit, and 37 degrees Celcius should equal 98.6 degrees Fahrenheit.</p>
+</section>
+<section id="exercise-7-2">
+<h3>Exercise 7.2.<a class="headerlink" href="#exercise-7-2" title="Permalink to this heading">#</a></h3>
+<p>In a given university course, the final grade is determined by grade for essay and by the grade for a presentation. The presentation counts for 30% and the essay for 70%.</p>
+<p>Write two functions:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">calculate_mark</span></code> should calculate the final grade based on a set of partial grades according to the given formula.
+Grades must be rounded to integers. 5.4, for example, becomes 5 and 6.6 becomes 7.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pass_or_fail</span></code> should determine whether a given grade is at a pass level (i.e. equal to or higher than 6).
+This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function calculate_mark determines the final mark, based on the marks for the essay and presentation</span>
+
+
+<span class="c1"># Function pass_or_fail determines &#39;Pass&#39; or &#39;Fail&#39;, based on a single mark</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s try them:</span>
+<span class="n">essay1</span> <span class="o">=</span> <span class="mf">7.0</span>
+<span class="n">presentation1</span> <span class="o">=</span> <span class="mf">8.5</span>
+<span class="n">final1</span> <span class="o">=</span> <span class="n">calculate_mark</span><span class="p">(</span><span class="n">essay1</span><span class="p">,</span> <span class="n">presentation1</span><span class="p">)</span>
+<span class="c1"># We expect the grade 7 (pass)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;final grade: </span><span class="si">{</span><span class="n">final1</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">pass_or_fail</span><span class="p">(</span><span class="n">final1</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="p">)</span>
+
+<span class="n">essay2</span> <span class="o">=</span> <span class="mf">4.5</span>
+<span class="n">presentation2</span> <span class="o">=</span> <span class="mf">5.5</span>
+<span class="n">final2</span> <span class="o">=</span> <span class="n">calculate_mark</span><span class="p">(</span><span class="n">essay2</span><span class="p">,</span> <span class="n">presentation2</span><span class="p">)</span>
+<span class="c1"># We expect the grade 5 (fail)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;final grade: </span><span class="si">{</span><span class="n">final2</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">pass_or_fail</span><span class="p">(</span><span class="n">final2</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="optional-parameters">
+<h2>Optional parameters<a class="headerlink" href="#optional-parameters" title="Permalink to this heading">#</a></h2>
+<p>Parameters can be made optional by specifying default values in the function definition. The function below can be used to shorten a string. Such a function can be useful if you want to display shortened titles in a library catalogue, for example. By default, the function selects the first twelve characters only. If a different length is needed, the required number of characters can be specified by the second parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">shorten_string</span><span class="p">(</span> <span class="n">text</span> <span class="p">,</span> <span class="n">max_characters</span> <span class="o">=</span> <span class="mi">12</span> <span class="p">):</span>
+    <span class="k">return</span> <span class="n">text</span><span class="p">[:</span><span class="n">max_characters</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; [...]&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">shorten_string</span><span class="p">(</span><span class="s1">&#39;Frankenstein, or, The Modern Prometheus&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shorten_string</span><span class="p">(</span><span class="s1">&#39;The Secret Agent: A Simple Tale&#39;</span> <span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The in-built function <code class="docutils literal notranslate"><span class="pre">round()</span></code>, which was discussed above, similarly works with optional parameters. The first parameter is the floating point number that needs to be rounded off. The second parameter is the number of digits you would like to see following the decimal point. The default value for this second parameter is the zero. If you supply only one parameter, the number is rounded off to a number with zero decimals, or, in other words, to an integer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">float_number</span> <span class="o">=</span> <span class="mf">4.55892</span>
+
+<span class="c1"># Keep 2 decimals</span>
+<span class="nb">print</span><span class="p">(</span> <span class="nb">round</span><span class="p">(</span><span class="n">float_number</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Round to zero decimals and return an integer</span>
+<span class="nb">print</span><span class="p">(</span> <span class="nb">round</span><span class="p">(</span><span class="n">float_number</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise-7-3">
+<h3>Exercise 7.3.<a class="headerlink" href="#exercise-7-3" title="Permalink to this heading">#</a></h3>
+<p>Write a function which takes a Python list as a parameter. This list should contain numbers. The function should return the average value of the numbers in the list. Name the function <code class="docutils literal notranslate"><span class="pre">calculate_average()</span></code>. in the definition of this function, add an optional parameter which specifies the number of digits that are returned after the digit. The default value must be 1.</p>
+<p>To calculate the sum of all the numbers in a list, you can work with the <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">134</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">23</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -617,7 +645,7 @@ This class defines the methods that we used, such as <code class="docutils liter
 </section>
 <section id="combining-functionality-modules-packages-and-the-library">
 <h2>Combining functionality: modules, packages and the Library<a class="headerlink" href="#combining-functionality-modules-packages-and-the-library" title="Permalink to this heading">#</a></h2>
-<p><em>Note: the terms in this section are easily confused. It is not too important to get them right.</em></p>
+<p><em>Note: the terms in this section are easily confused.</em></p>
 <p>When you have a number of functions or classes that perform similar or related activities,
 these can all be placed together in a Python file.
 Such a file containing related functions, statements or classes is called a <em>module</em>.
@@ -696,51 +724,8 @@ It is rare, but unfortunately it happens.</p>
 </div>
 <p>We will not go deeper into installing these packages now.
 If you would like to use any of these, you can usually find installation instructions on the project website.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
-<section id="exercise-7-1">
-<h2>Exercise 7.1.<a class="headerlink" href="#exercise-7-1" title="Permalink to this heading">#</a></h2>
-<p>In a given university course, the final grade is determined by grade for essay and by the grade for a presentation. The presentation counts for 30% and the essay for 70%.</p>
-<p>Write two functions:</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">calculate_mark</span></code> should calculate the final grade based on a set of partial grades according to the given formula.
-Grades must be rounded to integers. 5.4, for example, becomes 5 and 6.6 becomes 7.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pass_or_fail</span></code> should determine whether a given grade is at a pass level (i.e. equal to or higher than 6).
-This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function calculate_mark determines the final mark, based on the marks for the essay and presentation</span>
-
-
-<span class="c1"># Function pass_or_fail determines &#39;Pass&#39; or &#39;Fail&#39;, based on a single mark</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s try them:</span>
-<span class="n">essay1</span> <span class="o">=</span> <span class="mf">7.0</span>
-<span class="n">presentation1</span> <span class="o">=</span> <span class="mf">8.5</span>
-<span class="n">final1</span> <span class="o">=</span> <span class="n">calculate_mark</span><span class="p">(</span><span class="n">essay1</span><span class="p">,</span> <span class="n">presentation1</span><span class="p">)</span>
-<span class="c1"># We expect the grade 7 (pass)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;final grade: </span><span class="si">{</span><span class="n">final1</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">pass_or_fail</span><span class="p">(</span><span class="n">final1</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="p">)</span>
-
-<span class="n">essay2</span> <span class="o">=</span> <span class="mf">4.5</span>
-<span class="n">presentation2</span> <span class="o">=</span> <span class="mf">5.5</span>
-<span class="n">final2</span> <span class="o">=</span> <span class="n">calculate_mark</span><span class="p">(</span><span class="n">essay2</span><span class="p">,</span> <span class="n">presentation2</span><span class="p">)</span>
-<span class="c1"># We expect the grade 5 (fail)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;final grade: </span><span class="si">{</span><span class="n">final2</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">pass_or_fail</span><span class="p">(</span><span class="n">final2</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-7-2">
-<h2>Exercise 7.2.<a class="headerlink" href="#exercise-7-2" title="Permalink to this heading">#</a></h2>
+<section id="exercise-7-4">
+<h3>Exercise 7.4.<a class="headerlink" href="#exercise-7-4" title="Permalink to this heading">#</a></h3>
 <p>Import the math module, as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
@@ -763,14 +748,10 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 </div>
 </div>
 </section>
-<section id="exercise-7-3">
-<h2>Exercise 7.3.<a class="headerlink" href="#exercise-7-3" title="Permalink to this heading">#</a></h2>
-<p>Write a function which can convert a given temperature in degrees Celcius into the equivalent in Fahrenheit. Use the following formula: F = 1.8 * C + 32.</p>
-<p>Once the function is ready, test it with a number of values. 20 degrees Celcius ought to be converted into 68 degrees Fahrenheit, and 37 degrees Celcius should equal 98.6 degrees Fahrenheit.</p>
-</section>
-<section id="exercise-7-4">
-<h2>Exercise 7.4.<a class="headerlink" href="#exercise-7-4" title="Permalink to this heading">#</a></h2>
+<section id="exercise-7-5">
+<h3>Exercise 7.5.<a class="headerlink" href="#exercise-7-5" title="Permalink to this heading">#</a></h3>
 <p>Following Pythagoras’ theorem (A<sup>2</sup> + B<sup>2</sup> = C<sup>2</sup>), calculate the length of the hypothenuse in a right trangle in which the other two sides have a length of 6 and 7. Make use of the math module.</p>
+</section>
 </section>
 </section>
 
@@ -837,27 +818,29 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7. Functions, Modules and Libraries</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions">Built-in functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-and-arguments">Parameters and arguments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-functions">Defining functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-functions">Defining functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-1">Exercise 7.1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-2">Exercise 7.2.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-parameters">Optional parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-3">Exercise 7.3.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-and-classes">Methods (and classes)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-functionality-modules-packages-and-the-library">Combining functionality: modules, packages and the Library</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-from-modules">Importing (from) modules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-functionality">Finding functionality</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-1">Exercise 7.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-2">Exercise 7.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-3">Exercise 7.3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-4">Exercise 7.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-functionality">Finding functionality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-4">Exercise 7.4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-5">Exercise 7.5.</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

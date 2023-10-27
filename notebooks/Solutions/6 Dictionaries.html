@@ -167,15 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3%20Working_with_strings.html">3. Working with strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4%20Flow_control.html">4. Flow control</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../5%20Lists.html">5. Lists</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../6%20Dictionaries.html">6. Dictionaries</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../9%20Regular_expressions.html">9. Regular Expressions</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../10%20Data_acquisition.html">10. Data acquisition</a></li>
@@ -397,6 +392,40 @@ document.write(`
 <h1>6. Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h1>
 <section id="exercise-6-1">
 <h2>Exercise 6.1.<a class="headerlink" href="#exercise-6-1" title="Permalink to this heading">#</a></h2>
+<p>Using the dictionary <code class="docutils literal notranslate"><span class="pre">person_data</span></code> below, print the following sentence: “Louis Elsevier was a printer. He was born in 1540 in Leuven and died in 1617 in Leiden.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;firstName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;louis&#39;</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;lastName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;elsevier&#39;</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;profession&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;printer&#39;</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;yob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1540</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;yod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1617</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;pob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leuven&#39;</span>
+<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;pod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leiden&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We first construct the sentence, to keep the code a bit more readable.</p>
+<p>Remember that you can use <code class="docutils literal notranslate"><span class="pre">some_string.title()</span></code> to capitalise the first character.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="w"> </span><span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;firstName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="w"> </span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;lastName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> was a </span><span class="si">{</span><span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;profession&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">. &quot;</span>
+<span class="n">sentence</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;He was born in </span><span class="si">{</span><span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;yob&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">person_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pob&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;[Unknown]&#39;</span><span class="w"> </span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="w"> </span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">sentence</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; and died in </span><span class="si">{</span><span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;yod&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">person_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pod&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;[Unknown]&#39;</span><span class="w"> </span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span>
+
+<span class="c1"># Print the sentence</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">sentence</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-6-2">
+<h2>Exercise 6.2.<a class="headerlink" href="#exercise-6-2" title="Permalink to this heading">#</a></h2>
 <p>The code below creates a new dictionary. This dictionary connects a number of ISBNs to the titles of the books they identify.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">isbn</span> <span class="o">=</span> <span class="p">{</span>
 <span class="mi">9780143105985</span> <span class="p">:</span> <span class="s1">&#39;White Noise&#39;</span> <span class="p">,</span>
@@ -454,40 +483,6 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">isbn</span> <span class="ow">in</span> <span class="n">books_by_isbn</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span> <span class="n">books_by_isbn</span><span class="p">[</span><span class="n">isbn</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; (&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">isbn</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-6-2">
-<h2>Exercise 6.2.<a class="headerlink" href="#exercise-6-2" title="Permalink to this heading">#</a></h2>
-<p>Using the dictionary <code class="docutils literal notranslate"><span class="pre">person_data</span></code> below, print the following sentence: “Louis Elsevier was a printer. He was born in 1540 in Leuven and died in 1617 in Leiden.”</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-
-<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;firstName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;louis&#39;</span>
-<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;lastName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;elsevier&#39;</span>
-<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;profession&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;printer&#39;</span>
-<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;yob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1540</span>
-<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;yod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1617</span>
-<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;pob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leuven&#39;</span>
-<span class="n">person_data</span><span class="p">[</span><span class="s2">&quot;pod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;leiden&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We first construct the sentence, to keep the code a bit more readable.</p>
-<p>Remember that you can use <code class="docutils literal notranslate"><span class="pre">some_string.title()</span></code> to capitalise the first character.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="w"> </span><span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;firstName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="w"> </span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;lastName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> was a </span><span class="si">{</span><span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;profession&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">. &quot;</span>
-<span class="n">sentence</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;He was born in </span><span class="si">{</span><span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;yob&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">person_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pob&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;[Unknown]&#39;</span><span class="w"> </span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="w"> </span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">sentence</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; and died in </span><span class="si">{</span><span class="n">person_data</span><span class="p">[</span><span class="s1">&#39;yod&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">person_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pod&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;[Unknown]&#39;</span><span class="w"> </span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span>
-
-<span class="c1"># Print the sentence</span>
-
-<span class="nb">print</span><span class="p">(</span> <span class="n">sentence</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>

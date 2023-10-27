@@ -167,15 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3%20Working_with_strings.html">3. Working with strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4%20Flow_control.html">4. Flow control</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../5%20Lists.html">5. Lists</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../6%20Dictionaries.html">6. Dictionaries</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../9%20Regular_expressions.html">9. Regular Expressions</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../10%20Data_acquisition.html">10. Data acquisition</a></li>
@@ -382,7 +377,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-1">Exercise 4.1.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-2">Exercise 4.2.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-3">Exercise 4.3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-5">Exercise 4.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-6">Exercise 4.6</a></li>
 </ul>
             </nav>
         </div>
@@ -398,33 +395,19 @@ document.write(`
 <h1>4. Flow control<a class="headerlink" href="#flow-control" title="Permalink to this heading">#</a></h1>
 <section id="exercise-4-1">
 <h2>Exercise 4.1.<a class="headerlink" href="#exercise-4-1" title="Permalink to this heading">#</a></h2>
-<p>Write code which can print headingings in a syllabus for a university course which has 12 weeks. More specifically, print the headings ‘Week 1’, ‘Week 2’, ‘Week 3’, etc.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nr_weeks</span> <span class="o">=</span> <span class="mi">12</span>
-
-<span class="k">for</span> <span class="n">week_number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nr_weeks</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;Week </span><span class="si">{</span><span class="n">week_number</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-4-2">
-<h2>Exercise 4.2.<a class="headerlink" href="#exercise-4-2" title="Permalink to this heading">#</a></h2>
 <p>Create a variable named <code class="docutils literal notranslate"><span class="pre">hour</span></code> and asign it a value in between 0 and 23. Assuming that this variable represents a given time, print a message that is appropriate for the part of the day this hour is in. If the variable <code class="docutils literal notranslate"><span class="pre">hour</span></code> has value 10, for instance, the code should print <code class="docutils literal notranslate"><span class="pre">'Good</span> <span class="pre">morning!'</span></code> and if <code class="docutils literal notranslate"><span class="pre">hour</span></code> has value 23, the code should print <code class="docutils literal notranslate"><span class="pre">'Good</span> <span class="pre">night!'</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hour</span> <span class="o">=</span> <span class="mi">19</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hour</span> <span class="o">=</span> <span class="mi">21</span>
 
 <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;It is now </span><span class="si">{</span><span class="n">hour</span><span class="si">}</span><span class="s2"> o&#39;clock&quot;</span> <span class="p">)</span>
 
 <span class="c1"># We check for two conditions at once using `and`</span>
-<span class="k">if</span> <span class="mi">6</span> <span class="o">&lt;=</span> <span class="n">hour</span> <span class="ow">and</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">hour</span> <span class="o">&gt;</span> <span class="mi">6</span> <span class="ow">and</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good morning!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="mi">12</span> <span class="o">&lt;=</span> <span class="n">hour</span> <span class="ow">and</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">17</span><span class="p">:</span>
+<span class="k">elif</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">17</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good afternoon!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="mi">17</span> <span class="o">&lt;=</span> <span class="n">hour</span> <span class="ow">and</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">23</span><span class="p">:</span>
+<span class="k">elif</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">23</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good evening!&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good night!&quot;</span><span class="p">)</span>
@@ -437,21 +420,16 @@ For example, we don’t check whether <code class="docutils literal notranslate"
 It is advisable to include these checks in code that you rely on.</p>
 <p>In case you wondered if you can make the comparisons more compact, you can!
 You can compare a number to two numbers at the same time, as demonstrated below.</p>
+</section>
+<section id="exercise-4-2">
+<h2>Exercise 4.2.<a class="headerlink" href="#exercise-4-2" title="Permalink to this heading">#</a></h2>
+<p>Write code which can print headingings in a syllabus for a university course which has 12 weeks. More specifically, print the headings ‘Week 1’, ‘Week 2’, ‘Week 3’, etc.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hour</span> <span class="o">=</span> <span class="mi">19</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nr_weeks</span> <span class="o">=</span> <span class="mi">12</span>
 
-<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;It is now </span><span class="si">{</span><span class="n">hour</span><span class="si">}</span><span class="s2"> o&#39;clock&quot;</span> <span class="p">)</span>
-
-<span class="c1"># You can check a variable against two values at once</span>
-<span class="k">if</span> <span class="mi">6</span> <span class="o">&lt;=</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good morning!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="mi">12</span> <span class="o">&lt;=</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">17</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good afternoon!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="mi">17</span> <span class="o">&lt;=</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">23</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good evening!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good night!&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">week_number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nr_weeks</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;Week </span><span class="si">{</span><span class="n">week_number</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -459,6 +437,58 @@ You can compare a number to two numbers at the same time, as demonstrated below.
 </section>
 <section id="exercise-4-3">
 <h2>Exercise 4.3.<a class="headerlink" href="#exercise-4-3" title="Permalink to this heading">#</a></h2>
+<p>Strings can be viewed as collections of characters. When you iterate across a  string using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, you will receive each individual character in sequence. Try to write code which can reverse the order of the characters in a given string.</p>
+<p>You can test your code with the following examples:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Input</p></th>
+<th class="head text-left"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>time</p></td>
+<td class="text-left"><p>emit</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>drawer</p></td>
+<td class="text-left"><p>reward</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>stressed</p></td>
+<td class="text-left"><p>desserts</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_string</span> <span class="o">=</span> <span class="s1">&#39;drawer&#39;</span> 
+<span class="n">output_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">input_string</span><span class="p">:</span>
+    <span class="n">output_string</span> <span class="o">=</span> <span class="n">character</span> <span class="o">+</span> <span class="n">output_string</span> 
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">output_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-4-4">
+<h2>Exercise 4.4<a class="headerlink" href="#exercise-4-4" title="Permalink to this heading">#</a></h2>
+<p>Define a list ranging from 1 to 100 using the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function. Next, print the cumulative sum of all the numbers in this collection of numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cumulative_sum</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    <span class="n">cumulative_sum</span> <span class="o">+=</span> <span class="n">i</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">cumulative_sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-4-5">
+<h2>Exercise 4.5.<a class="headerlink" href="#exercise-4-5" title="Permalink to this heading">#</a></h2>
 <p>The standard function <code class="docutils literal notranslate"><span class="pre">input()</span></code> can be used to request a value from the user.</p>
 <p>Use this function to request a year from the user. You can copy the code below:</p>
 <p><code class="docutils literal notranslate"><span class="pre">year</span> <span class="pre">=</span> <span class="pre">int(</span> <span class="pre">input(</span> <span class="pre">f&quot;Please</span> <span class="pre">enter</span> <span class="pre">a</span> <span class="pre">year:</span> <span class="pre">&quot;)</span> <span class="pre">)</span></code></p>
@@ -491,8 +521,8 @@ Note that it is possible to combine two different Boolean expressions using the 
 </div>
 </div>
 </section>
-<section id="exercise-4-4">
-<h2>Exercise 4.4.<a class="headerlink" href="#exercise-4-4" title="Permalink to this heading">#</a></h2>
+<section id="exercise-4-6">
+<h2>Exercise 4.6<a class="headerlink" href="#exercise-4-6" title="Permalink to this heading">#</a></h2>
 <p>Program a small guessing game. In this game, the player needs to guess a number in between 1 and 50. You can use the code below as a basis.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">randint()</span></code> method from <code class="docutils literal notranslate"><span class="pre">random</span></code> can be used, firstly, to generate a random integer.</p>
 <p>Use the function <code class="docutils literal notranslate"><span class="pre">input()</span></code> to request a value from the user. The function <code class="docutils literal notranslate"><span class="pre">int()</span></code> needs to be used to convert the input into an integer.</p>
@@ -591,7 +621,9 @@ When that works, think which parts of the code need to be repeated to let the pl
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-1">Exercise 4.1.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-2">Exercise 4.2.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-3">Exercise 4.3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-5">Exercise 4.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-6">Exercise 4.6</a></li>
 </ul>
   </nav></div>
 

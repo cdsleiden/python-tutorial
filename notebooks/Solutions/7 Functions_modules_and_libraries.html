@@ -167,15 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3%20Working_with_strings.html">3. Working with strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4%20Flow_control.html">4. Flow control</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../5%20Lists.html">5. Lists</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../6%20Dictionaries.html">6. Dictionaries</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../9%20Regular_expressions.html">9. Regular Expressions</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../10%20Data_acquisition.html">10. Data acquisition</a></li>
@@ -383,6 +378,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-2">Exercise 7.2.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-3">Exercise 7.3.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-4">Exercise 7.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-5">Exercise 7.5.</a></li>
 </ul>
             </nav>
         </div>
@@ -398,6 +394,23 @@ document.write(`
 <h1>7. Functions, Modules and Libraries<a class="headerlink" href="#functions-modules-and-libraries" title="Permalink to this heading">#</a></h1>
 <section id="exercise-7-1">
 <h2>Exercise 7.1.<a class="headerlink" href="#exercise-7-1" title="Permalink to this heading">#</a></h2>
+<p>Write a function which can convert a given temperature in degrees Celcius into the equivalent in Fahrenheit. Use the following formula: F = 1.8 * C + 32.</p>
+<p>Once the function is ready, test it with a number of values. 20 degrees Celcius ought to be converted into 68 degrees Fahrenheit, and 37 degrees Celcius should equal 98.6 degrees Fahrenheit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">celcius_to_fahrentheit</span><span class="p">(</span> <span class="n">celcius</span> <span class="p">):</span>
+    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="mf">1.8</span> <span class="o">*</span> <span class="n">celcius</span> <span class="o">+</span> <span class="mi">32</span> 
+    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span> <span class="n">fahrenheit</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> degrees Celcius is </span><span class="si">{}</span><span class="s1"> degrees in Fahrenheit&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="mi">20</span> <span class="p">,</span> <span class="n">celcius_to_fahrentheit</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> degrees Celcius is </span><span class="si">{}</span><span class="s1"> degrees in Fahrenheit&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="mi">37</span> <span class="p">,</span> <span class="n">celcius_to_fahrentheit</span><span class="p">(</span><span class="mi">37</span><span class="p">)</span>  <span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-7-2">
+<h2>Exercise 7.2.<a class="headerlink" href="#exercise-7-2" title="Permalink to this heading">#</a></h2>
 <p>In a given university course, the final grade is determined by grade for essay and by the grade for a presentation. The presentation counts for 30% and the essay for 70%.</p>
 <p>Write two functions:</p>
 <ol class="arabic simple">
@@ -435,8 +448,26 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 </div>
 </div>
 </section>
-<section id="exercise-7-2">
-<h2>Exercise 7.2.<a class="headerlink" href="#exercise-7-2" title="Permalink to this heading">#</a></h2>
+<section id="exercise-7-3">
+<h2>Exercise 7.3.<a class="headerlink" href="#exercise-7-3" title="Permalink to this heading">#</a></h2>
+<p>Write a function which takes a Python list as a parameter. This list should contain numbers. The function should return the average value of the numbers in the list. Name the function <code class="docutils literal notranslate"><span class="pre">calculate_average()</span></code>. in the definition of this function, add an optional parameter which specifies the number of digits that are returned after the digit. The default value must be 1.</p>
+<p>To calculate the sum of all the numbers in a list, you can work with the <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">134</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">23</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">calculate_average</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">nr_digits</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">average</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">average</span><span class="p">,</span> <span class="n">nr_digits</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">calculate_average</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-7-4">
+<h2>Exercise 7.4.<a class="headerlink" href="#exercise-7-4" title="Permalink to this heading">#</a></h2>
 <p>Import the math library, as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
@@ -462,25 +493,8 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 </div>
 </div>
 </section>
-<section id="exercise-7-3">
-<h2>Exercise 7.3.<a class="headerlink" href="#exercise-7-3" title="Permalink to this heading">#</a></h2>
-<p>Write a function which can convert a given temperature in degrees Celcius into the equivalent in Fahrenheit. Use the following formula: F = 1.8 * C + 32.</p>
-<p>Once the function is ready, test it with a number of values. 20 degrees Celcius ought to be converted into 68 degrees Fahrenheit, and 37 degrees Celcius should equal 98.6 degrees Fahrenheit.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">celciusToFahrentheit</span><span class="p">(</span> <span class="n">celcius</span> <span class="p">):</span>
-    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="mf">1.8</span> <span class="o">*</span> <span class="n">celcius</span> <span class="o">+</span> <span class="mi">32</span> 
-    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span> <span class="n">fahrenheit</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> degrees Celcius is </span><span class="si">{}</span><span class="s1"> degrees in Fahrenheit&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="mi">20</span> <span class="p">,</span> <span class="n">celciusToFahrentheit</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> degrees Celcius is </span><span class="si">{}</span><span class="s1"> degrees in Fahrenheit&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="mi">37</span> <span class="p">,</span> <span class="n">celciusToFahrentheit</span><span class="p">(</span><span class="mi">37</span><span class="p">)</span>  <span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-7-4">
-<h2>Exercise 7.4.<a class="headerlink" href="#exercise-7-4" title="Permalink to this heading">#</a></h2>
+<section id="exercise-7-5">
+<h2>Exercise 7.5.<a class="headerlink" href="#exercise-7-5" title="Permalink to this heading">#</a></h2>
 <p>Following Pythagoras’ theorem (A<sup>2</sup> + B<sup>2</sup> = C<sup>2</sup>), calculate the length of the hypothenuse in a right trangle in which the other two sides have a length of 6 and 7. Make use of the math module.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -567,6 +581,7 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-2">Exercise 7.2.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-3">Exercise 7.3.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-4">Exercise 7.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-5">Exercise 7.5.</a></li>
 </ul>
   </nav></div>
 
