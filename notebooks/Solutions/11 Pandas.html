@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>11. Pandas &#8212; Python Tutorial</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Solutions/11 Pandas';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -76,10 +71,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -120,11 +114,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,6 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../Welcome.html">
@@ -151,7 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Python Tutorial</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -334,6 +343,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -343,6 +353,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -393,12 +404,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas">
-<h1>11. Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
+<h1>11. Pandas<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
 <section id="exercise-11-1">
-<h2>Exercise 11.1.<a class="headerlink" href="#exercise-11-1" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 11.1.<a class="headerlink" href="#exercise-11-1" title="Link to this heading">#</a></h2>
 <p>In the data folder for this tutorial, you can find a CSV file named ‘nobel.csv’. This file contains information about Nobel laureates. If, for whichever reason, you cannot locate this file, you can download it from the following address: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a><br />
 First, read in the data using Pandas. Use ‘nobel’ as a name for the data frame.</p>
 <p>Next, print a sentence which gives information about the total number of Nobel laureates. Also print a sentence giving information about the number of columns in this data set.</p>
@@ -420,7 +431,7 @@ First, read in the data using Pandas. Use ‘nobel’ as a name for the data fra
 </div>
 </section>
 <section id="exercise-11-2">
-<h2>Exercise 11.2.<a class="headerlink" href="#exercise-11-2" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 11.2.<a class="headerlink" href="#exercise-11-2" title="Link to this heading">#</a></h2>
 <p>As was explained, the <code class="docutils literal notranslate"><span class="pre">head()</span></code> function prints the first five rows of a dataframe. There is a similar finction named <code class="docutils literal notranslate"><span class="pre">tail()</span></code> which returns the <em>last</em> five rows of a dataframe.</p>
 <p>Working with the Nobel laureates data set, try to recreate this functionality using the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> indexer. In other words, use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> to print only the first five and only the last five rows. Note that, as is the case for lists, you can work with negative numbers for the indices.</p>
 <p>Finally, try to use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> again to print only the first and the the second column of the last five rows.</p>
@@ -450,7 +461,7 @@ First, read in the data using Pandas. Use ‘nobel’ as a name for the data fra
 </div>
 </section>
 <section id="exercise-1-3">
-<h2>Exercise 1.3.<a class="headerlink" href="#exercise-1-3" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 1.3.<a class="headerlink" href="#exercise-1-3" title="Link to this heading">#</a></h2>
 <p>Working with the Nobel laureates data set, try to answer the following questions:</p>
 <ul class="simple">
 <li><p>How many Dutch Nobel laureates have there been so far?</p></li>
@@ -475,7 +486,7 @@ First, read in the data using Pandas. Use ‘nobel’ as a name for the data fra
 </div>
 </section>
 <section id="exercise-1-4">
-<h2>Exercise 1.4.<a class="headerlink" href="#exercise-1-4" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 1.4.<a class="headerlink" href="#exercise-1-4" title="Link to this heading">#</a></h2>
 <p>How many female Nobel laureates are there in this data set? Print a list containing, their names, the category of the award, and the year in which the prize was awarded.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -493,7 +504,7 @@ First, read in the data using Pandas. Use ‘nobel’ as a name for the data fra
 </div>
 </section>
 <section id="exercise-1-5">
-<h2>Exercise 1.5<a class="headerlink" href="#exercise-1-5" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 1.5<a class="headerlink" href="#exercise-1-5" title="Link to this heading">#</a></h2>
 <p>Who was the youngest person ever to receive the Nobel Prize? Who was the oldest person?</p>
 <p>Tip: Create a new column called ‘Age’, in which the year in which the prize was awarded is subtracted from the year of birth. A difficulty here is that we have the full date of birth, and not only the year. The year of birth can be extracted from the date of birth using the following code:</p>
 <blockquote>
@@ -536,7 +547,7 @@ First, read in the data using Pandas. Use ‘nobel’ as a name for the data fra
 </div>
 </section>
 <section id="exercise-1-6">
-<h2>Exercise 1.6.<a class="headerlink" href="#exercise-1-6" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 1.6.<a class="headerlink" href="#exercise-1-6" title="Link to this heading">#</a></h2>
 <p>For each category, calculate the average age of the Nobel laureates. Note that this exercise builds on the results of exercise 1.5.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -579,7 +590,7 @@ First, read in the data using Pandas. Use ‘nobel’ as a name for the data fra
 </div>
 </section>
 <section id="exercise-11-7">
-<h2>Exercise 11.7.<a class="headerlink" href="#exercise-11-7" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 11.7.<a class="headerlink" href="#exercise-11-7" title="Link to this heading">#</a></h2>
 <p>Create a list of all the unique countries, and calculate the number of Nobel laureates per country. Print a list which is ranked according to the number of Nobel prizes. The country with the highest number of Nobel laureates must be at the top of the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -605,7 +616,7 @@ First, read in the data using Pandas. Use ‘nobel’ as a name for the data fra
 </div>
 </section>
 <section id="exercise-11-8">
-<h2>Exercise 11.8.<a class="headerlink" href="#exercise-11-8" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 11.8.<a class="headerlink" href="#exercise-11-8" title="Link to this heading">#</a></h2>
 <p>Download the Excel file names ‘Grades.xsl’ from the following address:</p>
 <p><a class="reference external" href="https://edu.nl/m6w8n">https://edu.nl/m6w8n</a></p>
 <p>This spreadsheet contains the partial grades received in a certain course.</p>
@@ -652,7 +663,7 @@ First, read in the data using Pandas. Use ‘nobel’ as a name for the data fra
 </div>
 </section>
 <section id="exercise-11-9">
-<h2>Exercise 11.9.<a class="headerlink" href="#exercise-11-9" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 11.9.<a class="headerlink" href="#exercise-11-9" title="Link to this heading">#</a></h2>
 <p>In the exercise, we make use of the following data set:</p>
 <blockquote>
 <div><p>Fatah-Black, Dr KJ (Leiden University) (2017): Lijsten van de leveranties, met de namen van de kopers en betaalde prijzen op de verkopingen van de VOC kamer Zeeland, 1725 – 1777. DANS. <a class="reference external" href="https://doi.org/10.17026/dans-23z-ez6f">https://doi.org/10.17026/dans-23z-ez6f</a></p>
@@ -749,7 +760,7 @@ First, read in the data using Pandas. Use ‘nobel’ as a name for the data fra
 </div>
 </section>
 <section id="exercise-11-10">
-<h2>Exercise 11.10.<a class="headerlink" href="#exercise-11-10" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 11.10.<a class="headerlink" href="#exercise-11-10" title="Link to this heading">#</a></h2>
 <p>Download the CSV file ‘gutenberg_metadata.csv’ via the URL <a class="reference external" href="https://edu.nl/xcm3q">https://edu.nl/xcm3q</a>.</p>
 <p>Using this CSV file, create a dataframe which only contains the English texts written by Charles Dickens. In the data set, this name is given as ‘Dickens Charles’. Use the code ‘en’ for ‘English’.</p>
 <p>Two different conditions can be combined using the ampersand (’&amp;’). The combined criteria must be given in brackets.</p>
@@ -801,7 +812,7 @@ First, read in the data using Pandas. Use ‘nobel’ as a name for the data fra
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="10%20Data_acquisition.html"
@@ -829,6 +840,7 @@ First, read in the data using Pandas. Use ‘nobel’ as a name for the data fra
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -867,6 +879,7 @@ By Peter Verhaar and Ben Companjen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -893,8 +906,8 @@ By Peter Verhaar and Ben Companjen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

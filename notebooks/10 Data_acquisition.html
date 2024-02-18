@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>10. Data acquisition &#8212; Python Tutorial</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/10 Data_acquisition';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,10 +71,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -120,11 +114,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,6 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../Welcome.html">
@@ -151,7 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Python Tutorial</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -334,6 +343,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -343,6 +353,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -405,16 +416,16 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-acquisition">
-<h1>10. Data acquisition<a class="headerlink" href="#data-acquisition" title="Permalink to this heading">#</a></h1>
+<h1>10. Data acquisition<a class="headerlink" href="#data-acquisition" title="Link to this heading">#</a></h1>
 <p>Data science projects typically start with the acquisition of data. Such data sets may consist of secondary data made available on the web by commercial or non-commercial organisations. This part of the tutorial explains how you can obtain such online data sets using code.</p>
 <p>Many data sets can be downloaded manually through your browser, for example, from data portals or repositories. <a class="reference external" href="https://www.re3data.org/">Re3data</a> is a large overview of repositories for research data.</p>
 <p>There can be good reasons for downloading data sets using a script. The manual acquisition of data may be tedious if the data collection consists of many files. In some cases, you may want to download files that are updated frequently.</p>
 <p>In this tutorial, we distinguish three methods of data acquisition: downloading data files, accessing data through APIs and webscraping. You usually choose one of these methods to acquire your data, based on what the data provider offers.</p>
 <section id="direct-downloads">
-<h2>Direct downloads<a class="headerlink" href="#direct-downloads" title="Permalink to this heading">#</a></h2>
+<h2>Direct downloads<a class="headerlink" href="#direct-downloads" title="Link to this heading">#</a></h2>
 <p>If the resources that you are interested in are available directly via the web, you can download these files by making use of the <a class="reference external" href="https://requests.readthedocs.io/"><code class="docutils literal notranslate"><span class="pre">requests</span></code></a> library. As is the case for all libraries, the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library needs to be imported before you can use it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -471,7 +482,7 @@ The status code 200 indicates that the request was successful. The infamous stat
 </div>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">if</span></code> keyword in the code above does not explicitly test whether the response code is 200. The Response object, which is created when you use the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method from requests, automatically returns <code class="docutils literal notranslate"><span class="pre">True</span></code> when the status code is 200.</p>
 <section id="exercise-10-1">
-<h3>Exercise 10.1.<a class="headerlink" href="#exercise-10-1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 10.1.<a class="headerlink" href="#exercise-10-1" title="Link to this heading">#</a></h3>
 <p>The list below contains a number of URLs. They are the web addresses of texts created for the <a class="reference external" href="https://www.gutenberg.org">Project Gutenberg</a> website.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;https://www.gutenberg.org/files/580/580-0.txt&#39;</span> <span class="p">,</span>
 <span class="s1">&#39;https://www.gutenberg.org/files/1400/1400-0.txt&#39;</span> <span class="p">,</span>
@@ -512,13 +523,13 @@ The status code 200 indicates that the request was successful. The infamous stat
 </section>
 </section>
 <section id="acquiring-data-via-apis">
-<h2>Acquiring data via APIs<a class="headerlink" href="#acquiring-data-via-apis" title="Permalink to this heading">#</a></h2>
+<h2>Acquiring data via APIs<a class="headerlink" href="#acquiring-data-via-apis" title="Link to this heading">#</a></h2>
 <p>Organisations which aim to make their data available for reuse often do this through an <em>Application Programming Interface</em> (API). An API, simply put, is the interface through which (online) services and applications provide access to their information and functionalities.</p>
 <p>It enables organisations to share some of the data that they have in a strucured format, so that other external parties can make use of these data in new applications.</p>
 <p>The communication between the sender and the recipient of such requests needs to take place according to a specific protocol. The requests need to be formulated according to certain rules.</p>
 <p>For many APIs, you need to create an access key (which may or may not require payment) before you can send requests. This is the case, for instance, for the Twitter/X API.</p>
 <section id="example-musicbrainz">
-<h3>Example: MusicBrainz<a class="headerlink" href="#example-musicbrainz" title="Permalink to this heading">#</a></h3>
+<h3>Example: MusicBrainz<a class="headerlink" href="#example-musicbrainz" title="Link to this heading">#</a></h3>
 <p>There are also many APIs that are open, in the sense that do not require registration. The <a class="reference external" href="https://musicbrainz.org/doc/MusicBrainz_API">MusicBrainz API</a>, for example, is free for non-commercial use. <em>MusicBrainz</em> is a large online encyclopedia containing information about musicians and their work. You can send requests to this API without having to provide an access key.</p>
 <p>The root URL of this API is <a class="reference external" href="https://musicbrainz.org/ws/2/">https://musicbrainz.org/ws/2/</a></p>
 <p>On MusicBrainz, you can request information about different entities, including artists, genres, instruments, labels and releases. The entity type you are interested in firstly needs to be appended to the root URL. If you want to search for information about an artist, for example, you need to work with the following URL structure: <code class="docutils literal notranslate"><span class="pre">https://musicbrainz.org/ws/2/artist[?parameters]</span></code></p>
@@ -583,7 +594,7 @@ The status code 200 indicates that the request was successful. The infamous stat
 </div>
 </section>
 <section id="exercise-10-2">
-<h3>Exercise 10.2.<a class="headerlink" href="#exercise-10-2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 10.2.<a class="headerlink" href="#exercise-10-2" title="Link to this heading">#</a></h3>
 <p>As was discussed above, you can use the <em>MusicBrainz</em> API to request information about musicians. Via the code that is provided, you can request the names and the types of artists. This specific API can make much more information available, however. Try to add some code with can add the following data about each artist:</p>
 <ul class="simple">
 <li><p>The gender (in the case of a person)</p></li>
@@ -635,7 +646,7 @@ The status code 200 indicates that the request was successful. The infamous stat
 </div>
 </section>
 <section id="exercise-10-3">
-<h3>Exercise 10.3.<a class="headerlink" href="#exercise-10-3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 10.3.<a class="headerlink" href="#exercise-10-3" title="Link to this heading">#</a></h3>
 <p>Find the coordinates for each address in the given list using <a class="reference external" href="https://www.openstreetmap.org/">OpenStreetMap</a>’s Nominatim API.</p>
 <p>The Nominatim API can be used, among other things, to find the precise geographic coordinates of a specific location. The base URL of this API is <a class="reference external" href="https://nominatim.openstreetmap.org/search">https://nominatim.openstreetmap.org/search</a>.</p>
 <p>Following the <code class="docutils literal notranslate"><span class="pre">q</span></code> parameter, you need to supply a string describing the locations whose latitude and longitude you want to find. As values for the <code class="docutils literal notranslate"><span class="pre">format</span></code> parameter, you can use <code class="docutils literal notranslate"><span class="pre">xml</span></code> for XML-formatted data or <code class="docutils literal notranslate"><span class="pre">json</span></code> for JSON-formatted data.</p>
@@ -677,7 +688,7 @@ The status code 200 indicates that the request was successful. The infamous stat
 </div>
 </section>
 <section id="exercise-10-4">
-<h3>Exercise 10.4.<a class="headerlink" href="#exercise-10-4" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 10.4.<a class="headerlink" href="#exercise-10-4" title="Link to this heading">#</a></h3>
 <p><em><a class="reference external" href="https://journals.plos.org/plosone/">PLOS One</a></em> is a peer reviewed open access journal. The <em>PLOS One</em> API can be used to request metadata about all the articles that have been published in the journal. In this API, you can refer to specific articles using their <a class="reference external" href="https://www.doi.org/">DOI</a>.</p>
 <p>Such requests can be sent using API calls with the following structure:</p>
 <p><a class="reference external" href="https://api.plos.org/search?q=id:%7Bdoi%7D">https://api.plos.org/search?q=id:{doi}</a></p>
@@ -704,7 +715,7 @@ The status code 200 indicates that the request was successful. The infamous stat
 </section>
 </section>
 <section id="webscraping">
-<h2>Webscraping<a class="headerlink" href="#webscraping" title="Permalink to this heading">#</a></h2>
+<h2>Webscraping<a class="headerlink" href="#webscraping" title="Link to this heading">#</a></h2>
 <p>When a website does not offer access to its structured data via a well-defined API, it may be an option to acquire the data that can be viewed on a site by making use of web scraping. It is a process in which a computer program tries to process the contents of given webpage, and to extract the data values that are needed. The aim of such an application is generally to copy information on a web page and to paste it into a local database.</p>
 <p>To get the most out of webscraping, you need to have a basic understanding of HTML, the language that is use to make web pages. HTML, in short, encodes information in what are called elements or tags. The elements consist of a code surrounded by angular brackets, such as <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code>. Elements may also have attributes. in the HTML fragment <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">href=&quot;https://example.com/&quot;&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code> is the name of the element and <code class="docutils literal notranslate"><span class="pre">href</span></code> is the attribute. If you want to learn more about HTML, this <a class="reference external" href="https://bookandbyte.universiteitleiden.nl/DMT/HTML/HTML.pdf">basic introduction</a> may provide a start, but many other tutorials are available on the web.</p>
 <p>Web scraping should be used with caution, because it may be not always be allowed to download large quantities of data from a specific website. In this tutorial, we will only discuss code that extracts information from single web pages.</p>
@@ -820,22 +831,22 @@ The status code 200 indicates that the request was successful. The infamous stat
 </div>
 </div>
 <section id="advanced-scraping-scrapy">
-<h3>Advanced scraping: Scrapy<a class="headerlink" href="#advanced-scraping-scrapy" title="Permalink to this heading">#</a></h3>
+<h3>Advanced scraping: Scrapy<a class="headerlink" href="#advanced-scraping-scrapy" title="Link to this heading">#</a></h3>
 <p>As you can see, web scraping can easily become rather difficult. You need to inspect the structure of the HTML source quite carefully, and you often need to work with fairly complicated code to extract only the values that you need. This tutorial has only touched the surface of web scraping. To get specific data from webpages or APIs, you will often need to dig deeply into the data that you get.</p>
 <p>A more advanced framework (or toolkit) for webscraping with Python is <a class="reference external" href="https://scrapy.org">Scrapy</a>. This framework can simplify the process of building a scraper/crawler considerably. Scrapy helps you to ensure that you don’t send too many requests at the same time, for example. The <a class="reference external" href="https://docs.scrapy.org/en/latest/intro/tutorial.html">Scrapy tutorial</a> offers more information on this library.</p>
 </section>
 <section id="exercise-10-5">
-<h3>Exercise 10.5.<a class="headerlink" href="#exercise-10-5" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 10.5.<a class="headerlink" href="#exercise-10-5" title="Link to this heading">#</a></h3>
 <p>This tutorial has explained how you can extract data about the titles and the prices of all the books that are shown on the web page <a class="reference external" href="https://books.toscrape.com/">https://books.toscrape.com/</a>.</p>
 <p>Can you write code to extract the URLs of all the book covers on this page? These URLs can be found in the <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> elements within the <code class="docutils literal notranslate"><span class="pre">&lt;article&gt;</span></code> about each book. Note that the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> element specifies a relative path. To change the relative path into an absolute path, you need to concatenate the base url (<a class="reference external" href="https://books.toscrape.com/">https://books.toscrape.com/</a>) and the relative path to the image.</p>
 </section>
 <section id="exercise-10-6">
-<h3>Exercise 10.6.<a class="headerlink" href="#exercise-10-6" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 10.6.<a class="headerlink" href="#exercise-10-6" title="Link to this heading">#</a></h3>
 <p>On the web page <a class="reference external" href="https://books.toscrape.com/">https://books.toscrape.com/</a>, the menu on the lefthand side contains a list of all the subject categories of the books.</p>
 <p>Try to write some code which can extract all the terms in this list. This list is in an element named <code class="docutils literal notranslate"><span class="pre">div</span></code>, and this <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> has a <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute with the value <code class="docutils literal notranslate"><span class="pre">side_categories</span></code>. The categories themselves are all encoded within an <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> element.</p>
 </section>
 <section id="exercise-10-7">
-<h3>Exercise 10.7.<a class="headerlink" href="#exercise-10-7" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 10.7.<a class="headerlink" href="#exercise-10-7" title="Link to this heading">#</a></h3>
 <p>Write a program in Python which can extract data from the following web page:</p>
 <p><a class="reference external" href="https://www.imdb.com/chart/top/">https://www.imdb.com/chart/top/</a></p>
 <p>This is a page on the <a class="reference external" href="https://www.imdb.com">Internet Movie Database website</a>. It lists the 25 most highly rated movies.</p>
@@ -885,7 +896,7 @@ The status code 200 indicates that the request was successful. The infamous stat
 </div>
 </section>
 <section id="exercise-10-8">
-<h3>Exercise 10.8.<a class="headerlink" href="#exercise-10-8" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 10.8.<a class="headerlink" href="#exercise-10-8" title="Link to this heading">#</a></h3>
 <p>The webpage below offers access to the complete work of the author H.P. Lovecraft.</p>
 <p><a class="reference external" href="https://www.hplovecraft.com/writings/texts/">https://www.hplovecraft.com/writings/texts/</a></p>
 <p>Write code in Python to find and print the URLs of all the texts that are listed. The links are all encoded in an element named &lt;a&gt;. The attribute <code class="docutils literal notranslate"><span class="pre">href</span></code> mentions the links, and the body of the &lt;a&gt; element mentions the title. List only the web pages that end in ‘.aspx’.</p>
@@ -902,13 +913,13 @@ The status code 200 indicates that the request was successful. The infamous stat
 </div>
 </section>
 <section id="exercise-10-9">
-<h3>Exercise 10.9.<a class="headerlink" href="#exercise-10-9" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 10.9.<a class="headerlink" href="#exercise-10-9" title="Link to this heading">#</a></h3>
 <p>Using <code class="docutils literal notranslate"><span class="pre">requests</span></code> and <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>, create a list of all the countries mentioned on <a class="reference external" href="https://www.scrapethissite.com/pages/simple/">https://www.scrapethissite.com/pages/simple/</a>.</p>
 <p>Also collect and print data about the capital, the population and the area of all of these countries.</p>
 <p>How you print or present the information is not too important here; the challenge in this exercise is to extract the data from the webpage.</p>
 </section>
 <section id="exercise-10-10">
-<h3>Exercise 10.10.<a class="headerlink" href="#exercise-10-10" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 10.10.<a class="headerlink" href="#exercise-10-10" title="Link to this heading">#</a></h3>
 <p>Download all the images shown on the following page: <a class="reference external" href="https://www.bbc.com/news/in-pictures-61014501">https://www.bbc.com/news/in-pictures-61014501</a></p>
 <p>You can follow these steps:</p>
 <ol class="arabic simple">
@@ -920,13 +931,13 @@ The status code 200 indicates that the request was successful. The infamous stat
 </ol>
 </section>
 <section id="exercise-10-11">
-<h3>Exercise 10.11.<a class="headerlink" href="#exercise-10-11" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 10.11.<a class="headerlink" href="#exercise-10-11" title="Link to this heading">#</a></h3>
 <p>Write Python code which can download the titles and the URLs of Wikipedia articles whose titles contain the word ‘Dutch’. Your code needs to display the first 30 results only.</p>
 <p>You can search for Wikipedia pages containing a certain term using the following base URL:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/w/api.php?action=opensearch&#39;</span>
 </pre></div>
 </div>
-<p>As you can read in the <a class="reference external" href="https://www.mediawiki.org/w/api.php?action=help&amp;modules=opensearch">documentation of this API</a>, the <code class="docutils literal notranslate"><span class="pre">opensearch</span></code> function accepts the following parameters:</p>
+<p>As you can read in the <a class="reference external" href="https://www.mediawiki.org/w/api.php?action=help&amp;amp;modules=opensearch">documentation of this API</a>, the <code class="docutils literal notranslate"><span class="pre">opensearch</span></code> function accepts the following parameters:</p>
 <ul class="simple">
 <li><p><em>query</em> speficies the search term.</p></li>
 <li><p><em>limit</em> sets a limit to the number of items to return</p></li>
@@ -977,7 +988,7 @@ The status code 200 indicates that the request was successful. The infamous stat
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="9%20Regular_expressions.html"
@@ -1005,6 +1016,7 @@ The status code 200 indicates that the request was successful. The infamous stat
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1055,6 +1067,7 @@ By Peter Verhaar and Ben Companjen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1081,8 +1094,8 @@ By Peter Verhaar and Ben Companjen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

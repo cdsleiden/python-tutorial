@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>7. Functions, Modules and Libraries &#8212; Python Tutorial</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Solutions/7 Functions_modules_and_libraries';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -76,10 +71,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -120,11 +114,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,6 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../Welcome.html">
@@ -151,7 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Python Tutorial</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -334,6 +343,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -343,6 +353,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -379,6 +390,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-3">Exercise 7.3.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-4">Exercise 7.4.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-5">Exercise 7.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-6">Exercise 7.6.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-7">Exercise 7.7.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-8">Exercise 7.8.</a></li>
 </ul>
             </nav>
         </div>
@@ -388,29 +402,50 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="functions-modules-and-libraries">
-<h1>7. Functions, Modules and Libraries<a class="headerlink" href="#functions-modules-and-libraries" title="Permalink to this heading">#</a></h1>
+<h1>7. Functions, Modules and Libraries<a class="headerlink" href="#functions-modules-and-libraries" title="Link to this heading">#</a></h1>
 <section id="exercise-7-1">
-<h2>Exercise 7.1.<a class="headerlink" href="#exercise-7-1" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 7.1.<a class="headerlink" href="#exercise-7-1" title="Link to this heading">#</a></h2>
 <p>Write a function which can convert a given temperature in degrees Celcius into the equivalent in Fahrenheit. Use the following formula: F = 1.8 * C + 32.</p>
 <p>Once the function is ready, test it with a number of values. 20 degrees Celcius ought to be converted into 68 degrees Fahrenheit, and 37 degrees Celcius should equal 98.6 degrees Fahrenheit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">celcius_to_fahrentheit</span><span class="p">(</span> <span class="n">celcius</span> <span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">celcius_to_fahrenheit</span><span class="p">(</span> <span class="n">celcius</span> <span class="p">):</span>
     <span class="n">fahrenheit</span> <span class="o">=</span> <span class="mf">1.8</span> <span class="o">*</span> <span class="n">celcius</span> <span class="o">+</span> <span class="mi">32</span> 
     <span class="k">return</span> <span class="nb">round</span><span class="p">(</span> <span class="n">fahrenheit</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> degrees Celcius is </span><span class="si">{}</span><span class="s1"> degrees in Fahrenheit&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="mi">20</span> <span class="p">,</span> <span class="n">celcius_to_fahrentheit</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> degrees Celcius is </span><span class="si">{}</span><span class="s1"> degrees in Fahrenheit&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="mi">37</span> <span class="p">,</span> <span class="n">celcius_to_fahrentheit</span><span class="p">(</span><span class="mi">37</span><span class="p">)</span>  <span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">celcius_to_fahrenheit</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">celcius_to_fahrenheit</span><span class="p">(</span><span class="mi">37</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="exercise-7-2">
-<h2>Exercise 7.2.<a class="headerlink" href="#exercise-7-2" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 7.2.<a class="headerlink" href="#exercise-7-2" title="Link to this heading">#</a></h2>
+<p>Write a function which can test whether a given number is in between 10 and 20. The function should return <code class="docutils literal notranslate"><span class="pre">True</span></code> if this is the case, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise. The function should also return <code class="docutils literal notranslate"><span class="pre">False</span></code> is equal to 10 or to 20.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">between_10_and_20</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span><span class="o">&gt;</span><span class="mi">10</span> <span class="ow">and</span> <span class="n">number</span><span class="o">&lt;</span><span class="mi">20</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">between_10_and_20</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">between_10_and_20</span><span class="p">(</span><span class="mi">14</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">between_10_and_20</span><span class="p">(</span><span class="mi">29</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">between_10_and_20</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-7-3">
+<h2>Exercise 7.3.<a class="headerlink" href="#exercise-7-3" title="Link to this heading">#</a></h2>
 <p>In a given university course, the final grade is determined by grade for essay and by the grade for a presentation. The presentation counts for 30% and the essay for 70%.</p>
 <p>Write two functions:</p>
 <ol class="arabic simple">
@@ -448,8 +483,8 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 </div>
 </div>
 </section>
-<section id="exercise-7-3">
-<h2>Exercise 7.3.<a class="headerlink" href="#exercise-7-3" title="Permalink to this heading">#</a></h2>
+<section id="exercise-7-4">
+<h2>Exercise 7.4.<a class="headerlink" href="#exercise-7-4" title="Link to this heading">#</a></h2>
 <p>Write a function which takes a Python list as a parameter. This list should contain numbers. The function should return the average value of the numbers in the list. Name the function <code class="docutils literal notranslate"><span class="pre">calculate_average()</span></code>. in the definition of this function, add an optional parameter which specifies the number of digits that are returned after the digit. The default value must be 1.</p>
 <p>To calculate the sum of all the numbers in a list, you can work with the <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function.</p>
 <div class="cell docutils container">
@@ -466,8 +501,8 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 </div>
 </div>
 </section>
-<section id="exercise-7-4">
-<h2>Exercise 7.4.<a class="headerlink" href="#exercise-7-4" title="Permalink to this heading">#</a></h2>
+<section id="exercise-7-5">
+<h2>Exercise 7.5.<a class="headerlink" href="#exercise-7-5" title="Link to this heading">#</a></h2>
 <p>Import the math library, as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
@@ -493,8 +528,8 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 </div>
 </div>
 </section>
-<section id="exercise-7-5">
-<h2>Exercise 7.5.<a class="headerlink" href="#exercise-7-5" title="Permalink to this heading">#</a></h2>
+<section id="exercise-7-6">
+<h2>Exercise 7.6.<a class="headerlink" href="#exercise-7-6" title="Link to this heading">#</a></h2>
 <p>Following Pythagoras’ theorem (A<sup>2</sup> + B<sup>2</sup> = C<sup>2</sup>), calculate the length of the hypothenuse in a right trangle in which the other two sides have a length of 6 and 7. Make use of the math module.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -507,6 +542,48 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 <span class="n">C</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span> <span class="n">C2</span> <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-7-7">
+<h2>Exercise 7.7.<a class="headerlink" href="#exercise-7-7" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">random</span></code> module can be used to make random numbers, or to select items from a list randomly.</p>
+<ul class="simple">
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">randrange()</span></code> method, write code which can generate a random number in between 10 and 50.</p></li>
+<li><p>Secondly, work with the <code class="docutils literal notranslate"><span class="pre">choice()</span></code> method from random to select a random number from the list named <code class="docutils literal notranslate"><span class="pre">animals</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rabbit&#39;</span><span class="p">,</span><span class="s1">&#39;horse&#39;</span><span class="p">,</span><span class="s1">&#39;cow&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;chicken&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;duck&#39;</span><span class="p">]</span>
+
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span><span class="p">,</span> <span class="n">choice</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">randrange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">animals</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-7-8">
+<h2>Exercise 7.8.<a class="headerlink" href="#exercise-7-8" title="Link to this heading">#</a></h2>
+<p>Instead of saving dates simply as strings, you can also save them as <code class="docutils literal notranslate"><span class="pre">datetime</span></code> objects. This can be done using the <code class="docutils literal notranslate"><span class="pre">datetime</span></code> module. Saving dates as <code class="docutils literal notranslate"><span class="pre">datetime</span></code> objects can be very helpful when you want to perform calculations on dates. For this exercise, calculate the number of days that have passed since January 1 2022. Follow the steps below.</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">datetime</span></code> is module. Within this module, there is also a class named <code class="docutils literal notranslate"><span class="pre">datetime</span></code>/ Start by importing the datetime class from the datetime module.</p></li>
+<li><p>Define ‘January 1 2022’ as a <code class="docutils literal notranslate"><span class="pre">datetime</span></code>. You can do this using the constructor method of <code class="docutils literal notranslate"><span class="pre">datetime</span></code>. This method demands three parameters: the year, the month and the date. These three numbers should all be integers. Assign the date to a variable named <code class="docutils literal notranslate"><span class="pre">older_date</span></code></p></li>
+<li><p>Find the current date. The <code class="docutils literal notranslate"><span class="pre">datetime</span></code> class in <code class="docutils literal notranslate"><span class="pre">datetime</span></code> contains a method called <code class="docutils literal notranslate"><span class="pre">now()</span></code> that you can use for this purpose. Assign today’s date to a variable named <code class="docutils literal notranslate"><span class="pre">today</span></code>.</p></li>
+<li><p>Subtract <code class="docutils literal notranslate"><span class="pre">older_date</span></code> from <code class="docutils literal notranslate"><span class="pre">now</span></code>. Append the property <code class="docutils literal notranslate"><span class="pre">days</span></code> to the result to see only the number of days.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="n">older_date</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">now</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">nr_days</span> <span class="o">=</span> <span class="p">(</span><span class="n">now</span><span class="o">-</span><span class="n">older_date</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nr_days</span><span class="o">.</span><span class="n">days</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -542,7 +619,7 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="6%20Dictionaries.html"
@@ -571,6 +648,7 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -582,6 +660,9 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-3">Exercise 7.3.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-4">Exercise 7.4.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-5">Exercise 7.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-6">Exercise 7.6.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-7">Exercise 7.7.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-8">Exercise 7.8.</a></li>
 </ul>
   </nav></div>
 
@@ -603,6 +684,7 @@ By Peter Verhaar and Ben Companjen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -629,8 +711,8 @@ By Peter Verhaar and Ben Companjen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

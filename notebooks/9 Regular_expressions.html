@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>9. Regular Expressions &#8212; Python Tutorial</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/9 Regular_expressions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,10 +71,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -120,11 +114,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,6 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../Welcome.html">
@@ -151,7 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Python Tutorial</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -334,6 +343,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -343,6 +353,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -400,15 +411,15 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="regular-expressions">
-<h1>9. Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this heading">#</a></h1>
+<h1>9. Regular Expressions<a class="headerlink" href="#regular-expressions" title="Link to this heading">#</a></h1>
 <p>Regular expressions can be used to search for specific patterns within texts. When you search using patterns, rather than search terms, you can generally search in much more advanced ways. You can search for words with specific types of characters or for words containing a specific number fo characters, for instance.</p>
 <p>Such regular expressions typically consist of a sequence of symbols which specify a search action. Once defined, such regular expressions can be matched against actual strings.</p>
 <p>Regular expressions can be constructed using literal characters and so-called metacharacters. The simple regular expression ‘flower’, for instance, only contains literal characters. It can be used to search for the six characters that are mentioned. Metacharacters, by contrast, are characters with a special meaning. They represent specific types of characters, such as characters in lower case, digits, spaces or tabs. When you combine literal characters and metacharacters, you can search for patterns rather than for literal strings or keywords.</p>
 <section id="re-search">
-<h2>re.search()<a class="headerlink" href="#re-search" title="Permalink to this heading">#</a></h2>
+<h2>re.search()<a class="headerlink" href="#re-search" title="Link to this heading">#</a></h2>
 <p>The standard installation of Python includes a useful module called <code class="docutils literal notranslate"><span class="pre">re</span></code>, which can be used to search for text fragments on the basis of regular expressions. To work with the module, you firstly need to import it. The module <code class="docutils literal notranslate"><span class="pre">re</span></code> contains a method named <code class="docutils literal notranslate"><span class="pre">search()</span></code>, which minimally requires two parameters. The first parameter is the pattern to search for, and the second parameter is the string in which you want to search. The method returns the value <code class="docutils literal notranslate"><span class="pre">True</span></code> if the pattern which is mentioned occurs in the string which is provided as the second parameter.</p>
 <p>The listing below offers an example. The regular expression, in this case, is simply a string consisting of literal characters. The code below tries to establish whether the string that is mentioned as the first parameter of <code class="docutils literal notranslate"><span class="pre">re.search()'</span></code>occurs in the sentence which is mentioned as the second parameter.</p>
 <div class="cell docutils container">
@@ -426,7 +437,7 @@ document.write(`
 </div>
 </section>
 <section id="meta-characters">
-<h2>Meta-characters<a class="headerlink" href="#meta-characters" title="Permalink to this heading">#</a></h2>
+<h2>Meta-characters<a class="headerlink" href="#meta-characters" title="Link to this heading">#</a></h2>
 <p>Next to literal characters, the following metacharacters may be used:</p>
 <p>
 <table width="100%; " style="text-align: left; font-size: 1.0em;  ">
@@ -467,7 +478,7 @@ document.write(`
 <p>The square brackets can be useful if you need to search for words which can be spelled in different ways. To localize the word ‘digitise’ in a text, for instance, either in its British or in its American spelling, you may use the regular expression <code class="docutils literal notranslate"><span class="pre">digiti[sz]e</span></code>.</p>
 </section>
 <section id="quantifiers">
-<h2>Quantifiers<a class="headerlink" href="#quantifiers" title="Permalink to this heading">#</a></h2>
+<h2>Quantifiers<a class="headerlink" href="#quantifiers" title="Link to this heading">#</a></h2>
 <p>You can also use quantifiers to specify the number of times a character or a pattern should occur.</p>
 <p>
 <table width="100%; " style="text-align: left; font-size: 1.0em; ">
@@ -524,7 +535,7 @@ document.write(`
 <p>The fragment above also illustrates the function of the <code class="docutils literal notranslate"><span class="pre">findall()</span></code> method from the <code class="docutils literal notranslate"><span class="pre">re</span></code> module. This function creates a list containing all fragments from the string that match the regular expression. The <code class="docutils literal notranslate"><span class="pre">re.search()</span></code> funcion, by contrast, only produces a Boolean value, depending on whether the regular expression matches the string.</p>
 </section>
 <section id="anchors">
-<h2>Anchors<a class="headerlink" href="#anchors" title="Permalink to this heading">#</a></h2>
+<h2>Anchors<a class="headerlink" href="#anchors" title="Link to this heading">#</a></h2>
 <p>Finally, you can also use so-called anchors in regular expression. Anchors do not represent actual characters, but only locations within strings.</p>
 <p>
 <table width="100%; " style="text-align: left; font-size: 1.0em; ">
@@ -570,7 +581,7 @@ document.write(`
 </div>
 </section>
 <section id="case-insensitivity">
-<h2>Case insensitivity<a class="headerlink" href="#case-insensitivity" title="Permalink to this heading">#</a></h2>
+<h2>Case insensitivity<a class="headerlink" href="#case-insensitivity" title="Link to this heading">#</a></h2>
 <p>If you add the text “re.IGNORECASE” as the third parameter of the search() function, the search will take place in a case-insensitive manner. For examples of case-insensitive searches using word boundaries, see the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -606,7 +617,7 @@ document.write(`
 </div>
 </section>
 <section id="the-escape-character">
-<h2>The escape character<a class="headerlink" href="#the-escape-character" title="Permalink to this heading">#</a></h2>
+<h2>The escape character<a class="headerlink" href="#the-escape-character" title="Link to this heading">#</a></h2>
 <p>As was discussed above, character such as the dot (‘.’), the asterisk (‘*’) or the question mark (‘?’) have a special meaning in regular expressions. Normally, they function as quantifiers or as metacharacters. In some cases, however, you may want to search for these literal characters themselves. If you need to extract the top level domain name from the URL of a website, for example, you need to specify that it is the part that follows the final dot.</p>
 <p>If you want to refer to characters in their literal meaning, these special characters need to be preceded by the back slash. This notation is known as “escaping” the character. The following code cell contains an illustration.</p>
 <div class="cell docutils container">
@@ -626,7 +637,7 @@ document.write(`
 </div>
 </section>
 <section id="finding-and-replacing-text">
-<h2>Finding and replacing text<a class="headerlink" href="#finding-and-replacing-text" title="Permalink to this heading">#</a></h2>
+<h2>Finding and replacing text<a class="headerlink" href="#finding-and-replacing-text" title="Link to this heading">#</a></h2>
 <p>In Python, regular expressions can also be applied usefully in ‘find and replace’ operations. Such operations can be performed using the <code class="docutils literal notranslate"><span class="pre">sub()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">re</span></code> module. The <code class="docutils literal notranslate"><span class="pre">sub()</span></code> method demands three parameters: (1) a regular expression, (2) a replacement string, and (3) the string containing text which needs to be replaced.</p>
 <p>If matches can be found for the regular expression which is mentioned as the first parameter, these matches will all be replaced with the string which is given as the second parameter. The function of <code class="docutils literal notranslate"><span class="pre">re.sub</span></code> is comparable to that of the <code class="docutils literal notranslate"><span class="pre">replace()</span></code> function, discussed in the section on ‘Working with Strings’.</p>
 <div class="cell docutils container">
@@ -662,9 +673,9 @@ document.write(`
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
+<h1>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
 <section id="exercise-9-1">
-<h2>Exercise 9.1.<a class="headerlink" href="#exercise-9-1" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 9.1.<a class="headerlink" href="#exercise-9-1" title="Link to this heading">#</a></h2>
 <p>Download the full text of “P.B. Shelley’s Complete Poems” from the following URL:</p>
 <p><a class="reference external" href="https://edu.nl/r6dn8">https://edu.nl/r6dn8</a></p>
 <p>Regular expressions can be used to find verse lines with specific properties. Write a program in Python which can identify verse lines with the following features:</p>
@@ -754,7 +765,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-9-2">
-<h2>Exercise 9.2.<a class="headerlink" href="#exercise-9-2" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 9.2.<a class="headerlink" href="#exercise-9-2" title="Link to this heading">#</a></h2>
 <p>Download the file “bibliography.txt” from</p>
 <p><a class="reference external" href="https://edu.nl/t449h">https://edu.nl/t449h</a></p>
 <p>This file contains a list of articles, formatted according to the APA citation style. For each title, try to extract the year of publication, the title and the name of the journal.</p>
@@ -787,7 +798,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-9-3">
-<h2>Exercise 9.3.<a class="headerlink" href="#exercise-9-3" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 9.3.<a class="headerlink" href="#exercise-9-3" title="Link to this heading">#</a></h2>
 <p>Download the file “tweets.txt” from <a class="reference external" href="https://edu.nl/cvge6">https://edu.nl/cvge6</a>.</p>
 <p>This file contains a number of tweets containing the hashtag ‘#universiteitleiden’, obtained using the Twitter API. Extract all the usernames and all the hashtags form these tweets, using regular expressions.</p>
 <div class="cell docutils container">
@@ -850,7 +861,7 @@ document.write(`
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="8%20Working_with_files_and_folders.html"
@@ -878,6 +889,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -923,6 +935,7 @@ By Peter Verhaar and Ben Companjen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -949,8 +962,8 @@ By Peter Verhaar and Ben Companjen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

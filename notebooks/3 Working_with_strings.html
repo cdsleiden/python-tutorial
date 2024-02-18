@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>3. Working with strings &#8212; Python Tutorial</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/3 Working_with_strings';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,10 +71,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -120,11 +114,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,6 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../Welcome.html">
@@ -151,7 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Python Tutorial</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -334,6 +343,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -343,6 +353,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -401,15 +412,15 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="working-with-strings">
-<h1>3. Working with strings<a class="headerlink" href="#working-with-strings" title="Permalink to this heading">#</a></h1>
+<h1>3. Working with strings<a class="headerlink" href="#working-with-strings" title="Link to this heading">#</a></h1>
 <p>Text data is everywhere and we can store texts in string variables. A string can contain the contents of a book, but a URL or filename is also a string. And dates are also often represented as a string.
 So it is important to know a little about what we can do with them.</p>
 <p>Strings consist of sequences of characters. We learned in the section on data types that they can be created using single, double and triple quotes. The single and the double quotes are used most commonly. Once created, such strings can be changed in a number of ways.</p>
 <section id="concatenation">
-<h2>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this heading">#</a></h2>
+<h2>Concatenation<a class="headerlink" href="#concatenation" title="Link to this heading">#</a></h2>
 <p>One of the operators that you can use in combination with strings is the <em>concatenation</em> operator. Its symbol is the plus (‘+’). You can use this operator to combine two or more existing strings into a longer string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -428,7 +439,7 @@ So it is important to know a little about what we can do with them.</p>
 <p>A very short string, consisting of a space only, is placed in between the first name and the last name. The penultimate line uses the variable <code class="docutils literal notranslate"><span class="pre">full_name</span></code> in a sentence which is printed.</p>
 <p>Note that the more precise function of an operator can vary along with the types of values it is used with. The plus symbol represents addition when it is combined with numbers, but it represents concatenation when it is used with strings.</p>
 <section id="exercise-3-1">
-<h3>Exercise 3.1.<a class="headerlink" href="#exercise-3-1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 3.1.<a class="headerlink" href="#exercise-3-1" title="Link to this heading">#</a></h3>
 <p>Declare a variable named <code class="docutils literal notranslate"><span class="pre">year</span></code>, and assign it an integer with the value 1879. Next, use this variable to print the following sentence: “Albert Einstein was born in 1879”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -440,7 +451,7 @@ So it is important to know a little about what we can do with them.</p>
 </section>
 </section>
 <section id="functions-and-methods-for-strings">
-<h2>Functions and methods for strings<a class="headerlink" href="#functions-and-methods-for-strings" title="Permalink to this heading">#</a></h2>
+<h2>Functions and methods for strings<a class="headerlink" href="#functions-and-methods-for-strings" title="Link to this heading">#</a></h2>
 <p>To get information about the number of characters in a string, you can make use of the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function. The characters ‘len’ stand for ‘length’. A function, as will be explained in a later tutorial, is a chunk of code that can be reused. A function always has a name, which can be used to request the actions that can be carried out via function. Functions such as <code class="docutils literal notranslate"><span class="pre">len()</span></code> can generally be applied to a wide range of variable types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -452,7 +463,7 @@ So it is important to know a little about what we can do with them.</p>
 </div>
 </div>
 </div>
-<p>A method is very similar to a function. An important difference, however, is that a method can only be run on very specific variable types. A number of methods have been developed specifically for strings, for example. While functions can be used independently, methods are always associated with a specific type of variable. We can call a method by appending the name of the method to the name of the variable. The variable and the method must be delimited by a period. The differences between methods and functions will be explained in more detail in another part of this tutorial.</p>
+<p>A <strong>method</strong> is very similar to a function. An important difference, however, is that while <strong>functions</strong> can be used in many different contexts, a method can only be run on very specific variable types. A number of methods have been developed specifically for strings, for example. While functions can be used independently, methods are always associated with a specific type of variable. We can call (i.e. invoke or use) a method by appending the name of the method to the name of the variable. The variable and the method must be delimited by a dot. The differences between methods and functions will be explained in more detail in another part of this tutorial.</p>
 <p>The following methods are available for string objects:</p>
 <table width="100%; " style="font-size: 1.0em; text-align: left; ">
     <tr style="font-size: 1.0em; text-align: left; ">
@@ -478,7 +489,13 @@ So it is important to know a little about what we can do with them.</p>
 
 <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 <span class="c1"># This removes the spaces before and after the original string</span>
+<span class="c1"># Note that the spaced IN BETWEEN the words are not removed!</span>
 <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;-</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-The Hitchhiker&#39;s Guide to the Galaxy-
 </pre></div>
 </div>
 </div>
@@ -510,13 +527,13 @@ So it is important to know a little about what we can do with them.</p>
 </div>
 </div>
 <section id="exercise-3-2">
-<h3>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Link to this heading">#</a></h3>
 <p>Create a variable and assign it your full name as a string. Next, print the number of characters in your name, excluding the space(s).</p>
 <p>Tip: to remove the spaces, you can replace these with an empty string (‘’).</p>
 </section>
 </section>
 <section id="selecting-individual-characters-and-slices-of-a-string">
-<h2>Selecting individual characters and slices of a string<a class="headerlink" href="#selecting-individual-characters-and-slices-of-a-string" title="Permalink to this heading">#</a></h2>
+<h2>Selecting individual characters and slices of a string<a class="headerlink" href="#selecting-individual-characters-and-slices-of-a-string" title="Link to this heading">#</a></h2>
 <p>When you create a string, it is useful to bear in mind that all the inividual characters that make up the string are numbered behind the scenes. These numbers are referred to as indices. The first character is given the index 0. Individual characters can be accessed by appending a set of square brackets to the name of the string variable, and by supplying the index of the character you want to access within these brackets. Using these indices, it becomes possible to extract specific characters from variables. When you use negative numbers (e.g. -1 or -2), Python starts selecting characters at the end of the string and moves back.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -572,11 +589,11 @@ Taking a <em>slice</em> from a string is also called <em>slicing</em>.</p>
 </div>
 </div>
 <section id="exercise-3-3">
-<h3>Exercise 3.3.<a class="headerlink" href="#exercise-3-3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 3.3.<a class="headerlink" href="#exercise-3-3" title="Link to this heading">#</a></h3>
 <p>Create two string variables. The first variable must be assigned the value ‘unique’ and the second variable should be assigned the value ‘biodiversity’. Create a third variable with the value ‘university’, by firstly slicing the first two string variables, and by subsequently concatenating the substrings.</p>
 </section>
 <section id="exercise-3-4">
-<h3>Exercise 3.4.<a class="headerlink" href="#exercise-3-4" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 3.4.<a class="headerlink" href="#exercise-3-4" title="Link to this heading">#</a></h3>
 <p>Create the following two string variables:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;vladimir&#39;</span>
 <span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;nabokov&#39;</span>
@@ -586,7 +603,7 @@ Taking a <em>slice</em> from a string is also called <em>slicing</em>.</p>
 </section>
 </section>
 <section id="the-index-method">
-<h2>The index() method<a class="headerlink" href="#the-index-method" title="Permalink to this heading">#</a></h2>
+<h2>The index() method<a class="headerlink" href="#the-index-method" title="Link to this heading">#</a></h2>
 <p>The method <code class="docutils literal notranslate"><span class="pre">index()</span></code> can help you to find the index of a given character. This method can be used productively in string slices.</p>
 <p>The method firstly determines whether a string contains a given substring. If it does, the method returns a number indicating the starting position (i.e. the index) of this substring. The function always returns the index of the first occurrence of the substring. If the string does not contain the substring that is mentioned as a parameter, the method produces an error message.</p>
 <div class="cell docutils container">
@@ -622,7 +639,7 @@ Taking a <em>slice</em> from a string is also called <em>slicing</em>.</p>
 </div>
 </div>
 <section id="exercise-3-5">
-<h3>Exercise 3.5.<a class="headerlink" href="#exercise-3-5" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 3.5.<a class="headerlink" href="#exercise-3-5" title="Link to this heading">#</a></h3>
 <p>Create a variable named <code class="docutils literal notranslate"><span class="pre">url</span></code> and assign it following string: <code class="docutils literal notranslate"><span class="pre">https://www.universiteitleiden.nl</span></code>.</p>
 <p>Try to write code which can extract the top-level domain (i.e. the country code) from this url.
 Tip: this problem can be solved by creating a string slice with the last two characters only, but top-level domains may consist of more than two characters, like ‘.com’ or ‘.amsterdam’.
@@ -636,7 +653,7 @@ A more generic approach is to make use of the <code class="docutils literal notr
 </div>
 </section>
 <section id="exercise-3-6">
-<h3>Exercise 3.6.<a class="headerlink" href="#exercise-3-6" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 3.6.<a class="headerlink" href="#exercise-3-6" title="Link to this heading">#</a></h3>
 <p>Create a variable named <code class="docutils literal notranslate"><span class="pre">filename</span></code> and assign it the value ‘README.txt’. Next, write some code in Python which can extract the filename without the extension.</p>
 </section>
 </section>
@@ -670,7 +687,7 @@ A more generic approach is to make use of the <code class="docutils literal notr
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="2%20Operators.html"
@@ -698,6 +715,7 @@ A more generic approach is to make use of the <code class="docutils literal notr
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -744,6 +762,7 @@ By Peter Verhaar and Ben Companjen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -770,8 +789,8 @@ By Peter Verhaar and Ben Companjen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

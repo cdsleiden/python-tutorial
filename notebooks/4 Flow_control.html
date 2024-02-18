@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>4. Flow control &#8212; Python Tutorial</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/4 Flow_control';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,10 +71,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -120,11 +114,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,6 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../Welcome.html">
@@ -151,7 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Python Tutorial</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -334,6 +343,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -343,6 +353,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -380,13 +391,12 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">Iteration</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-2">Exercise 4.2.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-3">Exercise 4.3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-3">Exercise 4.3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aside-getting-user-input">Aside: getting user input</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-5">Exercise 4.5.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-6">Exercise 4.6.</a></li>
 </ul>
 </li>
 </ul>
@@ -398,14 +408,14 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="flow-control">
-<h1>4. Flow control<a class="headerlink" href="#flow-control" title="Permalink to this heading">#</a></h1>
+<h1>4. Flow control<a class="headerlink" href="#flow-control" title="Link to this heading">#</a></h1>
 <p>By default, Python moves through the code in a linear way. It simply executes all the statements in the order in which they are found in the programme. In some cases, however, a statement only needs to be performed under a certain condition. In other situations, statements may need to be repeated as long as a certain condition applies.</p>
 <p>Flow control is the process of determining how often, or under which circumstances, a certain set of statement needs to be executed. In Python, there are various keywords that you can use to specify if, or how many times, a statement needs to be run.</p>
 <section id="conditional-execution">
-<h2>Conditional execution<a class="headerlink" href="#conditional-execution" title="Permalink to this heading">#</a></h2>
+<h2>Conditional execution<a class="headerlink" href="#conditional-execution" title="Link to this heading">#</a></h2>
 <p>To make sure that a certain section of your program is executed only if a certain condition is true, you can use the keyword <code class="docutils literal notranslate"><span class="pre">if</span></code>. This keyword is followed by a Boolean expression. This Boolean expression, in turn, is followed by a colon (’<code class="docutils literal notranslate"><span class="pre">:</span></code>’). When the expression following <code class="docutils literal notranslate"><span class="pre">if</span></code> is indeed true, the statements underneath the expression are executed. If not, these statements are ignored. The listing below offers an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -445,7 +455,7 @@ document.write(`
 <p>Note that only the keywords <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">elif</span></code> can be followed by a condition. The keyword <code class="docutils literal notranslate"><span class="pre">else</span></code> always appears WITHOUT such a condition. The code block given after else contains the actions that must be performed if all the earlier conditions are false.</p>
 <p>Importantly, the lines starting with <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> all end in a colon.</p>
 <section id="exercise-4-1">
-<h3>Exercise 4.1.<a class="headerlink" href="#exercise-4-1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 4.1.<a class="headerlink" href="#exercise-4-1" title="Link to this heading">#</a></h3>
 <p>Write some code which can print a text to welcome its users with messages such as ‘Good morning’, ‘Good afternoon’, or ‘Good evening’. The message that is printed should vary along with the time of the day.</p>
 <p>Follow the steps below:</p>
 <ul class="simple">
@@ -456,7 +466,7 @@ document.write(`
 </section>
 </section>
 <section id="iteration">
-<h2>Iteration<a class="headerlink" href="#iteration" title="Permalink to this heading">#</a></h2>
+<h2>Iteration<a class="headerlink" href="#iteration" title="Link to this heading">#</a></h2>
 <p>Next to the flow structures for selection, there are also flow control structures that can be used for repetitions of statements. Such repetitions are generally referred to as iterations. In Python, you can specify the number of times a set of statements need to be repeated by making use of <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code>, firstly, is used in combination with a collection of values. With <code class="docutils literal notranslate"><span class="pre">for</span></code>, you can specify that block of code needs to be repeated for each item in this collection. Examples of such collections include lists and dictionaries, which will be discussed at a later point in this tutorial. Such a collection of values can also be created via the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function, which can be used to generate a list of numbers. When this <code class="docutils literal notranslate"><span class="pre">range()</span></code> function is used with two integers, the function starts the list with the number which is mentioned first and it continues to add integers to the list, as long as the value of these numbers is less than the number which is mentioned secondly. When you use <code class="docutils literal notranslate"><span class="pre">range(1,11)</span></code>, for instance, this results in a list of integers ranging from 1 up and until 10, but not including 11.</p>
 <p>The code below prints the multiplication table for the number 7.</p>
@@ -487,12 +497,23 @@ document.write(`
 <p>In this second multiplication table, we explicitly need to increment the value of variable <code class="docutils literal notranslate"><span class="pre">i</span></code> using the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator. The loop will terminate after the variable <code class="docutils literal notranslate"><span class="pre">i</span></code> has reached the value 10.</p>
 <p>Remember that the code blocks that follow lines starting with <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> all need to be indented.</p>
 <section id="exercise-4-2">
-<h3>Exercise 4.2.<a class="headerlink" href="#exercise-4-2" title="Permalink to this heading">#</a></h3>
-<p>Write code to print headings in a syllabus for a university course which has 12 weeks. More specifically, use a loop to print the headings ‘Week 1’, ‘Week 2’, ‘Week 3’, etc.</p>
+<h3>Exercise 4.2.<a class="headerlink" href="#exercise-4-2" title="Link to this heading">#</a></h3>
+<p>Strings can be viewed as collections of characters. When you iterate across a string using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, you will receive each individual character in sequence. Try to write code which print all each characters of a string on a separate line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Flow control&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="exercise-4-3">
-<h3>Exercise 4.3<a class="headerlink" href="#exercise-4-3" title="Permalink to this heading">#</a></h3>
-<p>Strings can be viewed as collections of characters. When you iterate across a  string using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, you will receive each individual character in sequence. Try to write code which can reverse the order of the characters in a given string.</p>
+<h3>Exercise 4.3.<a class="headerlink" href="#exercise-4-3" title="Link to this heading">#</a></h3>
+<p>Define a list ranging from 1 to 100 using the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function. Next, print the cumulative sum of all the numbers in this collection of numbers.</p>
+</section>
+<section id="exercise-4-4">
+<h3>Exercise 4.4.<a class="headerlink" href="#exercise-4-4" title="Link to this heading">#</a></h3>
+<p>Building on the code you developed for exercise 4.2, try to write code which can reverse the order of the characters in a given string.</p>
 <p>You can test your code with the following examples:</p>
 <table class="table">
 <thead>
@@ -513,13 +534,9 @@ document.write(`
 </tbody>
 </table>
 </section>
-<section id="exercise-4-4">
-<h3>Exercise 4.4<a class="headerlink" href="#exercise-4-4" title="Permalink to this heading">#</a></h3>
-<p>Define a list ranging from 1 to 100 using the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function. Next, print the cumulative sum of all the numbers in this collection of numbers.</p>
-</section>
 </section>
 <section id="aside-getting-user-input">
-<h2>Aside: getting user input<a class="headerlink" href="#aside-getting-user-input" title="Permalink to this heading">#</a></h2>
+<h2>Aside: getting user input<a class="headerlink" href="#aside-getting-user-input" title="Link to this heading">#</a></h2>
 <p>In the examples above, we first manually assigned a number (e.g., <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">8</span></code>), and this number was then used in the rest of the code block. If we want to run the code with different input, we need to change our code. There is a way to ask for a value when the program is run (i.e. <em>at runtime</em>), namely, by using the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">input()</span></code> function takes a string. This is generally a question or a prompt for a value. It returns the value that the user entered as a string.</p>
 <div class="cell docutils container">
@@ -545,35 +562,7 @@ If the string cannot be converted, for example if it is not actually a number, P
 </div>
 </div>
 <section id="exercise-4-5">
-<h3>Exercise 4.5.<a class="headerlink" href="#exercise-4-5" title="Permalink to this heading">#</a></h3>
-<p>As was discussed, the standard function <code class="docutils literal notranslate"><span class="pre">input()</span></code> can be used to request a value from the user. Use this function to request a year from the user. You can start from the code below:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Please enter a year: &quot;</span><span class="p">)</span> <span class="p">)</span>
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">input()</span></code> function returns a string by default. We use <code class="docutils literal notranslate"><span class="pre">int()</span></code> to change this value into an integer.</p>
-<p>Next, write some code which can describe the century a given year is in. Given the year 1767, for instance, the application must be able to print the following sentence: “The year 1767 is in the eighteenth century”. Limit your algorithm to years in between 1500 and 2020.<br />
-Note that it is possible to combine two different Boolean expressions using the keyword <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Request a year (which is a number)</span>
-<span class="c1"># and convert it to an integer</span>
-<span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Please enter a year: &quot;</span><span class="p">)</span> <span class="p">)</span>
-
-<span class="c1"># Decide in which century this year is.</span>
-<span class="c1"># If the year is between 1500 and 1599, then we say the year is in the sixteenth century.</span>
-
-<span class="c1"># Else, if the year is ..., then ...</span>
-
-<span class="c1"># ...</span>
-
-<span class="c1"># In all other cases, we say &quot;our knowledge is limited&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-4-6">
-<h3>Exercise 4.6.<a class="headerlink" href="#exercise-4-6" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 4.5.<a class="headerlink" href="#exercise-4-5" title="Link to this heading">#</a></h3>
 <p>Program a small guessing game. In this game, the player needs to guess a number in between 1 and 50. You can use the code below as a basis.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">randint()</span></code> method from <code class="docutils literal notranslate"><span class="pre">random</span></code> can be used, firstly, to generate a random integer.</p>
 <p>Use the function <code class="docutils literal notranslate"><span class="pre">input()</span></code> to request a value from the user. The function <code class="docutils literal notranslate"><span class="pre">int()</span></code> needs to be used to convert the input into an integer.</p>
@@ -629,7 +618,7 @@ When that works, think which parts of the code need to be repeated to let the pl
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="3%20Working_with_strings.html"
@@ -658,6 +647,7 @@ When that works, think which parts of the code need to be repeated to let the pl
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -670,13 +660,12 @@ When that works, think which parts of the code need to be repeated to let the pl
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">Iteration</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-2">Exercise 4.2.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-3">Exercise 4.3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-3">Exercise 4.3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aside-getting-user-input">Aside: getting user input</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-5">Exercise 4.5.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-6">Exercise 4.6.</a></li>
 </ul>
 </li>
 </ul>
@@ -700,6 +689,7 @@ By Peter Verhaar and Ben Companjen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -726,8 +716,8 @@ By Peter Verhaar and Ben Companjen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

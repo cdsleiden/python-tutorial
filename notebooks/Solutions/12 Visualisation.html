@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>12. Visualisation &#8212; Python Tutorial</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Solutions/12 Visualisation';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -75,10 +70,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -119,11 +113,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -138,6 +135,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../Welcome.html">
@@ -150,7 +148,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Python Tutorial</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -333,6 +342,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -342,6 +352,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -392,12 +403,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="visualisation">
-<h1>12. Visualisation<a class="headerlink" href="#visualisation" title="Permalink to this heading">#</a></h1>
+<h1>12. Visualisation<a class="headerlink" href="#visualisation" title="Link to this heading">#</a></h1>
 <section id="exercise-12-1">
-<h2>Exercise 12.1<a class="headerlink" href="#exercise-12-1" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 12.1<a class="headerlink" href="#exercise-12-1" title="Link to this heading">#</a></h2>
 <p>PISA is the OECD’s <a class="reference external" href="https://www.oecd.org/pisa/">Programme for International Student Assessment</a>. This programme evaluates educational systems globally by measuring the performance of 15 year-old-children in mathematics, science and reading. The latest study is from 2018.</p>
 <p>The data folder of this tutorial includes a CSV file named ‘<a class="reference external" href="https://edu.nl/p97ma">pisa.csv</a>’. It contains all the scores measured for mathematics and reading in between 2000 and 2018.</p>
 <p>How did the various countries that were examined in 2018 perform on the reading tests? Which countries had the highest scores, and which countries had the lowest scores? ou can limit the analyses to the the ‘total’ scores (i.e. those records in which column ‘object’ has value ‘TOT’).</p>
@@ -449,7 +460,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-12-2">
-<h2>Exercise 12.2.<a class="headerlink" href="#exercise-12-2" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 12.2.<a class="headerlink" href="#exercise-12-2" title="Link to this heading">#</a></h2>
 <p>As for exercis 12.1, make a bar chart which gives information about the total scors for reading in 2018. For this exercise, try to give information about the continents as well. Use distinctive colours for each continent.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -473,7 +484,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-12-3">
-<h2>Exercise 12.3.<a class="headerlink" href="#exercise-12-3" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 12.3.<a class="headerlink" href="#exercise-12-3" title="Link to this heading">#</a></h2>
 <p>In the PISA data set, how do the scores for reading compare to the scores for mathematics?</p>
 <p>Focus on the scores obtained in 2018. Answer this question by creating a scatter plot.</p>
 <p>Customise the plot according to the following specifications:</p>
@@ -511,7 +522,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-12-4">
-<h2>Exercise 12.4.<a class="headerlink" href="#exercise-12-4" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 12.4.<a class="headerlink" href="#exercise-12-4" title="Link to this heading">#</a></h2>
 <p>As for exercise 12.3, create a scatterplot which can help to visualise the correlation between the scores for reading and the scores for mathematics. This time, also add labels to indicate the scores for the countries captured in the list named <code class="docutils literal notranslate"><span class="pre">countries</span></code>, defined below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">,</span><span class="s1">&#39;Italy&#39;</span><span class="p">]</span>
 </pre></div>
@@ -566,7 +577,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-12-5">
-<h2>Exercise 12.5.<a class="headerlink" href="#exercise-12-5" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 12.5.<a class="headerlink" href="#exercise-12-5" title="Link to this heading">#</a></h2>
 <p>Add a new column to the <code class="docutils literal notranslate"><span class="pre">df_2018</span></code> dataframe which you created for the previous exercises, containing the avrage values for reading and mathematics. You can use the code below for this purpose.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_2018</span><span class="p">[</span><span class="s1">&#39;pisa_mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2018</span><span class="p">[[</span><span class="s1">&#39;pisa_read&#39;</span><span class="p">,</span> <span class="s1">&#39;pisa_math&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -626,7 +637,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-12-6">
-<h2>Exercise 12.6.<a class="headerlink" href="#exercise-12-6" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 12.6.<a class="headerlink" href="#exercise-12-6" title="Link to this heading">#</a></h2>
 <p>Starting from the full PISA data set, creates a new dataframe containing the scores obtained by pupils in the Netherlands during the period in between 2004 and 2018.</p>
 <p>Use this new dataframe to trace the development of the reading scores in the Netherlands in between 2000 and 2018. Focus on the total scores.</p>
 <div class="cell docutils container">
@@ -657,7 +668,7 @@ document.write(`
 </div>
 </section>
 <section id="ecercise-12-7">
-<h2>Ecercise 12.7.<a class="headerlink" href="#ecercise-12-7" title="Permalink to this heading">#</a></h2>
+<h2>Ecercise 12.7.<a class="headerlink" href="#ecercise-12-7" title="Link to this heading">#</a></h2>
 <p>How did the scores for maths develop in the Netherlands in between 2000 and 2018? Focus on the score for boys and for girls separately.
 Tip: You can also work with the <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter in thae case of line charts.</p>
 <div class="cell docutils container">
@@ -737,7 +748,7 @@ Tip: You can also work with the <code class="docutils literal notranslate"><span
 </div>
 </section>
 <section id="exercise-12-8">
-<h2>Exercise 12.8<a class="headerlink" href="#exercise-12-8" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 12.8<a class="headerlink" href="#exercise-12-8" title="Link to this heading">#</a></h2>
 <p>Have the scores remained relatively stable over the years if we look at the total scores? Or has there been some variation? How does the variation of the scores for the Netherlands compare to the scores in France, Germany, Belgium and Luxembourg? Try to answer this question by crearing a boxplot.</p>
 <p>The names of the countries should be displayed on the X-axis, and the values associated with these countries should be displayed along the Y-axis.</p>
 <p>For this exercise, it can be useful to make a list containing the countries you are interesed in, and to filter the dataframe using the <code class="docutils literal notranslate"><span class="pre">isin()</span></code> function.</p>
@@ -769,7 +780,7 @@ Tip: You can also work with the <code class="docutils literal notranslate"><span
 </div>
 </section>
 <section id="exercise-12-9">
-<h2>Exercise 12.9<a class="headerlink" href="#exercise-12-9" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 12.9<a class="headerlink" href="#exercise-12-9" title="Link to this heading">#</a></h2>
 <p>The data folder of this tutorial includes a CSV file named ‘nobel.csv’. If necessary you can also download this file from the following address: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a>.</p>
 <p>Visualise the data in this data set in the following ways.</p>
 <ul class="simple">
@@ -926,7 +937,7 @@ Tip: You can also work with the <code class="docutils literal notranslate"><span
 </div>
 </section>
 <section id="exercise-12-10">
-<h2>Exercise 12.10<a class="headerlink" href="#exercise-12-10" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 12.10<a class="headerlink" href="#exercise-12-10" title="Link to this heading">#</a></h2>
 <p>In exercise 11.3, you created a CSV file named ‘prices_of_coffee_over_time.csv’, containing data about the average price of a pound of coffee on a range of dates. Use this CSV file to create a line chart which visualises the development of these prices over time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -990,7 +1001,7 @@ Tip: You can also work with the <code class="docutils literal notranslate"><span
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="11%20Pandas.html"
@@ -1009,6 +1020,7 @@ Tip: You can also work with the <code class="docutils literal notranslate"><span
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1047,6 +1059,7 @@ By Peter Verhaar and Ben Companjen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1073,8 +1086,8 @@ By Peter Verhaar and Ben Companjen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

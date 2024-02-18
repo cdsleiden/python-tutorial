@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>1. Statements, variables and data types &#8212; Python Tutorial</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/1 Variables_and_data_types';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,10 +71,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -120,11 +114,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,6 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../Welcome.html">
@@ -151,7 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Python Tutorial</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -334,6 +343,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -343,6 +353,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -402,15 +413,15 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="statements-variables-and-data-types">
-<h1>1. Statements, variables and data types<a class="headerlink" href="#statements-variables-and-data-types" title="Permalink to this heading">#</a></h1>
+<h1>1. Statements, variables and data types<a class="headerlink" href="#statements-variables-and-data-types" title="Link to this heading">#</a></h1>
 <p>This is the first step into understanding and creating a Python program.
 Statements instruct the computer to do something.
 In this section, we start with storing different kinds of data values in the computer memory and showing their values to the user.</p>
 <section id="statements">
-<h2>Statements<a class="headerlink" href="#statements" title="Permalink to this heading">#</a></h2>
+<h2>Statements<a class="headerlink" href="#statements" title="Link to this heading">#</a></h2>
 <p>Computer programs are generally written to solve specific problems or to automate certain activities. They consist of instructions or commands, which tell the computer what to do. Such instructions are referred to as statements.</p>
 <p>In the Python language, the individual statements are separated by hard returns. The end of the statement (i.e. the hard return) is a cue which triggers the Python parser to interpret and to execute the statement.</p>
 <p>A simple program may consist of a single statement, or more statements, that are executed in order starting at the top.
@@ -418,7 +429,7 @@ We will later see and create more complex programs that execute statements condi
 In such programs some statements may be not executed, or in a different order than the order in which they appear in the program.</p>
 </section>
 <section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
+<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
 <p>Virtually all programming languages make use of variables of some sort. Variables can be thought of as containers or as boxes in which information can be stored temporarily. Variables always need to be given a <em>name</em>. This name can be used to retrieve the ‘contents’ of the variable. These contents (the data assigned to the variable) are referred to as the variable’s <em>value</em>.</p>
 <p>Variables names can consist of any combination of alphanumerical characters that you can think of. Underscores are also allowed in variable names. Variable names cannot begin with a number, however, and they cannot contain a hyphen or spaces.</p>
 <p>Although it is possible to work with any sequence of characters, your script will evidently be most understandable when you make use of variable names which are meaningful.</p>
@@ -434,7 +445,7 @@ In such programs some statements may be not executed, or in a different order th
 </div>
 </section>
 <section id="printing-output">
-<h2>Printing output<a class="headerlink" href="#printing-output" title="Permalink to this heading">#</a></h2>
+<h2>Printing output<a class="headerlink" href="#printing-output" title="Link to this heading">#</a></h2>
 <p>Programs often produce some output. This output can be the result of a calculation, for instance. The <code class="docutils literal notranslate"><span class="pre">print()</span></code> function can be used to communicate the output of the program to the user. A function is <em>a named collection of statements</em>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">print()</span></code> function is always used with parentheses. Inside the parentheses, you can provide the string that you would like the computer to display. A string, as was explained above, is a sequence of alphanumerical characters and spaces.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">print()</span></code> function adds a line break after the string by default.</p>
@@ -482,11 +493,11 @@ In such programs some statements may be not executed, or in a different order th
 </div>
 </div>
 <section id="exercise-1-1">
-<h3>Exercise 1.1.<a class="headerlink" href="#exercise-1-1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1.1.<a class="headerlink" href="#exercise-1-1" title="Link to this heading">#</a></h3>
 <p>Write code that can print the sentence “Hello world” or any other sentence that you can think of.</p>
 </section>
 <section id="exercise-1-2">
-<h3>Exercise 1.2.<a class="headerlink" href="#exercise-1-2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1.2.<a class="headerlink" href="#exercise-1-2" title="Link to this heading">#</a></h3>
 <p>Using a single print statement, try to produce the following output:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">first</span> <span class="n">line</span><span class="o">.</span>
 <span class="n">This</span> <span class="n">second</span> <span class="n">line</span> <span class="n">contains</span> <span class="n">a</span>        <span class="n">tab</span><span class="o">.</span>
@@ -494,7 +505,7 @@ In such programs some statements may be not executed, or in a different order th
 </div>
 </section>
 <section id="exercise-1-3">
-<h3>Exercise 1.3.<a class="headerlink" href="#exercise-1-3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1.3.<a class="headerlink" href="#exercise-1-3" title="Link to this heading">#</a></h3>
 <p>We created two variables named <code class="docutils literal notranslate"><span class="pre">colour1</span></code> and <code class="docutils literal notranslate"><span class="pre">colour2</span></code>, and assign the values blue and yellow to these two variables, respectively.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colour1</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span>
 <span class="n">colour2</span> <span class="o">=</span> <span class="s1">&#39;yellow&#39;</span>
@@ -512,10 +523,10 @@ In such programs some statements may be not executed, or in a different order th
 </section>
 </section>
 <section id="data-types">
-<h2>Data types<a class="headerlink" href="#data-types" title="Permalink to this heading">#</a></h2>
-<p>As mentioned in <span class="xref myst">Variables</span>, the values that are assigned to variables are always of a certain type. We can distinguish three general types: <strong>strings</strong>, <strong>numbers</strong> and <strong>boolean values</strong>.</p>
+<h2>Data types<a class="headerlink" href="#data-types" title="Link to this heading">#</a></h2>
+<p>As mentioned in <a class="reference internal" href="#Variables"><span class="xref myst">Variables</span></a>, the values that are assigned to variables are always of a certain type. We can distinguish three general types: <strong>strings</strong>, <strong>numbers</strong> and <strong>boolean values</strong>.</p>
 <section id="strings">
-<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h3>
+<h3>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h3>
 <p>A string stores a text fragment: a sequence of alphanumeric characters and spaces. Strings can be created either with single quotes, double quotes or triple quotes (<code class="docutils literal notranslate"><span class="pre">'''</span></code>). The single quote and the double quote are most common. They are often used interchangeably. You can find a number of examples of strings below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -575,7 +586,7 @@ In such programs some statements may be not executed, or in a different order th
 </div>
 </section>
 <section id="exercise-1-4">
-<h3>Exercise 1.4<a class="headerlink" href="#exercise-1-4" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1.4<a class="headerlink" href="#exercise-1-4" title="Link to this heading">#</a></h3>
 <p>‘Debugging’ is the process of finding and correcting mistakes in a computer program. It is a very useful skill to have as a programmer.</p>
 <p>Try to debug the code below.</p>
 <div class="cell docutils container">
@@ -590,7 +601,7 @@ In such programs some statements may be not executed, or in a different order th
 </div>
 </section>
 <section id="numbers">
-<h3>Numbers<a class="headerlink" href="#numbers" title="Permalink to this heading">#</a></h3>
+<h3>Numbers<a class="headerlink" href="#numbers" title="Link to this heading">#</a></h3>
 <p><em>Numbers</em> form the second data type. In Python, there are two types of numbers. <em>Integers</em>, firstly, are whole numbers. They are natural numbers without a fractional or decimal part. Integers can also be negative numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -653,7 +664,7 @@ In such programs some statements may be not executed, or in a different order th
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mf">7.5</span>
 <span class="n">grade_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">grade_int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">grade_int</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">grade_int</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -683,16 +694,16 @@ In such programs some statements may be not executed, or in a different order th
 </div>
 </section>
 <section id="boolean-values">
-<h3>Boolean values<a class="headerlink" href="#boolean-values" title="Permalink to this heading">#</a></h3>
+<h3>Boolean values<a class="headerlink" href="#boolean-values" title="Link to this heading">#</a></h3>
 <p>A Boolean variable can only be assigned two values: either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> (with this exact capitalisation!). They are often used to test whether something is the case. These values will be discussed in more detail in the section on ‘<em>Flow Control</em>’.</p>
 </section>
 </section>
 <section id="comments">
-<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this heading">#</a></h2>
+<h2>Comments<a class="headerlink" href="#comments" title="Link to this heading">#</a></h2>
 <p>In the Python language, lines can be preceded by the hash (‘#’) symbol. Lines that start with a hash are called comments. Comments are always ignored by the Python interpreter. They are included for human readers of the code.</p>
 <p>Such comments can be very useful when you want to document your code. Computer programs can sometimes be difficult to understand, and, in such situations, comments may help to explain in understandable language what happens exactly in specific parts of the code.</p>
 <section id="exercise-1-5">
-<h3>Exercise 1.5.<a class="headerlink" href="#exercise-1-5" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1.5.<a class="headerlink" href="#exercise-1-5" title="Link to this heading">#</a></h3>
 <p>As will be explained in the next notebook, you can work with variables in calculations. The code below gives an example.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
@@ -701,8 +712,8 @@ In such programs some statements may be not executed, or in a different order th
 </pre></div>
 </div>
 <p>What happens when you try to make calculations with numbers that have different types?</p>
-<p>To examine this question, convert the type of variable a to a floating point number using the <code class="docutils literal notranslate"><span class="pre">float()</span></code> function. Next, try to determine the type of variable that results from the addition.</p>
-<p>What happens when you coerce variable a into a string?</p>
+<p>To examine this question, convert the type of variable ‘a’ to a floating point number using the <code class="docutils literal notranslate"><span class="pre">float()</span></code> function. Next, try to determine the type of variable that results from the addition.</p>
+<p>What happens when you coerce variable ‘a’ into a string, using the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
@@ -745,7 +756,7 @@ In such programs some statements may be not executed, or in a different order th
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../Welcome.html"
@@ -773,6 +784,7 @@ In such programs some statements may be not executed, or in a different order th
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -820,6 +832,7 @@ By Peter Verhaar and Ben Companjen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -846,8 +859,8 @@ By Peter Verhaar and Ben Companjen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

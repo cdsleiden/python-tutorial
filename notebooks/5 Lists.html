@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>5. Lists &#8212; Python Tutorial</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/5 Lists';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,10 +71,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -120,11 +114,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,6 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../Welcome.html">
@@ -151,7 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Python Tutorial</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -334,6 +343,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -343,6 +353,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -407,10 +418,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lists">
-<h1>5. Lists<a class="headerlink" href="#lists" title="Permalink to this heading">#</a></h1>
+<h1>5. Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h1>
 <p>The variables that were discussed in the previous tutorials were all assigned single values, such as strings, integers or floating point numbers.
 It is also possible to work with variables that contain collections of values.</p>
 <p>One example of a variable type that can hold multiple values is the <em>list</em>.
@@ -425,7 +436,7 @@ Lists can be created by surrounding all the values that you want to gather by sq
 </div>
 <p>The things that are in the list are referred to as <em>elements</em> or <em>items</em>. The elements in <code class="docutils literal notranslate"><span class="pre">week</span></code> are all strings. The elements do not all have to be of the same type, however. It is allowed to mix strings with integers, for instance.</p>
 <section id="accessing-individual-items">
-<h2>Accessing individual items<a class="headerlink" href="#accessing-individual-items" title="Permalink to this heading">#</a></h2>
+<h2>Accessing individual items<a class="headerlink" href="#accessing-individual-items" title="Link to this heading">#</a></h2>
 <p>When lists are created in this manner, the items in this list are given a certain order.
 Python numbers the elements in the list automatically, following the order in which these values were given. These numbers will function as <em>indices</em> that can be used to access the individual items in the list. Bear in mind that Python starts counting at 0.</p>
 <p>In the example above, the element <code class="docutils literal notranslate"><span class="pre">&quot;Monday&quot;</span></code> is assigned the index 0, and the element <code class="docutils literal notranslate"><span class="pre">&quot;Thursday&quot;</span></code> will have the index 3. As is the case for strings and their individual characters, the separate elements in the list can be accessed using the square bracket notation.</p>
@@ -451,7 +462,7 @@ Python numbers the elements in the list automatically, following the order in wh
 </div>
 </section>
 <section id="list-slicing">
-<h2>List slicing<a class="headerlink" href="#list-slicing" title="Permalink to this heading">#</a></h2>
+<h2>List slicing<a class="headerlink" href="#list-slicing" title="Link to this heading">#</a></h2>
 <p>Like strings, lists can also be sliced. <em>Slicing</em> means selecting a part of a list (or string).
 To do this, you need to type in a set of square brackets directly following the name of the list. Within these brackets, you need to give a pair of indices, specifying the first and the last item you want to retrieve. These two numbers need to be separated by a colon.
 The item whose index is to the right of the colon is not included in the selection. If you state that the selection should stop at index 3, for instance, the last item in the selection will be the item with index 2.</p>
@@ -484,7 +495,7 @@ The item whose index is to the right of the colon is not included in the selecti
 </div>
 </div>
 <section id="exercise-5-1">
-<h3>Exercise 5.1<a class="headerlink" href="#exercise-5-1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 5.1<a class="headerlink" href="#exercise-5-1" title="Link to this heading">#</a></h3>
 <p>The list named <code class="docutils literal notranslate"><span class="pre">titles</span></code> below brings together a number of book titles. Print a sentence that gives information about the number of books in this list of titles.
 Next, create a new list named <code class="docutils literal notranslate"><span class="pre">last_two</span></code> containing only the last two titles in this series.</p>
 <div class="cell docutils container">
@@ -500,7 +511,7 @@ Next, create a new list named <code class="docutils literal notranslate"><span c
 </section>
 </section>
 <section id="adding-items-to-a-list">
-<h2>Adding items to a list<a class="headerlink" href="#adding-items-to-a-list" title="Permalink to this heading">#</a></h2>
+<h2>Adding items to a list<a class="headerlink" href="#adding-items-to-a-list" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">append()</span></code> method can be used to add items to an existing list.
 This is a <em>method</em>, which is part of the list and therefore needs to be called in the <code class="docutils literal notranslate"><span class="pre">my_list.append(new_item)</span></code> syntax.
 Functions and methods will be discussed later in the tutorial.</p>
@@ -515,14 +526,14 @@ Functions and methods will be discussed later in the tutorial.</p>
 </div>
 </div>
 <section id="exercise-5-2">
-<h3>Exercise 5.2.<a class="headerlink" href="#exercise-5-2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 5.2.<a class="headerlink" href="#exercise-5-2" title="Link to this heading">#</a></h3>
 <p>Create the following list:</p>
 <p><code class="docutils literal notranslate"><span class="pre">colours</span> <span class="pre">=</span> <span class="pre">['green','blue','red']</span></code></p>
 <p>Add the colours ‘orange’, ‘yellow’ to this list.</p>
 </section>
 </section>
 <section id="sorting">
-<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this heading">#</a></h2>
+<h2>Sorting<a class="headerlink" href="#sorting" title="Link to this heading">#</a></h2>
 <p>The items in a list can be arranged alphabetically or numerically using the <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -537,7 +548,7 @@ Functions and methods will be discussed later in the tutorial.</p>
 </div>
 </section>
 <section id="navigating-a-list">
-<h2>Navigating a list<a class="headerlink" href="#navigating-a-list" title="Permalink to this heading">#</a></h2>
+<h2>Navigating a list<a class="headerlink" href="#navigating-a-list" title="Link to this heading">#</a></h2>
 <p>To move through all the elements in a list, you can use the <code class="docutils literal notranslate"><span class="pre">for</span></code> keyword. We also talk about <em>iterating over a list</em>.
 We have learned in the section on iteration that <code class="docutils literal notranslate"><span class="pre">for</span></code> needs to be used in combination with <code class="docutils literal notranslate"><span class="pre">in</span></code>.
 After <code class="docutils literal notranslate"><span class="pre">for</span></code>, you first supply the name of a (new) variable that you can use to refer to the current element.
@@ -556,7 +567,7 @@ The loop will continue as long as there are items in the list.</p>
 </div>
 </div>
 <section id="exercise-5-3">
-<h3>Exercise 5.3.<a class="headerlink" href="#exercise-5-3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 5.3.<a class="headerlink" href="#exercise-5-3" title="Link to this heading">#</a></h3>
 <p>The list named <code class="docutils literal notranslate"><span class="pre">years</span></code> brings together a number of years.  Use the keywords <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">if</span></code> to select the years from this list that are in the 18th century.  Remember that you can combine multiple Boolean expressions using <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -570,7 +581,7 @@ The loop will continue as long as there are items in the list.</p>
 </section>
 </section>
 <section id="presence-in-a-list">
-<h2>Presence in a list<a class="headerlink" href="#presence-in-a-list" title="Permalink to this heading">#</a></h2>
+<h2>Presence in a list<a class="headerlink" href="#presence-in-a-list" title="Link to this heading">#</a></h2>
 <p>If you want to know whether a list contains a given item, you use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.
 This operator takes two operands, i.e. things to operate on.
 To the left of <code class="docutils literal notranslate"><span class="pre">in</span></code>, you mention the item you want to search for.
@@ -593,7 +604,7 @@ Using <code class="docutils literal notranslate"><span class="pre">in</span></co
 </div>
 </div>
 <section id="exercise-5-4">
-<h3>Exercise 5.4.<a class="headerlink" href="#exercise-5-4" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 5.4.<a class="headerlink" href="#exercise-5-4" title="Link to this heading">#</a></h3>
 <p>We have two lists of numbers and would like to know which numbers in the first list are not in the second list. Write code which can extract those numbers from the first list that are <strong>not</strong> in the second list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,7 +623,7 @@ Using <code class="docutils literal notranslate"><span class="pre">in</span></co
 </section>
 </section>
 <section id="counting-items">
-<h2>Counting items<a class="headerlink" href="#counting-items" title="Permalink to this heading">#</a></h2>
+<h2>Counting items<a class="headerlink" href="#counting-items" title="Link to this heading">#</a></h2>
 <p>You can count the number of times an item occurs in a list by making use of the <code class="docutils literal notranslate"><span class="pre">count()</span></code> method.</p>
 <p>This method needs to be appended after the name of the list, using a dot.
 As a parameter to this method, you provide the item that you want to count.</p>
@@ -630,7 +641,7 @@ As a parameter to this method, you provide the item that you want to count.</p>
 </div>
 </div>
 <section id="exercise-5-5">
-<h3>Exercise 5.5.<a class="headerlink" href="#exercise-5-5" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 5.5.<a class="headerlink" href="#exercise-5-5" title="Link to this heading">#</a></h3>
 <p>The list below contains the titles of first twelve plays written by William Shakespeare.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -669,7 +680,7 @@ As a parameter to this method, you provide the item that you want to count.</p>
 </div>
 </section>
 <section id="exercise-5-6">
-<h3>Exercise 5.6.<a class="headerlink" href="#exercise-5-6" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 5.6.<a class="headerlink" href="#exercise-5-6" title="Link to this heading">#</a></h3>
 <p>We have a list of websites and are interested to find the Dutch ones.</p>
 <p>Write some code to select the Dutch websites from this list.
 Tip: You may want to reuse some of the code developed for exercise 3.4.</p>
@@ -692,7 +703,7 @@ Tip: You may want to reuse some of the code developed for exercise 3.4.</p>
 </div>
 </section>
 <section id="exercise-5-7">
-<h3>Exercise 5.7.<a class="headerlink" href="#exercise-5-7" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 5.7.<a class="headerlink" href="#exercise-5-7" title="Link to this heading">#</a></h3>
 <p>We have a quote from E.M. Forster’s <em>A Room with a View</em> below and want to get a few statistics about it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -760,7 +771,7 @@ This <code class="docutils literal notranslate"><span class="pre">split()</span>
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="4%20Flow_control.html"
@@ -788,6 +799,7 @@ This <code class="docutils literal notranslate"><span class="pre">split()</span>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -840,6 +852,7 @@ By Peter Verhaar and Ben Companjen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -866,8 +879,8 @@ By Peter Verhaar and Ben Companjen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

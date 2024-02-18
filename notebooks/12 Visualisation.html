@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>12. Data Visualisation &#8212; Python Tutorial</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/12 Visualisation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,10 +71,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -120,11 +114,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,6 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../Welcome.html">
@@ -151,7 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Python Tutorial</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -334,6 +343,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -343,6 +353,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -426,16 +437,16 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-visualisation">
-<h1>12. Data Visualisation<a class="headerlink" href="#data-visualisation" title="Permalink to this heading">#</a></h1>
+<h1>12. Data Visualisation<a class="headerlink" href="#data-visualisation" title="Link to this heading">#</a></h1>
 <p>Data visualisations such as graphs and diagrams often make it easier for researchers to explore patterns and trends within large data sets, or to identify notable exceptions to the trends that can be observed.</p>
 <p>During the last number of years, a large number of visualisation libraries have been developed for the Python language. Examples include <a class="reference external" href="https://bokeh.org/">Bokeh</a>, <a class="reference external" href="https://plotly.com/python/">Plotly</a>, <a class="reference external" href="https://altair-viz.github.io/">Altair</a> and <a class="reference external" href="https://python-visualization.github.io/folium/">Folium</a>.</p>
 <p>One of the earliest visualisation libraries in Python is called <a class="reference external" href="https://matplotlib.org/">matplotlib</a>. This library is very powerful, but its code can easily get quite complicated and wieldy. The visualisation library <a class="reference external" href="https://seaborn.pydata.org/api.html">seaborn</a> can be viewed as  as extention and a simplification of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. According to its <a class="reference external" href="http://seaborn.pydata.org/index.html">documentation</a>, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> “provides a high-level interface for drawing attractive and informative statistical graphics”. You can use <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> to create fairly complicated visualisations using a limited number of functions, and, fortunately, much of the processing takes place behind the scenes. A second important advantage of <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> is that it works well in combination with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, a Python library for data analysis.</p>
 <p>This tutorial also explains a number of visualisations that can be created using <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <section id="the-data-to-be-visualised">
-<h2>The data to be visualised<a class="headerlink" href="#the-data-to-be-visualised" title="Permalink to this heading">#</a></h2>
+<h2>The data to be visualised<a class="headerlink" href="#the-data-to-be-visualised" title="Link to this heading">#</a></h2>
 <p>Data visualisations are obviously based on data. This tutorial makes use of a dataset named ‘bli.csv’. This file contains data collected for the 2018 Better Life Index, which was created by the <a class="reference external" href="https://www.oecdbetterlifeindex.org/">OECD</a> to visuale some of the key factors that contribute to well-being in OECD countries, including education, income, housing and environment. The data set is included in the ‘Data’ folder created for this tutorial. If you cannot locate this dataset, you can also download it from the following address: <a class="reference external" href="https://edu.nl/bcm4x">https://edu.nl/bcm4x</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -450,7 +461,7 @@ document.write(`
 </div>
 </section>
 <section id="importing-seaborn-and-matplotlib">
-<h2>Importing seaborn and matplotlib<a class="headerlink" href="#importing-seaborn-and-matplotlib" title="Permalink to this heading">#</a></h2>
+<h2>Importing seaborn and matplotlib<a class="headerlink" href="#importing-seaborn-and-matplotlib" title="Link to this heading">#</a></h2>
 <p>Before you can work with <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, you need to import this package. It is customary to import <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> under the alias ‘sns’.</p>
 <p>We also need to import <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>’s <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> module. The code below uses the alias ‘plt’. The <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> module can be used to customise <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> plots. The <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> module can be used to change the nature and the appearance of plots.</p>
 <div class="cell docutils container">
@@ -463,7 +474,7 @@ document.write(`
 </div>
 </section>
 <section id="a-bar-plot">
-<h2>A bar plot<a class="headerlink" href="#a-bar-plot" title="Permalink to this heading">#</a></h2>
+<h2>A bar plot<a class="headerlink" href="#a-bar-plot" title="Link to this heading">#</a></h2>
 <p>Bar plots can be created using the <code class="docutils literal notranslate"><span class="pre">barplot()</span></code> method. It demands a <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter, which need to refer to a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe containing the values you want to visualise.</p>
 <p>Additionally, we need supply two variables: (1) the values to be shown on the X-axis and (2) the values to be shown on the Y-axis. These values need to be passed as the <code class="docutils literal notranslate"><span class="pre">x</span></code> and the <code class="docutils literal notranslate"><span class="pre">y</span></code> parameters, respectively. The <code class="docutils literal notranslate"><span class="pre">y</span></code> parameter, more concretely, specifies the height of the bars that are drawn. Optionally, you can also use the <code class="docutils literal notranslate"><span class="pre">color</span></code> parameter to specify a fixed fill colour for the bars in the plot. This parameter need to be assigned a hexadecimal code for colours. To find such hexadecimal codes, you can make use of a <a class="reference external" href="https://g.co/kgs/9W4qA3">colour picker tool</a>.</p>
 <p>The code below visualises the level of air pollution in the various countries described in the BLI dataset. Note that the code also sorts the values found for the variable ‘air_pollution’ in a descending order, using the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> method <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code>. As a result of this, the values will be shown in a specific order: from highest to lowest.</p>
@@ -490,7 +501,7 @@ document.write(`
 </div>
 </section>
 <section id="customisations">
-<h2>Customisations<a class="headerlink" href="#customisations" title="Permalink to this heading">#</a></h2>
+<h2>Customisations<a class="headerlink" href="#customisations" title="Link to this heading">#</a></h2>
 <p>Clearly, the appearance of the barplot can still be improved in a number of ways. One difficulty is that the label on the X-axis cannot be read, because of the fact that they overlap. We may also want to increase the size of the plot, to enhance the readability. Customisations such as these can be done via <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> methods.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">figure()</span></code> method, firstly, has a <code class="docutils literal notranslate"><span class="pre">figsize</span></code> parameter, which can be assigned a tuple with two integer values. The first of these specifies the width, and the second integer specifies the height.
 As values for the <code class="docutils literal notranslate"><span class="pre">figsize</span></code> parameter, you can specify the width and the height of the graph in inches.</p>
@@ -553,7 +564,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <section id="exercise-12-1">
-<h3>Exercise 12.1<a class="headerlink" href="#exercise-12-1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 12.1<a class="headerlink" href="#exercise-12-1" title="Link to this heading">#</a></h3>
 <p>PISA is the OECD’s <a class="reference external" href="https://www.oecd.org/pisa/">Programme for International Student Assessment</a>. This programme evaluates educational systems globally by measuring the performance of 15 year-old-children in mathematics, science and reading. The latest study is from 2018.</p>
 <p>The data folder of this tutorial includes a CSV file named ‘<a class="reference external" href="https://edu.nl/p97ma">pisa.csv</a>’. It contains all the scores measured for mathematics and reading in between 2000 and 2018.</p>
 <p>How did the various countries that were examined in 2018 perform on the reading tests? Which countries had the highest scores, and which countries had the lowest scores? ou can limit the analyses to the the ‘total’ scores (i.e. those records in which column ‘object’ has value ‘TOT’).</p>
@@ -578,7 +589,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </section>
 </section>
 <section id="changing-the-plot-style">
-<h2>Changing the plot style<a class="headerlink" href="#changing-the-plot-style" title="Permalink to this heading">#</a></h2>
+<h2>Changing the plot style<a class="headerlink" href="#changing-the-plot-style" title="Link to this heading">#</a></h2>
 <p>The overall style of the plot, including the background colour and the presence of the of grid lines, can be modified using <code class="docutils literal notranslate"><span class="pre">set_style()</span></code>.</p>
 <p>The following styles have been defined in <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>:</p>
 <ul class="simple">
@@ -597,7 +608,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </section>
 <section id="categorical-variables">
-<h2>Categorical variables<a class="headerlink" href="#categorical-variables" title="Permalink to this heading">#</a></h2>
+<h2>Categorical variables<a class="headerlink" href="#categorical-variables" title="Link to this heading">#</a></h2>
 <p>Categorical variables are variables which can be used to divide observations into smaller groups. They can divide the observations in the dataset over a number of categories. The values for such categorical variables are usually taken from a limited set of options. These options are often strings, such as ‘low’, ‘medium’ or ‘high’.</p>
 <p>In a <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> barplot, you can easily visualise the different categories that are available via the fill colour of the bars. In the <code class="docutils literal notranslate"><span class="pre">barplot()</span></code> method, you can work with a parameter named <code class="docutils literal notranslate"><span class="pre">hue</span></code>. When you mention the name of a categorirical variable as a value for this <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter, the different groups that can be created will all be shown in a different colour. In addition, a legend will be added to clarify the meaning of these colours.</p>
 <p>To avoid overlapping bars, you need to set the value of the <code class="docutils literal notranslate"><span class="pre">dodge</span></code> parameter to ‘False’.</p>
@@ -697,7 +708,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </section>
 <section id="colour-palettes">
-<h2>Colour palettes<a class="headerlink" href="#colour-palettes" title="Permalink to this heading">#</a></h2>
+<h2>Colour palettes<a class="headerlink" href="#colour-palettes" title="Link to this heading">#</a></h2>
 <p>Next to specifying all the colours yourself, you can also make use of one of <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>’s predefined <a class="reference external" href="https://seaborn.pydata.org/tutorial/color_palettes.html">colour pallettes</a>. You can choose from several tens of predefined palettes. The list below only mentions some of the possibilities.</p>
 <ul class="simple">
 <li><p>hls</p></li>
@@ -792,12 +803,12 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <section id="exercise-12-2">
-<h3>Exercise 12.2.<a class="headerlink" href="#exercise-12-2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 12.2.<a class="headerlink" href="#exercise-12-2" title="Link to this heading">#</a></h3>
 <p>As for exercise 12.1, make a bar chart which gives information about the total scors for reading in 2018. For this exercise, try to give information about the continents as well. Use distinctive colours for each continent.</p>
 </section>
 </section>
 <section id="a-scatter-plot">
-<h2>A scatter plot<a class="headerlink" href="#a-scatter-plot" title="Permalink to this heading">#</a></h2>
+<h2>A scatter plot<a class="headerlink" href="#a-scatter-plot" title="Link to this heading">#</a></h2>
 <p>A scatter plot is a data visualisation that makes use of dots to represent the values of two numerical variables. Scatter plots can be created using the <code class="docutils literal notranslate"><span class="pre">scatterplot()</span></code> method. The parameters for this method are largely the same as those for <code class="docutils literal notranslate"><span class="pre">barplot()</span></code>. The <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter needs to refer to a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe containing the dataset you want to visualise. The parameters <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> specify the variables (i.e. the columns) from this dataset that you want to display on the X-axis and the Y-axis, respectively.</p>
 <p>You can specify a fixed colour for the points using the <code class="docutils literal notranslate"><span class="pre">color</span></code> parameter, and the size of the points can be set using the <code class="docutils literal notranslate"><span class="pre">s</span></code> parameter.</p>
 <p>As is the case for the barplot, you can change the size of the figure via the <code class="docutils literal notranslate"><span class="pre">figure()</span></code> method from <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>’s <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> module.</p>
@@ -819,7 +830,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <section id="exercise-12-3">
-<h3>Exercise 12.3.<a class="headerlink" href="#exercise-12-3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 12.3.<a class="headerlink" href="#exercise-12-3" title="Link to this heading">#</a></h3>
 <p>In the PISA data set, how do the scores for reading compare to the scores for mathematics?</p>
 <p>Focus on the scores obtained in 2018. Answer this question by creating a scatter plot.</p>
 <p>Customise the plot according to the following specifications:</p>
@@ -831,7 +842,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </section>
 </section>
 <section id="annotating-text-annotation-on-a-scatterplot">
-<h2>Annotating text annotation on a scatterplot<a class="headerlink" href="#annotating-text-annotation-on-a-scatterplot" title="Permalink to this heading">#</a></h2>
+<h2>Annotating text annotation on a scatterplot<a class="headerlink" href="#annotating-text-annotation-on-a-scatterplot" title="Link to this heading">#</a></h2>
 <p>In the scatterplot above, it is clearly difficult to understand what the various dots mean. Which countries are actually shown on this plot? Once you have created the scatterplot, you can use the <code class="docutils literal notranslate"><span class="pre">text()</span></code> method from <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> to add descriptive labels to the points.</p>
 <p>You need to provide values for the following parameters:</p>
 <ul class="simple">
@@ -899,7 +910,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <section id="exercise-12-4">
-<h3>Exercise 12.4.<a class="headerlink" href="#exercise-12-4" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 12.4.<a class="headerlink" href="#exercise-12-4" title="Link to this heading">#</a></h3>
 <p>As for exercise 12.3, create a scatterplot which can help to visualise the correlation between the scores for reading and the scores for mathematics. This time, also add labels to indicate the scores for the countries captured in the list named <code class="docutils literal notranslate"><span class="pre">countries</span></code>, defined below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span> <span class="p">,</span> <span class="s1">&#39;Germany&#39;</span> <span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Luxembourg&#39;</span><span class="p">,</span><span class="s1">&#39;Italy&#39;</span><span class="p">]</span>
 </pre></div>
@@ -908,7 +919,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </section>
 </section>
 <section id="conveying-information-via-sizes-and-colours">
-<h2>Conveying information via sizes and colours<a class="headerlink" href="#conveying-information-via-sizes-and-colours" title="Permalink to this heading">#</a></h2>
+<h2>Conveying information via sizes and colours<a class="headerlink" href="#conveying-information-via-sizes-and-colours" title="Link to this heading">#</a></h2>
 <p>As we saw earlier, the <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter can be used to visualise the values of a categorical variable through the use of colour. This <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter can be used in a scatterplot as well. When you associate the <code class="docutils literal notranslate"><span class="pre">hue</span></code> with a categorical variable, the colours of the points in the scatter plot will indicate the categories they belong to.</p>
 <p>Secondly, you can also specify that the <em>sizes</em> of the points should vary along with the values in a specific column. You can do this by supplying the name of this column as the value of the <code class="docutils literal notranslate"><span class="pre">size</span></code> parameter.</p>
 <p>When the actual values in the column that you associate with the <code class="docutils literal notranslate"><span class="pre">size</span></code> parameter are too small or too big, you can rescale these values using the <code class="docutils literal notranslate"><span class="pre">sizes</span></code> parameter. This parameter demands two values: a minimum size and a maximum size. The values of the column that is mentioned in <code class="docutils literal notranslate"><span class="pre">size</span></code> will then be rescaled, on the range that is determined by these minimum and maximum values.</p>
@@ -954,7 +965,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </section>
 <section id="saving-an-image">
-<h2>Saving an image<a class="headerlink" href="#saving-an-image" title="Permalink to this heading">#</a></h2>
+<h2>Saving an image<a class="headerlink" href="#saving-an-image" title="Link to this heading">#</a></h2>
 <p>To save the image that is created, you can work with the <code class="docutils literal notranslate"><span class="pre">savefig()</span></code> method. Within the parentheses, you should firstly supply a filename for the image. You can optionally provide the <code class="docutils literal notranslate"><span class="pre">dpi</span></code> method as well. This parameters specific the number of dots per inch.</p>
 <p>Next to opening the graph in a viewer on your screen, using show(), it is also possible to instruct Python to create an image file on your computer, via the <code class="docutils literal notranslate"><span class="pre">savefig()</span></code> method. As the first parameter to this function, you must provide a filename. The filename must include an extension, such as ‘jpeg’, ‘tiff’, ‘png’ or ‘pdf’. The methods savefig() and show() are mutually exclusive. When you use one of these, you cannot use the other.</p>
 <div class="cell docutils container">
@@ -970,7 +981,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <section id="exercise-12-5">
-<h3>Exercise 12.5.<a class="headerlink" href="#exercise-12-5" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 12.5.<a class="headerlink" href="#exercise-12-5" title="Link to this heading">#</a></h3>
 <p>Add a new column to the <code class="docutils literal notranslate"><span class="pre">df_2018</span></code> dataframe which you created for the previous exercises, containing the avrage values for reading and mathematics. You can use the code below for this purpose.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_2018</span><span class="p">[</span><span class="s1">&#39;pisa_mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2018</span><span class="p">[[</span><span class="s1">&#39;pisa_read&#39;</span><span class="p">,</span> <span class="s1">&#39;pisa_math&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -984,7 +995,7 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </section>
 </section>
 <section id="a-line-plot">
-<h2>A line plot<a class="headerlink" href="#a-line-plot" title="Permalink to this heading">#</a></h2>
+<h2>A line plot<a class="headerlink" href="#a-line-plot" title="Link to this heading">#</a></h2>
 <p>With <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, we can also create many other types of visualisations. To create a line plot, for example, you can use the <code class="docutils literal notranslate"><span class="pre">lineplot()</span></code> method. The line plot can be customised via the following parameters:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>: the color of the line</p></li>
@@ -1019,18 +1030,18 @@ As values for the <code class="docutils literal notranslate"><span class="pre">f
 </div>
 </div>
 <section id="exercise-12-6">
-<h3>Exercise 12.6.<a class="headerlink" href="#exercise-12-6" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 12.6.<a class="headerlink" href="#exercise-12-6" title="Link to this heading">#</a></h3>
 <p>Starting from the full PISA data set, creates a new dataframe containing the scores obtained by pupils in the Netherlands during the period in between 2004 and 2018.</p>
 <p>Use this new dataframe to trace the development of the reading scores in the Netherlands in between 2000 and 2018. Focus on the total scores.</p>
 </section>
 <section id="ecercise-12-7">
-<h3>Ecercise 12.7.<a class="headerlink" href="#ecercise-12-7" title="Permalink to this heading">#</a></h3>
+<h3>Ecercise 12.7.<a class="headerlink" href="#ecercise-12-7" title="Link to this heading">#</a></h3>
 <p>How did the scores for maths develop in the Netherlands in between 2000 and 2018? Focus on the score for boys and for girls separately.
 Tip: You can also work with the <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter in thae case of line charts.</p>
 </section>
 </section>
 <section id="a-count-plot">
-<h2>A count plot<a class="headerlink" href="#a-count-plot" title="Permalink to this heading">#</a></h2>
+<h2>A count plot<a class="headerlink" href="#a-count-plot" title="Link to this heading">#</a></h2>
 <p>You can see that, using seaborn, you can create fairly advanced plots with only a few lines of code. If you want to see the number of items for each of the categories in a categorical variable, you can work with the <code class="docutils literal notranslate"><span class="pre">countplot()</span></code> method.</p>
 <p>The code below indicates that the OECD dataset mostly concentrates on countries in Europe.</p>
 <div class="cell docutils container">
@@ -1048,7 +1059,7 @@ Tip: You can also work with the <code class="docutils literal notranslate"><span
 </div>
 </section>
 <section id="a-histogram">
-<h2>A histogram<a class="headerlink" href="#a-histogram" title="Permalink to this heading">#</a></h2>
+<h2>A histogram<a class="headerlink" href="#a-histogram" title="Link to this heading">#</a></h2>
 <p>A countplot can be used to clarify the distribution across the options that are available for a categorical varable.</p>
 <p>To explore the distibution of the values of a quantitative variable, you can work with a histogram. You can create such a histogram with <code class="docutils literal notranslate"><span class="pre">histplot()</span></code>. To generate such a plot, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> divives the available values evenly in a number of ranges and then counts the number of observations belonging to each of these groups. You can also specify the number of groups to be craeted explicitly using the <code class="docutils literal notranslate"><span class="pre">bins</span></code> parameter.</p>
 <div class="cell docutils container">
@@ -1065,7 +1076,7 @@ Tip: You can also work with the <code class="docutils literal notranslate"><span
 </div>
 </section>
 <section id="a-boxplot">
-<h2>A boxplot<a class="headerlink" href="#a-boxplot" title="Permalink to this heading">#</a></h2>
+<h2>A boxplot<a class="headerlink" href="#a-boxplot" title="Link to this heading">#</a></h2>
 <p>A boxplot is a diagram which visualises the minimum, the maximum, the median and the first and third quartiles. It can be created using the <code class="docutils literal notranslate"><span class="pre">boxplot()</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1082,7 +1093,7 @@ Tip: You can also work with the <code class="docutils literal notranslate"><span
 </div>
 </div>
 <section id="exercise-12-8">
-<h3>Exercise 12.8<a class="headerlink" href="#exercise-12-8" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 12.8<a class="headerlink" href="#exercise-12-8" title="Link to this heading">#</a></h3>
 <p>Have the scores remained relatively stable over the years if we look at the total scores? Or has there been some variation? How does the variation of the scores for the Netherlands compare to the scores in France, Germany, Belgium and Luxembourg? Try to answer this question by crearing a boxplot.</p>
 <p>The names of the countries should be displayed on the X-axis, and the values associated with these countries should be displayed along the Y-axis.</p>
 <p>For this exercise, it can be useful to make a list containing the countries you are interesed in, and to filter the dataframe using the <code class="docutils literal notranslate"><span class="pre">isin()</span></code> function.</p>
@@ -1093,7 +1104,7 @@ Tip: You can also work with the <code class="docutils literal notranslate"><span
 </section>
 </section>
 <section id="a-heatmap">
-<h2>A heatmap<a class="headerlink" href="#a-heatmap" title="Permalink to this heading">#</a></h2>
+<h2>A heatmap<a class="headerlink" href="#a-heatmap" title="Link to this heading">#</a></h2>
 <p>Heatmaps often offer a useful way of visualising correlations in a dataset. Such correlations can be calculated using the <code class="docutils literal notranslate"><span class="pre">corr()</span></code> method from <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, such a heatmap clarifying the correlations among the variables in the data set can be created using only a few lines of code. The method to be used is named <code class="docutils literal notranslate"><span class="pre">heatmap()</span></code>. This method demands a two-dimensional matrix containing the values to be shown. The colours can be specified using the <code class="docutils literal notranslate"><span class="pre">cmap</span></code> parameter. As values, you can use the colour palettes that are predefined by <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>.</p>
 <div class="cell docutils container">
@@ -1121,7 +1132,7 @@ Tip: You can also work with the <code class="docutils literal notranslate"><span
 </div>
 </section>
 <section id="density-plot">
-<h2>Density plot<a class="headerlink" href="#density-plot" title="Permalink to this heading">#</a></h2>
+<h2>Density plot<a class="headerlink" href="#density-plot" title="Link to this heading">#</a></h2>
 <p>Density regions can be shown using <code class="docutils literal notranslate"><span class="pre">kdeplot()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1136,7 +1147,7 @@ Tip: You can also work with the <code class="docutils literal notranslate"><span
 </div>
 <p>Many other types are diagrams can be created. For more information, visit the <a class="reference external" href="https://seaborn.pydata.org/examples/index.html">gallery</a> or the <a class="reference external" href="https://seaborn.pydata.org/tutorial.html">tutorials</a> on the seaborn website.</p>
 <section id="exercise-12-9">
-<h3>Exercise 12.9<a class="headerlink" href="#exercise-12-9" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 12.9<a class="headerlink" href="#exercise-12-9" title="Link to this heading">#</a></h3>
 <p>The data folder of this tutorial includes a CSV file named ‘nobel.csv’. If necessary you can also download this file from the following address: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a>.</p>
 <p>Visualise the data in this data set in the following ways.</p>
 <ul class="simple">
@@ -1209,7 +1220,7 @@ Tip: You can also work with the <code class="docutils literal notranslate"><span
 </div>
 </section>
 <section id="exercise-12-10">
-<h3>Exercise 12.10.<a class="headerlink" href="#exercise-12-10" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 12.10.<a class="headerlink" href="#exercise-12-10" title="Link to this heading">#</a></h3>
 <p>In exercise 11.3, you created a CSV file named ‘prices_of_coffee_over_time.csv’, containing data about the average price of a pound of coffee on a range of dates. Use this CSV file to create a line chart which visualises the development of these prices over time.</p>
 </section>
 </section>
@@ -1243,7 +1254,7 @@ Tip: You can also work with the <code class="docutils literal notranslate"><span
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="11%20Pandas.html"
@@ -1271,6 +1282,7 @@ Tip: You can also work with the <code class="docutils literal notranslate"><span
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1342,6 +1354,7 @@ By Peter Verhaar and Ben Companjen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1368,8 +1381,8 @@ By Peter Verhaar and Ben Companjen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

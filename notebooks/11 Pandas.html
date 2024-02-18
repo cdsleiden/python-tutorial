@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>11. Data analysis with pandas &#8212; Python Tutorial</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/11 Pandas';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,10 +71,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -120,11 +114,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,6 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../Welcome.html">
@@ -151,7 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Python Tutorial</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -334,6 +343,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -343,6 +353,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -420,10 +431,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-analysis-with-pandas">
-<h1>11. Data analysis with pandas<a class="headerlink" href="#data-analysis-with-pandas" title="Permalink to this heading">#</a></h1>
+<h1>11. Data analysis with pandas<a class="headerlink" href="#data-analysis-with-pandas" title="Link to this heading">#</a></h1>
 <p>‘Pandas’ is a Python library which was developed for the manipulation and the analysis of data sets. It is available for Python version 2.7 and higher. The name of the library loosely stands for “Python Data Analysis Library”. Pandas contains methods that enable programmers to read data from and write data to a wide range of file formats, including CSV, TSV, Excel spreadsheets and MySQL databases, and it offers numerous statistical methods that can be used to analyse these data.</p>
 <p>If pandas has been installed successfully on your computer, this library can be imported into your program using the <code class="docutils literal notranslate"><span class="pre">import</span></code> keyword.</p>
 <div class="cell docutils container">
@@ -435,7 +446,7 @@ document.write(`
 </div>
 <p>As can be seen, this import statement also assigns an alias, namely <code class="docutils literal notranslate"><span class="pre">pd</span></code>. This is an abbreviated reference to the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library. Without this alias, the full name of the library would have to be typed in each time a method from this library is needed.</p>
 <section id="reading-a-csv-file">
-<h2>Reading a CSV file<a class="headerlink" href="#reading-a-csv-file" title="Permalink to this heading">#</a></h2>
+<h2>Reading a CSV file<a class="headerlink" href="#reading-a-csv-file" title="Link to this heading">#</a></h2>
 <p>The folder containing all the notebooks for this tutorial also includes a subfolder named ‘Data’. This subfolder contains a CSV file unoriginally named ‘data.csv’.</p>
 <p>If you want to work with a data set that is stored in the CSV format, it can be accessed using the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function.</p>
 <div class="cell docutils container">
@@ -469,7 +480,7 @@ document.write(`
 <p>Your CSV file may of course contain missing values. If, in the CSV file, all missing values are represented using codes such as ‘NULL’, ‘NaN’, or ‘NA’, pandas will automically recognised these missing values as such. Pandas represents missing values via the code ‘NaN’, which stands for ‘Not a Number’.</p>
 </section>
 <section id="reading-an-excel-spreadsheet">
-<h2>Reading an Excel spreadsheet<a class="headerlink" href="#reading-an-excel-spreadsheet" title="Permalink to this heading">#</a></h2>
+<h2>Reading an Excel spreadsheet<a class="headerlink" href="#reading-an-excel-spreadsheet" title="Link to this heading">#</a></h2>
 <p>The Pandas library also offers a method named <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code>. You can use this function, unsurprisingly, to process data stored in an Excel spreadsheet. The method needs to be used with two parameters. The first parameter is the name of the Excel file that you want to work with. Secondly, as a value to a parameter named <code class="docutils literal notranslate"><span class="pre">sheet_name</span></code>, you need to provide the name of the sheet within the spreadsheet that you want to read.</p>
 <p>Similarly to the way in which <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> processes data, <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code> loads the data on the sheet that you mention into a dataframe.</p>
 <p>The cell below illustrates the use of the <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code> file using the Excel file provided in the ‘Data’ subfolder.</p>
@@ -485,7 +496,7 @@ document.write(`
 </div>
 </section>
 <section id="converting-a-list-into-a-dataframe">
-<h2>Converting a list into a dataframe<a class="headerlink" href="#converting-a-list-into-a-dataframe" title="Permalink to this heading">#</a></h2>
+<h2>Converting a list into a dataframe<a class="headerlink" href="#converting-a-list-into-a-dataframe" title="Link to this heading">#</a></h2>
 <p>It is also possible to convert an existing Python list into a dataframe, using the <code class="docutils literal notranslate"><span class="pre">DataFrame()</span></code> method. In the code below, the list named <code class="docutils literal notranslate"><span class="pre">data</span></code> is a two-dimensional array. Each item is in fact a list in itself.</p>
 <p>When you pass this list into <code class="docutils literal notranslate"><span class="pre">Dataframe()</span></code>, the method converts this data structure into a colelction of rows and columns. The <code class="docutils literal notranslate"><span class="pre">columns</span></code> parameter may be used to supply column names.</p>
 <div class="cell docutils container">
@@ -504,7 +515,7 @@ document.write(`
 </div>
 </section>
 <section id="basic-information-about-the-dataframe">
-<h2>Basic information about the dataframe<a class="headerlink" href="#basic-information-about-the-dataframe" title="Permalink to this heading">#</a></h2>
+<h2>Basic information about the dataframe<a class="headerlink" href="#basic-information-about-the-dataframe" title="Link to this heading">#</a></h2>
 <p>Once a dataframe has been created, the data set can be examined using a number of methods that are available within the Pandas library. These methods will be explained using the simple data set that was shown above.</p>
 <p>After you have run the cell above, you can inspect the contents by using a print command, as follows:</p>
 <div class="cell docutils container">
@@ -568,7 +579,7 @@ document.write(`
 </div>
 </div>
 <section id="exercise-11-1">
-<h3>Exercise 11.1.<a class="headerlink" href="#exercise-11-1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 11.1.<a class="headerlink" href="#exercise-11-1" title="Link to this heading">#</a></h3>
 <p>In the data folder for this tutorial, you can find a CSV file named ‘nobel.csv’. This file contains information about Nobel laureates. If, for whichever reason, you cannot locate this file, you can download it from the following address: <a class="reference external" href="https://edu.nl/3xmbd">https://edu.nl/3xmbd</a></p>
 <p>First, read in the data using Pandas. Use ‘nobel’ as a name for the data frame.</p>
 <p>Next, print a sentence which gives information about the total number of Nobel laureates. Also print a sentence giving information about the number of columns in this data set.</p>
@@ -583,7 +594,7 @@ document.write(`
 </section>
 </section>
 <section id="series">
-<h2>Series<a class="headerlink" href="#series" title="Permalink to this heading">#</a></h2>
+<h2>Series<a class="headerlink" href="#series" title="Link to this heading">#</a></h2>
 <p>The values in a column of a dataframe can be accessed separately using the name of the column. In order to obtain the data in a specific column, the name of the column must be appended to the name of the full dataframe using square brackets, as follows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,10 +623,10 @@ document.write(`
 </div>
 </section>
 <section id="selecting-subsets">
-<h2>Selecting subsets<a class="headerlink" href="#selecting-subsets" title="Permalink to this heading">#</a></h2>
+<h2>Selecting subsets<a class="headerlink" href="#selecting-subsets" title="Link to this heading">#</a></h2>
 <p>In the pandas library, it is also possible to filter data sets. In other words, we can create new data sets containing only some of the rows or the columns of the original data sets. Such filtered data sets are also referred to as subsets. This process of ‘subsetting’ a dataframe takes place on the basis of specific criteria. Different types of criteria are possible.</p>
 <section id="filtering-by-index">
-<h3>Filtering by index<a class="headerlink" href="#filtering-by-index" title="Permalink to this heading">#</a></h3>
+<h3>Filtering by index<a class="headerlink" href="#filtering-by-index" title="Link to this heading">#</a></h3>
 <p>As a first possibility, we can use the indices of rows and of columns as criteria. These indices need to be added to the dataframe using the <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> indexer.</p>
 <p>When we want to select all the values on the third row of the dataframe (i.e. the row with index 2), this can be accomplished using the code below. The third row has index number ‘2’, because pandas start counting at zero.</p>
 <div class="cell docutils container">
@@ -646,13 +657,13 @@ document.write(`
 </div>
 </section>
 <section id="exercise-11-2">
-<h3>Exercise 11.2.<a class="headerlink" href="#exercise-11-2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 11.2.<a class="headerlink" href="#exercise-11-2" title="Link to this heading">#</a></h3>
 <p>As was explained, the <code class="docutils literal notranslate"><span class="pre">head()</span></code> function prints the first five rows of a dataframe. There is a similar finction named <code class="docutils literal notranslate"><span class="pre">tail()</span></code> which returns the <em>last</em> five rows of a dataframe.</p>
 <p>Working with the Nobel laureates data set, try to recreate this functionality using the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> indexer. In other words, use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> to print only the first five and only the last five rows. Note that, as is the case for lists, you can work with negative numbers for the indices.</p>
 <p>Finally, try to use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> again to print only the first and the the second column of the last five rows.</p>
 </section>
 <section id="filtering-by-values">
-<h3>Filtering by values<a class="headerlink" href="#filtering-by-values" title="Permalink to this heading">#</a></h3>
+<h3>Filtering by values<a class="headerlink" href="#filtering-by-values" title="Link to this heading">#</a></h3>
 <p>A potential disadvantage of this <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> selector is that you need to know the exact values for the indices. In most situations, it is more useful to create subsets on the basis of the names of the columns and criteria applied to the values in the data set.</p>
 <p>Imagine, for instance, that you are only interested in rows in which the column B contains a value of 5 or higher. To select those rows, you can work with the Boolean expression <code class="docutils literal notranslate"><span class="pre">df['B']</span> <span class="pre">&gt;=</span> <span class="pre">5</span></code>. This Boolean expression can be added to the original dataframe in square brackets. In the code that follows, the subset is assigned to a new dataframe, one named <code class="docutils literal notranslate"><span class="pre">new_df</span></code>.</p>
 <div class="cell docutils container">
@@ -690,7 +701,7 @@ document.write(`
 <p>Note that <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> does not actually change the dataframe in any way. If you actually need a dataframe in which the missing values are removed, you need to assign the output of <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> to a new variable.</p>
 </section>
 <section id="subsets-of-columns">
-<h3>Subsets of columns<a class="headerlink" href="#subsets-of-columns" title="Permalink to this heading">#</a></h3>
+<h3>Subsets of columns<a class="headerlink" href="#subsets-of-columns" title="Link to this heading">#</a></h3>
 <p>Next to subsets of rows, it is also possible to create subsets of columns. More specifically, this means that we create new dataframe, by copying only some of the columns that are available in another dataframe. The easiest way to accomplish this is by supplying a list of the column names that you want to keep within the square brackets appended to dataframe that needs to be filtered. After running the code below, the dataframe named <code class="docutils literal notranslate"><span class="pre">new_df</span></code> has the exact same number of rows as df, but it only contains three of its columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -710,7 +721,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-1-3">
-<h3>Exercise 1.3.<a class="headerlink" href="#exercise-1-3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1.3.<a class="headerlink" href="#exercise-1-3" title="Link to this heading">#</a></h3>
 <p>Working with the Nobel laureates data set, try to answer the following questions:</p>
 <ul class="simple">
 <li><p>How many Dutch Nobel laureates have there been so far?</p></li>
@@ -720,7 +731,7 @@ document.write(`
 </section>
 </section>
 <section id="navigating-a-dataframe">
-<h2>Navigating a dataframe<a class="headerlink" href="#navigating-a-dataframe" title="Permalink to this heading">#</a></h2>
+<h2>Navigating a dataframe<a class="headerlink" href="#navigating-a-dataframe" title="Link to this heading">#</a></h2>
 <p>When you want to print a list of all the values in a column, you iterate across all of the values in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, as folows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -743,12 +754,12 @@ document.write(`
 </div>
 </div>
 <section id="exercise-1-4">
-<h3>Exercise 1.4.<a class="headerlink" href="#exercise-1-4" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1.4.<a class="headerlink" href="#exercise-1-4" title="Link to this heading">#</a></h3>
 <p>How many female Nobel laureates are there in this data set? Print a list containing, their names, the category of the award, and the year in which the prize was awarded.</p>
 </section>
 </section>
 <section id="calculations">
-<h2>Calculations<a class="headerlink" href="#calculations" title="Permalink to this heading">#</a></h2>
+<h2>Calculations<a class="headerlink" href="#calculations" title="Link to this heading">#</a></h2>
 <p>One of the great strengths of Pandas is that it can make calculations using the values captured in dataframes. Such calculations can be carried out using the regular mathematical operators in Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -772,7 +783,7 @@ document.write(`
 </div>
 </section>
 <section id="statistical-functions">
-<h2>Statistical functions<a class="headerlink" href="#statistical-functions" title="Permalink to this heading">#</a></h2>
+<h2>Statistical functions<a class="headerlink" href="#statistical-functions" title="Link to this heading">#</a></h2>
 <p>Within Pandas, you can use methods such as <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code>, <code class="docutils literal notranslate"><span class="pre">mean()</span></code> to receive basic statistical information about numerical values in your data set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -803,7 +814,7 @@ document.write(`
 <p>Note that this particular method for calculating summations will only produce meaningful results in the case of numerical values. If the column contains strings, as in the case of column ‘E’ of our sample data set, this method will simply concatenate all the string values in the Series.</p>
 </section>
 <section id="working-with-dates">
-<h2>Working with dates<a class="headerlink" href="#working-with-dates" title="Permalink to this heading">#</a></h2>
+<h2>Working with dates<a class="headerlink" href="#working-with-dates" title="Link to this heading">#</a></h2>
 <p>In the sample data set you have worked with in this notebook, the column named ‘F’ contains strings which represent dates. As you can see, these strings use two digits for the days, two digits for the months and four digits for the years. These components are separated by hyphens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -873,7 +884,7 @@ document.write(`
 </div>
 </div>
 <section id="exercise-1-5">
-<h3>Exercise 1.5<a class="headerlink" href="#exercise-1-5" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1.5<a class="headerlink" href="#exercise-1-5" title="Link to this heading">#</a></h3>
 <p>Who was the youngest person ever to receive the Nobel Prize? Who was the oldest person?</p>
 <p>Tip: Create a new column called ‘Age’, in which the year in which the prize was awarded is subtracted from the year of birth. A difficulty here is that we have the full date of birth, and not only the year. The year of birth can be extracted from the date of birth using the following code:</p>
 <blockquote>
@@ -882,7 +893,7 @@ document.write(`
 </section>
 </section>
 <section id="grouping-items-and-aggregation">
-<h2>Grouping items and aggregation<a class="headerlink" href="#grouping-items-and-aggregation" title="Permalink to this heading">#</a></h2>
+<h2>Grouping items and aggregation<a class="headerlink" href="#grouping-items-and-aggregation" title="Link to this heading">#</a></h2>
 <p>Pandas also offers a method named <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> which can be very useful when your data set contains labels or categories for specific records. Using <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>, the records which have been assigned the same category can all be placed in a single group. Subsequently, it becomes possible to perform calcutions for each group that has been created. This process is demonstrated below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -908,7 +919,7 @@ document.write(`
 </div>
 </div>
 <section id="exercise-1-6">
-<h3>Exercise 1.6.<a class="headerlink" href="#exercise-1-6" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1.6.<a class="headerlink" href="#exercise-1-6" title="Link to this heading">#</a></h3>
 <p>For each category, calculate the average age of the Nobel laureates. Note that this exercise builds on the results of exercise 1.5.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -922,7 +933,7 @@ document.write(`
 </section>
 </section>
 <section id="sorting">
-<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this heading">#</a></h2>
+<h2>Sorting<a class="headerlink" href="#sorting" title="Link to this heading">#</a></h2>
 <p>It is also possible to <em>sort</em> all the values in dataframe. The method to be used for this purpose is <code class="docutils literal notranslate"><span class="pre">sortvalues()</span></code>. The <code class="docutils literal notranslate"><span class="pre">by</span></code> parameter of this method specifies the column to sort by.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -956,7 +967,7 @@ document.write(`
 </div>
 </div>
 <section id="exercise-1-7">
-<h3>Exercise 1.7.<a class="headerlink" href="#exercise-1-7" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1.7.<a class="headerlink" href="#exercise-1-7" title="Link to this heading">#</a></h3>
 <p>Create a list of all the unique countries, and calculate the number of Nobel laureates per country. Print a list which is ranked according to the number of Nobel prizes. The country with the highest number of Nobel laureates must be at the top of the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -972,7 +983,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-11-8">
-<h3>Exercise 11.8.<a class="headerlink" href="#exercise-11-8" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 11.8.<a class="headerlink" href="#exercise-11-8" title="Link to this heading">#</a></h3>
 <p>In the data folder for this tutorial, you can find a CSV file named ‘Grades.xlsx’. If you cannot locate this file, you can download it from the following address: <a class="reference external" href="https://edu.nl/m6w8n">https://edu.nl/m6w8n</a></p>
 <p>This spreadsheet contains the partial grades received in a certain course.</p>
 <p>Write code which can calculate and print the final grade for each student. The essay and the exam both count for 40% the grade. The remaining 20% is determined by the presentation. All grades should have one digit after the decimal point.</p>
@@ -985,7 +996,7 @@ document.write(`
 </ul>
 </section>
 <section id="exercise-11-9">
-<h3>Exercise 11.9.<a class="headerlink" href="#exercise-11-9" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 11.9.<a class="headerlink" href="#exercise-11-9" title="Link to this heading">#</a></h3>
 <p>In the exercise, we make use of the following data set:</p>
 <blockquote>
 <div><p>Fatah-Black, Dr KJ (Leiden University) (2017): Lijsten van de leveranties, met de namen van de kopers en betaalde prijzen op de verkopingen van de VOC kamer Zeeland, 1725 – 1777. DANS. <a class="reference external" href="https://doi.org/10.17026/dans-23z-ez6f">https://doi.org/10.17026/dans-23z-ez6f</a></p>
@@ -1041,7 +1052,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-11-10">
-<h3>Exercise 11.10.<a class="headerlink" href="#exercise-11-10" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 11.10.<a class="headerlink" href="#exercise-11-10" title="Link to this heading">#</a></h3>
 <p>Download the CSV file ‘gutenberg_metadata.csv’ via the URL <a class="reference external" href="https://edu.nl/xcm3q">https://edu.nl/xcm3q</a>.</p>
 <p>Using this CSV file, create a dataframe which only contains the English texts written by Charles Dickens. In the data set, this name is given as ‘Dickens Charles’. Use the code ‘en’ for ‘English’.</p>
 <p>Two different conditions can be combined using the ampersand (’&amp;’). The combined criteria must be given in brackets.</p>
@@ -1091,7 +1102,7 @@ document.write(`
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="10%20Data_acquisition.html"
@@ -1119,6 +1130,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1184,6 +1196,7 @@ By Peter Verhaar and Ben Companjen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1210,8 +1223,8 @@ By Peter Verhaar and Ben Companjen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
