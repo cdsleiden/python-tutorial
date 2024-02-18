@@ -394,7 +394,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-contents-of-a-folder">Reading the contents of a folder</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise 8.1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-3">Exercise 8.3.</a></li>
 </ul>
 </li>
 </ul>
@@ -460,28 +460,11 @@ document.write(`
 </div>
 <section id="exercise-8-1">
 <h3>Exercise 8.1.<a class="headerlink" href="#exercise-8-1" title="Link to this heading">#</a></h3>
-<p>Download the following file:</p>
-<p><a class="reference external" href="https://edu.nl/ggwtf">https://edu.nl/ggwtf</a></p>
-<p>The file contains the text of a poem.</p>
-<p>Print the content of the poem that you have downloaded for exercises 8.2 on your screen, and make sure that you also add line numbers, as follows:</p>
+<p>The ‘Data’ folder contains a file named ‘sonnet116.txt’. It is the full text of a Shakespeare sonnet.</p>
+<p>Print the poem on your screen, and make sure that you also add line numbers, as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="p">[</span><span class="n">line1</span><span class="p">]</span>
 <span class="mf">2.</span> <span class="p">[</span><span class="n">line2</span><span class="p">]</span>
 </pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://edu.nl/ggwtf&#39;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-    <span class="n">response</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span>
-    <span class="n">contents</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;sonnet116.txt&#39;</span> <span class="p">,</span> <span class="s1">&#39;w&#39;</span> <span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
-        <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -560,8 +543,8 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="id1">
-<h3>Exercise 8.1.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="exercise-8-3">
+<h3>Exercise 8.3.<a class="headerlink" href="#exercise-8-3" title="Link to this heading">#</a></h3>
 <p>Find a directory on your own computer which contains both files and subfolders. Define the path to this folder, as a variable named <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p>
 <p>Next, write some code that can list only the subdirectories in this directories, and which ignores the individual files, using the functions <code class="docutils literal notranslate"><span class="pre">listdir()</span></code> and <code class="docutils literal notranslate"><span class="pre">isfile</span></code>.</p>
 <p>Finally, also try to list all the files in one of these subdirectories.</p>
@@ -642,7 +625,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-contents-of-a-folder">Reading the contents of a folder</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise 8.1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-3">Exercise 8.3.</a></li>
 </ul>
 </li>
 </ul>
