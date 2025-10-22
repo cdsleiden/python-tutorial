@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -415,7 +415,7 @@ document.write(`
 <p>Once the function is ready, test it with a number of values. 20 degrees Celcius ought to be converted into 68 degrees Fahrenheit, and 37 degrees Celcius should equal 98.6 degrees Fahrenheit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">celcius_to_fahrenheit</span><span class="p">(</span> <span class="n">celcius</span> <span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">celcius_to_fahrenheit</span><span class="p">(</span> <span class="n">celcius</span> <span class="p">):</span>
     <span class="n">fahrenheit</span> <span class="o">=</span> <span class="mf">1.8</span> <span class="o">*</span> <span class="n">celcius</span> <span class="o">+</span> <span class="mi">32</span> 
     <span class="k">return</span> <span class="nb">round</span><span class="p">(</span> <span class="n">fahrenheit</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
 
@@ -431,7 +431,7 @@ document.write(`
 <p>Write a function which can test whether a given number is in between 10 and 20. The function should return <code class="docutils literal notranslate"><span class="pre">True</span></code> if this is the case, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise. The function should also return <code class="docutils literal notranslate"><span class="pre">False</span></code> is equal to 10 or to 20.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">between_10_and_20</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">between_10_and_20</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">number</span><span class="o">&gt;</span><span class="mi">10</span> <span class="ow">and</span> <span class="n">number</span><span class="o">&lt;</span><span class="mi">20</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
@@ -459,13 +459,13 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_mark</span><span class="p">(</span> <span class="n">essay</span><span class="p">,</span> <span class="n">presentation</span> <span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_mark</span><span class="p">(</span> <span class="n">essay</span><span class="p">,</span> <span class="n">presentation</span> <span class="p">):</span>
     <span class="n">partial1</span> <span class="o">=</span> <span class="n">essay</span> <span class="o">*</span> <span class="mf">0.7</span>
     <span class="n">partial2</span> <span class="o">=</span> <span class="n">presentation</span> <span class="o">*</span> <span class="mf">0.3</span>
     <span class="n">final</span> <span class="o">=</span> <span class="n">partial1</span> <span class="o">+</span> <span class="n">partial2</span>
     <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">final</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">pass_or_fail</span><span class="p">(</span><span class="n">grade</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pass_or_fail</span><span class="p">(</span><span class="n">grade</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;Fail&#39;</span>
     <span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">6</span><span class="p">:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;Pass&#39;</span>
@@ -494,7 +494,7 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">134</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">23</span><span class="p">]</span>
 
-<span class="k">def</span> <span class="nf">calculate_average</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">nr_digits</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_average</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">nr_digits</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">average</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">average</span><span class="p">,</span> <span class="n">nr_digits</span><span class="p">)</span>
 
@@ -507,7 +507,7 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 <section id="exercise-7-5">
 <h2>Exercise 7.5.<a class="headerlink" href="#exercise-7-5" title="Link to this heading">#</a></h2>
 <p>Import the math library, as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <p>This command simply imports all the available functions from the math library. Use the functions <code class="docutils literal notranslate"><span class="pre">log10()</span></code>, <code class="docutils literal notranslate"><span class="pre">pow()</span></code>, <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> and <code class="docutils literal notranslate"><span class="pre">cos()</span></code> to generate the following numbers:</p>
@@ -519,7 +519,7 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 
 <span class="nb">print</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span> <span class="n">log10</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="p">)</span>  <span class="p">)</span>
@@ -536,7 +536,7 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 <p>Following Pythagoras’ theorem (A<sup>2</sup> + B<sup>2</sup> = C<sup>2</sup>), calculate the length of the hypothenuse in a right trangle in which the other two sides have a length of 6 and 7. Make use of the math module.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">B</span> <span class="o">=</span> <span class="mi">7</span>
@@ -559,7 +559,7 @@ This function must return a string value, ‘Pass’ or ‘Fail’.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span><span class="p">,</span> <span class="n">choice</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randrange</span><span class="p">,</span> <span class="n">choice</span>
 <span class="n">game</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rock&#39;</span><span class="p">,</span><span class="s1">&#39;paper&#39;</span><span class="p">,</span><span class="s1">&#39;scissors&#39;</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -586,7 +586,7 @@ paper
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
 
 <span class="n">older_date</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">now</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
