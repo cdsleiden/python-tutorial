@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5. Lists &#8212; Python Tutorial</title>
+    <title>4. Lists &#8212; Python Tutorial</title>
   
   
   
@@ -57,11 +57,9 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/5 Lists';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/4 Lists';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6. Dictionaries" href="6%20Dictionaries.html" />
-    <link rel="prev" title="4. Flow control" href="4%20Flow_control.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,6 +122,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -174,12 +174,10 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3%20Working_with_strings.html">3. Working with strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4%20Flow_control.html">4. Flow control</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6%20Dictionaries.html">6. Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
@@ -200,8 +198,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/3%20Working_with_strings.html">3. Working with strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Solutions/4%20Flow_control.html">4. Flow control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Solutions/5%20Lists.html">5. Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/6%20Dictionaries.html">6. Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
@@ -263,7 +259,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/5 Lists.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/4 Lists.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -294,7 +290,7 @@
       
       
       
-      <li><a href="../_sources/notebooks/5 Lists.ipynb" target="_blank"
+      <li><a href="../_sources/notebooks/4 Lists.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,7 +374,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>5. Lists</h1>
+    <h1>4. Lists</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -390,26 +386,21 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-individual-items">Accessing individual items</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-slicing">List slicing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-1">Exercise 5.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-1">Exercise 4.1</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-items-to-a-list">Adding items to a list</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-2">Exercise 5.2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-2">Exercise 4.2.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting">Sorting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-list">Navigating a list</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-3">Exercise 5.3.</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presence-in-a-list">Presence in a list</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-4">Exercise 5.4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-3">Exercise 4.3.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-items">Counting items</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-5">Exercise 5.5.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-6">Exercise 5.6.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-7">Exercise 5.7.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-5">Exercise 4.5.</a></li>
 </ul>
 </li>
 </ul>
@@ -424,7 +415,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lists">
-<h1>5. Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h1>
+<h1>4. Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h1>
 <p>The variables that were discussed in the previous tutorials were all assigned single values, such as strings, integers or floating point numbers.
 It is also possible to work with variables that contain collections of values.</p>
 <p>One example of a variable type that can hold multiple values is the <em>list</em>.
@@ -440,7 +431,7 @@ Lists can be created by surrounding all the values that you want to gather by sq
 <p>The things that are in the list are referred to as <em>elements</em> or <em>items</em>. The elements in <code class="docutils literal notranslate"><span class="pre">week</span></code> are all strings. The elements do not all have to be of the same type, however. It is allowed to mix strings with integers, for instance.</p>
 <section id="accessing-individual-items">
 <h2>Accessing individual items<a class="headerlink" href="#accessing-individual-items" title="Link to this heading">#</a></h2>
-<p>When lists are created in this manner, the items in this list are given a certain order.
+<p>When lists are created in this manner, the items in this list are saved in a specific order.
 Python numbers the elements in the list automatically, following the order in which these values were given. These numbers will function as <em>indices</em> that can be used to access the individual items in the list. Bear in mind that Python starts counting at 0.</p>
 <p>In the example above, the element <code class="docutils literal notranslate"><span class="pre">&quot;Monday&quot;</span></code> is assigned the index 0, and the element <code class="docutils literal notranslate"><span class="pre">&quot;Thursday&quot;</span></code> will have the index 3. As is the case for strings and their individual characters, the separate elements in the list can be accessed using the square bracket notation.</p>
 <div class="cell docutils container">
@@ -466,9 +457,7 @@ Python numbers the elements in the list automatically, following the order in wh
 </section>
 <section id="list-slicing">
 <h2>List slicing<a class="headerlink" href="#list-slicing" title="Link to this heading">#</a></h2>
-<p>Like strings, lists can also be sliced. <em>Slicing</em> means selecting a part of a list (or string).
-To do this, you need to type in a set of square brackets directly following the name of the list. Within these brackets, you need to give a pair of indices, specifying the first and the last item you want to retrieve. These two numbers need to be separated by a colon.
-The item whose index is to the right of the colon is not included in the selection. If you state that the selection should stop at index 3, for instance, the last item in the selection will be the item with index 2.</p>
+<p>Like strings, lists can also be sliced. In this contenxt, <em>slicing</em> means selecting a part of a list. To do this, you need to type in a set of square brackets directly following the name of the list. Within these brackets, you need to give a pair of indices, specifying the first and the last item you want to retrieve. These two numbers need to be separated by a colon. The item whose index is to the right of the colon is not included in the selection. If you state that the selection should stop at index 3, for instance, the last item in the selection will be the item with index 2.</p>
 <p>If you leave out the first number, Python will start at the beginning of the list. If you omit the second number, the selection will continue until the very last item in the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -497,8 +486,8 @@ The item whose index is to the right of the colon is not included in the selecti
 </div>
 </div>
 </div>
-<section id="exercise-5-1">
-<h3>Exercise 5.1<a class="headerlink" href="#exercise-5-1" title="Link to this heading">#</a></h3>
+<section id="exercise-4-1">
+<h3>Exercise 4.1<a class="headerlink" href="#exercise-4-1" title="Link to this heading">#</a></h3>
 <p>The list named <code class="docutils literal notranslate"><span class="pre">titles</span></code> below brings together a number of book titles. Print a sentence that gives information about the number of books in this list of titles.
 Next, create a new list named <code class="docutils literal notranslate"><span class="pre">last_two</span></code> containing only the last two titles in this series.</p>
 <div class="cell docutils container">
@@ -528,8 +517,8 @@ Functions and methods will be discussed later in the tutorial.</p>
 </div>
 </div>
 </div>
-<section id="exercise-5-2">
-<h3>Exercise 5.2.<a class="headerlink" href="#exercise-5-2" title="Link to this heading">#</a></h3>
+<section id="exercise-4-2">
+<h3>Exercise 4.2.<a class="headerlink" href="#exercise-4-2" title="Link to this heading">#</a></h3>
 <p>Create the following list:</p>
 <p><code class="docutils literal notranslate"><span class="pre">colours</span> <span class="pre">=</span> <span class="pre">['green','blue','red']</span></code></p>
 <p>Add the colours ‘orange’, ‘yellow’ to this list.</p>
@@ -550,39 +539,6 @@ Functions and methods will be discussed later in the tutorial.</p>
 </div>
 </div>
 </section>
-<section id="navigating-a-list">
-<h2>Navigating a list<a class="headerlink" href="#navigating-a-list" title="Link to this heading">#</a></h2>
-<p>To move through all the elements in a list, you can use the <code class="docutils literal notranslate"><span class="pre">for</span></code> keyword. We also talk about <em>iterating over a list</em>.
-We have learned in the section on iteration that <code class="docutils literal notranslate"><span class="pre">for</span></code> needs to be used in combination with <code class="docutils literal notranslate"><span class="pre">in</span></code>.
-After <code class="docutils literal notranslate"><span class="pre">for</span></code>, you first supply the name of a (new) variable that you can use to refer to the current element.
-After <code class="docutils literal notranslate"><span class="pre">in</span></code>, you give the name of the list whose elements you want to retrieve.</p>
-<p>In the example below, we print the names of the days in the week.
-We assign the current element to a new variable <code class="docutils literal notranslate"><span class="pre">day</span></code>.
-During each cycle, the value of the variable <code class="docutils literal notranslate"><span class="pre">day</span></code> will be different; it will
-consecutively be assigned the various elements in the list named <code class="docutils literal notranslate"><span class="pre">week</span></code>.
-The loop will continue as long as there are items in the list.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">week</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="n">day</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="exercise-5-3">
-<h3>Exercise 5.3.<a class="headerlink" href="#exercise-5-3" title="Link to this heading">#</a></h3>
-<p>The list named <code class="docutils literal notranslate"><span class="pre">years</span></code> brings together a number of years.  Use the keywords <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">if</span></code> to select the years from this list that are in the 18th century.  Remember that you can combine multiple Boolean expressions using <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1756</span><span class="p">,</span> <span class="mi">1575</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="mi">1984</span> <span class="p">,</span><span class="mi">1626</span> <span class="p">,</span><span class="mi">1791</span><span class="p">,</span> <span class="mi">1714</span><span class="p">,</span> <span class="mi">1873</span><span class="p">,</span> <span class="mi">1991</span> <span class="p">]</span>
-
-<span class="c1"># Print years that are in the 18th century</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
 <section id="presence-in-a-list">
 <h2>Presence in a list<a class="headerlink" href="#presence-in-a-list" title="Link to this heading">#</a></h2>
 <p>If you want to know whether a list contains a given item, you use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.
@@ -600,29 +556,17 @@ Using <code class="docutils literal notranslate"><span class="pre">in</span></co
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;Monday&#39;</span> <span class="ow">in</span> <span class="n">week</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This item is indeed in the list!&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Is the string &#39;Monday&#39; in the list named &#39;week&#39;? Yes, so this returns True</span>
+<span class="s1">&#39;Monday&#39;</span> <span class="ow">in</span> <span class="n">week</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="exercise-5-4">
-<h3>Exercise 5.4.<a class="headerlink" href="#exercise-5-4" title="Link to this heading">#</a></h3>
-<p>We have two lists of numbers and would like to know which numbers in the first list are not in the second list. Write code which can extract those numbers from the first list that are <strong>not</strong> in the second list.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">63</span><span class="p">]</span> 
-<span class="n">second</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">26</span><span class="p">]</span>
-
-<span class="n">numbers_not_in_second</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># Add the numbers from `first` that are not in `second` to `numbers_not_in_second`</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">numbers_not_in_second</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+<section id="exercise-4-3">
+<h3>Exercise 4.3.<a class="headerlink" href="#exercise-4-3" title="Link to this heading">#</a></h3>
+<p>Create the following list:</p>
+<p><code class="docutils literal notranslate"><span class="pre">cities</span> <span class="pre">=</span> <span class="pre">['Madrid','Helsinki','Paris','Brussels','London','Rome','Warsaw','Amsterdam']</span></code></p>
+<p>Mext, create a new list named <code class="docutils literal notranslate"><span class="pre">sorted_cities</span></code> in which the elements are sorted alphabetically.</p>
 </section>
 </section>
 <section id="counting-items">
@@ -643,8 +587,8 @@ As a parameter to this method, you provide the item that you want to count.</p>
 </div>
 </div>
 </div>
-<section id="exercise-5-5">
-<h3>Exercise 5.5.<a class="headerlink" href="#exercise-5-5" title="Link to this heading">#</a></h3>
+<section id="exercise-4-4">
+<h3>Exercise 4.4.<a class="headerlink" href="#exercise-4-4" title="Link to this heading">#</a></h3>
 <p>The list below contains the titles of first twelve plays written by William Shakespeare.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -673,40 +617,9 @@ As a parameter to this method, you provide the item that you want to count.</p>
 </ul>
 <p>Next, count the number of plays in this list.</p>
 <p>Print the titles of the first and the last plays in the list, using the index of these items.</p>
-<p>Print the full list in alphabetical order using the <code class="docutils literal notranslate"><span class="pre">for</span></code> keyword.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> 
-</pre></div>
-</div>
-</div>
-</div>
 </section>
-<section id="exercise-5-6">
-<h3>Exercise 5.6.<a class="headerlink" href="#exercise-5-6" title="Link to this heading">#</a></h3>
-<p>We have a list of websites and are interested to find the Dutch ones.</p>
-<p>Write some code to select the Dutch websites from this list.
-Tip: You may want to reuse some of the code developed for exercise 3.4.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">websites</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;https://www.universiteitleiden.nl&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;https://www.stanford.edu&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;https://www.uu.nl&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;http://www.ox.ac.uk&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;https://www.rug.nl&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;https://www.hu-berlin.de&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;https://www.uva.nl&#39;</span>
-<span class="p">]</span>
-
-<span class="c1"># Print the URLs that belong to Dutch institutions</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-5-7">
-<h3>Exercise 5.7.<a class="headerlink" href="#exercise-5-7" title="Link to this heading">#</a></h3>
+<section id="exercise-4-5">
+<h3>Exercise 4.5.<a class="headerlink" href="#exercise-4-5" title="Link to this heading">#</a></h3>
 <p>We have a quote from E.M. Forster’s <em>A Room with a View</em> below and want to get a few statistics about it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -718,12 +631,8 @@ Tip: You may want to reuse some of the code developed for exercise 3.4.</p>
 </div>
 </div>
 </div>
-<p>First we’d like to know the total number of words. Here we say that the words are all the strings separated by spaces.
-That means “won’t” is a word in the quote, as well as “stand,” (including the comma).
-It depends on the context of the research if this is okay, or that you need to further process the words before you count them.</p>
-<p>We can convert a string to a list of words, using the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method.
-This method can convert a string into a list, based on a character or space that occurs in this string.
-This <code class="docutils literal notranslate"><span class="pre">split()</span></code> method must be added after the the string variable, using a dot, as follows:</p>
+<p>First, we would like to know the total number of words. Here we say that the words are all the strings separated by spaces. That means that “won’t” is a word in the quote, as well as “stand,” (including the comma). It depends on the context of the research if this is okay, or that you need to further process the words before you count them.</p>
+<p>We can convert a string to a list of words, using the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method. This method can convert a string into a list, based on a character or space that occurs in this string. This <code class="docutils literal notranslate"><span class="pre">split()</span></code> method must be added after the the string variable, using a dot, as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quote</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">string_to_split_on</span><span class="p">)</span>
 <span class="n">quote</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="c1"># Not specifying what to split on is the same as splitting by a space, like this:</span>
@@ -776,24 +685,6 @@ This <code class="docutils literal notranslate"><span class="pre">split()</span>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="4%20Flow_control.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">4. Flow control</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="6%20Dictionaries.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">6. Dictionaries</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -812,26 +703,21 @@ This <code class="docutils literal notranslate"><span class="pre">split()</span>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-individual-items">Accessing individual items</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-slicing">List slicing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-1">Exercise 5.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-1">Exercise 4.1</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-items-to-a-list">Adding items to a list</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-2">Exercise 5.2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-2">Exercise 4.2.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting">Sorting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-list">Navigating a list</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-3">Exercise 5.3.</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presence-in-a-list">Presence in a list</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-4">Exercise 5.4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-3">Exercise 4.3.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-items">Counting items</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-5">Exercise 5.5.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-6">Exercise 5.6.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-7">Exercise 5.7.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-5">Exercise 4.5.</a></li>
 </ul>
 </li>
 </ul>

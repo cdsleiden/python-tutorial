@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Flow control &#8212; Python Tutorial</title>
+    <title>5. Flow control &#8212; Python Tutorial</title>
   
   
   
@@ -57,11 +57,9 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/4 Flow_control';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/5 Flow_control';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Lists" href="5%20Lists.html" />
-    <link rel="prev" title="3. Working with strings" href="3%20Working_with_strings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,6 +122,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -174,12 +174,10 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3%20Working_with_strings.html">3. Working with strings</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Flow control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5%20Lists.html">5. Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6%20Dictionaries.html">6. Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
@@ -200,8 +198,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/3%20Working_with_strings.html">3. Working with strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Solutions/4%20Flow_control.html">4. Flow control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Solutions/5%20Lists.html">5. Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/6%20Dictionaries.html">6. Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
@@ -263,7 +259,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/4 Flow_control.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/5 Flow_control.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -294,7 +290,7 @@
       
       
       
-      <li><a href="../_sources/notebooks/4 Flow_control.ipynb" target="_blank"
+      <li><a href="../_sources/notebooks/5 Flow_control.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,7 +374,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>4. Flow control</h1>
+    <h1>5. Flow control</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,17 +385,19 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-execution">Conditional execution</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-1">Exercise 4.1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-1">Exercise 5.1.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">Iteration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-2">Exercise 4.2.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-3">Exercise 4.3.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-2">Exercise 5.2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-3">Exercise 5.3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-4">Exercise 5.4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-5">Exercise 5.5.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-6">Exercise 5.6.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aside-getting-user-input">Aside: getting user input</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-5">Exercise 4.5.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-7">Exercise 5.7.</a></li>
 </ul>
 </li>
 </ul>
@@ -414,7 +412,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="flow-control">
-<h1>4. Flow control<a class="headerlink" href="#flow-control" title="Link to this heading">#</a></h1>
+<h1>5. Flow control<a class="headerlink" href="#flow-control" title="Link to this heading">#</a></h1>
 <p>By default, Python moves through the code in a linear way. It simply executes all the statements in the order in which they are found in the programme. In some cases, however, a statement only needs to be performed under a certain condition. In other situations, statements may need to be repeated as long as a certain condition applies.</p>
 <p>Flow control is the process of determining how often, or under which circumstances, a certain set of statement needs to be executed. In Python, there are various keywords that you can use to specify if, or how many times, a statement needs to be run.</p>
 <section id="conditional-execution">
@@ -454,11 +452,11 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Python moves across all the options in the order that is given. Each condition is evaluated in turn. If the condition that follows the <code class="docutils literal notranslate"><span class="pre">if</span></code> keyword can be evaluated as <code class="docutils literal notranslate"><span class="pre">True</span></code>, the first code block will be caried out. If not, the condition that is given after <code class="docutils literal notranslate"><span class="pre">elif</span></code> will be evaluated. Python will execute the second block of code if that second condition is found to be <code class="docutils literal notranslate"><span class="pre">True</span></code>. The final set of statements (i.e. those given after <code class="docutils literal notranslate"><span class="pre">else</span></code>) will be executed only if all the two earlier conditions are evaluated as <code class="docutils literal notranslate"><span class="pre">False</span></code>. This final code block may be viewed as the default option or the “catch all” option.</p>
+<p>Python moves across all the options in the order that is given. Each condition is evaluated in turn. If the condition that follows the <code class="docutils literal notranslate"><span class="pre">if</span></code> keyword can be evaluated as <code class="docutils literal notranslate"><span class="pre">True</span></code>, the first code block will be caried out. If not, the condition that is given after <code class="docutils literal notranslate"><span class="pre">elif</span></code> will be evaluated. Python will execute the second block of code if that second condition is found to be <code class="docutils literal notranslate"><span class="pre">True</span></code>. The final set of statements (i.e. those given after <code class="docutils literal notranslate"><span class="pre">else</span></code>) will be executed only if all of the earlier conditions are evaluated as <code class="docutils literal notranslate"><span class="pre">False</span></code>. This final code block may be viewed as the default option or the “catch all” option.</p>
 <p>Note that only the keywords <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">elif</span></code> can be followed by a condition. The keyword <code class="docutils literal notranslate"><span class="pre">else</span></code> always appears WITHOUT such a condition. The code block given after else contains the actions that must be performed if all the earlier conditions are false.</p>
 <p>Importantly, the lines starting with <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> all end in a colon.</p>
-<section id="exercise-4-1">
-<h3>Exercise 4.1.<a class="headerlink" href="#exercise-4-1" title="Link to this heading">#</a></h3>
+<section id="exercise-5-1">
+<h3>Exercise 5.1.<a class="headerlink" href="#exercise-5-1" title="Link to this heading">#</a></h3>
 <p>Write some code which can print a text to welcome its users with messages such as ‘Good morning’, ‘Good afternoon’, or ‘Good evening’. The message that is printed should vary along with the time of the day.</p>
 <p>Follow the steps below:</p>
 <ul class="simple">
@@ -471,20 +469,20 @@ document.write(`
 <section id="iteration">
 <h2>Iteration<a class="headerlink" href="#iteration" title="Link to this heading">#</a></h2>
 <p>Next to the flow structures for selection, there are also flow control structures that can be used for repetitions of statements. Such repetitions are generally referred to as iterations. In Python, you can specify the number of times a set of statements need to be repeated by making use of <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">for</span></code>, firstly, is used in combination with a collection of values. With <code class="docutils literal notranslate"><span class="pre">for</span></code>, you can specify that block of code needs to be repeated for each item in this collection. Examples of such collections include lists and dictionaries, which will be discussed at a later point in this tutorial. Such a collection of values can also be created via the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function, which can be used to generate a list of numbers. When this <code class="docutils literal notranslate"><span class="pre">range()</span></code> function is used with two integers, the function starts the list with the number which is mentioned first and it continues to add integers to the list, as long as the value of these numbers is less than the number which is mentioned secondly. When you use <code class="docutils literal notranslate"><span class="pre">range(1,11)</span></code>, for instance, this results in a list of integers ranging from 1 up and until 10, but not including 11.</p>
-<p>The code below prints the multiplication table for the number 7.</p>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>, firstly, is used in combination with a collection of values, such as a list. With <code class="docutils literal notranslate"><span class="pre">for</span></code>, you can specify, for example, that a block of code needs to be repeated for each item in a list. This process of moving through all the elements in a list is also referred to as <em>iterating</em> over a list or <em>navigating</em> a list. <code class="docutils literal notranslate"><span class="pre">for</span></code> always needs to be used in combination with <code class="docutils literal notranslate"><span class="pre">in</span></code>. After <code class="docutils literal notranslate"><span class="pre">in</span></code>, you give the name of the list whose elements you want to retrieve. After <code class="docutils literal notranslate"><span class="pre">for</span></code>, you supply the name of a new variable that you can use to refer to each element in the list in sequence. This variable is referred to as the <em>loop variable</em>. You are free to name this variable as you wish, but bear in mind that you cannot choose reserved words. As always, it is best to choose a variable name that is meaningful in the context of the code. This loop variable gets assigned and reassigned during each cycle of the iteration.</p>
+<p>In the example below, we print the names of the days in the week. We assign the current element to a new variable named day. During each cycle, the value of the variable day will be different; it will consecutively be assigned the various elements in the list named week. The loop will continue as long as there are items in the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">7</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">week</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Monday&quot;</span><span class="p">,</span> <span class="s2">&quot;Tuesday&quot;</span><span class="p">,</span> <span class="s2">&quot;Wednesday&quot;</span><span class="p">,</span> <span class="s2">&quot;Thursday&quot;</span><span class="p">,</span> <span class="s2">&quot;Friday&quot;</span><span class="p">,</span><span class="s2">&quot;Saturday&quot;</span><span class="p">,</span><span class="s2">&quot;Sunday&quot;</span><span class="p">]</span>  
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="si">}</span><span class="s2"> times </span><span class="si">{</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="n">number</span><span class="w"> </span><span class="si">}</span><span class="s2">.&quot;</span> <span class="p">)</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">week</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">day</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>The number of repetitions are counted using a variable named <code class="docutils literal notranslate"><span class="pre">i</span></code>. This variable is referred to as the <em>loop variable</em>. You are free to name this variable as you wish, but bear in mind that you cannot choose reserved words. As always, it is best to choose a variable name that is meaningful in the context of the code. This loop variable gets assigned and reassigned during each cycle of the iteration. The line <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(1,11)</span></code> starts a sequence of 10 loops. In this example, the variable named <code class="docutils literal notranslate"><span class="pre">i</span></code> successively receives all the values generated by the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function.</p>
-<p>The same algorithm can be implemented using the <code class="docutils literal notranslate"><span class="pre">while</span></code> keyword. It carries out repetiutions using a slightly differnt logic. As is the case for <code class="docutils literal notranslate"><span class="pre">if</span></code>, the <code class="docutils literal notranslate"><span class="pre">while</span></code> keyword should be followed by a test, or, more precisely, by a Boolean expression. The <code class="docutils literal notranslate"><span class="pre">while</span></code> keyword initiates a loop. The statements that follow <code class="docutils literal notranslate"><span class="pre">while</span></code> will be repeated as long as the Boolean expression is <code class="docutils literal notranslate"><span class="pre">True</span></code>, and the repetion ends as soon as the expression is found to be <code class="docutils literal notranslate"><span class="pre">False</span></code>.  Clearly, it is necessary to ensure that the code block that is repeated can actually change the value of this Boolean expression, and that the expression can actucally be evaluated to <code class="docutils literal notranslate"><span class="pre">False</span></code> at some point. If this is not the case, the repetition will continue endlessly.</p>
+<p>Blocks of code can also be repeated using the <code class="docutils literal notranslate"><span class="pre">while</span></code> keyword. It carries out repetitions using a slightly different logic. As is the case for <code class="docutils literal notranslate"><span class="pre">if</span></code>, the <code class="docutils literal notranslate"><span class="pre">while</span></code> keyword should be followed by a test, or, more precisely, by a Boolean expression. The <code class="docutils literal notranslate"><span class="pre">while</span></code> keyword initiates a loop. The statements that follow <code class="docutils literal notranslate"><span class="pre">while</span></code> will be repeated as long as the Boolean expression is <code class="docutils literal notranslate"><span class="pre">True</span></code>, and the repetion ends as soon as the expression is found to be <code class="docutils literal notranslate"><span class="pre">False</span></code>. Clearly, it is necessary to ensure that the code block that is repeated can actually change the value of this Boolean expression, and that the expression can actually be evaluated to <code class="docutils literal notranslate"><span class="pre">False</span></code> at some point. If this is not the case, the repetition will continue endlessly.</p>
+<p>The code below prints the multiplication table for the number 7.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">7</span>
@@ -499,9 +497,9 @@ document.write(`
 </div>
 <p>In this second multiplication table, we explicitly need to increment the value of variable <code class="docutils literal notranslate"><span class="pre">i</span></code> using the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator. The loop will terminate after the variable <code class="docutils literal notranslate"><span class="pre">i</span></code> has reached the value 10.</p>
 <p>Remember that the code blocks that follow lines starting with <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> all need to be indented.</p>
-<section id="exercise-4-2">
-<h3>Exercise 4.2.<a class="headerlink" href="#exercise-4-2" title="Link to this heading">#</a></h3>
-<p>Strings can be viewed as collections of characters. When you iterate across a string using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, you will receive each individual character in sequence. Try to write code which print all each characters of a string on a separate line.</p>
+<section id="exercise-5-2">
+<h3>Exercise 5.2.<a class="headerlink" href="#exercise-5-2" title="Link to this heading">#</a></h3>
+<p>Strings can be viewed as collections of characters. When you iterate across a string using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, you will receive each individual character in sequence. Try to write code which prints each character of the string on a separate line.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Flow control&#39;</span>
@@ -510,13 +508,22 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="exercise-4-3">
-<h3>Exercise 4.3.<a class="headerlink" href="#exercise-4-3" title="Link to this heading">#</a></h3>
-<p>Define a list ranging from 1 to 100 using the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function. Next, print the cumulative sum of all the numbers in this collection of numbers.</p>
+<section id="exercise-5-3">
+<h3>Exercise 5.3.<a class="headerlink" href="#exercise-5-3" title="Link to this heading">#</a></h3>
+<p>The list named <code class="docutils literal notranslate"><span class="pre">years</span></code> brings together a number of years.  Use the keywords <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">if</span></code> to select the years from this list that are in the 18th century.  Remember that you can combine multiple Boolean expressions using <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1756</span><span class="p">,</span> <span class="mi">1575</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="mi">1984</span> <span class="p">,</span><span class="mi">1626</span> <span class="p">,</span><span class="mi">1791</span><span class="p">,</span> <span class="mi">1714</span><span class="p">,</span> <span class="mi">1873</span><span class="p">,</span> <span class="mi">1991</span> <span class="p">]</span>
+
+<span class="c1"># Print years that are in the 18th century</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="exercise-4-4">
-<h3>Exercise 4.4.<a class="headerlink" href="#exercise-4-4" title="Link to this heading">#</a></h3>
-<p>Building on the code you developed for exercise 4.2, try to write code which can reverse the order of the characters in a given string.</p>
+<section id="exercise-5-4">
+<h3>Exercise 5.4.<a class="headerlink" href="#exercise-5-4" title="Link to this heading">#</a></h3>
+<p>Building on the code you developed for exercise 5.2, try to write code which can reverse the order of the characters in a given string.</p>
 <p>You can test your code with the following examples:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -536,6 +543,52 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
+<p>Start by defining an empty output string, as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+<p>Next, iterate across all the individual characters of the string and append the output string <em>to the right of</em> this character.</p>
+</section>
+<section id="exercise-5-5">
+<h3>Exercise 5.5.<a class="headerlink" href="#exercise-5-5" title="Link to this heading">#</a></h3>
+<p>We have two lists of numbers and would like to know which numbers in the first list are not in the second list. Write code which can extract those numbers from the first list that are <strong>not</strong> in the second list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">63</span><span class="p">]</span> 
+<span class="n">second</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">26</span><span class="p">]</span>
+
+<span class="n">numbers_not_in_second</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Add the numbers from `first` that are not in `second` to `numbers_not_in_second`</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers_not_in_second</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-5-6">
+<h3>Exercise 5.6.<a class="headerlink" href="#exercise-5-6" title="Link to this heading">#</a></h3>
+<p>We have a list of websites and are interested to find the Dutch ones.</p>
+<p>Write some code to select the Dutch websites from this list.
+Tip: You may want to reuse some of the code developed for exercise 3.4.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">websites</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;https://www.universiteitleiden.nl&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.stanford.edu&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.uu.nl&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;http://www.ox.ac.uk&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.rug.nl&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.hu-berlin.de&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.uva.nl&#39;</span>
+<span class="p">]</span>
+
+<span class="c1"># Print the URLs that belong to Dutch institutions</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -565,8 +618,8 @@ If the string cannot be converted, for example if it is not actually a number, P
 </div>
 </div>
 </div>
-<section id="exercise-4-5">
-<h3>Exercise 4.5.<a class="headerlink" href="#exercise-4-5" title="Link to this heading">#</a></h3>
+<section id="exercise-5-7">
+<h3>Exercise 5.7.<a class="headerlink" href="#exercise-5-7" title="Link to this heading">#</a></h3>
 <p>Program a small guessing game. In this game, the player needs to guess a number in between 1 and 50. You can use the code below as a basis.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">randint()</span></code> method from <code class="docutils literal notranslate"><span class="pre">random</span></code> can be used, firstly, to generate a random integer.</p>
 <p>Use the function <code class="docutils literal notranslate"><span class="pre">input()</span></code> to request a value from the user. The function <code class="docutils literal notranslate"><span class="pre">int()</span></code> needs to be used to convert the input into an integer.</p>
@@ -624,24 +677,6 @@ When that works, think which parts of the code need to be repeated to let the pl
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="3%20Working_with_strings.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">3. Working with strings</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="5%20Lists.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">5. Lists</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -659,17 +694,19 @@ When that works, think which parts of the code need to be repeated to let the pl
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-execution">Conditional execution</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-1">Exercise 4.1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-1">Exercise 5.1.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">Iteration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-2">Exercise 4.2.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-3">Exercise 4.3.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-2">Exercise 5.2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-3">Exercise 5.3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-4">Exercise 5.4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-5">Exercise 5.5.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-6">Exercise 5.6.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aside-getting-user-input">Aside: getting user input</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-5">Exercise 4.5.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-7">Exercise 5.7.</a></li>
 </ul>
 </li>
 </ul>

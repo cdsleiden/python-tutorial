@@ -178,8 +178,6 @@
 <li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3%20Working_with_strings.html">3. Working with strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4%20Flow_control.html">4. Flow control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5%20Lists.html">5. Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6%20Dictionaries.html">6. Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
@@ -200,8 +198,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Solutions/1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/3%20Working_with_strings.html">3. Working with strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Solutions/4%20Flow_control.html">4. Flow control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Solutions/5%20Lists.html">5. Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/6%20Dictionaries.html">6. Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Solutions/8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
@@ -532,7 +528,7 @@ The status code 200 indicates that the request was successful. The infamous stat
 <p>For many APIs, you need to create an access key (which may or may not require payment) before you can send requests. This is the case, for instance, for the Twitter/X API.</p>
 <section id="example-musicbrainz">
 <h3>Example: MusicBrainz<a class="headerlink" href="#example-musicbrainz" title="Link to this heading">#</a></h3>
-<p>There are also many APIs that are open, in the sense that do not require registration. The <a class="reference external" href="https://musicbrainz.org/doc/MusicBrainz_API">MusicBrainz API</a>, for example, is free for non-commercial use. <em>MusicBrainz</em> is a large online encyclopedia containing information about musicians and their work. You can send requests to this API without having to provide an access key.</p>
+<p>There are also many APIs which are open, and which do not require any registration. The <a class="reference external" href="https://musicbrainz.org/doc/MusicBrainz_API">MusicBrainz API</a>, for example, is free for non-commercial use. <em>MusicBrainz</em> is a large online encyclopedia containing information about musicians and their work. You can send requests to this API without having to provide an access key.</p>
 <p>The root URL of this API is <a class="reference external" href="https://musicbrainz.org/ws/2/">https://musicbrainz.org/ws/2/</a></p>
 <p>On MusicBrainz, you can request information about different entities, including artists, genres, instruments, labels and releases. The entity type you are interested in firstly needs to be appended to the root URL. If you want to search for information about an artist, for example, you need to work with the following URL structure: <code class="docutils literal notranslate"><span class="pre">https://musicbrainz.org/ws/2/artist[?parameters]</span></code></p>
 <p>You can work with the following parameters:</p>
@@ -649,10 +645,22 @@ The status code 200 indicates that the request was successful. The infamous stat
 </section>
 <section id="exercise-10-3">
 <h3>Exercise 10.3.<a class="headerlink" href="#exercise-10-3" title="Link to this heading">#</a></h3>
-<p>Find the coordinates for each address in the given list using <a class="reference external" href="https://www.openstreetmap.org/">OpenStreetMap</a>’s Nominatim API.</p>
-<p>The Nominatim API can be used, among other things, to find the precise geographic coordinates of a specific location. The base URL of this API is <a class="reference external" href="https://nominatim.openstreetmap.org/search">https://nominatim.openstreetmap.org/search</a>.</p>
+<p><a class="reference external" href="https://www.openstreetmap.org/">OpenStreetMap</a>’s Nominatim API can be used, among other things, to find the precise geographic coordinates of a specific location. The base URL of this API is <a class="reference external" href="https://nominatim.openstreetmap.org/search">https://nominatim.openstreetmap.org/search</a>.</p>
 <p>Following the <code class="docutils literal notranslate"><span class="pre">q</span></code> parameter, you need to supply a string describing the locations whose latitude and longitude you want to find. As values for the <code class="docutils literal notranslate"><span class="pre">format</span></code> parameter, you can use <code class="docutils literal notranslate"><span class="pre">xml</span></code> for XML-formatted data or <code class="docutils literal notranslate"><span class="pre">json</span></code> for JSON-formatted data.</p>
-<p>Use this API to find the longitude and the latitude of the addresses in the following list:</p>
+<p>When you request information from the OpenStreetMap API, you also need specify a user agent, in the <code class="docutils literal notranslate"><span class="pre">headers</span></code> paramerer of the <code class="docutils literal notranslate"><span class="pre">get</span></code> method. It typically includes information about the software, the operating system, and sometimes additional details such as the device type or version numbers. The user agent can be seen as a fingerprint that identifies the client.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:136.0) Gecko/20100101 Firefox/136.0’}</span>
+</pre></div>
+</div>
+<p>The API call via <code class="docutils literal notranslate"><span class="pre">requests</span></code> can then take place as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can find a valid User Agent string by making use of the following websites.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.whatismybrowser.com/detect/what-is-my-user-agent/">https://www.whatismybrowser.com/detect/what-is-my-user-agent/</a></p></li>
+<li><p><a class="reference external" href="https://dnschecker.org/user-agent-info.php">https://dnschecker.org/user-agent-info.php</a></p></li>
+</ul>
+<p>Using <a class="reference external" href="https://www.openstreetmap.org/">OpenStreetMap</a>’s Nominatim API, try to find the longitude and the latitude of the addresses in the following list:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span> <span class="p">,</span>
 <span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
 </pre></div>

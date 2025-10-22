@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Flow control &#8212; Python Tutorial</title>
+    <title>5. Flow control &#8212; Python Tutorial</title>
   
   
   
@@ -57,11 +57,9 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Solutions/4 Flow_control';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Solutions/5 Flow_control';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5. Lists" href="5%20Lists.html" />
-    <link rel="prev" title="3. Working with strings" href="3%20Working_with_strings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,6 +122,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -178,8 +178,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3%20Working_with_strings.html">3. Working with strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4%20Flow_control.html">4. Flow control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5%20Lists.html">5. Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../6%20Dictionaries.html">6. Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
@@ -196,12 +194,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Other_resources.html">Other resources</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Solutions to the exercises</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3%20Working_with_strings.html">3. Working with strings</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Flow control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5%20Lists.html">5. Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6%20Dictionaries.html">6. Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
@@ -263,7 +259,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/Solutions/4 Flow_control.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/cdsleiden/python-tutorial/main?urlpath=tree/notebooks/Solutions/5 Flow_control.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -294,7 +290,7 @@
       
       
       
-      <li><a href="../../_sources/notebooks/Solutions/4 Flow_control.ipynb" target="_blank"
+      <li><a href="../../_sources/notebooks/Solutions/5 Flow_control.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,7 +374,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>4. Flow control</h1>
+    <h1>5. Flow control</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -388,11 +384,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-1">Exercise 4.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-2">Exercise 4.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-3">Exercise 4.3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-5">Exercise 4.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-1">Exercise 5.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-2">Exercise 5.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-3">Exercise 5.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-4">Exercise 5.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-5">Exercise 5.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-6">Exercise 5.6.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-7">Exercise 5.7.</a></li>
 </ul>
             </nav>
         </div>
@@ -405,9 +403,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="flow-control">
-<h1>4. Flow control<a class="headerlink" href="#flow-control" title="Link to this heading">#</a></h1>
-<section id="exercise-4-1">
-<h2>Exercise 4.1.<a class="headerlink" href="#exercise-4-1" title="Link to this heading">#</a></h2>
+<h1>5. Flow control<a class="headerlink" href="#flow-control" title="Link to this heading">#</a></h1>
+<section id="exercise-5-1">
+<h2>Exercise 5.1.<a class="headerlink" href="#exercise-5-1" title="Link to this heading">#</a></h2>
 <p>Create a variable named <code class="docutils literal notranslate"><span class="pre">hour</span></code> and asign it a value in between 0 and 23. Assuming that this variable represents a given time, print a message that is appropriate for the part of the day this hour is in. If the variable <code class="docutils literal notranslate"><span class="pre">hour</span></code> has value 10, for instance, the code should print <code class="docutils literal notranslate"><span class="pre">'Good</span> <span class="pre">morning!'</span></code> and if <code class="docutils literal notranslate"><span class="pre">hour</span></code> has value 23, the code should print <code class="docutils literal notranslate"><span class="pre">'Good</span> <span class="pre">night!'</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -434,9 +432,9 @@ It is advisable to include these checks in code that you rely on.</p>
 <p>In case you wondered if you can make the comparisons more compact, you can!
 You can compare a number to two numbers at the same time, as demonstrated below.</p>
 </section>
-<section id="exercise-4-2">
-<h2>Exercise 4.2.<a class="headerlink" href="#exercise-4-2" title="Link to this heading">#</a></h2>
-<p>Strings can be viewed as collections of characters. When you iterate across a string using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, you will receive each individual character in sequence. Try to write code which print all each characters of a string on a separate line.</p>
+<section id="exercise-5-2">
+<h2>Exercise 5.2.<a class="headerlink" href="#exercise-5-2" title="Link to this heading">#</a></h2>
+<p>Strings can be viewed as collections of characters. When you iterate across a string using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, you will receive each individual character in sequence. Try to write code which prints each character of the string on a separate line.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Flow control&#39;</span>
@@ -448,24 +446,31 @@ You can compare a number to two numbers at the same time, as demonstrated below.
 </div>
 </div>
 </section>
-<section id="exercise-4-3">
-<h2>Exercise 4.3.<a class="headerlink" href="#exercise-4-3" title="Link to this heading">#</a></h2>
-<p>Define a list ranging from 1 to 100 using the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function. Next, print the cumulative sum of all the numbers in this collection of numbers.</p>
+<section id="exercise-5-3">
+<h2>Exercise 5.3.<a class="headerlink" href="#exercise-5-3" title="Link to this heading">#</a></h2>
+<p>The list named <code class="docutils literal notranslate"><span class="pre">years</span></code> brings together a number of years.  Use the keywords <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">if</span></code> to select the years from this list that are in the 18th century.  Remember that you can combine multiple Boolean expressions using <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cumulative_sum</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1756</span><span class="p">,</span> <span class="mi">1575</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="mi">1984</span> <span class="p">,</span><span class="mi">1626</span> <span class="p">,</span><span class="mi">1791</span><span class="p">,</span> <span class="mi">1714</span><span class="p">,</span> <span class="mi">1873</span><span class="p">,</span> <span class="mi">1991</span> <span class="p">]</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
-    <span class="n">cumulative_sum</span> <span class="o">+=</span> <span class="n">i</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="n">cumulative_sum</span><span class="p">)</span>
+<span class="c1"># Print years that are in the 18th century</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">year</span> <span class="o">&gt;</span> <span class="mi">1700</span> <span class="ow">and</span> <span class="n">year</span> <span class="o">&lt;</span> <span class="mi">1800</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1"> is in the 18th century.&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1756 is in the 18th century.
+1791 is in the 18th century.
+1714 is in the 18th century.
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-4-4">
-<h2>Exercise 4.4.<a class="headerlink" href="#exercise-4-4" title="Link to this heading">#</a></h2>
+<section id="exercise-5-4">
+<h2>Exercise 5.4.<a class="headerlink" href="#exercise-5-4" title="Link to this heading">#</a></h2>
 <p>Building on the code you developed for exercise 4.2, try to write code which can reverse the order of the characters in a given string.</p>
 <p>You can test your code with the following examples:</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -487,6 +492,11 @@ You can compare a number to two numbers at the same time, as demonstrated below.
 </tbody>
 </table>
 </div>
+<p>Start by defining an empty output string, as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+<p>Next, iterate across all the individual characters of the string and append the output string <em>to the right of</em> this character.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_string</span> <span class="o">=</span> <span class="s1">&#39;drawer&#39;</span> 
@@ -499,10 +509,71 @@ You can compare a number to two numbers at the same time, as demonstrated below.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reward
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section id="exercise-4-5">
-<h2>Exercise 4.5.<a class="headerlink" href="#exercise-4-5" title="Link to this heading">#</a></h2>
+<section id="exercise-5-5">
+<h2>Exercise 5.5.<a class="headerlink" href="#exercise-5-5" title="Link to this heading">#</a></h2>
+<p>We have two lists of numbers and would like to know which numbers in the first list are not in the second list. Write code which can extract those numbers from the first list that are <strong>not</strong> in the second list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">63</span><span class="p">]</span> 
+<span class="n">second</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">26</span><span class="p">]</span>
+
+<span class="n">numbers_not_in_second</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Add the numbers from `first` that are not in `second` to `numbers_not_in_second`</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">first</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">f</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">second</span><span class="p">:</span>
+        <span class="n">numbers_not_in_second</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers_not_in_second</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 1, 17, 54]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-5-6">
+<h2>Exercise 5.6.<a class="headerlink" href="#exercise-5-6" title="Link to this heading">#</a></h2>
+<p>We have a list of websites and are interested to find the Dutch ones.</p>
+<p>Write some code to select the Dutch websites from this list.
+Tip: You may want to reuse some of the code developed for exercise 3.4.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">websites</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;https://www.universiteitleiden.nl&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.stanford.edu&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.uu.nl&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;http://www.ox.ac.uk&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.rug.nl&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.hu-berlin.de&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://www.uva.nl&#39;</span>
+<span class="p">]</span>
+
+<span class="c1"># Print the URLs that belong to Dutch institutions</span>
+<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">websites</span><span class="p">:</span>
+    <span class="c1"># Extract the top-level domain, i.e. everything after the final dot</span>
+    <span class="c1"># You can leave out the end index of the &#39;slice&#39; to get everything until the end of the string</span>
+    <span class="n">top_level_domain</span> <span class="o">=</span> <span class="n">url</span><span class="p">[</span> <span class="n">url</span><span class="o">.</span><span class="n">rindex</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:</span> <span class="p">]</span>
+    <span class="c1"># Dutch institutions have a &#39;.nl&#39; website</span>
+    <span class="k">if</span> <span class="n">top_level_domain</span> <span class="o">==</span> <span class="s1">&#39;nl&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-5-7">
+<h2>Exercise 5.7.<a class="headerlink" href="#exercise-5-7" title="Link to this heading">#</a></h2>
 <p>Program a small guessing game. In this game, the player needs to guess a number in between 1 and 50. You can use the code below as a basis.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">randint()</span></code> method from <code class="docutils literal notranslate"><span class="pre">random</span></code> can be used, firstly, to generate a random integer.</p>
 <p>Use the function <code class="docutils literal notranslate"><span class="pre">input()</span></code> to request a value from the user. The function <code class="docutils literal notranslate"><span class="pre">int()</span></code> needs to be used to convert the input into an integer.</p>
@@ -565,24 +636,6 @@ When that works, think which parts of the code need to be repeated to let the pl
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="3%20Working_with_strings.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">3. Working with strings</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="5%20Lists.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">5. Lists</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -599,11 +652,13 @@ When that works, think which parts of the code need to be repeated to let the pl
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-1">Exercise 4.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-2">Exercise 4.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-3">Exercise 4.3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-4">Exercise 4.4.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-5">Exercise 4.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-1">Exercise 5.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-2">Exercise 5.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-3">Exercise 5.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-4">Exercise 5.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-5">Exercise 5.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-6">Exercise 5.6.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-7">Exercise 5.7.</a></li>
 </ul>
   </nav></div>
 

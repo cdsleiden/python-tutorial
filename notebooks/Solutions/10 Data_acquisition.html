@@ -178,8 +178,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3%20Working_with_strings.html">3. Working with strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4%20Flow_control.html">4. Flow control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5%20Lists.html">5. Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../6%20Dictionaries.html">6. Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
@@ -200,8 +198,6 @@
 <li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3%20Working_with_strings.html">3. Working with strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4%20Flow_control.html">4. Flow control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5%20Lists.html">5. Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6%20Dictionaries.html">6. Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
@@ -556,20 +552,58 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span>
 
-<span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span> <span class="p">,</span>
-<span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
+<span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grote Looiersstraat 17 Maastricht&#39;</span> <span class="p">,</span> 
+             <span class="s1">&#39;Witte Singel 27 Leiden&#39;</span><span class="p">,</span><span class="s1">&#39;Singel 425 Amsterdam&#39;</span> <span class="p">,</span> 
+             <span class="s1">&#39;Drift 27 Utrecht&#39;</span> <span class="p">,</span> <span class="s1">&#39;Broerstraat 4 Groningen&#39;</span><span class="p">]</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:136.0) Gecko/20100101 Firefox/136.0&#39;</span><span class="p">}</span>
 
 
 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">addresses</span><span class="p">:</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://nominatim.openstreetmap.org/search?q=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&amp;format=json&#39;</span>
-
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">url</span> <span class="p">)</span> <span class="c1"># The spaces in each address are automatically encoded as &#39;%20&#39; by requests</span>
-    <span class="n">json_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-    <span class="c1"># json_data is a list of results; we assume that the first result is always correct(!)</span>
-    <span class="n">latitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
-    <span class="n">longitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">latitude</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">longitude</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="c1"># create the API call, with the address in the &#39;q&#39; parameter</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">a_encoded</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    
+    <span class="n">api_call</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://nominatim.openstreetmap.org/search?q=</span><span class="si">{</span><span class="n">a_encoded</span><span class="si">}</span><span class="s1">&amp;format=json&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">api_call</span><span class="p">)</span>
+    
+    <span class="c1"># Get the JSON data and process the data using json()</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">api_call</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="n">json_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    
+        <span class="c1"># Find the latitude and the longitude of the first result</span>
+        <span class="n">latitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+        <span class="n">longitude</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">latitude</span><span class="p">,</span><span class="n">longitude</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grote Looiersstraat 17 Maastricht
+https://nominatim.openstreetmap.org/search?q=Grote%20Looiersstraat%2017%20Maastricht&amp;format=json
+200
+50.8450593 5.6899146
+Witte Singel 27 Leiden
+https://nominatim.openstreetmap.org/search?q=Witte%20Singel%2027%20Leiden&amp;format=json
+200
+52.1575004 4.4813728
+Singel 425 Amsterdam
+https://nominatim.openstreetmap.org/search?q=Singel%20425%20Amsterdam&amp;format=json
+200
+52.3676855 4.8897127
+Drift 27 Utrecht
+https://nominatim.openstreetmap.org/search?q=Drift%2027%20Utrecht&amp;format=json
+200
+52.0946054 5.1235846
+Broerstraat 4 Groningen
+https://nominatim.openstreetmap.org/search?q=Broerstraat%204%20Groningen&amp;format=json
+200
+53.2189163 6.5629461
 </pre></div>
 </div>
 </div>
