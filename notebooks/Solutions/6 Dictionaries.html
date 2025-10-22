@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="7. Functions, Modules and Libraries" href="7%20Functions_modules_and_libraries.html" />
-    <link rel="prev" title="3. Working with strings" href="3%20Working_with_strings.html" />
+    <link rel="prev" title="5. Flow control" href="5%20Flow_control.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,6 +178,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3%20Working_with_strings.html">3. Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4%20Lists.html">4. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5%20Flow_control.html">5. Flow control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../6%20Dictionaries.html">6. Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
@@ -198,6 +200,8 @@
 <li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3%20Working_with_strings.html">3. Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4%20Lists.html">4. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5%20Flow_control.html">5. Flow control</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
@@ -385,14 +389,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-1">Exercise 6.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-2">Exercise 6.2.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-3">Exercise 6.3.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-4">Exercise 6.4.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-5">Exercise 6.5.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-2">Exercise 6.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-3">Exercise 6.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-4">Exercise 6.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-5">Exercise 6.5.</a></li>
 </ul>
             </nav>
         </div>
@@ -464,8 +464,9 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
 <section id="exercise-6-3">
-<h3>Exercise 6.3.<a class="headerlink" href="#exercise-6-3" title="Link to this heading">#</a></h3>
+<h2>Exercise 6.3.<a class="headerlink" href="#exercise-6-3" title="Link to this heading">#</a></h2>
 <p>The cell below creates a dictionary named <code class="docutils literal notranslate"><span class="pre">language_code</span></code> and a list named <code class="docutils literal notranslate"><span class="pre">language_code</span></code>. Using these two variables, try to print the <strong>names</strong> of the languages that are given in the list named <code class="docutils literal notranslate"><span class="pre">languages</span></code>. The output should look as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="nb">list</span> <span class="n">contains</span> <span class="n">the</span> <span class="n">following</span> <span class="n">countries</span><span class="p">:</span>
 <span class="n">German</span>
@@ -495,7 +496,6 @@ document.write(`
 </div>
 </div>
 </section>
-</section>
 <section id="exercise-6-4">
 <h2>Exercise 6.4.<a class="headerlink" href="#exercise-6-4" title="Link to this heading">#</a></h2>
 <p>The dictionary named <code class="docutils literal notranslate"><span class="pre">country_continent</span></code>, defined below, connects the names of countries to the continents they are on.</p>
@@ -521,8 +521,9 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
 <section id="exercise-6-5">
-<h3>Exercise 6.5.<a class="headerlink" href="#exercise-6-5" title="Link to this heading">#</a></h3>
+<h2>Exercise 6.5.<a class="headerlink" href="#exercise-6-5" title="Link to this heading">#</a></h2>
 <p>The dictionary named <code class="docutils literal notranslate"><span class="pre">eu_capitals</span></code> connects the countries in the European Union to their capitals.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -567,7 +568,6 @@ document.write(`
 </div>
 </section>
 </section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -600,12 +600,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="3%20Working_with_strings.html"
+       href="5%20Flow_control.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">3. Working with strings</p>
+        <p class="prev-next-title">5. Flow control</p>
       </div>
     </a>
     <a class="right-next"
@@ -634,14 +634,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-1">Exercise 6.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-2">Exercise 6.2.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-3">Exercise 6.3.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-4">Exercise 6.4.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-5">Exercise 6.5.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-2">Exercise 6.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-3">Exercise 6.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-4">Exercise 6.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-5">Exercise 6.5.</a></li>
 </ul>
   </nav></div>
 
@@ -666,7 +662,7 @@ By Peter Verhaar and Ben Companjen
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2025.
       <br/>
     
   </p>

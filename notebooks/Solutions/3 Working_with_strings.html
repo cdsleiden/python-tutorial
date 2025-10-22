@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Solutions/3 Working_with_strings';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6. Dictionaries" href="6%20Dictionaries.html" />
+    <link rel="next" title="4. Lists" href="4%20Lists.html" />
     <link rel="prev" title="2. Operators" href="2%20Operators.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -178,6 +178,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3%20Working_with_strings.html">3. Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4%20Lists.html">4. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5%20Flow_control.html">5. Flow control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../6%20Dictionaries.html">6. Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
@@ -198,6 +200,8 @@
 <li class="toctree-l1"><a class="reference internal" href="1%20Variables_and_data_types.html">1. Statements, variables and data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2%20Operators.html">2. Operators</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4%20Lists.html">4. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5%20Flow_control.html">5. Flow control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6%20Dictionaries.html">6. Dictionaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7%20Functions_modules_and_libraries.html">7. Functions, Modules and Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="8%20Working_with_files_and_folders.html">8. Working with files and folders</a></li>
@@ -384,15 +388,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-exercises">Solutions to exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-1">Exercise 3.1.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-2">Exercise 3.2.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-6">Exercise 3.6.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-1">Exercise 3.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-2">Exercise 3.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-6">Exercise 3.6.</a></li>
 </ul>
             </nav>
         </div>
@@ -406,10 +407,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="working-with-strings">
 <h1>3. Working with strings<a class="headerlink" href="#working-with-strings" title="Link to this heading">#</a></h1>
-<section id="solutions-to-exercises">
-<h2>Solutions to exercises<a class="headerlink" href="#solutions-to-exercises" title="Link to this heading">#</a></h2>
 <section id="exercise-3-1">
-<h3>Exercise 3.1.<a class="headerlink" href="#exercise-3-1" title="Link to this heading">#</a></h3>
+<h2>Exercise 3.1.<a class="headerlink" href="#exercise-3-1" title="Link to this heading">#</a></h2>
 <p>Declare a variable named <code class="docutils literal notranslate"><span class="pre">year</span></code>, and assign it an integer with the value 1879. Next, use this variable to print the following sentence: “Albert Einstein was born in 1879”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -422,7 +421,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-3-2">
-<h3>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Link to this heading">#</a></h3>
+<h2>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Link to this heading">#</a></h2>
 <p>Create a variable and assign it your full name as a string. Next, print the number of characters in your name, excluding the space(s).</p>
 <p>Tip: to remove the spaces, you can replace these with an exmpty string (‘’).</p>
 <div class="cell docutils container">
@@ -437,7 +436,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-3-3">
-<h3>Exercise 3.3.<a class="headerlink" href="#exercise-3-3" title="Link to this heading">#</a></h3>
+<h2>Exercise 3.3.<a class="headerlink" href="#exercise-3-3" title="Link to this heading">#</a></h2>
 <p>Create two string variables. The first variable must be assigned the value ‘unique’ and the second variable should be assigned the value ‘biodiversity’. Create a third variable with the value ‘university’, by firstly slicing the first two string variables, and by subsequently concatenating the substrings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -457,7 +456,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-3-4">
-<h3>Exercise 3.4.<a class="headerlink" href="#exercise-3-4" title="Link to this heading">#</a></h3>
+<h2>Exercise 3.4.<a class="headerlink" href="#exercise-3-4" title="Link to this heading">#</a></h2>
 <p>Create the following two string variables:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;vladimir&#39;</span>
 <span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;nabokov&#39;</span>
@@ -483,7 +482,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise-3-5">
-<h3>Exercise 3.5.<a class="headerlink" href="#exercise-3-5" title="Link to this heading">#</a></h3>
+<h2>Exercise 3.5.<a class="headerlink" href="#exercise-3-5" title="Link to this heading">#</a></h2>
 <p>Create a variable named <code class="docutils literal notranslate"><span class="pre">url</span></code> and assign it following string: <code class="docutils literal notranslate"><span class="pre">https://www.universiteitleiden.nl</span></code>.</p>
 <p>Try to write code which can extract the top-level domain (i.e. the country code) from this url.
 Tip: this problem can be solved by creating a string slice with the last two characters only, but top-level domains may consist of more than two characters, like ‘.com’ or ‘.amsterdam’.
@@ -504,7 +503,7 @@ A more generic approach is to make use of the <code class="docutils literal notr
 </div>
 </section>
 <section id="exercise-3-6">
-<h3>Exercise 3.6.<a class="headerlink" href="#exercise-3-6" title="Link to this heading">#</a></h3>
+<h2>Exercise 3.6.<a class="headerlink" href="#exercise-3-6" title="Link to this heading">#</a></h2>
 <p>Create a variable named <code class="docutils literal notranslate"><span class="pre">filename</span></code> and assign it the value ‘README.txt’. Next, write some code in Python which can extract the filename without the extension.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -516,7 +515,6 @@ A more generic approach is to make use of the <code class="docutils literal notr
 </div>
 </div>
 </div>
-</section>
 </section>
 </section>
 
@@ -560,11 +558,11 @@ A more generic approach is to make use of the <code class="docutils literal notr
       </div>
     </a>
     <a class="right-next"
-       href="6%20Dictionaries.html"
+       href="4%20Lists.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">6. Dictionaries</p>
+        <p class="prev-next-title">4. Lists</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -584,15 +582,12 @@ A more generic approach is to make use of the <code class="docutils literal notr
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-exercises">Solutions to exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-1">Exercise 3.1.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-2">Exercise 3.2.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-6">Exercise 3.6.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-1">Exercise 3.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-2">Exercise 3.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-3">Exercise 3.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-4">Exercise 3.4.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-5">Exercise 3.5.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-6">Exercise 3.6.</a></li>
 </ul>
   </nav></div>
 
@@ -617,7 +612,7 @@ By Peter Verhaar and Ben Companjen
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2025.
       <br/>
     
   </p>
