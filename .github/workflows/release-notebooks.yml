@@ -13,7 +13,7 @@ jobs:
   zip-notebooks:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
     - name: Zip notebooks
       run: |
         zip -r notebooks.zip notebooks
