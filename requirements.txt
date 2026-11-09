@@ -1,4 +1,4 @@
-jupyter-book>=1.0,<2
+jupyter-book>=2.1.7,<3
 requests
 pandas
 beautifulsoup4
