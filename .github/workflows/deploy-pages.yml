@@ -9,6 +9,9 @@ on:
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
+    permissions:
+      contents: write
+      # pages: write # this may not be necessary
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v7
