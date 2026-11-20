@@ -11,6 +11,8 @@ on:
 # This job creates a release from the notebooks with data and solutions
 jobs:
   zip-notebooks:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v7
